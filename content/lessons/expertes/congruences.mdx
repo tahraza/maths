@@ -1,0 +1,212 @@
+---
+id: "congruences"
+title: "Congruences et arithmétique modulaire"
+track: "expertes"
+level: 3
+prerequisites: ["divisibilite"]
+tags: ["congruences", "modulo", "arithmétique", "cryptographie"]
+estimatedTime: 50
+chapter: "arithmetique"
+order: 2
+---
+
+# Congruences et arithmétique modulaire
+
+## Intuition et analogie
+
+Les congruences permettent de travailler avec les restes des divisions. C'est comme une horloge : après 12h, on revient à 1h. On travaille "modulo 12".
+
+Cette arithmétique est fondamentale en informatique : codes correcteurs, cryptographie (RSA), générateurs de nombres pseudo-aléatoires, etc.
+
+## Objectifs de cette leçon
+
+À la fin de cette leçon, tu sauras :
+- Définir et manipuler les congruences
+- Effectuer des opérations modulo $n$
+- Résoudre des équations de congruence simples
+- Appliquer le petit théorème de Fermat
+
+## Prérequis (rappel express)
+
+- **Divisibilité** : définition, division euclidienne
+- **PGCD** : algorithme d'Euclide, nombres premiers entre eux
+
+## Définitions
+
+:::definition
+**Congruence**
+
+Soient $a, b \in \mathbb{Z}$ et $n \in \mathbb{N}^*$.
+
+On dit que $a$ est **congru à $b$ modulo $n$**, noté $a \equiv b \pmod{n}$ ou $a \equiv b [n]$, si $n$ divise $a - b$.
+
+$$a \equiv b \pmod{n} \Leftrightarrow n | (a - b) \Leftrightarrow \exists k \in \mathbb{Z}, a - b = kn$$
+
+Autrement dit : $a$ et $b$ ont le même reste dans la division euclidienne par $n$.
+:::
+
+**Exemples** :
+- $17 \equiv 2 \pmod{5}$ car $17 - 2 = 15 = 5 \times 3$
+- $-3 \equiv 4 \pmod{7}$ car $-3 - 4 = -7 = 7 \times (-1)$
+- $25 \equiv 0 \pmod{5}$ signifie que $5 | 25$
+
+## Propriétés
+
+:::property[Compatibilité avec les opérations]
+Si $a \equiv b \pmod{n}$ et $c \equiv d \pmod{n}$, alors :
+
+$$a + c \equiv b + d \pmod{n}$$
+$$a - c \equiv b - d \pmod{n}$$
+$$a \times c \equiv b \times d \pmod{n}$$
+$$a^k \equiv b^k \pmod{n}$$ pour tout $k \in \mathbb{N}$
+:::
+
+:::property[Réflexivité, symétrie, transitivité]
+- $a \equiv a \pmod{n}$ (réflexivité)
+- Si $a \equiv b \pmod{n}$, alors $b \equiv a \pmod{n}$ (symétrie)
+- Si $a \equiv b$ et $b \equiv c \pmod{n}$, alors $a \equiv c \pmod{n}$ (transitivité)
+:::
+
+:::warning
+**Attention à la division !** On ne peut pas toujours simplifier par $c$ :
+
+$6 \equiv 0 \pmod{6}$, mais $6/2 \not\equiv 0/2 \pmod{6}$ au sens habituel.
+
+La simplification par $c$ n'est possible que si $\text{pgcd}(c, n) = 1$.
+:::
+
+:::property[Simplification]
+Si $a \cdot c \equiv b \cdot c \pmod{n}$ et $\text{pgcd}(c, n) = 1$, alors $a \equiv b \pmod{n}$.
+:::
+
+## Théorèmes fondamentaux
+
+:::theorem[Petit théorème de Fermat]
+Si $p$ est un nombre premier et $a$ un entier non divisible par $p$, alors :
+$$a^{p-1} \equiv 1 \pmod{p}$$
+
+Sous forme équivalente, pour tout entier $a$ :
+$$a^p \equiv a \pmod{p}$$
+:::
+
+:::theorem[Théorème de Bézout (rappel)]
+$a$ et $b$ sont premiers entre eux si et seulement s'il existe $u, v \in \mathbb{Z}$ tels que :
+$$au + bv = 1$$
+:::
+
+## Méthodes types
+
+:::method[Calculer $a^n \mod m$]
+1. Réduis d'abord $a$ modulo $m$
+2. Utilise les propriétés des puissances pour simplifier
+3. Si $n$ est grand et $m$ premier, utilise Fermat : $a^{m-1} \equiv 1 \pmod{m}$
+4. Calcule le reste de $n$ dans la division par $m-1$
+:::
+
+:::method[Résoudre $ax \equiv b \pmod{n}$]
+1. Calcule $d = \text{pgcd}(a, n)$
+2. Si $d \nmid b$ : pas de solution
+3. Si $d | b$ : divise tout par $d$, résous l'équation simplifiée
+4. Trouve $u$ tel que $\frac{a}{d} \cdot u \equiv 1 \pmod{\frac{n}{d}}$ (inverse modulaire)
+5. $x \equiv u \cdot \frac{b}{d} \pmod{\frac{n}{d}}$
+:::
+
+:::method[Trouver l'inverse modulaire]
+Pour trouver $a^{-1} \pmod{n}$ (existe si $\text{pgcd}(a,n) = 1$) :
+1. Utilise l'algorithme d'Euclide étendu pour trouver $u$ tel que $au + nv = 1$
+2. Alors $a^{-1} \equiv u \pmod{n}$
+:::
+
+## Exemples résolus
+
+### Exemple 1 : Calcul de reste
+
+Calculer le reste de $3^{100}$ dans la division par $7$.
+
+Par le petit théorème de Fermat (7 premier, 3 non divisible par 7) :
+$3^6 \equiv 1 \pmod{7}$
+
+$100 = 6 \times 16 + 4$, donc $3^{100} = (3^6)^{16} \times 3^4 \equiv 1^{16} \times 3^4 \pmod{7}$
+
+$3^4 = 81 = 7 \times 11 + 4$, donc $3^4 \equiv 4 \pmod{7}$
+
+**Réponse** : le reste est $4$.
+
+### Exemple 2 : Critère de divisibilité par 9
+
+Montrer que $n \equiv S(n) \pmod{9}$ où $S(n)$ est la somme des chiffres.
+
+Si $n = a_k 10^k + a_{k-1} 10^{k-1} + \cdots + a_1 \times 10 + a_0$
+
+Or $10 \equiv 1 \pmod{9}$, donc $10^j \equiv 1 \pmod{9}$ pour tout $j$.
+
+$n \equiv a_k + a_{k-1} + \cdots + a_1 + a_0 = S(n) \pmod{9}$
+
+Donc $9 | n \Leftrightarrow 9 | S(n)$.
+
+### Exemple 3 : Équation de congruence
+
+Résoudre $5x \equiv 3 \pmod{7}$.
+
+$\text{pgcd}(5, 7) = 1$, donc il existe une solution unique modulo 7.
+
+Cherchons l'inverse de 5 modulo 7. Par tâtonnement : $5 \times 3 = 15 = 7 \times 2 + 1$, donc $5 \times 3 \equiv 1 \pmod{7}$.
+
+$5^{-1} \equiv 3 \pmod{7}$
+
+$x \equiv 3 \times 3 = 9 \equiv 2 \pmod{7}$
+
+**Solution** : $x \equiv 2 \pmod{7}$, soit $x \in \{..., -5, 2, 9, 16, ...\}$
+
+### Exemple 4 : Dernier chiffre
+
+Quel est le dernier chiffre de $7^{2023}$ ?
+
+Le dernier chiffre, c'est le reste modulo 10.
+
+$7^1 = 7$, $7^2 = 49 \equiv 9$, $7^3 \equiv 9 \times 7 = 63 \equiv 3$, $7^4 \equiv 3 \times 7 = 21 \equiv 1 \pmod{10}$
+
+La période est 4. $2023 = 4 \times 505 + 3$
+
+$7^{2023} \equiv 7^3 \equiv 3 \pmod{10}$
+
+**Réponse** : le dernier chiffre est 3.
+
+## Erreurs fréquentes
+
+:::warning
+**Erreur 1** : Diviser les deux membres sans précaution
+
+$10 \equiv 4 \pmod{6}$ mais $10/2 = 5 \not\equiv 4/2 = 2 \pmod{6}$ !
+
+(En fait $5 \equiv 2 \pmod{3}$ car on doit aussi diviser le module par $\text{pgcd}(2,6)$)
+
+**Erreur 2** : Oublier les conditions de Fermat
+
+Fermat ne s'applique que si $p$ est premier ET $a$ n'est pas divisible par $p$.
+
+**Erreur 3** : Confondre $a \equiv b \pmod{n}$ et $a = b$
+
+$17 \equiv 3 \pmod{7}$ mais $17 \neq 3$.
+
+**Erreur 4** : Mal interpréter les congruences négatives
+
+$-3 \equiv 4 \pmod{7}$ est valide (car $-3 = 7 \times (-1) + 4$).
+:::
+
+## Mini-résumé à apprendre
+
+**Définition** : $a \equiv b \pmod{n} \Leftrightarrow n | (a-b)$
+
+**Opérations** : addition, soustraction, multiplication, puissances compatibles
+
+**Petit théorème de Fermat** : si $p$ premier et $p \nmid a$, alors $a^{p-1} \equiv 1 \pmod{p}$
+
+**Inverse** : $a^{-1}$ existe mod $n$ ssi $\text{pgcd}(a,n) = 1$
+
+## Ponts vers autres chapitres
+
+- **Cryptographie RSA** : utilise Fermat et les inverses modulaires
+- **Codes correcteurs** : calculs modulo des polynômes
+- **Théorème chinois** : systèmes de congruences
+- **Carrés parfaits** : étude des résidus quadratiques

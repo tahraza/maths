@@ -1,0 +1,238 @@
+---
+id: "limites-fonctions"
+title: "Limites de fonctions"
+track: "spe"
+level: 2
+prerequisites: ["suites-limites"]
+tags: ["limites", "fonctions", "asymptotes", "infini"]
+estimatedTime: 60
+chapter: "fonctions"
+order: 1
+---
+
+# Limites de fonctions
+
+## Intuition et analogie
+
+La limite d'une fonction en un point décrit son comportement quand la variable s'approche de ce point. C'est comme observer un cycliste qui s'approche d'une ligne d'arrivée : même avant qu'il la franchisse, on peut prédire où il va passer.
+
+Les limites à l'infini décrivent le comportement "lointain" de la fonction : que se passe-t-il quand $x$ devient très grand ?
+
+## Objectifs de cette leçon
+
+À la fin de cette leçon, tu sauras :
+- Calculer des limites de fonctions en un point et à l'infini
+- Identifier et lever les formes indéterminées
+- Déterminer les asymptotes d'une courbe
+- Utiliser les théorèmes de comparaison
+
+## Définitions
+
+:::definition
+**Limite finie en $+\infty$**
+
+On dit que $f$ a pour limite $\ell$ en $+\infty$, noté $\displaystyle\lim_{x \to +\infty} f(x) = \ell$, si $f(x)$ se rapproche indéfiniment de $\ell$ quand $x$ devient arbitrairement grand.
+:::
+
+:::definition
+**Limite infinie en un point**
+
+On dit que $f$ a pour limite $+\infty$ en $a$, noté $\displaystyle\lim_{x \to a} f(x) = +\infty$, si $f(x)$ devient arbitrairement grand quand $x$ s'approche de $a$.
+:::
+
+:::definition
+**Limite à gauche et à droite**
+
+- **Limite à droite** en $a$ : $\displaystyle\lim_{x \to a^+} f(x)$ (on s'approche par valeurs supérieures à $a$)
+- **Limite à gauche** en $a$ : $\displaystyle\lim_{x \to a^-} f(x)$ (on s'approche par valeurs inférieures à $a$)
+
+$f$ admet une limite en $a$ si et seulement si les limites à gauche et à droite existent et sont égales.
+:::
+
+## Limites de référence
+
+:::property[Limites usuelles]
+| Fonction | En $+\infty$ | En $-\infty$ | En $0^+$ | En $0^-$ |
+|----------|-------------|-------------|---------|---------|
+| $\frac{1}{x}$ | $0$ | $0$ | $+\infty$ | $-\infty$ |
+| $\sqrt{x}$ | $+\infty$ | — | $0$ | — |
+| $e^x$ | $+\infty$ | $0$ | — | — |
+| $\ln(x)$ | $+\infty$ | — | $-\infty$ | — |
+:::
+
+:::property[Croissances comparées]
+$$\lim_{x \to +\infty} \frac{e^x}{x^n} = +\infty \quad \text{et} \quad \lim_{x \to +\infty} \frac{x^n}{e^x} = 0$$
+
+$$\lim_{x \to +\infty} \frac{\ln(x)}{x^{\alpha}} = 0 \quad (\alpha > 0)$$
+
+$$\lim_{x \to 0^+} x^{\alpha} \ln(x) = 0 \quad (\alpha > 0)$$
+
+L'exponentielle domine les puissances, les puissances dominent le logarithme.
+:::
+
+## Opérations sur les limites
+
+:::property[Opérations]
+Les mêmes règles que pour les suites s'appliquent :
+- Somme, différence, produit, quotient de limites
+- Composition de limites
+
+**Formes indéterminées (FI)** : $\frac{0}{0}$, $\frac{\infty}{\infty}$, $0 \times \infty$, $\infty - \infty$, $1^{\infty}$, $0^0$, $\infty^0$
+:::
+
+## Asymptotes
+
+:::definition
+**Asymptote horizontale**
+
+La droite $y = \ell$ est asymptote horizontale à la courbe de $f$ en $+\infty$ (resp. $-\infty$) si :
+$$\lim_{x \to +\infty} f(x) = \ell \quad (\text{resp. } \lim_{x \to -\infty} f(x) = \ell)$$
+:::
+
+:::definition
+**Asymptote verticale**
+
+La droite $x = a$ est asymptote verticale à la courbe de $f$ si :
+$$\lim_{x \to a^+} f(x) = \pm\infty \quad \text{ou} \quad \lim_{x \to a^-} f(x) = \pm\infty$$
+:::
+
+:::definition
+**Asymptote oblique**
+
+La droite $y = ax + b$ (avec $a \neq 0$) est asymptote oblique à la courbe de $f$ en $+\infty$ si :
+$$\lim_{x \to +\infty} [f(x) - (ax + b)] = 0$$
+
+Pour la trouver : $a = \lim_{x \to +\infty} \frac{f(x)}{x}$ et $b = \lim_{x \to +\infty} [f(x) - ax]$
+:::
+
+## Méthodes types
+
+:::method[Lever $\frac{0}{0}$ par factorisation]
+1. Factoriser le numérateur et le dénominateur
+2. Simplifier le facteur commun qui s'annule
+3. Calculer la limite de l'expression simplifiée
+:::
+
+:::method[Lever $\frac{\infty}{\infty}$ par terme dominant]
+Pour une fraction de polynômes ou avec $e^x$, $\ln(x)$ :
+1. Identifier le terme dominant au numérateur et au dénominateur
+2. Factoriser par ces termes
+3. Utiliser les croissances comparées si nécessaire
+:::
+
+:::method[Rechercher les asymptotes]
+1. **Domaine** : trouver les valeurs interdites → candidats pour asymptotes verticales
+2. **Limites aux bornes** : calculer les limites en ces points
+3. **Limites en $\pm\infty$** : limite finie → asymptote horizontale ; sinon, chercher une asymptote oblique
+:::
+
+## Exemples résolus
+
+### Exemple 1 : Forme $\frac{0}{0}$
+
+Calculer $\displaystyle\lim_{x \to 2} \frac{x^2 - 4}{x - 2}$.
+
+**Forme** : $\frac{0}{0}$ car numérateur et dénominateur s'annulent en $x = 2$.
+
+Factorisation : $x^2 - 4 = (x-2)(x+2)$
+
+$$\frac{x^2 - 4}{x - 2} = \frac{(x-2)(x+2)}{x-2} = x + 2 \quad \text{pour } x \neq 2$$
+
+Donc $\displaystyle\lim_{x \to 2} \frac{x^2 - 4}{x - 2} = 2 + 2 = 4$
+
+### Exemple 2 : Croissance comparée
+
+Calculer $\displaystyle\lim_{x \to +\infty} \frac{x^3}{e^x}$.
+
+**Forme** : $\frac{\infty}{\infty}$
+
+Par croissance comparée : $e^x$ domine toute puissance de $x$.
+
+Donc $\displaystyle\lim_{x \to +\infty} \frac{x^3}{e^x} = 0$
+
+### Exemple 3 : Limite en un point avec $\ln$
+
+Calculer $\displaystyle\lim_{x \to 0^+} x \ln(x)$.
+
+**Forme** : $0 \times (-\infty)$
+
+Par croissance comparée : $\displaystyle\lim_{x \to 0^+} x \ln(x) = 0$
+
+(Le facteur $x$ qui tend vers 0 l'emporte sur $\ln(x)$ qui tend vers $-\infty$)
+
+### Exemple 4 : Asymptotes
+
+Soit $f(x) = \frac{x^2 + 1}{x - 1}$.
+
+**Domaine** : $D_f = \mathbb{R} \setminus \{1\}$
+
+**Asymptote verticale** : en $x = 1$
+- $\displaystyle\lim_{x \to 1^+} f(x) = \frac{2}{0^+} = +\infty$
+- $\displaystyle\lim_{x \to 1^-} f(x) = \frac{2}{0^-} = -\infty$
+
+La droite $x = 1$ est asymptote verticale.
+
+**En $+\infty$** :
+$\displaystyle\lim_{x \to +\infty} f(x) = \lim_{x \to +\infty} \frac{x^2}{x} = +\infty$ (pas d'asymptote horizontale)
+
+Cherchons une asymptote oblique :
+$a = \displaystyle\lim_{x \to +\infty} \frac{f(x)}{x} = \lim_{x \to +\infty} \frac{x^2 + 1}{x(x-1)} = 1$
+
+Division euclidienne : $x^2 + 1 = (x+1)(x-1) + 2$
+
+Donc $f(x) = x + 1 + \frac{2}{x-1}$
+
+$b = \displaystyle\lim_{x \to +\infty} [f(x) - x] = 1 + 0 = 1$
+
+La droite $y = x + 1$ est asymptote oblique en $\pm\infty$.
+
+### Exemple 5 : Théorème des gendarmes
+
+Montrer que $\displaystyle\lim_{x \to +\infty} \frac{\sin(x)}{x} = 0$.
+
+On sait que $-1 \leq \sin(x) \leq 1$ pour tout $x$.
+
+Pour $x > 0$ : $-\frac{1}{x} \leq \frac{\sin(x)}{x} \leq \frac{1}{x}$
+
+Or $\displaystyle\lim_{x \to +\infty} \frac{1}{x} = \lim_{x \to +\infty} \left(-\frac{1}{x}\right) = 0$
+
+Par le théorème des gendarmes : $\displaystyle\lim_{x \to +\infty} \frac{\sin(x)}{x} = 0$
+
+## Erreurs fréquentes
+
+:::warning
+**Erreur 1** : Conclure sur une forme indéterminée
+
+$\frac{0}{0}$ n'est pas égal à 1 ! C'est une forme qu'il faut transformer.
+
+**Erreur 2** : Oublier les signes dans les limites latérales
+
+$\displaystyle\lim_{x \to 0^+} \frac{1}{x} = +\infty$ mais $\displaystyle\lim_{x \to 0^-} \frac{1}{x} = -\infty$
+
+**Erreur 3** : Mal appliquer les croissances comparées
+
+C'est $e^x$ qui domine $x^n$, pas l'inverse. Et $\ln(x)$ est dominé par toute puissance positive.
+
+**Erreur 4** : Confondre limite en un point et valeur en ce point
+
+$f$ peut avoir une limite en $a$ même si $f(a)$ n'est pas défini ou est différent de cette limite.
+:::
+
+## Mini-résumé à apprendre
+
+**Croissances comparées** : $\ln(x) \ll x^{\alpha} \ll e^x$ (pour $\alpha > 0$)
+
+**Asymptotes** :
+- Verticale $x = a$ : limite infinie en $a$
+- Horizontale $y = \ell$ : limite finie en $\pm\infty$
+- Oblique $y = ax + b$ : $a = \lim \frac{f(x)}{x}$, $b = \lim [f(x) - ax]$
+
+**Limites à connaître** :
+- $\lim_{x \to 0^+} x\ln(x) = 0$
+- $\lim_{x \to +\infty} \frac{\ln(x)}{x} = 0$
+
+## Ponts vers autres chapitres
+
+- **Continuité** : lien entre limite et valeur de la fonction
+- **Dérivation** : la dérivée est une limite du taux d'accroissement
+- **Intégrales impropres** : limites d'intégrales

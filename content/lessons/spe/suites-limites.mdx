@@ -1,0 +1,248 @@
+---
+id: "suites-limites"
+title: "Limites de suites"
+track: "spe"
+level: 2
+prerequisites: ["suites-definition"]
+tags: ["suites", "limites", "convergence", "divergence", "infini"]
+estimatedTime: 55
+chapter: "suites"
+order: 2
+---
+
+# Limites de suites
+
+## Intuition et analogie
+
+Imagine une grenouille qui saute vers un mur. À chaque saut, elle parcourt la moitié de la distance restante. Elle ne touchera jamais le mur, mais elle s'en approche indéfiniment. On dit que la suite de ses positions **converge** vers le mur.
+
+La limite d'une suite décrit le comportement "à l'infini" : vers quoi tend la suite quand $n$ devient très grand ?
+
+## Objectifs de cette leçon
+
+À la fin de cette leçon, tu sauras :
+- Définir la limite d'une suite (finie ou infinie)
+- Calculer des limites de suites
+- Utiliser les théorèmes de comparaison
+- Reconnaître les formes indéterminées
+
+## Définitions
+
+:::definition
+**Limite finie**
+
+La suite $(u_n)$ a pour **limite** $\ell \in \mathbb{R}$ si les termes $u_n$ se rapprochent indéfiniment de $\ell$ quand $n$ tend vers $+\infty$.
+
+On écrit : $\displaystyle\lim_{n \to +\infty} u_n = \ell$
+
+On dit que la suite **converge** vers $\ell$.
+:::
+
+:::definition
+**Limite infinie**
+
+La suite $(u_n)$ a pour limite $+\infty$ si les termes $u_n$ deviennent arbitrairement grands quand $n$ tend vers $+\infty$.
+
+On écrit : $\displaystyle\lim_{n \to +\infty} u_n = +\infty$
+
+(De même pour $-\infty$)
+
+On dit que la suite **diverge** vers $+\infty$ (ou $-\infty$).
+:::
+
+:::definition
+**Suite divergente**
+
+Une suite est **divergente** si elle n'a pas de limite (finie ou infinie).
+
+Exemple : $u_n = (-1)^n$ oscille entre $-1$ et $1$ sans se stabiliser.
+:::
+
+## Limites de référence
+
+:::property[Limites usuelles]
+| Suite | Limite |
+|-------|--------|
+| $u_n = \frac{1}{n}$ | $0$ |
+| $u_n = \frac{1}{n^2}$ | $0$ |
+| $u_n = \sqrt{n}$ | $+\infty$ |
+| $u_n = n^k$ ($k > 0$) | $+\infty$ |
+| $u_n = q^n$ avec $\|q\| < 1$ | $0$ |
+| $u_n = q^n$ avec $q > 1$ | $+\infty$ |
+| $u_n = q^n$ avec $q \leq -1$ | pas de limite |
+:::
+
+## Opérations sur les limites
+
+:::property[Somme de limites]
+| $\lim u_n$ | $\lim v_n$ | $\lim (u_n + v_n)$ |
+|------------|------------|-------------------|
+| $\ell$ | $\ell'$ | $\ell + \ell'$ |
+| $\ell$ | $+\infty$ | $+\infty$ |
+| $+\infty$ | $+\infty$ | $+\infty$ |
+| $+\infty$ | $-\infty$ | **FI** |
+:::
+
+:::property[Produit de limites]
+| $\lim u_n$ | $\lim v_n$ | $\lim (u_n \times v_n)$ |
+|------------|------------|------------------------|
+| $\ell$ | $\ell'$ | $\ell \times \ell'$ |
+| $\ell > 0$ | $+\infty$ | $+\infty$ |
+| $\ell < 0$ | $+\infty$ | $-\infty$ |
+| $0$ | $\pm\infty$ | **FI** |
+| $+\infty$ | $+\infty$ | $+\infty$ |
+:::
+
+:::property[Quotient de limites]
+| $\lim u_n$ | $\lim v_n$ | $\lim \frac{u_n}{v_n}$ |
+|------------|------------|------------------------|
+| $\ell$ | $\ell' \neq 0$ | $\frac{\ell}{\ell'}$ |
+| $\ell \neq 0$ | $0^+$ | $\pm\infty$ |
+| $\ell$ | $\pm\infty$ | $0$ |
+| $\pm\infty$ | $\pm\infty$ | **FI** |
+| $0$ | $0$ | **FI** |
+:::
+
+**FI** = Forme Indéterminée (on ne peut pas conclure directement)
+
+## Méthodes types
+
+:::method[Lever une forme indéterminée $\frac{\infty}{\infty}$]
+Pour une fraction de polynômes ou avec des puissances :
+1. Identifie le terme de plus haut degré au numérateur
+2. Identifie le terme de plus haut degré au dénominateur
+3. Factorise par ces termes dominants
+4. Simplifie et calcule la limite
+:::
+
+:::method[Lever une forme indéterminée $\infty - \infty$]
+1. Factorise par le terme dominant
+2. Ou mets au même dénominateur
+3. Ou utilise une expression conjuguée (pour les racines)
+:::
+
+:::method[Limites avec des suites géométriques]
+Pour $u_n = a \cdot q^n$ :
+- Si $|q| < 1$ : $\lim u_n = 0$
+- Si $q > 1$ : $\lim u_n = +\infty$ (si $a > 0$)
+- Si $q = 1$ : $\lim u_n = a$
+- Si $q \leq -1$ : pas de limite
+:::
+
+## Théorèmes de comparaison
+
+:::property[Théorème des gendarmes]
+Si pour tout $n$ assez grand :
+$$v_n \leq u_n \leq w_n$$
+et si $\displaystyle\lim_{n \to +\infty} v_n = \lim_{n \to +\infty} w_n = \ell$
+
+alors $\displaystyle\lim_{n \to +\infty} u_n = \ell$
+:::
+
+:::property[Comparaison et limites infinies]
+Si pour tout $n$ assez grand :
+- $u_n \leq v_n$ et $\lim u_n = +\infty$, alors $\lim v_n = +\infty$
+- $u_n \geq v_n$ et $\lim u_n = -\infty$, alors $\lim v_n = -\infty$
+:::
+
+## Croissances comparées
+
+:::property[Croissances comparées fondamentales]
+Pour tout $\alpha > 0$ et $q > 1$ :
+
+$$\lim_{n \to +\infty} \frac{q^n}{n^\alpha} = +\infty$$
+
+En clair : **l'exponentielle l'emporte sur les puissances**.
+
+$$\lim_{n \to +\infty} \frac{\ln(n)}{n^\alpha} = 0$$
+
+En clair : **les puissances l'emportent sur le logarithme**.
+:::
+
+## Exemples résolus
+
+### Exemple 1 : Limite d'une fraction polynomiale
+
+Calculer $\displaystyle\lim_{n \to +\infty} \frac{3n^2 - 2n + 1}{5n^2 + n}$.
+
+**Forme** : $\frac{\infty}{\infty}$
+
+On factorise par le terme dominant ($n^2$) :
+
+$$\frac{3n^2 - 2n + 1}{5n^2 + n} = \frac{n^2(3 - \frac{2}{n} + \frac{1}{n^2})}{n^2(5 + \frac{1}{n})} = \frac{3 - \frac{2}{n} + \frac{1}{n^2}}{5 + \frac{1}{n}}$$
+
+Quand $n \to +\infty$ : $\frac{2}{n} \to 0$, $\frac{1}{n^2} \to 0$, $\frac{1}{n} \to 0$
+
+Donc $\displaystyle\lim_{n \to +\infty} \frac{3n^2 - 2n + 1}{5n^2 + n} = \frac{3}{5}$
+
+### Exemple 2 : Forme $\infty - \infty$
+
+Calculer $\displaystyle\lim_{n \to +\infty} (\sqrt{n+1} - \sqrt{n})$.
+
+**Forme** : $\infty - \infty$
+
+On multiplie par l'expression conjuguée :
+
+$$\sqrt{n+1} - \sqrt{n} = \frac{(\sqrt{n+1} - \sqrt{n})(\sqrt{n+1} + \sqrt{n})}{\sqrt{n+1} + \sqrt{n}} = \frac{(n+1) - n}{\sqrt{n+1} + \sqrt{n}} = \frac{1}{\sqrt{n+1} + \sqrt{n}}$$
+
+Quand $n \to +\infty$ : $\sqrt{n+1} + \sqrt{n} \to +\infty$
+
+Donc $\displaystyle\lim_{n \to +\infty} (\sqrt{n+1} - \sqrt{n}) = 0$
+
+### Exemple 3 : Théorème des gendarmes
+
+Montrer que $\displaystyle\lim_{n \to +\infty} \frac{\sin(n)}{n} = 0$.
+
+On sait que $-1 \leq \sin(n) \leq 1$ pour tout $n$.
+
+Donc $-\frac{1}{n} \leq \frac{\sin(n)}{n} \leq \frac{1}{n}$
+
+Or $\displaystyle\lim_{n \to +\infty} \frac{1}{n} = \lim_{n \to +\infty} \left(-\frac{1}{n}\right) = 0$
+
+Par le théorème des gendarmes : $\displaystyle\lim_{n \to +\infty} \frac{\sin(n)}{n} = 0$
+
+### Exemple 4 : Croissance comparée
+
+Calculer $\displaystyle\lim_{n \to +\infty} \frac{2^n}{n^{100}}$.
+
+**Forme** : $\frac{\infty}{\infty}$
+
+Par croissance comparée, l'exponentielle $2^n$ croît plus vite que toute puissance de $n$.
+
+Donc $\displaystyle\lim_{n \to +\infty} \frac{2^n}{n^{100}} = +\infty$
+
+## Erreurs fréquentes
+
+:::warning
+**Erreur 1** : Conclure trop vite sur une forme indéterminée
+
+$\infty - \infty$ peut donner n'importe quoi ! Il faut transformer l'expression.
+
+**Erreur 2** : Mal factoriser
+
+On factorise par le terme de **plus haut degré**, pas par n'importe quel terme.
+
+**Erreur 3** : Oublier les croissances comparées
+
+$\frac{n^{1000}}{2^n} \to 0$ car l'exponentielle domine toujours les puissances.
+
+**Erreur 4** : Confondre "pas de limite" et "limite infinie"
+
+$(-1)^n$ n'a pas de limite (oscille), ce n'est pas une limite infinie.
+:::
+
+## Mini-résumé à apprendre
+
+**Formes indéterminées** : $\frac{\infty}{\infty}$, $\infty - \infty$, $0 \times \infty$, $\frac{0}{0}$
+
+**Hiérarchie de croissance** : $\ln(n) \ll n^\alpha \ll q^n \ll n!$ (pour $q > 1$, $\alpha > 0$)
+
+**Gendarmes** : Si $v_n \leq u_n \leq w_n$ et $v_n, w_n \to \ell$, alors $u_n \to \ell$
+
+**Suite géométrique** $q^n$ : converge vers 0 si $|q| < 1$
+
+## Ponts vers autres chapitres
+
+- **Suites et convergence** : lien entre monotonie, bornage et convergence
+- **Limites de fonctions** : mêmes techniques pour les fonctions
+- **Intégrales** : sommes de Riemann et passages à la limite

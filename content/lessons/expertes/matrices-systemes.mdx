@@ -1,0 +1,207 @@
+---
+id: "matrices-systemes"
+title: "Systèmes linéaires et matrices"
+track: "expertes"
+level: 3
+prerequisites: ["matrices-operations"]
+tags: ["matrices", "systèmes", "Gauss", "inverse", "déterminant"]
+estimatedTime: 55
+chapter: "matrices"
+order: 2
+---
+
+# Systèmes linéaires et matrices
+
+## Intuition et analogie
+
+Résoudre un système d'équations, c'est comme trouver le point de rencontre de plusieurs droites (ou plans). Les matrices permettent de mécaniser cette résolution : on transforme le système en calcul matriciel, puis on applique des algorithmes systématiques.
+
+## Objectifs de cette leçon
+
+À la fin de cette leçon, tu sauras :
+- Écrire un système sous forme matricielle
+- Résoudre par pivot de Gauss
+- Utiliser l'inverse d'une matrice
+- Analyser l'existence et l'unicité des solutions
+
+## Écriture matricielle
+
+:::definition
+**Système linéaire sous forme matricielle**
+
+Le système :
+$$\begin{cases} a_{11}x_1 + a_{12}x_2 + \cdots + a_{1n}x_n = b_1 \\ a_{21}x_1 + a_{22}x_2 + \cdots + a_{2n}x_n = b_2 \\ \vdots \\ a_{m1}x_1 + a_{m2}x_2 + \cdots + a_{mn}x_n = b_m \end{cases}$$
+
+s'écrit matriciellement :
+$$AX = B$$
+
+où $A$ est la matrice des coefficients, $X$ le vecteur des inconnues, $B$ le vecteur second membre.
+:::
+
+## Méthode du pivot de Gauss
+
+:::method[Algorithme de Gauss]
+1. Former la matrice augmentée $(A|B)$
+2. Transformer en forme échelonnée par :
+   - $L_i \leftarrow L_i + \lambda L_j$ (ajouter un multiple d'une ligne à une autre)
+   - $L_i \leftrightarrow L_j$ (échanger deux lignes)
+   - $L_i \leftarrow \lambda L_i$ avec $\lambda \neq 0$ (multiplier une ligne)
+3. Remonter pour trouver les solutions
+:::
+
+:::property[Interprétation des résultats]
+Après échelonnement :
+- **Ligne $0 = 0$** : équation redondante (infinité de solutions possibles)
+- **Ligne $0 = c$ avec $c \neq 0$** : système incompatible (aucune solution)
+- **Autant de pivots que d'inconnues** : solution unique
+:::
+
+## Résolution par matrice inverse
+
+:::property[Théorème fondamental]
+Si $A$ est une matrice **carrée inversible**, le système $AX = B$ a une **unique solution** :
+$$X = A^{-1}B$$
+:::
+
+:::property[Critère d'inversibilité]
+Une matrice carrée $A$ est inversible si et seulement si $\det(A) \neq 0$.
+:::
+
+## Déterminant 2×2 et 3×3
+
+:::property[Déterminant 2×2]
+$$\det\begin{pmatrix} a & b \\ c & d \end{pmatrix} = ad - bc$$
+:::
+
+:::property[Déterminant 3×3 (Sarrus)]
+$$\det\begin{pmatrix} a & b & c \\ d & e & f \\ g & h & i \end{pmatrix} = aei + bfg + cdh - ceg - bdi - afh$$
+
+Mnémotechnique : diagonales descendantes (+) moins diagonales montantes (−).
+:::
+
+## Inverse d'une matrice 2×2
+
+:::property[Formule de l'inverse 2×2]
+Si $A = \begin{pmatrix} a & b \\ c & d \end{pmatrix}$ avec $\det(A) = ad - bc \neq 0$ :
+
+$$A^{-1} = \frac{1}{ad-bc}\begin{pmatrix} d & -b \\ -c & a \end{pmatrix}$$
+
+On échange les éléments diagonaux et on change les signes des éléments anti-diagonaux.
+:::
+
+## Exemples résolus
+
+### Exemple 1 : Système 2×2
+
+Résoudre $\begin{cases} 2x + 3y = 7 \\ x - y = 1 \end{cases}$
+
+**Forme matricielle** :
+$$\begin{pmatrix} 2 & 3 \\ 1 & -1 \end{pmatrix} \begin{pmatrix} x \\ y \end{pmatrix} = \begin{pmatrix} 7 \\ 1 \end{pmatrix}$$
+
+**Par l'inverse** :
+$\det(A) = 2(-1) - 3(1) = -5 \neq 0$ donc inversible.
+
+$$A^{-1} = \frac{1}{-5}\begin{pmatrix} -1 & -3 \\ -1 & 2 \end{pmatrix} = \begin{pmatrix} 1/5 & 3/5 \\ 1/5 & -2/5 \end{pmatrix}$$
+
+$$X = A^{-1}B = \begin{pmatrix} 1/5 & 3/5 \\ 1/5 & -2/5 \end{pmatrix}\begin{pmatrix} 7 \\ 1 \end{pmatrix} = \begin{pmatrix} 7/5 + 3/5 \\ 7/5 - 2/5 \end{pmatrix} = \begin{pmatrix} 2 \\ 1 \end{pmatrix}$$
+
+**Solution** : $x = 2$, $y = 1$
+
+### Exemple 2 : Pivot de Gauss
+
+Résoudre $\begin{cases} x + 2y + 3z = 6 \\ 2x + 5y + 7z = 14 \\ 3x + 8y + 11z = 22 \end{cases}$
+
+**Matrice augmentée** :
+$$\begin{pmatrix} 1 & 2 & 3 & | & 6 \\ 2 & 5 & 7 & | & 14 \\ 3 & 8 & 11 & | & 22 \end{pmatrix}$$
+
+$L_2 \leftarrow L_2 - 2L_1$ :
+$$\begin{pmatrix} 1 & 2 & 3 & | & 6 \\ 0 & 1 & 1 & | & 2 \\ 3 & 8 & 11 & | & 22 \end{pmatrix}$$
+
+$L_3 \leftarrow L_3 - 3L_1$ :
+$$\begin{pmatrix} 1 & 2 & 3 & | & 6 \\ 0 & 1 & 1 & | & 2 \\ 0 & 2 & 2 & | & 4 \end{pmatrix}$$
+
+$L_3 \leftarrow L_3 - 2L_2$ :
+$$\begin{pmatrix} 1 & 2 & 3 & | & 6 \\ 0 & 1 & 1 & | & 2 \\ 0 & 0 & 0 & | & 0 \end{pmatrix}$$
+
+La 3e ligne est $0 = 0$ : infinité de solutions.
+
+Posons $z = t$ (paramètre libre).
+- Ligne 2 : $y + t = 2$ → $y = 2 - t$
+- Ligne 1 : $x + 2(2-t) + 3t = 6$ → $x = 6 - 4 + 2t - 3t = 2 - t$
+
+**Solutions** : $(x, y, z) = (2-t, 2-t, t)$ pour $t \in \mathbb{R}$
+
+### Exemple 3 : Système incompatible
+
+$\begin{cases} x + y = 3 \\ 2x + 2y = 5 \end{cases}$
+
+**Matrice augmentée** :
+$$\begin{pmatrix} 1 & 1 & | & 3 \\ 2 & 2 & | & 5 \end{pmatrix}$$
+
+$L_2 \leftarrow L_2 - 2L_1$ :
+$$\begin{pmatrix} 1 & 1 & | & 3 \\ 0 & 0 & | & -1 \end{pmatrix}$$
+
+La 2e ligne donne $0 = -1$ : **contradiction**.
+
+Le système est **incompatible** (aucune solution).
+
+### Exemple 4 : Calcul de déterminant 3×3
+
+Calculer $\det\begin{pmatrix} 1 & 2 & 3 \\ 0 & 1 & 4 \\ 5 & 6 & 0 \end{pmatrix}$
+
+Par Sarrus :
+$= 1 \cdot 1 \cdot 0 + 2 \cdot 4 \cdot 5 + 3 \cdot 0 \cdot 6 - 3 \cdot 1 \cdot 5 - 2 \cdot 0 \cdot 0 - 1 \cdot 4 \cdot 6$
+$= 0 + 40 + 0 - 15 - 0 - 24$
+$= 1$
+
+Le déterminant vaut 1, donc la matrice est inversible.
+
+## Théorème de Cramer
+
+:::property[Formules de Cramer (système 2×2)]
+Pour $\begin{cases} ax + by = e \\ cx + dy = f \end{cases}$ avec $\Delta = ad - bc \neq 0$ :
+
+$$x = \frac{ed - bf}{\Delta} = \frac{\det\begin{pmatrix} e & b \\ f & d \end{pmatrix}}{\Delta}$$
+
+$$y = \frac{af - ec}{\Delta} = \frac{\det\begin{pmatrix} a & e \\ c & f \end{pmatrix}}{\Delta}$$
+
+On remplace la colonne de l'inconnue par le second membre.
+:::
+
+## Erreurs fréquentes
+
+:::warning
+**Erreur 1** : Oublier de propager les opérations au second membre
+
+Quand on fait $L_2 \leftarrow L_2 - 2L_1$, il faut aussi modifier la colonne de droite.
+
+**Erreur 2** : Conclure trop vite à l'unicité
+
+Vérifier le rang : une ligne $0 = 0$ signifie infinité de solutions, pas unicité.
+
+**Erreur 3** : Se tromper dans le déterminant
+
+Pour Sarrus : attention à l'ordre des produits et aux signes.
+
+**Erreur 4** : Inverser l'ordre dans $X = A^{-1}B$
+
+C'est $A^{-1}B$, pas $BA^{-1}$ (le produit matriciel n'est pas commutatif).
+:::
+
+## Mini-résumé à apprendre
+
+**Forme matricielle** : $AX = B$
+
+**Solution si inversible** : $X = A^{-1}B$
+
+**Déterminant 2×2** : $ad - bc$
+
+**Inverse 2×2** : $\frac{1}{\det}\begin{pmatrix} d & -b \\ -c & a \end{pmatrix}$
+
+**Gauss** : échelonner puis remonter
+
+## Ponts vers autres chapitres
+
+- **Matrices** : opérations et propriétés
+- **Arithmétique** : systèmes de congruences
+- **Géométrie** : intersection de droites/plans

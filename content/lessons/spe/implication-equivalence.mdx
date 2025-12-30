@@ -1,0 +1,202 @@
+---
+id: "implication-equivalence"
+title: "Implication, équivalence et raisonnement"
+track: "spe"
+level: 1
+prerequisites: []
+tags: ["logique", "implication", "équivalence", "contraposée", "raisonnement"]
+estimatedTime: 45
+chapter: "raisonnement"
+order: 1
+---
+
+# Implication, équivalence et raisonnement
+
+## Intuition et analogie
+
+En mathématiques, on fait des affirmations précises et on les relie entre elles. Quand tu dis "S'il pleut, alors je prends mon parapluie", tu fais une **implication**. Et si tu ajoutes "Je prends mon parapluie uniquement s'il pleut", alors les deux sont liés dans les deux sens : c'est une **équivalence**.
+
+La logique mathématique formalise ces liens pour raisonner sans ambiguïté.
+
+## Objectifs de cette leçon
+
+À la fin de cette leçon, tu sauras :
+- Distinguer implication et équivalence
+- Utiliser la contraposée pour démontrer
+- Reconnaître les différents types de raisonnement
+- Éviter les erreurs logiques courantes
+
+## Définitions
+
+:::definition
+**Implication**
+
+L'**implication** $P \Rightarrow Q$ (lue "P implique Q") signifie :
+"Si P est vraie, alors Q est vraie."
+
+- $P$ est l'**hypothèse** (ou antécédent)
+- $Q$ est la **conclusion** (ou conséquent)
+
+L'implication est fausse uniquement quand P est vraie et Q est fausse.
+:::
+
+:::definition
+**Équivalence**
+
+L'**équivalence** $P \Leftrightarrow Q$ (lue "P équivaut à Q") signifie :
+"P est vraie si et seulement si Q est vraie."
+
+C'est la conjonction des deux implications : $(P \Rightarrow Q)$ ET $(Q \Rightarrow P)$.
+:::
+
+:::definition
+**Contraposée**
+
+La **contraposée** de l'implication $P \Rightarrow Q$ est l'implication :
+$$\text{non } Q \Rightarrow \text{non } P$$
+
+**Propriété fondamentale** : Une implication et sa contraposée sont logiquement équivalentes.
+$$P \Rightarrow Q \quad \Leftrightarrow \quad (\text{non } Q \Rightarrow \text{non } P)$$
+:::
+
+## Propriétés
+
+:::property[Négation d'une implication]
+La négation de "$P \Rightarrow Q$" est "$P$ ET non $Q$".
+
+En symboles : $\text{non}(P \Rightarrow Q) \Leftrightarrow (P \text{ et } \text{non } Q)$
+:::
+
+:::property[Transitivité de l'implication]
+Si $P \Rightarrow Q$ et $Q \Rightarrow R$, alors $P \Rightarrow R$.
+:::
+
+:::property[Condition nécessaire et suffisante]
+- "$P \Rightarrow Q$" signifie que $P$ est une condition **suffisante** pour $Q$
+- "$P \Rightarrow Q$" signifie aussi que $Q$ est une condition **nécessaire** pour $P$
+- "$P \Leftrightarrow Q$" signifie que $P$ est une condition **nécessaire et suffisante** pour $Q$
+:::
+
+## Types de raisonnement
+
+:::method[Raisonnement direct]
+Pour montrer $P \Rightarrow Q$ :
+1. On suppose $P$ vraie
+2. On effectue des déductions logiques
+3. On arrive à $Q$
+:::
+
+:::method[Raisonnement par contraposée]
+Pour montrer $P \Rightarrow Q$ :
+1. On suppose non $Q$ (la négation de la conclusion)
+2. On démontre non $P$ (la négation de l'hypothèse)
+3. On conclut que $P \Rightarrow Q$ est vraie
+
+Utile quand partir de "non Q" est plus facile.
+:::
+
+:::method[Raisonnement par l'absurde]
+Pour montrer $P$ :
+1. On suppose non $P$
+2. On arrive à une contradiction
+3. On conclut que $P$ est vraie
+:::
+
+:::method[Raisonnement par disjonction des cas]
+Pour montrer $P$ :
+1. On distingue plusieurs cas qui couvrent toutes les possibilités
+2. On démontre $P$ dans chaque cas
+3. On conclut que $P$ est vraie dans tous les cas
+:::
+
+## Exemples résolus
+
+### Exemple 1 : Implication vraie ou fausse ?
+
+Soit l'implication : "Si $n$ est un multiple de 6, alors $n$ est pair."
+
+- Hypothèse $P$ : "$n$ est un multiple de 6"
+- Conclusion $Q$ : "$n$ est pair"
+
+**Vérification** : Si $n = 6k$ pour un entier $k$, alors $n = 2(3k)$ donc $n$ est pair.
+L'implication est **vraie**.
+
+### Exemple 2 : Contraposée
+
+Montrer : "Si $n^2$ est impair, alors $n$ est impair."
+
+**Par contraposée** : On montre "Si $n$ est pair, alors $n^2$ est pair."
+
+Si $n$ est pair, alors $n = 2k$ pour un entier $k$.
+Donc $n^2 = 4k^2 = 2(2k^2)$ qui est pair.
+
+Ainsi la contraposée est vraie, donc l'implication originale est vraie.
+
+### Exemple 3 : Équivalence
+
+Montrer : $x^2 = 4 \Leftrightarrow x = 2$ ou $x = -2$.
+
+**Sens $\Leftarrow$** : Si $x = 2$, alors $x^2 = 4$. Si $x = -2$, alors $x^2 = 4$. ✓
+
+**Sens $\Rightarrow$** : Si $x^2 = 4$, alors $x^2 - 4 = 0$, donc $(x-2)(x+2) = 0$.
+Ainsi $x = 2$ ou $x = -2$. ✓
+
+Les deux implications sont vraies, donc l'équivalence est vraie.
+
+### Exemple 4 : Raisonnement par l'absurde
+
+Montrer que $\sqrt{2}$ est irrationnel.
+
+**Par l'absurde** : Supposons que $\sqrt{2} = \frac{p}{q}$ avec $p$ et $q$ entiers, $q \neq 0$, et $\frac{p}{q}$ irréductible.
+
+Alors $2 = \frac{p^2}{q^2}$, donc $p^2 = 2q^2$.
+
+Ainsi $p^2$ est pair, donc $p$ est pair (par contraposée du fait que impair² = impair).
+Posons $p = 2k$. Alors $4k^2 = 2q^2$, donc $q^2 = 2k^2$.
+Ainsi $q^2$ est pair, donc $q$ est pair.
+
+Mais alors $p$ et $q$ sont tous deux pairs, ce qui contredit l'hypothèse que $\frac{p}{q}$ est irréductible.
+
+**Conclusion** : $\sqrt{2}$ est irrationnel.
+
+## Erreurs fréquentes
+
+:::warning
+**Erreur 1** : Confondre implication et équivalence
+
+"$x = 2 \Rightarrow x^2 = 4$" est vrai, mais la réciproque "$x^2 = 4 \Rightarrow x = 2$" est **fausse** (car $x$ pourrait être $-2$).
+
+**Erreur 2** : Confondre implication et réciproque
+
+L'implication $P \Rightarrow Q$ n'est PAS équivalente à $Q \Rightarrow P$.
+Exemple : "Si c'est un carré, alors c'est un rectangle" ≠ "Si c'est un rectangle, alors c'est un carré"
+
+**Erreur 3** : Croire qu'un contre-exemple prouve une implication fausse
+
+Pour prouver $P \Rightarrow Q$ fausse, il faut trouver un cas où $P$ est vraie ET $Q$ est fausse.
+
+**Erreur 4** : Mal appliquer l'absurde
+
+On doit arriver à une vraie contradiction (deux affirmations incompatibles), pas juste à quelque chose de "bizarre".
+:::
+
+## Mini-résumé à apprendre
+
+**Implication** $P \Rightarrow Q$ :
+- Vraie sauf si $P$ vraie et $Q$ fausse
+- Contraposée : $\text{non } Q \Rightarrow \text{non } P$ (équivalente)
+- Réciproque : $Q \Rightarrow P$ (pas équivalente !)
+
+**Équivalence** $P \Leftrightarrow Q$ :
+- Les deux implications dans les deux sens
+- "Si et seulement si"
+
+**Raisonnements** :
+- Direct : supposer P, déduire Q
+- Contraposée : supposer non Q, déduire non P
+- Absurde : supposer non P, arriver à une contradiction
+
+## Ponts vers autres chapitres
+
+- **Récurrence** : raisonnement spécifique pour les propriétés des entiers
+- **Tous les chapitres** : les raisonnements sont utilisés partout en mathématiques

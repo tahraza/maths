@@ -1,0 +1,239 @@
+---
+id: "loi-normale"
+title: "Loi normale"
+track: "spe"
+level: 3
+prerequisites: ["probabilites-va", "integrales"]
+tags: ["probabilités", "loi normale", "gaussienne", "intervalle de confiance"]
+estimatedTime: 50
+chapter: "probas"
+order: 3
+---
+
+# Loi normale
+
+## Intuition et analogie
+
+La loi normale, aussi appelée "courbe en cloche", apparaît partout dans la nature : tailles des individus, notes d'examen, erreurs de mesure... C'est la loi "universelle" vers laquelle convergent beaucoup de phénomènes aléatoires quand on les additionne.
+
+Si tu mesures la taille de 1000 personnes et traces l'histogramme, tu obtiens une belle courbe en cloche.
+
+## Objectifs de cette leçon
+
+À la fin de cette leçon, tu sauras :
+- Reconnaître et utiliser la loi normale
+- Centrer et réduire une variable normale
+- Lire et utiliser les tables de la loi normale
+- Appliquer aux intervalles de confiance
+
+## Définition
+
+:::definition
+**Loi normale**
+
+Une variable aléatoire $X$ suit la **loi normale** de paramètres $\mu$ (espérance) et $\sigma^2$ (variance), notée $X \sim \mathcal{N}(\mu, \sigma^2)$, si sa densité de probabilité est :
+
+$$f(x) = \frac{1}{\sigma\sqrt{2\pi}} e^{-\frac{(x-\mu)^2}{2\sigma^2}}$$
+
+La courbe a une forme de "cloche" centrée en $\mu$.
+:::
+
+:::definition
+**Loi normale centrée réduite**
+
+La **loi normale centrée réduite** est $\mathcal{N}(0, 1)$.
+
+Si $Z \sim \mathcal{N}(0, 1)$ :
+- $E(Z) = 0$
+- $V(Z) = 1$
+
+Toute loi normale se ramène à la loi centrée réduite par changement de variable.
+:::
+
+## Propriétés
+
+:::property[Espérance et variance]
+Si $X \sim \mathcal{N}(\mu, \sigma^2)$ :
+- $E(X) = \mu$
+- $V(X) = \sigma^2$
+- $\sigma(X) = \sigma$
+:::
+
+:::property[Centrer-réduire]
+Si $X \sim \mathcal{N}(\mu, \sigma^2)$, alors :
+
+$$Z = \frac{X - \mu}{\sigma} \sim \mathcal{N}(0, 1)$$
+
+C'est la variable centrée réduite associée à $X$.
+:::
+
+:::property[Transformation affine]
+Si $X \sim \mathcal{N}(\mu, \sigma^2)$ et $Y = aX + b$ avec $a \neq 0$ :
+
+$$Y \sim \mathcal{N}(a\mu + b, a^2\sigma^2)$$
+:::
+
+:::property[Symétrie]
+Si $Z \sim \mathcal{N}(0, 1)$ :
+- $P(Z \leq -z) = P(Z \geq z) = 1 - P(Z \leq z)$
+- $P(-z \leq Z \leq z) = 2P(Z \leq z) - 1$
+:::
+
+## Valeurs remarquables
+
+:::property[Règle des 68-95-99]
+Pour $X \sim \mathcal{N}(\mu, \sigma^2)$ :
+
+| Intervalle | Probabilité |
+|------------|-------------|
+| $[\mu - \sigma, \mu + \sigma]$ | $\approx 68\%$ |
+| $[\mu - 2\sigma, \mu + 2\sigma]$ | $\approx 95\%$ |
+| $[\mu - 3\sigma, \mu + 3\sigma]$ | $\approx 99.7\%$ |
+:::
+
+:::property[Quantiles usuels]
+Pour $Z \sim \mathcal{N}(0, 1)$ :
+
+| Niveau | Quantile $z_\alpha$ |
+|--------|---------------------|
+| $P(Z \leq z_\alpha) = 0.95$ | $z_{0.95} \approx 1.645$ |
+| $P(Z \leq z_\alpha) = 0.975$ | $z_{0.975} \approx 1.96$ |
+| $P(Z \leq z_\alpha) = 0.99$ | $z_{0.99} \approx 2.33$ |
+:::
+
+## Méthodes types
+
+:::method[Calculer $P(a \leq X \leq b)$ pour $X \sim \mathcal{N}(\mu, \sigma^2)$]
+1. Centrer-réduire : poser $Z = \frac{X - \mu}{\sigma}$
+2. Transformer les bornes : $P(a \leq X \leq b) = P\left(\frac{a-\mu}{\sigma} \leq Z \leq \frac{b-\mu}{\sigma}\right)$
+3. Utiliser la table ou la calculatrice pour $Z \sim \mathcal{N}(0, 1)$
+:::
+
+:::method[Trouver un quantile]
+Pour trouver $x$ tel que $P(X \leq x) = p$ :
+1. Trouver $z$ tel que $P(Z \leq z) = p$ (table ou calculatrice)
+2. Reconvertir : $x = \mu + z\sigma$
+:::
+
+:::method[Approximation normale de la binomiale]
+Si $X \sim \mathcal{B}(n, p)$ avec $n$ grand et $np(1-p) \geq 5$ :
+
+$$X \approx \mathcal{N}(np, np(1-p))$$
+
+Correction de continuité : pour $P(X \leq k)$, calculer $P(Y \leq k + 0.5)$
+:::
+
+## Intervalle de fluctuation
+
+:::property[Intervalle de fluctuation à 95%]
+Pour une fréquence $f$ observée sur un échantillon de taille $n$, avec probabilité théorique $p$ :
+
+$$I_{95} = \left[p - 1.96\frac{\sigma}{\sqrt{n}}, p + 1.96\frac{\sigma}{\sqrt{n}}\right]$$
+
+où $\sigma = \sqrt{p(1-p)}$.
+
+En pratique, on utilise : $I_{95} \approx \left[p - \frac{1}{\sqrt{n}}, p + \frac{1}{\sqrt{n}}\right]$
+:::
+
+## Exemples résolus
+
+### Exemple 1 : Probabilité avec loi normale
+
+Soit $X \sim \mathcal{N}(100, 225)$ (donc $\mu = 100$, $\sigma = 15$).
+
+Calculer $P(85 \leq X \leq 115)$.
+
+**Centrer-réduire** :
+$$P(85 \leq X \leq 115) = P\left(\frac{85-100}{15} \leq Z \leq \frac{115-100}{15}\right)$$
+$$= P(-1 \leq Z \leq 1)$$
+
+Par symétrie :
+$$P(-1 \leq Z \leq 1) = 2P(Z \leq 1) - 1 \approx 2 \times 0.8413 - 1 = 0.6826$$
+
+Environ **68%** (cohérent avec la règle 68-95-99).
+
+### Exemple 2 : Trouver un seuil
+
+Une machine produit des pièces dont le diamètre suit $\mathcal{N}(50, 4)$ (en mm).
+
+On veut que 95% des pièces aient un diamètre inférieur à $d$. Trouver $d$.
+
+On cherche $d$ tel que $P(X \leq d) = 0.95$.
+
+Pour $Z \sim \mathcal{N}(0, 1)$ : $P(Z \leq 1.645) = 0.95$
+
+Donc : $\frac{d - 50}{2} = 1.645$
+$d = 50 + 2 \times 1.645 = 53.29$ mm
+
+### Exemple 3 : Approximation de la binomiale
+
+On lance 100 fois une pièce équilibrée. Quelle est la probabilité d'obtenir entre 45 et 55 piles ?
+
+$X \sim \mathcal{B}(100, 0.5)$
+
+Approximation : $X \approx \mathcal{N}(50, 25)$ (car $\mu = 50$, $\sigma^2 = 25$)
+
+Avec correction de continuité :
+$$P(45 \leq X \leq 55) \approx P(44.5 \leq Y \leq 55.5)$$
+$$= P\left(\frac{44.5-50}{5} \leq Z \leq \frac{55.5-50}{5}\right)$$
+$$= P(-1.1 \leq Z \leq 1.1)$$
+$$\approx 2 \times 0.8643 - 1 = 0.7286$$
+
+Environ **73%**.
+
+### Exemple 4 : Intervalle de confiance
+
+Dans un sondage de 1000 personnes, 520 sont favorables à une mesure.
+
+Calculer un intervalle de confiance à 95% pour la proportion réelle.
+
+Fréquence observée : $f = 0.52$
+
+Intervalle de confiance à 95% :
+$$\left[f - 1.96\sqrt{\frac{f(1-f)}{n}}, f + 1.96\sqrt{\frac{f(1-f)}{n}}\right]$$
+
+$$= \left[0.52 - 1.96\sqrt{\frac{0.52 \times 0.48}{1000}}, 0.52 + 1.96\sqrt{\frac{0.52 \times 0.48}{1000}}\right]$$
+
+$$\approx [0.52 - 0.031, 0.52 + 0.031] = [0.489, 0.551]$$
+
+On peut affirmer avec 95% de confiance que la proportion réelle est entre **48.9% et 55.1%**.
+
+## Erreurs fréquentes
+
+:::warning
+**Erreur 1** : Confondre variance et écart-type
+
+$\mathcal{N}(\mu, \sigma^2)$ : le deuxième paramètre est la **variance**, pas l'écart-type !
+
+**Erreur 2** : Mal centrer-réduire
+
+$Z = \frac{X - \mu}{\sigma}$, pas $\frac{X - \mu}{\sigma^2}$
+
+**Erreur 3** : Oublier la symétrie
+
+$P(Z \leq -a) = P(Z \geq a) = 1 - P(Z \leq a)$
+
+**Erreur 4** : Appliquer l'approximation normale sans vérifier
+
+Il faut $np \geq 5$ ET $n(1-p) \geq 5$ pour approcher une binomiale par une normale.
+:::
+
+## Mini-résumé à apprendre
+
+**Loi normale** $X \sim \mathcal{N}(\mu, \sigma^2)$ :
+- $E(X) = \mu$, $V(X) = \sigma^2$
+
+**Centrer-réduire** :
+$$Z = \frac{X - \mu}{\sigma} \sim \mathcal{N}(0, 1)$$
+
+**Règle 68-95-99** :
+- 68% dans $[\mu - \sigma, \mu + \sigma]$
+- 95% dans $[\mu - 2\sigma, \mu + 2\sigma]$
+
+**Quantile 95%** : $z_{0.975} \approx 1.96$
+
+## Ponts vers autres chapitres
+
+- **Probabilités binomiales** : approximation pour $n$ grand
+- **Statistiques** : intervalles de confiance, tests d'hypothèses
+- **Intégrales** : la densité est une fonction intégrable

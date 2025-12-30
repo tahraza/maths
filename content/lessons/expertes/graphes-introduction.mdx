@@ -1,0 +1,240 @@
+---
+id: "graphes-introduction"
+title: "Introduction aux graphes"
+track: "expertes"
+level: 2
+prerequisites: []
+tags: ["graphes", "sommets", "arêtes", "degré", "connexité"]
+estimatedTime: 45
+chapter: "graphes"
+order: 1
+---
+
+# Introduction aux graphes
+
+## Intuition et analogie
+
+Un graphe modélise des relations : amis sur un réseau social, routes entre villes, liaisons dans un circuit électrique. Les **sommets** représentent les objets, les **arêtes** (ou arcs) représentent les liens entre eux.
+
+La théorie des graphes permet de répondre à des questions comme : peut-on visiter toutes les villes en passant une seule fois par chaque route ?
+
+## Objectifs de cette leçon
+
+À la fin de cette leçon, tu sauras :
+- Définir et représenter un graphe
+- Calculer les degrés des sommets
+- Déterminer si un graphe est connexe
+- Représenter un graphe par sa matrice d'adjacence
+
+## Définitions de base
+
+:::definition
+**Graphe non orienté**
+
+Un **graphe** $G = (S, A)$ est constitué de :
+- $S$ : ensemble fini de **sommets** (ou nœuds)
+- $A$ : ensemble d'**arêtes**, chaque arête reliant deux sommets
+
+Une arête entre $u$ et $v$ se note $\{u, v\}$ ou simplement $uv$.
+:::
+
+:::definition
+**Graphe orienté**
+
+Un **graphe orienté** (ou digraphe) a des **arcs** au lieu d'arêtes.
+
+Un arc de $u$ vers $v$ se note $(u, v)$ : il a un sens.
+:::
+
+:::definition
+**Graphe pondéré**
+
+Un graphe **pondéré** associe un poids (nombre) à chaque arête.
+
+Exemple : distances entre villes, coûts de connexion.
+:::
+
+## Vocabulaire fondamental
+
+:::definition
+**Adjacence et incidence**
+
+- Deux sommets sont **adjacents** (ou voisins) s'ils sont reliés par une arête.
+- Une arête est **incidente** à un sommet si elle le touche.
+- L'ensemble des voisins de $u$ est noté $N(u)$ ou $\Gamma(u)$.
+:::
+
+:::definition
+**Degré d'un sommet**
+
+Le **degré** d'un sommet $u$, noté $d(u)$ ou $\deg(u)$, est le nombre d'arêtes incidentes à $u$.
+
+Pour un graphe orienté :
+- **Degré entrant** $d^-(u)$ : nombre d'arcs arrivant en $u$
+- **Degré sortant** $d^+(u)$ : nombre d'arcs partant de $u$
+:::
+
+:::property[Théorème des poignées de main]
+La somme des degrés de tous les sommets est égale à **deux fois** le nombre d'arêtes :
+
+$$\sum_{u \in S} d(u) = 2|A|$$
+
+**Conséquence** : Dans tout graphe, le nombre de sommets de degré impair est pair.
+:::
+
+## Chemins et connexité
+
+:::definition
+**Chaîne et chemin**
+
+Une **chaîne** de $u$ à $v$ est une suite de sommets $u = s_0, s_1, \ldots, s_k = v$ où chaque paire consécutive est reliée par une arête.
+
+Un **chemin** est une chaîne où tous les sommets sont distincts.
+
+La **longueur** d'une chaîne est le nombre d'arêtes traversées.
+:::
+
+:::definition
+**Cycle**
+
+Un **cycle** est une chaîne qui revient à son point de départ : $s_0 = s_k$ avec $k \geq 3$.
+
+Un graphe sans cycle est dit **acyclique**.
+:::
+
+:::definition
+**Connexité**
+
+Un graphe est **connexe** si pour tout couple de sommets $(u, v)$, il existe une chaîne de $u$ à $v$.
+
+Sinon, le graphe est formé de plusieurs **composantes connexes** disjointes.
+:::
+
+## Représentations
+
+:::definition
+**Matrice d'adjacence**
+
+Pour un graphe à $n$ sommets numérotés $1, \ldots, n$, la **matrice d'adjacence** $M$ est définie par :
+
+$$M_{ij} = \begin{cases} 1 & \text{si } i \text{ et } j \text{ sont adjacents} \\ 0 & \text{sinon} \end{cases}$$
+
+Pour un graphe non orienté, $M$ est **symétrique**.
+:::
+
+:::property[Interprétation de $M^k$]
+L'élément $(M^k)_{ij}$ donne le nombre de chaînes de longueur $k$ entre les sommets $i$ et $j$.
+:::
+
+## Graphes particuliers
+
+:::definition
+**Graphe complet $K_n$**
+
+Le graphe complet à $n$ sommets, noté $K_n$, est le graphe où tous les sommets sont deux à deux adjacents.
+
+Nombre d'arêtes : $\frac{n(n-1)}{2}$
+:::
+
+:::definition
+**Graphe biparti**
+
+Un graphe est **biparti** si ses sommets peuvent être partitionnés en deux ensembles $A$ et $B$ tels que toute arête relie un sommet de $A$ à un sommet de $B$.
+:::
+
+:::definition
+**Arbre**
+
+Un **arbre** est un graphe connexe sans cycle.
+
+Propriétés équivalentes pour un graphe à $n$ sommets :
+- C'est un arbre
+- Il est connexe avec $n-1$ arêtes
+- Il est sans cycle avec $n-1$ arêtes
+- Entre deux sommets, il existe un unique chemin
+:::
+
+## Exemples résolus
+
+### Exemple 1 : Calcul des degrés
+
+Soit le graphe avec $S = \{A, B, C, D, E\}$ et arêtes $\{AB, BC, CD, DE, EA, AC\}$.
+
+**Degrés** :
+- $d(A) = 3$ (voisins : B, C, E)
+- $d(B) = 2$ (voisins : A, C)
+- $d(C) = 3$ (voisins : A, B, D)
+- $d(D) = 2$ (voisins : C, E)
+- $d(E) = 2$ (voisins : A, D)
+
+**Vérification** : $3 + 2 + 3 + 2 + 2 = 12 = 2 \times 6$ arêtes ✓
+
+### Exemple 2 : Matrice d'adjacence
+
+Graphe avec sommets 1, 2, 3, 4 et arêtes $\{12, 13, 23, 34\}$.
+
+$$M = \begin{pmatrix} 0 & 1 & 1 & 0 \\ 1 & 0 & 1 & 0 \\ 1 & 1 & 0 & 1 \\ 0 & 0 & 1 & 0 \end{pmatrix}$$
+
+Calculons $M^2$ pour trouver les chaînes de longueur 2 :
+- $(M^2)_{14}$ = ? C'est le nombre de chaînes de longueur 2 entre 1 et 4.
+- Chemins possibles : 1→3→4. Donc $(M^2)_{14} = 1$.
+
+### Exemple 3 : Connexité
+
+Graphe $S = \{A, B, C, D, E, F\}$, arêtes $\{AB, BC, DE, EF\}$.
+
+Ce graphe a **deux composantes connexes** :
+- $\{A, B, C\}$
+- $\{D, E, F\}$
+
+Il n'est pas connexe car il n'existe pas de chaîne de A à D.
+
+### Exemple 4 : Est-ce un arbre ?
+
+Graphe à 5 sommets et 5 arêtes.
+
+Pour être un arbre, il faudrait $n - 1 = 4$ arêtes.
+
+Avec 5 arêtes et 5 sommets, le graphe contient au moins un cycle.
+
+**Ce n'est pas un arbre.**
+
+## Erreurs fréquentes
+
+:::warning
+**Erreur 1** : Confondre degré et nombre de voisins dans les multigraphes
+
+Si plusieurs arêtes relient les mêmes sommets, elles comptent chacune dans le degré.
+
+**Erreur 2** : Oublier la symétrie de la matrice d'adjacence
+
+Pour un graphe non orienté, $M_{ij} = M_{ji}$ toujours.
+
+**Erreur 3** : Mal compter les arêtes dans $K_n$
+
+C'est $\frac{n(n-1)}{2}$, pas $n^2$ (on divise par 2 car $\{i,j\} = \{j,i\}$).
+
+**Erreur 4** : Confondre chaîne et chemin
+
+Une chaîne peut repasser par un sommet, un chemin non.
+:::
+
+## Mini-résumé à apprendre
+
+**Graphe** : sommets + arêtes
+
+**Degré** : nombre d'arêtes touchant un sommet
+
+**Poignées de main** : $\sum d(u) = 2|A|$
+
+**Connexe** : tout sommet accessible depuis tout autre
+
+**Arbre** : connexe et sans cycle, $n-1$ arêtes pour $n$ sommets
+
+**Matrice d'adjacence** : $M_{ij} = 1$ si arête entre $i$ et $j$
+
+## Ponts vers autres chapitres
+
+- **Parcours de graphes** : algorithmes BFS et DFS
+- **Matrices** : puissances de la matrice d'adjacence
+- **Arithmétique** : applications combinatoires

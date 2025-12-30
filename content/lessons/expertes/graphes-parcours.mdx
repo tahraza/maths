@@ -1,0 +1,249 @@
+---
+id: "graphes-parcours"
+title: "Parcours de graphes"
+track: "expertes"
+level: 3
+prerequisites: ["graphes-introduction"]
+tags: ["graphes", "parcours", "BFS", "DFS", "Euler", "Hamilton"]
+estimatedTime: 50
+chapter: "graphes"
+order: 2
+---
+
+# Parcours de graphes
+
+## Intuition et analogie
+
+Parcourir un graphe, c'est comme visiter une ville en suivant les rues. Selon ta stratégie, tu explores d'abord le voisinage immédiat (BFS) ou tu t'enfonces au plus profond avant de revenir (DFS). Ces algorithmes sont à la base de nombreuses applications : GPS, réseaux sociaux, jeux...
+
+## Objectifs de cette leçon
+
+À la fin de cette leçon, tu sauras :
+- Appliquer le parcours en largeur (BFS)
+- Appliquer le parcours en profondeur (DFS)
+- Reconnaître les chaînes/cycles eulériens et hamiltoniens
+- Résoudre des problèmes de plus court chemin
+
+## Parcours en largeur (BFS)
+
+:::definition
+**Breadth-First Search (BFS)**
+
+Le **parcours en largeur** explore le graphe "niveau par niveau" :
+1. Partir du sommet source
+2. Visiter tous ses voisins directs (distance 1)
+3. Puis tous les voisins des voisins (distance 2)
+4. Et ainsi de suite...
+
+On utilise une **file** (premier entré, premier sorti).
+:::
+
+:::property[Propriétés du BFS]
+- Trouve le **plus court chemin** (en nombre d'arêtes) dans un graphe non pondéré
+- Détermine si le graphe est connexe
+- Calcule les **distances** depuis la source
+:::
+
+:::method[Algorithme BFS]
+```
+BFS(G, source):
+    Créer une file F, initialisée avec {source}
+    Marquer source comme visité
+    Tant que F non vide:
+        u = défiler F
+        Pour chaque voisin v de u:
+            Si v non visité:
+                Marquer v comme visité
+                Enfiler v dans F
+```
+:::
+
+## Parcours en profondeur (DFS)
+
+:::definition
+**Depth-First Search (DFS)**
+
+Le **parcours en profondeur** s'enfonce le plus loin possible avant de revenir :
+1. Partir du sommet source
+2. Visiter un voisin non visité
+3. Répéter depuis ce voisin
+4. Si blocage, revenir en arrière (backtrack)
+
+On utilise une **pile** (dernier entré, premier sorti) ou la récursivité.
+:::
+
+:::property[Propriétés du DFS]
+- Détecte les **cycles** dans un graphe
+- Trouve les **composantes connexes**
+- Permet le **tri topologique** des graphes orientés acycliques
+:::
+
+:::method[Algorithme DFS récursif]
+```
+DFS(G, u):
+    Marquer u comme visité
+    Pour chaque voisin v de u:
+        Si v non visité:
+            DFS(G, v)
+```
+:::
+
+## Chaînes et cycles eulériens
+
+:::definition
+**Chaîne eulérienne**
+
+Une **chaîne eulérienne** est une chaîne qui passe par **toutes les arêtes** exactement une fois.
+
+Un **cycle eulérien** est une chaîne eulérienne qui revient au point de départ.
+:::
+
+:::property[Théorème d'Euler]
+Un graphe connexe admet :
+- Un **cycle eulérien** ⟺ tous les sommets sont de degré **pair**
+- Une **chaîne eulérienne** (sans être un cycle) ⟺ exactement **deux** sommets sont de degré **impair** (ce sont les extrémités)
+:::
+
+## Chaînes et cycles hamiltoniens
+
+:::definition
+**Chaîne hamiltonienne**
+
+Une **chaîne hamiltonienne** passe par **tous les sommets** exactement une fois.
+
+Un **cycle hamiltonien** est une chaîne hamiltonienne qui revient au départ.
+:::
+
+:::warning
+Contrairement au cas eulérien, il n'existe pas de condition simple pour l'existence d'un chemin hamiltonien. C'est un problème difficile (NP-complet).
+:::
+
+:::property[Conditions suffisantes (non nécessaires)]
+- **Théorème de Dirac** : Si $n \geq 3$ et tout sommet a un degré $\geq \frac{n}{2}$, alors le graphe admet un cycle hamiltonien.
+- **Théorème d'Ore** : Si $n \geq 3$ et pour toute paire de sommets non adjacents $u, v$ on a $d(u) + d(v) \geq n$, alors le graphe admet un cycle hamiltonien.
+:::
+
+## Plus court chemin
+
+:::definition
+**Problème du plus court chemin**
+
+Trouver le chemin de poids minimum entre deux sommets dans un graphe pondéré.
+
+- **BFS** : fonctionne si tous les poids valent 1
+- **Dijkstra** : fonctionne avec des poids positifs
+- **Bellman-Ford** : fonctionne même avec des poids négatifs
+:::
+
+## Exemples résolus
+
+### Exemple 1 : BFS
+
+Graphe : 1—2, 1—3, 2—4, 2—5, 3—5, 4—6, 5—6
+
+BFS depuis le sommet 1 :
+
+| Étape | File | Visités |
+|-------|------|---------|
+| Init | [1] | {1} |
+| 1 | [2, 3] | {1, 2, 3} |
+| 2 | [3, 4, 5] | {1, 2, 3, 4, 5} |
+| 3 | [4, 5] | (3 déjà traité ses voisins) |
+| 4 | [5, 6] | {1, 2, 3, 4, 5, 6} |
+| 5 | [6] | (5 déjà traité) |
+| 6 | [] | Terminé |
+
+**Distances depuis 1** : d(1)=0, d(2)=1, d(3)=1, d(4)=2, d(5)=2, d(6)=3
+
+### Exemple 2 : DFS
+
+Même graphe. DFS depuis 1 (en visitant les voisins par ordre croissant) :
+
+Ordre de visite : 1 → 2 → 4 → 6 → 5 → 3
+
+Explication :
+- De 1, on va à 2
+- De 2, on va à 4 (premier voisin non visité)
+- De 4, on va à 6
+- De 6, voisin 5 non visité, on y va
+- De 5, tous voisins sauf 3 visités, on va à 3
+- De 3, tout visité, on remonte
+- Terminé
+
+### Exemple 3 : Chaîne eulérienne
+
+Graphe "maison" : A—B, B—C, C—A, B—D, C—D, D—E, C—E
+
+Degrés : d(A)=2, d(B)=3, d(C)=4, d(D)=3, d(E)=2
+
+Sommets de degré impair : B et D (exactement 2).
+
+→ Il existe une **chaîne eulérienne** de B à D (ou de D à B).
+
+Exemple : B—A—C—B—D—E—C—D
+
+### Exemple 4 : Cycle eulérien
+
+Les 7 ponts de Königsberg : 4 zones reliées par 7 ponts.
+
+Degrés : 3, 3, 3, 5 (tous impairs !)
+
+→ Pas de cycle ni de chaîne eulérienne (plus de 2 sommets de degré impair).
+
+Euler a prouvé qu'il est impossible de traverser chaque pont exactement une fois.
+
+### Exemple 5 : Hamiltonien
+
+$K_5$ (graphe complet à 5 sommets) : tout sommet a degré 4 ≥ 5/2.
+
+Par Dirac, $K_5$ admet un cycle hamiltonien.
+
+Exemple : 1—2—3—4—5—1
+
+## Applications
+
+:::property[Applications courantes]
+- **BFS** : GPS (plus court chemin), propagation dans les réseaux sociaux, jeux (niveau le plus proche)
+- **DFS** : résolution de labyrinthes, détection de cycles, génération de labyrinthes
+- **Euler** : tracé de circuits électroniques, problème du facteur (distribuer le courrier)
+- **Hamilton** : problème du voyageur de commerce, planification de tournées
+:::
+
+## Erreurs fréquentes
+
+:::warning
+**Erreur 1** : Confondre BFS et DFS
+
+BFS utilise une file (FIFO), DFS utilise une pile (LIFO) ou la récursivité.
+
+**Erreur 2** : Confondre eulérien et hamiltonien
+
+- Eulérien : toutes les **arêtes** une fois
+- Hamiltonien : tous les **sommets** une fois
+
+**Erreur 3** : Appliquer Euler sans vérifier la connexité
+
+Un graphe non connexe n'a ni chaîne ni cycle eulérien, même si les degrés sont pairs.
+
+**Erreur 4** : Croire que les conditions de Dirac/Ore sont nécessaires
+
+Un graphe peut avoir un cycle hamiltonien sans satisfaire ces conditions.
+:::
+
+## Mini-résumé à apprendre
+
+**BFS** : file, plus court chemin, niveau par niveau
+
+**DFS** : pile/récursion, détection de cycles, en profondeur
+
+**Eulérien** (arêtes) :
+- Cycle : tous degrés pairs
+- Chaîne : exactement 2 degrés impairs
+
+**Hamiltonien** (sommets) : pas de condition simple
+
+## Ponts vers autres chapitres
+
+- **Matrices** : représentation et algorithmes
+- **Arithmétique** : applications en cryptographie
+- **Probabilités** : marches aléatoires sur graphes

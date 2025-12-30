@@ -1,0 +1,227 @@
+---
+id: "complexes-introduction"
+title: "Nombres complexes : introduction et formes"
+track: "expertes"
+level: 2
+prerequisites: ["equations-second-degre", "trigonometrie"]
+tags: ["complexes", "imaginaire", "module", "argument", "forme algébrique"]
+estimatedTime: 50
+chapter: "complexes"
+order: 1
+---
+
+# Nombres complexes : introduction et formes
+
+## Intuition et analogie
+
+Les nombres réels ne permettent pas de résoudre $x^2 = -1$ : aucun carré n'est négatif. Pour dépasser cette limite, les mathématiciens ont inventé un nombre $i$ tel que $i^2 = -1$.
+
+En combinant $i$ avec les réels, on obtient les **nombres complexes** : $a + bi$ où $a$ et $b$ sont réels. Ces nombres forment un plan (le plan complexe) où chaque point représente un nombre.
+
+## Objectifs de cette leçon
+
+À la fin de cette leçon, tu sauras :
+- Définir un nombre complexe et ses parties
+- Effectuer des opérations (somme, produit, quotient)
+- Passer de la forme algébrique à la forme trigonométrique
+- Calculer module et argument
+
+## Prérequis (rappel express)
+
+- **Équations du second degré** : discriminant
+- **Trigonométrie** : cos, sin, formules d'addition
+
+## Définitions
+
+:::definition
+**Nombre imaginaire $i$**
+
+On note $i$ le nombre tel que $i^2 = -1$.
+
+$i$ est appelé **unité imaginaire**.
+:::
+
+:::definition
+**Nombre complexe**
+
+Un **nombre complexe** est un nombre de la forme $z = a + bi$ où $a, b \in \mathbb{R}$.
+
+- $a = \text{Re}(z)$ est la **partie réelle** de $z$
+- $b = \text{Im}(z)$ est la **partie imaginaire** de $z$
+
+L'ensemble des nombres complexes est noté $\mathbb{C}$.
+:::
+
+:::property[Égalité de deux complexes]
+Deux complexes $z = a + bi$ et $z' = a' + b'i$ sont égaux si et seulement si :
+$$a = a' \text{ et } b = b'$$
+(identification des parties réelles et imaginaires)
+:::
+
+:::definition
+**Conjugué**
+
+Le **conjugué** de $z = a + bi$ est $\bar{z} = a - bi$.
+
+Géométriquement, $\bar{z}$ est le symétrique de $z$ par rapport à l'axe réel.
+:::
+
+## Opérations
+
+:::property[Addition et soustraction]
+$(a + bi) + (c + di) = (a+c) + (b+d)i$
+
+$(a + bi) - (c + di) = (a-c) + (b-d)i$
+:::
+
+:::property[Multiplication]
+$(a + bi)(c + di) = (ac - bd) + (ad + bc)i$
+
+En développant et utilisant $i^2 = -1$.
+:::
+
+:::property[Puissances de $i$]
+- $i^0 = 1$
+- $i^1 = i$
+- $i^2 = -1$
+- $i^3 = -i$
+- $i^4 = 1$ (puis ça recommence)
+:::
+
+:::property[Division]
+Pour diviser par $z = a + bi$ (avec $z \neq 0$) :
+
+$$\frac{1}{z} = \frac{\bar{z}}{z\bar{z}} = \frac{a - bi}{a^2 + b^2}$$
+
+On multiplie numérateur et dénominateur par le conjugué.
+:::
+
+## Module et argument
+
+:::definition
+**Module**
+
+Le **module** de $z = a + bi$ est :
+$$|z| = \sqrt{a^2 + b^2}$$
+
+C'est la distance de $z$ à l'origine dans le plan complexe.
+:::
+
+:::property[Propriétés du module]
+- $|z| \geq 0$ et $|z| = 0 \Leftrightarrow z = 0$
+- $|z\bar{z}| = |z|^2 = a^2 + b^2$
+- $|z_1 z_2| = |z_1| \cdot |z_2|$
+- $\left|\frac{z_1}{z_2}\right| = \frac{|z_1|}{|z_2|}$
+- $|z_1 + z_2| \leq |z_1| + |z_2|$ (inégalité triangulaire)
+:::
+
+:::definition
+**Argument**
+
+L'**argument** de $z \neq 0$, noté $\arg(z)$, est l'angle $\theta$ (modulo $2\pi$) tel que :
+$$z = |z|(\cos\theta + i\sin\theta)$$
+
+C'est l'angle entre l'axe réel positif et le vecteur $\overrightarrow{OM}$ où $M$ représente $z$.
+:::
+
+:::definition
+**Forme trigonométrique**
+
+Tout complexe non nul s'écrit sous **forme trigonométrique** :
+$$z = r(\cos\theta + i\sin\theta)$$
+
+où $r = |z|$ et $\theta = \arg(z)$.
+:::
+
+## Méthodes types
+
+:::method[Calculer avec les complexes]
+1. Pour additionner/soustraire : additionne les parties réelles entre elles, les imaginaires entre elles
+2. Pour multiplier : développe et utilise $i^2 = -1$
+3. Pour diviser : multiplie par le conjugué du dénominateur
+:::
+
+:::method[Trouver module et argument]
+Pour $z = a + bi$ :
+1. **Module** : $|z| = \sqrt{a^2 + b^2}$
+2. **Argument** : trouve $\theta$ tel que $\cos\theta = \frac{a}{|z|}$ et $\sin\theta = \frac{b}{|z|}$
+   - Utilise le signe de $a$ et $b$ pour déterminer le quadrant
+:::
+
+:::method[Passer d'une forme à l'autre]
+- **Algébrique → Trigonométrique** : calcule $r = |z|$ et $\theta = \arg(z)$
+- **Trigonométrique → Algébrique** : $a = r\cos\theta$, $b = r\sin\theta$
+:::
+
+## Exemples résolus
+
+### Exemple 1 : Calculs de base
+
+Soit $z = 3 + 2i$ et $z' = 1 - i$.
+
+**Somme** : $z + z' = (3+1) + (2-1)i = 4 + i$
+
+**Produit** : $zz' = (3+2i)(1-i) = 3 - 3i + 2i - 2i^2 = 3 - i + 2 = 5 - i$
+
+**Quotient** :
+$$\frac{z}{z'} = \frac{3+2i}{1-i} = \frac{(3+2i)(1+i)}{(1-i)(1+i)} = \frac{3+3i+2i+2i^2}{1-i^2} = \frac{3+5i-2}{1+1} = \frac{1+5i}{2} = \frac{1}{2} + \frac{5}{2}i$$
+
+### Exemple 2 : Module et argument
+
+Soit $z = 1 + i$.
+
+**Module** : $|z| = \sqrt{1^2 + 1^2} = \sqrt{2}$
+
+**Argument** : $\cos\theta = \frac{1}{\sqrt{2}}$ et $\sin\theta = \frac{1}{\sqrt{2}}$
+
+Donc $\theta = \frac{\pi}{4}$ (premier quadrant).
+
+**Forme trigonométrique** : $z = \sqrt{2}\left(\cos\frac{\pi}{4} + i\sin\frac{\pi}{4}\right)$
+
+### Exemple 3 : De trigonométrique à algébrique
+
+Soit $z = 4\left(\cos\frac{2\pi}{3} + i\sin\frac{2\pi}{3}\right)$.
+
+$\cos\frac{2\pi}{3} = -\frac{1}{2}$ et $\sin\frac{2\pi}{3} = \frac{\sqrt{3}}{2}$
+
+**Forme algébrique** : $z = 4\left(-\frac{1}{2} + i\frac{\sqrt{3}}{2}\right) = -2 + 2\sqrt{3}i$
+
+## Erreurs fréquentes
+
+:::warning
+**Erreur 1** : Croire que $i = \sqrt{-1}$
+
+Cette notation peut mener à des erreurs. On définit $i$ par $i^2 = -1$, pas comme une racine.
+
+**Erreur 2** : Oublier $i^2 = -1$ en développant
+
+$(1+i)^2 = 1 + 2i + i^2 = 1 + 2i - 1 = 2i$, pas $1 + 2i + 1$ !
+
+**Erreur 3** : Confondre partie imaginaire et coefficient
+
+Si $z = 3 + 5i$, alors $\text{Im}(z) = 5$ (pas $5i$).
+
+**Erreur 4** : Se tromper dans le quadrant pour l'argument
+
+$\arg(-1 + i) = \frac{3\pi}{4}$ (2e quadrant), pas $\frac{\pi}{4}$.
+:::
+
+## Mini-résumé à apprendre
+
+**Définition** : $z = a + bi$ avec $i^2 = -1$
+
+**Opérations** :
+- Conjugué : $\overline{a+bi} = a - bi$
+- Module : $|z| = \sqrt{a^2 + b^2}$
+- $z\bar{z} = |z|^2$
+
+**Forme trigonométrique** : $z = r(\cos\theta + i\sin\theta)$
+
+**Pour diviser** : multiplie par le conjugué du dénominateur.
+
+## Ponts vers autres chapitres
+
+- **Équations polynomiales** : racines complexes
+- **Géométrie** : transformations du plan
+- **Forme exponentielle** : $z = re^{i\theta}$ (formule d'Euler)
+- **Racines n-ièmes** : équation $z^n = a$

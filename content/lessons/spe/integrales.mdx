@@ -1,0 +1,206 @@
+---
+id: "integrales"
+title: "Intégration et calcul d'aires"
+track: "spe"
+level: 3
+prerequisites: ["primitives", "continuite"]
+tags: ["intégrales", "aires", "valeur moyenne", "primitives"]
+estimatedTime: 55
+chapter: "integration"
+order: 2
+---
+
+# Intégration et calcul d'aires
+
+## Intuition et analogie
+
+L'intégrale mesure l'aire "algébrique" sous une courbe : positive au-dessus de l'axe des x, négative en-dessous. C'est comme additionner une infinité de rectangles infiniment fins pour obtenir une aire exacte.
+
+Historiquement, l'intégration a été inventée pour calculer des aires et des volumes impossibles à obtenir par géométrie classique.
+
+## Objectifs de cette leçon
+
+À la fin de cette leçon, tu sauras :
+- Calculer une intégrale à l'aide de primitives
+- Interpréter géométriquement l'intégrale
+- Calculer des aires entre courbes
+- Calculer une valeur moyenne
+
+## Définitions
+
+:::definition
+**Intégrale d'une fonction continue**
+
+Soit $f$ continue sur $[a, b]$ et $F$ une primitive de $f$ sur $[a, b]$.
+
+L'**intégrale de $f$ de $a$ à $b$** est :
+
+$$\int_a^b f(x) \, dx = F(b) - F(a) = [F(x)]_a^b$$
+:::
+
+:::definition
+**Interprétation géométrique**
+
+Si $f \geq 0$ sur $[a, b]$ :
+$$\int_a^b f(x) \, dx = \text{aire sous la courbe de } f \text{ entre } a \text{ et } b$$
+
+Si $f$ change de signe, l'intégrale est l'aire algébrique (aires au-dessus moins aires en-dessous).
+:::
+
+## Propriétés
+
+:::property[Linéarité]
+$$\int_a^b (\lambda f(x) + \mu g(x)) \, dx = \lambda \int_a^b f(x) \, dx + \mu \int_a^b g(x) \, dx$$
+:::
+
+:::property[Relation de Chasles]
+$$\int_a^b f(x) \, dx + \int_b^c f(x) \, dx = \int_a^c f(x) \, dx$$
+:::
+
+:::property[Conventions]
+$$\int_a^a f(x) \, dx = 0$$
+$$\int_b^a f(x) \, dx = -\int_a^b f(x) \, dx$$
+:::
+
+:::property[Positivité et comparaison]
+- Si $f \geq 0$ sur $[a, b]$ : $\int_a^b f(x) \, dx \geq 0$
+- Si $f \leq g$ sur $[a, b]$ : $\int_a^b f(x) \, dx \leq \int_a^b g(x) \, dx$
+- $\left|\int_a^b f(x) \, dx\right| \leq \int_a^b |f(x)| \, dx$
+:::
+
+## Valeur moyenne
+
+:::definition
+**Valeur moyenne**
+
+La **valeur moyenne** de $f$ sur $[a, b]$ est :
+
+$$\mu = \frac{1}{b-a} \int_a^b f(x) \, dx$$
+
+C'est la hauteur du rectangle de base $[a, b]$ ayant la même aire que sous la courbe.
+:::
+
+## Méthodes types
+
+:::method[Calculer une intégrale]
+1. Trouver une primitive $F$ de $f$
+2. Calculer $F(b) - F(a)$
+3. Simplifier le résultat
+
+Attention : ne pas oublier le signe de $F(b) - F(a)$ !
+:::
+
+:::method[Aire entre deux courbes]
+Pour calculer l'aire entre les courbes de $f$ et $g$ sur $[a, b]$ :
+1. Déterminer quelle courbe est au-dessus
+2. Si $f \geq g$ sur $[a, b]$ : $\text{Aire} = \int_a^b (f(x) - g(x)) \, dx$
+3. Si les courbes se croisent, découper en plusieurs intégrales
+:::
+
+:::method[Aire avec changement de signe]
+Pour l'aire entre la courbe de $f$ et l'axe des x :
+1. Trouver les zéros de $f$ sur $[a, b]$
+2. Étudier le signe de $f$ sur chaque intervalle
+3. Calculer $\int |f(x)| \, dx$ en découpant selon le signe
+:::
+
+## Exemples résolus
+
+### Exemple 1 : Intégrale simple
+
+Calculer $I = \int_0^1 (3x^2 - 2x + 1) \, dx$.
+
+Une primitive est $F(x) = x^3 - x^2 + x$.
+
+$$I = [x^3 - x^2 + x]_0^1 = (1 - 1 + 1) - (0) = 1$$
+
+### Exemple 2 : Avec exponentielle
+
+Calculer $I = \int_0^{\ln 2} e^x \, dx$.
+
+$$I = [e^x]_0^{\ln 2} = e^{\ln 2} - e^0 = 2 - 1 = 1$$
+
+### Exemple 3 : Aire sous une courbe
+
+Calculer l'aire sous la courbe de $f(x) = x^2$ entre $x = 0$ et $x = 2$.
+
+Comme $f \geq 0$ sur $[0, 2]$ :
+$$\text{Aire} = \int_0^2 x^2 \, dx = \left[\frac{x^3}{3}\right]_0^2 = \frac{8}{3} - 0 = \frac{8}{3}$$
+
+### Exemple 4 : Aire avec changement de signe
+
+Calculer l'aire entre la courbe de $f(x) = x^2 - 1$ et l'axe des x sur $[-2, 2]$.
+
+$f(x) = 0 \Leftrightarrow x = \pm 1$
+
+Signe de $f$ : négatif sur $[-1, 1]$, positif ailleurs.
+
+$$\text{Aire} = \int_{-2}^{-1} (x^2-1) \, dx + \int_{-1}^{1} (1-x^2) \, dx + \int_{1}^{2} (x^2-1) \, dx$$
+
+$$= \left[\frac{x^3}{3} - x\right]_{-2}^{-1} + \left[x - \frac{x^3}{3}\right]_{-1}^{1} + \left[\frac{x^3}{3} - x\right]_{1}^{2}$$
+
+$$= \left(\frac{2}{3}\right) + \left(\frac{4}{3}\right) + \left(\frac{2}{3}\right) = 4$$
+
+### Exemple 5 : Aire entre deux courbes
+
+Calculer l'aire entre les courbes de $f(x) = x^2$ et $g(x) = x$ sur $[0, 1]$.
+
+Sur $[0, 1]$ : $x \geq x^2$ car $x - x^2 = x(1-x) \geq 0$.
+
+$$\text{Aire} = \int_0^1 (x - x^2) \, dx = \left[\frac{x^2}{2} - \frac{x^3}{3}\right]_0^1 = \frac{1}{2} - \frac{1}{3} = \frac{1}{6}$$
+
+### Exemple 6 : Valeur moyenne
+
+Calculer la valeur moyenne de $f(x) = \sin x$ sur $[0, \pi]$.
+
+$$\mu = \frac{1}{\pi - 0} \int_0^\pi \sin x \, dx = \frac{1}{\pi}[-\cos x]_0^\pi$$
+$$= \frac{1}{\pi}(-\cos\pi + \cos 0) = \frac{1}{\pi}(1 + 1) = \frac{2}{\pi}$$
+
+## Intégrales à connaître
+
+:::property[Formules utiles]
+$$\int_0^1 x^n \, dx = \frac{1}{n+1}$$
+
+$$\int_0^{\frac{\pi}{2}} \cos x \, dx = \int_0^{\frac{\pi}{2}} \sin x \, dx = 1$$
+
+$$\int_0^1 e^x \, dx = e - 1$$
+
+$$\int_1^e \frac{1}{x} \, dx = 1$$
+:::
+
+## Erreurs fréquentes
+
+:::warning
+**Erreur 1** : Confondre intégrale et aire
+
+$\int_a^b f(x) \, dx$ peut être négatif ! Pour l'aire, il faut prendre $\int |f(x)| \, dx$.
+
+**Erreur 2** : Se tromper dans les bornes
+
+$\int_a^b = F(b) - F(a)$, pas $F(a) - F(b)$.
+
+**Erreur 3** : Oublier de vérifier quelle courbe est au-dessus
+
+Pour l'aire entre deux courbes, il faut savoir quelle fonction est plus grande.
+
+**Erreur 4** : Oublier le coefficient dans les composées
+
+$\int e^{2x} dx = \frac{1}{2}e^{2x} + C$, pas $e^{2x}$.
+:::
+
+## Mini-résumé à apprendre
+
+**Formule fondamentale** :
+$$\int_a^b f(x) \, dx = [F(x)]_a^b = F(b) - F(a)$$
+
+**Aire entre courbes** (si $f \geq g$) :
+$$\text{Aire} = \int_a^b (f(x) - g(x)) \, dx$$
+
+**Valeur moyenne** :
+$$\mu = \frac{1}{b-a} \int_a^b f(x) \, dx$$
+
+## Ponts vers autres chapitres
+
+- **Primitives** : outil indispensable pour le calcul d'intégrales
+- **Suites** : sommes de Riemann et passage à la limite
+- **Probabilités** : espérance et loi à densité

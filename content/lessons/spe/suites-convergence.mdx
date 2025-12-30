@@ -1,0 +1,213 @@
+---
+id: "suites-convergence"
+title: "Convergence des suites"
+track: "spe"
+level: 3
+prerequisites: ["suites-definition", "suites-limites"]
+tags: ["suites", "convergence", "monotone", "bornée", "adjacentes"]
+estimatedTime: 50
+chapter: "suites"
+order: 3
+---
+
+# Convergence des suites
+
+## Intuition et analogie
+
+Savoir qu'une suite converge sans connaître sa limite exacte est parfois très utile. C'est comme savoir qu'un voyageur arrivera à destination sans connaître l'adresse précise : on peut déjà en tirer des conclusions.
+
+Ce chapitre donne des **critères de convergence** qui permettent de prouver qu'une suite admet une limite, même si on ne sait pas la calculer directement.
+
+## Objectifs de cette leçon
+
+À la fin de cette leçon, tu sauras :
+- Appliquer le théorème de la limite monotone
+- Reconnaître et utiliser les suites adjacentes
+- Prouver la convergence sans calculer la limite
+- Encadrer une limite
+
+## Théorèmes fondamentaux
+
+:::property[Théorème de la limite monotone]
+- Une suite **croissante** et **majorée** converge.
+- Une suite **décroissante** et **minorée** converge.
+- Une suite **croissante** et **non majorée** tend vers $+\infty$.
+- Une suite **décroissante** et **non minorée** tend vers $-\infty$.
+:::
+
+Ce théorème est fondamental : il garantit l'existence d'une limite sans la calculer explicitement.
+
+:::definition
+**Suites adjacentes**
+
+Deux suites $(u_n)$ et $(v_n)$ sont **adjacentes** si :
+1. $(u_n)$ est croissante
+2. $(v_n)$ est décroissante
+3. $\displaystyle\lim_{n \to +\infty} (v_n - u_n) = 0$
+:::
+
+:::property[Théorème des suites adjacentes]
+Si $(u_n)$ et $(v_n)$ sont adjacentes, alors elles convergent vers la **même limite** $\ell$.
+
+De plus, pour tout $n$ : $u_n \leq \ell \leq v_n$.
+:::
+
+## Méthodes types
+
+:::method[Montrer la convergence par monotonie]
+1. Montrer que la suite est monotone (croissante ou décroissante)
+2. Montrer que la suite est bornée (majorée si croissante, minorée si décroissante)
+3. Conclure par le théorème de la limite monotone
+4. Si nécessaire, trouver la limite en passant à la limite dans une relation de récurrence
+:::
+
+:::method[Utiliser les suites adjacentes]
+1. Identifier deux suites $(u_n)$ et $(v_n)$
+2. Montrer que $u_n$ est croissante
+3. Montrer que $v_n$ est décroissante
+4. Montrer que $v_n - u_n \to 0$
+5. Conclure que les deux suites convergent vers une même limite
+:::
+
+:::method[Trouver la limite d'une suite récurrente convergente]
+Si $u_{n+1} = f(u_n)$ et si on sait que $(u_n)$ converge vers $\ell$ :
+1. Passer à la limite : $\ell = f(\ell)$
+2. Résoudre cette équation pour trouver $\ell$
+3. Attention : il peut y avoir plusieurs solutions, identifier la bonne avec les conditions initiales et la monotonie
+:::
+
+## Exemples résolus
+
+### Exemple 1 : Suite récurrente avec convergence
+
+Soit $(u_n)$ définie par $u_0 = 0$ et $u_{n+1} = \sqrt{2 + u_n}$.
+
+**Étape 1 : Montrer que $0 \leq u_n \leq 2$ pour tout $n$ (par récurrence)**
+
+- $u_0 = 0 \in [0, 2]$ ✓
+- Si $0 \leq u_n \leq 2$, alors $2 \leq 2 + u_n \leq 4$
+  donc $\sqrt{2} \leq u_{n+1} \leq 2$ ✓
+
+**Étape 2 : Montrer que $(u_n)$ est croissante**
+
+$u_{n+1} - u_n = \sqrt{2 + u_n} - u_n$
+
+Posons $f(x) = \sqrt{2+x} - x$ sur $[0, 2]$.
+
+$f(x) \geq 0 \Leftrightarrow \sqrt{2+x} \geq x \Leftrightarrow 2+x \geq x^2$ (car $x \geq 0$)
+$\Leftrightarrow x^2 - x - 2 \leq 0 \Leftrightarrow (x-2)(x+1) \leq 0$
+
+Vrai pour $x \in [-1, 2]$, donc pour $x \in [0, 2]$.
+
+Ainsi $u_{n+1} \geq u_n$ : la suite est croissante.
+
+**Étape 3 : Conclusion**
+
+$(u_n)$ est croissante et majorée par 2, donc elle converge vers une limite $\ell \in [0, 2]$.
+
+**Étape 4 : Calcul de la limite**
+
+En passant à la limite dans $u_{n+1} = \sqrt{2 + u_n}$ :
+$\ell = \sqrt{2 + \ell}$
+$\ell^2 = 2 + \ell$
+$\ell^2 - \ell - 2 = 0$
+$(\ell - 2)(\ell + 1) = 0$
+
+Donc $\ell = 2$ ou $\ell = -1$.
+
+Comme $\ell \geq 0$, on a $\ell = 2$.
+
+### Exemple 2 : Suites adjacentes
+
+Soit $u_n = \sum_{k=0}^{n} \frac{1}{k!}$ et $v_n = u_n + \frac{1}{n \cdot n!}$.
+
+**Montrer que $(u_n)$ et $(v_n)$ sont adjacentes.**
+
+1. $(u_n)$ est croissante (on ajoute des termes positifs)
+
+2. $v_{n+1} - v_n = u_{n+1} + \frac{1}{(n+1)(n+1)!} - u_n - \frac{1}{n \cdot n!}$
+   $= \frac{1}{(n+1)!} + \frac{1}{(n+1)(n+1)!} - \frac{1}{n \cdot n!}$
+
+   Après calcul, on montre que $v_{n+1} < v_n$ (décroissante)
+
+3. $v_n - u_n = \frac{1}{n \cdot n!} \to 0$
+
+Les suites sont adjacentes, donc convergent vers une même limite.
+
+(Cette limite est $e$, le nombre d'Euler !)
+
+### Exemple 3 : Suite définie par moyenne
+
+Soit $u_0 = a > 0$, $v_0 = b > a$, et pour $n \geq 0$ :
+$$u_{n+1} = \sqrt{u_n v_n} \quad \text{et} \quad v_{n+1} = \frac{u_n + v_n}{2}$$
+
+**Montrer que $(u_n)$ et $(v_n)$ sont adjacentes.**
+
+Par l'inégalité arithmético-géométrique : $\sqrt{u_n v_n} \leq \frac{u_n + v_n}{2}$
+
+Donc $u_{n+1} \leq v_{n+1}$.
+
+De plus :
+- $u_{n+1} = \sqrt{u_n v_n} \geq \sqrt{u_n \cdot u_n} = u_n$ (car $v_n \geq u_n$) : $(u_n)$ croissante
+- $v_{n+1} = \frac{u_n + v_n}{2} \leq \frac{v_n + v_n}{2} = v_n$ : $(v_n)$ décroissante
+
+$v_{n+1} - u_{n+1} = \frac{u_n + v_n}{2} - \sqrt{u_n v_n} = \frac{(\sqrt{v_n} - \sqrt{u_n})^2}{2}$
+
+On peut montrer que $v_n - u_n \to 0$.
+
+Les suites sont adjacentes et convergent vers la **moyenne arithmético-géométrique** de $a$ et $b$.
+
+## Cas particuliers importants
+
+:::property[Suite arithmético-géométrique]
+Si $u_{n+1} = au_n + b$ avec $a \neq 1$ :
+- Point fixe : $\ell = \frac{b}{1-a}$
+- Si $|a| < 1$ : la suite converge vers $\ell$
+- Si $|a| > 1$ : la suite diverge (sauf si $u_0 = \ell$)
+- Si $a = -1$ : la suite oscille
+:::
+
+:::property[Suite $u_{n+1} = f(u_n)$]
+Si $f$ est continue et $(u_n)$ converge vers $\ell$, alors $f(\ell) = \ell$.
+
+Les candidats pour $\ell$ sont les **points fixes** de $f$.
+:::
+
+## Erreurs fréquentes
+
+:::warning
+**Erreur 1** : Oublier de vérifier la monotonie
+
+Le théorème de la limite monotone nécessite que la suite soit monotone. Une suite bornée non monotone peut ne pas converger (ex: $(-1)^n$).
+
+**Erreur 2** : Confondre "converge" et "a une limite calculable"
+
+Une suite peut converger sans qu'on sache calculer explicitement sa limite.
+
+**Erreur 3** : Trouver plusieurs points fixes et ne pas choisir le bon
+
+Si l'équation $f(\ell) = \ell$ a plusieurs solutions, il faut utiliser la monotonie et les conditions initiales pour identifier la bonne limite.
+
+**Erreur 4** : Oublier les conditions d'adjacence
+
+Pour des suites adjacentes, il faut les **trois** conditions : croissance de l'une, décroissance de l'autre, ET différence tendant vers 0.
+:::
+
+## Mini-résumé à apprendre
+
+**Limite monotone** :
+- Croissante + majorée → converge
+- Décroissante + minorée → converge
+
+**Suites adjacentes** $(u_n)$ ↑ et $(v_n)$ ↓ avec $v_n - u_n \to 0$ :
+- Convergent vers la même limite $\ell$
+- $u_n \leq \ell \leq v_n$
+
+**Suite récurrente** $u_{n+1} = f(u_n)$ :
+- Si converge vers $\ell$, alors $f(\ell) = \ell$
+
+## Ponts vers autres chapitres
+
+- **Intégrales** : approximation d'intégrales par suites adjacentes
+- **Équations différentielles** : solutions approchées par suites
+- **Probabilités** : convergence de variables aléatoires

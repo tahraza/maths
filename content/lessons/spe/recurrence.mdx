@@ -1,0 +1,186 @@
+---
+id: "recurrence"
+title: "Raisonnement par récurrence"
+track: "spe"
+level: 2
+prerequisites: ["logique-bases"]
+tags: ["récurrence", "démonstration", "raisonnement", "suites"]
+estimatedTime: 40
+chapter: "raisonnement"
+order: 2
+---
+
+# Raisonnement par récurrence
+
+## Intuition et analogie
+
+Imagine une file infinie de dominos. Si tu peux montrer que :
+1. Le premier domino tombe
+2. Chaque fois qu'un domino tombe, il fait tomber le suivant
+
+Alors tu peux conclure que **tous** les dominos tombent.
+
+C'est exactement le principe du raisonnement par récurrence : on démontre une propriété pour tous les entiers en montrant qu'elle est vraie au départ et qu'elle se transmet d'un entier au suivant.
+
+## Objectifs de cette leçon
+
+À la fin de cette leçon, tu sauras :
+- Comprendre le principe de la récurrence
+- Structurer une démonstration par récurrence
+- Appliquer la récurrence aux suites et aux sommes
+- Éviter les erreurs courantes
+
+## Prérequis (rappel express)
+
+- **Logique** : implication, pour tout $n$
+- **Entiers naturels** : $\mathbb{N} = \{0, 1, 2, 3, \ldots\}$
+
+## Définitions
+
+:::definition
+**Principe de récurrence**
+
+Soit $P(n)$ une propriété dépendant de l'entier naturel $n$.
+
+Si :
+1. **Initialisation** : $P(n_0)$ est vraie pour un certain $n_0$
+2. **Hérédité** : Pour tout $n \geq n_0$, $P(n) \Rightarrow P(n+1)$
+
+Alors $P(n)$ est vraie pour tout entier $n \geq n_0$.
+:::
+
+:::tip
+L'**initialisation** fait tomber le premier domino.
+L'**hérédité** montre que chaque domino fait tomber le suivant.
+La **conclusion** affirme que tous les dominos tombent.
+:::
+
+## Méthodes types
+
+:::method[Structure d'une récurrence]
+**Étape 1 : Définir la propriété**
+"Pour tout $n \geq n_0$, notons $P(n)$ la propriété : ..."
+
+**Étape 2 : Initialisation**
+"Pour $n = n_0$ : [calcul montrant que $P(n_0)$ est vraie]"
+Conclure : "Donc $P(n_0)$ est vraie."
+
+**Étape 3 : Hérédité**
+"Soit $n \geq n_0$ fixé. Supposons $P(n)$ vraie (hypothèse de récurrence)."
+"Montrons que $P(n+1)$ est vraie."
+[Calculs utilisant l'hypothèse de récurrence]
+Conclure : "Donc $P(n+1)$ est vraie."
+
+**Étape 4 : Conclusion**
+"Par principe de récurrence, $P(n)$ est vraie pour tout $n \geq n_0$."
+:::
+
+## Exemples résolus
+
+### Exemple 1 : Somme des entiers
+
+Démontrer que pour tout $n \geq 0$ : $\sum_{k=0}^{n} k = \frac{n(n+1)}{2}$
+
+**Propriété** : Pour $n \geq 0$, notons $P(n)$ : "$0 + 1 + 2 + \cdots + n = \frac{n(n+1)}{2}$"
+
+**Initialisation** ($n = 0$) :
+- Membre de gauche : $0$
+- Membre de droite : $\frac{0 \times 1}{2} = 0$
+- $P(0)$ est vraie. ✓
+
+**Hérédité** : Soit $n \geq 0$ fixé. Supposons $P(n)$ vraie, c'est-à-dire :
+$$0 + 1 + \cdots + n = \frac{n(n+1)}{2}$$
+
+Montrons $P(n+1)$, c'est-à-dire : $0 + 1 + \cdots + n + (n+1) = \frac{(n+1)(n+2)}{2}$
+
+$$0 + 1 + \cdots + n + (n+1) = \underbrace{(0 + 1 + \cdots + n)}_{= \frac{n(n+1)}{2} \text{ par HR}} + (n+1)$$
+
+$$= \frac{n(n+1)}{2} + (n+1) = (n+1)\left(\frac{n}{2} + 1\right) = (n+1) \cdot \frac{n+2}{2} = \frac{(n+1)(n+2)}{2}$$
+
+Donc $P(n+1)$ est vraie. ✓
+
+**Conclusion** : Par récurrence, $P(n)$ est vraie pour tout $n \geq 0$.
+
+### Exemple 2 : Inégalité
+
+Démontrer que pour tout $n \geq 3$ : $2^n > 2n + 1$
+
+**Propriété** : Pour $n \geq 3$, notons $P(n)$ : "$2^n > 2n + 1$"
+
+**Initialisation** ($n = 3$) :
+- $2^3 = 8$
+- $2 \times 3 + 1 = 7$
+- $8 > 7$ ✓, donc $P(3)$ est vraie.
+
+**Hérédité** : Soit $n \geq 3$ fixé. Supposons $2^n > 2n + 1$.
+
+Montrons que $2^{n+1} > 2(n+1) + 1 = 2n + 3$.
+
+$$2^{n+1} = 2 \times 2^n > 2(2n+1) = 4n + 2$$
+
+Or, pour $n \geq 3$ : $4n + 2 \geq 14 > 2n + 3$ (car $2n > 1$ pour $n \geq 1$).
+
+Plus simplement : $4n + 2 - (2n + 3) = 2n - 1 > 0$ pour $n \geq 1$.
+
+Donc $2^{n+1} > 4n + 2 > 2n + 3$, c'est-à-dire $P(n+1)$ vraie. ✓
+
+**Conclusion** : Par récurrence, pour tout $n \geq 3$, $2^n > 2n + 1$.
+
+### Exemple 3 : Suite définie par récurrence
+
+Soit $(u_n)$ définie par $u_0 = 1$ et $u_{n+1} = 2u_n + 1$.
+
+Démontrer que $u_n = 2^{n+1} - 1$ pour tout $n \geq 0$.
+
+**Initialisation** ($n = 0$) :
+- $u_0 = 1$
+- $2^{0+1} - 1 = 2 - 1 = 1$ ✓
+
+**Hérédité** : Supposons $u_n = 2^{n+1} - 1$.
+
+$$u_{n+1} = 2u_n + 1 = 2(2^{n+1} - 1) + 1 = 2^{n+2} - 2 + 1 = 2^{n+2} - 1 = 2^{(n+1)+1} - 1$$
+
+Donc $P(n+1)$ est vraie. ✓
+
+**Conclusion** : Par récurrence, $u_n = 2^{n+1} - 1$ pour tout $n \geq 0$.
+
+## Erreurs fréquentes
+
+:::warning
+**Erreur 1** : Oublier l'initialisation
+
+Sans initialisation, la démonstration est incomplète. La propriété "pour tout $n$, $n > n+1$" vérifie l'hérédité (vacuité) mais est fausse !
+
+**Erreur 2** : Mal énoncer l'hérédité
+
+On suppose $P(n)$ vraie (hypothèse de récurrence) et on **montre** $P(n+1)$.
+On ne suppose pas $P(n+1)$ !
+
+**Erreur 3** : Ne pas utiliser l'hypothèse de récurrence
+
+Si tu ne l'utilises pas, c'est que ta démonstration n'est pas une récurrence (ou qu'il y a une erreur).
+
+**Erreur 4** : Mauvais rang d'initialisation
+
+Si la propriété est "pour $n \geq 3$", initialise à $n = 3$, pas à $n = 0$.
+:::
+
+## Mini-résumé à apprendre
+
+**Structure de la récurrence** :
+1. Énoncer $P(n)$
+2. **Initialisation** : vérifier $P(n_0)$
+3. **Hérédité** : supposer $P(n)$ → montrer $P(n+1)$
+4. **Conclusion** : "par récurrence, $P(n)$ vraie pour tout $n \geq n_0$"
+
+**Formules utiles** souvent démontrées par récurrence :
+- $\sum_{k=0}^n k = \frac{n(n+1)}{2}$
+- $\sum_{k=0}^n k^2 = \frac{n(n+1)(2n+1)}{6}$
+- $\sum_{k=0}^n q^k = \frac{1-q^{n+1}}{1-q}$ (pour $q \neq 1$)
+
+## Ponts vers autres chapitres
+
+- **Suites** : démontrer des formules explicites
+- **Dénombrement** : propriétés des coefficients binomiaux
+- **Arithmétique** : divisibilité, congruences
+- **Algorithmique** : correction des algorithmes récursifs

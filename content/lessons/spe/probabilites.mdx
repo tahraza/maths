@@ -1,0 +1,216 @@
+---
+id: "probabilites-va"
+title: "Variables aléatoires et loi binomiale"
+track: "spe"
+level: 3
+prerequisites: ["combinatoire", "probabilites-bases"]
+tags: ["probabilités", "variable aléatoire", "binomiale", "espérance", "variance"]
+estimatedTime: 55
+chapter: "probas"
+order: 1
+---
+
+# Variables aléatoires et loi binomiale
+
+## Intuition et analogie
+
+Quand tu lances un dé, tu ne sais pas à l'avance quel numéro va sortir, mais tu peux associer un nombre au résultat (le numéro lui-même, ou par exemple le gain dans un jeu). Cette association s'appelle une **variable aléatoire**.
+
+La **loi binomiale** modélise le nombre de succès dans une répétition d'expériences identiques et indépendantes : combien de fois "pile" en lançant 10 fois une pièce ? Combien de bonnes réponses en cochant au hasard un QCM ?
+
+## Objectifs de cette leçon
+
+À la fin de cette leçon, tu sauras :
+- Définir une variable aléatoire et sa loi de probabilité
+- Calculer l'espérance et la variance
+- Reconnaître et utiliser la loi binomiale
+- Calculer des probabilités avec la loi binomiale
+
+## Prérequis (rappel express)
+
+- **Probabilités de base** : événements, probabilités, indépendance
+- **Combinatoire** : $\binom{n}{k}$ (coefficients binomiaux)
+
+## Définitions
+
+:::definition
+**Variable aléatoire**
+
+Une **variable aléatoire** $X$ sur un univers $\Omega$ est une fonction qui associe à chaque issue un nombre réel.
+
+$$X : \Omega \to \mathbb{R}$$
+
+L'ensemble des valeurs prises par $X$ est noté $X(\Omega)$.
+:::
+
+:::definition
+**Loi de probabilité**
+
+La **loi de probabilité** de $X$ est la donnée de toutes les valeurs $x_i$ prises par $X$ et de leurs probabilités $P(X = x_i)$.
+:::
+
+:::definition
+**Espérance**
+
+L'**espérance** de $X$, notée $E(X)$, est la moyenne pondérée des valeurs :
+
+$$E(X) = \sum_{i} x_i \cdot P(X = x_i)$$
+
+C'est la valeur "moyenne" que l'on s'attend à obtenir.
+:::
+
+:::definition
+**Variance et écart-type**
+
+La **variance** de $X$, notée $V(X)$, mesure la dispersion autour de l'espérance :
+
+$$V(X) = E\left((X - E(X))^2\right) = E(X^2) - (E(X))^2$$
+
+L'**écart-type** est $\sigma(X) = \sqrt{V(X)}$.
+:::
+
+## La loi binomiale
+
+:::definition
+**Épreuve de Bernoulli**
+
+Une **épreuve de Bernoulli** de paramètre $p$ est une expérience aléatoire à deux issues :
+- "Succès" avec probabilité $p$
+- "Échec" avec probabilité $1 - p$
+:::
+
+:::definition
+**Loi binomiale**
+
+Soit $n$ répétitions **indépendantes** d'une épreuve de Bernoulli de paramètre $p$.
+
+Le nombre de succès $X$ suit la **loi binomiale** de paramètres $n$ et $p$, notée $X \sim \mathcal{B}(n, p)$.
+
+Pour tout $k \in \{0, 1, \ldots, n\}$ :
+
+$$P(X = k) = \binom{n}{k} p^k (1-p)^{n-k}$$
+:::
+
+:::property[Espérance et variance de la loi binomiale]
+Si $X \sim \mathcal{B}(n, p)$ :
+
+$$E(X) = np$$
+$$V(X) = np(1-p)$$
+$$\sigma(X) = \sqrt{np(1-p)}$$
+:::
+
+## Méthodes types
+
+:::method[Reconnaître une loi binomiale]
+Une variable $X$ suit une loi binomiale si :
+1. On répète $n$ fois la même expérience
+2. Chaque expérience a deux issues : succès (proba $p$) ou échec
+3. Les expériences sont **indépendantes**
+4. $X$ compte le **nombre de succès**
+
+Si ces conditions sont vérifiées : $X \sim \mathcal{B}(n, p)$
+:::
+
+:::method[Calculer $P(X = k)$ avec la loi binomiale]
+1. Identifie $n$ (nombre de répétitions) et $p$ (proba de succès)
+2. Applique la formule : $P(X = k) = \binom{n}{k} p^k (1-p)^{n-k}$
+3. Calcule $\binom{n}{k} = \frac{n!}{k!(n-k)!}$ ou utilise la calculatrice
+:::
+
+:::method[Calculer $P(X \leq k)$ ou $P(X \geq k)$]
+- $P(X \leq k) = P(X=0) + P(X=1) + \cdots + P(X=k)$
+- $P(X \geq k) = 1 - P(X \leq k-1)$
+- $P(X < k) = P(X \leq k-1)$
+- $P(X > k) = P(X \geq k+1) = 1 - P(X \leq k)$
+
+Utilise la calculatrice pour les sommes (fonction `binomcdf` ou équivalent).
+:::
+
+## Exemples résolus
+
+### Exemple 1 : Loi de probabilité et espérance
+
+On lance un dé équilibré. Soit $X$ le gain défini par :
+- $X = 3$ si on obtient 6
+- $X = 1$ si on obtient un nombre pair (2 ou 4)
+- $X = -1$ sinon
+
+**Loi de $X$** :
+- $P(X = 3) = P(\{6\}) = \frac{1}{6}$
+- $P(X = 1) = P(\{2, 4\}) = \frac{2}{6} = \frac{1}{3}$
+- $P(X = -1) = P(\{1, 3, 5\}) = \frac{3}{6} = \frac{1}{2}$
+
+**Espérance** :
+$$E(X) = 3 \times \frac{1}{6} + 1 \times \frac{1}{3} + (-1) \times \frac{1}{2} = \frac{3}{6} + \frac{2}{6} - \frac{3}{6} = \frac{2}{6} = \frac{1}{3}$$
+
+En moyenne, on gagne $\frac{1}{3}$ d'unité par partie.
+
+### Exemple 2 : Loi binomiale
+
+Un QCM comporte 10 questions à 4 choix chacune. Un élève répond au hasard. Soit $X$ le nombre de bonnes réponses.
+
+**Identification** :
+- 10 questions = 10 répétitions indépendantes
+- Probabilité de succès = $\frac{1}{4}$ pour chaque question
+- $X$ compte les succès
+
+Donc $X \sim \mathcal{B}(10, 0{,}25)$.
+
+**Calcul de $P(X = 3)$** :
+$$P(X=3) = \binom{10}{3} (0{,}25)^3 (0{,}75)^7 = 120 \times 0{,}015625 \times 0{,}1335 \approx 0{,}250$$
+
+**Espérance** : $E(X) = 10 \times 0{,}25 = 2{,}5$ bonnes réponses en moyenne.
+
+**Écart-type** : $\sigma(X) = \sqrt{10 \times 0{,}25 \times 0{,}75} = \sqrt{1{,}875} \approx 1{,}37$
+
+### Exemple 3 : Calcul de $P(X \geq k)$
+
+Avec l'exemple précédent, calculer $P(X \geq 5)$ (avoir au moins 5 bonnes réponses).
+
+$$P(X \geq 5) = 1 - P(X \leq 4)$$
+
+À la calculatrice : $P(X \leq 4) \approx 0{,}922$
+
+Donc $P(X \geq 5) \approx 1 - 0{,}922 = 0{,}078$ soit environ 7,8%.
+
+## Erreurs fréquentes
+
+:::warning
+**Erreur 1** : Oublier de vérifier l'indépendance
+
+La loi binomiale suppose des expériences **indépendantes**. Si on tire sans remise, ce n'est plus binomial !
+
+**Erreur 2** : Confondre $P(X = k)$ et $P(X \leq k)$
+
+$P(X = 3)$ : probabilité d'avoir exactement 3 succès
+$P(X \leq 3)$ : probabilité d'avoir au plus 3 succès (0, 1, 2 ou 3)
+
+**Erreur 3** : Se tromper dans $P(X \geq k)$
+
+$P(X \geq k) = 1 - P(X \leq k-1)$ (attention au $k-1$ !)
+ou $P(X \geq k) = 1 - P(X < k)$
+
+**Erreur 4** : Mal identifier $p$
+
+$p$ est la probabilité de **succès**, pas d'échec. Si on cherche le nombre d'échecs, il faut adapter.
+:::
+
+## Mini-résumé à apprendre
+
+**Variable aléatoire** :
+- $E(X) = \sum x_i P(X = x_i)$ (moyenne pondérée)
+- $V(X) = E(X^2) - (E(X))^2$
+
+**Loi binomiale** $X \sim \mathcal{B}(n, p)$ :
+- $P(X = k) = \binom{n}{k} p^k (1-p)^{n-k}$
+- $E(X) = np$
+- $V(X) = np(1-p)$
+
+**Conditions** : $n$ répétitions indépendantes, même proba $p$ de succès.
+
+## Ponts vers autres chapitres
+
+- **Loi normale** : approximation de la binomiale pour $n$ grand
+- **Estimation** : utilisation de la loi binomiale pour les sondages
+- **Suites** : espérance et variance liées à des sommes
+- **Algorithmique** : simulation de lois avec Python

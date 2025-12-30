@@ -1,0 +1,210 @@
+---
+id: "derivation"
+title: "Dérivation : techniques et applications"
+track: "spe"
+level: 2
+prerequisites: ["limites-fonctions", "fonctions-bases"]
+tags: ["dérivation", "tangente", "variations", "extremum"]
+estimatedTime: 60
+chapter: "fonctions"
+order: 3
+---
+
+# Dérivation : techniques et applications
+
+## Intuition et analogie
+
+Quand tu roules en voiture, le compteur de vitesse indique ta **vitesse instantanée** : c'est la dérivée de ta position par rapport au temps. Si tu traces le graphique de ta position en fonction du temps, la vitesse à un instant $t$ correspond à la **pente de la tangente** au graphique en ce point.
+
+La dérivée mesure donc la **vitesse de variation** d'une grandeur. Plus la dérivée est grande (en valeur absolue), plus la fonction varie vite.
+
+## Objectifs de cette leçon
+
+À la fin de cette leçon, tu sauras :
+- Calculer la dérivée des fonctions usuelles
+- Appliquer les règles de dérivation (somme, produit, quotient, composée)
+- Utiliser la dérivée pour étudier les variations d'une fonction
+- Déterminer l'équation de la tangente à une courbe
+
+## Prérequis (rappel express)
+
+- **Limites** : notion de limite, limites usuelles
+- **Fonctions** : fonctions de référence, opérations sur les fonctions
+
+## Définitions
+
+:::definition
+**Nombre dérivé**
+
+Soit $f$ une fonction définie sur un intervalle $I$ et $a \in I$.
+
+Le **nombre dérivé** de $f$ en $a$, noté $f'(a)$, est défini par :
+
+$$f'(a) = \lim_{h \to 0} \frac{f(a+h) - f(a)}{h}$$
+
+si cette limite existe et est finie.
+
+On dit alors que $f$ est **dérivable** en $a$.
+:::
+
+:::definition
+**Fonction dérivée**
+
+Si $f$ est dérivable en tout point de $I$, on définit la **fonction dérivée** $f'$ qui à tout $x \in I$ associe $f'(x)$.
+:::
+
+**Interprétation géométrique** : $f'(a)$ est la pente de la tangente à la courbe de $f$ au point d'abscisse $a$.
+
+## Propriétés : dérivées des fonctions usuelles
+
+:::property[Dérivées usuelles]
+| Fonction $f(x)$ | Dérivée $f'(x)$ | Domaine |
+|----------------|-----------------|---------|
+| $k$ (constante) | $0$ | $\mathbb{R}$ |
+| $x$ | $1$ | $\mathbb{R}$ |
+| $x^n$ ($n \in \mathbb{N}^*$) | $nx^{n-1}$ | $\mathbb{R}$ |
+| $\frac{1}{x}$ | $-\frac{1}{x^2}$ | $\mathbb{R}^*$ |
+| $\sqrt{x}$ | $\frac{1}{2\sqrt{x}}$ | $]0, +\infty[$ |
+| $e^x$ | $e^x$ | $\mathbb{R}$ |
+| $\ln(x)$ | $\frac{1}{x}$ | $]0, +\infty[$ |
+| $\cos(x)$ | $-\sin(x)$ | $\mathbb{R}$ |
+| $\sin(x)$ | $\cos(x)$ | $\mathbb{R}$ |
+:::
+
+:::property[Règles de calcul]
+Soient $u$ et $v$ deux fonctions dérivables et $k$ une constante.
+
+| Opération | Dérivée |
+|-----------|---------|
+| $ku$ | $ku'$ |
+| $u + v$ | $u' + v'$ |
+| $uv$ | $u'v + uv'$ |
+| $\frac{u}{v}$ (si $v \neq 0$) | $\frac{u'v - uv'}{v^2}$ |
+| $u^n$ | $nu'u^{n-1}$ |
+| $e^u$ | $u'e^u$ |
+| $\ln(u)$ (si $u > 0$) | $\frac{u'}{u}$ |
+:::
+
+## Méthodes types
+
+:::method[Calculer une dérivée]
+1. Identifie la forme de la fonction (somme, produit, quotient, composée)
+2. Applique la règle correspondante
+3. Simplifie l'expression obtenue
+4. Factorise si possible (utile pour étudier le signe)
+:::
+
+:::method[Équation de la tangente]
+La tangente à la courbe de $f$ au point d'abscisse $a$ a pour équation :
+
+$$y = f'(a)(x - a) + f(a)$$
+
+Étapes :
+1. Calcule $f(a)$ (ordonnée du point)
+2. Calcule $f'(x)$ (fonction dérivée)
+3. Calcule $f'(a)$ (pente de la tangente)
+4. Écris l'équation $y = f'(a)(x-a) + f(a)$
+:::
+
+:::method[Étudier les variations]
+1. Calcule $f'(x)$
+2. Étudie le signe de $f'(x)$ sur l'intervalle
+3. Construis le tableau de variations :
+   - $f'(x) > 0$ ⟹ $f$ croissante
+   - $f'(x) < 0$ ⟹ $f$ décroissante
+   - $f'(x) = 0$ ⟹ extremum possible
+:::
+
+## Exemples résolus
+
+### Exemple 1 : Dérivée d'un polynôme
+
+Soit $f(x) = 3x^4 - 2x^2 + 5x - 1$.
+
+$$f'(x) = 3 \times 4x^3 - 2 \times 2x + 5 = 12x^3 - 4x + 5$$
+
+### Exemple 2 : Dérivée d'un produit
+
+Soit $f(x) = (2x+1)e^x$.
+
+On pose $u(x) = 2x+1$ donc $u'(x) = 2$, et $v(x) = e^x$ donc $v'(x) = e^x$.
+
+$$f'(x) = u'v + uv' = 2e^x + (2x+1)e^x = e^x(2 + 2x + 1) = (2x+3)e^x$$
+
+### Exemple 3 : Dérivée d'un quotient
+
+Soit $f(x) = \frac{x^2 + 1}{x - 2}$ pour $x \neq 2$.
+
+On pose $u = x^2+1$, $u' = 2x$, $v = x-2$, $v' = 1$.
+
+$$f'(x) = \frac{u'v - uv'}{v^2} = \frac{2x(x-2) - (x^2+1) \times 1}{(x-2)^2}$$
+
+$$f'(x) = \frac{2x^2 - 4x - x^2 - 1}{(x-2)^2} = \frac{x^2 - 4x - 1}{(x-2)^2}$$
+
+### Exemple 4 : Tangente et variations
+
+Soit $f(x) = x^3 - 3x + 2$.
+
+**Dérivée** : $f'(x) = 3x^2 - 3 = 3(x^2 - 1) = 3(x-1)(x+1)$
+
+**Signe de $f'(x)$** :
+- $f'(x) = 0$ si $x = -1$ ou $x = 1$
+- $f'(x) > 0$ si $x < -1$ ou $x > 1$
+- $f'(x) < 0$ si $-1 < x < 1$
+
+**Variations** : $f$ croissante sur $]-\infty, -1]$ et $[1, +\infty[$, décroissante sur $[-1, 1]$.
+
+**Maximum local** en $x = -1$ : $f(-1) = -1 + 3 + 2 = 4$
+**Minimum local** en $x = 1$ : $f(1) = 1 - 3 + 2 = 0$
+
+**Tangente en $x = 0$** :
+- $f(0) = 2$
+- $f'(0) = -3$
+- Équation : $y = -3(x - 0) + 2 = -3x + 2$
+
+## Erreurs fréquentes
+
+:::warning
+**Erreur 1** : Oublier le facteur $u'$ dans les composées
+
+$(\sin(3x))' = 3\cos(3x)$ et NON $\cos(3x)$
+
+$(e^{2x})' = 2e^{2x}$ et NON $e^{2x}$
+
+**Erreur 2** : Mal appliquer la dérivée du quotient
+
+$\left(\frac{u}{v}\right)' = \frac{u'v - uv'}{v^2}$ : attention à l'ordre dans le numérateur !
+
+**Erreur 3** : Confondre $f'(a) = 0$ et extremum
+
+$f'(a) = 0$ est une condition nécessaire mais pas suffisante. Il faut vérifier le changement de signe.
+
+**Erreur 4** : Oublier les restrictions de domaine
+
+$(\ln(x))' = \frac{1}{x}$ uniquement pour $x > 0$
+
+$(\sqrt{x})' = \frac{1}{2\sqrt{x}}$ uniquement pour $x > 0$
+:::
+
+## Mini-résumé à apprendre
+
+**Dérivées à connaître par cœur** :
+- $(x^n)' = nx^{n-1}$
+- $(e^x)' = e^x$
+- $(\ln x)' = \frac{1}{x}$
+- $(\sin x)' = \cos x$
+- $(\cos x)' = -\sin x$
+
+**Règles essentielles** :
+- $(uv)' = u'v + uv'$
+- $\left(\frac{u}{v}\right)' = \frac{u'v - uv'}{v^2}$
+- $(e^u)' = u'e^u$, $(\ln u)' = \frac{u'}{u}$
+
+**Tangente** : $y = f'(a)(x-a) + f(a)$
+
+## Ponts vers autres chapitres
+
+- **Convexité** : utilise la dérivée seconde $f''$
+- **Primitives et intégrales** : opération "inverse" de la dérivation
+- **Équations différentielles** : équations faisant intervenir $y$ et $y'$
+- **Optimisation** : trouver max/min avec la dérivée

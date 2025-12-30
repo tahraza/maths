@@ -1,0 +1,230 @@
+---
+id: "complexes-geometrie"
+title: "Nombres complexes et géométrie"
+track: "expertes"
+level: 3
+prerequisites: ["complexes-introduction", "complexes-formes"]
+tags: ["complexes", "géométrie", "affixe", "transformation", "rotation"]
+estimatedTime: 55
+chapter: "complexes"
+order: 3
+---
+
+# Nombres complexes et géométrie
+
+## Intuition et analogie
+
+Le plan complexe offre un pont extraordinaire entre algèbre et géométrie. Chaque point du plan correspond à un nombre complexe (son **affixe**), et les opérations sur les complexes se traduisent en transformations géométriques :
+- Additionner → Translation
+- Multiplier par $e^{i\theta}$ → Rotation
+- Multiplier par $r$ → Homothétie
+
+## Objectifs de cette leçon
+
+À la fin de cette leçon, tu sauras :
+- Associer points du plan et nombres complexes (affixe)
+- Calculer distances et milieux avec les complexes
+- Interpréter géométriquement les opérations
+- Reconnaître des ensembles de points définis par des équations complexes
+
+## Prérequis (rappel express)
+
+- **Complexes : formes** : algébrique, trigonométrique, exponentielle
+- **Module et argument** : calculs et propriétés
+
+## Définitions
+
+:::definition
+**Affixe d'un point**
+
+Dans le plan muni d'un repère orthonormé $(O, \vec{u}, \vec{v})$, l'**affixe** du point $M(x, y)$ est le complexe $z = x + iy$.
+
+Réciproquement, le point d'affixe $z = x + iy$ est le point de coordonnées $(x, y)$.
+:::
+
+:::definition
+**Affixe d'un vecteur**
+
+L'affixe du vecteur $\vec{AB}$ où $A$ a pour affixe $z_A$ et $B$ a pour affixe $z_B$ est :
+$$z_{\vec{AB}} = z_B - z_A$$
+:::
+
+## Propriétés géométriques
+
+:::property[Distance entre deux points]
+Si $A$ et $B$ ont pour affixes $z_A$ et $z_B$ :
+$$AB = |z_B - z_A|$$
+:::
+
+:::property[Milieu d'un segment]
+Le milieu $I$ du segment $[AB]$ a pour affixe :
+$$z_I = \frac{z_A + z_B}{2}$$
+:::
+
+:::property[Barycentre]
+Le barycentre $G$ de $(A, \alpha)$ et $(B, \beta)$ a pour affixe :
+$$z_G = \frac{\alpha z_A + \beta z_B}{\alpha + \beta}$$
+:::
+
+## Transformations du plan
+
+:::property[Translation]
+La translation de vecteur $\vec{t}$ d'affixe $t$ transforme le point d'affixe $z$ en le point d'affixe :
+$$z' = z + t$$
+:::
+
+:::property[Homothétie]
+L'homothétie de centre $\Omega$ (affixe $\omega$) et de rapport $k \in \mathbb{R}^*$ transforme $z$ en :
+$$z' = k(z - \omega) + \omega$$
+ou encore : $z' - \omega = k(z - \omega)$
+:::
+
+:::property[Rotation]
+La rotation de centre $\Omega$ (affixe $\omega$) et d'angle $\theta$ transforme $z$ en :
+$$z' = e^{i\theta}(z - \omega) + \omega$$
+ou encore : $z' - \omega = e^{i\theta}(z - \omega)$
+:::
+
+:::property[Similitude directe]
+La similitude directe de centre $\Omega$, de rapport $k > 0$ et d'angle $\theta$ s'écrit :
+$$z' - \omega = ke^{i\theta}(z - \omega)$$
+C'est la composée d'une homothétie et d'une rotation de même centre.
+:::
+
+## Ensembles de points
+
+:::property[Cercle]
+L'ensemble des points $M$ d'affixe $z$ tels que $|z - \omega| = R$ est le **cercle** de centre $\Omega$ (affixe $\omega$) et de rayon $R$.
+:::
+
+:::property[Médiatrice]
+L'ensemble des points $M$ d'affixe $z$ tels que $|z - z_A| = |z - z_B|$ est la **médiatrice** du segment $[AB]$.
+:::
+
+:::property[Droite]
+Une droite peut se caractériser par une équation du type :
+$$\text{Im}\left(\frac{z - z_A}{z_B - z_A}\right) = 0$$
+(ensemble des $z$ tels que $z - z_A$ soit colinéaire à $z_B - z_A$)
+:::
+
+## Méthodes types
+
+:::method[Prouver un alignement]
+Trois points $A$, $B$, $C$ d'affixes $z_A$, $z_B$, $z_C$ sont alignés si et seulement si :
+$$\frac{z_C - z_A}{z_B - z_A} \in \mathbb{R}$$
+(l'argument de ce quotient est $0$ ou $\pi$)
+:::
+
+:::method[Prouver un angle droit]
+Les droites $(AB)$ et $(CD)$ sont perpendiculaires si :
+$$\frac{z_B - z_A}{z_D - z_C}$$ est imaginaire pur
+(l'argument de ce quotient est $\pm\frac{\pi}{2}$)
+:::
+
+:::method[Identifier un ensemble de points]
+1. Pose $z = x + iy$ et traduis la condition
+2. Reconnais l'équation (cercle, droite, etc.)
+3. Ou bien : utilise les propriétés du module pour reconnaître la forme
+:::
+
+## Exemples résolus
+
+### Exemple 1 : Distance et milieu
+
+Soient $A(z_A = 2 + 3i)$ et $B(z_B = -1 + i)$.
+
+**Distance** : $AB = |z_B - z_A| = |{-3 - 2i}| = \sqrt{9 + 4} = \sqrt{13}$
+
+**Milieu** : $z_I = \frac{(2+3i) + (-1+i)}{2} = \frac{1 + 4i}{2} = \frac{1}{2} + 2i$
+
+### Exemple 2 : Rotation
+
+Trouver l'image de $M(z = 1 + i)$ par la rotation de centre $O$ et d'angle $\frac{\pi}{2}$.
+
+$$z' = e^{i\pi/2} \cdot z = i \cdot (1 + i) = i + i^2 = i - 1 = -1 + i$$
+
+L'image est le point $M'(-1, 1)$.
+
+### Exemple 3 : Ensemble de points
+
+Déterminer l'ensemble des points $M$ d'affixe $z$ tels que $|z - 1| = |z + i|$.
+
+C'est l'ensemble des points équidistants de $A(1)$ et $B(-i)$.
+
+C'est la **médiatrice** du segment $[AB]$.
+
+En coordonnées : $|x + iy - 1| = |x + iy + i|$
+
+$\sqrt{(x-1)^2 + y^2} = \sqrt{x^2 + (y+1)^2}$
+
+$(x-1)^2 + y^2 = x^2 + (y+1)^2$
+
+$x^2 - 2x + 1 + y^2 = x^2 + y^2 + 2y + 1$
+
+$-2x = 2y$, soit $y = -x$
+
+C'est la droite d'équation $y = -x$.
+
+### Exemple 4 : Nature d'un quadrilatère
+
+Soient $A(0)$, $B(2)$, $C(3 + i)$, $D(1 + i)$.
+
+**Milieu de $[AC]$** : $\frac{0 + 3 + i}{2} = \frac{3 + i}{2}$
+
+**Milieu de $[BD]$** : $\frac{2 + 1 + i}{2} = \frac{3 + i}{2}$
+
+Les diagonales ont le même milieu, donc $ABCD$ est un **parallélogramme**.
+
+**Longueur de $[AB]$** : $|2 - 0| = 2$
+**Longueur de $[AD]$** : $|1 + i - 0| = \sqrt{2}$
+
+$AB \neq AD$, donc ce n'est pas un losange.
+
+**Angle** : $\frac{z_B - z_A}{z_D - z_A} = \frac{2}{1+i} = \frac{2(1-i)}{2} = 1 - i$
+
+Ce n'est pas imaginaire pur, donc pas un rectangle.
+
+$ABCD$ est un parallélogramme quelconque.
+
+## Erreurs fréquentes
+
+:::warning
+**Erreur 1** : Confondre affixe et coordonnées
+
+L'affixe $z = 3 + 2i$ correspond au point $(3, 2)$, pas à $(3, 2i)$.
+
+**Erreur 2** : Oublier de centrer pour les rotations
+
+Pour une rotation de centre $\Omega \neq O$ : $z' - \omega = e^{i\theta}(z - \omega)$, pas $z' = e^{i\theta}z$.
+
+**Erreur 3** : Confondre $|z|^2$ et $z^2$
+
+$|z|^2 = z\bar{z} = x^2 + y^2$ (réel positif)
+$z^2 = (x + iy)^2 = x^2 - y^2 + 2ixy$ (complexe)
+
+**Erreur 4** : Se tromper dans l'interprétation de l'argument
+
+$\arg(z_B - z_A)$ est l'angle de $\vec{AB}$ avec l'axe réel, pas l'angle $\widehat{OAB}$.
+:::
+
+## Mini-résumé à apprendre
+
+**Formules clés** :
+- Distance : $AB = |z_B - z_A|$
+- Milieu : $z_I = \frac{z_A + z_B}{2}$
+- Rotation : $z' - \omega = e^{i\theta}(z - \omega)$
+
+**Ensembles** :
+- Cercle : $|z - \omega| = R$
+- Médiatrice : $|z - z_A| = |z - z_B|$
+
+**Alignement** : $\frac{z_C - z_A}{z_B - z_A} \in \mathbb{R}$
+
+**Perpendiculaire** : $\frac{z_B - z_A}{z_D - z_C}$ imaginaire pur
+
+## Ponts vers autres chapitres
+
+- **Transformations** : similitudes, isométries
+- **Équations** : résolution géométrique
+- **Vecteurs** : lien avec l'algèbre linéaire
+- **Trigonométrie** : formules d'angle

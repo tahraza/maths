@@ -1,0 +1,219 @@
+---
+id: "logarithme"
+title: "Fonction logarithme népérien"
+track: "spe"
+level: 3
+prerequisites: ["exponentielle", "derivation"]
+tags: ["logarithme", "ln", "équations", "dérivation"]
+estimatedTime: 50
+chapter: "exp-ln"
+order: 2
+---
+
+# Fonction logarithme népérien
+
+## Intuition et analogie
+
+Le logarithme est l'opération "inverse" de l'exponentielle. Si l'exponentielle répond à "combien fait $e$ puissance $x$ ?", le logarithme répond à "quelle puissance de $e$ donne $y$ ?".
+
+Historiquement, les logarithmes ont été inventés pour simplifier les calculs : multiplier deux nombres revient à additionner leurs logarithmes, ce qui était précieux avant les calculatrices.
+
+## Objectifs de cette leçon
+
+À la fin de cette leçon, tu sauras :
+- Définir le logarithme népérien comme fonction réciproque de l'exponentielle
+- Utiliser les propriétés algébriques du logarithme
+- Dériver des fonctions avec logarithme
+- Résoudre des équations et inéquations logarithmiques
+
+## Prérequis (rappel express)
+
+- **Exponentielle** : propriétés de $e^x$, croissance
+- **Fonction réciproque** : notion de bijection
+
+## Définitions
+
+:::definition
+**Logarithme népérien**
+
+La fonction **logarithme népérien**, notée $\ln$, est définie sur $]0, +\infty[$ comme la fonction réciproque de l'exponentielle.
+
+Pour tout $x > 0$ :
+$$y = \ln(x) \Leftrightarrow e^y = x$$
+
+Autrement dit, $\ln(x)$ est l'exposant qu'il faut mettre à $e$ pour obtenir $x$.
+:::
+
+:::definition
+**Relation fondamentale**
+
+Pour tout $x > 0$ : $e^{\ln(x)} = x$
+
+Pour tout $x \in \mathbb{R}$ : $\ln(e^x) = x$
+:::
+
+## Propriétés algébriques
+
+:::property[Propriétés du logarithme]
+Pour tous réels $a > 0$ et $b > 0$, et tout entier $n$ :
+
+$$\ln(ab) = \ln(a) + \ln(b)$$
+$$\ln\left(\frac{a}{b}\right) = \ln(a) - \ln(b)$$
+$$\ln(a^n) = n \ln(a)$$
+$$\ln\left(\frac{1}{a}\right) = -\ln(a)$$
+$$\ln(\sqrt{a}) = \frac{1}{2}\ln(a)$$
+:::
+
+:::property[Valeurs particulières]
+$$\ln(1) = 0$$
+$$\ln(e) = 1$$
+:::
+
+## Propriétés analytiques
+
+:::property[Dérivée]
+La fonction $\ln$ est dérivable sur $]0, +\infty[$ et :
+$$(\ln(x))' = \frac{1}{x}$$
+
+Plus généralement, si $u$ est dérivable et $u > 0$ :
+$$(\ln(u))' = \frac{u'}{u}$$
+:::
+
+:::property[Variations et signe]
+- $\frac{1}{x} > 0$ pour $x > 0$, donc $\ln$ est **strictement croissante** sur $]0, +\infty[$
+- $\ln(x) < 0$ si $0 < x < 1$
+- $\ln(x) = 0$ si $x = 1$
+- $\ln(x) > 0$ si $x > 1$
+:::
+
+:::property[Limites]
+$$\lim_{x \to +\infty} \ln(x) = +\infty$$
+$$\lim_{x \to 0^+} \ln(x) = -\infty$$
+:::
+
+:::property[Croissances comparées]
+Pour tout entier $n \geq 1$ :
+$$\lim_{x \to +\infty} \frac{\ln(x)}{x^n} = 0$$
+$$\lim_{x \to 0^+} x^n \ln(x) = 0$$
+
+Interprétation : les puissances de $x$ "dominent" le logarithme.
+:::
+
+## Méthodes types
+
+:::method[Résoudre $\ln(f(x)) = \ln(g(x))$]
+Conditions : $f(x) > 0$ et $g(x) > 0$ (existence du $\ln$)
+
+Puis, comme $\ln$ est strictement croissante :
+$$\ln(f(x)) = \ln(g(x)) \Leftrightarrow f(x) = g(x)$$
+
+Ne pas oublier de vérifier que la solution rend $f$ et $g$ positifs !
+:::
+
+:::method[Résoudre $\ln(f(x)) > k$]
+$$\ln(f(x)) > k \Leftrightarrow f(x) > e^k$$
+
+(à condition que $f(x) > 0$)
+:::
+
+:::method[Dériver avec $\ln$]
+Utilise la formule $(\ln(u))' = \frac{u'}{u}$.
+
+Exemple : pour $f(x) = \ln(x^2 + 1)$
+- $u(x) = x^2 + 1$, donc $u'(x) = 2x$
+- $f'(x) = \frac{2x}{x^2+1}$
+:::
+
+## Exemples résolus
+
+### Exemple 1 : Simplification
+
+Simplifier $A = \ln(8) - 2\ln(2)$.
+
+$$A = \ln(8) - \ln(2^2) = \ln(8) - \ln(4) = \ln\left(\frac{8}{4}\right) = \ln(2)$$
+
+### Exemple 2 : Équation logarithmique
+
+Résoudre $\ln(2x-1) = \ln(x+3)$.
+
+**Condition d'existence** : $2x - 1 > 0$ et $x + 3 > 0$, soit $x > \frac{1}{2}$.
+
+$$\ln(2x-1) = \ln(x+3) \Leftrightarrow 2x - 1 = x + 3 \Leftrightarrow x = 4$$
+
+Vérification : $4 > \frac{1}{2}$ ✓
+
+**Solution** : $S = \{4\}$
+
+### Exemple 3 : Équation avec exponentielle et logarithme
+
+Résoudre $e^{2x} = 5$.
+
+On passe au logarithme : $\ln(e^{2x}) = \ln(5)$, donc $2x = \ln(5)$, soit $x = \frac{\ln(5)}{2}$.
+
+### Exemple 4 : Étude de fonction
+
+Soit $f(x) = x - \ln(x)$ sur $]0, +\infty[$.
+
+**Dérivée** : $f'(x) = 1 - \frac{1}{x} = \frac{x-1}{x}$
+
+**Signe** : Pour $x > 0$, le signe de $f'(x)$ est celui de $x - 1$.
+- $f'(x) < 0$ si $0 < x < 1$
+- $f'(x) = 0$ si $x = 1$
+- $f'(x) > 0$ si $x > 1$
+
+**Minimum** en $x = 1$ : $f(1) = 1 - \ln(1) = 1$
+
+**Limites** :
+- $\lim_{x \to 0^+} f(x) = 0 - (-\infty) = +\infty$
+- $\lim_{x \to +\infty} f(x) = +\infty - \infty$ FI. On factorise : $f(x) = x\left(1 - \frac{\ln(x)}{x}\right) \to +\infty$ car $\frac{\ln(x)}{x} \to 0$.
+
+### Exemple 5 : Croissance comparée
+
+Calculer $\lim_{x \to +\infty} \frac{\ln(x)}{x}$.
+
+C'est la croissance comparée : $\lim_{x \to +\infty} \frac{\ln(x)}{x} = 0$.
+
+## Erreurs fréquentes
+
+:::warning
+**Erreur 1** : Écrire $\ln(a+b) = \ln(a) + \ln(b)$
+
+FAUX ! $\ln(a+b) \neq \ln(a) + \ln(b)$
+
+C'est $\ln(a \times b) = \ln(a) + \ln(b)$
+
+**Erreur 2** : Oublier les conditions d'existence
+
+$\ln(x)$ n'existe que si $x > 0$. Toujours vérifier !
+
+**Erreur 3** : Confondre $\ln(x^2)$ et $(\ln(x))^2$
+
+$\ln(x^2) = 2\ln(x)$ (pour $x > 0$)
+$(\ln(x))^2$ est le carré de $\ln(x)$
+
+**Erreur 4** : Mal résoudre $\ln(x) = -2$
+
+La solution est $x = e^{-2} = \frac{1}{e^2}$, pas $x = -2$ !
+:::
+
+## Mini-résumé à apprendre
+
+**Définition** : $\ln(x) = y \Leftrightarrow e^y = x$
+
+**Propriétés essentielles** :
+- $\ln(1) = 0$, $\ln(e) = 1$
+- $\ln(ab) = \ln(a) + \ln(b)$
+- $\ln(a^n) = n\ln(a)$
+- $(\ln(x))' = \frac{1}{x}$, $(\ln(u))' = \frac{u'}{u}$
+
+**Limites** :
+- $\lim_{x \to +\infty} \ln(x) = +\infty$
+- $\lim_{x \to 0^+} \ln(x) = -\infty$
+- Croissance comparée : $\lim_{x \to +\infty} \frac{\ln(x)}{x} = 0$
+
+## Ponts vers autres chapitres
+
+- **Exponentielle** : $\ln$ et $\exp$ sont réciproques
+- **Primitives** : $\int \frac{1}{x} dx = \ln|x| + C$
+- **Équations différentielles** : apparition naturelle du $\ln$
+- **Probabilités** : le $\ln$ intervient dans l'entropie

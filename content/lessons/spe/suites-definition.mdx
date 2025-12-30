@@ -1,0 +1,203 @@
+---
+id: "suites-definition"
+title: "Suites numériques : définitions et modes de génération"
+track: "spe"
+level: 2
+prerequisites: ["fonctions-bases", "recurrence"]
+tags: ["suites", "récurrence", "explicite", "arithmétique", "géométrique"]
+estimatedTime: 45
+chapter: "suites"
+order: 1
+---
+
+# Suites numériques : définitions et modes de génération
+
+## Intuition et analogie
+
+Imagine que tu empiles des briques : chaque jour, tu en ajoutes un certain nombre. La suite des hauteurs de la pile forme une **suite numérique**. Chaque terme correspond à un instant précis (jour 1, jour 2, etc.), et il existe une logique pour passer d'un terme au suivant.
+
+Une suite, c'est donc une **liste infinie de nombres**, indexée par les entiers naturels. Contrairement à une fonction définie sur $\mathbb{R}$, une suite ne "vit" que sur les entiers : $u_0, u_1, u_2, \ldots$
+
+## Objectifs de cette leçon
+
+À la fin de cette leçon, tu sauras :
+- Définir une suite de deux façons : explicite et par récurrence
+- Identifier et manipuler les suites arithmétiques et géométriques
+- Calculer le terme général à partir de la définition
+- Représenter graphiquement une suite
+
+## Prérequis (rappel express)
+
+- **Fonctions** : notion de fonction, image, antécédent
+- **Récurrence** : principe du raisonnement par récurrence (pour les démonstrations)
+
+:::definition
+**Suite numérique**
+
+Une **suite numérique** $(u_n)$ est une fonction de $\mathbb{N}$ (ou une partie de $\mathbb{N}$) vers $\mathbb{R}$.
+À chaque entier naturel $n$, on associe un réel $u_n$, appelé **terme de rang $n$** ou **terme d'indice $n$**.
+:::
+
+## Définitions
+
+### Définition explicite
+
+:::definition
+**Définition explicite (ou terme général)**
+
+Une suite est définie **explicitement** quand on donne une formule directe permettant de calculer $u_n$ en fonction de $n$ uniquement.
+
+Exemple : $u_n = 2n + 3$ pour tout $n \in \mathbb{N}$
+:::
+
+Avec une définition explicite, tu peux calculer n'importe quel terme directement :
+- $u_0 = 2 \times 0 + 3 = 3$
+- $u_{100} = 2 \times 100 + 3 = 203$
+
+### Définition par récurrence
+
+:::definition
+**Définition par récurrence**
+
+Une suite est définie **par récurrence** quand on donne :
+1. Un ou plusieurs **termes initiaux** (ex : $u_0 = 5$)
+2. Une **relation de récurrence** permettant de calculer $u_{n+1}$ à partir de $u_n$ (ou des termes précédents)
+
+Exemple : $u_0 = 1$ et $u_{n+1} = 2u_n + 1$ pour tout $n \in \mathbb{N}$
+:::
+
+:::warning
+Avec une définition par récurrence, pour calculer $u_{100}$, il faut d'abord calculer $u_1$, puis $u_2$, etc. jusqu'à $u_{100}$. C'est plus long qu'avec une formule explicite !
+:::
+
+## Propriétés : suites arithmétiques et géométriques
+
+### Suite arithmétique
+
+:::property[Suite arithmétique]
+Une suite $(u_n)$ est **arithmétique** de raison $r$ si, pour tout $n \in \mathbb{N}$ :
+$$u_{n+1} = u_n + r$$
+
+Le terme général est alors :
+$$u_n = u_0 + n \cdot r$$
+
+Ou plus généralement, pour tout $p \in \mathbb{N}$ :
+$$u_n = u_p + (n-p) \cdot r$$
+:::
+
+:::example[Suite arithmétique]
+La suite définie par $u_0 = 5$ et $u_{n+1} = u_n + 3$ est arithmétique de raison $r = 3$.
+
+Terme général : $u_n = 5 + 3n$
+
+Vérifions : $u_3 = 5 + 3 \times 3 = 14$ ✓
+:::
+
+### Suite géométrique
+
+:::property[Suite géométrique]
+Une suite $(u_n)$ est **géométrique** de raison $q$ si, pour tout $n \in \mathbb{N}$ :
+$$u_{n+1} = q \cdot u_n$$
+
+Le terme général est alors (si $u_0 \neq 0$) :
+$$u_n = u_0 \cdot q^n$$
+
+Ou plus généralement :
+$$u_n = u_p \cdot q^{n-p}$$
+:::
+
+:::example[Suite géométrique]
+La suite définie par $u_0 = 2$ et $u_{n+1} = 3u_n$ est géométrique de raison $q = 3$.
+
+Terme général : $u_n = 2 \times 3^n$
+
+Vérifions : $u_4 = 2 \times 3^4 = 2 \times 81 = 162$ ✓
+:::
+
+## Méthodes types
+
+:::method[Reconnaître le type d'une suite]
+1. Calcule les premiers termes : $u_0, u_1, u_2, u_3$
+2. Calcule les différences $u_1 - u_0$, $u_2 - u_1$, $u_3 - u_2$
+   - Si elles sont **constantes** → suite arithmétique
+3. Calcule les quotients $\frac{u_1}{u_0}$, $\frac{u_2}{u_1}$, $\frac{u_3}{u_2}$ (si $u_n \neq 0$)
+   - Si ils sont **constants** → suite géométrique
+:::
+
+:::method[Passer de la récurrence à l'explicite (arithmétique/géométrique)]
+Pour une suite arithmétique de premier terme $u_0$ et de raison $r$ :
+$$u_n = u_0 + nr$$
+
+Pour une suite géométrique de premier terme $u_0$ et de raison $q$ :
+$$u_n = u_0 \times q^n$$
+:::
+
+## Exemples résolus
+
+### Exemple 1 : Suite définie explicitement
+
+Soit $u_n = \frac{n^2 + 1}{n + 2}$ pour $n \geq 0$.
+
+Calcul de $u_5$ :
+$$u_5 = \frac{5^2 + 1}{5 + 2} = \frac{26}{7}$$
+
+### Exemple 2 : Suite définie par récurrence
+
+Soit $u_0 = 3$ et $u_{n+1} = 2u_n - 1$.
+
+- $u_1 = 2 \times 3 - 1 = 5$
+- $u_2 = 2 \times 5 - 1 = 9$
+- $u_3 = 2 \times 9 - 1 = 17$
+
+Cette suite n'est ni arithmétique (différences : 2, 4, 8) ni géométrique (quotients : 5/3, 9/5, 17/9).
+
+### Exemple 3 : Identifier une suite arithmétique
+
+Une suite vérifie $u_3 = 11$ et $u_7 = 23$. Est-elle arithmétique ? Si oui, trouver $u_0$ et $r$.
+
+Si la suite est arithmétique : $u_7 = u_3 + 4r$
+Donc $23 = 11 + 4r$, soit $r = 3$.
+
+Puis $u_0 = u_3 - 3r = 11 - 9 = 2$.
+
+Vérification : $u_n = 2 + 3n$, donc $u_3 = 2 + 9 = 11$ ✓ et $u_7 = 2 + 21 = 23$ ✓
+
+## Erreurs fréquentes
+
+:::warning
+**Erreur 1** : Confondre $u_n$ et $n$
+
+$u_n$ est le terme de la suite, $n$ est l'indice. Par exemple, si $u_n = 2n+1$, alors $u_5 = 11$ (pas 5 !).
+
+**Erreur 2** : Oublier $u_0$
+
+Attention, les suites commencent souvent à $n=0$, pas à $n=1$. Le premier terme est $u_0$, pas $u_1$.
+
+**Erreur 3** : Mal utiliser la récurrence
+
+Pour calculer $u_{n+1}$, il faut connaître $u_n$. On ne peut pas "sauter" des termes.
+
+**Erreur 4** : Confondre raison arithmétique et géométrique
+
+- Arithmétique : on **ajoute** $r$ → $u_{n+1} = u_n + r$
+- Géométrique : on **multiplie** par $q$ → $u_{n+1} = q \cdot u_n$
+:::
+
+## Mini-résumé à apprendre
+
+| Type | Récurrence | Terme général |
+|------|------------|---------------|
+| Quelconque | $u_0$ donné, $u_{n+1} = f(u_n)$ | À déterminer |
+| Arithmétique | $u_{n+1} = u_n + r$ | $u_n = u_0 + nr$ |
+| Géométrique | $u_{n+1} = q \cdot u_n$ | $u_n = u_0 \cdot q^n$ |
+
+:::tip
+Pour retenir : **A**rithmétique = **A**ddition, **G**éométrique = multiplication (× comme dans Géo).
+:::
+
+## Ponts vers autres chapitres
+
+- **Limites de suites** : on étudiera le comportement quand $n \to +\infty$
+- **Récurrence** : utilisée pour démontrer des formules sur les suites
+- **Fonctions exponentielles** : $u_n = u_0 \cdot q^n$ fait penser à $f(x) = a \cdot b^x$
+- **Intégrales** : sommes de suites → lien avec les aires

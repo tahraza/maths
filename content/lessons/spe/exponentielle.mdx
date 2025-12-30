@@ -1,0 +1,207 @@
+---
+id: "exponentielle"
+title: "Fonction exponentielle"
+track: "spe"
+level: 3
+prerequisites: ["derivation", "limites-fonctions"]
+tags: ["exponentielle", "exp", "croissance", "équations"]
+estimatedTime: 50
+chapter: "exp-ln"
+order: 1
+---
+
+# Fonction exponentielle
+
+## Intuition et analogie
+
+Imagine une population de bactéries qui double toutes les heures. Au bout de $t$ heures, la population est $2^t$ fois plus grande. Cette croissance "explosive" est caractéristique des phénomènes exponentiels.
+
+La fonction exponentielle modélise tous les phénomènes où la vitesse de croissance est proportionnelle à la quantité présente : populations, radioactivité, intérêts composés, etc.
+
+## Objectifs de cette leçon
+
+À la fin de cette leçon, tu sauras :
+- Définir la fonction exponentielle et connaître ses propriétés
+- Calculer avec les exponentielles (propriétés algébriques)
+- Résoudre des équations et inéquations exponentielles
+- Étudier des fonctions comportant des exponentielles
+
+## Prérequis (rappel express)
+
+- **Dérivation** : calcul de dérivées, étude de variations
+- **Limites** : limites à l'infini, formes indéterminées
+
+## Définitions
+
+:::definition
+**Fonction exponentielle**
+
+La fonction exponentielle, notée $\exp$ ou $x \mapsto e^x$, est l'unique fonction $f$ définie sur $\mathbb{R}$ telle que :
+- $f'(x) = f(x)$ pour tout $x \in \mathbb{R}$
+- $f(0) = 1$
+
+Le nombre $e = \exp(1) \approx 2{,}718$ est appelé nombre d'Euler.
+:::
+
+:::definition
+**Notation**
+
+Pour tout réel $x$ : $\exp(x) = e^x$
+
+Ces deux notations sont équivalentes.
+:::
+
+## Propriétés algébriques
+
+:::property[Propriétés fondamentales de l'exponentielle]
+Pour tous réels $a$ et $b$ :
+
+$$e^{a+b} = e^a \times e^b$$
+$$e^{a-b} = \frac{e^a}{e^b}$$
+$$(e^a)^n = e^{na}$$ pour tout $n \in \mathbb{Z}$
+$$e^{-a} = \frac{1}{e^a}$$
+$$e^0 = 1$$
+:::
+
+:::property[Signe]
+Pour tout réel $x$ : $e^x > 0$
+
+L'exponentielle est toujours **strictement positive**.
+:::
+
+## Propriétés analytiques
+
+:::property[Dérivée]
+La fonction $x \mapsto e^x$ est dérivable sur $\mathbb{R}$ et :
+$$(e^x)' = e^x$$
+
+Plus généralement, si $u$ est dérivable :
+$$(e^{u(x)})' = u'(x) \cdot e^{u(x)}$$
+:::
+
+:::property[Variations]
+- $e^x > 0$ pour tout $x$ donc $(e^x)' > 0$
+- La fonction exponentielle est **strictement croissante** sur $\mathbb{R}$
+:::
+
+:::property[Limites aux bornes]
+$$\lim_{x \to +\infty} e^x = +\infty$$
+$$\lim_{x \to -\infty} e^x = 0$$
+:::
+
+:::property[Croissances comparées]
+Pour tout entier $n \geq 1$ :
+$$\lim_{x \to +\infty} \frac{e^x}{x^n} = +\infty$$
+$$\lim_{x \to -\infty} x^n e^x = 0$$
+
+Interprétation : l'exponentielle "l'emporte" sur toute puissance de $x$.
+:::
+
+## Méthodes types
+
+:::method[Résoudre $e^{f(x)} = e^{g(x)}$]
+Puisque l'exponentielle est strictement croissante (donc injective) :
+
+$$e^{f(x)} = e^{g(x)} \Leftrightarrow f(x) = g(x)$$
+:::
+
+:::method[Résoudre $e^{f(x)} > e^{g(x)}$]
+Puisque l'exponentielle est strictement croissante :
+
+$$e^{f(x)} > e^{g(x)} \Leftrightarrow f(x) > g(x)$$
+:::
+
+:::method[Étudier une fonction avec exponentielle]
+1. Détermine le domaine de définition
+2. Calcule la dérivée (utilise $(e^u)' = u'e^u$)
+3. Étudie le signe de la dérivée
+4. Calcule les limites aux bornes (attention aux formes indéterminées)
+5. Dresse le tableau de variations
+:::
+
+## Exemples résolus
+
+### Exemple 1 : Équation exponentielle
+
+Résoudre $e^{2x-1} = e^{x+3}$.
+
+$$e^{2x-1} = e^{x+3} \Leftrightarrow 2x-1 = x+3 \Leftrightarrow x = 4$$
+
+### Exemple 2 : Inéquation exponentielle
+
+Résoudre $e^{3x} \geq e^{2-x}$.
+
+$$e^{3x} \geq e^{2-x} \Leftrightarrow 3x \geq 2-x \Leftrightarrow 4x \geq 2 \Leftrightarrow x \geq \frac{1}{2}$$
+
+Solution : $S = \left[\frac{1}{2}, +\infty\right[$
+
+### Exemple 3 : Étude d'une fonction
+
+Soit $f(x) = (x-1)e^x$ sur $\mathbb{R}$.
+
+**Domaine** : $\mathbb{R}$
+
+**Dérivée** : $f'(x) = 1 \cdot e^x + (x-1) \cdot e^x = e^x(1 + x - 1) = xe^x$
+
+**Signe de $f'$** : $e^x > 0$ toujours, donc $f'(x)$ est du signe de $x$.
+- $f'(x) < 0$ si $x < 0$
+- $f'(x) = 0$ si $x = 0$
+- $f'(x) > 0$ si $x > 0$
+
+**Limites** :
+- $\lim_{x \to +\infty} f(x) = \lim_{x \to +\infty} (x-1)e^x = +\infty$
+- $\lim_{x \to -\infty} f(x) = \lim_{x \to -\infty} (x-1)e^x = 0$ (car $e^x$ l'emporte)
+
+**Extremum** : minimum en $x = 0$, $f(0) = -1$.
+
+### Exemple 4 : Limite avec croissance comparée
+
+Calculer $\lim_{x \to +\infty} \frac{e^x - x^2}{e^x + x}$.
+
+On factorise par $e^x$ :
+$$\frac{e^x - x^2}{e^x + x} = \frac{e^x(1 - \frac{x^2}{e^x})}{e^x(1 + \frac{x}{e^x})} = \frac{1 - \frac{x^2}{e^x}}{1 + \frac{x}{e^x}}$$
+
+Or $\lim_{x \to +\infty} \frac{x^2}{e^x} = 0$ et $\lim_{x \to +\infty} \frac{x}{e^x} = 0$ (croissances comparées).
+
+Donc $\lim_{x \to +\infty} \frac{e^x - x^2}{e^x + x} = \frac{1-0}{1+0} = 1$
+
+## Erreurs fréquentes
+
+:::warning
+**Erreur 1** : Croire que $e^{a+b} = e^a + e^b$
+
+NON ! $e^{a+b} = e^a \times e^b$ (c'est un produit, pas une somme)
+
+**Erreur 2** : Croire que $e^{ab} = e^a \times e^b$
+
+NON ! $e^{ab} = (e^a)^b = (e^b)^a$
+
+**Erreur 3** : Oublier que $e^x > 0$
+
+Dans $f(x) = xe^x$, le signe est celui de $x$ car $e^x > 0$.
+
+**Erreur 4** : Mal utiliser la croissance comparée
+
+$\lim_{x \to +\infty} (e^x - x^2)$ n'est PAS une forme indéterminée : c'est $+\infty$ car $e^x$ domine.
+:::
+
+## Mini-résumé à apprendre
+
+**Propriétés essentielles** :
+- $e^0 = 1$, $e^1 = e \approx 2{,}718$
+- $e^x > 0$ pour tout $x$
+- $(e^x)' = e^x$, $(e^u)' = u'e^u$
+- $e^{a+b} = e^a \cdot e^b$, $e^{-a} = \frac{1}{e^a}$
+
+**Limites** :
+- $\lim_{x \to +\infty} e^x = +\infty$, $\lim_{x \to -\infty} e^x = 0$
+- L'exponentielle domine les puissances : $\lim_{x \to +\infty} \frac{e^x}{x^n} = +\infty$
+
+**Équations/inéquations** : $e^a = e^b \Leftrightarrow a = b$, $e^a > e^b \Leftrightarrow a > b$
+
+## Ponts vers autres chapitres
+
+- **Logarithme népérien** : fonction réciproque de l'exponentielle
+- **Équations différentielles** : $y' = y$ a pour solution $y = Ce^x$
+- **Suites géométriques** : $u_n = u_0 q^n$ est un cas discret de l'exponentielle
+- **Probabilités** : loi exponentielle en Terminale

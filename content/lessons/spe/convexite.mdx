@@ -1,0 +1,246 @@
+---
+id: "convexite"
+title: "Convexité des fonctions"
+track: "spe"
+level: 3
+prerequisites: ["derivation"]
+tags: ["convexité", "concavité", "point d'inflexion", "dérivée seconde"]
+estimatedTime: 45
+chapter: "fonctions"
+order: 4
+---
+
+# Convexité des fonctions
+
+## Intuition et analogie
+
+Une fonction convexe a une courbe "en forme de bol" : si tu poses une bille dessus, elle roule vers le bas. Une fonction concave est "en forme de dôme".
+
+Géométriquement : pour une fonction convexe, tout segment reliant deux points de la courbe est **au-dessus** de la courbe. C'est le contraire pour une fonction concave.
+
+## Objectifs de cette leçon
+
+À la fin de cette leçon, tu sauras :
+- Définir convexité et concavité
+- Utiliser la dérivée seconde pour étudier la convexité
+- Trouver les points d'inflexion
+- Appliquer l'inégalité de convexité
+
+## Définitions
+
+:::definition
+**Fonction convexe**
+
+Une fonction $f$ est **convexe** sur un intervalle $I$ si pour tous $a, b \in I$ et tout $t \in [0, 1]$ :
+
+$$f(ta + (1-t)b) \leq tf(a) + (1-t)f(b)$$
+
+Géométriquement : la courbe est **en-dessous** de ses cordes.
+:::
+
+:::definition
+**Fonction concave**
+
+Une fonction $f$ est **concave** sur $I$ si $-f$ est convexe, c'est-à-dire :
+
+$$f(ta + (1-t)b) \geq tf(a) + (1-t)f(b)$$
+
+Géométriquement : la courbe est **au-dessus** de ses cordes.
+:::
+
+:::definition
+**Point d'inflexion**
+
+Un **point d'inflexion** est un point où la courbe change de convexité (passe de convexe à concave ou inversement).
+
+En ce point, la tangente **traverse** la courbe.
+:::
+
+## Caractérisation par les dérivées
+
+:::property[Convexité et dérivée seconde]
+Soit $f$ deux fois dérivable sur $I$.
+
+- $f$ est **convexe** sur $I$ $\Leftrightarrow$ $f''(x) \geq 0$ pour tout $x \in I$
+- $f$ est **concave** sur $I$ $\Leftrightarrow$ $f''(x) \leq 0$ pour tout $x \in I$
+- $f$ est **strictement convexe** si $f''(x) > 0$
+- $f$ est **strictement concave** si $f''(x) < 0$
+:::
+
+:::property[Convexité et dérivée première]
+- $f$ est convexe sur $I$ $\Leftrightarrow$ $f'$ est croissante sur $I$
+- $f$ est concave sur $I$ $\Leftrightarrow$ $f'$ est décroissante sur $I$
+:::
+
+:::property[Point d'inflexion]
+Si $f$ est deux fois dérivable et si $f''$ **change de signe** en $a$, alors $(a, f(a))$ est un point d'inflexion.
+
+Condition nécessaire : $f''(a) = 0$ (mais pas suffisante !)
+:::
+
+## Position par rapport aux tangentes
+
+:::property[Convexité et tangentes]
+- Si $f$ est **convexe** sur $I$, la courbe est **au-dessus** de toutes ses tangentes
+- Si $f$ est **concave** sur $I$, la courbe est **en-dessous** de toutes ses tangentes
+
+Pour tout $a \in I$ :
+$$f(x) \geq f(a) + f'(a)(x - a) \quad \text{(convexe)}$$
+$$f(x) \leq f(a) + f'(a)(x - a) \quad \text{(concave)}$$
+:::
+
+## Méthodes types
+
+:::method[Étudier la convexité d'une fonction]
+1. Calculer $f'(x)$
+2. Calculer $f''(x)$
+3. Étudier le signe de $f''(x)$
+4. Conclure :
+   - $f'' > 0$ : convexe
+   - $f'' < 0$ : concave
+   - Changement de signe : point d'inflexion
+:::
+
+:::method[Trouver les points d'inflexion]
+1. Résoudre $f''(x) = 0$
+2. Pour chaque solution $a$, vérifier que $f''$ change de signe en $a$
+3. Calculer les coordonnées : $(a, f(a))$
+:::
+
+:::method[Encadrer avec la tangente]
+Si $f$ est convexe et on connaît la tangente en $a$ :
+$$f(x) \geq f(a) + f'(a)(x-a)$$
+
+Utile pour des inégalités comme $e^x \geq 1 + x$.
+:::
+
+## Exemples résolus
+
+### Exemple 1 : Convexité de l'exponentielle
+
+Étudier la convexité de $f(x) = e^x$.
+
+$f'(x) = e^x$
+$f''(x) = e^x$
+
+Comme $e^x > 0$ pour tout $x \in \mathbb{R}$, on a $f''(x) > 0$.
+
+**Conclusion** : $f$ est strictement convexe sur $\mathbb{R}$.
+
+**Conséquence** : La courbe de $e^x$ est au-dessus de toutes ses tangentes.
+
+En particulier, la tangente en $x = 0$ est $y = 1 + x$.
+
+Donc : $e^x \geq 1 + x$ pour tout $x \in \mathbb{R}$.
+
+### Exemple 2 : Point d'inflexion
+
+Soit $f(x) = x^3 - 3x^2 + 2x$.
+
+$f'(x) = 3x^2 - 6x + 2$
+$f''(x) = 6x - 6 = 6(x - 1)$
+
+$f''(x) = 0 \Leftrightarrow x = 1$
+
+Signe de $f''$ :
+- $x < 1$ : $f''(x) < 0$ (concave)
+- $x > 1$ : $f''(x) > 0$ (convexe)
+
+$f''$ change de signe en $x = 1$.
+
+Point d'inflexion : $(1, f(1)) = (1, 1 - 3 + 2) = (1, 0)$
+
+### Exemple 3 : Tableau complet
+
+Soit $f(x) = x^4 - 2x^2$.
+
+$f'(x) = 4x^3 - 4x = 4x(x^2 - 1) = 4x(x-1)(x+1)$
+
+$f'(x) = 0$ si $x \in \{-1, 0, 1\}$
+
+$f''(x) = 12x^2 - 4 = 4(3x^2 - 1)$
+
+$f''(x) = 0$ si $x = \pm\frac{1}{\sqrt{3}}$
+
+**Signe de $f''$** :
+- $|x| < \frac{1}{\sqrt{3}}$ : $f'' < 0$ (concave)
+- $|x| > \frac{1}{\sqrt{3}}$ : $f'' > 0$ (convexe)
+
+**Points d'inflexion** en $x = \pm\frac{1}{\sqrt{3}}$
+
+Coordonnées : $f\left(\frac{1}{\sqrt{3}}\right) = \frac{1}{9} - \frac{2}{3} = -\frac{5}{9}$
+
+### Exemple 4 : Inégalité par convexité
+
+Montrer que $\ln(x) \leq x - 1$ pour tout $x > 0$.
+
+Soit $f(x) = \ln(x)$.
+
+$f'(x) = \frac{1}{x}$, $f''(x) = -\frac{1}{x^2} < 0$
+
+$f$ est concave sur $]0, +\infty[$.
+
+La courbe est donc **en-dessous** de ses tangentes.
+
+Tangente en $x = 1$ : $y = f(1) + f'(1)(x - 1) = 0 + 1 \cdot (x - 1) = x - 1$
+
+Donc : $\ln(x) \leq x - 1$ pour tout $x > 0$, avec égalité uniquement en $x = 1$.
+
+### Exemple 5 : Inégalité de Jensen
+
+Montrer que pour $a, b > 0$ : $\sqrt{ab} \leq \frac{a + b}{2}$ (inégalité arithmético-géométrique).
+
+Soit $f(x) = \ln(x)$, concave.
+
+Par concavité (avec $t = \frac{1}{2}$) :
+
+$$f\left(\frac{a + b}{2}\right) \geq \frac{f(a) + f(b)}{2}$$
+
+$$\ln\left(\frac{a + b}{2}\right) \geq \frac{\ln(a) + \ln(b)}{2} = \ln(\sqrt{ab})$$
+
+Par croissance de l'exponentielle :
+
+$$\frac{a + b}{2} \geq \sqrt{ab}$$
+
+## Erreurs fréquentes
+
+:::warning
+**Erreur 1** : Confondre $f''(a) = 0$ et point d'inflexion
+
+$f''(a) = 0$ est nécessaire mais pas suffisant. Exemple : $f(x) = x^4$ a $f''(0) = 0$ mais pas de point d'inflexion en 0.
+
+**Erreur 2** : Inverser convexe et concave
+
+Convexe = "bol" = $f'' \geq 0$ = courbe au-dessus des tangentes
+Concave = "dôme" = $f'' \leq 0$ = courbe en-dessous des tangentes
+
+**Erreur 3** : Oublier de vérifier le changement de signe
+
+Pour un point d'inflexion, $f''$ doit **changer de signe**, pas seulement s'annuler.
+
+**Erreur 4** : Mal interpréter la position relative
+
+Fonction convexe : courbe AU-DESSUS des tangentes mais EN-DESSOUS des cordes.
+:::
+
+## Mini-résumé à apprendre
+
+**Convexité** :
+- $f'' > 0$ ⟹ convexe (courbe "en bol")
+- $f'' < 0$ ⟹ concave (courbe "en dôme")
+
+**Point d'inflexion** : $f''$ change de signe
+
+**Position** :
+- Convexe : courbe au-dessus des tangentes
+- Concave : courbe en-dessous des tangentes
+
+**Inégalités classiques** :
+- $e^x \geq 1 + x$
+- $\ln(x) \leq x - 1$
+
+## Ponts vers autres chapitres
+
+- **Dérivation** : utilisation de $f'$ et $f''$
+- **Optimisation** : minimum global d'une fonction convexe
+- **Probabilités** : inégalité de Jensen

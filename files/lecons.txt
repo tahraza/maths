@@ -1,0 +1,153 @@
+
+---
+id: "suites-definition"
+title: "Suites numériques"
+track: "spe"
+level: 2
+prerequisites: ["entiers-naturels"]
+tags: ["suites"]
+estimatedTime: 45
+chapter: "suites"
+order: 1
+---
+
+# Suites numériques
+
+## Intuition et analogie
+Une suite numérique peut être vue comme une **liste ordonnée de nombres**, indexée par les entiers naturels.  
+On peut l’interpréter comme l’évolution d’une quantité au fil du temps ou comme les valeurs successives d’un calcul.
+
+:::definition
+**Suite numérique**  
+Une suite numérique est une application  
+\[
+u : \mathbb{N} \to \mathbb{R}, \quad n \mapsto u_n
+\]
+où $u_n$ est le terme de rang $n$.
+:::
+
+:::property[Modes de définition]
+Une suite peut être définie :
+- par **formule explicite** : $u_n=f(n)$ ;
+- par **relation de récurrence** : $u_{n+1}=g(u_n)$ avec un terme initial.
+:::
+
+:::method[Méthode type : calculer des termes]
+1. Identifier le terme initial ($u_0$ ou $u_1$).
+2. Appliquer la relation de récurrence étape par étape.
+:::
+
+:::warning
+**Attention !**  
+Ne pas confondre l’indice $n$ et la valeur $u_n$.
+:::
+
+:::tip
+Faire un tableau $n \mapsto u_n$ aide à éviter les erreurs de calcul.
+:::
+
+---
+id: "suites-arithmetiques"
+title: "Suites arithmétiques"
+track: "spe"
+level: 2
+prerequisites: ["suites-definition"]
+tags: ["suites", "arithmétique"]
+estimatedTime: 40
+chapter: "suites"
+order: 2
+---
+
+# Suites arithmétiques
+
+## Intuition et analogie
+Une suite arithmétique correspond à une évolution **linéaire** : on ajoute toujours le même nombre d’un terme au suivant.
+
+:::definition
+**Suite arithmétique**  
+Une suite $(u_n)$ est arithmétique s’il existe un réel $r$ tel que  
+\[
+u_{n+1}=u_n+r
+\]
+Le nombre $r$ est appelé la **raison**.
+:::
+
+:::property[Expression explicite]
+Si $(u_n)$ est arithmétique de raison $r$ et de premier terme $u_0$, alors  
+\[
+u_n = u_0 + nr
+\]
+:::
+
+:::theorem[Somme des termes]
+Pour tout $n\in\mathbb{N}$,  
+\[
+\sum_{k=0}^{n} u_k = \frac{(n+1)(u_0+u_n)}{2}
+\]
+:::
+
+:::method[Méthode type : reconnaître une suite arithmétique]
+1. Calculer $u_{n+1}-u_n$.
+2. Vérifier que cette différence est constante.
+:::
+
+:::warning
+**Attention !**  
+Une suite arithmétique de raison négative est **décroissante**.
+:::
+
+:::tip
+Pour calculer un terme éloigné, utiliser directement $u_n=u_m+(n-m)r$.
+:::
+
+---
+id: "logarithmes-definition"
+title: "Logarithme népérien"
+track: "spe"
+level: 2
+prerequisites: ["fonction-exponentielle"]
+tags: ["logarithmes"]
+estimatedTime: 50
+chapter: "logarithmes"
+order: 1
+---
+
+# Logarithme népérien
+
+## Intuition et analogie
+Le logarithme népérien est l’opération **inverse de l’exponentielle**.  
+Il permet de transformer des produits en sommes et d’étudier des croissances lentes.
+
+:::definition
+**Logarithme népérien**  
+Le logarithme népérien, noté $\ln$, est défini comme la fonction réciproque de l’exponentielle sur $]0,+\infty[$.
+:::
+
+:::property[Propriétés fondamentales]
+Pour $a,b>0$ :
+- $\ln(ab)=\ln a+\ln b$ ;
+- $\ln\left(\frac{a}{b}\right)=\ln a-\ln b$ ;
+- $\ln(a^\alpha)=\alpha\ln a$.
+:::
+
+:::theorem[Dérivée du logarithme]
+La fonction $\ln$ est dérivable sur $]0,+\infty[$ et  
+\[
+(\ln x)'=\frac{1}{x}
+\]
+:::
+
+:::method[Méthode type : résoudre une équation logarithmique]
+1. Vérifier le **domaine de définition**.
+2. Utiliser les propriétés de $\ln$ pour simplifier.
+3. Résoudre l’équation obtenue.
+:::
+
+:::warning
+**Attention !**  
+$\ln(x)$ n’est défini que pour $x>0$.
+:::
+
+:::tip
+Comparer $\ln(x)$ à des puissances de $x$ aide pour les limites.
+:::

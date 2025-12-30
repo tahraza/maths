@@ -1,0 +1,253 @@
+---
+id: "complexes-formes"
+title: "Formes des nombres complexes"
+track: "expertes"
+level: 2
+prerequisites: ["complexes-introduction"]
+tags: ["complexes", "trigonométrique", "exponentielle", "module", "argument"]
+estimatedTime: 55
+chapter: "complexes"
+order: 2
+---
+
+# Formes des nombres complexes
+
+## Intuition et analogie
+
+Un nombre complexe peut se représenter de trois façons équivalentes, comme une adresse peut être donnée en coordonnées (x, y), en distance et direction (polaire), ou en notation compacte (exponentielle). Chaque forme a ses avantages selon l'opération à effectuer.
+
+## Objectifs de cette leçon
+
+À la fin de cette leçon, tu sauras :
+- Passer d'une forme à l'autre
+- Utiliser la forme adaptée à chaque calcul
+- Appliquer les formules d'Euler et de Moivre
+- Calculer des puissances et racines
+
+## Les trois formes
+
+:::definition
+**Forme algébrique**
+
+$$z = a + ib \quad (a, b \in \mathbb{R})$$
+
+- $a = \text{Re}(z)$ : partie réelle
+- $b = \text{Im}(z)$ : partie imaginaire
+- Adaptée aux sommes et produits simples
+:::
+
+:::definition
+**Forme trigonométrique**
+
+$$z = r(\cos\theta + i\sin\theta)$$
+
+- $r = |z|$ : module (distance à l'origine)
+- $\theta = \arg(z)$ : argument (angle avec l'axe réel)
+- Adaptée aux produits, quotients, puissances
+:::
+
+:::definition
+**Forme exponentielle**
+
+$$z = re^{i\theta}$$
+
+C'est la forme trigonométrique en notation compacte, grâce à la formule d'Euler :
+$$e^{i\theta} = \cos\theta + i\sin\theta$$
+:::
+
+## Conversions
+
+:::property[Algébrique → Trigonométrique/Exponentielle]
+Pour $z = a + ib$ :
+- Module : $r = |z| = \sqrt{a^2 + b^2}$
+- Argument : $\theta$ tel que $\cos\theta = \frac{a}{r}$ et $\sin\theta = \frac{b}{r}$
+
+Attention au cadran pour déterminer $\theta$ correctement !
+:::
+
+:::property[Trigonométrique → Algébrique]
+Pour $z = re^{i\theta}$ :
+- $a = r\cos\theta$
+- $b = r\sin\theta$
+- Donc $z = r\cos\theta + ir\sin\theta$
+:::
+
+## Formules fondamentales
+
+:::property[Formule d'Euler]
+$$e^{i\theta} = \cos\theta + i\sin\theta$$
+
+Cas particuliers :
+- $e^{i\pi} = -1$ (identité d'Euler)
+- $e^{i\pi/2} = i$
+- $e^{i\cdot 0} = 1$
+:::
+
+:::property[Formules dérivées]
+$$\cos\theta = \frac{e^{i\theta} + e^{-i\theta}}{2}$$
+$$\sin\theta = \frac{e^{i\theta} - e^{-i\theta}}{2i}$$
+:::
+
+:::property[Formule de Moivre]
+Pour tout $n \in \mathbb{Z}$ :
+$$(e^{i\theta})^n = e^{in\theta}$$
+$$(\cos\theta + i\sin\theta)^n = \cos(n\theta) + i\sin(n\theta)$$
+:::
+
+## Opérations en forme exponentielle
+
+:::property[Produit]
+$$z_1 \cdot z_2 = r_1 e^{i\theta_1} \cdot r_2 e^{i\theta_2} = r_1 r_2 e^{i(\theta_1 + \theta_2)}$$
+
+Les modules se multiplient, les arguments s'additionnent.
+:::
+
+:::property[Quotient]
+$$\frac{z_1}{z_2} = \frac{r_1}{r_2} e^{i(\theta_1 - \theta_2)}$$
+
+Les modules se divisent, les arguments se soustraient.
+:::
+
+:::property[Puissance]
+$$z^n = r^n e^{in\theta}$$
+
+Le module est élevé à la puissance $n$, l'argument est multiplié par $n$.
+:::
+
+## Racines n-ièmes
+
+:::property[Racines n-ièmes de l'unité]
+Les solutions de $z^n = 1$ sont les $n$ racines n-ièmes de l'unité :
+$$\omega_k = e^{i\frac{2k\pi}{n}} \quad \text{pour } k = 0, 1, \ldots, n-1$$
+
+Elles forment un polygone régulier à $n$ côtés inscrit dans le cercle unité.
+:::
+
+:::property[Racines n-ièmes d'un complexe]
+Les solutions de $z^n = w$ où $w = \rho e^{i\varphi}$ sont :
+$$z_k = \sqrt[n]{\rho} \cdot e^{i\frac{\varphi + 2k\pi}{n}} \quad \text{pour } k = 0, 1, \ldots, n-1$$
+:::
+
+## Méthodes types
+
+:::method[Convertir en forme exponentielle]
+1. Calculer le module : $r = \sqrt{a^2 + b^2}$
+2. Déterminer le quadrant (signes de $a$ et $b$)
+3. Calculer $\theta$ avec $\tan\theta = \frac{b}{a}$ en tenant compte du quadrant
+4. Écrire $z = re^{i\theta}$
+:::
+
+:::method[Calculer $z^n$ efficacement]
+1. Mettre $z$ sous forme exponentielle
+2. Appliquer $(re^{i\theta})^n = r^n e^{in\theta}$
+3. Si demandé, revenir en forme algébrique
+:::
+
+:::method[Linéariser $\cos^n\theta$ ou $\sin^n\theta$]
+1. Utiliser $\cos\theta = \frac{e^{i\theta} + e^{-i\theta}}{2}$
+2. Développer avec le binôme de Newton
+3. Regrouper les termes conjugués pour obtenir des cosinus
+:::
+
+## Exemples résolus
+
+### Exemple 1 : Conversion
+
+Mettre $z = 1 + i$ sous forme exponentielle.
+
+**Module** : $r = \sqrt{1^2 + 1^2} = \sqrt{2}$
+
+**Argument** : $a = b = 1 > 0$ donc premier quadrant.
+$\cos\theta = \frac{1}{\sqrt{2}}$, $\sin\theta = \frac{1}{\sqrt{2}}$ → $\theta = \frac{\pi}{4}$
+
+**Résultat** : $z = \sqrt{2}e^{i\pi/4}$
+
+### Exemple 2 : Puissance
+
+Calculer $(1 + i)^{10}$.
+
+On a $1 + i = \sqrt{2}e^{i\pi/4}$.
+
+$(1 + i)^{10} = (\sqrt{2})^{10} e^{i \cdot 10\pi/4} = 32 e^{i \cdot 5\pi/2}$
+
+Or $\frac{5\pi}{2} = \frac{\pi}{2} + 2\pi$, donc $e^{i5\pi/2} = e^{i\pi/2} = i$.
+
+**Résultat** : $(1 + i)^{10} = 32i$
+
+### Exemple 3 : Racines de l'unité
+
+Trouver les racines cubiques de 1.
+
+On cherche $z^3 = 1 = e^{i \cdot 0}$.
+
+Les solutions sont $z_k = e^{i\frac{2k\pi}{3}}$ pour $k = 0, 1, 2$.
+
+- $z_0 = e^{i \cdot 0} = 1$
+- $z_1 = e^{i\frac{2\pi}{3}} = -\frac{1}{2} + i\frac{\sqrt{3}}{2}$
+- $z_2 = e^{i\frac{4\pi}{3}} = -\frac{1}{2} - i\frac{\sqrt{3}}{2}$
+
+### Exemple 4 : Formule de Moivre pour $\cos(3\theta)$
+
+Exprimer $\cos(3\theta)$ en fonction de $\cos\theta$.
+
+Par Moivre : $\cos(3\theta) + i\sin(3\theta) = (\cos\theta + i\sin\theta)^3$
+
+Développons : $(\cos\theta + i\sin\theta)^3 = \cos^3\theta + 3\cos^2\theta(i\sin\theta) + 3\cos\theta(i\sin\theta)^2 + (i\sin\theta)^3$
+
+$= \cos^3\theta - 3\cos\theta\sin^2\theta + i(3\cos^2\theta\sin\theta - \sin^3\theta)$
+
+Partie réelle : $\cos(3\theta) = \cos^3\theta - 3\cos\theta\sin^2\theta$
+
+Avec $\sin^2\theta = 1 - \cos^2\theta$ :
+$\cos(3\theta) = \cos^3\theta - 3\cos\theta(1 - \cos^2\theta) = 4\cos^3\theta - 3\cos\theta$
+
+### Exemple 5 : Linéarisation
+
+Linéariser $\cos^2\theta$.
+
+$\cos\theta = \frac{e^{i\theta} + e^{-i\theta}}{2}$
+
+$\cos^2\theta = \frac{(e^{i\theta} + e^{-i\theta})^2}{4} = \frac{e^{2i\theta} + 2 + e^{-2i\theta}}{4}$
+
+$= \frac{2\cos(2\theta) + 2}{4} = \frac{1 + \cos(2\theta)}{2}$
+
+## Erreurs fréquentes
+
+:::warning
+**Erreur 1** : Mauvais quadrant pour l'argument
+
+$z = -1 + i$ : $\arg(z) = \frac{3\pi}{4}$ (pas $-\frac{\pi}{4}$)
+
+Toujours vérifier les signes de $a$ et $b$.
+
+**Erreur 2** : Oublier les $n$ racines
+
+$z^n = w$ a **exactement $n$ solutions** (sauf si $w = 0$).
+
+**Erreur 3** : Confondre $e^{i\theta}$ et $e^\theta$
+
+$|e^{i\theta}| = 1$ toujours, mais $|e^\theta| = e^\theta$.
+
+**Erreur 4** : Mal simplifier les arguments
+
+$e^{i \cdot 7\pi/2} = e^{i \cdot 3\pi/2} = -i$ (réduire modulo $2\pi$)
+:::
+
+## Mini-résumé à apprendre
+
+**Formes** :
+- Algébrique : $z = a + ib$
+- Trigonométrique : $z = r(\cos\theta + i\sin\theta)$
+- Exponentielle : $z = re^{i\theta}$
+
+**Euler** : $e^{i\theta} = \cos\theta + i\sin\theta$
+
+**Moivre** : $(e^{i\theta})^n = e^{in\theta}$
+
+**Opérations** : modules se multiplient/divisent, arguments s'additionnent/soustraient
+
+## Ponts vers autres chapitres
+
+- **Géométrie complexe** : transformations du plan
+- **Trigonométrie** : linéarisation et formules
+- **Équations différentielles** : solutions complexes

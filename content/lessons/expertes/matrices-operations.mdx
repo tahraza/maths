@@ -1,0 +1,222 @@
+---
+id: "matrices-operations"
+title: "Matrices : définitions et opérations"
+track: "expertes"
+level: 2
+prerequisites: ["systemes-lineaires"]
+tags: ["matrices", "addition", "multiplication", "transposée"]
+estimatedTime: 50
+chapter: "matrices"
+order: 1
+---
+
+# Matrices : définitions et opérations
+
+## Intuition et analogie
+
+Une matrice est un tableau de nombres organisé en lignes et colonnes. C'est un outil puissant pour représenter et résoudre des systèmes d'équations, mais aussi pour décrire des transformations géométriques.
+
+Pense à une matrice comme à une "fonction" qui transforme des vecteurs en d'autres vecteurs : la multiplication d'un vecteur par une matrice produit un nouveau vecteur.
+
+## Objectifs de cette leçon
+
+À la fin de cette leçon, tu sauras :
+- Définir une matrice et son format
+- Effectuer les opérations (addition, multiplication par un scalaire)
+- Calculer un produit matriciel
+- Identifier les matrices particulières (identité, transposée)
+
+## Prérequis (rappel express)
+
+- **Systèmes linéaires** : résolution par substitution ou combinaison
+- **Calcul algébrique** : manipulation d'expressions
+
+## Définitions
+
+:::definition
+**Matrice**
+
+Une **matrice** $A$ de taille $n \times p$ (ou format $(n, p)$) est un tableau de $n$ lignes et $p$ colonnes de nombres réels.
+
+$$A = \begin{pmatrix} a_{1,1} & a_{1,2} & \cdots & a_{1,p} \\ a_{2,1} & a_{2,2} & \cdots & a_{2,p} \\ \vdots & \vdots & \ddots & \vdots \\ a_{n,1} & a_{n,2} & \cdots & a_{n,p} \end{pmatrix}$$
+
+$a_{i,j}$ est le coefficient de la ligne $i$ et colonne $j$.
+:::
+
+:::definition
+**Matrice carrée**
+
+Une matrice est **carrée** si elle a autant de lignes que de colonnes ($n = p$).
+
+Les coefficients $a_{i,i}$ forment la **diagonale principale**.
+:::
+
+:::definition
+**Matrices particulières**
+- **Matrice nulle** $O$ : tous les coefficients sont nuls
+- **Matrice identité** $I_n$ : matrice carrée avec $1$ sur la diagonale et $0$ ailleurs
+- **Matrice diagonale** : tous les coefficients hors diagonale sont nuls
+- **Matrice triangulaire** supérieure (resp. inférieure) : coefficients nuls sous (resp. au-dessus de) la diagonale
+:::
+
+$$I_3 = \begin{pmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{pmatrix}$$
+
+## Opérations
+
+:::property[Addition]
+L'addition est définie pour des matrices de **même taille**.
+
+Si $A = (a_{i,j})$ et $B = (b_{i,j})$ sont de taille $n \times p$ :
+$$A + B = (a_{i,j} + b_{i,j})$$
+
+On additionne coefficient par coefficient.
+:::
+
+:::property[Multiplication par un scalaire]
+Pour $\lambda \in \mathbb{R}$ et $A = (a_{i,j})$ :
+$$\lambda A = (\lambda \cdot a_{i,j})$$
+
+On multiplie chaque coefficient par $\lambda$.
+:::
+
+:::property[Produit matriciel]
+Le produit $A \times B$ est défini si le nombre de **colonnes de $A$** égale le nombre de **lignes de $B$**.
+
+Si $A$ est de taille $n \times p$ et $B$ de taille $p \times q$, alors $AB$ est de taille $n \times q$.
+
+Le coefficient $(i, j)$ de $AB$ est :
+$$(AB)_{i,j} = \sum_{k=1}^{p} a_{i,k} \cdot b_{k,j}$$
+
+(ligne $i$ de $A$) $\cdot$ (colonne $j$ de $B$)
+:::
+
+:::warning
+**Le produit matriciel n'est PAS commutatif !**
+
+En général, $AB \neq BA$ (quand les deux produits sont définis).
+:::
+
+:::definition
+**Transposée**
+
+La **transposée** de $A$, notée $A^T$ ou ${}^t A$, est obtenue en échangeant lignes et colonnes.
+
+Si $A$ est de taille $n \times p$, alors $A^T$ est de taille $p \times n$.
+
+$(A^T)_{i,j} = A_{j,i}$
+:::
+
+## Propriétés
+
+:::property[Propriétés de l'addition]
+- Commutativité : $A + B = B + A$
+- Associativité : $(A + B) + C = A + (B + C)$
+- Élément neutre : $A + O = A$
+- Opposé : $A + (-A) = O$
+:::
+
+:::property[Propriétés du produit]
+- Associativité : $(AB)C = A(BC)$
+- Distributivité : $A(B + C) = AB + AC$ et $(A + B)C = AC + BC$
+- Élément neutre : $AI_n = I_n A = A$ (pour les tailles compatibles)
+- **Non-commutativité** : en général $AB \neq BA$
+:::
+
+:::property[Propriétés de la transposée]
+- $(A^T)^T = A$
+- $(A + B)^T = A^T + B^T$
+- $(\lambda A)^T = \lambda A^T$
+- $(AB)^T = B^T A^T$ (attention à l'ordre !)
+:::
+
+## Méthodes types
+
+:::method[Calculer un produit matriciel]
+Pour calculer le coefficient $(i, j)$ de $AB$ :
+1. Prends la ligne $i$ de $A$
+2. Prends la colonne $j$ de $B$
+3. Multiplie terme à terme et additionne
+
+Exemple : si ligne $i$ de $A$ = $(2, 3, -1)$ et colonne $j$ de $B$ = $\begin{pmatrix}4\\1\\5\end{pmatrix}$
+
+$(AB)_{i,j} = 2 \times 4 + 3 \times 1 + (-1) \times 5 = 8 + 3 - 5 = 6$
+:::
+
+:::method[Vérifier si un produit est défini]
+$A$ de taille $n \times \boxed{p}$ et $B$ de taille $\boxed{p} \times q$ → $AB$ défini, de taille $n \times q$
+
+Les "dimensions intérieures" doivent être égales.
+:::
+
+## Exemples résolus
+
+### Exemple 1 : Somme et produit par scalaire
+
+$A = \begin{pmatrix} 1 & 2 \\ 3 & -1 \end{pmatrix}$ et $B = \begin{pmatrix} 0 & -1 \\ 2 & 4 \end{pmatrix}$
+
+**Somme** : $A + B = \begin{pmatrix} 1 & 1 \\ 5 & 3 \end{pmatrix}$
+
+**Produit par scalaire** : $2A = \begin{pmatrix} 2 & 4 \\ 6 & -2 \end{pmatrix}$
+
+### Exemple 2 : Produit matriciel
+
+$A = \begin{pmatrix} 1 & 2 \\ 3 & 4 \end{pmatrix}$ et $B = \begin{pmatrix} 5 & 6 \\ 7 & 8 \end{pmatrix}$
+
+$$AB = \begin{pmatrix} 1 \times 5 + 2 \times 7 & 1 \times 6 + 2 \times 8 \\ 3 \times 5 + 4 \times 7 & 3 \times 6 + 4 \times 8 \end{pmatrix} = \begin{pmatrix} 19 & 22 \\ 43 & 50 \end{pmatrix}$$
+
+$$BA = \begin{pmatrix} 5 \times 1 + 6 \times 3 & 5 \times 2 + 6 \times 4 \\ 7 \times 1 + 8 \times 3 & 7 \times 2 + 8 \times 4 \end{pmatrix} = \begin{pmatrix} 23 & 34 \\ 31 & 46 \end{pmatrix}$$
+
+On vérifie que $AB \neq BA$.
+
+### Exemple 3 : Produit avec tailles différentes
+
+$A = \begin{pmatrix} 1 & 2 & 3 \\ 4 & 5 & 6 \end{pmatrix}$ ($2 \times 3$) et $B = \begin{pmatrix} 1 \\ 2 \\ 3 \end{pmatrix}$ ($3 \times 1$)
+
+$AB$ est défini car $3 = 3$. Taille de $AB$ : $2 \times 1$.
+
+$$AB = \begin{pmatrix} 1 \times 1 + 2 \times 2 + 3 \times 3 \\ 4 \times 1 + 5 \times 2 + 6 \times 3 \end{pmatrix} = \begin{pmatrix} 14 \\ 32 \end{pmatrix}$$
+
+### Exemple 4 : Transposée
+
+$A = \begin{pmatrix} 1 & 2 & 3 \\ 4 & 5 & 6 \end{pmatrix}$
+
+$A^T = \begin{pmatrix} 1 & 4 \\ 2 & 5 \\ 3 & 6 \end{pmatrix}$
+
+## Erreurs fréquentes
+
+:::warning
+**Erreur 1** : Croire que $AB = BA$
+
+Le produit matriciel n'est PAS commutatif. Toujours vérifier !
+
+**Erreur 2** : Multiplier des matrices de tailles incompatibles
+
+$A$ ($2 \times 3$) et $B$ ($2 \times 3$) : $AB$ n'est pas défini !
+
+**Erreur 3** : Se tromper dans le calcul du coefficient
+
+$(AB)_{i,j}$ = ligne $i$ de $A$ × colonne $j$ de $B$ (pas l'inverse).
+
+**Erreur 4** : Oublier que $(AB)^T = B^T A^T$
+
+L'ordre s'inverse pour la transposée d'un produit.
+:::
+
+## Mini-résumé à apprendre
+
+**Opérations** :
+- Addition : coefficient par coefficient (même taille)
+- Produit : $(AB)_{i,j} = \sum_k a_{i,k} b_{k,j}$ (colonnes de $A$ = lignes de $B$)
+
+**Propriétés** :
+- $AB \neq BA$ en général
+- $(AB)C = A(BC)$
+- $AI = IA = A$
+- $(AB)^T = B^T A^T$
+
+## Ponts vers autres chapitres
+
+- **Systèmes linéaires** : écriture matricielle $AX = B$
+- **Déterminant** : calcul et applications
+- **Inverse** : résolution de $AX = B$ par $X = A^{-1}B$
+- **Transformations** : matrices de rotation, symétrie

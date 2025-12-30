@@ -1,0 +1,218 @@
+---
+id: "trigonometrie-bases"
+title: "Trigonométrie : cercle et formules"
+track: "spe"
+level: 2
+prerequisites: []
+tags: ["trigonométrie", "cercle trigonométrique", "radians", "formules"]
+estimatedTime: 50
+chapter: "trigo"
+order: 1
+---
+
+# Trigonométrie : cercle et formules
+
+## Intuition et analogie
+
+Le cercle trigonométrique est comme une horloge mathématique. Au lieu de lire l'heure, on lit des angles et leurs cosinus/sinus. Chaque point du cercle correspond à un angle, et ses coordonnées donnent directement cos et sin.
+
+## Objectifs de cette leçon
+
+À la fin de cette leçon, tu sauras :
+- Utiliser le cercle trigonométrique
+- Convertir degrés et radians
+- Connaître les valeurs remarquables
+- Appliquer les formules de trigonométrie
+
+## Le cercle trigonométrique
+
+:::definition
+**Cercle trigonométrique**
+
+Le **cercle trigonométrique** est le cercle de centre O et de rayon 1 dans un repère orthonormé.
+
+Pour un angle $\theta$ (mesuré depuis l'axe des abscisses positives, dans le sens trigonométrique) :
+- Le point M du cercle a pour coordonnées $(\cos\theta, \sin\theta)$
+- $\cos\theta$ est l'abscisse de M
+- $\sin\theta$ est l'ordonnée de M
+:::
+
+:::definition
+**Radians et degrés**
+
+Un **radian** est l'angle qui intercepte un arc de longueur 1 sur le cercle de rayon 1.
+
+$$\pi \text{ rad} = 180°$$
+
+Conversion :
+$$\text{radians} = \frac{\pi}{180} \times \text{degrés}$$
+$$\text{degrés} = \frac{180}{\pi} \times \text{radians}$$
+:::
+
+## Valeurs remarquables
+
+:::property[Valeurs à connaître par cœur]
+| $\theta$ | $0$ | $\frac{\pi}{6}$ | $\frac{\pi}{4}$ | $\frac{\pi}{3}$ | $\frac{\pi}{2}$ |
+|----------|-----|-----------------|-----------------|-----------------|-----------------|
+| $\cos\theta$ | $1$ | $\frac{\sqrt{3}}{2}$ | $\frac{\sqrt{2}}{2}$ | $\frac{1}{2}$ | $0$ |
+| $\sin\theta$ | $0$ | $\frac{1}{2}$ | $\frac{\sqrt{2}}{2}$ | $\frac{\sqrt{3}}{2}$ | $1$ |
+
+Moyen mnémotechnique : $\frac{\sqrt{0}}{2}, \frac{\sqrt{1}}{2}, \frac{\sqrt{2}}{2}, \frac{\sqrt{3}}{2}, \frac{\sqrt{4}}{2}$
+:::
+
+## Formules fondamentales
+
+:::property[Relation fondamentale]
+Pour tout réel $\theta$ :
+$$\cos^2\theta + \sin^2\theta = 1$$
+:::
+
+:::property[Formules d'addition]
+$$\cos(a + b) = \cos a \cos b - \sin a \sin b$$
+$$\cos(a - b) = \cos a \cos b + \sin a \sin b$$
+$$\sin(a + b) = \sin a \cos b + \cos a \sin b$$
+$$\sin(a - b) = \sin a \cos b - \cos a \sin b$$
+:::
+
+:::property[Formules de duplication]
+$$\cos(2a) = \cos^2 a - \sin^2 a = 2\cos^2 a - 1 = 1 - 2\sin^2 a$$
+$$\sin(2a) = 2\sin a \cos a$$
+:::
+
+:::property[Formules de linéarisation]
+$$\cos^2 a = \frac{1 + \cos(2a)}{2}$$
+$$\sin^2 a = \frac{1 - \cos(2a)}{2}$$
+:::
+
+## Symétries et réductions
+
+:::property[Symétries sur le cercle]
+| Transformation | cos | sin |
+|---------------|-----|-----|
+| $-\theta$ | $\cos\theta$ | $-\sin\theta$ |
+| $\pi - \theta$ | $-\cos\theta$ | $\sin\theta$ |
+| $\pi + \theta$ | $-\cos\theta$ | $-\sin\theta$ |
+| $\frac{\pi}{2} - \theta$ | $\sin\theta$ | $\cos\theta$ |
+| $\frac{\pi}{2} + \theta$ | $-\sin\theta$ | $\cos\theta$ |
+:::
+
+:::property[Périodicité]
+$$\cos(\theta + 2\pi) = \cos\theta$$
+$$\sin(\theta + 2\pi) = \sin\theta$$
+
+Les fonctions cos et sin sont $2\pi$-périodiques.
+:::
+
+## Tangente
+
+:::definition
+**Tangente**
+
+$$\tan\theta = \frac{\sin\theta}{\cos\theta} \quad \text{(défini si } \cos\theta \neq 0\text{)}$$
+
+Domaine : $\mathbb{R} \setminus \left\{\frac{\pi}{2} + k\pi, k \in \mathbb{Z}\right\}$
+
+Période : $\pi$ (et non $2\pi$)
+:::
+
+:::property[Formules avec la tangente]
+$$1 + \tan^2\theta = \frac{1}{\cos^2\theta}$$
+$$\tan(a + b) = \frac{\tan a + \tan b}{1 - \tan a \tan b}$$
+$$\tan(2a) = \frac{2\tan a}{1 - \tan^2 a}$$
+:::
+
+## Méthodes types
+
+:::method[Simplifier une expression trigonométrique]
+1. Identifier les angles en jeu
+2. Utiliser les formules d'addition/duplication si nécessaire
+3. Ramener à un seul angle si possible
+4. Utiliser $\cos^2 + \sin^2 = 1$ pour simplifier
+:::
+
+:::method[Calculer cos et sin d'un angle]
+1. Exprimer l'angle comme somme/différence d'angles connus
+2. Appliquer les formules d'addition
+3. Utiliser les valeurs remarquables
+:::
+
+## Exemples résolus
+
+### Exemple 1 : Valeur exacte
+
+Calculer $\cos\left(\frac{5\pi}{12}\right)$.
+
+$\frac{5\pi}{12} = \frac{3\pi}{12} + \frac{2\pi}{12} = \frac{\pi}{4} + \frac{\pi}{6}$
+
+$$\cos\left(\frac{5\pi}{12}\right) = \cos\left(\frac{\pi}{4} + \frac{\pi}{6}\right)$$
+$$= \cos\frac{\pi}{4}\cos\frac{\pi}{6} - \sin\frac{\pi}{4}\sin\frac{\pi}{6}$$
+$$= \frac{\sqrt{2}}{2} \times \frac{\sqrt{3}}{2} - \frac{\sqrt{2}}{2} \times \frac{1}{2}$$
+$$= \frac{\sqrt{6} - \sqrt{2}}{4}$$
+
+### Exemple 2 : Simplification
+
+Simplifier $A = \cos^4 x - \sin^4 x$.
+
+$A = (\cos^2 x)^2 - (\sin^2 x)^2$
+$= (\cos^2 x - \sin^2 x)(\cos^2 x + \sin^2 x)$
+$= \cos(2x) \times 1$
+$= \cos(2x)$
+
+### Exemple 3 : Linéarisation
+
+Linéariser $\cos^2 x \sin^2 x$.
+
+$$\cos^2 x \sin^2 x = \frac{1}{4}(2\sin x \cos x)^2 = \frac{1}{4}\sin^2(2x)$$
+$$= \frac{1}{4} \times \frac{1 - \cos(4x)}{2} = \frac{1 - \cos(4x)}{8}$$
+
+### Exemple 4 : Équation trigonométrique simple
+
+Résoudre $\cos x = \frac{1}{2}$ sur $[0, 2\pi]$.
+
+Sur le cercle trigonométrique, $\cos x = \frac{1}{2}$ correspond aux points d'abscisse $\frac{1}{2}$.
+
+Ce sont les angles $\frac{\pi}{3}$ et $-\frac{\pi}{3}$ (soit $\frac{5\pi}{3}$ sur $[0, 2\pi]$).
+
+**Solutions** : $x = \frac{\pi}{3}$ ou $x = \frac{5\pi}{3}$
+
+**En général** : $x = \frac{\pi}{3} + 2k\pi$ ou $x = -\frac{\pi}{3} + 2k\pi$, $k \in \mathbb{Z}$
+
+## Erreurs fréquentes
+
+:::warning
+**Erreur 1** : Confondre les formules d'addition
+
+$\cos(a+b) \neq \cos a + \cos b$ !
+
+Il y a des produits : $\cos(a+b) = \cos a \cos b - \sin a \sin b$
+
+**Erreur 2** : Oublier le signe dans les symétries
+
+$\cos(-\theta) = \cos\theta$ mais $\sin(-\theta) = -\sin\theta$
+
+**Erreur 3** : Se tromper dans les valeurs remarquables
+
+Retenir : $\sin$ croît de 0 à $\frac{\pi}{2}$, donc $\sin\frac{\pi}{6} < \sin\frac{\pi}{4} < \sin\frac{\pi}{3}$
+
+**Erreur 4** : Oublier la périodicité dans les équations
+
+$\cos x = a$ donne deux familles de solutions (sauf cas particuliers).
+:::
+
+## Mini-résumé à apprendre
+
+**Valeurs clés** :
+- $\cos\frac{\pi}{3} = \frac{1}{2}$, $\sin\frac{\pi}{3} = \frac{\sqrt{3}}{2}$
+- $\cos\frac{\pi}{4} = \sin\frac{\pi}{4} = \frac{\sqrt{2}}{2}$
+- $\cos\frac{\pi}{6} = \frac{\sqrt{3}}{2}$, $\sin\frac{\pi}{6} = \frac{1}{2}$
+
+**Formules essentielles** :
+- $\cos^2 + \sin^2 = 1$
+- $\cos(2a) = \cos^2 a - \sin^2 a$
+- $\sin(2a) = 2\sin a \cos a$
+
+## Ponts vers autres chapitres
+
+- **Fonctions trigonométriques** : étude des fonctions $x \mapsto \sin x$ et $x \mapsto \cos x$
+- **Nombres complexes** : forme trigonométrique et formule de Moivre
+- **Intégrales** : primitives des fonctions trigonométriques

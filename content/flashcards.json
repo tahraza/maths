@@ -1,0 +1,830 @@
+[
+  {
+    "id": "fc-suites-001",
+    "lessonId": "suites-definition",
+    "front": "Comment reconnaître une suite arithmétique ?",
+    "back": "Une suite (uₙ) est arithmétique si la différence entre deux termes consécutifs est constante : uₙ₊₁ - uₙ = r (raison)",
+    "tags": ["suites", "arithmétique"],
+    "level": 1,
+    "category": "definition"
+  },
+  {
+    "id": "fc-suites-002",
+    "lessonId": "suites-definition",
+    "front": "Formule du terme général d'une suite arithmétique",
+    "back": "uₙ = u₀ + n·r où u₀ est le premier terme et r la raison",
+    "tags": ["suites", "arithmétique", "formule"],
+    "level": 1,
+    "category": "formula"
+  },
+  {
+    "id": "fc-suites-003",
+    "lessonId": "suites-definition",
+    "front": "Formule du terme général d'une suite géométrique",
+    "back": "uₙ = u₀ × qⁿ où u₀ est le premier terme et q la raison",
+    "tags": ["suites", "géométrique", "formule"],
+    "level": 1,
+    "category": "formula"
+  },
+  {
+    "id": "fc-suites-004",
+    "lessonId": "suites-definition",
+    "front": "Piège : confondre uₙ et n",
+    "back": "uₙ est la VALEUR du terme de rang n, n est juste l'INDICE. Si uₙ = 2n+1, alors u₅ = 11 (pas 5 !)",
+    "tags": ["suites", "erreur"],
+    "level": 2,
+    "category": "trap"
+  },
+  {
+    "id": "fc-derivation-001",
+    "lessonId": "derivation",
+    "front": "Dérivée de xⁿ",
+    "back": "(xⁿ)' = n·xⁿ⁻¹",
+    "tags": ["dérivation", "formule"],
+    "level": 1,
+    "category": "formula"
+  },
+  {
+    "id": "fc-derivation-002",
+    "lessonId": "derivation",
+    "front": "Dérivée d'un produit (uv)'",
+    "back": "(uv)' = u'v + uv'",
+    "tags": ["dérivation", "formule"],
+    "level": 1,
+    "category": "formula"
+  },
+  {
+    "id": "fc-derivation-003",
+    "lessonId": "derivation",
+    "front": "Dérivée d'un quotient (u/v)'",
+    "back": "(u/v)' = (u'v - uv') / v²",
+    "tags": ["dérivation", "formule"],
+    "level": 2,
+    "category": "formula"
+  },
+  {
+    "id": "fc-derivation-004",
+    "lessonId": "derivation",
+    "front": "Équation de la tangente en x = a",
+    "back": "y = f'(a)(x - a) + f(a)",
+    "tags": ["dérivation", "tangente", "formule"],
+    "level": 2,
+    "category": "formula"
+  },
+  {
+    "id": "fc-derivation-005",
+    "lessonId": "derivation",
+    "front": "Que signifie f'(x) > 0 sur un intervalle ?",
+    "back": "f est strictement croissante sur cet intervalle",
+    "tags": ["dérivation", "variations"],
+    "level": 1,
+    "category": "interpretation"
+  },
+  {
+    "id": "fc-derivation-006",
+    "lessonId": "derivation",
+    "front": "Dérivée de eᵘ",
+    "back": "(eᵘ)' = u' × eᵘ (ne pas oublier u' !)",
+    "tags": ["dérivation", "exponentielle", "formule"],
+    "level": 2,
+    "category": "formula"
+  },
+  {
+    "id": "fc-exp-001",
+    "lessonId": "exponentielle",
+    "front": "Propriété fondamentale de eˣ",
+    "back": "La fonction exponentielle est sa propre dérivée : (eˣ)' = eˣ",
+    "tags": ["exponentielle", "dérivation"],
+    "level": 1,
+    "category": "definition"
+  },
+  {
+    "id": "fc-exp-002",
+    "lessonId": "exponentielle",
+    "front": "eᵃ⁺ᵇ = ?",
+    "back": "eᵃ⁺ᵇ = eᵃ × eᵇ (ATTENTION : c'est un PRODUIT, pas une somme !)",
+    "tags": ["exponentielle", "formule"],
+    "level": 1,
+    "category": "formula"
+  },
+  {
+    "id": "fc-exp-003",
+    "lessonId": "exponentielle",
+    "front": "lim(x→+∞) eˣ/xⁿ = ?",
+    "back": "lim(x→+∞) eˣ/xⁿ = +∞ (l'exponentielle domine toute puissance)",
+    "tags": ["exponentielle", "limite"],
+    "level": 2,
+    "category": "formula"
+  },
+  {
+    "id": "fc-exp-004",
+    "lessonId": "exponentielle",
+    "front": "Signe de eˣ",
+    "back": "eˣ > 0 pour TOUT x réel (jamais nul, jamais négatif)",
+    "tags": ["exponentielle"],
+    "level": 1,
+    "category": "interpretation"
+  },
+  {
+    "id": "fc-ln-001",
+    "lessonId": "logarithme",
+    "front": "Définition du logarithme népérien",
+    "back": "y = ln(x) ⟺ eʸ = x. Le ln est la fonction réciproque de l'exponentielle.",
+    "tags": ["logarithme", "définition"],
+    "level": 1,
+    "category": "definition"
+  },
+  {
+    "id": "fc-ln-002",
+    "lessonId": "logarithme",
+    "front": "ln(ab) = ?",
+    "back": "ln(ab) = ln(a) + ln(b) (ATTENTION : ln(a+b) ≠ ln(a) + ln(b) !)",
+    "tags": ["logarithme", "formule"],
+    "level": 1,
+    "category": "formula"
+  },
+  {
+    "id": "fc-ln-003",
+    "lessonId": "logarithme",
+    "front": "Dérivée de ln(x)",
+    "back": "(ln(x))' = 1/x pour x > 0",
+    "tags": ["logarithme", "dérivation", "formule"],
+    "level": 1,
+    "category": "formula"
+  },
+  {
+    "id": "fc-ln-004",
+    "lessonId": "logarithme",
+    "front": "Dérivée de ln(u)",
+    "back": "(ln(u))' = u'/u",
+    "tags": ["logarithme", "dérivation", "formule"],
+    "level": 2,
+    "category": "formula"
+  },
+  {
+    "id": "fc-ln-005",
+    "lessonId": "logarithme",
+    "front": "Domaine de définition de ln(x)",
+    "back": "ln(x) n'existe que pour x > 0 (strictement positif)",
+    "tags": ["logarithme"],
+    "level": 1,
+    "category": "trap"
+  },
+  {
+    "id": "fc-proba-001",
+    "lessonId": "probabilites-va",
+    "front": "Formule de l'espérance E(X)",
+    "back": "E(X) = Σ xᵢ × P(X = xᵢ) (moyenne pondérée des valeurs)",
+    "tags": ["probabilités", "espérance", "formule"],
+    "level": 2,
+    "category": "formula"
+  },
+  {
+    "id": "fc-proba-002",
+    "lessonId": "probabilites-va",
+    "front": "Conditions pour une loi binomiale",
+    "back": "n répétitions INDÉPENDANTES de même probabilité p de succès. X compte le nombre de succès.",
+    "tags": ["probabilités", "binomiale"],
+    "level": 2,
+    "category": "definition"
+  },
+  {
+    "id": "fc-proba-003",
+    "lessonId": "probabilites-va",
+    "front": "P(X = k) pour X ~ B(n, p)",
+    "back": "P(X = k) = C(n,k) × pᵏ × (1-p)ⁿ⁻ᵏ",
+    "tags": ["probabilités", "binomiale", "formule"],
+    "level": 2,
+    "category": "formula"
+  },
+  {
+    "id": "fc-proba-004",
+    "lessonId": "probabilites-va",
+    "front": "E(X) et V(X) pour X ~ B(n, p)",
+    "back": "E(X) = np et V(X) = np(1-p)",
+    "tags": ["probabilités", "binomiale", "formule"],
+    "level": 2,
+    "category": "formula"
+  },
+  {
+    "id": "fc-primitives-001",
+    "lessonId": "primitives",
+    "front": "Primitive de xⁿ (n ≠ -1)",
+    "back": "∫xⁿ dx = xⁿ⁺¹/(n+1) + C",
+    "tags": ["primitives", "formule"],
+    "level": 1,
+    "category": "formula"
+  },
+  {
+    "id": "fc-primitives-002",
+    "lessonId": "primitives",
+    "front": "Primitive de 1/x",
+    "back": "∫(1/x) dx = ln|x| + C (avec valeur absolue !)",
+    "tags": ["primitives", "formule"],
+    "level": 1,
+    "category": "formula"
+  },
+  {
+    "id": "fc-primitives-003",
+    "lessonId": "primitives",
+    "front": "Formule de l'intégrale définie",
+    "back": "∫ₐᵇ f(x)dx = F(b) - F(a) où F est une primitive de f",
+    "tags": ["intégrales", "formule"],
+    "level": 1,
+    "category": "formula"
+  },
+  {
+    "id": "fc-recurrence-001",
+    "lessonId": "recurrence",
+    "front": "Les 3 étapes d'une récurrence",
+    "back": "1. Initialisation (vérifier P(n₀)) 2. Hérédité (P(n) ⟹ P(n+1)) 3. Conclusion",
+    "tags": ["récurrence", "méthode"],
+    "level": 1,
+    "category": "method"
+  },
+  {
+    "id": "fc-recurrence-002",
+    "lessonId": "recurrence",
+    "front": "Formule de la somme des n premiers entiers",
+    "back": "1 + 2 + ... + n = n(n+1)/2",
+    "tags": ["récurrence", "formule"],
+    "level": 1,
+    "category": "formula"
+  },
+  {
+    "id": "fc-complexes-001",
+    "lessonId": "complexes-introduction",
+    "front": "Définition de i",
+    "back": "i est le nombre tel que i² = -1 (unité imaginaire)",
+    "tags": ["complexes", "définition"],
+    "level": 1,
+    "category": "definition"
+  },
+  {
+    "id": "fc-complexes-002",
+    "lessonId": "complexes-introduction",
+    "front": "Module d'un complexe z = a + bi",
+    "back": "|z| = √(a² + b²) (distance à l'origine)",
+    "tags": ["complexes", "module", "formule"],
+    "level": 1,
+    "category": "formula"
+  },
+  {
+    "id": "fc-complexes-003",
+    "lessonId": "complexes-introduction",
+    "front": "Conjugué de z = a + bi",
+    "back": "z̄ = a - bi (on change le signe de la partie imaginaire)",
+    "tags": ["complexes", "conjugué"],
+    "level": 1,
+    "category": "definition"
+  },
+  {
+    "id": "fc-complexes-004",
+    "lessonId": "complexes-introduction",
+    "front": "Produit z × z̄",
+    "back": "z × z̄ = |z|² = a² + b² (toujours réel positif)",
+    "tags": ["complexes", "formule"],
+    "level": 1,
+    "category": "formula"
+  },
+  {
+    "id": "fc-complexes-005",
+    "lessonId": "complexes-introduction",
+    "front": "Comment diviser par un complexe z ?",
+    "back": "Multiplier numérateur et dénominateur par le conjugué z̄",
+    "tags": ["complexes", "méthode"],
+    "level": 2,
+    "category": "method"
+  },
+  {
+    "id": "fc-complexes-geo-001",
+    "lessonId": "complexes-geometrie",
+    "front": "Distance AB en complexes",
+    "back": "AB = |zB - zA|",
+    "tags": ["complexes", "géométrie", "formule"],
+    "level": 2,
+    "category": "formula"
+  },
+  {
+    "id": "fc-complexes-geo-002",
+    "lessonId": "complexes-geometrie",
+    "front": "Milieu I de [AB] en complexes",
+    "back": "zI = (zA + zB)/2",
+    "tags": ["complexes", "géométrie", "formule"],
+    "level": 2,
+    "category": "formula"
+  },
+  {
+    "id": "fc-complexes-geo-003",
+    "lessonId": "complexes-geometrie",
+    "front": "Rotation de centre Ω et d'angle θ",
+    "back": "z' - ω = eⁱᶿ(z - ω)",
+    "tags": ["complexes", "géométrie", "rotation", "formule"],
+    "level": 3,
+    "category": "formula"
+  },
+  {
+    "id": "fc-matrices-001",
+    "lessonId": "matrices-operations",
+    "front": "Le produit matriciel est-il commutatif ?",
+    "back": "NON ! En général AB ≠ BA",
+    "tags": ["matrices"],
+    "level": 1,
+    "category": "trap"
+  },
+  {
+    "id": "fc-matrices-002",
+    "lessonId": "matrices-operations",
+    "front": "Condition pour que AB soit défini",
+    "back": "Le nombre de COLONNES de A doit égaler le nombre de LIGNES de B",
+    "tags": ["matrices", "produit"],
+    "level": 1,
+    "category": "definition"
+  },
+  {
+    "id": "fc-matrices-003",
+    "lessonId": "matrices-operations",
+    "front": "(AB)ᵀ = ?",
+    "back": "(AB)ᵀ = BᵀAᵀ (l'ordre s'inverse !)",
+    "tags": ["matrices", "transposée", "formule"],
+    "level": 2,
+    "category": "formula"
+  },
+  {
+    "id": "fc-divisibilite-001",
+    "lessonId": "divisibilite",
+    "front": "Définition : b | a",
+    "back": "b divise a signifie qu'il existe k ∈ ℤ tel que a = kb",
+    "tags": ["arithmétique", "divisibilité"],
+    "level": 1,
+    "category": "definition"
+  },
+  {
+    "id": "fc-divisibilite-002",
+    "lessonId": "divisibilite",
+    "front": "Division euclidienne a = bq + r",
+    "back": "q est le quotient, r est le reste avec 0 ≤ r < b",
+    "tags": ["arithmétique", "division euclidienne"],
+    "level": 1,
+    "category": "definition"
+  },
+  {
+    "id": "fc-divisibilite-003",
+    "lessonId": "divisibilite",
+    "front": "Relation PGCD × PPCM",
+    "back": "pgcd(a,b) × ppcm(a,b) = a × b",
+    "tags": ["arithmétique", "pgcd", "ppcm", "formule"],
+    "level": 2,
+    "category": "formula"
+  },
+  {
+    "id": "fc-congruences-001",
+    "lessonId": "congruences",
+    "front": "a ≡ b (mod n) signifie...",
+    "back": "n divise (a - b), ou a et b ont le même reste mod n",
+    "tags": ["congruences", "définition"],
+    "level": 1,
+    "category": "definition"
+  },
+  {
+    "id": "fc-congruences-002",
+    "lessonId": "congruences",
+    "front": "Petit théorème de Fermat",
+    "back": "Si p premier et p ∤ a, alors aᵖ⁻¹ ≡ 1 (mod p)",
+    "tags": ["congruences", "Fermat", "formule"],
+    "level": 3,
+    "category": "formula"
+  },
+  {
+    "id": "fc-bezout-001",
+    "lessonId": "bezout",
+    "front": "Théorème de Bézout",
+    "back": "∃ u,v ∈ ℤ tels que au + bv = pgcd(a,b)",
+    "tags": ["arithmétique", "Bézout", "formule"],
+    "level": 2,
+    "category": "formula"
+  },
+  {
+    "id": "fc-bezout-002",
+    "lessonId": "bezout",
+    "front": "Condition d'existence de solutions pour ax + by = c",
+    "back": "Il existe des solutions entières ssi pgcd(a,b) | c",
+    "tags": ["arithmétique", "diophantienne"],
+    "level": 2,
+    "category": "definition"
+  },
+  {
+    "id": "fc-bezout-003",
+    "lessonId": "bezout",
+    "front": "Lemme de Gauss",
+    "back": "Si a | bc et pgcd(a,b) = 1, alors a | c",
+    "tags": ["arithmétique", "Gauss"],
+    "level": 3,
+    "category": "formula"
+  },
+  {
+    "id": "fc-exp-005",
+    "lessonId": "exponentielle",
+    "front": "Valeur de e⁰",
+    "back": "e⁰ = 1",
+    "tags": ["exponentielle"],
+    "level": 1,
+    "category": "formula"
+  },
+  {
+    "id": "fc-ln-006",
+    "lessonId": "logarithme",
+    "front": "ln(1) = ?",
+    "back": "ln(1) = 0",
+    "tags": ["logarithme"],
+    "level": 1,
+    "category": "formula"
+  },
+  {
+    "id": "fc-ln-007",
+    "lessonId": "logarithme",
+    "front": "ln(e) = ?",
+    "back": "ln(e) = 1",
+    "tags": ["logarithme"],
+    "level": 1,
+    "category": "formula"
+  },
+  {
+    "id": "fc-ln-008",
+    "lessonId": "logarithme",
+    "front": "ln(aⁿ) = ?",
+    "back": "ln(aⁿ) = n × ln(a)",
+    "tags": ["logarithme", "formule"],
+    "level": 1,
+    "category": "formula"
+  },
+  {
+    "id": "fc-derivation-007",
+    "lessonId": "derivation",
+    "front": "Dérivée de sin(x)",
+    "back": "(sin(x))' = cos(x)",
+    "tags": ["dérivation", "trigonométrie", "formule"],
+    "level": 1,
+    "category": "formula"
+  },
+  {
+    "id": "fc-derivation-008",
+    "lessonId": "derivation",
+    "front": "Dérivée de cos(x)",
+    "back": "(cos(x))' = -sin(x) (ATTENTION au signe !)",
+    "tags": ["dérivation", "trigonométrie", "formule"],
+    "level": 1,
+    "category": "formula"
+  },
+  {
+    "id": "fc-primitives-004",
+    "lessonId": "primitives",
+    "front": "Primitive de eˣ",
+    "back": "∫eˣ dx = eˣ + C",
+    "tags": ["primitives", "formule"],
+    "level": 1,
+    "category": "formula"
+  },
+  {
+    "id": "fc-primitives-005",
+    "lessonId": "primitives",
+    "front": "Primitive de cos(x)",
+    "back": "∫cos(x) dx = sin(x) + C",
+    "tags": ["primitives", "trigonométrie", "formule"],
+    "level": 1,
+    "category": "formula"
+  },
+  {
+    "id": "fc-primitives-006",
+    "lessonId": "primitives",
+    "front": "Primitive de sin(x)",
+    "back": "∫sin(x) dx = -cos(x) + C",
+    "tags": ["primitives", "trigonométrie", "formule"],
+    "level": 1,
+    "category": "formula"
+  },
+  {
+    "id": "fc-suites-005",
+    "lessonId": "suites-definition",
+    "front": "Somme des n premiers termes d'une suite arithmétique",
+    "back": "Sₙ = n × (premier + dernier) / 2 = n × (u₁ + uₙ) / 2",
+    "tags": ["suites", "arithmétique", "formule"],
+    "level": 2,
+    "category": "formula"
+  },
+  {
+    "id": "fc-suites-006",
+    "lessonId": "suites-definition",
+    "front": "Somme des n premiers termes d'une suite géométrique",
+    "back": "Sₙ = u₁ × (1 - qⁿ) / (1 - q) si q ≠ 1",
+    "tags": ["suites", "géométrique", "formule"],
+    "level": 2,
+    "category": "formula"
+  },
+  {
+    "id": "fc-suites-007",
+    "lessonId": "suites-definition",
+    "front": "Limite de qⁿ quand n → +∞",
+    "back": "Si |q| < 1 : qⁿ → 0\nSi q > 1 : qⁿ → +∞\nSi q ≤ -1 : pas de limite",
+    "tags": ["suites", "limite", "géométrique"],
+    "level": 2,
+    "category": "formula"
+  },
+  {
+    "id": "fc-derivation-009",
+    "lessonId": "derivation",
+    "front": "Dérivée de √x",
+    "back": "(√x)' = 1/(2√x) = (1/2)x^(-1/2)",
+    "tags": ["dérivation", "formule"],
+    "level": 1,
+    "category": "formula"
+  },
+  {
+    "id": "fc-derivation-010",
+    "lessonId": "derivation",
+    "front": "Piège : dérivée de (f+g) vs (fg)",
+    "back": "(f+g)' = f' + g' MAIS (fg)' ≠ f'g' ! Il faut : (fg)' = f'g + fg'",
+    "tags": ["dérivation", "erreur"],
+    "level": 2,
+    "category": "trap"
+  },
+  {
+    "id": "fc-derivation-011",
+    "lessonId": "derivation",
+    "front": "Dérivée de f(ax+b)",
+    "back": "[f(ax+b)]' = a × f'(ax+b) (ne pas oublier le coefficient a)",
+    "tags": ["dérivation", "composée", "formule"],
+    "level": 2,
+    "category": "formula"
+  },
+  {
+    "id": "fc-exp-006",
+    "lessonId": "exponentielle",
+    "front": "e^(a-b) = ?",
+    "back": "e^(a-b) = eᵃ / eᵇ",
+    "tags": ["exponentielle", "formule"],
+    "level": 1,
+    "category": "formula"
+  },
+  {
+    "id": "fc-exp-007",
+    "lessonId": "exponentielle",
+    "front": "(eᵃ)ⁿ = ?",
+    "back": "(eᵃ)ⁿ = e^(na)",
+    "tags": ["exponentielle", "formule"],
+    "level": 1,
+    "category": "formula"
+  },
+  {
+    "id": "fc-exp-008",
+    "lessonId": "exponentielle",
+    "front": "Limite xⁿe⁻ˣ quand x → +∞",
+    "back": "lim(x→+∞) xⁿe⁻ˣ = 0 (l'exponentielle l'emporte)",
+    "tags": ["exponentielle", "limite"],
+    "level": 2,
+    "category": "formula"
+  },
+  {
+    "id": "fc-ln-009",
+    "lessonId": "logarithme",
+    "front": "ln(a/b) = ?",
+    "back": "ln(a/b) = ln(a) - ln(b)",
+    "tags": ["logarithme", "formule"],
+    "level": 1,
+    "category": "formula"
+  },
+  {
+    "id": "fc-ln-010",
+    "lessonId": "logarithme",
+    "front": "Piège courant avec le logarithme",
+    "back": "ln(a+b) ≠ ln(a) + ln(b) ! C'est ln(ab) = ln(a) + ln(b)",
+    "tags": ["logarithme", "erreur"],
+    "level": 1,
+    "category": "trap"
+  },
+  {
+    "id": "fc-ln-011",
+    "lessonId": "logarithme",
+    "front": "Limite ln(x)/x quand x → +∞",
+    "back": "lim(x→+∞) ln(x)/x = 0 (croissance comparée)",
+    "tags": ["logarithme", "limite"],
+    "level": 2,
+    "category": "formula"
+  },
+  {
+    "id": "fc-proba-005",
+    "lessonId": "probabilites-va",
+    "front": "Écart-type d'une loi binomiale",
+    "back": "σ(X) = √(np(1-p)) pour X ~ B(n,p)",
+    "tags": ["probabilités", "binomiale", "formule"],
+    "level": 2,
+    "category": "formula"
+  },
+  {
+    "id": "fc-proba-006",
+    "lessonId": "probabilites-va",
+    "front": "Formule des probabilités totales",
+    "back": "P(B) = Σᵢ P(B|Aᵢ)×P(Aᵢ) où les Aᵢ forment une partition",
+    "tags": ["probabilités", "conditionnelle", "formule"],
+    "level": 2,
+    "category": "formula"
+  },
+  {
+    "id": "fc-proba-007",
+    "lessonId": "probabilites-va",
+    "front": "Formule de Bayes simplifiée",
+    "back": "P(A|B) = P(B|A)×P(A) / P(B)",
+    "tags": ["probabilités", "conditionnelle", "formule"],
+    "level": 3,
+    "category": "formula"
+  },
+  {
+    "id": "fc-primitives-007",
+    "lessonId": "primitives",
+    "front": "Primitive de u'/u",
+    "back": "∫(u'/u)dx = ln|u| + C",
+    "tags": ["primitives", "formule"],
+    "level": 2,
+    "category": "formula"
+  },
+  {
+    "id": "fc-primitives-008",
+    "lessonId": "primitives",
+    "front": "Primitive de u'eᵘ",
+    "back": "∫u'eᵘdx = eᵘ + C",
+    "tags": ["primitives", "formule"],
+    "level": 2,
+    "category": "formula"
+  },
+  {
+    "id": "fc-primitives-009",
+    "lessonId": "primitives",
+    "front": "Intégration par parties (IPP)",
+    "back": "∫uv'dx = [uv] - ∫u'vdx",
+    "tags": ["primitives", "IPP", "formule"],
+    "level": 3,
+    "category": "formula"
+  },
+  {
+    "id": "fc-primitives-010",
+    "lessonId": "primitives",
+    "front": "Valeur moyenne d'une fonction",
+    "back": "μ = (1/(b-a)) × ∫ₐᵇ f(x)dx",
+    "tags": ["primitives", "intégrale", "formule"],
+    "level": 2,
+    "category": "formula"
+  },
+  {
+    "id": "fc-recurrence-003",
+    "lessonId": "recurrence",
+    "front": "Piège : erreur classique en récurrence",
+    "back": "Ne PAS oublier d'UTILISER l'hypothèse P(n) pour montrer P(n+1). Si tu ne l'utilises pas, c'est probablement faux !",
+    "tags": ["récurrence", "erreur"],
+    "level": 2,
+    "category": "trap"
+  },
+  {
+    "id": "fc-recurrence-004",
+    "lessonId": "recurrence",
+    "front": "Somme des carrés : 1² + 2² + ... + n²",
+    "back": "1² + 2² + ... + n² = n(n+1)(2n+1)/6",
+    "tags": ["récurrence", "formule", "somme"],
+    "level": 2,
+    "category": "formula"
+  },
+  {
+    "id": "fc-complexes-006",
+    "lessonId": "complexes-introduction",
+    "front": "Puissances de i : i¹, i², i³, i⁴",
+    "back": "i¹ = i, i² = -1, i³ = -i, i⁴ = 1 (puis ça recommence)",
+    "tags": ["complexes", "formule"],
+    "level": 1,
+    "category": "formula"
+  },
+  {
+    "id": "fc-complexes-007",
+    "lessonId": "complexes-introduction",
+    "front": "Partie réelle et imaginaire de z = a+bi",
+    "back": "Re(z) = a et Im(z) = b (ATTENTION : Im(z) = b, pas bi)",
+    "tags": ["complexes", "définition"],
+    "level": 1,
+    "category": "definition"
+  },
+  {
+    "id": "fc-complexes-008",
+    "lessonId": "complexes-introduction",
+    "front": "Somme z + z̄",
+    "back": "z + z̄ = 2×Re(z) (le double de la partie réelle)",
+    "tags": ["complexes", "formule"],
+    "level": 2,
+    "category": "formula"
+  },
+  {
+    "id": "fc-complexes-geo-004",
+    "lessonId": "complexes-geometrie",
+    "front": "Forme trigonométrique d'un complexe",
+    "back": "z = r(cosθ + i sinθ) = r·e^(iθ) avec r = |z| et θ = arg(z)",
+    "tags": ["complexes", "géométrie", "formule"],
+    "level": 2,
+    "category": "formula"
+  },
+  {
+    "id": "fc-complexes-geo-005",
+    "lessonId": "complexes-geometrie",
+    "front": "Formule d'Euler",
+    "back": "e^(iθ) = cosθ + i sinθ",
+    "tags": ["complexes", "géométrie", "formule"],
+    "level": 2,
+    "category": "formula"
+  },
+  {
+    "id": "fc-complexes-geo-006",
+    "lessonId": "complexes-geometrie",
+    "front": "|z₁ × z₂| = ?",
+    "back": "|z₁ × z₂| = |z₁| × |z₂| (les modules se multiplient)",
+    "tags": ["complexes", "module", "formule"],
+    "level": 2,
+    "category": "formula"
+  },
+  {
+    "id": "fc-matrices-004",
+    "lessonId": "matrices-operations",
+    "front": "Inverse d'une matrice 2×2",
+    "back": "Pour A = [[a,b],[c,d]] : A⁻¹ = (1/det)×[[d,-b],[-c,a]] avec det = ad-bc",
+    "tags": ["matrices", "inverse", "formule"],
+    "level": 2,
+    "category": "formula"
+  },
+  {
+    "id": "fc-matrices-005",
+    "lessonId": "matrices-operations",
+    "front": "Condition pour que A soit inversible",
+    "back": "A est inversible ssi det(A) ≠ 0",
+    "tags": ["matrices", "inverse"],
+    "level": 2,
+    "category": "definition"
+  },
+  {
+    "id": "fc-matrices-006",
+    "lessonId": "matrices-operations",
+    "front": "Piège : (AB)⁻¹ = ?",
+    "back": "(AB)⁻¹ = B⁻¹A⁻¹ (l'ordre s'inverse !)",
+    "tags": ["matrices", "inverse", "erreur"],
+    "level": 2,
+    "category": "trap"
+  },
+  {
+    "id": "fc-divisibilite-004",
+    "lessonId": "divisibilite",
+    "front": "Algorithme d'Euclide",
+    "back": "pgcd(a,b) = pgcd(b, a mod b). Répéter jusqu'au reste 0. Le PGCD est le dernier reste non nul.",
+    "tags": ["arithmétique", "pgcd", "méthode"],
+    "level": 2,
+    "category": "method"
+  },
+  {
+    "id": "fc-divisibilite-005",
+    "lessonId": "divisibilite",
+    "front": "Nombres premiers entre eux",
+    "back": "a et b sont premiers entre eux ssi pgcd(a,b) = 1",
+    "tags": ["arithmétique", "définition"],
+    "level": 1,
+    "category": "definition"
+  },
+  {
+    "id": "fc-congruences-003",
+    "lessonId": "congruences",
+    "front": "Propriété de compatibilité avec × des congruences",
+    "back": "Si a ≡ b (mod n) et c ≡ d (mod n), alors ac ≡ bd (mod n)",
+    "tags": ["congruences", "formule"],
+    "level": 2,
+    "category": "formula"
+  },
+  {
+    "id": "fc-congruences-004",
+    "lessonId": "congruences",
+    "front": "Trouver le dernier chiffre",
+    "back": "Le dernier chiffre de n est le reste de n mod 10",
+    "tags": ["congruences", "méthode"],
+    "level": 1,
+    "category": "method"
+  },
+  {
+    "id": "fc-bezout-004",
+    "lessonId": "bezout",
+    "front": "Solution générale d'une équation diophantienne",
+    "back": "Si ax + by = c admet (x₀,y₀), alors toutes les solutions sont x = x₀ + (b/d)k, y = y₀ - (a/d)k avec d = pgcd(a,b)",
+    "tags": ["arithmétique", "diophantienne", "formule"],
+    "level": 3,
+    "category": "formula"
+  },
+  {
+    "id": "fc-bezout-005",
+    "lessonId": "bezout",
+    "front": "Trouver l'inverse de a modulo n",
+    "back": "Utiliser Bézout : si pgcd(a,n) = 1, alors au + nv = 1, donc a⁻¹ ≡ u (mod n)",
+    "tags": ["arithmétique", "Bézout", "méthode"],
+    "level": 3,
+    "category": "method"
+  }
+]
