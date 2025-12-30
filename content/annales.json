@@ -1,0 +1,485 @@
+{
+  "annales": [
+    {
+      "id": "2024-metropole-ex1",
+      "year": 2024,
+      "session": "Métropole",
+      "exerciseNumber": 1,
+      "title": "Suites et récurrence",
+      "subject": "analyse",
+      "themes": ["Suites", "Récurrence", "Limites"],
+      "points": 5,
+      "duration": 45,
+      "difficulty": "moyen",
+      "description": "Étude d'une suite définie par récurrence et calcul de sa limite.",
+      "parts": [
+        {
+          "id": "A",
+          "title": "Étude de la suite",
+          "questions": [
+            { "number": "1", "text": "Soit $(u_n)$ la suite définie par $u_0 = 2$ et pour tout $n \\in \\mathbb{N}$, $u_{n+1} = \\frac{1}{2}u_n + 1$. Calculer $u_1$, $u_2$ et $u_3$.", "points": 1, "answer": "$u_1 = \\frac{1}{2} \\times 2 + 1 = 2$, $u_2 = 2$, $u_3 = 2$. La suite semble constante égale à 2." },
+            { "number": "2", "text": "Démontrer par récurrence que pour tout $n \\in \\mathbb{N}$, $u_n = 2$.", "points": 2, "answer": "**Initialisation** : $u_0 = 2$ ✓\n**Hérédité** : Si $u_n = 2$, alors $u_{n+1} = \\frac{1}{2} \\times 2 + 1 = 2$ ✓\n**Conclusion** : Par récurrence, $u_n = 2$ pour tout $n$." },
+            { "number": "3", "text": "En déduire la limite de la suite $(u_n)$.", "points": 2, "answer": "La suite étant constante égale à 2, $\\lim_{n \\to +\\infty} u_n = 2$." }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "2024-metropole-ex2",
+      "year": 2024,
+      "session": "Métropole",
+      "exerciseNumber": 2,
+      "title": "Probabilités et loi binomiale",
+      "subject": "probabilites",
+      "themes": ["Loi binomiale", "Espérance", "Probabilités"],
+      "points": 5,
+      "duration": 40,
+      "difficulty": "moyen",
+      "description": "Étude d'une expérience aléatoire avec loi binomiale.",
+      "parts": [
+        {
+          "id": "A",
+          "title": "Loi binomiale",
+          "questions": [
+            { "number": "1", "text": "On lance 5 fois une pièce équilibrée. Soit $X$ le nombre de piles. Quelle est la loi de $X$ ?", "points": 1, "answer": "$X \\sim \\mathcal{B}(5, 0.5)$" },
+            { "number": "2", "text": "Calculer $P(X = 3)$.", "points": 2, "answer": "$P(X=3) = \\binom{5}{3} \\times 0.5^5 = 10 \\times 0.03125 = 0.3125$" },
+            { "number": "3", "text": "Calculer l'espérance et la variance de $X$.", "points": 2, "answer": "$E(X) = np = 2.5$ et $V(X) = np(1-p) = 1.25$" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "2024-metropole-ex3",
+      "year": 2024,
+      "session": "Métropole",
+      "exerciseNumber": 3,
+      "title": "Fonction exponentielle",
+      "subject": "analyse",
+      "themes": ["Exponentielle", "Dérivation", "Limites"],
+      "points": 5,
+      "duration": 45,
+      "difficulty": "difficile",
+      "description": "Étude complète d'une fonction avec exponentielle.",
+      "parts": [
+        {
+          "id": "A",
+          "title": "Étude de la fonction",
+          "questions": [
+            { "number": "1", "text": "Soit $f(x) = (x-1)e^x$. Calculer $f'(x)$.", "points": 2, "answer": "$f'(x) = e^x + (x-1)e^x = xe^x$" },
+            { "number": "2", "text": "Étudier le signe de $f'(x)$ et les variations de $f$.", "points": 2, "answer": "$f'(x) = xe^x$. Comme $e^x > 0$, $f'(x)$ a le signe de $x$.\n$f$ décroissante sur $]-\\infty, 0]$, croissante sur $[0, +\\infty[$. Minimum en 0." },
+            { "number": "3", "text": "Calculer les limites de $f$ en $\\pm\\infty$.", "points": 1, "answer": "$\\lim_{x \\to +\\infty} f(x) = +\\infty$ et $\\lim_{x \\to -\\infty} f(x) = 0$" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "2024-metropole-ex4",
+      "year": 2024,
+      "session": "Métropole",
+      "exerciseNumber": 4,
+      "title": "Intégration",
+      "subject": "analyse",
+      "themes": ["Primitives", "Intégrales", "Aires"],
+      "points": 5,
+      "duration": 40,
+      "difficulty": "moyen",
+      "description": "Calcul d'intégrales et application au calcul d'aires.",
+      "parts": [
+        {
+          "id": "A",
+          "title": "Calcul d'intégrales",
+          "questions": [
+            { "number": "1", "text": "Calculer $\\int_0^1 (2x + 3) dx$.", "points": 1, "answer": "$\\int_0^1 (2x+3)dx = [x^2 + 3x]_0^1 = (1+3) - 0 = 4$" },
+            { "number": "2", "text": "Calculer $\\int_1^e \\frac{1}{x} dx$.", "points": 2, "answer": "$\\int_1^e \\frac{1}{x}dx = [\\ln x]_1^e = \\ln e - \\ln 1 = 1 - 0 = 1$" },
+            { "number": "3", "text": "Calculer l'aire sous la courbe de $f(x) = e^x$ entre 0 et 1.", "points": 2, "answer": "$\\mathcal{A} = \\int_0^1 e^x dx = [e^x]_0^1 = e - 1 \\approx 1.72$ u.a." }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "2024-antilles-ex1",
+      "year": 2024,
+      "session": "Antilles-Guyane",
+      "exerciseNumber": 1,
+      "title": "Nombres complexes",
+      "subject": "algebre",
+      "themes": ["Complexes", "Module", "Argument"],
+      "points": 5,
+      "duration": 45,
+      "difficulty": "moyen",
+      "description": "Calculs avec les nombres complexes et interprétation géométrique.",
+      "parts": [
+        {
+          "id": "A",
+          "title": "Forme algébrique et trigonométrique",
+          "questions": [
+            { "number": "1", "text": "Soit $z = 1 + i$. Calculer le module et l'argument de $z$.", "points": 2, "answer": "$|z| = \\sqrt{1^2 + 1^2} = \\sqrt{2}$\n$\\arg(z) = \\arctan(1/1) = \\frac{\\pi}{4}$" },
+            { "number": "2", "text": "Écrire $z$ sous forme exponentielle.", "points": 1, "answer": "$z = \\sqrt{2}e^{i\\frac{\\pi}{4}}$" },
+            { "number": "3", "text": "Calculer $z^4$ sous forme algébrique.", "points": 2, "answer": "$z^4 = (\\sqrt{2})^4 e^{i\\pi} = 4e^{i\\pi} = 4(-1) = -4$" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "2024-antilles-ex2",
+      "year": 2024,
+      "session": "Antilles-Guyane",
+      "exerciseNumber": 2,
+      "title": "Géométrie dans l'espace",
+      "subject": "geometrie",
+      "themes": ["Vecteurs", "Droites", "Plans"],
+      "points": 5,
+      "duration": 50,
+      "difficulty": "difficile",
+      "description": "Étude de positions relatives et équations de plans.",
+      "parts": [
+        {
+          "id": "A",
+          "title": "Équations de plans",
+          "questions": [
+            { "number": "1", "text": "Donner une équation cartésienne du plan $\\mathcal{P}$ passant par $A(1,0,2)$ et de vecteur normal $\\vec{n}(1,2,-1)$.", "points": 2, "answer": "L'équation est $1(x-1) + 2(y-0) - 1(z-2) = 0$, soit $x + 2y - z + 1 = 0$" },
+            { "number": "2", "text": "Le point $B(2, 1, 5)$ appartient-il au plan $\\mathcal{P}$ ?", "points": 1, "answer": "$2 + 2(1) - 5 + 1 = 0$. Oui, $B \\in \\mathcal{P}$." },
+            { "number": "3", "text": "Déterminer la distance du point $C(0,0,0)$ au plan $\\mathcal{P}$.", "points": 2, "answer": "$d = \\frac{|0 + 0 - 0 + 1|}{\\sqrt{1+4+1}} = \\frac{1}{\\sqrt{6}}$" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "2024-asie-ex1",
+      "year": 2024,
+      "session": "Asie",
+      "exerciseNumber": 1,
+      "title": "Équations différentielles",
+      "subject": "analyse",
+      "themes": ["Équations différentielles", "Exponentielle", "Conditions initiales"],
+      "points": 5,
+      "duration": 45,
+      "difficulty": "difficile",
+      "description": "Résolution d'équations différentielles du premier ordre.",
+      "parts": [
+        {
+          "id": "A",
+          "title": "Équation homogène",
+          "questions": [
+            { "number": "1", "text": "Résoudre l'équation différentielle $y' + 2y = 0$.", "points": 2, "answer": "Les solutions sont $y(x) = Ce^{-2x}$ où $C \\in \\mathbb{R}$." },
+            { "number": "2", "text": "Trouver une solution particulière de $y' + 2y = 4$.", "points": 2, "answer": "On cherche une solution constante : $0 + 2y_p = 4$, donc $y_p = 2$." },
+            { "number": "3", "text": "Déterminer la solution vérifiant $y(0) = 5$.", "points": 1, "answer": "Solution générale : $y = Ce^{-2x} + 2$. $y(0) = C + 2 = 5$, donc $C = 3$.\nSolution : $y(x) = 3e^{-2x} + 2$." }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "2024-asie-ex2",
+      "year": 2024,
+      "session": "Asie",
+      "exerciseNumber": 2,
+      "title": "Matrices et systèmes",
+      "subject": "algebre",
+      "themes": ["Matrices", "Systèmes linéaires", "Inverse"],
+      "points": 5,
+      "duration": 50,
+      "difficulty": "difficile",
+      "description": "Calcul matriciel et résolution de systèmes.",
+      "parts": [
+        {
+          "id": "A",
+          "title": "Calcul matriciel",
+          "questions": [
+            { "number": "1", "text": "Soit $A = \\begin{pmatrix} 2 & 1 \\\\ 1 & 1 \\end{pmatrix}$. Calculer $A^2$.", "points": 2, "answer": "$A^2 = \\begin{pmatrix} 5 & 3 \\\\ 3 & 2 \\end{pmatrix}$" },
+            { "number": "2", "text": "Calculer le déterminant de $A$.", "points": 1, "answer": "$\\det(A) = 2 \\times 1 - 1 \\times 1 = 1$" },
+            { "number": "3", "text": "Déterminer $A^{-1}$.", "points": 2, "answer": "$A^{-1} = \\begin{pmatrix} 1 & -1 \\\\ -1 & 2 \\end{pmatrix}$" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "2023-metropole-ex1",
+      "year": 2023,
+      "session": "Métropole",
+      "exerciseNumber": 1,
+      "title": "Logarithme népérien",
+      "subject": "analyse",
+      "themes": ["Logarithme", "Dérivation", "Équations"],
+      "points": 5,
+      "duration": 45,
+      "difficulty": "facile",
+      "description": "Étude d'une fonction logarithmique.",
+      "parts": [
+        {
+          "id": "A",
+          "title": "Étude de fonction",
+          "questions": [
+            { "number": "1", "text": "Soit $f(x) = \\ln(x) - x + 1$ sur $]0, +\\infty[$. Calculer $f'(x)$.", "points": 1, "answer": "$f'(x) = \\frac{1}{x} - 1 = \\frac{1-x}{x}$" },
+            { "number": "2", "text": "Dresser le tableau de variations de $f$.", "points": 2, "answer": "$f'(x) > 0$ si $x < 1$, $f'(x) < 0$ si $x > 1$. Maximum en $x = 1$ : $f(1) = 0$." },
+            { "number": "3", "text": "En déduire que $\\ln(x) \\leq x - 1$ pour tout $x > 0$.", "points": 2, "answer": "$f(x) \\leq f(1) = 0$ pour tout $x > 0$, donc $\\ln(x) \\leq x - 1$." }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "2023-metropole-ex2",
+      "year": 2023,
+      "session": "Métropole",
+      "exerciseNumber": 2,
+      "title": "Suites géométriques",
+      "subject": "analyse",
+      "themes": ["Suites géométriques", "Sommes", "Limites"],
+      "points": 5,
+      "duration": 40,
+      "difficulty": "facile",
+      "description": "Étude d'une suite géométrique et calcul de sommes.",
+      "parts": [
+        {
+          "id": "A",
+          "title": "Suite géométrique",
+          "questions": [
+            { "number": "1", "text": "Soit $(u_n)$ la suite géométrique de premier terme $u_0 = 3$ et de raison $q = 0.5$. Exprimer $u_n$ en fonction de $n$.", "points": 1, "answer": "$u_n = u_0 \\times q^n = 3 \\times 0.5^n$" },
+            { "number": "2", "text": "Calculer $S_n = u_0 + u_1 + ... + u_n$.", "points": 2, "answer": "$S_n = 3 \\times \\frac{1 - 0.5^{n+1}}{1 - 0.5} = 6(1 - 0.5^{n+1})$" },
+            { "number": "3", "text": "Calculer $\\lim_{n \\to +\\infty} S_n$.", "points": 2, "answer": "Comme $|0.5| < 1$, $0.5^{n+1} \\to 0$, donc $\\lim S_n = 6$." }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "2023-metropole-ex3",
+      "year": 2023,
+      "session": "Métropole",
+      "exerciseNumber": 3,
+      "title": "Probabilités continues",
+      "subject": "probabilites",
+      "themes": ["Loi normale", "Densité", "Probabilités"],
+      "points": 5,
+      "duration": 45,
+      "difficulty": "moyen",
+      "description": "Étude d'une variable aléatoire suivant une loi normale.",
+      "parts": [
+        {
+          "id": "A",
+          "title": "Loi normale",
+          "questions": [
+            { "number": "1", "text": "Soit $X$ une variable aléatoire suivant la loi normale $\\mathcal{N}(100, 15)$. Que valent $E(X)$ et $\\sigma(X)$ ?", "points": 1, "answer": "$E(X) = 100$ et $\\sigma(X) = 15$" },
+            { "number": "2", "text": "Calculer $P(85 < X < 115)$ (à la calculatrice).", "points": 2, "answer": "$P(85 < X < 115) \\approx 0.6827$ (intervalle $[\\mu-\\sigma, \\mu+\\sigma]$)" },
+            { "number": "3", "text": "Déterminer la valeur $a$ telle que $P(X > a) = 0.05$.", "points": 2, "answer": "$a = \\mu + 1.645\\sigma = 100 + 1.645 \\times 15 \\approx 124.7$" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "2023-metropole-ex4",
+      "year": 2023,
+      "session": "Métropole",
+      "exerciseNumber": 4,
+      "title": "Convexité et point d'inflexion",
+      "subject": "analyse",
+      "themes": ["Convexité", "Dérivée seconde", "Inflexion"],
+      "points": 5,
+      "duration": 45,
+      "difficulty": "moyen",
+      "description": "Étude de la convexité d'une fonction.",
+      "parts": [
+        {
+          "id": "A",
+          "title": "Convexité",
+          "questions": [
+            { "number": "1", "text": "Soit $f(x) = x^3 - 3x^2 + 2x$. Calculer $f''(x)$.", "points": 1, "answer": "$f'(x) = 3x^2 - 6x + 2$, donc $f''(x) = 6x - 6$" },
+            { "number": "2", "text": "Étudier le signe de $f''(x)$ et en déduire la convexité de $f$.", "points": 2, "answer": "$f''(x) = 6(x-1)$. $f''(x) < 0$ si $x < 1$ (concave), $f''(x) > 0$ si $x > 1$ (convexe)." },
+            { "number": "3", "text": "Déterminer les coordonnées du point d'inflexion.", "points": 2, "answer": "Point d'inflexion en $x = 1$. $f(1) = 1 - 3 + 2 = 0$. Point d'inflexion : $(1, 0)$." }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "2023-antilles-ex1",
+      "year": 2023,
+      "session": "Antilles-Guyane",
+      "exerciseNumber": 1,
+      "title": "Fonction avec paramètre",
+      "subject": "analyse",
+      "themes": ["Fonctions", "Dérivées", "Paramètre"],
+      "points": 5,
+      "duration": 50,
+      "difficulty": "difficile",
+      "description": "Étude d'une famille de fonctions dépendant d'un paramètre.",
+      "parts": [
+        {
+          "id": "A",
+          "title": "Étude selon le paramètre",
+          "questions": [
+            { "number": "1", "text": "Soit $f_m(x) = x^2 - 2mx + 1$ où $m$ est un réel. Calculer $f'_m(x)$.", "points": 1, "answer": "$f'_m(x) = 2x - 2m$" },
+            { "number": "2", "text": "Trouver les coordonnées du sommet de la parabole.", "points": 2, "answer": "Le sommet est atteint pour $x = m$. $f_m(m) = m^2 - 2m^2 + 1 = 1 - m^2$. Sommet : $(m, 1-m^2)$." },
+            { "number": "3", "text": "Pour quelles valeurs de $m$ la fonction $f_m$ a-t-elle deux racines réelles distinctes ?", "points": 2, "answer": "$\\Delta = 4m^2 - 4 > 0 \\Leftrightarrow m^2 > 1 \\Leftrightarrow m < -1$ ou $m > 1$" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "2023-antilles-ex2",
+      "year": 2023,
+      "session": "Antilles-Guyane",
+      "exerciseNumber": 2,
+      "title": "Probabilités conditionnelles",
+      "subject": "probabilites",
+      "themes": ["Probabilités conditionnelles", "Arbre", "Formule de Bayes"],
+      "points": 5,
+      "duration": 40,
+      "difficulty": "moyen",
+      "description": "Utilisation des probabilités conditionnelles et de la formule de Bayes.",
+      "parts": [
+        {
+          "id": "A",
+          "title": "Arbre de probabilités",
+          "questions": [
+            { "number": "1", "text": "Une urne contient 3 boules rouges et 2 blanches. On tire 2 boules successivement sans remise. Calculer $P(R_1)$ et $P(R_2|R_1)$.", "points": 2, "answer": "$P(R_1) = \\frac{3}{5}$ et $P(R_2|R_1) = \\frac{2}{4} = \\frac{1}{2}$" },
+            { "number": "2", "text": "Calculer $P(R_1 \\cap R_2)$.", "points": 1, "answer": "$P(R_1 \\cap R_2) = P(R_1) \\times P(R_2|R_1) = \\frac{3}{5} \\times \\frac{1}{2} = \\frac{3}{10}$" },
+            { "number": "3", "text": "Calculer $P(R_2)$ en utilisant la formule des probabilités totales.", "points": 2, "answer": "$P(R_2) = P(R_1)P(R_2|R_1) + P(\\bar{R_1})P(R_2|\\bar{R_1}) = \\frac{3}{5} \\times \\frac{2}{4} + \\frac{2}{5} \\times \\frac{3}{4} = \\frac{3}{10} + \\frac{3}{10} = \\frac{3}{5}$" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "2023-asie-ex1",
+      "year": 2023,
+      "session": "Asie",
+      "exerciseNumber": 1,
+      "title": "Suite arithmético-géométrique",
+      "subject": "analyse",
+      "themes": ["Suites", "Arithmético-géométrique", "Limites"],
+      "points": 5,
+      "duration": 50,
+      "difficulty": "difficile",
+      "description": "Étude d'une suite arithmético-géométrique.",
+      "parts": [
+        {
+          "id": "A",
+          "title": "Suite auxiliaire",
+          "questions": [
+            { "number": "1", "text": "Soit $(u_n)$ définie par $u_0 = 4$ et $u_{n+1} = \\frac{1}{2}u_n + 3$. Montrer que $(v_n)$ définie par $v_n = u_n - 6$ est géométrique.", "points": 2, "answer": "$v_{n+1} = u_{n+1} - 6 = \\frac{1}{2}u_n + 3 - 6 = \\frac{1}{2}u_n - 3 = \\frac{1}{2}(u_n - 6) = \\frac{1}{2}v_n$\nDonc $(v_n)$ est géométrique de raison $\\frac{1}{2}$." },
+            { "number": "2", "text": "Exprimer $v_n$ puis $u_n$ en fonction de $n$.", "points": 2, "answer": "$v_n = v_0 \\times (\\frac{1}{2})^n = (4-6) \\times (\\frac{1}{2})^n = -2 \\times (\\frac{1}{2})^n$\n$u_n = v_n + 6 = 6 - 2 \\times (\\frac{1}{2})^n$" },
+            { "number": "3", "text": "Calculer $\\lim_{n \\to +\\infty} u_n$.", "points": 1, "answer": "$\\lim_{n \\to +\\infty} (\\frac{1}{2})^n = 0$, donc $\\lim_{n \\to +\\infty} u_n = 6$" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "2022-metropole-ex1",
+      "year": 2022,
+      "session": "Métropole",
+      "exerciseNumber": 1,
+      "title": "Fonction trigonométrique",
+      "subject": "analyse",
+      "themes": ["Trigonométrie", "Dérivation", "Variations"],
+      "points": 5,
+      "duration": 45,
+      "difficulty": "moyen",
+      "description": "Étude d'une fonction trigonométrique.",
+      "parts": [
+        {
+          "id": "A",
+          "title": "Étude de $f$",
+          "questions": [
+            { "number": "1", "text": "Soit $f(x) = \\cos(2x) + 2\\cos(x)$ sur $[0, 2\\pi]$. Montrer que $f(x) = 2\\cos^2(x) + 2\\cos(x) - 1$.", "points": 1, "answer": "On utilise $\\cos(2x) = 2\\cos^2(x) - 1$.\nDonc $f(x) = 2\\cos^2(x) - 1 + 2\\cos(x) = 2\\cos^2(x) + 2\\cos(x) - 1$." },
+            { "number": "2", "text": "En posant $X = \\cos(x)$, résoudre $f(x) = 0$.", "points": 2, "answer": "$2X^2 + 2X - 1 = 0$. $\\Delta = 4 + 8 = 12$.\n$X = \\frac{-2 \\pm 2\\sqrt{3}}{4} = \\frac{-1 \\pm \\sqrt{3}}{2}$.\nSeule $X = \\frac{-1 + \\sqrt{3}}{2} \\approx 0.366$ est dans $[-1,1]$." },
+            { "number": "3", "text": "Calculer $f'(x)$.", "points": 2, "answer": "$f'(x) = -2\\sin(2x) - 2\\sin(x) = -4\\sin(x)\\cos(x) - 2\\sin(x) = -2\\sin(x)(2\\cos(x) + 1)$" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "2022-metropole-ex2",
+      "year": 2022,
+      "session": "Métropole",
+      "exerciseNumber": 2,
+      "title": "Vecteurs et produit scalaire",
+      "subject": "geometrie",
+      "themes": ["Vecteurs", "Produit scalaire", "Orthogonalité"],
+      "points": 5,
+      "duration": 40,
+      "difficulty": "moyen",
+      "description": "Utilisation du produit scalaire pour des problèmes géométriques.",
+      "parts": [
+        {
+          "id": "A",
+          "title": "Produit scalaire",
+          "questions": [
+            { "number": "1", "text": "Soient $\\vec{u}(3, -1)$ et $\\vec{v}(2, 6)$. Calculer $\\vec{u} \\cdot \\vec{v}$.", "points": 1, "answer": "$\\vec{u} \\cdot \\vec{v} = 3 \\times 2 + (-1) \\times 6 = 6 - 6 = 0$" },
+            { "number": "2", "text": "Que peut-on en déduire sur $\\vec{u}$ et $\\vec{v}$ ?", "points": 1, "answer": "$\\vec{u} \\cdot \\vec{v} = 0$, donc $\\vec{u}$ et $\\vec{v}$ sont orthogonaux." },
+            { "number": "3", "text": "Calculer $||\\vec{u}||$ et $||\\vec{v}||$.", "points": 1, "answer": "$||\\vec{u}|| = \\sqrt{9+1} = \\sqrt{10}$ et $||\\vec{v}|| = \\sqrt{4+36} = \\sqrt{40} = 2\\sqrt{10}$" },
+            { "number": "4", "text": "Déterminer l'aire du parallélogramme construit sur $\\vec{u}$ et $\\vec{v}$.", "points": 2, "answer": "Aire $= ||\\vec{u}|| \\times ||\\vec{v}|| = \\sqrt{10} \\times 2\\sqrt{10} = 20$ (car $\\vec{u} \\perp \\vec{v}$)" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "2022-metropole-ex3",
+      "year": 2022,
+      "session": "Métropole",
+      "exerciseNumber": 3,
+      "title": "Intégration par parties",
+      "subject": "analyse",
+      "themes": ["Intégration", "Parties", "Primitives"],
+      "points": 5,
+      "duration": 45,
+      "difficulty": "difficile",
+      "description": "Calcul d'intégrales par la méthode d'intégration par parties.",
+      "parts": [
+        {
+          "id": "A",
+          "title": "Intégration par parties",
+          "questions": [
+            { "number": "1", "text": "Rappeler la formule d'intégration par parties.", "points": 1, "answer": "$\\int_a^b u'(x)v(x)dx = [u(x)v(x)]_a^b - \\int_a^b u(x)v'(x)dx$" },
+            { "number": "2", "text": "Calculer $\\int_0^1 xe^x dx$ en posant $u'(x) = e^x$ et $v(x) = x$.", "points": 2, "answer": "$u(x) = e^x$, $v'(x) = 1$.\n$\\int_0^1 xe^x dx = [xe^x]_0^1 - \\int_0^1 e^x dx = e - [e^x]_0^1 = e - (e-1) = 1$" },
+            { "number": "3", "text": "Calculer $\\int_1^e x\\ln(x) dx$.", "points": 2, "answer": "On pose $u'(x) = x$ et $v(x) = \\ln(x)$.\n$u(x) = \\frac{x^2}{2}$, $v'(x) = \\frac{1}{x}$.\n$\\int_1^e x\\ln(x)dx = [\\frac{x^2}{2}\\ln(x)]_1^e - \\int_1^e \\frac{x}{2}dx = \\frac{e^2}{2} - [\\frac{x^2}{4}]_1^e = \\frac{e^2}{2} - \\frac{e^2-1}{4} = \\frac{e^2+1}{4}$" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "2022-antilles-ex1",
+      "year": 2022,
+      "session": "Antilles-Guyane",
+      "exerciseNumber": 1,
+      "title": "Continuité et TVI",
+      "subject": "analyse",
+      "themes": ["Continuité", "TVI", "Équations"],
+      "points": 5,
+      "duration": 40,
+      "difficulty": "moyen",
+      "description": "Application du théorème des valeurs intermédiaires.",
+      "parts": [
+        {
+          "id": "A",
+          "title": "Théorème des valeurs intermédiaires",
+          "questions": [
+            { "number": "1", "text": "Soit $f(x) = x^3 + x - 1$. Calculer $f(0)$ et $f(1)$.", "points": 1, "answer": "$f(0) = -1 < 0$ et $f(1) = 1 > 0$" },
+            { "number": "2", "text": "Montrer que l'équation $f(x) = 0$ admet une unique solution sur $[0, 1]$.", "points": 2, "answer": "$f$ est continue sur $[0,1]$, $f(0) < 0 < f(1)$.\nD'après le TVI, $\\exists \\alpha \\in ]0,1[$ tel que $f(\\alpha) = 0$.\n$f'(x) = 3x^2 + 1 > 0$, donc $f$ est strictement croissante : unicité." },
+            { "number": "3", "text": "Donner un encadrement de $\\alpha$ à $10^{-1}$ près.", "points": 2, "answer": "$f(0.6) \\approx -0.18 < 0$ et $f(0.7) \\approx 0.04 > 0$.\nDonc $\\alpha \\in [0.6, 0.7]$, soit $\\alpha \\approx 0.7$ à $10^{-1}$ près." }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "2022-antilles-ex2",
+      "year": 2022,
+      "session": "Antilles-Guyane",
+      "exerciseNumber": 2,
+      "title": "Loi exponentielle",
+      "subject": "probabilites",
+      "themes": ["Loi exponentielle", "Espérance", "Probabilités"],
+      "points": 5,
+      "duration": 40,
+      "difficulty": "moyen",
+      "description": "Étude d'une variable aléatoire suivant une loi exponentielle.",
+      "parts": [
+        {
+          "id": "A",
+          "title": "Loi exponentielle",
+          "questions": [
+            { "number": "1", "text": "Soit $T$ une variable aléatoire suivant la loi exponentielle de paramètre $\\lambda = 0.5$. Quelle est la fonction de densité de $T$ ?", "points": 1, "answer": "$f(t) = 0.5e^{-0.5t}$ pour $t \\geq 0$, $f(t) = 0$ sinon." },
+            { "number": "2", "text": "Calculer $P(T \\leq 2)$.", "points": 2, "answer": "$P(T \\leq 2) = 1 - e^{-0.5 \\times 2} = 1 - e^{-1} \\approx 0.632$" },
+            { "number": "3", "text": "Calculer l'espérance $E(T)$.", "points": 2, "answer": "Pour une loi exponentielle de paramètre $\\lambda$, $E(T) = \\frac{1}{\\lambda} = \\frac{1}{0.5} = 2$." }
+          ]
+        }
+      ]
+    }
+  ]
+}

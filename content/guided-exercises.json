@@ -1,0 +1,203 @@
+{
+  "exercises": [
+    {
+      "id": "derivee-polynome",
+      "title": "Dériver un polynôme",
+      "theme": "Dérivation",
+      "difficulty": "facile",
+      "duration": 10,
+      "description": "Calculer la dérivée d'une fonction polynomiale.",
+      "problem": "Soit $f(x) = 3x^3 - 2x^2 + 5x - 1$. Calculer $f'(x)$.",
+      "steps": [
+        { "instruction": "Rappelle la formule de dérivation : $(x^n)' = nx^{n-1}$", "hint": "Cette formule s'applique à chaque terme du polynôme.", "solution": "On va dériver terme par terme." },
+        { "instruction": "Dérive le premier terme $3x^3$.", "hint": "L'exposant descend et diminue de 1.", "solution": "$(3x^3)' = 3 \\times 3x^{3-1} = 9x^2$" },
+        { "instruction": "Dérive le deuxième terme $-2x^2$.", "hint": "Attention au signe négatif !", "solution": "$(-2x^2)' = -2 \\times 2x^{2-1} = -4x$" },
+        { "instruction": "Dérive le troisième terme $5x$.", "hint": "$(x)' = 1$", "solution": "$(5x)' = 5 \\times 1 = 5$" },
+        { "instruction": "Dérive le dernier terme $-1$.", "hint": "La dérivée d'une constante est...", "solution": "$(-1)' = 0$" },
+        { "instruction": "Additionne tous les termes pour obtenir $f'(x)$.", "hint": "Rassemble les résultats.", "solution": "$f'(x) = 9x^2 - 4x + 5$" }
+      ],
+      "finalAnswer": "$f'(x) = 9x^2 - 4x + 5$"
+    },
+    {
+      "id": "limite-quotient",
+      "title": "Limite d'un quotient",
+      "theme": "Limites",
+      "difficulty": "moyen",
+      "duration": 15,
+      "description": "Calculer une limite avec forme indéterminée.",
+      "problem": "Calculer $\\lim_{x \\to +\\infty} \\frac{2x^2 + 3x}{x^2 - 1}$.",
+      "steps": [
+        { "instruction": "Identifie la forme de la limite.", "hint": "Que donnent numérateur et dénominateur quand $x \\to +\\infty$ ?", "solution": "$\\frac{+\\infty}{+\\infty}$ : forme indéterminée" },
+        { "instruction": "Factorise par le terme dominant au numérateur et dénominateur.", "hint": "Le terme dominant est $x^2$.", "solution": "$\\frac{x^2(2 + \\frac{3}{x})}{x^2(1 - \\frac{1}{x^2})}$" },
+        { "instruction": "Simplifie par $x^2$.", "hint": "$\\frac{x^2}{x^2} = 1$", "solution": "$\\frac{2 + \\frac{3}{x}}{1 - \\frac{1}{x^2}}$" },
+        { "instruction": "Calcule la limite quand $x \\to +\\infty$.", "hint": "$\\frac{3}{x} \\to 0$ et $\\frac{1}{x^2} \\to 0$", "solution": "$\\lim = \\frac{2 + 0}{1 - 0} = 2$" }
+      ],
+      "finalAnswer": "$\\lim_{x \\to +\\infty} \\frac{2x^2 + 3x}{x^2 - 1} = 2$"
+    },
+    {
+      "id": "recurrence-simple",
+      "title": "Démonstration par récurrence",
+      "theme": "Suites",
+      "difficulty": "moyen",
+      "duration": 20,
+      "description": "Démontrer une propriété par récurrence.",
+      "problem": "Démontrer par récurrence que pour tout $n \\in \\mathbb{N}$, $\\sum_{k=0}^{n} k = \\frac{n(n+1)}{2}$.",
+      "steps": [
+        { "instruction": "Écris la propriété $P(n)$ à démontrer.", "hint": "C'est l'égalité à prouver.", "solution": "$P(n)$ : $0 + 1 + 2 + ... + n = \\frac{n(n+1)}{2}$" },
+        { "instruction": "Vérifie l'initialisation pour $n = 0$.", "hint": "Calcule les deux membres pour $n = 0$.", "solution": "Gauche : $0$. Droite : $\\frac{0 \\times 1}{2} = 0$. ✓" },
+        { "instruction": "Suppose $P(n)$ vraie pour un certain $n$ (hypothèse de récurrence).", "hint": "On suppose que la formule marche au rang $n$.", "solution": "On suppose $\\sum_{k=0}^{n} k = \\frac{n(n+1)}{2}$" },
+        { "instruction": "Démontre $P(n+1)$ : calcule $\\sum_{k=0}^{n+1} k$.", "hint": "Utilise l'hypothèse et ajoute $(n+1)$.", "solution": "$\\sum_{k=0}^{n+1} k = \\frac{n(n+1)}{2} + (n+1) = \\frac{n(n+1) + 2(n+1)}{2} = \\frac{(n+1)(n+2)}{2}$" },
+        { "instruction": "Vérifie que c'est bien la formule au rang $n+1$.", "hint": "Compare avec $\\frac{(n+1)((n+1)+1)}{2}$.", "solution": "$\\frac{(n+1)(n+2)}{2}$ correspond bien à $P(n+1)$. ✓" }
+      ],
+      "finalAnswer": "Par récurrence, pour tout $n \\in \\mathbb{N}$, $\\sum_{k=0}^{n} k = \\frac{n(n+1)}{2}$"
+    },
+    {
+      "id": "integrale-exp",
+      "title": "Intégrale avec exponentielle",
+      "theme": "Intégration",
+      "difficulty": "moyen",
+      "duration": 15,
+      "description": "Calculer une intégrale impliquant l'exponentielle.",
+      "problem": "Calculer $I = \\int_0^1 xe^x dx$.",
+      "steps": [
+        { "instruction": "Cette intégrale nécessite une intégration par parties. Rappelle la formule.", "hint": "$\\int u'v = [uv] - \\int uv'$", "solution": "$\\int_a^b u'v = [uv]_a^b - \\int_a^b uv'$" },
+        { "instruction": "Choisis $u'$ et $v$. Ici, pose $v = x$ et $u' = e^x$.", "hint": "On choisit de dériver $x$ car sa dérivée simplifie.", "solution": "$v = x \\Rightarrow v' = 1$ et $u' = e^x \\Rightarrow u = e^x$" },
+        { "instruction": "Applique la formule d'intégration par parties.", "hint": "$[uv]_0^1 - \\int_0^1 uv'$", "solution": "$I = [xe^x]_0^1 - \\int_0^1 e^x dx$" },
+        { "instruction": "Calcule $[xe^x]_0^1$.", "hint": "Évalue en 1 puis en 0.", "solution": "$[xe^x]_0^1 = 1 \\times e^1 - 0 \\times e^0 = e$" },
+        { "instruction": "Calcule $\\int_0^1 e^x dx$.", "hint": "La primitive de $e^x$ est $e^x$.", "solution": "$\\int_0^1 e^x dx = [e^x]_0^1 = e - 1$" },
+        { "instruction": "Conclus en calculant $I$.", "hint": "$I = e - (e-1)$", "solution": "$I = e - (e - 1) = 1$" }
+      ],
+      "finalAnswer": "$\\int_0^1 xe^x dx = 1$"
+    },
+    {
+      "id": "complexe-module",
+      "title": "Module et argument d'un complexe",
+      "theme": "Nombres complexes",
+      "difficulty": "facile",
+      "duration": 10,
+      "description": "Trouver le module et l'argument d'un nombre complexe.",
+      "problem": "Soit $z = -1 + i\\sqrt{3}$. Trouver le module et l'argument de $z$.",
+      "steps": [
+        { "instruction": "Identifie la partie réelle $a$ et la partie imaginaire $b$.", "hint": "$z = a + ib$", "solution": "$a = -1$ et $b = \\sqrt{3}$" },
+        { "instruction": "Calcule le module $|z| = \\sqrt{a^2 + b^2}$.", "hint": "C'est la distance à l'origine.", "solution": "$|z| = \\sqrt{(-1)^2 + (\\sqrt{3})^2} = \\sqrt{1 + 3} = 2$" },
+        { "instruction": "Place le point dans le plan complexe.", "hint": "$a < 0$ et $b > 0$, donc 2ème quadrant.", "solution": "Le point est dans le deuxième quadrant." },
+        { "instruction": "Calcule $\\theta$ tel que $\\cos\\theta = \\frac{a}{|z|}$ et $\\sin\\theta = \\frac{b}{|z|}$.", "hint": "Utilise les valeurs remarquables.", "solution": "$\\cos\\theta = -\\frac{1}{2}$ et $\\sin\\theta = \\frac{\\sqrt{3}}{2}$" },
+        { "instruction": "Déduis l'argument $\\theta$.", "hint": "Quel angle a ces valeurs ?", "solution": "$\\theta = \\frac{2\\pi}{3}$" }
+      ],
+      "finalAnswer": "$|z| = 2$ et $\\arg(z) = \\frac{2\\pi}{3}$"
+    },
+    {
+      "id": "proba-binomiale",
+      "title": "Loi binomiale",
+      "theme": "Probabilités",
+      "difficulty": "moyen",
+      "duration": 15,
+      "description": "Calculer des probabilités avec une loi binomiale.",
+      "problem": "Une usine produit des pièces dont 5% sont défectueuses. On prélève 10 pièces. Quelle est la probabilité d'avoir exactement 2 pièces défectueuses ?",
+      "steps": [
+        { "instruction": "Identifie les paramètres de la loi binomiale.", "hint": "$n$ = nombre d'essais, $p$ = probabilité de succès.", "solution": "$n = 10$, $p = 0.05$" },
+        { "instruction": "Écris la formule de la loi binomiale.", "hint": "$P(X = k) = \\binom{n}{k} p^k (1-p)^{n-k}$", "solution": "$P(X = 2) = \\binom{10}{2} \\times 0.05^2 \\times 0.95^8$" },
+        { "instruction": "Calcule $\\binom{10}{2}$.", "hint": "$\\binom{n}{k} = \\frac{n!}{k!(n-k)!}$", "solution": "$\\binom{10}{2} = \\frac{10!}{2! \\times 8!} = \\frac{10 \\times 9}{2} = 45$" },
+        { "instruction": "Calcule $0.05^2$ et $0.95^8$.", "hint": "Utilise la calculatrice.", "solution": "$0.05^2 = 0.0025$ et $0.95^8 \\approx 0.6634$" },
+        { "instruction": "Calcule le résultat final.", "hint": "Multiplie les trois valeurs.", "solution": "$P(X=2) = 45 \\times 0.0025 \\times 0.6634 \\approx 0.0746$" }
+      ],
+      "finalAnswer": "$P(X = 2) \\approx 0.075$ soit environ 7.5%"
+    },
+    {
+      "id": "equation-exp",
+      "title": "Équation avec exponentielle",
+      "theme": "Fonctions exponentielles",
+      "difficulty": "moyen",
+      "duration": 12,
+      "description": "Résoudre une équation impliquant l'exponentielle.",
+      "problem": "Résoudre l'équation $e^{2x} - 5e^x + 6 = 0$.",
+      "steps": [
+        { "instruction": "Pose $X = e^x$ pour transformer l'équation.", "hint": "$e^{2x} = (e^x)^2 = X^2$", "solution": "L'équation devient $X^2 - 5X + 6 = 0$" },
+        { "instruction": "Résous l'équation du second degré en $X$.", "hint": "Calcule le discriminant ou factorise.", "solution": "$(X - 2)(X - 3) = 0$, donc $X = 2$ ou $X = 3$" },
+        { "instruction": "Reviens à $x$ avec $X = e^x$.", "hint": "Si $e^x = k$, alors $x = \\ln(k)$.", "solution": "$e^x = 2 \\Rightarrow x = \\ln 2$ et $e^x = 3 \\Rightarrow x = \\ln 3$" },
+        { "instruction": "Vérifie que les solutions sont valides.", "hint": "$e^x > 0$ toujours, donc pas de solution à rejeter.", "solution": "Les deux solutions sont acceptables." }
+      ],
+      "finalAnswer": "$S = \\{\\ln 2, \\ln 3\\}$"
+    },
+    {
+      "id": "vecteur-espace",
+      "title": "Vecteurs dans l'espace",
+      "theme": "Géométrie dans l'espace",
+      "difficulty": "moyen",
+      "duration": 15,
+      "description": "Travailler avec des vecteurs dans un repère de l'espace.",
+      "problem": "Soient $A(1, 2, 3)$ et $B(4, 0, -1)$. Calculer $\\overrightarrow{AB}$ et sa norme.",
+      "steps": [
+        { "instruction": "Calcule les coordonnées de $\\overrightarrow{AB}$.", "hint": "$\\overrightarrow{AB} = (x_B - x_A, y_B - y_A, z_B - z_A)$", "solution": "$\\overrightarrow{AB} = (4-1, 0-2, -1-3) = (3, -2, -4)$" },
+        { "instruction": "Rappelle la formule de la norme dans l'espace.", "hint": "$\\|\\vec{v}\\| = \\sqrt{x^2 + y^2 + z^2}$", "solution": "$\\|\\overrightarrow{AB}\\| = \\sqrt{3^2 + (-2)^2 + (-4)^2}$" },
+        { "instruction": "Calcule les carrés.", "hint": "Attention aux signes.", "solution": "$3^2 = 9$, $(-2)^2 = 4$, $(-4)^2 = 16$" },
+        { "instruction": "Calcule la norme.", "hint": "$\\sqrt{9 + 4 + 16}$", "solution": "$\\|\\overrightarrow{AB}\\| = \\sqrt{29}$" }
+      ],
+      "finalAnswer": "$\\overrightarrow{AB} = (3, -2, -4)$ et $\\|\\overrightarrow{AB}\\| = \\sqrt{29}$"
+    },
+    {
+      "id": "suite-arithmetique",
+      "title": "Suite arithmétique",
+      "theme": "Suites",
+      "difficulty": "facile",
+      "duration": 10,
+      "description": "Étudier une suite arithmétique.",
+      "problem": "Soit $(u_n)$ la suite arithmétique de premier terme $u_0 = 5$ et de raison $r = 3$. Trouver $u_{10}$ et la somme $S = u_0 + u_1 + ... + u_{10}$.",
+      "steps": [
+        { "instruction": "Écris la formule du terme général d'une suite arithmétique.", "hint": "$u_n = u_0 + nr$", "solution": "$u_n = 5 + 3n$" },
+        { "instruction": "Calcule $u_{10}$.", "hint": "Remplace $n$ par 10.", "solution": "$u_{10} = 5 + 3 \\times 10 = 35$" },
+        { "instruction": "Rappelle la formule de la somme des termes.", "hint": "$S = \\frac{(n+1)(u_0 + u_n)}{2}$", "solution": "$S = \\frac{11 \\times (5 + 35)}{2}$" },
+        { "instruction": "Calcule la somme.", "hint": "$S = \\frac{11 \\times 40}{2}$", "solution": "$S = \\frac{440}{2} = 220$" }
+      ],
+      "finalAnswer": "$u_{10} = 35$ et $S = 220$"
+    },
+    {
+      "id": "ln-derivee",
+      "title": "Dérivée avec logarithme",
+      "theme": "Dérivation",
+      "difficulty": "moyen",
+      "duration": 12,
+      "description": "Calculer la dérivée d'une fonction avec logarithme.",
+      "problem": "Soit $f(x) = x\\ln(x) - x$. Calculer $f'(x)$.",
+      "steps": [
+        { "instruction": "Identifie les termes à dériver.", "hint": "On a un produit $x\\ln(x)$ et un terme simple $-x$.", "solution": "$f(x) = x\\ln(x) - x$" },
+        { "instruction": "Dérive $x\\ln(x)$ en utilisant la formule $(uv)' = u'v + uv'$.", "hint": "$u = x$, $v = \\ln(x)$", "solution": "$(x\\ln(x))' = 1 \\times \\ln(x) + x \\times \\frac{1}{x} = \\ln(x) + 1$" },
+        { "instruction": "Dérive $-x$.", "hint": "La dérivée de $x$ est 1.", "solution": "$(-x)' = -1$" },
+        { "instruction": "Combine les résultats.", "hint": "Additionne les deux dérivées.", "solution": "$f'(x) = \\ln(x) + 1 - 1 = \\ln(x)$" }
+      ],
+      "finalAnswer": "$f'(x) = \\ln(x)$"
+    },
+    {
+      "id": "equation-degre2",
+      "title": "Équation du second degré",
+      "theme": "Algèbre",
+      "difficulty": "facile",
+      "duration": 10,
+      "description": "Résoudre une équation du second degré.",
+      "problem": "Résoudre $2x^2 - 7x + 3 = 0$.",
+      "steps": [
+        { "instruction": "Identifie les coefficients $a$, $b$, $c$.", "hint": "$ax^2 + bx + c = 0$", "solution": "$a = 2$, $b = -7$, $c = 3$" },
+        { "instruction": "Calcule le discriminant $\\Delta = b^2 - 4ac$.", "hint": "Attention aux signes.", "solution": "$\\Delta = (-7)^2 - 4(2)(3) = 49 - 24 = 25$" },
+        { "instruction": "Analyse le signe de $\\Delta$.", "hint": "$\\Delta > 0$ signifie 2 solutions.", "solution": "$\\Delta = 25 > 0$ donc deux solutions réelles distinctes." },
+        { "instruction": "Calcule les solutions avec $x = \\frac{-b \\pm \\sqrt{\\Delta}}{2a}$.", "hint": "$\\sqrt{25} = 5$", "solution": "$x_1 = \\frac{7 + 5}{4} = 3$ et $x_2 = \\frac{7 - 5}{4} = \\frac{1}{2}$" }
+      ],
+      "finalAnswer": "$S = \\{\\frac{1}{2}, 3\\}$"
+    },
+    {
+      "id": "primitive-fraction",
+      "title": "Primitive d'une fraction",
+      "theme": "Intégration",
+      "difficulty": "moyen",
+      "duration": 12,
+      "description": "Trouver la primitive d'une fonction rationnelle.",
+      "problem": "Trouver une primitive de $f(x) = \\frac{2x + 1}{x^2 + x}$ sur $]0, +\\infty[$.",
+      "steps": [
+        { "instruction": "Observe que le numérateur ressemble à la dérivée du dénominateur.", "hint": "$(x^2 + x)' = 2x + 1$", "solution": "En effet, $(x^2 + x)' = 2x + 1$ qui est exactement le numérateur !" },
+        { "instruction": "Rappelle la formule : une primitive de $\\frac{u'}{u}$ est...", "hint": "C'est le logarithme népérien.", "solution": "$\\int \\frac{u'}{u} dx = \\ln|u| + C$" },
+        { "instruction": "Applique la formule.", "hint": "Ici $u = x^2 + x$.", "solution": "$F(x) = \\ln|x^2 + x| + C$" },
+        { "instruction": "Simplifie sur $]0, +\\infty[$.", "hint": "Sur cet intervalle, $x^2 + x > 0$.", "solution": "$F(x) = \\ln(x^2 + x) + C$" }
+      ],
+      "finalAnswer": "Une primitive est $F(x) = \\ln(x^2 + x) + C$"
+    }
+  ]
+}
