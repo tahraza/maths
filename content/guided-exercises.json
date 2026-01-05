@@ -198,6 +198,199 @@
         { "instruction": "Simplifie sur $]0, +\\infty[$.", "hint": "Sur cet intervalle, $x^2 + x > 0$.", "solution": "$F(x) = \\ln(x^2 + x) + C$" }
       ],
       "finalAnswer": "Une primitive est $F(x) = \\ln(x^2 + x) + C$"
+    },
+    {
+      "id": "plan-cartesien",
+      "title": "Équation cartésienne d'un plan",
+      "theme": "Géométrie dans l'espace",
+      "difficulty": "moyen",
+      "duration": 15,
+      "description": "Trouver l'équation cartésienne d'un plan passant par trois points.",
+      "problem": "Trouver l'équation du plan $(P)$ passant par $A(1, 0, 2)$, $B(3, 1, 0)$ et $C(0, 2, 1)$.",
+      "steps": [
+        { "instruction": "Calcule deux vecteurs directeurs du plan.", "hint": "Utilise $\\overrightarrow{AB}$ et $\\overrightarrow{AC}$.", "solution": "$\\overrightarrow{AB} = (2, 1, -2)$ et $\\overrightarrow{AC} = (-1, 2, -1)$" },
+        { "instruction": "Un vecteur normal $\\vec{n}$ doit être orthogonal aux deux vecteurs. Pose $\\vec{n}(a, b, c)$.", "hint": "On a $\\vec{n} \\cdot \\overrightarrow{AB} = 0$ et $\\vec{n} \\cdot \\overrightarrow{AC} = 0$.", "solution": "$2a + b - 2c = 0$ et $-a + 2b - c = 0$" },
+        { "instruction": "Résous le système pour trouver $\\vec{n}$.", "hint": "Exprime $a$ et $b$ en fonction de $c$.", "solution": "De la 2ème : $a = 2b - c$. Dans la 1ère : $4b - 2c + b - 2c = 0 \\Rightarrow b = \\frac{4c}{5}$. Donc $\\vec{n}(3, 4, 5)$ (en prenant $c=5$)." },
+        { "instruction": "Écris l'équation du plan $3x + 4y + 5z + d = 0$.", "hint": "Le plan passe par $A(1, 0, 2)$.", "solution": "$3(1) + 4(0) + 5(2) + d = 0 \\Rightarrow d = -13$" }
+      ],
+      "finalAnswer": "$(P) : 3x + 4y + 5z - 13 = 0$"
+    },
+    {
+      "id": "distance-point-plan",
+      "title": "Distance d'un point à un plan",
+      "theme": "Géométrie dans l'espace",
+      "difficulty": "moyen",
+      "duration": 12,
+      "description": "Calculer la distance d'un point à un plan.",
+      "problem": "Calculer la distance du point $M(2, 3, 1)$ au plan $(P) : 2x - 2y + z - 3 = 0$.",
+      "steps": [
+        { "instruction": "Rappelle la formule de la distance point-plan.", "hint": "$d(M, P) = \\frac{|ax_M + by_M + cz_M + d|}{\\sqrt{a^2 + b^2 + c^2}}$", "solution": "$d = \\frac{|2x_M - 2y_M + z_M - 3|}{\\sqrt{4 + 4 + 1}}$" },
+        { "instruction": "Calcule le numérateur.", "hint": "Substitue les coordonnées de $M$.", "solution": "$|2(2) - 2(3) + 1 - 3| = |4 - 6 + 1 - 3| = |-4| = 4$" },
+        { "instruction": "Calcule le dénominateur.", "hint": "$\\sqrt{a^2 + b^2 + c^2}$", "solution": "$\\sqrt{4 + 4 + 1} = \\sqrt{9} = 3$" },
+        { "instruction": "Calcule la distance.", "hint": "Divise.", "solution": "$d = \\frac{4}{3}$" }
+      ],
+      "finalAnswer": "$d(M, P) = \\frac{4}{3}$"
+    },
+    {
+      "id": "produit-scalaire-espace",
+      "title": "Produit scalaire dans l'espace",
+      "theme": "Géométrie dans l'espace",
+      "difficulty": "moyen",
+      "duration": 12,
+      "description": "Calculer un angle entre deux vecteurs de l'espace.",
+      "problem": "Soit $\\vec{u}(1, 2, 2)$ et $\\vec{v}(2, -1, 2)$. Calculer l'angle entre $\\vec{u}$ et $\\vec{v}$.",
+      "steps": [
+        { "instruction": "Calcule le produit scalaire $\\vec{u} \\cdot \\vec{v}$.", "hint": "$\\vec{u} \\cdot \\vec{v} = x_1x_2 + y_1y_2 + z_1z_2$", "solution": "$\\vec{u} \\cdot \\vec{v} = 1(2) + 2(-1) + 2(2) = 2 - 2 + 4 = 4$" },
+        { "instruction": "Calcule les normes $\\|\\vec{u}\\|$ et $\\|\\vec{v}\\|$.", "hint": "$\\|\\vec{v}\\| = \\sqrt{x^2 + y^2 + z^2}$", "solution": "$\\|\\vec{u}\\| = \\sqrt{1 + 4 + 4} = 3$ et $\\|\\vec{v}\\| = \\sqrt{4 + 1 + 4} = 3$" },
+        { "instruction": "Utilise la formule $\\cos\\theta = \\frac{\\vec{u} \\cdot \\vec{v}}{\\|\\vec{u}\\| \\times \\|\\vec{v}\\|}$.", "hint": "Substitue les valeurs.", "solution": "$\\cos\\theta = \\frac{4}{3 \\times 3} = \\frac{4}{9}$" },
+        { "instruction": "Déduis l'angle $\\theta$.", "hint": "Utilise $\\arccos$.", "solution": "$\\theta = \\arccos\\left(\\frac{4}{9}\\right) \\approx 63.6°$" }
+      ],
+      "finalAnswer": "$\\theta = \\arccos\\left(\\frac{4}{9}\\right) \\approx 63.6°$"
+    },
+    {
+      "id": "esperance-va",
+      "title": "Espérance d'une variable aléatoire",
+      "theme": "Probabilités",
+      "difficulty": "moyen",
+      "duration": 15,
+      "description": "Calculer l'espérance et la variance d'une variable aléatoire.",
+      "problem": "On lance un dé truqué. La probabilité d'obtenir $k$ est $P(X=k) = \\frac{k}{21}$ pour $k \\in \\{1,2,3,4,5,6\\}$. Calculer $E(X)$ et $V(X)$.",
+      "steps": [
+        { "instruction": "Vérifie que c'est une loi de probabilité.", "hint": "La somme des probabilités doit valoir 1.", "solution": "$\\sum_{k=1}^{6} \\frac{k}{21} = \\frac{1+2+3+4+5+6}{21} = \\frac{21}{21} = 1$ ✓" },
+        { "instruction": "Calcule $E(X) = \\sum k \\times P(X=k)$.", "hint": "$E(X) = \\sum_{k=1}^{6} k \\times \\frac{k}{21}$", "solution": "$E(X) = \\frac{1}{21}(1 + 4 + 9 + 16 + 25 + 36) = \\frac{91}{21} = \\frac{13}{3}$" },
+        { "instruction": "Calcule $E(X^2) = \\sum k^2 \\times P(X=k)$.", "hint": "$E(X^2) = \\sum_{k=1}^{6} k^2 \\times \\frac{k}{21}$", "solution": "$E(X^2) = \\frac{1}{21}(1 + 8 + 27 + 64 + 125 + 216) = \\frac{441}{21} = 21$" },
+        { "instruction": "Applique la formule de König : $V(X) = E(X^2) - [E(X)]^2$.", "hint": "$[E(X)]^2 = \\left(\\frac{13}{3}\\right)^2$", "solution": "$V(X) = 21 - \\frac{169}{9} = \\frac{189 - 169}{9} = \\frac{20}{9}$" }
+      ],
+      "finalAnswer": "$E(X) = \\frac{13}{3} \\approx 4.33$ et $V(X) = \\frac{20}{9} \\approx 2.22$"
+    },
+    {
+      "id": "loi-normale",
+      "title": "Loi normale centrée réduite",
+      "theme": "Probabilités",
+      "difficulty": "moyen",
+      "duration": 12,
+      "description": "Utiliser la loi normale pour calculer des probabilités.",
+      "problem": "Soit $X \\sim \\mathcal{N}(0, 1)$. Calculer $P(-1.5 < X < 2)$ (on donne $\\Phi(1.5) = 0.933$ et $\\Phi(2) = 0.977$).",
+      "steps": [
+        { "instruction": "Exprime la probabilité en fonction de $\\Phi$.", "hint": "$P(a < X < b) = \\Phi(b) - \\Phi(a)$", "solution": "$P(-1.5 < X < 2) = \\Phi(2) - \\Phi(-1.5)$" },
+        { "instruction": "Utilise la symétrie : $\\Phi(-a) = 1 - \\Phi(a)$.", "hint": "La loi normale est symétrique.", "solution": "$\\Phi(-1.5) = 1 - \\Phi(1.5) = 1 - 0.933 = 0.067$" },
+        { "instruction": "Calcule la probabilité.", "hint": "$\\Phi(2) - \\Phi(-1.5)$", "solution": "$P = 0.977 - 0.067 = 0.910$" }
+      ],
+      "finalAnswer": "$P(-1.5 < X < 2) = 0.910$ soit environ 91%"
+    },
+    {
+      "id": "convexite-inflexion",
+      "title": "Convexité et point d'inflexion",
+      "theme": "Analyse",
+      "difficulty": "moyen",
+      "duration": 15,
+      "description": "Étudier la convexité d'une fonction et trouver les points d'inflexion.",
+      "problem": "Soit $f(x) = x^3 - 3x^2 + 2x$. Étudier la convexité de $f$ et trouver les points d'inflexion.",
+      "steps": [
+        { "instruction": "Calcule $f'(x)$.", "hint": "Dérive terme par terme.", "solution": "$f'(x) = 3x^2 - 6x + 2$" },
+        { "instruction": "Calcule $f''(x)$.", "hint": "Dérive $f'(x)$.", "solution": "$f''(x) = 6x - 6$" },
+        { "instruction": "Résous $f''(x) = 0$.", "hint": "$6x - 6 = 0$", "solution": "$x = 1$" },
+        { "instruction": "Étudie le signe de $f''(x)$.", "hint": "$f''(x) < 0$ si $x < 1$, $f''(x) > 0$ si $x > 1$.", "solution": "$f$ concave sur $]-\\infty, 1[$ et convexe sur $]1, +\\infty[$" },
+        { "instruction": "Déduis le point d'inflexion.", "hint": "C'est le point où $f''$ change de signe.", "solution": "Point d'inflexion en $x = 1$, donc $(1, f(1)) = (1, 0)$" }
+      ],
+      "finalAnswer": "Point d'inflexion en $(1, 0)$. $f$ concave sur $]-\\infty, 1[$, convexe sur $]1, +\\infty[$."
+    },
+    {
+      "id": "tvi-equation",
+      "title": "TVI et résolution d'équation",
+      "theme": "Analyse",
+      "difficulty": "moyen",
+      "duration": 12,
+      "description": "Utiliser le TVI pour prouver l'existence d'une solution.",
+      "problem": "Montrer que l'équation $x^3 + x - 1 = 0$ admet une unique solution sur $[0, 1]$.",
+      "steps": [
+        { "instruction": "Pose $f(x) = x^3 + x - 1$ et vérifie qu'elle est continue.", "hint": "Un polynôme est toujours continu.", "solution": "$f$ est continue sur $\\mathbb{R}$ comme fonction polynomiale." },
+        { "instruction": "Calcule $f(0)$ et $f(1)$.", "hint": "Évalue aux bornes.", "solution": "$f(0) = -1 < 0$ et $f(1) = 1 > 0$" },
+        { "instruction": "Applique le TVI.", "hint": "$f(0)$ et $f(1)$ sont de signes contraires.", "solution": "Par le TVI, $\\exists c \\in ]0, 1[$ tel que $f(c) = 0$." },
+        { "instruction": "Montre l'unicité.", "hint": "Étudie les variations de $f$.", "solution": "$f'(x) = 3x^2 + 1 > 0$ pour tout $x$, donc $f$ strictement croissante." },
+        { "instruction": "Conclus.", "hint": "Une fonction strictement monotone ne peut avoir qu'un seul zéro.", "solution": "$f$ strictement croissante, donc admet au plus une solution. Par le TVI, elle en a exactement une." }
+      ],
+      "finalAnswer": "L'équation admet une unique solution $\\alpha \\in ]0, 1[$."
+    },
+    {
+      "id": "limite-0sur0",
+      "title": "Limite indéterminée 0/0",
+      "theme": "Limites",
+      "difficulty": "moyen",
+      "duration": 12,
+      "description": "Lever une indétermination de type 0/0.",
+      "problem": "Calculer $\\lim_{x \\to 0} \\frac{e^x - 1 - x}{x^2}$.",
+      "steps": [
+        { "instruction": "Vérifie qu'on a une forme indéterminée.", "hint": "Calcule numérateur et dénominateur en 0.", "solution": "Num : $e^0 - 1 - 0 = 0$, Dén : $0^2 = 0$. FI $\\frac{0}{0}$." },
+        { "instruction": "Utilise le développement limité de $e^x$ en 0.", "hint": "$e^x = 1 + x + \\frac{x^2}{2} + o(x^2)$", "solution": "$e^x - 1 - x = \\frac{x^2}{2} + o(x^2)$" },
+        { "instruction": "Substitue dans la limite.", "hint": "Divise par $x^2$.", "solution": "$\\frac{e^x - 1 - x}{x^2} = \\frac{\\frac{x^2}{2} + o(x^2)}{x^2} = \\frac{1}{2} + o(1)$" },
+        { "instruction": "Calcule la limite.", "hint": "$o(1) \\to 0$", "solution": "$\\lim_{x \\to 0} = \\frac{1}{2}$" }
+      ],
+      "finalAnswer": "$\\lim_{x \\to 0} \\frac{e^x - 1 - x}{x^2} = \\frac{1}{2}$"
+    },
+    {
+      "id": "complexe-exponentielle",
+      "title": "Forme exponentielle",
+      "theme": "Nombres complexes",
+      "difficulty": "moyen",
+      "duration": 12,
+      "description": "Convertir un nombre complexe en forme exponentielle.",
+      "problem": "Écrire $z = 1 + i$ sous forme exponentielle $z = re^{i\\theta}$.",
+      "steps": [
+        { "instruction": "Calcule le module $r = |z|$.", "hint": "$|z| = \\sqrt{a^2 + b^2}$", "solution": "$r = \\sqrt{1^2 + 1^2} = \\sqrt{2}$" },
+        { "instruction": "Place $z$ dans le plan complexe.", "hint": "$a = 1 > 0$ et $b = 1 > 0$, donc 1er quadrant.", "solution": "Le point est dans le premier quadrant." },
+        { "instruction": "Calcule l'argument $\\theta$.", "hint": "$\\cos\\theta = \\frac{a}{r}$ et $\\sin\\theta = \\frac{b}{r}$", "solution": "$\\cos\\theta = \\frac{1}{\\sqrt{2}}$ et $\\sin\\theta = \\frac{1}{\\sqrt{2}}$, donc $\\theta = \\frac{\\pi}{4}$" },
+        { "instruction": "Écris la forme exponentielle.", "hint": "$z = re^{i\\theta}$", "solution": "$z = \\sqrt{2}e^{i\\frac{\\pi}{4}}$" }
+      ],
+      "finalAnswer": "$z = \\sqrt{2}e^{i\\frac{\\pi}{4}}$"
+    },
+    {
+      "id": "equation-complexe",
+      "title": "Équation dans ℂ",
+      "theme": "Nombres complexes",
+      "difficulty": "difficile",
+      "duration": 15,
+      "description": "Résoudre une équation du second degré dans ℂ.",
+      "problem": "Résoudre dans $\\mathbb{C}$ l'équation $z^2 - 2z + 2 = 0$.",
+      "steps": [
+        { "instruction": "Calcule le discriminant.", "hint": "$\\Delta = b^2 - 4ac$", "solution": "$\\Delta = 4 - 8 = -4$" },
+        { "instruction": "Interprète le signe de $\\Delta$.", "hint": "$\\Delta < 0$ signifie solutions complexes conjuguées.", "solution": "Deux solutions complexes conjuguées." },
+        { "instruction": "Calcule $\\sqrt{\\Delta}$ dans $\\mathbb{C}$.", "hint": "$\\sqrt{-4} = 2i$", "solution": "$\\sqrt{\\Delta} = 2i$" },
+        { "instruction": "Calcule les solutions.", "hint": "$z = \\frac{-b \\pm \\sqrt{\\Delta}}{2a}$", "solution": "$z_1 = \\frac{2 + 2i}{2} = 1 + i$ et $z_2 = \\frac{2 - 2i}{2} = 1 - i$" }
+      ],
+      "finalAnswer": "$S = \\{1 + i, 1 - i\\}$"
+    },
+    {
+      "id": "euclide-pgcd",
+      "title": "Algorithme d'Euclide",
+      "theme": "Arithmétique",
+      "difficulty": "moyen",
+      "duration": 12,
+      "description": "Calculer le PGCD avec l'algorithme d'Euclide.",
+      "problem": "Calculer $\\text{pgcd}(252, 180)$ par l'algorithme d'Euclide.",
+      "steps": [
+        { "instruction": "Effectue la première division euclidienne.", "hint": "$252 = 180 \\times q + r$", "solution": "$252 = 180 \\times 1 + 72$" },
+        { "instruction": "Continue avec le diviseur et le reste.", "hint": "$180 = 72 \\times q + r$", "solution": "$180 = 72 \\times 2 + 36$" },
+        { "instruction": "Continue.", "hint": "$72 = 36 \\times q + r$", "solution": "$72 = 36 \\times 2 + 0$" },
+        { "instruction": "Identifie le PGCD.", "hint": "C'est le dernier reste non nul.", "solution": "$\\text{pgcd}(252, 180) = 36$" }
+      ],
+      "finalAnswer": "$\\text{pgcd}(252, 180) = 36$"
+    },
+    {
+      "id": "diophantienne",
+      "title": "Équation diophantienne",
+      "theme": "Arithmétique",
+      "difficulty": "difficile",
+      "duration": 20,
+      "description": "Résoudre une équation diophantienne avec Bézout.",
+      "problem": "Trouver toutes les solutions entières de $15x + 24y = 6$.",
+      "steps": [
+        { "instruction": "Vérifie que l'équation a des solutions.", "hint": "Il faut que $\\text{pgcd}(15, 24)$ divise 6.", "solution": "$\\text{pgcd}(15, 24) = 3$ et $3 | 6$ ✓" },
+        { "instruction": "Simplifie l'équation.", "hint": "Divise par le PGCD.", "solution": "$5x + 8y = 2$" },
+        { "instruction": "Trouve une solution particulière par Bézout.", "hint": "Cherche $u, v$ tels que $5u + 8v = 1$.", "solution": "$5 \\times (-3) + 8 \\times 2 = 1$, donc $(x_0, y_0) = (-6, 4)$" },
+        { "instruction": "Écris la solution générale.", "hint": "$(x, y) = (x_0 + \\frac{b}{d}k, y_0 - \\frac{a}{d}k)$", "solution": "$x = -6 + 8k$ et $y = 4 - 5k$, $k \\in \\mathbb{Z}$" }
+      ],
+      "finalAnswer": "Solutions : $(x, y) = (-6 + 8k, 4 - 5k)$ pour $k \\in \\mathbb{Z}$"
     }
   ]
 }
