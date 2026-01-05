@@ -1,6 +1,7 @@
 'use client'
 
-import { createContext, useContext, useEffect, useState } from 'react'
+import { createContext, useContext, useEffect, useState, useRef } from 'react'
+import { useStore } from '@/store/useStore'
 
 type Theme = 'light' | 'dark' | 'system'
 
@@ -20,6 +21,8 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
   const [theme, setTheme] = useState<Theme>('system')
   const [resolvedTheme, setResolvedTheme] = useState<'light' | 'dark'>('light')
   const [mounted, setMounted] = useState(false)
+  const syncedRef = useRef(false)
+  const syncGamificationPoints = useStore((state) => state.syncGamificationPoints)
 
   useEffect(() => {
     setMounted(true)
@@ -27,7 +30,19 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     if (savedTheme) {
       setTheme(savedTheme)
     }
-  }, [])
+
+    // Synchroniser les points de gamification rétroactivement (une seule fois)
+    if (!syncedRef.current) {
+      syncedRef.current = true
+      // Attendre que les stores soient hydratés depuis localStorage
+      setTimeout(() => {
+        const result = syncGamificationPoints()
+        if (result.synced) {
+          console.log(`Points synchronisés: +${result.pointsAdded} XP`)
+        }
+      }, 100)
+    }
+  }, [syncGamificationPoints])
 
   useEffect(() => {
     if (!mounted) return

@@ -18,6 +18,7 @@ import type {
   RevisionScheduleItem,
 } from '@/types'
 import { calculateSpacedRepetitionDate, getRevisionSchedule } from '@/lib/utils'
+import { useGamificationStore, POINTS } from '@/stores/gamificationStore'
 
 // Valeurs par défaut
 const defaultStats: UserStats = {
@@ -89,6 +90,7 @@ interface StoreActions {
   resetAllProgress: () => void
   exportData: () => AppState
   importData: (data: AppState) => void
+  syncGamificationPoints: () => { synced: boolean; pointsAdded: number }
 }
 
 type Store = AppState & StoreActions
@@ -143,10 +145,10 @@ export const useStore = create<Store>()(
               })
             : get().lessonProgress[lessonId]?.revisionSchedule || []
 
-        set((state) => {
-          const wasCompleted = state.lessonProgress[lessonId]?.status === 'mastered'
-          const isNowCompleted = status === 'mastered'
+        const wasCompleted = get().lessonProgress[lessonId]?.status === 'mastered'
+        const isNowCompleted = status === 'mastered'
 
+        set((state) => {
           return {
             lessonProgress: {
               ...state.lessonProgress,
@@ -165,6 +167,14 @@ export const useStore = create<Store>()(
             },
           }
         })
+
+        // Accorder les points de gamification si la leçon est nouvellement maîtrisée
+        if (isNowCompleted && !wasCompleted) {
+          const gamification = useGamificationStore.getState()
+          gamification.addPoints(POINTS.LESSON_COMPLETED, 'Leçon terminée')
+          gamification.incrementStat('lessons')
+          gamification.recordActivity('lesson', lessonId)
+        }
       },
 
       completeLessonRevision: (lessonId, dayOffset) => {
@@ -205,9 +215,9 @@ export const useStore = create<Store>()(
       },
 
       markExerciseCompleted: (exerciseId, lessonId) => {
-        set((state) => {
-          const wasCompleted = state.exerciseProgress[exerciseId]?.status === 'completed'
+        const wasCompleted = get().exerciseProgress[exerciseId]?.status === 'completed'
 
+        set((state) => {
           return {
             exerciseProgress: {
               ...state.exerciseProgress,
@@ -226,6 +236,14 @@ export const useStore = create<Store>()(
           }
         })
         get().recordActivity('exercise', exerciseId)
+
+        // Accorder les points de gamification si l'exercice est nouvellement complété
+        if (!wasCompleted) {
+          const gamification = useGamificationStore.getState()
+          gamification.addPoints(POINTS.EXERCISE_CORRECT, 'Exercice réussi')
+          gamification.incrementStat('exercises')
+          gamification.recordActivity('exercise', exerciseId)
+        }
       },
 
       useExerciseHint: (exerciseId) => {
@@ -284,6 +302,7 @@ export const useStore = create<Store>()(
         let newEaseFactor = current.easeFactor
         let newRepetitionCount = current.repetitionCount
         let newStatus = current.status
+        const wasAlreadyMastered = current.status === 'mastered'
 
         switch (response) {
           case 'again':
@@ -329,6 +348,21 @@ export const useStore = create<Store>()(
         }))
 
         get().recordActivity('flashcard', flashcardId)
+
+        // Accorder les points de gamification pour la flashcard
+        const gamification = useGamificationStore.getState()
+        gamification.recordActivity('flashcard', flashcardId)
+
+        // Points pour réponse correcte (good ou easy)
+        if (response === 'good' || response === 'easy') {
+          gamification.addPoints(POINTS.FLASHCARD_CORRECT, 'Flashcard réussie')
+          gamification.incrementStat('correctAnswers')
+        }
+
+        // Bonus si la flashcard est nouvellement maîtrisée
+        if (newStatus === 'mastered' && !wasAlreadyMastered) {
+          gamification.addPoints(POINTS.FLASHCARD_MASTERED, 'Flashcard maîtrisée !')
+        }
       },
 
       getFlashcardsDueForReview: () => {
@@ -353,6 +387,17 @@ export const useStore = create<Store>()(
           },
         }))
         get().recordActivity('quiz', attempt.quizId)
+
+        // Accorder les points de gamification pour le QCM
+        const gamification = useGamificationStore.getState()
+        gamification.addPoints(POINTS.QUIZ_COMPLETED, 'QCM terminé')
+        gamification.incrementStat('quizzes')
+        gamification.recordActivity('quiz', attempt.quizId)
+
+        // Bonus si score parfait (100%)
+        if (attempt.score === 100) {
+          gamification.addPoints(POINTS.QUIZ_PERFECT, 'QCM parfait !')
+        }
       },
 
       getQuizAttempts: (lessonId) => {
@@ -543,6 +588,82 @@ export const useStore = create<Store>()(
           stats: defaultStats,
           dailyActivities: {},
         })
+      },
+
+      // Synchroniser les points de gamification rétroactivement
+      // à partir des données existantes (pour les utilisateurs existants)
+      syncGamificationPoints: () => {
+        const state = get()
+        const gamification = useGamificationStore.getState()
+
+        // Calculer les points qui auraient dû être accordés
+        let pointsToSync = 0
+        let lessonsToSync = 0
+        let exercisesToSync = 0
+        let quizzesToSync = 0
+
+        // Compter les leçons maîtrisées
+        Object.values(state.lessonProgress).forEach((progress) => {
+          if (progress.status === 'mastered') {
+            pointsToSync += POINTS.LESSON_COMPLETED
+            lessonsToSync++
+          }
+        })
+
+        // Compter les exercices complétés
+        Object.values(state.exerciseProgress).forEach((progress) => {
+          if (progress.status === 'completed') {
+            pointsToSync += POINTS.EXERCISE_CORRECT
+            exercisesToSync++
+          }
+        })
+
+        // Compter les QCM
+        state.quizAttempts.forEach((attempt) => {
+          pointsToSync += POINTS.QUIZ_COMPLETED
+          quizzesToSync++
+          if (attempt.score === 100) {
+            pointsToSync += POINTS.QUIZ_PERFECT
+          }
+        })
+
+        // Compter les flashcards
+        Object.values(state.flashcardProgress).forEach((progress) => {
+          if (progress.status === 'mastered') {
+            pointsToSync += POINTS.FLASHCARD_MASTERED
+          }
+        })
+
+        // Vérifier si la synchronisation est nécessaire
+        // (si les points actuels sont significativement inférieurs aux points calculés)
+        const currentPoints = gamification.totalPoints
+        const pointsDifference = pointsToSync - currentPoints
+
+        if (pointsDifference > 0) {
+          // Synchroniser les stats
+          if (lessonsToSync > gamification.totalLessonsCompleted) {
+            for (let i = gamification.totalLessonsCompleted; i < lessonsToSync; i++) {
+              gamification.incrementStat('lessons')
+            }
+          }
+          if (exercisesToSync > gamification.totalExercisesCompleted) {
+            for (let i = gamification.totalExercisesCompleted; i < exercisesToSync; i++) {
+              gamification.incrementStat('exercises')
+            }
+          }
+          if (quizzesToSync > gamification.totalQuizzesCompleted) {
+            for (let i = gamification.totalQuizzesCompleted; i < quizzesToSync; i++) {
+              gamification.incrementStat('quizzes')
+            }
+          }
+
+          // Ajouter les points manquants
+          gamification.addPoints(pointsDifference, 'Synchronisation des points rétroactifs')
+
+          return { synced: true, pointsAdded: pointsDifference }
+        }
+
+        return { synced: false, pointsAdded: 0 }
       },
 
       exportData: () => {
