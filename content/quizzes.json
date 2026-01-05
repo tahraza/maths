@@ -1656,5 +1656,105 @@
       {"id": "q3", "question": "Les 7 ponts de Königsberg n'ont pas de solution car :", "options": ["Plus de 2 sommets ont un degré impair", "Le graphe n'est pas connexe", "Il y a trop de ponts", "Les degrés sont tous pairs"], "correctAnswer": 0, "explanation": "4 sommets de degré impair : pas de chemin eulérien."},
       {"id": "q4", "question": "DFS permet de détecter les :", "options": ["Plus courts chemins", "Cycles", "Arbres couvrants", "B et C"], "correctAnswer": 3, "explanation": "DFS détecte les cycles et construit des arbres."}
     ]
+  },
+  {
+    "id": "pre-vecteurs-espace",
+    "lessonId": "vecteurs-espace",
+    "type": "pre",
+    "title": "Diagnostic : Vecteurs dans l'espace",
+    "questions": [
+      {"id": "q1", "question": "Dans l'espace, un point est repéré par :", "options": ["2 coordonnées", "3 coordonnées", "4 coordonnées", "1 coordonnée"], "correctAnswer": 1, "explanation": "Dans l'espace 3D, on utilise les coordonnées (x, y, z)."},
+      {"id": "q2", "question": "Si $A(1, 2, 3)$ et $B(4, 5, 6)$, alors $\\overrightarrow{AB}$ a pour coordonnées :", "options": ["$(5, 7, 9)$", "$(3, 3, 3)$", "$(-3, -3, -3)$", "$(4, 10, 18)$"], "correctAnswer": 1, "explanation": "$\\overrightarrow{AB} = (x_B - x_A, y_B - y_A, z_B - z_A) = (3, 3, 3)$."},
+      {"id": "q3", "question": "La norme du vecteur $\\vec{u}(1, 2, 2)$ vaut :", "options": ["$5$", "$3$", "$9$", "$\\sqrt{5}$"], "correctAnswer": 1, "explanation": "$\\|\\vec{u}\\| = \\sqrt{1^2 + 2^2 + 2^2} = \\sqrt{9} = 3$."},
+      {"id": "q4", "question": "Deux vecteurs colinéaires ont :", "options": ["La même norme", "La même direction", "Les mêmes coordonnées", "Le même sens"], "correctAnswer": 1, "explanation": "Colinéaires signifie même direction (mais pas forcément même sens ou norme)."}
+    ]
+  },
+  {
+    "id": "post-vecteurs-espace",
+    "lessonId": "vecteurs-espace",
+    "type": "post",
+    "title": "Validation : Vecteurs dans l'espace",
+    "questions": [
+      {"id": "q1", "question": "Le milieu de $[A(2, 4, 6), B(4, 2, 0)]$ a pour coordonnées :", "options": ["$(3, 3, 3)$", "$(6, 6, 6)$", "$(1, 1, 3)$", "$(2, 2, 6)$"], "correctAnswer": 0, "explanation": "Milieu : $((2+4)/2, (4+2)/2, (6+0)/2) = (3, 3, 3)$."},
+      {"id": "q2", "question": "Pour que $\\vec{u}(2, -4, 6)$ et $\\vec{v}(-1, a, -3)$ soient colinéaires, $a$ vaut :", "options": ["$-2$", "$2$", "$4$", "$-4$"], "correctAnswer": 1, "explanation": "$\\vec{v} = -\\frac{1}{2}\\vec{u}$ donc $a = -\\frac{1}{2} \\times (-4) = 2$."},
+      {"id": "q3", "question": "Le déterminant de trois vecteurs coplanaires vaut :", "options": ["$1$", "$-1$", "$0$", "Leur produit"], "correctAnswer": 2, "explanation": "Trois vecteurs sont coplanaires ssi leur déterminant est nul."},
+      {"id": "q4", "question": "La distance $AB$ avec $A(1, 0, 0)$ et $B(0, 1, 1)$ vaut :", "options": ["$\\sqrt{2}$", "$\\sqrt{3}$", "$2$", "$3$"], "correctAnswer": 1, "explanation": "$AB = \\sqrt{1 + 1 + 1} = \\sqrt{3}$."},
+      {"id": "q5", "question": "Si $\\det(\\vec{u}, \\vec{v}, \\vec{w}) \\neq 0$, les vecteurs sont :", "options": ["Colinéaires", "Coplanaires", "Non coplanaires", "Nuls"], "correctAnswer": 2, "explanation": "Un déterminant non nul indique que les vecteurs forment une base de l'espace."}
+    ]
+  },
+  {
+    "id": "pre-produit-scalaire-espace",
+    "lessonId": "produit-scalaire-espace",
+    "type": "pre",
+    "title": "Diagnostic : Produit scalaire dans l'espace",
+    "questions": [
+      {"id": "q1", "question": "Le produit scalaire de deux vecteurs donne :", "options": ["Un vecteur", "Un nombre réel", "Une matrice", "Un point"], "correctAnswer": 1, "explanation": "Le produit scalaire est un scalaire (nombre réel)."},
+      {"id": "q2", "question": "Si $\\vec{u} \\cdot \\vec{v} = 0$, les vecteurs sont :", "options": ["Colinéaires", "Orthogonaux", "De même norme", "Égaux"], "correctAnswer": 1, "explanation": "Le produit scalaire nul caractérise l'orthogonalité."},
+      {"id": "q3", "question": "$\\vec{u}(1, 2, 3) \\cdot \\vec{v}(4, 5, 6)$ vaut :", "options": ["$15$", "$32$", "$21$", "$27$"], "correctAnswer": 1, "explanation": "$1×4 + 2×5 + 3×6 = 4 + 10 + 18 = 32$."},
+      {"id": "q4", "question": "$\\|\\vec{u}\\|^2$ est égal à :", "options": ["$\\vec{u} \\cdot \\vec{u}$", "$2\\vec{u}$", "$\\vec{u}^2$", "$\\sqrt{\\vec{u}}$"], "correctAnswer": 0, "explanation": "Par définition, $\\vec{u} \\cdot \\vec{u} = \\|\\vec{u}\\|^2$."}
+    ]
+  },
+  {
+    "id": "post-produit-scalaire-espace",
+    "lessonId": "produit-scalaire-espace",
+    "type": "post",
+    "title": "Validation : Produit scalaire dans l'espace",
+    "questions": [
+      {"id": "q1", "question": "L'angle entre $\\vec{u}(1, 0, 0)$ et $\\vec{v}(0, 1, 0)$ vaut :", "options": ["$0$", "$\\frac{\\pi}{4}$", "$\\frac{\\pi}{2}$", "$\\pi$"], "correctAnswer": 2, "explanation": "$\\vec{u} \\cdot \\vec{v} = 0$ donc $\\cos\\theta = 0$ donc $\\theta = \\frac{\\pi}{2}$."},
+      {"id": "q2", "question": "Si $\\vec{u} \\cdot \\vec{v} < 0$, l'angle entre eux est :", "options": ["Aigu", "Droit", "Obtus", "Plat"], "correctAnswer": 2, "explanation": "$\\cos\\theta < 0$ signifie $\\theta > \\frac{\\pi}{2}$, angle obtus."},
+      {"id": "q3", "question": "La projection de $\\vec{u}$ sur $\\vec{v}$ est un vecteur :", "options": ["Perpendiculaire à $\\vec{v}$", "Colinéaire à $\\vec{v}$", "Égal à $\\vec{u}$", "De norme 1"], "correctAnswer": 1, "explanation": "La projection sur $\\vec{v}$ est colinéaire à $\\vec{v}$."},
+      {"id": "q4", "question": "$\\vec{u}(1, 1, 1) \\cdot \\vec{v}(1, -1, 0)$ vaut :", "options": ["$2$", "$0$", "$1$", "$-1$"], "correctAnswer": 1, "explanation": "$1×1 + 1×(-1) + 1×0 = 1 - 1 + 0 = 0$. Ils sont orthogonaux."},
+      {"id": "q5", "question": "$\\cos\\theta = \\frac{\\vec{u} \\cdot \\vec{v}}{\\|\\vec{u}\\| \\|\\vec{v}\\|}$ donne pour $\\vec{u}(1,0,1)$ et $\\vec{v}(0,1,1)$ :", "options": ["$\\frac{1}{2}$", "$\\frac{1}{\\sqrt{2}}$", "$\\frac{\\sqrt{2}}{2}$", "$\\frac{1}{4}$"], "correctAnswer": 0, "explanation": "$\\vec{u}\\cdot\\vec{v}=1$, $\\|\\vec{u}\\|=\\|\\vec{v}\\|=\\sqrt{2}$, donc $\\cos\\theta = \\frac{1}{2}$."}
+    ]
+  },
+  {
+    "id": "pre-droites-plans-espace",
+    "lessonId": "droites-plans-espace",
+    "type": "pre",
+    "title": "Diagnostic : Droites et plans de l'espace",
+    "questions": [
+      {"id": "q1", "question": "Une droite dans l'espace est définie par :", "options": ["1 équation", "2 équations", "Un point et un vecteur directeur", "3 points"], "correctAnswer": 2, "explanation": "Un point et un vecteur directeur suffisent à définir une droite."},
+      {"id": "q2", "question": "L'équation $2x - y + 3z - 5 = 0$ représente :", "options": ["Une droite", "Un plan", "Un point", "Une sphère"], "correctAnswer": 1, "explanation": "Une équation linéaire en x, y, z définit un plan."},
+      {"id": "q3", "question": "Le vecteur normal au plan $x + 2y - z = 0$ est :", "options": ["$(1, 2, 1)$", "$(1, 2, -1)$", "$(1, -2, 1)$", "$(0, 0, 0)$"], "correctAnswer": 1, "explanation": "Les coefficients a, b, c donnent le vecteur normal $(1, 2, -1)$."},
+      {"id": "q4", "question": "Deux droites non coplanaires sont dites :", "options": ["Parallèles", "Sécantes", "Confondues", "Gauches"], "correctAnswer": 3, "explanation": "Des droites non coplanaires sont appelées droites gauches."}
+    ]
+  },
+  {
+    "id": "post-droites-plans-espace",
+    "lessonId": "droites-plans-espace",
+    "type": "post",
+    "title": "Validation : Droites et plans de l'espace",
+    "questions": [
+      {"id": "q1", "question": "La droite passant par $A(1,0,0)$ de direction $\\vec{u}(1,1,1)$ a pour équation paramétrique :", "options": ["$x=1+t, y=t, z=t$", "$x=t, y=1+t, z=t$", "$x=1, y=1, z=1$", "$x+y+z=1$"], "correctAnswer": 0, "explanation": "$(x,y,z) = (1,0,0) + t(1,1,1) = (1+t, t, t)$."},
+      {"id": "q2", "question": "Une droite de vecteur directeur $\\vec{u}$ est parallèle à un plan de vecteur normal $\\vec{n}$ si :", "options": ["$\\vec{u} = \\vec{n}$", "$\\vec{u} \\cdot \\vec{n} = 0$", "$\\vec{u} \\cdot \\vec{n} = 1$", "$\\vec{u} \\parallel \\vec{n}$"], "correctAnswer": 1, "explanation": "Parallèle au plan signifie perpendiculaire au vecteur normal."},
+      {"id": "q3", "question": "L'intersection d'une droite et d'un plan peut être :", "options": ["Un point, une droite ou vide", "Toujours un point", "Toujours une droite", "Un plan"], "correctAnswer": 0, "explanation": "Sécante (1 point), contenue (droite), ou parallèle (vide)."},
+      {"id": "q4", "question": "Pour trouver l'intersection droite-plan, on :", "options": ["Égalise les vecteurs", "Substitue les équations paramétriques dans l'équation du plan", "Calcule le produit scalaire", "Additionne les équations"], "correctAnswer": 1, "explanation": "On remplace x, y, z dans ax+by+cz+d=0 puis on résout en t."},
+      {"id": "q5", "question": "Deux plans $P_1$ et $P_2$ sont perpendiculaires si :", "options": ["$\\vec{n_1} \\cdot \\vec{n_2} = 0$", "$\\vec{n_1} \\parallel \\vec{n_2}$", "$\\vec{n_1} = \\vec{n_2}$", "Ils n'ont pas d'intersection"], "correctAnswer": 0, "explanation": "Plans perpendiculaires ssi leurs normales sont orthogonales."}
+    ]
+  },
+  {
+    "id": "pre-orthogonalite-espace",
+    "lessonId": "orthogonalite-espace",
+    "type": "pre",
+    "title": "Diagnostic : Orthogonalité dans l'espace",
+    "questions": [
+      {"id": "q1", "question": "Une droite perpendiculaire à un plan est :", "options": ["Parallèle à ce plan", "Contenue dans ce plan", "Orthogonale à toute droite du plan", "Sécante en deux points"], "correctAnswer": 2, "explanation": "Perpendiculaire au plan = orthogonale à toutes les droites du plan passant par le point d'intersection."},
+      {"id": "q2", "question": "Le projeté orthogonal d'un point sur un plan est :", "options": ["Le point le plus éloigné", "Le point le plus proche", "L'intersection avec l'axe", "Le milieu"], "correctAnswer": 1, "explanation": "La projection orthogonale minimise la distance."},
+      {"id": "q3", "question": "La distance d'un point à un plan se mesure :", "options": ["Horizontalement", "Verticalement", "Perpendiculairement au plan", "Parallèlement au plan"], "correctAnswer": 2, "explanation": "La distance est toujours mesurée perpendiculairement."},
+      {"id": "q4", "question": "$(d) \\perp (P)$ si le vecteur directeur de $(d)$ est :", "options": ["Dans le plan", "Colinéaire au vecteur normal", "Orthogonal au vecteur normal", "Nul"], "correctAnswer": 1, "explanation": "Droite perpendiculaire = direction colinéaire à la normale du plan."}
+    ]
+  },
+  {
+    "id": "post-orthogonalite-espace",
+    "lessonId": "orthogonalite-espace",
+    "type": "post",
+    "title": "Validation : Orthogonalité dans l'espace",
+    "questions": [
+      {"id": "q1", "question": "La distance du point $M(1, 2, 3)$ au plan $x + y + z = 0$ vaut :", "options": ["$6$", "$2\\sqrt{3}$", "$\\frac{6}{\\sqrt{3}}$", "$\\sqrt{6}$"], "correctAnswer": 1, "explanation": "$d = \\frac{|1+2+3|}{\\sqrt{1+1+1}} = \\frac{6}{\\sqrt{3}} = 2\\sqrt{3}$."},
+      {"id": "q2", "question": "Pour trouver le projeté de $M$ sur $(P)$, on cherche l'intersection de :", "options": ["$(P)$ et un plan parallèle", "$(P)$ et la droite passant par $M$ perpendiculaire à $(P)$", "$(P)$ et l'axe des x", "Deux plans quelconques"], "correctAnswer": 1, "explanation": "Le projeté est sur la perpendiculaire au plan passant par M."},
+      {"id": "q3", "question": "Si $H$ est le projeté de $M$ sur $(P)$, alors $MH$ est :", "options": ["Parallèle à $(P)$", "Contenu dans $(P)$", "Perpendiculaire à $(P)$", "Tangent à $(P)$"], "correctAnswer": 2, "explanation": "Par définition de la projection orthogonale."},
+      {"id": "q4", "question": "La distance de $O(0,0,0)$ au plan $2x - 2y + z - 9 = 0$ vaut :", "options": ["$9$", "$3$", "$\\frac{9}{3}$", "$\\frac{9}{\\sqrt{9}}$"], "correctAnswer": 1, "explanation": "$d = \\frac{|-9|}{\\sqrt{4+4+1}} = \\frac{9}{3} = 3$."},
+      {"id": "q5", "question": "Le projeté de $M(3, 0, 0)$ sur la droite passant par $O$ de direction $(1, 1, 1)$ :", "options": ["Est sur l'axe Ox", "A ses trois coordonnées égales", "Est à l'origine", "N'existe pas"], "correctAnswer": 1, "explanation": "Le projeté est sur la droite, donc de la forme $(t, t, t)$."}
+    ]
   }
 ]

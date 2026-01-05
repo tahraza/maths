@@ -1,0 +1,233 @@
+---
+id: "droites-plans-espace"
+title: "Droites et plans de l'espace"
+track: "spe"
+level: 3
+prerequisites: ["vecteurs-espace", "produit-scalaire-espace"]
+tags: ["droites", "plans", "équations", "intersection", "parallélisme"]
+estimatedTime: 60
+chapter: "geometrie-espace"
+order: 3
+---
+
+# Droites et plans de l'espace
+
+## Intuition et analogie
+
+Une droite dans l'espace, c'est comme un fil tendu : elle est définie par un point de passage et une direction. Un plan, c'est comme une feuille infinie : il est défini par un point et deux directions non parallèles, ou par un point et une direction "interdite" (perpendiculaire au plan).
+
+Les équations nous permettent de traduire ces objets géométriques en langage algébrique pour les manipuler et résoudre des problèmes d'intersection.
+
+## Objectifs de cette leçon
+
+À la fin de cette leçon, tu sauras :
+- Écrire l'équation paramétrique d'une droite
+- Écrire l'équation cartésienne d'un plan
+- Déterminer les positions relatives de droites et plans
+- Calculer l'intersection de droites et plans
+
+## Prérequis (rappel express)
+
+- **Vecteurs dans l'espace** : coordonnées, colinéarité, coplanarité
+- **Produit scalaire** : orthogonalité, vecteur normal
+
+## Représentation paramétrique d'une droite
+
+:::definition
+**Représentation paramétrique**
+
+Une droite $(d)$ passant par un point $A(x_A, y_A, z_A)$ et de vecteur directeur $\vec{u}\begin{pmatrix} a \\ b \\ c \end{pmatrix}$ admet pour représentation paramétrique :
+
+$$\begin{cases} x = x_A + ta \\ y = y_A + tb \\ z = z_A + tc \end{cases}, \quad t \in \mathbb{R}$$
+
+Chaque valeur de $t$ donne un point de la droite.
+:::
+
+:::property[Unicité du vecteur directeur]
+Le vecteur directeur n'est pas unique : tout vecteur $k\vec{u}$ (avec $k \neq 0$) convient aussi.
+
+Une droite est entièrement déterminée par :
+- Un point + un vecteur directeur, OU
+- Deux points distincts (le vecteur directeur est alors $\overrightarrow{AB}$)
+:::
+
+## Équation cartésienne d'un plan
+
+:::definition
+**Équation cartésienne**
+
+Un plan $(P)$ de vecteur normal $\vec{n}\begin{pmatrix} a \\ b \\ c \end{pmatrix}$ (avec $(a,b,c) \neq (0,0,0)$) admet une équation de la forme :
+
+$$ax + by + cz + d = 0$$
+
+où $d$ est une constante déterminée par un point du plan.
+:::
+
+:::property[Vecteur normal]
+Le vecteur $\vec{n}(a, b, c)$ est **normal** (perpendiculaire) au plan.
+
+Réciproquement, si on connaît un vecteur normal $\vec{n}$ et un point $A(x_A, y_A, z_A)$ du plan :
+$$d = -(ax_A + by_A + cz_A)$$
+:::
+
+:::definition
+**Représentation paramétrique d'un plan**
+
+Un plan passant par $A$ et de vecteurs directeurs $\vec{u}$ et $\vec{v}$ (non colinéaires) :
+
+$$\begin{cases} x = x_A + su_x + tv_x \\ y = y_A + su_y + tv_y \\ z = z_A + su_z + tv_z \end{cases}, \quad (s, t) \in \mathbb{R}^2$$
+:::
+
+## Positions relatives
+
+:::property[Droite et plan]
+Soit $(d)$ de vecteur directeur $\vec{u}$ et $(P)$ de vecteur normal $\vec{n}$ :
+
+| Position | Condition | Description |
+|----------|-----------|-------------|
+| $(d) \subset (P)$ | $\vec{u} \cdot \vec{n} = 0$ ET un point de $(d)$ dans $(P)$ | Droite incluse |
+| $(d) \parallel (P)$ | $\vec{u} \cdot \vec{n} = 0$ ET aucun point commun | Strictement parallèles |
+| $(d) \cap (P) = \{I\}$ | $\vec{u} \cdot \vec{n} \neq 0$ | Sécantes en un point |
+| $(d) \perp (P)$ | $\vec{u}$ et $\vec{n}$ colinéaires | Perpendiculaires |
+:::
+
+:::property[Deux plans]
+Soient $(P_1): a_1x + b_1y + c_1z + d_1 = 0$ et $(P_2): a_2x + b_2y + c_2z + d_2 = 0$ :
+
+| Position | Condition |
+|----------|-----------|
+| Confondus | $\vec{n_1}$ et $\vec{n_2}$ colinéaires ET même plan |
+| Strictement parallèles | $\vec{n_1}$ et $\vec{n_2}$ colinéaires ET plans distincts |
+| Sécants | $\vec{n_1}$ et $\vec{n_2}$ non colinéaires (intersection = droite) |
+| Perpendiculaires | $\vec{n_1} \cdot \vec{n_2} = 0$ |
+:::
+
+:::property[Deux droites]
+Deux droites de l'espace peuvent être :
+- **Confondues** : même droite
+- **Parallèles** : vecteurs directeurs colinéaires, pas de point commun
+- **Sécantes** : un point d'intersection, coplanaires
+- **Non coplanaires** : pas d'intersection, pas parallèles
+:::
+
+## Méthodes types
+
+:::method[Déterminer l'équation d'un plan passant par 3 points]
+Soit $A$, $B$, $C$ trois points non alignés.
+
+1. Calcule $\vec{AB}$ et $\vec{AC}$ (vecteurs directeurs du plan)
+2. Cherche $\vec{n}(a, b, c)$ tel que $\vec{n} \cdot \vec{AB} = 0$ ET $\vec{n} \cdot \vec{AC} = 0$
+3. L'équation est $ax + by + cz + d = 0$ où $d$ est trouvé avec les coordonnées de $A$
+:::
+
+:::method[Trouver l'intersection d'une droite et d'un plan]
+Soit $(d)$ : $\begin{cases} x = x_0 + ta \\ y = y_0 + tb \\ z = z_0 + tc \end{cases}$ et $(P)$ : $\alpha x + \beta y + \gamma z + \delta = 0$
+
+1. Substitue les expressions de $x$, $y$, $z$ dans l'équation du plan
+2. Résous l'équation en $t$
+3. Si solution unique : calcule les coordonnées du point d'intersection
+4. Si pas de solution : droite parallèle au plan
+5. Si infinité de solutions : droite contenue dans le plan
+:::
+
+:::method[Vérifier si deux droites sont coplanaires]
+Soient $(d_1)$ passant par $A$ avec $\vec{u}$ et $(d_2)$ passant par $B$ avec $\vec{v}$.
+
+Les droites sont coplanaires si et seulement si $\det(\vec{u}, \vec{v}, \overrightarrow{AB}) = 0$.
+
+Sinon, elles sont non coplanaires (gauches).
+:::
+
+## Exemples résolus
+
+### Exemple 1 : Équation paramétrique d'une droite
+
+Droite $(d)$ passant par $A(1, 2, -1)$ et $B(3, 0, 2)$.
+
+**Vecteur directeur** : $\vec{AB} = \begin{pmatrix} 2 \\ -2 \\ 3 \end{pmatrix}$
+
+**Représentation paramétrique** :
+$$\begin{cases} x = 1 + 2t \\ y = 2 - 2t \\ z = -1 + 3t \end{cases}, \quad t \in \mathbb{R}$$
+
+### Exemple 2 : Équation cartésienne d'un plan
+
+Plan $(P)$ passant par $A(1, 0, 2)$, $B(0, 1, 1)$, $C(2, 1, 0)$.
+
+**Vecteurs directeurs** :
+$$\vec{AB} = \begin{pmatrix} -1 \\ 1 \\ -1 \end{pmatrix}, \quad \vec{AC} = \begin{pmatrix} 1 \\ 1 \\ -2 \end{pmatrix}$$
+
+**Vecteur normal** $\vec{n}(a, b, c)$ :
+- $\vec{n} \cdot \vec{AB} = 0 \Rightarrow -a + b - c = 0$
+- $\vec{n} \cdot \vec{AC} = 0 \Rightarrow a + b - 2c = 0$
+
+En résolvant : $a = c$ et $b = 2c$. Prenons $c = 1$ : $\vec{n}(1, 2, 1)$.
+
+**Équation** : $x + 2y + z + d = 0$
+
+Avec $A(1, 0, 2)$ : $1 + 0 + 2 + d = 0 \Rightarrow d = -3$
+
+**Équation finale** : $x + 2y + z - 3 = 0$
+
+### Exemple 3 : Intersection droite-plan
+
+$(d)$ : $\begin{cases} x = 1 + t \\ y = 2 - t \\ z = 3 + 2t \end{cases}$ et $(P)$ : $2x - y + z - 1 = 0$
+
+**Substitution** :
+$$2(1+t) - (2-t) + (3+2t) - 1 = 0$$
+$$2 + 2t - 2 + t + 3 + 2t - 1 = 0$$
+$$5t + 2 = 0 \Rightarrow t = -\frac{2}{5}$$
+
+**Point d'intersection** :
+$$I\left(1 - \frac{2}{5}, 2 + \frac{2}{5}, 3 - \frac{4}{5}\right) = I\left(\frac{3}{5}, \frac{12}{5}, \frac{11}{5}\right)$$
+
+### Exemple 4 : Droites coplanaires ou non
+
+$(d_1)$ passe par $A(1, 0, 0)$ avec $\vec{u}(1, 1, 0)$
+$(d_2)$ passe par $B(0, 1, 1)$ avec $\vec{v}(0, 1, 1)$
+
+$\overrightarrow{AB} = \begin{pmatrix} -1 \\ 1 \\ 1 \end{pmatrix}$
+
+**Déterminant** :
+$$\det(\vec{u}, \vec{v}, \overrightarrow{AB}) = \begin{vmatrix} 1 & 0 & -1 \\ 1 & 1 & 1 \\ 0 & 1 & 1 \end{vmatrix}$$
+$$= 1(1-1) - 0 + (-1)(1-0) = 0 - 1 = -1 \neq 0$$
+
+Les droites sont **non coplanaires** (gauches).
+
+## Erreurs fréquentes
+
+:::warning
+**Erreur 1** : Confondre vecteur directeur et vecteur normal
+
+- Droite : vecteur **directeur** (parallèle à la droite)
+- Plan : vecteur **normal** (perpendiculaire au plan)
+
+**Erreur 2** : Oublier de vérifier si les points sont dans l'objet
+
+Pour $(d) \subset (P)$, il ne suffit pas que $\vec{u} \perp \vec{n}$ : il faut aussi qu'un point de $(d)$ soit dans $(P)$.
+
+**Erreur 3** : Mal conclure sur les positions relatives
+
+Deux droites non sécantes peuvent être parallèles OU non coplanaires !
+
+**Erreur 4** : Erreur de signe dans l'équation du plan
+
+Après avoir trouvé $\vec{n}(a, b, c)$, bien calculer $d = -(ax_A + by_A + cz_A)$.
+:::
+
+## Mini-résumé à apprendre
+
+**Droite** (paramétrique) : $\begin{cases} x = x_0 + ta \\ y = y_0 + tb \\ z = z_0 + tc \end{cases}$
+
+**Plan** (cartésienne) : $ax + by + cz + d = 0$ avec $\vec{n}(a, b, c)$ normal
+
+**Intersection $(d) \cap (P)$** : substituer et résoudre en $t$
+
+**Positions** :
+- $\vec{u} \cdot \vec{n} = 0$ : droite parallèle ou dans le plan
+- $\vec{u} \cdot \vec{n} \neq 0$ : droite sécante au plan
+
+## Ponts vers autres chapitres
+
+- **Orthogonalité** : distance point-plan, projections
+- **Intégrales** : calcul de volumes limités par des plans
+- **Matrices** : systèmes linéaires pour les intersections

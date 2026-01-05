@@ -1,0 +1,217 @@
+---
+id: "produit-scalaire-espace"
+title: "Produit scalaire dans l'espace"
+track: "spe"
+level: 2
+prerequisites: ["vecteurs-espace"]
+tags: ["produit scalaire", "orthogonalité", "angle", "norme", "espace"]
+estimatedTime: 50
+chapter: "geometrie-espace"
+order: 2
+---
+
+# Produit scalaire dans l'espace
+
+## Intuition et analogie
+
+Le produit scalaire mesure à quel point deux vecteurs "vont dans la même direction". Imagine deux forces qui tirent sur un objet : si elles tirent dans le même sens, leur effet combiné est maximal ; si elles sont perpendiculaires, elles ne s'aident pas mutuellement ; si elles sont opposées, elles se contrecarrent.
+
+Mathématiquement, le produit scalaire est un nombre (un scalaire) qui traduit cette "compatibilité directionnelle" entre deux vecteurs.
+
+## Objectifs de cette leçon
+
+À la fin de cette leçon, tu sauras :
+- Calculer le produit scalaire de deux vecteurs dans l'espace
+- Utiliser le produit scalaire pour déterminer l'orthogonalité
+- Calculer l'angle entre deux vecteurs
+- Appliquer le produit scalaire à des problèmes géométriques
+
+## Prérequis (rappel express)
+
+- **Vecteurs dans l'espace** : coordonnées, norme, opérations
+- **Produit scalaire du plan** : formule et propriétés (extension à 3D)
+
+## Définitions
+
+:::definition
+**Produit scalaire (formule avec coordonnées)**
+
+Soient $\vec{u}\begin{pmatrix} x \\ y \\ z \end{pmatrix}$ et $\vec{v}\begin{pmatrix} x' \\ y' \\ z' \end{pmatrix}$ deux vecteurs de l'espace.
+
+Le **produit scalaire** de $\vec{u}$ et $\vec{v}$ est le réel :
+
+$$\vec{u} \cdot \vec{v} = xx' + yy' + zz'$$
+:::
+
+:::definition
+**Produit scalaire (formule avec angle)**
+
+Si $\theta$ est l'angle entre les vecteurs $\vec{u}$ et $\vec{v}$ (avec $0 \leq \theta \leq \pi$) :
+
+$$\vec{u} \cdot \vec{v} = \|\vec{u}\| \times \|\vec{v}\| \times \cos(\theta)$$
+:::
+
+:::definition
+**Orthogonalité**
+
+Deux vecteurs $\vec{u}$ et $\vec{v}$ sont **orthogonaux** si et seulement si :
+
+$$\vec{u} \cdot \vec{v} = 0$$
+
+On note $\vec{u} \perp \vec{v}$.
+:::
+
+## Propriétés
+
+:::property[Propriétés du produit scalaire]
+Pour tous vecteurs $\vec{u}$, $\vec{v}$, $\vec{w}$ et tout réel $k$ :
+
+1. **Symétrie** : $\vec{u} \cdot \vec{v} = \vec{v} \cdot \vec{u}$
+
+2. **Linéarité** : $\vec{u} \cdot (\vec{v} + \vec{w}) = \vec{u} \cdot \vec{v} + \vec{u} \cdot \vec{w}$
+
+3. **Homogénéité** : $(k\vec{u}) \cdot \vec{v} = k(\vec{u} \cdot \vec{v})$
+
+4. **Positivité** : $\vec{u} \cdot \vec{u} \geq 0$ et $\vec{u} \cdot \vec{u} = 0 \Leftrightarrow \vec{u} = \vec{0}$
+:::
+
+:::property[Lien avec la norme]
+Pour tout vecteur $\vec{u}$ :
+
+$$\vec{u} \cdot \vec{u} = \|\vec{u}\|^2$$
+
+Donc : $\|\vec{u}\| = \sqrt{\vec{u} \cdot \vec{u}}$
+:::
+
+:::property[Formule de l'angle]
+L'angle $\theta$ entre deux vecteurs non nuls $\vec{u}$ et $\vec{v}$ vérifie :
+
+$$\cos(\theta) = \frac{\vec{u} \cdot \vec{v}}{\|\vec{u}\| \times \|\vec{v}\|}$$
+:::
+
+:::property[Formules de polarisation]
+$$\vec{u} \cdot \vec{v} = \frac{1}{2}\left( \|\vec{u} + \vec{v}\|^2 - \|\vec{u}\|^2 - \|\vec{v}\|^2 \right)$$
+
+$$\vec{u} \cdot \vec{v} = \frac{1}{4}\left( \|\vec{u} + \vec{v}\|^2 - \|\vec{u} - \vec{v}\|^2 \right)$$
+:::
+
+## Méthodes types
+
+:::method[Calculer un produit scalaire]
+**Méthode 1 : Avec les coordonnées**
+1. Identifie les coordonnées de $\vec{u} = (x, y, z)$ et $\vec{v} = (x', y', z')$
+2. Calcule $\vec{u} \cdot \vec{v} = xx' + yy' + zz'$
+
+**Méthode 2 : Avec normes et angle**
+1. Calcule $\|\vec{u}\|$ et $\|\vec{v}\|$
+2. Détermine l'angle $\theta$ (si connu géométriquement)
+3. Calcule $\vec{u} \cdot \vec{v} = \|\vec{u}\| \|\vec{v}\| \cos(\theta)$
+:::
+
+:::method[Vérifier l'orthogonalité]
+Pour montrer que $\vec{u} \perp \vec{v}$ :
+1. Calcule $\vec{u} \cdot \vec{v}$
+2. Vérifie que le résultat est égal à 0
+:::
+
+:::method[Calculer l'angle entre deux vecteurs]
+1. Calcule $\vec{u} \cdot \vec{v}$
+2. Calcule $\|\vec{u}\|$ et $\|\vec{v}\|$
+3. Applique $\cos(\theta) = \frac{\vec{u} \cdot \vec{v}}{\|\vec{u}\| \|\vec{v}\|}$
+4. Déduis $\theta = \arccos\left(\frac{\vec{u} \cdot \vec{v}}{\|\vec{u}\| \|\vec{v}\|}\right)$
+:::
+
+:::method[Projeter un vecteur sur un autre]
+La projection orthogonale de $\vec{u}$ sur $\vec{v}$ (non nul) est :
+
+$$\text{proj}_{\vec{v}}(\vec{u}) = \frac{\vec{u} \cdot \vec{v}}{\|\vec{v}\|^2} \vec{v}$$
+
+La composante de $\vec{u}$ selon $\vec{v}$ est : $\frac{\vec{u} \cdot \vec{v}}{\|\vec{v}\|}$
+:::
+
+## Exemples résolus
+
+### Exemple 1 : Produit scalaire et orthogonalité
+
+Soient $\vec{u} = \begin{pmatrix} 2 \\ -1 \\ 3 \end{pmatrix}$ et $\vec{v} = \begin{pmatrix} 1 \\ 5 \\ 1 \end{pmatrix}$.
+
+**Produit scalaire** :
+$$\vec{u} \cdot \vec{v} = 2 \times 1 + (-1) \times 5 + 3 \times 1 = 2 - 5 + 3 = 0$$
+
+Donc $\vec{u} \perp \vec{v}$ : les vecteurs sont **orthogonaux**.
+
+### Exemple 2 : Angle entre deux vecteurs
+
+Soient $\vec{u} = \begin{pmatrix} 1 \\ 1 \\ 0 \end{pmatrix}$ et $\vec{v} = \begin{pmatrix} 0 \\ 1 \\ 1 \end{pmatrix}$.
+
+**Produit scalaire** : $\vec{u} \cdot \vec{v} = 0 + 1 + 0 = 1$
+
+**Normes** : $\|\vec{u}\| = \sqrt{1 + 1 + 0} = \sqrt{2}$ et $\|\vec{v}\| = \sqrt{0 + 1 + 1} = \sqrt{2}$
+
+**Angle** :
+$$\cos(\theta) = \frac{1}{\sqrt{2} \times \sqrt{2}} = \frac{1}{2}$$
+
+Donc $\theta = \frac{\pi}{3}$ (ou 60°).
+
+### Exemple 3 : Vecteur normal et distance
+
+Dans un repère orthonormé, on considère les points $A(1, 0, 0)$, $B(0, 2, 0)$, $C(0, 0, 3)$.
+
+**Vecteurs du plan** :
+$$\overrightarrow{AB} = \begin{pmatrix} -1 \\ 2 \\ 0 \end{pmatrix}, \quad \overrightarrow{AC} = \begin{pmatrix} -1 \\ 0 \\ 3 \end{pmatrix}$$
+
+Le produit vectoriel (voir chapitre suivant) donne un vecteur normal au plan.
+
+### Exemple 4 : Application - Triangle rectangle
+
+$A(1, 2, 3)$, $B(3, 4, 3)$, $C(3, 2, 5)$. Le triangle $ABC$ est-il rectangle ?
+
+$$\overrightarrow{AB} = \begin{pmatrix} 2 \\ 2 \\ 0 \end{pmatrix}, \quad \overrightarrow{AC} = \begin{pmatrix} 2 \\ 0 \\ 2 \end{pmatrix}, \quad \overrightarrow{BC} = \begin{pmatrix} 0 \\ -2 \\ 2 \end{pmatrix}$$
+
+**Test d'orthogonalité** :
+- $\overrightarrow{AB} \cdot \overrightarrow{AC} = 4 + 0 + 0 = 4 \neq 0$
+- $\overrightarrow{AB} \cdot \overrightarrow{BC} = 0 - 4 + 0 = -4 \neq 0$
+- $\overrightarrow{AC} \cdot \overrightarrow{BC} = 0 + 0 + 4 = 4 \neq 0$
+
+Le triangle n'est pas rectangle.
+
+## Erreurs fréquentes
+
+:::warning
+**Erreur 1** : Confondre produit scalaire et produit vectoriel
+
+- Produit scalaire : donne un **nombre** (scalaire)
+- Produit vectoriel : donne un **vecteur**
+
+**Erreur 2** : Oublier une coordonnée
+
+$\vec{u} \cdot \vec{v} = xx' + yy' + zz'$ (3 termes en 3D !)
+
+**Erreur 3** : Mal interpréter le signe
+
+- $\vec{u} \cdot \vec{v} > 0$ : angle aigu ($\theta < 90°$)
+- $\vec{u} \cdot \vec{v} = 0$ : angle droit ($\theta = 90°$)
+- $\vec{u} \cdot \vec{v} < 0$ : angle obtus ($\theta > 90°$)
+
+**Erreur 4** : Confondre norme et norme au carré
+
+$\|\vec{u}\|^2 = \vec{u} \cdot \vec{u}$ mais $\|\vec{u}\| = \sqrt{\vec{u} \cdot \vec{u}}$
+:::
+
+## Mini-résumé à apprendre
+
+**Formule analytique** : $\vec{u} \cdot \vec{v} = xx' + yy' + zz'$
+
+**Formule géométrique** : $\vec{u} \cdot \vec{v} = \|\vec{u}\| \|\vec{v}\| \cos(\theta)$
+
+**Orthogonalité** : $\vec{u} \perp \vec{v} \Leftrightarrow \vec{u} \cdot \vec{v} = 0$
+
+**Norme** : $\|\vec{u}\|^2 = \vec{u} \cdot \vec{u}$
+
+**Angle** : $\cos(\theta) = \frac{\vec{u} \cdot \vec{v}}{\|\vec{u}\| \|\vec{v}\|}$
+
+## Ponts vers autres chapitres
+
+- **Droites et plans** : le produit scalaire permet de définir l'équation d'un plan
+- **Orthogonalité** : fondement pour les projections et distances
+- **Nombres complexes** : analogie avec le produit des modules

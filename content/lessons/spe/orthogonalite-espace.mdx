@@ -1,0 +1,232 @@
+---
+id: "orthogonalite-espace"
+title: "Orthogonalité dans l'espace"
+track: "spe"
+level: 3
+prerequisites: ["produit-scalaire-espace", "droites-plans-espace"]
+tags: ["orthogonalité", "projection", "distance", "plan", "droite"]
+estimatedTime: 50
+chapter: "geometrie-espace"
+order: 4
+---
+
+# Orthogonalité dans l'espace
+
+## Intuition et analogie
+
+L'orthogonalité dans l'espace, c'est la généralisation de la perpendicularité. Quand tu poses un livre à plat sur une table, le livre est perpendiculaire aux pieds de la table. Quand tu laisses tomber une balle, sa trajectoire est perpendiculaire au sol.
+
+La projection orthogonale, c'est comme l'ombre d'un objet quand le soleil est à la verticale : chaque point "tombe" perpendiculairement sur le plan.
+
+## Objectifs de cette leçon
+
+À la fin de cette leçon, tu sauras :
+- Déterminer si une droite est orthogonale à un plan
+- Calculer la projection orthogonale d'un point sur un plan ou une droite
+- Calculer la distance d'un point à un plan ou à une droite
+- Résoudre des problèmes de géométrie impliquant l'orthogonalité
+
+## Prérequis (rappel express)
+
+- **Produit scalaire** : critère d'orthogonalité $\vec{u} \cdot \vec{v} = 0$
+- **Droites et plans** : équations, vecteur directeur et normal
+
+## Droite orthogonale à un plan
+
+:::definition
+**Droite orthogonale à un plan**
+
+Une droite $(d)$ est **orthogonale** (ou **perpendiculaire**) à un plan $(P)$ si elle est orthogonale à toutes les droites de $(P)$ passant par leur point d'intersection.
+
+Notation : $(d) \perp (P)$
+:::
+
+:::property[Caractérisation]
+$(d)$ de vecteur directeur $\vec{u}$ est orthogonale à $(P)$ de vecteur normal $\vec{n}$ si et seulement si :
+
+$$\vec{u} \text{ et } \vec{n} \text{ sont colinéaires}$$
+
+Autrement dit : le vecteur directeur de la droite est un vecteur normal au plan.
+:::
+
+:::property[Unicité]
+Par un point $A$ de l'espace, il passe **une unique droite** perpendiculaire à un plan $(P)$ donné.
+
+Cette droite a pour vecteur directeur le vecteur normal $\vec{n}$ du plan.
+:::
+
+## Projection orthogonale
+
+:::definition
+**Projection orthogonale sur un plan**
+
+La **projection orthogonale** d'un point $M$ sur un plan $(P)$ est le point $H$ intersection de $(P)$ et de la droite passant par $M$ perpendiculaire à $(P)$.
+
+On note $H = \text{proj}_{(P)}(M)$.
+:::
+
+:::definition
+**Projection orthogonale sur une droite**
+
+La **projection orthogonale** d'un point $M$ sur une droite $(d)$ est le point $H$ de $(d)$ tel que $(MH) \perp (d)$.
+:::
+
+:::property[Le projeté minimise la distance]
+Pour tout point $M$ et tout plan $(P)$ (ou droite $(d)$) :
+- $H = \text{proj}_{(P)}(M)$ est le point de $(P)$ le plus proche de $M$
+- La distance de $M$ à $(P)$ est $MH$
+:::
+
+## Distance d'un point à un plan
+
+:::property[Formule de la distance point-plan]
+Soit $(P)$ : $ax + by + cz + d = 0$ et $M(x_M, y_M, z_M)$.
+
+La distance de $M$ au plan $(P)$ est :
+
+$$d(M, (P)) = \frac{|ax_M + by_M + cz_M + d|}{\sqrt{a^2 + b^2 + c^2}}$$
+:::
+
+:::method[Démonstration de la formule]
+1. Soit $H$ le projeté de $M$ sur $(P)$
+2. $\overrightarrow{MH}$ est colinéaire à $\vec{n}(a, b, c)$
+3. $d(M, P) = \|\overrightarrow{MH}\| = \frac{|\overrightarrow{MA} \cdot \vec{n}|}{\|\vec{n}\|}$ pour tout $A \in (P)$
+4. En développant, on trouve la formule
+:::
+
+## Distance d'un point à une droite
+
+:::property[Distance point-droite]
+Soit $(d)$ passant par $A$ avec vecteur directeur $\vec{u}$, et $M$ un point quelconque.
+
+$$d(M, (d)) = \frac{\|\overrightarrow{AM} \wedge \vec{u}\|}{\|\vec{u}\|}$$
+
+où $\wedge$ désigne le produit vectoriel.
+:::
+
+:::method[Méthode alternative (sans produit vectoriel)]
+1. Écris la représentation paramétrique de $(d)$
+2. Le projeté $H$ vérifie $\overrightarrow{MH} \perp \vec{u}$
+3. Résous $\overrightarrow{MH(t)} \cdot \vec{u} = 0$ pour trouver $t$
+4. Calcule $MH = d(M, (d))$
+:::
+
+## Méthodes types
+
+:::method[Trouver le projeté orthogonal sur un plan]
+Soit $M(x_M, y_M, z_M)$ et $(P)$ : $ax + by + cz + d = 0$.
+
+1. La droite $(MH)$ passe par $M$ et a pour vecteur directeur $\vec{n}(a, b, c)$
+2. Représentation paramétrique : $\begin{cases} x = x_M + ta \\ y = y_M + tb \\ z = z_M + tc \end{cases}$
+3. $H \in (P)$ donc substitue dans l'équation du plan
+4. Résous en $t$ puis calcule les coordonnées de $H$
+:::
+
+:::method[Trouver le projeté orthogonal sur une droite]
+Soit $M$ et $(d)$ passant par $A$ avec $\vec{u}$.
+
+1. $H \in (d)$ donc $H = A + t\vec{u}$ pour un certain $t$
+2. $\overrightarrow{MH} \perp \vec{u}$ donc $\overrightarrow{MH} \cdot \vec{u} = 0$
+3. Exprime $\overrightarrow{MH}$ en fonction de $t$ et résous
+4. Déduis les coordonnées de $H$
+:::
+
+:::method[Montrer qu'une droite est perpendiculaire à un plan]
+Pour montrer $(d) \perp (P)$ :
+
+**Méthode 1** : Montrer que le vecteur directeur de $(d)$ est colinéaire au vecteur normal de $(P)$.
+
+**Méthode 2** : Montrer que le vecteur directeur de $(d)$ est orthogonal à deux vecteurs directeurs non colinéaires de $(P)$.
+:::
+
+## Exemples résolus
+
+### Exemple 1 : Distance point-plan
+
+Soit $(P)$ : $2x - y + 2z - 6 = 0$ et $M(1, 3, 2)$.
+
+**Distance** :
+$$d(M, P) = \frac{|2(1) - 3 + 2(2) - 6|}{\sqrt{4 + 1 + 4}} = \frac{|2 - 3 + 4 - 6|}{3} = \frac{|-3|}{3} = 1$$
+
+### Exemple 2 : Projeté sur un plan
+
+Même plan $(P)$ et point $M(1, 3, 2)$. Trouvons $H$.
+
+**Droite $(MH)$** : passe par $M$ avec $\vec{n}(2, -1, 2)$
+
+$$\begin{cases} x = 1 + 2t \\ y = 3 - t \\ z = 2 + 2t \end{cases}$$
+
+**$H \in (P)$** :
+$$2(1 + 2t) - (3 - t) + 2(2 + 2t) - 6 = 0$$
+$$2 + 4t - 3 + t + 4 + 4t - 6 = 0$$
+$$9t - 3 = 0 \Rightarrow t = \frac{1}{3}$$
+
+**Coordonnées de $H$** :
+$$H\left(1 + \frac{2}{3}, 3 - \frac{1}{3}, 2 + \frac{2}{3}\right) = H\left(\frac{5}{3}, \frac{8}{3}, \frac{8}{3}\right)$$
+
+**Vérification** : $MH = \sqrt{\left(\frac{2}{3}\right)^2 + \left(\frac{1}{3}\right)^2 + \left(\frac{2}{3}\right)^2} = \sqrt{\frac{9}{9}} = 1$ ✓
+
+### Exemple 3 : Projeté sur une droite
+
+$(d)$ passe par $A(1, 0, 0)$ avec $\vec{u}(1, 1, 1)$. Projeté de $M(3, 1, 2)$ sur $(d)$.
+
+$H = A + t\vec{u} = (1+t, t, t)$
+
+$\overrightarrow{MH} = (1+t-3, t-1, t-2) = (t-2, t-1, t-2)$
+
+**Condition** $\overrightarrow{MH} \cdot \vec{u} = 0$ :
+$$(t-2) + (t-1) + (t-2) = 0$$
+$$3t - 5 = 0 \Rightarrow t = \frac{5}{3}$$
+
+$$H\left(\frac{8}{3}, \frac{5}{3}, \frac{5}{3}\right)$$
+
+**Distance** :
+$$MH = \sqrt{\left(\frac{8}{3}-3\right)^2 + \left(\frac{5}{3}-1\right)^2 + \left(\frac{5}{3}-2\right)^2}$$
+$$= \sqrt{\frac{1}{9} + \frac{4}{9} + \frac{1}{9}} = \sqrt{\frac{6}{9}} = \frac{\sqrt{6}}{3}$$
+
+### Exemple 4 : Droite perpendiculaire à un plan
+
+$(d)$ de vecteur directeur $\vec{u}(3, -6, 3)$ et $(P)$ de vecteur normal $\vec{n}(1, -2, 1)$.
+
+$\vec{u} = 3\vec{n}$ donc $\vec{u}$ et $\vec{n}$ sont colinéaires.
+
+Donc $(d) \perp (P)$.
+
+## Erreurs fréquentes
+
+:::warning
+**Erreur 1** : Oublier la valeur absolue dans la formule de distance
+
+$d(M, P) = \frac{|\dots|}{\dots}$ : la distance est toujours positive !
+
+**Erreur 2** : Confondre perpendiculaire et parallèle
+
+- $(d) \perp (P)$ : $\vec{u}$ colinéaire à $\vec{n}$
+- $(d) \parallel (P)$ : $\vec{u} \cdot \vec{n} = 0$ (orthogonaux)
+
+**Erreur 3** : Mal calculer la norme du vecteur normal
+
+$\|\vec{n}\| = \sqrt{a^2 + b^2 + c^2}$, pas $\sqrt{a + b + c}$
+
+**Erreur 4** : Oublier de vérifier le résultat
+
+Après calcul du projeté $H$, vérifier que :
+- $H$ appartient bien au plan (ou à la droite)
+- $MH$ est bien perpendiculaire
+:::
+
+## Mini-résumé à apprendre
+
+**$(d) \perp (P)$** $\Leftrightarrow$ vecteur directeur de $(d)$ colinéaire au vecteur normal de $(P)$
+
+**Distance point-plan** : $d(M, P) = \frac{|ax_M + by_M + cz_M + d|}{\sqrt{a^2 + b^2 + c^2}}$
+
+**Projeté sur plan** : intersection de la perpendiculaire au plan passant par $M$
+
+**Projeté sur droite** : résoudre $\overrightarrow{MH} \cdot \vec{u} = 0$
+
+## Ponts vers autres chapitres
+
+- **Intégrales** : aires et volumes avec projections
+- **Physique** : travail d'une force, composante normale
+- **Optique** : réflexion sur un miroir plan
