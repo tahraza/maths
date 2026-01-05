@@ -29,8 +29,9 @@ import { VirtualPet } from '@/components/VirtualPet'
 import { PetShop } from '@/components/PetShop'
 import { PetSideQuests } from '@/components/PetSideQuests'
 import { ProgressBackup } from '@/components/ProgressBackup'
+import { MiniGamesHub } from '@/components/MiniGames/MiniGamesHub'
 
-type TabType = 'stats' | 'gamification' | 'pet'
+type TabType = 'stats' | 'gamification' | 'mini-games' | 'pet'
 
 export default function StatsPage() {
   const { stats, lessonProgress, exerciseProgress, flashcardProgress, quizAttempts, dailyActivities } = useStore()
@@ -73,7 +74,8 @@ export default function StatsPage() {
 
   const tabs = [
     { id: 'stats' as TabType, label: 'Statistiques', icon: BarChart3 },
-    { id: 'gamification' as TabType, label: 'Gamification', icon: Gamepad2 },
+    { id: 'gamification' as TabType, label: 'Gamification', icon: Trophy },
+    { id: 'mini-games' as TabType, label: 'Mini-jeux', icon: Gamepad2 },
     { id: 'pet' as TabType, label: 'Mon Animal', icon: Heart },
   ]
 
@@ -427,6 +429,16 @@ export default function StatsPage() {
 
             {/* Progress backup */}
             <ProgressBackup />
+          </div>
+        )}
+
+        {activeTab === 'mini-games' && (
+          <div className="space-y-8">
+            {/* Mini Games Hub */}
+            <MiniGamesHub />
+
+            {/* Badges related to mini-games could go here */}
+            <BadgesDisplay showAll={false} maxDisplay={8} />
           </div>
         )}
 
