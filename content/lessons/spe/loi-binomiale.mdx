@@ -1,0 +1,254 @@
+---
+id: "loi-binomiale"
+title: "Loi binomiale"
+track: "spe"
+level: 2
+prerequisites: ["variables-aleatoires"]
+tags: ["probabilités", "loi binomiale", "Bernoulli", "coefficients binomiaux"]
+estimatedTime: 55
+chapter: "probabilites"
+order: 3
+---
+
+# Loi binomiale
+
+## Intuition et analogie
+
+Imagine que tu lances une pièce 10 fois et que tu comptes le nombre de Piles. Ou que tu passes 20 QCM à 4 choix en répondant au hasard et que tu comptes tes bonnes réponses. Ces situations ont un point commun : tu répètes plusieurs fois la même expérience avec deux issues possibles (succès/échec), et tu comptes les succès.
+
+C'est exactement ce que modélise la **loi binomiale** : le nombre de succès dans $n$ répétitions indépendantes d'une expérience de Bernoulli.
+
+## Objectifs de cette leçon
+
+À la fin de cette leçon, tu sauras :
+- Reconnaître une situation qui suit une loi binomiale
+- Calculer les probabilités avec la formule binomiale
+- Déterminer l'espérance et la variance
+- Utiliser la calculatrice pour les calculs
+
+## Prérequis (rappel express)
+
+- **Variables aléatoires** : loi, espérance, variance
+- **Dénombrement** : factorielles, combinaisons
+
+## Schéma de Bernoulli
+
+:::definition
+**Épreuve de Bernoulli**
+
+Une **épreuve de Bernoulli** de paramètre $p$ est une expérience aléatoire à deux issues :
+- **Succès** avec probabilité $p$
+- **Échec** avec probabilité $q = 1 - p$
+
+Exemples : lancer de pièce, tirage avec remise, test positif/négatif...
+:::
+
+:::definition
+**Schéma de Bernoulli**
+
+Un **schéma de Bernoulli** de paramètres $(n, p)$ consiste à répéter $n$ fois de manière **indépendante** une épreuve de Bernoulli de paramètre $p$.
+:::
+
+## Coefficients binomiaux
+
+:::definition
+**Coefficient binomial**
+
+Le nombre de façons de choisir $k$ éléments parmi $n$ est le **coefficient binomial** :
+
+$$\binom{n}{k} = \frac{n!}{k!(n-k)!}$$
+
+On lit "k parmi n" ou "$C_n^k$".
+:::
+
+:::property[Propriétés des coefficients binomiaux]
+1. $\binom{n}{0} = \binom{n}{n} = 1$
+
+2. $\binom{n}{k} = \binom{n}{n-k}$ (symétrie)
+
+3. $\binom{n}{k} = \binom{n-1}{k-1} + \binom{n-1}{k}$ (triangle de Pascal)
+
+4. $\sum_{k=0}^{n} \binom{n}{k} = 2^n$
+:::
+
+:::property[Valeurs à connaître]
+| $n$ | 0 | 1 | 2 | 3 | 4 | 5 |
+|-----|---|---|---|---|---|---|
+| $\binom{n}{0}$ | 1 | 1 | 1 | 1 | 1 | 1 |
+| $\binom{n}{1}$ | - | 1 | 2 | 3 | 4 | 5 |
+| $\binom{n}{2}$ | - | - | 1 | 3 | 6 | 10 |
+| $\binom{n}{3}$ | - | - | - | 1 | 4 | 10 |
+:::
+
+## Loi binomiale
+
+:::definition
+**Loi binomiale $\mathcal{B}(n, p)$**
+
+Soit $X$ le nombre de succès dans un schéma de Bernoulli de paramètres $(n, p)$.
+
+$X$ suit la **loi binomiale** de paramètres $n$ et $p$, notée $X \sim \mathcal{B}(n, p)$.
+
+Pour tout $k \in \{0, 1, 2, \ldots, n\}$ :
+
+$$P(X = k) = \binom{n}{k} p^k (1-p)^{n-k}$$
+:::
+
+:::property[Espérance et variance]
+Si $X \sim \mathcal{B}(n, p)$ :
+
+$$E(X) = np$$
+
+$$V(X) = np(1-p) = npq$$
+
+$$\sigma(X) = \sqrt{np(1-p)}$$
+:::
+
+:::property[Interprétation de la formule]
+$P(X = k) = \binom{n}{k} \times p^k \times (1-p)^{n-k}$
+
+- $\binom{n}{k}$ : nombre de façons de placer les $k$ succès parmi les $n$ épreuves
+- $p^k$ : probabilité des $k$ succès
+- $(1-p)^{n-k}$ : probabilité des $n-k$ échecs
+:::
+
+## Méthodes types
+
+:::method[Reconnaître une loi binomiale]
+Vérifie que la situation correspond à :
+1. $n$ répétitions **indépendantes** d'une même expérience
+2. Chaque répétition a **deux issues** (succès/échec)
+3. La probabilité de succès $p$ est **constante**
+4. On s'intéresse au **nombre total de succès**
+
+Si oui, $X \sim \mathcal{B}(n, p)$ avec $n$ = nombre de répétitions et $p$ = proba de succès.
+:::
+
+:::method[Calculer $P(X = k)$]
+1. Identifie $n$, $p$ et $k$
+2. Calcule $\binom{n}{k}$ (à la calculatrice ou formule)
+3. Calcule $p^k$
+4. Calcule $(1-p)^{n-k}$
+5. Multiplie les trois termes
+:::
+
+:::method[Calculer $P(X \leq k)$ ou $P(X \geq k)$]
+**Méthode 1** : Somme directe
+$$P(X \leq k) = \sum_{i=0}^{k} P(X = i)$$
+
+**Méthode 2** : Complémentaire
+$$P(X \geq k) = 1 - P(X \leq k-1)$$
+
+**Méthode 3** : Calculatrice
+Utilise la fonction `binomCdf(n, p, k)` ou équivalent.
+:::
+
+:::method[Trouver le seuil pour une probabilité donnée]
+"Trouver le plus petit $k$ tel que $P(X \leq k) \geq 0.95$"
+
+1. Calcule $P(X \leq 0)$, puis $P(X \leq 1)$, etc.
+2. Arrête quand le seuil est atteint
+3. Ou utilise la fonction inverse sur calculatrice
+:::
+
+## Exemples résolus
+
+### Exemple 1 : QCM au hasard
+
+Un QCM a 10 questions avec 4 choix chacune. On répond au hasard. Soit $X$ le nombre de bonnes réponses.
+
+**Modélisation** : $X \sim \mathcal{B}(10, 0.25)$
+
+**$P(X = 3)$** :
+$$P(X = 3) = \binom{10}{3} \times 0.25^3 \times 0.75^7$$
+$$= 120 \times 0.015625 \times 0.1335 \approx 0.250$$
+
+**Espérance** : $E(X) = 10 \times 0.25 = 2.5$ bonnes réponses en moyenne.
+
+### Exemple 2 : Contrôle qualité
+
+Une machine produit 5% de pièces défectueuses. On prélève 20 pièces. Soit $X$ le nombre de pièces défectueuses.
+
+$X \sim \mathcal{B}(20, 0.05)$
+
+**Probabilité d'avoir au plus 1 défectueuse** :
+$$P(X \leq 1) = P(X = 0) + P(X = 1)$$
+$$= \binom{20}{0} \times 0.05^0 \times 0.95^{20} + \binom{20}{1} \times 0.05^1 \times 0.95^{19}$$
+$$= 1 \times 1 \times 0.358 + 20 \times 0.05 \times 0.377$$
+$$= 0.358 + 0.377 = 0.735$$
+
+**Espérance** : $E(X) = 20 \times 0.05 = 1$ pièce défectueuse en moyenne.
+
+### Exemple 3 : Lancer de dé
+
+On lance un dé 12 fois. Soit $X$ le nombre de 6 obtenus.
+
+$X \sim \mathcal{B}(12, \frac{1}{6})$
+
+**Probabilité d'obtenir exactement 2 fois le 6** :
+$$P(X = 2) = \binom{12}{2} \times \left(\frac{1}{6}\right)^2 \times \left(\frac{5}{6}\right)^{10}$$
+$$= 66 \times \frac{1}{36} \times 0.162 \approx 0.296$$
+
+**Espérance** : $E(X) = 12 \times \frac{1}{6} = 2$
+
+**Écart-type** : $\sigma = \sqrt{12 \times \frac{1}{6} \times \frac{5}{6}} = \sqrt{\frac{10}{6}} \approx 1.29$
+
+### Exemple 4 : Intervalle de fluctuation
+
+Pour $X \sim \mathcal{B}(100, 0.5)$, on a $E(X) = 50$ et $\sigma = 5$.
+
+Par l'approximation normale, 95% des valeurs sont dans $[E - 2\sigma, E + 2\sigma] = [40, 60]$.
+
+## Erreurs fréquentes
+
+:::warning
+**Erreur 1** : Confondre $\binom{n}{k}$ et $n^k$
+
+$\binom{10}{3} = 120$, pas $10^3 = 1000$ !
+
+**Erreur 2** : Oublier une condition d'application
+
+Les épreuves doivent être **indépendantes** et avec probabilité **constante**.
+Un tirage sans remise ne suit pas une loi binomiale !
+
+**Erreur 3** : Erreur dans le complémentaire
+
+$P(X \geq 3) = 1 - P(X \leq 2)$, pas $1 - P(X \leq 3)$
+
+**Erreur 4** : Confondre paramètres
+
+Dans $\mathcal{B}(n, p)$ : $n$ = nombre d'épreuves, $p$ = proba de succès (pas d'échec)
+:::
+
+## Calculatrice
+
+:::tip
+**TI-83/84** :
+- `binompdf(n, p, k)` : $P(X = k)$
+- `binomcdf(n, p, k)` : $P(X \leq k)$
+
+**Casio** :
+- `BinomialPD(k, n, p)` : $P(X = k)$
+- `BinomialCD(k, n, p)` : $P(X \leq k)$
+
+**NumWorks** :
+- Menu Probabilités > Binomiale
+:::
+
+## Mini-résumé à apprendre
+
+**Loi binomiale** : $X \sim \mathcal{B}(n, p)$ = nombre de succès en $n$ épreuves
+
+**Formule** : $P(X = k) = \binom{n}{k} p^k (1-p)^{n-k}$
+
+**Espérance** : $E(X) = np$
+
+**Variance** : $V(X) = np(1-p)$
+
+**Coefficient** : $\binom{n}{k} = \frac{n!}{k!(n-k)!}$
+
+## Ponts vers autres chapitres
+
+- **Loi normale** : approximation quand $n$ est grand
+- **Intervalles de confiance** : estimation de proportions
+- **Tests statistiques** : comparaison de fréquences

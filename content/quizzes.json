@@ -1756,5 +1756,55 @@
       {"id": "q4", "question": "La distance de $O(0,0,0)$ au plan $2x - 2y + z - 9 = 0$ vaut :", "options": ["$9$", "$3$", "$\\frac{9}{3}$", "$\\frac{9}{\\sqrt{9}}$"], "correctAnswer": 1, "explanation": "$d = \\frac{|-9|}{\\sqrt{4+4+1}} = \\frac{9}{3} = 3$."},
       {"id": "q5", "question": "Le projeté de $M(3, 0, 0)$ sur la droite passant par $O$ de direction $(1, 1, 1)$ :", "options": ["Est sur l'axe Ox", "A ses trois coordonnées égales", "Est à l'origine", "N'existe pas"], "correctAnswer": 1, "explanation": "Le projeté est sur la droite, donc de la forme $(t, t, t)$."}
     ]
+  },
+  {
+    "id": "pre-variables-aleatoires",
+    "lessonId": "variables-aleatoires",
+    "type": "pre",
+    "title": "Diagnostic : Variables aléatoires",
+    "questions": [
+      {"id": "q1", "question": "Une variable aléatoire associe à chaque issue :", "options": ["Une probabilité", "Un nombre réel", "Un événement", "Un univers"], "correctAnswer": 1, "explanation": "Une VA est une fonction de l'univers vers les réels."},
+      {"id": "q2", "question": "L'espérance $E(X)$ représente :", "options": ["La valeur la plus probable", "La moyenne théorique", "L'écart-type", "La variance"], "correctAnswer": 1, "explanation": "L'espérance est la moyenne pondérée par les probabilités."},
+      {"id": "q3", "question": "Si $X$ prend les valeurs 1 et 2 avec probabilités 0.5 chacune, $E(X)$ vaut :", "options": ["1", "1.5", "2", "3"], "correctAnswer": 1, "explanation": "$E(X) = 1 \\times 0.5 + 2 \\times 0.5 = 1.5$."},
+      {"id": "q4", "question": "La variance mesure :", "options": ["La valeur moyenne", "La dispersion", "La probabilité maximale", "Le nombre de valeurs"], "correctAnswer": 1, "explanation": "La variance mesure comment les valeurs s'écartent de l'espérance."}
+    ]
+  },
+  {
+    "id": "post-variables-aleatoires",
+    "lessonId": "variables-aleatoires",
+    "type": "post",
+    "title": "Validation : Variables aléatoires",
+    "questions": [
+      {"id": "q1", "question": "La formule de König-Huygens est :", "options": ["$V(X) = E(X)^2$", "$V(X) = E(X^2) - E(X)^2$", "$V(X) = E(X^2) + E(X)^2$", "$V(X) = E(X) - E(X^2)$"], "correctAnswer": 1, "explanation": "C'est la formule pratique pour calculer la variance."},
+      {"id": "q2", "question": "Si $E(X) = 3$ et $E(X^2) = 10$, alors $V(X)$ vaut :", "options": ["7", "1", "13", "10"], "correctAnswer": 1, "explanation": "$V(X) = 10 - 3^2 = 10 - 9 = 1$."},
+      {"id": "q3", "question": "$E(2X + 5)$ si $E(X) = 4$ vaut :", "options": ["9", "13", "8", "10"], "correctAnswer": 1, "explanation": "$E(2X + 5) = 2E(X) + 5 = 2 \\times 4 + 5 = 13$."},
+      {"id": "q4", "question": "$V(3X)$ si $V(X) = 4$ vaut :", "options": ["12", "36", "7", "9"], "correctAnswer": 1, "explanation": "$V(aX) = a^2 V(X) = 9 \\times 4 = 36$."},
+      {"id": "q5", "question": "L'écart-type $\\sigma(X)$ si $V(X) = 16$ vaut :", "options": ["16", "4", "256", "8"], "correctAnswer": 1, "explanation": "$\\sigma = \\sqrt{V(X)} = \\sqrt{16} = 4$."}
+    ]
+  },
+  {
+    "id": "pre-loi-binomiale",
+    "lessonId": "loi-binomiale",
+    "type": "pre",
+    "title": "Diagnostic : Loi binomiale",
+    "questions": [
+      {"id": "q1", "question": "Une épreuve de Bernoulli a :", "options": ["3 issues", "2 issues", "n issues", "1 issue"], "correctAnswer": 1, "explanation": "Succès ou échec : deux issues possibles."},
+      {"id": "q2", "question": "$\\binom{5}{2}$ vaut :", "options": ["25", "10", "7", "20"], "correctAnswer": 1, "explanation": "$\\binom{5}{2} = \\frac{5!}{2!3!} = \\frac{120}{2 \\times 6} = 10$."},
+      {"id": "q3", "question": "Si $X \\sim \\mathcal{B}(10, 0.5)$, $E(X)$ vaut :", "options": ["10", "5", "0.5", "50"], "correctAnswer": 1, "explanation": "$E(X) = np = 10 \\times 0.5 = 5$."},
+      {"id": "q4", "question": "Un schéma de Bernoulli nécessite des épreuves :", "options": ["Dépendantes", "Indépendantes", "Avec remise obligatoire", "Sans répétition"], "correctAnswer": 1, "explanation": "L'indépendance est une condition essentielle."}
+    ]
+  },
+  {
+    "id": "post-loi-binomiale",
+    "lessonId": "loi-binomiale",
+    "type": "post",
+    "title": "Validation : Loi binomiale",
+    "questions": [
+      {"id": "q1", "question": "$P(X = k)$ pour $X \\sim \\mathcal{B}(n,p)$ est :", "options": ["$p^k(1-p)^{n-k}$", "$\\binom{n}{k}p^k(1-p)^{n-k}$", "$np$", "$\\binom{n}{k}p^n$"], "correctAnswer": 1, "explanation": "C'est la formule complète de la loi binomiale."},
+      {"id": "q2", "question": "La variance de $X \\sim \\mathcal{B}(n,p)$ est :", "options": ["$np$", "$np(1-p)$", "$p(1-p)$", "$n(1-p)$"], "correctAnswer": 1, "explanation": "$V(X) = npq$ avec $q = 1-p$."},
+      {"id": "q3", "question": "Pour $X \\sim \\mathcal{B}(20, 0.3)$, $E(X)$ et $V(X)$ valent :", "options": ["6 et 4.2", "6 et 6", "20 et 0.3", "0.3 et 20"], "correctAnswer": 0, "explanation": "$E = 20 \\times 0.3 = 6$ et $V = 20 \\times 0.3 \\times 0.7 = 4.2$."},
+      {"id": "q4", "question": "$P(X \\geq 1)$ pour $X \\sim \\mathcal{B}(n,p)$ égale :", "options": ["$1 - P(X = 0)$", "$P(X = 1)$", "$1 - P(X = 1)$", "$P(X \\leq 1)$"], "correctAnswer": 0, "explanation": "C'est le complémentaire de 'aucun succès'."},
+      {"id": "q5", "question": "$\\binom{n}{k} = \\binom{n}{n-k}$ s'appelle :", "options": ["Formule de Pascal", "Symétrie des coefficients", "Formule de Bernoulli", "Théorème binomial"], "correctAnswer": 1, "explanation": "Choisir k parmi n = choisir n-k à exclure."}
+    ]
   }
 ]

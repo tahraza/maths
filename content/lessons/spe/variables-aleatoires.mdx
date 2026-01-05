@@ -1,0 +1,225 @@
+---
+id: "variables-aleatoires"
+title: "Variables aléatoires discrètes"
+track: "spe"
+level: 2
+prerequisites: ["probabilites"]
+tags: ["probabilités", "variable aléatoire", "espérance", "variance", "écart-type"]
+estimatedTime: 55
+chapter: "probabilites"
+order: 2
+---
+
+# Variables aléatoires discrètes
+
+## Intuition et analogie
+
+Imagine que tu lances deux dés et que tu t'intéresses à leur somme. Tu ne peux pas savoir à l'avance quel sera le résultat, mais tu peux lister toutes les sommes possibles (de 2 à 12) et calculer la probabilité de chacune. C'est exactement ce que fait une **variable aléatoire** : elle associe un nombre à chaque issue d'une expérience aléatoire.
+
+L'espérance, c'est la "moyenne théorique" : si tu répétais l'expérience un très grand nombre de fois, autour de quelle valeur se situeraient les résultats en moyenne ?
+
+## Objectifs de cette leçon
+
+À la fin de cette leçon, tu sauras :
+- Définir une variable aléatoire et sa loi de probabilité
+- Calculer l'espérance, la variance et l'écart-type
+- Utiliser les propriétés de linéarité
+- Interpréter ces indicateurs statistiques
+
+## Prérequis (rappel express)
+
+- **Probabilités** : vocabulaire (univers, événement, probabilité)
+- **Probabilités conditionnelles** : formule des probabilités totales
+
+## Définitions
+
+:::definition
+**Variable aléatoire**
+
+Une **variable aléatoire** $X$ sur un univers $\Omega$ est une fonction qui associe à chaque issue $\omega \in \Omega$ un nombre réel $X(\omega)$.
+
+On note $X(\Omega) = \{x_1, x_2, \ldots, x_n\}$ l'ensemble des valeurs prises par $X$.
+:::
+
+:::definition
+**Loi de probabilité**
+
+La **loi de probabilité** de $X$ est le tableau qui associe à chaque valeur $x_i$ la probabilité $P(X = x_i)$.
+
+| $x_i$ | $x_1$ | $x_2$ | ... | $x_n$ |
+|-------|-------|-------|-----|-------|
+| $P(X = x_i)$ | $p_1$ | $p_2$ | ... | $p_n$ |
+
+Avec : $\sum_{i=1}^{n} p_i = 1$
+:::
+
+:::definition
+**Espérance**
+
+L'**espérance** de $X$, notée $E(X)$ ou $\mu$, est la moyenne pondérée des valeurs par leurs probabilités :
+
+$$E(X) = \sum_{i=1}^{n} x_i \cdot P(X = x_i) = x_1 p_1 + x_2 p_2 + \cdots + x_n p_n$$
+
+C'est la valeur "attendue" en moyenne sur un grand nombre de répétitions.
+:::
+
+:::definition
+**Variance et écart-type**
+
+La **variance** de $X$, notée $V(X)$ ou $\sigma^2$, mesure la dispersion autour de l'espérance :
+
+$$V(X) = E\left[(X - E(X))^2\right] = \sum_{i=1}^{n} (x_i - \mu)^2 \cdot p_i$$
+
+L'**écart-type** est : $\sigma(X) = \sqrt{V(X)}$
+:::
+
+## Propriétés
+
+:::property[Formule de König-Huygens]
+$$V(X) = E(X^2) - [E(X)]^2$$
+
+Cette formule est souvent plus pratique pour les calculs.
+
+Où $E(X^2) = \sum_{i=1}^{n} x_i^2 \cdot p_i$
+:::
+
+:::property[Linéarité de l'espérance]
+Pour toutes constantes $a, b \in \mathbb{R}$ et variable aléatoire $X$ :
+
+$$E(aX + b) = aE(X) + b$$
+
+Pour deux variables aléatoires $X$ et $Y$ :
+
+$$E(X + Y) = E(X) + E(Y)$$
+
+(vraie même si $X$ et $Y$ ne sont pas indépendantes)
+:::
+
+:::property[Variance et transformation affine]
+$$V(aX + b) = a^2 V(X)$$
+
+Attention : la constante $b$ disparaît, et $a$ est au carré !
+
+$$\sigma(aX + b) = |a| \sigma(X)$$
+:::
+
+:::property[Variables indépendantes]
+Si $X$ et $Y$ sont **indépendantes** :
+
+$$V(X + Y) = V(X) + V(Y)$$
+
+Et : $E(XY) = E(X) \cdot E(Y)$
+:::
+
+## Méthodes types
+
+:::method[Déterminer la loi d'une variable aléatoire]
+1. Identifie toutes les valeurs possibles de $X$
+2. Pour chaque valeur $x_i$, calcule $P(X = x_i)$
+3. Vérifie que $\sum p_i = 1$
+4. Présente le résultat sous forme de tableau
+:::
+
+:::method[Calculer l'espérance]
+1. Liste les valeurs $x_i$ et leurs probabilités $p_i$
+2. Calcule chaque produit $x_i \cdot p_i$
+3. Somme tous les produits : $E(X) = \sum x_i p_i$
+:::
+
+:::method[Calculer la variance (formule de König)]
+1. Calcule $E(X)$
+2. Calcule $E(X^2) = \sum x_i^2 \cdot p_i$
+3. Applique $V(X) = E(X^2) - [E(X)]^2$
+4. L'écart-type est $\sigma = \sqrt{V(X)}$
+:::
+
+## Exemples résolus
+
+### Exemple 1 : Lancer d'un dé
+
+Soit $X$ le résultat d'un lancer de dé équilibré.
+
+**Loi de $X$** :
+
+| $x_i$ | 1 | 2 | 3 | 4 | 5 | 6 |
+|-------|---|---|---|---|---|---|
+| $P(X = x_i)$ | $\frac{1}{6}$ | $\frac{1}{6}$ | $\frac{1}{6}$ | $\frac{1}{6}$ | $\frac{1}{6}$ | $\frac{1}{6}$ |
+
+**Espérance** :
+$$E(X) = 1 \times \frac{1}{6} + 2 \times \frac{1}{6} + \cdots + 6 \times \frac{1}{6} = \frac{1+2+3+4+5+6}{6} = \frac{21}{6} = 3.5$$
+
+**Variance** :
+$$E(X^2) = \frac{1 + 4 + 9 + 16 + 25 + 36}{6} = \frac{91}{6}$$
+$$V(X) = \frac{91}{6} - \left(\frac{7}{2}\right)^2 = \frac{91}{6} - \frac{49}{4} = \frac{182 - 147}{12} = \frac{35}{12} \approx 2.92$$
+
+**Écart-type** : $\sigma \approx 1.71$
+
+### Exemple 2 : Jeu de pile ou face
+
+On lance 3 pièces. Soit $X$ le nombre de Piles.
+
+**Valeurs possibles** : $X \in \{0, 1, 2, 3\}$
+
+**Loi de $X$** (dénombrement) :
+- $P(X = 0) = \frac{1}{8}$ (FFF)
+- $P(X = 1) = \frac{3}{8}$ (PFF, FPF, FFP)
+- $P(X = 2) = \frac{3}{8}$ (PPF, PFP, FPP)
+- $P(X = 3) = \frac{1}{8}$ (PPP)
+
+**Espérance** :
+$$E(X) = 0 \times \frac{1}{8} + 1 \times \frac{3}{8} + 2 \times \frac{3}{8} + 3 \times \frac{1}{8} = \frac{0 + 3 + 6 + 3}{8} = \frac{12}{8} = 1.5$$
+
+### Exemple 3 : Transformation affine
+
+Un jeu rapporte $X$ euros avec $E(X) = 5$ et $\sigma(X) = 2$.
+
+Si on double les gains et ajoute un bonus de 10 euros, le nouveau gain est $Y = 2X + 10$.
+
+**Espérance de $Y$** :
+$$E(Y) = 2 \times E(X) + 10 = 2 \times 5 + 10 = 20 \text{ euros}$$
+
+**Écart-type de $Y$** :
+$$\sigma(Y) = 2 \times \sigma(X) = 2 \times 2 = 4 \text{ euros}$$
+
+(Le bonus fixe n'affecte pas la dispersion)
+
+## Erreurs fréquentes
+
+:::warning
+**Erreur 1** : Confondre $E(X^2)$ et $[E(X)]^2$
+
+- $E(X^2)$ : moyenne des carrés des valeurs
+- $[E(X)]^2$ : carré de l'espérance
+
+Ce ne sont pas égaux ! Leur différence est la variance.
+
+**Erreur 2** : Oublier le carré dans $V(aX)$
+
+$V(aX) = a^2 V(X)$, pas $aV(X)$ !
+
+**Erreur 3** : Additionner les variances sans indépendance
+
+$V(X + Y) = V(X) + V(Y)$ seulement si $X$ et $Y$ sont indépendantes.
+
+**Erreur 4** : Oublier de vérifier $\sum p_i = 1$
+
+Avant tout calcul, vérifie que les probabilités somment à 1.
+:::
+
+## Mini-résumé à apprendre
+
+**Espérance** : $E(X) = \sum x_i p_i$ (moyenne pondérée)
+
+**Variance** : $V(X) = E(X^2) - [E(X)]^2$
+
+**Écart-type** : $\sigma(X) = \sqrt{V(X)}$
+
+**Linéarité** : $E(aX + b) = aE(X) + b$
+
+**Variance affine** : $V(aX + b) = a^2 V(X)$
+
+## Ponts vers autres chapitres
+
+- **Loi binomiale** : cas particulier très important
+- **Loi normale** : approximation pour les grandes valeurs
+- **Statistiques** : lien entre population et échantillon
