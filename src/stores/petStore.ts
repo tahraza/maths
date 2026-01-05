@@ -94,6 +94,18 @@ export const ACCESSORIES: Accessory[] = [
   { id: 'special-calculator', name: 'Calculatrice magique', emoji: '🔢', price: 300, category: 'special', description: 'Puissance de calcul', rarity: 'rare' },
   { id: 'special-formula', name: 'Formule flottante', emoji: '📐', price: 700, category: 'special', description: 'E=mc²', rarity: 'legendary' },
   { id: 'special-rainbow', name: 'Arc-en-ciel', emoji: '🌈', price: 800, category: 'special', description: 'Spectre complet', rarity: 'legendary' },
+
+  // Premium accessories - Plus chers pour objectifs long terme
+  { id: 'hat-divine', name: 'Auréole divine', emoji: '😇', price: 1000, category: 'hat', description: 'Sagesse suprême', rarity: 'legendary' },
+  { id: 'hat-supreme', name: 'Chapeau cosmique', emoji: '🌌', price: 1200, category: 'hat', description: 'Maître de l\'univers', rarity: 'legendary' },
+  { id: 'special-orb', name: 'Orbe mystique', emoji: '🔮', price: 1500, category: 'special', description: 'Voit l\'avenir des équations', rarity: 'legendary' },
+  { id: 'special-portal', name: 'Portail dimensionnel', emoji: '🌀', price: 2000, category: 'special', description: 'Voyage entre les dimensions', rarity: 'legendary' },
+  { id: 'special-potion', name: 'Potion de sagesse', emoji: '⚗️', price: 850, category: 'special', description: 'Boost ton intelligence', rarity: 'epic' },
+  { id: 'special-scroll', name: 'Parchemin ancien', emoji: '📜', price: 900, category: 'special', description: 'Secrets des anciens', rarity: 'epic' },
+  { id: 'necklace-integral', name: 'Symbole intégrale', emoji: '∫', price: 1100, category: 'necklace', description: 'L\'intégrale de tout', rarity: 'legendary' },
+  { id: 'necklace-sigma', name: 'Sigma doré', emoji: '∑', price: 950, category: 'necklace', description: 'La somme de tes efforts', rarity: 'epic' },
+  { id: 'necklace-pi-gold', name: 'Pi géant doré', emoji: 'π', price: 880, category: 'necklace', description: '3.14159265359...', rarity: 'epic' },
+  { id: 'special-infinity', name: 'Infini cosmique', emoji: '∞', price: 1300, category: 'special', description: 'Au-delà des limites', rarity: 'legendary' },
 ]
 
 // Available backgrounds
