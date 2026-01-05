@@ -826,5 +826,781 @@
     "tags": ["arithmétique", "Bézout", "méthode"],
     "level": 3,
     "category": "method"
+  },
+
+  {
+    "id": "fc-implic-001",
+    "lessonId": "implication-equivalence",
+    "front": "P ⟹ Q est FAUSSE ssi...",
+    "back": "P est VRAIE et Q est FAUSSE. C'est le seul cas où l'implication est fausse.",
+    "tags": ["logique", "implication"],
+    "level": 1,
+    "category": "definition"
+  },
+  {
+    "id": "fc-implic-002",
+    "lessonId": "implication-equivalence",
+    "front": "Contraposée de P ⟹ Q",
+    "back": "non(Q) ⟹ non(P). Elle est ÉQUIVALENTE à l'implication originale.",
+    "tags": ["logique", "contraposée"],
+    "level": 2,
+    "category": "formula"
+  },
+  {
+    "id": "fc-implic-003",
+    "lessonId": "implication-equivalence",
+    "front": "Différence entre ⟹ et ⟺",
+    "back": "P ⟹ Q : condition SUFFISANTE (P suffit pour Q)\nP ⟺ Q : condition NÉCESSAIRE ET SUFFISANTE",
+    "tags": ["logique", "équivalence"],
+    "level": 1,
+    "category": "definition"
+  },
+  {
+    "id": "fc-implic-004",
+    "lessonId": "implication-equivalence",
+    "front": "Piège : réciproque vs contraposée",
+    "back": "Réciproque de P ⟹ Q : Q ⟹ P (pas équivalente !)\nContraposée : non(Q) ⟹ non(P) (équivalente)",
+    "tags": ["logique", "erreur"],
+    "level": 2,
+    "category": "trap"
+  },
+
+  {
+    "id": "fc-suites-lim-001",
+    "lessonId": "suites-limites",
+    "front": "Limite de 1/n quand n → +∞",
+    "back": "lim(n→+∞) 1/n = 0",
+    "tags": ["suites", "limite"],
+    "level": 1,
+    "category": "formula"
+  },
+  {
+    "id": "fc-suites-lim-002",
+    "lessonId": "suites-limites",
+    "front": "Formes indéterminées pour les suites",
+    "back": "+∞ - ∞, 0 × ∞, ∞/∞, 0/0",
+    "tags": ["suites", "limite"],
+    "level": 2,
+    "category": "definition"
+  },
+  {
+    "id": "fc-suites-lim-003",
+    "lessonId": "suites-limites",
+    "front": "Théorème des gendarmes (suites)",
+    "back": "Si uₙ ≤ vₙ ≤ wₙ et lim uₙ = lim wₙ = ℓ, alors lim vₙ = ℓ",
+    "tags": ["suites", "limite", "gendarmes"],
+    "level": 2,
+    "category": "formula"
+  },
+  {
+    "id": "fc-suites-lim-004",
+    "lessonId": "suites-limites",
+    "front": "Opérations sur les limites",
+    "back": "lim(uₙ + vₙ) = lim uₙ + lim vₙ (si pas indéterminé)\nlim(uₙ × vₙ) = lim uₙ × lim vₙ",
+    "tags": ["suites", "limite"],
+    "level": 1,
+    "category": "formula"
+  },
+
+  {
+    "id": "fc-suites-conv-001",
+    "lessonId": "suites-convergence",
+    "front": "Définition : suite convergente",
+    "back": "Une suite (uₙ) converge vers ℓ si pour tout ε > 0, il existe N tel que n ≥ N ⟹ |uₙ - ℓ| < ε",
+    "tags": ["suites", "convergence", "définition"],
+    "level": 2,
+    "category": "definition"
+  },
+  {
+    "id": "fc-suites-conv-002",
+    "lessonId": "suites-convergence",
+    "front": "Suite monotone bornée",
+    "back": "Toute suite monotone et bornée est CONVERGENTE",
+    "tags": ["suites", "convergence", "monotone"],
+    "level": 2,
+    "category": "formula"
+  },
+  {
+    "id": "fc-suites-conv-003",
+    "lessonId": "suites-convergence",
+    "front": "Suite adjacentes",
+    "back": "Si uₙ croissante, vₙ décroissante, et lim(vₙ - uₙ) = 0, alors elles convergent vers la même limite",
+    "tags": ["suites", "convergence", "adjacentes"],
+    "level": 2,
+    "category": "formula"
+  },
+  {
+    "id": "fc-suites-conv-004",
+    "lessonId": "suites-convergence",
+    "front": "Piège : convergente ⟹ bornée, mais...",
+    "back": "Suite convergente ⟹ bornée : VRAI\nSuite bornée ⟹ convergente : FAUX (ex: (-1)ⁿ)",
+    "tags": ["suites", "convergence", "erreur"],
+    "level": 2,
+    "category": "trap"
+  },
+
+  {
+    "id": "fc-lim-fonc-001",
+    "lessonId": "limites-fonctions",
+    "front": "Limite de 1/x quand x → 0⁺",
+    "back": "lim(x→0⁺) 1/x = +∞",
+    "tags": ["fonctions", "limite"],
+    "level": 1,
+    "category": "formula"
+  },
+  {
+    "id": "fc-lim-fonc-002",
+    "lessonId": "limites-fonctions",
+    "front": "Limite de (eˣ - 1)/x quand x → 0",
+    "back": "lim(x→0) (eˣ - 1)/x = 1",
+    "tags": ["fonctions", "limite", "exponentielle"],
+    "level": 2,
+    "category": "formula"
+  },
+  {
+    "id": "fc-lim-fonc-003",
+    "lessonId": "limites-fonctions",
+    "front": "Limite de sin(x)/x quand x → 0",
+    "back": "lim(x→0) sin(x)/x = 1 (en radians !)",
+    "tags": ["fonctions", "limite", "trigonométrie"],
+    "level": 2,
+    "category": "formula"
+  },
+  {
+    "id": "fc-lim-fonc-004",
+    "lessonId": "limites-fonctions",
+    "front": "Asymptote horizontale",
+    "back": "y = ℓ est asymptote horizontale si lim(x→±∞) f(x) = ℓ",
+    "tags": ["fonctions", "asymptote"],
+    "level": 1,
+    "category": "definition"
+  },
+  {
+    "id": "fc-lim-fonc-005",
+    "lessonId": "limites-fonctions",
+    "front": "Asymptote verticale",
+    "back": "x = a est asymptote verticale si lim(x→a) f(x) = ±∞",
+    "tags": ["fonctions", "asymptote"],
+    "level": 1,
+    "category": "definition"
+  },
+
+  {
+    "id": "fc-contin-001",
+    "lessonId": "continuite",
+    "front": "Définition : f continue en a",
+    "back": "f est continue en a si lim(x→a) f(x) = f(a)",
+    "tags": ["continuité", "définition"],
+    "level": 1,
+    "category": "definition"
+  },
+  {
+    "id": "fc-contin-002",
+    "lessonId": "continuite",
+    "front": "Théorème des valeurs intermédiaires (TVI)",
+    "back": "Si f continue sur [a,b] et k entre f(a) et f(b), alors ∃c ∈ [a,b] tel que f(c) = k",
+    "tags": ["continuité", "TVI"],
+    "level": 2,
+    "category": "formula"
+  },
+  {
+    "id": "fc-contin-003",
+    "lessonId": "continuite",
+    "front": "Corollaire du TVI pour les équations",
+    "back": "Si f continue, f(a) et f(b) de signes contraires, alors ∃c ∈ ]a,b[ tel que f(c) = 0",
+    "tags": ["continuité", "TVI", "zéro"],
+    "level": 2,
+    "category": "formula"
+  },
+  {
+    "id": "fc-contin-004",
+    "lessonId": "continuite",
+    "front": "Théorème de la bijection",
+    "back": "Si f continue et strictement monotone sur [a,b], alors f réalise une bijection de [a,b] sur [f(a),f(b)]",
+    "tags": ["continuité", "bijection"],
+    "level": 2,
+    "category": "formula"
+  },
+
+  {
+    "id": "fc-convex-001",
+    "lessonId": "convexite",
+    "front": "f convexe ssi...",
+    "back": "f''(x) ≥ 0 sur l'intervalle (la courbe est au-dessus de ses tangentes)",
+    "tags": ["convexité"],
+    "level": 1,
+    "category": "definition"
+  },
+  {
+    "id": "fc-convex-002",
+    "lessonId": "convexite",
+    "front": "f concave ssi...",
+    "back": "f''(x) ≤ 0 sur l'intervalle (la courbe est en-dessous de ses tangentes)",
+    "tags": ["convexité"],
+    "level": 1,
+    "category": "definition"
+  },
+  {
+    "id": "fc-convex-003",
+    "lessonId": "convexite",
+    "front": "Point d'inflexion",
+    "back": "Point où la courbe traverse sa tangente. Changement de convexité : f'' change de signe.",
+    "tags": ["convexité", "inflexion"],
+    "level": 2,
+    "category": "definition"
+  },
+  {
+    "id": "fc-convex-004",
+    "lessonId": "convexite",
+    "front": "Inégalité de convexité (Jensen)",
+    "back": "Si f convexe : f((a+b)/2) ≤ (f(a)+f(b))/2",
+    "tags": ["convexité", "inégalité"],
+    "level": 3,
+    "category": "formula"
+  },
+
+  {
+    "id": "fc-trigo-base-001",
+    "lessonId": "trigonometrie-bases",
+    "front": "cos²x + sin²x = ?",
+    "back": "cos²x + sin²x = 1 (relation fondamentale)",
+    "tags": ["trigonométrie", "formule"],
+    "level": 1,
+    "category": "formula"
+  },
+  {
+    "id": "fc-trigo-base-002",
+    "lessonId": "trigonometrie-bases",
+    "front": "Valeurs remarquables : cos(π/3) et sin(π/3)",
+    "back": "cos(π/3) = 1/2, sin(π/3) = √3/2",
+    "tags": ["trigonométrie", "valeurs"],
+    "level": 1,
+    "category": "formula"
+  },
+  {
+    "id": "fc-trigo-base-003",
+    "lessonId": "trigonometrie-bases",
+    "front": "cos(π/4) et sin(π/4)",
+    "back": "cos(π/4) = sin(π/4) = √2/2",
+    "tags": ["trigonométrie", "valeurs"],
+    "level": 1,
+    "category": "formula"
+  },
+  {
+    "id": "fc-trigo-base-004",
+    "lessonId": "trigonometrie-bases",
+    "front": "cos(a+b) = ?",
+    "back": "cos(a+b) = cos(a)cos(b) - sin(a)sin(b)",
+    "tags": ["trigonométrie", "formule"],
+    "level": 2,
+    "category": "formula"
+  },
+  {
+    "id": "fc-trigo-base-005",
+    "lessonId": "trigonometrie-bases",
+    "front": "sin(a+b) = ?",
+    "back": "sin(a+b) = sin(a)cos(b) + cos(a)sin(b)",
+    "tags": ["trigonométrie", "formule"],
+    "level": 2,
+    "category": "formula"
+  },
+
+  {
+    "id": "fc-fonc-trigo-001",
+    "lessonId": "fonctions-trigo",
+    "front": "Période de cos(x) et sin(x)",
+    "back": "Période = 2π",
+    "tags": ["trigonométrie", "période"],
+    "level": 1,
+    "category": "definition"
+  },
+  {
+    "id": "fc-fonc-trigo-002",
+    "lessonId": "fonctions-trigo",
+    "front": "Période de tan(x)",
+    "back": "Période = π",
+    "tags": ["trigonométrie", "période"],
+    "level": 1,
+    "category": "definition"
+  },
+  {
+    "id": "fc-fonc-trigo-003",
+    "lessonId": "fonctions-trigo",
+    "front": "Dérivée de tan(x)",
+    "back": "(tan(x))' = 1 + tan²(x) = 1/cos²(x)",
+    "tags": ["trigonométrie", "dérivée"],
+    "level": 2,
+    "category": "formula"
+  },
+  {
+    "id": "fc-fonc-trigo-004",
+    "lessonId": "fonctions-trigo",
+    "front": "Domaine de définition de tan(x)",
+    "back": "ℝ \\ {π/2 + kπ, k ∈ ℤ} (asymptotes où cos(x) = 0)",
+    "tags": ["trigonométrie", "domaine"],
+    "level": 1,
+    "category": "definition"
+  },
+
+  {
+    "id": "fc-integ-001",
+    "lessonId": "integrales",
+    "front": "Interprétation géométrique de ∫ₐᵇ f(x)dx",
+    "back": "Aire algébrique entre la courbe et l'axe des x (positive au-dessus, négative en-dessous)",
+    "tags": ["intégrale", "interprétation"],
+    "level": 1,
+    "category": "interpretation"
+  },
+  {
+    "id": "fc-integ-002",
+    "lessonId": "integrales",
+    "front": "Relation de Chasles pour les intégrales",
+    "back": "∫ₐᵇ f + ∫ᵦᶜ f = ∫ₐᶜ f",
+    "tags": ["intégrale", "formule"],
+    "level": 1,
+    "category": "formula"
+  },
+  {
+    "id": "fc-integ-003",
+    "lessonId": "integrales",
+    "front": "∫ₐᵇ f = ?",
+    "back": "∫ₐᵇ f = -∫ᵦₐ f (inverser les bornes change le signe)",
+    "tags": ["intégrale", "formule"],
+    "level": 1,
+    "category": "formula"
+  },
+  {
+    "id": "fc-integ-004",
+    "lessonId": "integrales",
+    "front": "Linéarité de l'intégrale",
+    "back": "∫(αf + βg) = α∫f + β∫g",
+    "tags": ["intégrale", "formule"],
+    "level": 1,
+    "category": "formula"
+  },
+  {
+    "id": "fc-integ-005",
+    "lessonId": "integrales",
+    "front": "Aire entre deux courbes",
+    "back": "Aire = ∫ₐᵇ |f(x) - g(x)| dx",
+    "tags": ["intégrale", "aire"],
+    "level": 2,
+    "category": "formula"
+  },
+
+  {
+    "id": "fc-normale-001",
+    "lessonId": "loi-normale",
+    "front": "Notation de la loi normale centrée réduite",
+    "back": "X ~ N(0, 1) : moyenne μ = 0, écart-type σ = 1",
+    "tags": ["probabilités", "normale"],
+    "level": 1,
+    "category": "definition"
+  },
+  {
+    "id": "fc-normale-002",
+    "lessonId": "loi-normale",
+    "front": "Règle 68-95-99.7",
+    "back": "P(μ-σ < X < μ+σ) ≈ 68%\nP(μ-2σ < X < μ+2σ) ≈ 95%\nP(μ-3σ < X < μ+3σ) ≈ 99.7%",
+    "tags": ["probabilités", "normale"],
+    "level": 2,
+    "category": "formula"
+  },
+  {
+    "id": "fc-normale-003",
+    "lessonId": "loi-normale",
+    "front": "Centrer-réduire X ~ N(μ, σ²)",
+    "back": "Z = (X - μ)/σ suit N(0, 1)",
+    "tags": ["probabilités", "normale"],
+    "level": 2,
+    "category": "formula"
+  },
+  {
+    "id": "fc-normale-004",
+    "lessonId": "loi-normale",
+    "front": "P(X ≤ -a) pour X ~ N(0,1)",
+    "back": "P(X ≤ -a) = 1 - P(X ≤ a) par symétrie",
+    "tags": ["probabilités", "normale"],
+    "level": 2,
+    "category": "formula"
+  },
+
+  {
+    "id": "fc-vect-esp-001",
+    "lessonId": "vecteurs-espace",
+    "front": "Coordonnées du vecteur AB dans l'espace",
+    "back": "AB = (xB - xA, yB - yA, zB - zA)",
+    "tags": ["géométrie", "vecteurs", "espace"],
+    "level": 1,
+    "category": "formula"
+  },
+  {
+    "id": "fc-vect-esp-002",
+    "lessonId": "vecteurs-espace",
+    "front": "Condition de colinéarité dans l'espace",
+    "back": "u et v colinéaires ⟺ ∃k : v = ku ⟺ coordonnées proportionnelles",
+    "tags": ["géométrie", "vecteurs", "colinéarité"],
+    "level": 1,
+    "category": "definition"
+  },
+  {
+    "id": "fc-vect-esp-003",
+    "lessonId": "vecteurs-espace",
+    "front": "Condition de coplanarité (3 vecteurs)",
+    "back": "u, v, w coplanaires ⟺ det(u, v, w) = 0",
+    "tags": ["géométrie", "vecteurs", "coplanarité"],
+    "level": 2,
+    "category": "formula"
+  },
+  {
+    "id": "fc-vect-esp-004",
+    "lessonId": "vecteurs-espace",
+    "front": "Formule du déterminant 3×3",
+    "back": "det = a(ei-fh) - b(di-fg) + c(dh-eg)",
+    "tags": ["géométrie", "déterminant"],
+    "level": 2,
+    "category": "formula"
+  },
+
+  {
+    "id": "fc-scal-esp-001",
+    "lessonId": "produit-scalaire-espace",
+    "front": "Produit scalaire avec coordonnées",
+    "back": "u·v = x₁x₂ + y₁y₂ + z₁z₂",
+    "tags": ["géométrie", "produit scalaire"],
+    "level": 1,
+    "category": "formula"
+  },
+  {
+    "id": "fc-scal-esp-002",
+    "lessonId": "produit-scalaire-espace",
+    "front": "Norme d'un vecteur dans l'espace",
+    "back": "||u|| = √(x² + y² + z²)",
+    "tags": ["géométrie", "norme"],
+    "level": 1,
+    "category": "formula"
+  },
+  {
+    "id": "fc-scal-esp-003",
+    "lessonId": "produit-scalaire-espace",
+    "front": "Condition d'orthogonalité",
+    "back": "u ⊥ v ⟺ u·v = 0",
+    "tags": ["géométrie", "orthogonalité"],
+    "level": 1,
+    "category": "definition"
+  },
+  {
+    "id": "fc-scal-esp-004",
+    "lessonId": "produit-scalaire-espace",
+    "front": "Formule avec angle : u·v",
+    "back": "u·v = ||u|| × ||v|| × cos(θ)",
+    "tags": ["géométrie", "produit scalaire", "angle"],
+    "level": 2,
+    "category": "formula"
+  },
+
+  {
+    "id": "fc-droites-plans-001",
+    "lessonId": "droites-plans-espace",
+    "front": "Représentation paramétrique d'une droite",
+    "back": "x = x₀ + ta\ny = y₀ + tb, t ∈ ℝ\nz = z₀ + tc",
+    "tags": ["géométrie", "droite", "paramétrique"],
+    "level": 1,
+    "category": "formula"
+  },
+  {
+    "id": "fc-droites-plans-002",
+    "lessonId": "droites-plans-espace",
+    "front": "Équation cartésienne d'un plan",
+    "back": "ax + by + cz + d = 0 où n(a,b,c) est un vecteur normal",
+    "tags": ["géométrie", "plan", "cartésienne"],
+    "level": 1,
+    "category": "formula"
+  },
+  {
+    "id": "fc-droites-plans-003",
+    "lessonId": "droites-plans-espace",
+    "front": "Droite parallèle à un plan",
+    "back": "u·n = 0 (vecteur directeur orthogonal au vecteur normal)",
+    "tags": ["géométrie", "parallèle"],
+    "level": 2,
+    "category": "definition"
+  },
+  {
+    "id": "fc-droites-plans-004",
+    "lessonId": "droites-plans-espace",
+    "front": "Plans parallèles",
+    "back": "Vecteurs normaux colinéaires (mêmes coefficients a, b, c à un facteur près)",
+    "tags": ["géométrie", "plans parallèles"],
+    "level": 2,
+    "category": "definition"
+  },
+
+  {
+    "id": "fc-ortho-esp-001",
+    "lessonId": "orthogonalite-espace",
+    "front": "Distance point-plan",
+    "back": "d(M, P) = |axₘ + byₘ + czₘ + d| / √(a² + b² + c²)",
+    "tags": ["géométrie", "distance"],
+    "level": 2,
+    "category": "formula"
+  },
+  {
+    "id": "fc-ortho-esp-002",
+    "lessonId": "orthogonalite-espace",
+    "front": "Droite perpendiculaire à un plan",
+    "back": "Vecteur directeur colinéaire au vecteur normal du plan",
+    "tags": ["géométrie", "perpendiculaire"],
+    "level": 2,
+    "category": "definition"
+  },
+  {
+    "id": "fc-ortho-esp-003",
+    "lessonId": "orthogonalite-espace",
+    "front": "Projeté orthogonal de M sur un plan",
+    "back": "H = intersection du plan et de la droite passant par M perpendiculaire au plan",
+    "tags": ["géométrie", "projection"],
+    "level": 2,
+    "category": "definition"
+  },
+  {
+    "id": "fc-ortho-esp-004",
+    "lessonId": "orthogonalite-espace",
+    "front": "Piège : perpendiculaire vs parallèle",
+    "back": "d ⊥ P : u // n (colinéaires)\nd // P : u·n = 0 (orthogonaux)",
+    "tags": ["géométrie", "erreur"],
+    "level": 2,
+    "category": "trap"
+  },
+
+  {
+    "id": "fc-va-001",
+    "lessonId": "variables-aleatoires",
+    "front": "Espérance E(X)",
+    "back": "E(X) = Σ xᵢ × P(X = xᵢ)",
+    "tags": ["probabilités", "espérance"],
+    "level": 1,
+    "category": "formula"
+  },
+  {
+    "id": "fc-va-002",
+    "lessonId": "variables-aleatoires",
+    "front": "Formule de König-Huygens",
+    "back": "V(X) = E(X²) - [E(X)]²",
+    "tags": ["probabilités", "variance"],
+    "level": 2,
+    "category": "formula"
+  },
+  {
+    "id": "fc-va-003",
+    "lessonId": "variables-aleatoires",
+    "front": "Linéarité de l'espérance",
+    "back": "E(aX + b) = aE(X) + b\nE(X + Y) = E(X) + E(Y)",
+    "tags": ["probabilités", "espérance"],
+    "level": 2,
+    "category": "formula"
+  },
+  {
+    "id": "fc-va-004",
+    "lessonId": "variables-aleatoires",
+    "front": "Variance et transformation affine",
+    "back": "V(aX + b) = a²V(X) (le b disparaît, a au carré !)",
+    "tags": ["probabilités", "variance"],
+    "level": 2,
+    "category": "formula"
+  },
+
+  {
+    "id": "fc-binom-001",
+    "lessonId": "loi-binomiale",
+    "front": "Conditions d'une loi binomiale",
+    "back": "n répétitions INDÉPENDANTES, même probabilité p de succès, X = nombre de succès",
+    "tags": ["probabilités", "binomiale"],
+    "level": 1,
+    "category": "definition"
+  },
+  {
+    "id": "fc-binom-002",
+    "lessonId": "loi-binomiale",
+    "front": "Formule P(X = k) pour X ~ B(n,p)",
+    "back": "P(X = k) = C(n,k) × pᵏ × (1-p)ⁿ⁻ᵏ",
+    "tags": ["probabilités", "binomiale", "formule"],
+    "level": 2,
+    "category": "formula"
+  },
+  {
+    "id": "fc-binom-003",
+    "lessonId": "loi-binomiale",
+    "front": "Espérance et variance de B(n,p)",
+    "back": "E(X) = np, V(X) = np(1-p)",
+    "tags": ["probabilités", "binomiale"],
+    "level": 1,
+    "category": "formula"
+  },
+  {
+    "id": "fc-binom-004",
+    "lessonId": "loi-binomiale",
+    "front": "Coefficient binomial C(n,k)",
+    "back": "C(n,k) = n! / (k!(n-k)!)",
+    "tags": ["probabilités", "binomiale", "combinatoire"],
+    "level": 2,
+    "category": "formula"
+  },
+  {
+    "id": "fc-binom-005",
+    "lessonId": "loi-binomiale",
+    "front": "Piège : tirage SANS remise",
+    "back": "SANS remise = pas d'indépendance = PAS binomiale ! (loi hypergéométrique)",
+    "tags": ["probabilités", "binomiale", "erreur"],
+    "level": 2,
+    "category": "trap"
+  },
+
+  {
+    "id": "fc-compl-formes-001",
+    "lessonId": "complexes-formes",
+    "front": "Forme exponentielle",
+    "back": "z = r × e^(iθ) avec r = |z| et θ = arg(z)",
+    "tags": ["complexes", "forme exponentielle"],
+    "level": 2,
+    "category": "definition"
+  },
+  {
+    "id": "fc-compl-formes-002",
+    "lessonId": "complexes-formes",
+    "front": "Formule de Moivre",
+    "back": "(cosθ + i sinθ)ⁿ = cos(nθ) + i sin(nθ)",
+    "tags": ["complexes", "Moivre"],
+    "level": 2,
+    "category": "formula"
+  },
+  {
+    "id": "fc-compl-formes-003",
+    "lessonId": "complexes-formes",
+    "front": "Racines n-ièmes de l'unité",
+    "back": "zₖ = e^(i×2kπ/n) pour k = 0, 1, ..., n-1",
+    "tags": ["complexes", "racines"],
+    "level": 3,
+    "category": "formula"
+  },
+  {
+    "id": "fc-compl-formes-004",
+    "lessonId": "complexes-formes",
+    "front": "e^(iπ) = ?",
+    "back": "e^(iπ) = -1 (identité d'Euler)",
+    "tags": ["complexes", "Euler"],
+    "level": 2,
+    "category": "formula"
+  },
+
+  {
+    "id": "fc-mat-syst-001",
+    "lessonId": "matrices-systemes",
+    "front": "Écriture matricielle AX = B",
+    "back": "A = matrice des coefficients, X = inconnues, B = seconds membres",
+    "tags": ["matrices", "systèmes"],
+    "level": 1,
+    "category": "definition"
+  },
+  {
+    "id": "fc-mat-syst-002",
+    "lessonId": "matrices-systemes",
+    "front": "Solution si A inversible",
+    "back": "X = A⁻¹B (unique solution)",
+    "tags": ["matrices", "systèmes"],
+    "level": 2,
+    "category": "formula"
+  },
+  {
+    "id": "fc-mat-syst-003",
+    "lessonId": "matrices-systemes",
+    "front": "Système de Cramer",
+    "back": "Si det(A) ≠ 0, le système a une unique solution",
+    "tags": ["matrices", "systèmes", "Cramer"],
+    "level": 2,
+    "category": "definition"
+  },
+  {
+    "id": "fc-mat-syst-004",
+    "lessonId": "matrices-systemes",
+    "front": "Méthode du pivot de Gauss",
+    "back": "Éliminer successivement les inconnues par combinaisons linéaires",
+    "tags": ["matrices", "Gauss", "méthode"],
+    "level": 2,
+    "category": "method"
+  },
+
+  {
+    "id": "fc-graphes-intro-001",
+    "lessonId": "graphes-introduction",
+    "front": "Degré d'un sommet",
+    "back": "Nombre d'arêtes incidentes à ce sommet",
+    "tags": ["graphes", "degré"],
+    "level": 1,
+    "category": "definition"
+  },
+  {
+    "id": "fc-graphes-intro-002",
+    "lessonId": "graphes-introduction",
+    "front": "Théorème des poignées de main",
+    "back": "Σ deg(v) = 2 × nombre d'arêtes",
+    "tags": ["graphes", "formule"],
+    "level": 2,
+    "category": "formula"
+  },
+  {
+    "id": "fc-graphes-intro-003",
+    "lessonId": "graphes-introduction",
+    "front": "Graphe complet Kₙ",
+    "back": "Tous les sommets sont reliés. Nombre d'arêtes = n(n-1)/2",
+    "tags": ["graphes", "complet"],
+    "level": 2,
+    "category": "definition"
+  },
+  {
+    "id": "fc-graphes-intro-004",
+    "lessonId": "graphes-introduction",
+    "front": "Graphe connexe",
+    "back": "Il existe un chemin entre toute paire de sommets",
+    "tags": ["graphes", "connexité"],
+    "level": 1,
+    "category": "definition"
+  },
+
+  {
+    "id": "fc-graphes-parc-001",
+    "lessonId": "graphes-parcours",
+    "front": "Chaîne eulérienne",
+    "back": "Chemin passant par chaque ARÊTE exactement une fois. Existe ssi 0 ou 2 sommets de degré impair.",
+    "tags": ["graphes", "Euler"],
+    "level": 2,
+    "category": "definition"
+  },
+  {
+    "id": "fc-graphes-parc-002",
+    "lessonId": "graphes-parcours",
+    "front": "Cycle eulérien",
+    "back": "Chemin fermé passant par chaque arête une fois. Existe ssi tous les sommets sont de degré pair.",
+    "tags": ["graphes", "Euler"],
+    "level": 2,
+    "category": "definition"
+  },
+  {
+    "id": "fc-graphes-parc-003",
+    "lessonId": "graphes-parcours",
+    "front": "Parcours en largeur (BFS)",
+    "back": "Explorer les voisins d'abord, puis leurs voisins. Utilise une FILE (FIFO).",
+    "tags": ["graphes", "BFS"],
+    "level": 2,
+    "category": "method"
+  },
+  {
+    "id": "fc-graphes-parc-004",
+    "lessonId": "graphes-parcours",
+    "front": "Parcours en profondeur (DFS)",
+    "back": "Aller le plus loin possible, puis revenir. Utilise une PILE (LIFO) ou récursion.",
+    "tags": ["graphes", "DFS"],
+    "level": 2,
+    "category": "method"
   }
 ]
