@@ -3988,5 +3988,906 @@
       "coefficients"
     ],
     "isComprehension": false
+  },
+  {
+    "id": "ex-avance-001",
+    "lessonId": "derivation",
+    "title": "Étude complète de $f(x) = xe^{-x^2}$",
+    "difficulty": 4,
+    "statement": "Soit $f(x) = xe^{-x^2}$ définie sur $\\mathbb{R}$.\n1) Étudier les limites de $f$ en $\\pm\\infty$.\n2) Calculer $f'(x)$ et étudier son signe.\n3) Dresser le tableau de variations complet.\n4) Montrer que $f$ admet un maximum global et le calculer.",
+    "hints": [
+      "Pour les limites, utiliser la croissance comparée $e^{x^2}$ domine $|x|$.",
+      "Pour $f'(x)$, utiliser la règle du produit : $(uv)' = u'v + uv'$."
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Limites",
+        "content": "Quand $x \\to +\\infty$: $f(x) = \\frac{x}{e^{x^2}} \\to 0$ (croissance comparée).\nQuand $x \\to -\\infty$: $f(x) = \\frac{x}{e^{x^2}} \\to 0$ aussi."
+      },
+      {
+        "step": 2,
+        "title": "Dérivée",
+        "content": "$f'(x) = 1 \\cdot e^{-x^2} + x \\cdot (-2x)e^{-x^2} = e^{-x^2}(1 - 2x^2)$.\n$f'(x) = 0 \\Leftrightarrow x = \\pm\\frac{1}{\\sqrt{2}}$."
+      },
+      {
+        "step": 3,
+        "title": "Tableau de variations",
+        "content": "Sur $]-\\infty, -\\frac{1}{\\sqrt{2}}[$: $f' < 0$, $f$ décroissante.\nSur $]-\\frac{1}{\\sqrt{2}}, \\frac{1}{\\sqrt{2}}[$: $f' > 0$, $f$ croissante.\nSur $]\\frac{1}{\\sqrt{2}}, +\\infty[$: $f' < 0$, $f$ décroissante."
+      },
+      {
+        "step": 4,
+        "title": "Maximum global",
+        "content": "Maximum en $x = \\frac{1}{\\sqrt{2}}$: $f\\left(\\frac{1}{\\sqrt{2}}\\right) = \\frac{1}{\\sqrt{2}}e^{-1/2} = \\frac{1}{\\sqrt{2e}}$."
+      }
+    ],
+    "method": "Pour une étude complète: limites, dérivée, signe de la dérivée, tableau de variations, extremums.",
+    "commonMistakes": [
+      "Oublier le facteur $-2x$ dans la dérivée de $e^{-x^2}$.",
+      "Confondre minimum local et minimum global."
+    ],
+    "tags": ["dérivation", "variations", "extremums", "exponentielle"],
+    "isComprehension": false
+  },
+  {
+    "id": "ex-avance-002",
+    "lessonId": "integrales",
+    "title": "Intégrale avec paramètre : $I_n = \\int_0^1 x^n e^x dx$",
+    "difficulty": 5,
+    "statement": "Pour $n \\in \\mathbb{N}$, on pose $I_n = \\int_0^1 x^n e^x dx$.\n1) Calculer $I_0$.\n2) À l'aide d'une intégration par parties, établir une relation de récurrence entre $I_{n+1}$ et $I_n$.\n3) En déduire $I_1$ et $I_2$.",
+    "hints": [
+      "Pour l'IPP, poser $u = x^{n+1}$ et $v' = e^x$.",
+      "La relation sera de la forme $I_{n+1} = \\text{quelque chose} - (n+1)I_n$."
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Calcul de $I_0$",
+        "content": "$I_0 = \\int_0^1 e^x dx = [e^x]_0^1 = e - 1$."
+      },
+      {
+        "step": 2,
+        "title": "Récurrence par IPP",
+        "content": "IPP avec $u = x^{n+1}$, $v' = e^x$, donc $u' = (n+1)x^n$, $v = e^x$.\n$I_{n+1} = [x^{n+1}e^x]_0^1 - (n+1)\\int_0^1 x^n e^x dx = e - (n+1)I_n$."
+      },
+      {
+        "step": 3,
+        "title": "Calcul de $I_1$ et $I_2$",
+        "content": "$I_1 = e - 1 \\cdot I_0 = e - (e-1) = 1$.\n$I_2 = e - 2I_1 = e - 2$."
+      }
+    ],
+    "method": "L'intégration par parties permet de réduire la puissance de $x$ à chaque étape.",
+    "commonMistakes": [
+      "Oublier d'évaluer le crochet aux bornes.",
+      "Se tromper dans le coefficient $(n+1)$."
+    ],
+    "tags": ["intégrales", "IPP", "récurrence"],
+    "isComprehension": false
+  },
+  {
+    "id": "ex-avance-003",
+    "lessonId": "suites-limites",
+    "title": "Suite récurrente : $u_{n+1} = \\sqrt{2 + u_n}$",
+    "difficulty": 4,
+    "statement": "Soit $(u_n)$ définie par $u_0 = 0$ et $u_{n+1} = \\sqrt{2 + u_n}$.\n1) Montrer que pour tout $n$, $0 \\leq u_n \\leq 2$.\n2) Montrer que $(u_n)$ est croissante.\n3) En déduire que $(u_n)$ converge et calculer sa limite.",
+    "hints": [
+      "Pour 1), raisonner par récurrence.",
+      "Pour 2), étudier le signe de $u_{n+1} - u_n$.",
+      "Pour 3), utiliser le théorème des suites monotones bornées."
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Bornitude par récurrence",
+        "content": "Initialisation: $u_0 = 0 \\in [0,2]$.\nHérédité: si $u_n \\in [0,2]$, alors $u_{n+1} = \\sqrt{2+u_n} \\in [\\sqrt{2}, 2]$ car $2 \\leq 2+u_n \\leq 4$."
+      },
+      {
+        "step": 2,
+        "title": "Croissance",
+        "content": "Soit $f(x) = \\sqrt{2+x}$. On a $u_{n+1} - u_n = f(u_n) - u_n$.\nÉtudions $g(x) = \\sqrt{2+x} - x$ sur $[0,2]$.\n$g'(x) = \\frac{1}{2\\sqrt{2+x}} - 1 < 0$ sur $[0,2]$.\n$g(2) = 0$ et $g(0) = \\sqrt{2} > 0$, donc $g(x) > 0$ sur $[0,2[$.\nAinsi $u_{n+1} > u_n$ tant que $u_n < 2$."
+      },
+      {
+        "step": 3,
+        "title": "Convergence et limite",
+        "content": "$(u_n)$ croissante et majorée donc convergente.\nSi $\\ell = \\lim u_n$, alors $\\ell = \\sqrt{2+\\ell}$.\n$\\ell^2 = 2 + \\ell$, donc $\\ell^2 - \\ell - 2 = 0$.\n$(\\ell-2)(\\ell+1) = 0$, donc $\\ell = 2$ (car $\\ell \\geq 0$)."
+      }
+    ],
+    "method": "Pour les suites récurrentes: bornitude par récurrence, monotonie, puis théorème de convergence monotone.",
+    "commonMistakes": [
+      "Oublier de vérifier que la limite est dans l'ensemble d'arrivée.",
+      "Ne pas justifier l'existence de la limite avant de résoudre l'équation."
+    ],
+    "tags": ["suites", "récurrence", "convergence", "limites"],
+    "isComprehension": false
+  },
+  {
+    "id": "ex-avance-004",
+    "lessonId": "loi-binomiale",
+    "title": "Loi binomiale : contrôle qualité avec décision",
+    "difficulty": 4,
+    "statement": "Une machine produit des pièces dont 3% sont défectueuses. On prélève un échantillon de 50 pièces.\nSoit $X$ le nombre de pièces défectueuses.\n1) Quelle loi suit $X$ ? Donner ses paramètres.\n2) Calculer $P(X = 0)$ et $P(X \\leq 2)$.\n3) On refuse le lot si $X \\geq 4$. Calculer la probabilité de refus.\n4) Quelle est la probabilité de refuser un lot alors que le taux réel est bien de 3% ?",
+    "hints": [
+      "C'est un schéma de Bernoulli avec $n = 50$ et $p = 0.03$.",
+      "Utiliser $P(X \\geq 4) = 1 - P(X \\leq 3)$."
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Identification de la loi",
+        "content": "$X \\sim \\mathcal{B}(50, 0.03)$.\n$E(X) = 50 \\times 0.03 = 1.5$ pièces défectueuses en moyenne."
+      },
+      {
+        "step": 2,
+        "title": "Calculs de probabilités",
+        "content": "$P(X=0) = 0.97^{50} \\approx 0.218$.\n$P(X \\leq 2) = P(X=0) + P(X=1) + P(X=2)$.\n$P(X=1) = \\binom{50}{1}(0.03)(0.97)^{49} \\approx 0.336$.\n$P(X=2) = \\binom{50}{2}(0.03)^2(0.97)^{48} \\approx 0.259$.\n$P(X \\leq 2) \\approx 0.813$."
+      },
+      {
+        "step": 3,
+        "title": "Probabilité de refus",
+        "content": "$P(X \\geq 4) = 1 - P(X \\leq 3)$.\n$P(X=3) = \\binom{50}{3}(0.03)^3(0.97)^{47} \\approx 0.126$.\n$P(X \\leq 3) \\approx 0.939$, donc $P(X \\geq 4) \\approx 0.061$."
+      },
+      {
+        "step": 4,
+        "title": "Interprétation",
+        "content": "Il y a environ 6.1% de chance de refuser un lot conforme (erreur de type I)."
+      }
+    ],
+    "method": "Toujours identifier la loi, calculer espérance, puis les probabilités demandées.",
+    "commonMistakes": [
+      "Confondre $P(X \\geq 4)$ et $P(X > 4)$.",
+      "Oublier que $\\binom{50}{k}$ peut être grand."
+    ],
+    "tags": ["loi binomiale", "probabilités", "décision"],
+    "isComprehension": false
+  },
+  {
+    "id": "ex-avance-005",
+    "lessonId": "complexes-geometrie",
+    "title": "Lieu géométrique : $|z - 1| = |z + i|$",
+    "difficulty": 4,
+    "statement": "Déterminer et représenter l'ensemble des points $M$ d'affixe $z$ tels que $|z - 1| = |z + i|$.",
+    "hints": [
+      "$|z - a|$ représente la distance de $M$ au point d'affixe $a$.",
+      "L'ensemble des points équidistants de deux points fixes est une droite."
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Interprétation géométrique",
+        "content": "Soit $A(1, 0)$ d'affixe 1 et $B(0, -1)$ d'affixe $-i$.\n$|z-1| = MA$ et $|z+i| = MB$.\nL'équation devient $MA = MB$."
+      },
+      {
+        "step": 2,
+        "title": "Lieu géométrique",
+        "content": "L'ensemble des points équidistants de $A$ et $B$ est la médiatrice de $[AB]$.\nMilieu de $[AB]$: $I(\\frac{1}{2}, -\\frac{1}{2})$.\nLa médiatrice passe par $I$ et est perpendiculaire à $\\overrightarrow{AB} = (-1, -1)$.\nSon vecteur directeur est $(1, -1)$."
+      },
+      {
+        "step": 3,
+        "title": "Équation cartésienne",
+        "content": "Médiatrice: $(x - \\frac{1}{2}) \\cdot (-1) + (y + \\frac{1}{2}) \\cdot (-1) = 0$.\nSimplification: $-x + \\frac{1}{2} - y - \\frac{1}{2} = 0$, soit $x + y = 0$ ou $y = -x$."
+      }
+    ],
+    "method": "Pour les lieux définis par des modules égaux, interpréter géométriquement comme des distances égales.",
+    "commonMistakes": [
+      "Oublier que $|z + i| = |z - (-i)|$.",
+      "Se tromper dans le calcul du milieu."
+    ],
+    "tags": ["complexes", "lieu géométrique", "médiatrice"],
+    "isComprehension": false
+  },
+  {
+    "id": "ex-avance-006",
+    "lessonId": "droites-plans-espace",
+    "title": "Intersection de trois plans",
+    "difficulty": 4,
+    "statement": "Déterminer l'intersection des trois plans:\n$(P_1): x + y + z = 3$\n$(P_2): 2x - y + z = 0$\n$(P_3): x + 2y - z = 1$",
+    "hints": [
+      "Résoudre le système de trois équations à trois inconnues.",
+      "Si le système a une solution unique, l'intersection est un point."
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Mise en système",
+        "content": "$(P_1): x + y + z = 3$\n$(P_2): 2x - y + z = 0$\n$(P_3): x + 2y - z = 1$"
+      },
+      {
+        "step": 2,
+        "title": "Résolution",
+        "content": "$(P_1) + (P_2)$: $3x + 2z = 3$.\n$(P_1) + (P_3)$: $2x + 3y = 4$.\n$(P_2) + (P_3)$: $3x + y = 1$."
+      },
+      {
+        "step": 3,
+        "title": "Suite de la résolution",
+        "content": "De $3x + y = 1$: $y = 1 - 3x$.\nDans $2x + 3y = 4$: $2x + 3(1-3x) = 4$, donc $-7x = 1$, $x = -\\frac{1}{7}$.\n$y = 1 + \\frac{3}{7} = \\frac{10}{7}$.\nDe $(P_1)$: $z = 3 - x - y = 3 + \\frac{1}{7} - \\frac{10}{7} = \\frac{12}{7}$."
+      },
+      {
+        "step": 4,
+        "title": "Conclusion",
+        "content": "Les trois plans se coupent en un unique point $M\\left(-\\frac{1}{7}, \\frac{10}{7}, \\frac{12}{7}\\right)$."
+      }
+    ],
+    "method": "L'intersection de trois plans se ramène à un système linéaire de 3 équations à 3 inconnues.",
+    "commonMistakes": [
+      "Erreur de calcul dans les combinaisons linéaires.",
+      "Oublier de vérifier la solution dans les trois équations."
+    ],
+    "tags": ["plans", "intersection", "systèmes linéaires"],
+    "isComprehension": false
+  },
+  {
+    "id": "ex-avance-007",
+    "lessonId": "limites-fonctions",
+    "title": "Limite avec forme indéterminée : $\\lim_{x \\to 0} \\frac{e^x - 1 - x}{x^2}$",
+    "difficulty": 5,
+    "statement": "Calculer $\\displaystyle \\lim_{x \\to 0} \\frac{e^x - 1 - x}{x^2}$.",
+    "hints": [
+      "Utiliser le développement limité de $e^x$ en 0.",
+      "$e^x = 1 + x + \\frac{x^2}{2} + o(x^2)$."
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Développement limité",
+        "content": "$e^x = 1 + x + \\frac{x^2}{2} + \\frac{x^3}{6} + o(x^3)$.\nDonc $e^x - 1 - x = \\frac{x^2}{2} + \\frac{x^3}{6} + o(x^3)$."
+      },
+      {
+        "step": 2,
+        "title": "Division",
+        "content": "$\\frac{e^x - 1 - x}{x^2} = \\frac{\\frac{x^2}{2} + o(x^2)}{x^2} = \\frac{1}{2} + o(1)$."
+      },
+      {
+        "step": 3,
+        "title": "Conclusion",
+        "content": "$\\displaystyle \\lim_{x \\to 0} \\frac{e^x - 1 - x}{x^2} = \\frac{1}{2}$."
+      }
+    ],
+    "method": "Les développements limités sont essentiels pour lever les formes indéterminées $\\frac{0}{0}$.",
+    "commonMistakes": [
+      "Ne pas pousser le DL assez loin.",
+      "Oublier le terme en $\\frac{x^2}{2}$ dans $e^x$."
+    ],
+    "tags": ["limites", "développement limité", "exponentielle"],
+    "isComprehension": false
+  },
+  {
+    "id": "ex-avance-008",
+    "lessonId": "recurrence",
+    "title": "Récurrence forte : $F_n < 2^n$",
+    "difficulty": 4,
+    "statement": "Soit $(F_n)$ la suite de Fibonacci définie par $F_0 = 0$, $F_1 = 1$ et $F_{n+2} = F_{n+1} + F_n$.\nMontrer par récurrence forte que pour tout $n \\geq 0$, $F_n < 2^n$.",
+    "hints": [
+      "La récurrence forte nécessite de supposer la propriété vraie pour tous les rangs $\\leq n$.",
+      "Utiliser $F_{n+2} = F_{n+1} + F_n < 2^{n+1} + 2^n$."
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Initialisation",
+        "content": "$F_0 = 0 < 1 = 2^0$ ✓\n$F_1 = 1 < 2 = 2^1$ ✓"
+      },
+      {
+        "step": 2,
+        "title": "Hérédité (récurrence forte)",
+        "content": "Supposons $F_k < 2^k$ pour tout $k \\leq n+1$ avec $n \\geq 0$.\n$F_{n+2} = F_{n+1} + F_n < 2^{n+1} + 2^n = 2^n(2 + 1) = 3 \\cdot 2^n < 4 \\cdot 2^n = 2^{n+2}$."
+      },
+      {
+        "step": 3,
+        "title": "Conclusion",
+        "content": "Par récurrence forte, pour tout $n \\geq 0$, $F_n < 2^n$."
+      }
+    ],
+    "method": "La récurrence forte est nécessaire quand la relation de récurrence utilise plusieurs termes précédents.",
+    "commonMistakes": [
+      "Utiliser une récurrence simple au lieu d'une récurrence forte.",
+      "Oublier d'initialiser aux deux premiers rangs."
+    ],
+    "tags": ["récurrence", "Fibonacci", "inégalités"],
+    "isComprehension": false
+  },
+  {
+    "id": "ex-avance-009",
+    "lessonId": "primitives",
+    "title": "Primitive avec substitution : $\\int \\frac{x}{\\sqrt{1+x^2}} dx$",
+    "difficulty": 4,
+    "statement": "Calculer $\\displaystyle \\int \\frac{x}{\\sqrt{1+x^2}} dx$.",
+    "hints": [
+      "Poser $u = 1 + x^2$, alors $du = 2x\\,dx$.",
+      "L'intégrale devient $\\frac{1}{2} \\int \\frac{du}{\\sqrt{u}}$."
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Substitution",
+        "content": "Posons $u = 1 + x^2$, donc $du = 2x\\,dx$, soit $x\\,dx = \\frac{1}{2}du$."
+      },
+      {
+        "step": 2,
+        "title": "Transformation",
+        "content": "$\\int \\frac{x}{\\sqrt{1+x^2}} dx = \\frac{1}{2} \\int \\frac{du}{\\sqrt{u}} = \\frac{1}{2} \\int u^{-1/2} du$."
+      },
+      {
+        "step": 3,
+        "title": "Calcul",
+        "content": "$= \\frac{1}{2} \\cdot \\frac{u^{1/2}}{1/2} + C = \\sqrt{u} + C = \\sqrt{1+x^2} + C$."
+      }
+    ],
+    "method": "Chercher une substitution qui simplifie l'intégrale, souvent $u = $ intérieur d'une composée.",
+    "commonMistakes": [
+      "Oublier le facteur $\\frac{1}{2}$ venant de $du = 2x\\,dx$.",
+      "Ne pas revenir à la variable $x$ à la fin."
+    ],
+    "tags": ["primitives", "substitution", "racines"],
+    "isComprehension": false
+  },
+  {
+    "id": "ex-avance-010",
+    "lessonId": "complexes-formes",
+    "title": "Équation complexe : $z^3 = 8$",
+    "difficulty": 4,
+    "statement": "Résoudre dans $\\mathbb{C}$ l'équation $z^3 = 8$.\nDonner les solutions sous forme algébrique et les placer dans le plan complexe.",
+    "hints": [
+      "Écrire $8 = 8e^{i \\cdot 0}$ sous forme exponentielle.",
+      "Les solutions sont $z_k = \\sqrt[3]{8} e^{i \\cdot \\frac{2k\\pi}{3}}$ pour $k = 0, 1, 2$."
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Forme exponentielle de 8",
+        "content": "$8 = 8e^{i \\cdot 0} = 8e^{i \\cdot 2k\\pi}$ pour $k \\in \\mathbb{Z}$."
+      },
+      {
+        "step": 2,
+        "title": "Solutions",
+        "content": "$z^3 = 8 \\Rightarrow z = 2e^{i \\cdot \\frac{2k\\pi}{3}}$ pour $k = 0, 1, 2$.\n$z_0 = 2e^{i \\cdot 0} = 2$.\n$z_1 = 2e^{i \\cdot \\frac{2\\pi}{3}} = 2(-\\frac{1}{2} + i\\frac{\\sqrt{3}}{2}) = -1 + i\\sqrt{3}$.\n$z_2 = 2e^{i \\cdot \\frac{4\\pi}{3}} = 2(-\\frac{1}{2} - i\\frac{\\sqrt{3}}{2}) = -1 - i\\sqrt{3}$."
+      },
+      {
+        "step": 3,
+        "title": "Représentation",
+        "content": "Les trois solutions forment un triangle équilatéral inscrit dans le cercle de centre $O$ et de rayon 2."
+      }
+    ],
+    "method": "Pour $z^n = a$, on utilise la forme exponentielle et on trouve $n$ solutions réparties régulièrement sur un cercle.",
+    "commonMistakes": [
+      "Oublier des solutions (il y en a toujours $n$).",
+      "Erreur dans les formules de $\\cos$ et $\\sin$ des angles remarquables."
+    ],
+    "tags": ["complexes", "racines n-ièmes", "forme exponentielle"],
+    "isComprehension": false
+  },
+  {
+    "id": "ex-avance-011",
+    "lessonId": "orthogonalite-espace",
+    "title": "Distance minimale point-droite dans l'espace",
+    "difficulty": 4,
+    "statement": "Soit $(d)$ la droite passant par $A(1, 0, 1)$ de vecteur directeur $\\vec{u}(1, 1, 1)$.\nSoit $M(3, 2, 0)$. Calculer la distance de $M$ à $(d)$.",
+    "hints": [
+      "Le projeté $H$ de $M$ sur $(d)$ est tel que $\\overrightarrow{MH} \\perp \\vec{u}$.",
+      "Écrire $H = A + t\\vec{u}$ et résoudre $\\overrightarrow{MH} \\cdot \\vec{u} = 0$."
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Paramétrage de $H$",
+        "content": "Tout point de $(d)$ s'écrit $H = (1+t, t, 1+t)$ pour $t \\in \\mathbb{R}$."
+      },
+      {
+        "step": 2,
+        "title": "Vecteur $\\overrightarrow{MH}$",
+        "content": "$\\overrightarrow{MH} = (1+t-3, t-2, 1+t-0) = (t-2, t-2, t+1)$."
+      },
+      {
+        "step": 3,
+        "title": "Orthogonalité",
+        "content": "$\\overrightarrow{MH} \\cdot \\vec{u} = 0$:\n$(t-2) + (t-2) + (t+1) = 0$\n$3t - 3 = 0$, donc $t = 1$."
+      },
+      {
+        "step": 4,
+        "title": "Calcul de la distance",
+        "content": "$H = (2, 1, 2)$.\n$MH = \\sqrt{(2-3)^2 + (1-2)^2 + (2-0)^2} = \\sqrt{1+1+4} = \\sqrt{6}$."
+      }
+    ],
+    "method": "Pour la distance point-droite: trouver le projeté orthogonal puis calculer la distance.",
+    "commonMistakes": [
+      "Oublier de vérifier l'orthogonalité.",
+      "Erreur de calcul dans le produit scalaire."
+    ],
+    "tags": ["géométrie espace", "distance", "projection"],
+    "isComprehension": false
+  },
+  {
+    "id": "ex-avance-012",
+    "lessonId": "variables-aleatoires",
+    "title": "Variance d'une somme de VA indépendantes",
+    "difficulty": 4,
+    "statement": "Soient $X$ et $Y$ deux variables aléatoires indépendantes avec $E(X) = 2$, $V(X) = 3$, $E(Y) = 5$, $V(Y) = 2$.\n1) Calculer $E(X + Y)$ et $V(X + Y)$.\n2) Calculer $E(2X - 3Y + 1)$ et $V(2X - 3Y + 1)$.",
+    "hints": [
+      "L'espérance est toujours linéaire.",
+      "La variance de la somme de VA indépendantes est la somme des variances."
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Somme $X + Y$",
+        "content": "$E(X + Y) = E(X) + E(Y) = 2 + 5 = 7$.\nComme $X$ et $Y$ sont indépendantes:\n$V(X + Y) = V(X) + V(Y) = 3 + 2 = 5$."
+      },
+      {
+        "step": 2,
+        "title": "Transformation $2X - 3Y + 1$",
+        "content": "$E(2X - 3Y + 1) = 2E(X) - 3E(Y) + 1 = 2(2) - 3(5) + 1 = 4 - 15 + 1 = -10$.\n$V(2X - 3Y + 1) = V(2X) + V(-3Y) = 4V(X) + 9V(Y) = 4(3) + 9(2) = 12 + 18 = 30$."
+      }
+    ],
+    "method": "Pour la variance: $V(aX + bY) = a^2V(X) + b^2V(Y)$ si $X$, $Y$ indépendantes.",
+    "commonMistakes": [
+      "Oublier que $V(-Y) = V(Y)$, pas $-V(Y)$.",
+      "Oublier le carré des coefficients dans la variance."
+    ],
+    "tags": ["espérance", "variance", "indépendance"],
+    "isComprehension": false
+  },
+  {
+    "id": "ex-avance-013",
+    "lessonId": "convexite",
+    "title": "Point d'inflexion de $f(x) = x^4 - 6x^2$",
+    "difficulty": 4,
+    "statement": "Soit $f(x) = x^4 - 6x^2$.\n1) Calculer $f''(x)$.\n2) Déterminer les points d'inflexion de la courbe.\n3) Étudier la convexité de $f$.",
+    "hints": [
+      "Point d'inflexion: $f''(x) = 0$ avec changement de signe.",
+      "Convexe si $f'' > 0$, concave si $f'' < 0$."
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Calcul de $f''$",
+        "content": "$f'(x) = 4x^3 - 12x$.\n$f''(x) = 12x^2 - 12 = 12(x^2 - 1) = 12(x-1)(x+1)$."
+      },
+      {
+        "step": 2,
+        "title": "Points d'inflexion",
+        "content": "$f''(x) = 0 \\Leftrightarrow x = -1$ ou $x = 1$.\n$f''$ change de signe en ces deux points.\n$f(-1) = 1 - 6 = -5$ et $f(1) = 1 - 6 = -5$.\nPoints d'inflexion: $(-1, -5)$ et $(1, -5)$."
+      },
+      {
+        "step": 3,
+        "title": "Convexité",
+        "content": "$f'' > 0$ sur $]-\\infty, -1[ \\cup ]1, +\\infty[$: $f$ convexe.\n$f'' < 0$ sur $]-1, 1[$: $f$ concave."
+      }
+    ],
+    "method": "Les points d'inflexion sont les zéros de $f''$ où il y a changement de signe.",
+    "commonMistakes": [
+      "Oublier de vérifier le changement de signe de $f''$.",
+      "Confondre maximum/minimum avec point d'inflexion."
+    ],
+    "tags": ["convexité", "point d'inflexion", "dérivée seconde"],
+    "isComprehension": false
+  },
+  {
+    "id": "ex-avance-014",
+    "lessonId": "produit-scalaire-espace",
+    "title": "Angle entre deux vecteurs dans l'espace",
+    "difficulty": 4,
+    "statement": "Soit $\\vec{u}(1, 2, 2)$ et $\\vec{v}(2, -1, 2)$.\n1) Calculer $\\vec{u} \\cdot \\vec{v}$.\n2) Calculer $\\|\\vec{u}\\|$ et $\\|\\vec{v}\\|$.\n3) En déduire l'angle $\\theta$ entre $\\vec{u}$ et $\\vec{v}$.",
+    "hints": [
+      "$\\vec{u} \\cdot \\vec{v} = x_1x_2 + y_1y_2 + z_1z_2$.",
+      "$\\cos\\theta = \\frac{\\vec{u} \\cdot \\vec{v}}{\\|\\vec{u}\\| \\|\\vec{v}\\|}$."
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Produit scalaire",
+        "content": "$\\vec{u} \\cdot \\vec{v} = 1 \\times 2 + 2 \\times (-1) + 2 \\times 2 = 2 - 2 + 4 = 4$."
+      },
+      {
+        "step": 2,
+        "title": "Normes",
+        "content": "$\\|\\vec{u}\\| = \\sqrt{1 + 4 + 4} = \\sqrt{9} = 3$.\n$\\|\\vec{v}\\| = \\sqrt{4 + 1 + 4} = \\sqrt{9} = 3$."
+      },
+      {
+        "step": 3,
+        "title": "Angle",
+        "content": "$\\cos\\theta = \\frac{4}{3 \\times 3} = \\frac{4}{9}$.\n$\\theta = \\arccos\\left(\\frac{4}{9}\\right) \\approx 63.6°$."
+      }
+    ],
+    "method": "L'angle entre deux vecteurs s'obtient via le produit scalaire et les normes.",
+    "commonMistakes": [
+      "Oublier une coordonnée dans le produit scalaire.",
+      "Confondre $\\cos\\theta$ et $\\theta$."
+    ],
+    "tags": ["produit scalaire", "angle", "vecteurs espace"],
+    "isComprehension": false
+  },
+  {
+    "id": "ex-avance-015",
+    "lessonId": "loi-normale",
+    "title": "Loi normale : probabilités et intervalles",
+    "difficulty": 4,
+    "statement": "Soit $X \\sim \\mathcal{N}(50, 10^2)$ (moyenne 50, écart-type 10).\n1) Calculer $P(40 \\leq X \\leq 60)$.\n2) Déterminer $a$ tel que $P(X \\leq a) = 0.95$.",
+    "hints": [
+      "Centrer-réduire: $Z = \\frac{X - 50}{10}$ suit $\\mathcal{N}(0, 1)$.",
+      "Utiliser la table de la loi normale ou la calculatrice."
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Centrage-réduction",
+        "content": "$P(40 \\leq X \\leq 60) = P\\left(\\frac{40-50}{10} \\leq Z \\leq \\frac{60-50}{10}\\right) = P(-1 \\leq Z \\leq 1)$."
+      },
+      {
+        "step": 2,
+        "title": "Calcul avec la table",
+        "content": "$P(-1 \\leq Z \\leq 1) = 2\\Phi(1) - 1 \\approx 2(0.8413) - 1 = 0.6826$.\nEnviron 68.26% des valeurs."
+      },
+      {
+        "step": 3,
+        "title": "Quantile",
+        "content": "$P(X \\leq a) = 0.95$.\n$P\\left(Z \\leq \\frac{a-50}{10}\\right) = 0.95$.\n$\\frac{a-50}{10} = 1.645$ (quantile d'ordre 0.95).\n$a = 50 + 10 \\times 1.645 = 66.45$."
+      }
+    ],
+    "method": "Toujours centrer-réduire pour ramener à la loi normale centrée réduite.",
+    "commonMistakes": [
+      "Oublier de diviser par $\\sigma$ lors du centrage-réduction.",
+      "Confondre quantile et probabilité."
+    ],
+    "tags": ["loi normale", "probabilités", "quantile"],
+    "isComprehension": false
+  },
+  {
+    "id": "ex-avance-016",
+    "lessonId": "suites-convergence",
+    "title": "Théorème des gendarmes pour suites",
+    "difficulty": 4,
+    "statement": "Soit $(u_n)$ définie par $u_n = \\frac{\\sin(n)}{n}$ pour $n \\geq 1$.\nMontrer que $(u_n)$ converge et déterminer sa limite.",
+    "hints": [
+      "Encadrer $\\sin(n)$ par $-1$ et $1$.",
+      "Appliquer le théorème des gendarmes."
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Encadrement",
+        "content": "Pour tout $n \\geq 1$: $-1 \\leq \\sin(n) \\leq 1$.\nDonc $-\\frac{1}{n} \\leq \\frac{\\sin(n)}{n} \\leq \\frac{1}{n}$."
+      },
+      {
+        "step": 2,
+        "title": "Théorème des gendarmes",
+        "content": "$\\lim_{n \\to +\\infty} \\left(-\\frac{1}{n}\\right) = 0$.\n$\\lim_{n \\to +\\infty} \\frac{1}{n} = 0$.\nPar le théorème des gendarmes: $\\lim_{n \\to +\\infty} \\frac{\\sin(n)}{n} = 0$."
+      }
+    ],
+    "method": "Le théorème des gendarmes permet de déterminer la limite d'une suite encadrée par deux suites de même limite.",
+    "commonMistakes": [
+      "Oublier que $\\sin(n)$ n'a pas de limite.",
+      "Ne pas justifier que les deux suites encadrantes tendent vers la même limite."
+    ],
+    "tags": ["suites", "convergence", "gendarmes"],
+    "isComprehension": false
+  },
+  {
+    "id": "ex-avance-017",
+    "lessonId": "logarithme",
+    "title": "Limite logarithmique : $\\lim_{x \\to +\\infty} \\frac{\\ln(x^2 + 1)}{\\ln(x)}$",
+    "difficulty": 5,
+    "statement": "Calculer $\\displaystyle \\lim_{x \\to +\\infty} \\frac{\\ln(x^2 + 1)}{\\ln(x)}$.",
+    "hints": [
+      "Factoriser $x^2$ dans $x^2 + 1$.",
+      "Utiliser $\\ln(x^2(1 + \\frac{1}{x^2})) = \\ln(x^2) + \\ln(1 + \\frac{1}{x^2})$."
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Transformation",
+        "content": "$\\ln(x^2 + 1) = \\ln\\left(x^2\\left(1 + \\frac{1}{x^2}\\right)\\right) = 2\\ln(x) + \\ln\\left(1 + \\frac{1}{x^2}\\right)$."
+      },
+      {
+        "step": 2,
+        "title": "Division",
+        "content": "$\\frac{\\ln(x^2 + 1)}{\\ln(x)} = \\frac{2\\ln(x) + \\ln(1 + \\frac{1}{x^2})}{\\ln(x)} = 2 + \\frac{\\ln(1 + \\frac{1}{x^2})}{\\ln(x)}$."
+      },
+      {
+        "step": 3,
+        "title": "Limite",
+        "content": "Quand $x \\to +\\infty$: $\\frac{1}{x^2} \\to 0$, donc $\\ln(1 + \\frac{1}{x^2}) \\to 0$.\n$\\ln(x) \\to +\\infty$, donc $\\frac{\\ln(1 + \\frac{1}{x^2})}{\\ln(x)} \\to 0$.\nConclusion: la limite est $2$."
+      }
+    ],
+    "method": "Factoriser pour faire apparaître des termes dont on connaît la limite.",
+    "commonMistakes": [
+      "Conclure trop vite que c'est une forme $\\frac{\\infty}{\\infty}$.",
+      "Oublier que $\\ln(ab) = \\ln(a) + \\ln(b)$."
+    ],
+    "tags": ["logarithmes", "limites", "factorisation"],
+    "isComprehension": false
+  },
+  {
+    "id": "ex-avance-018",
+    "lessonId": "matrices-operations",
+    "title": "Puissance d'une matrice diagonalisable",
+    "difficulty": 5,
+    "statement": "Soit $A = \\begin{pmatrix} 2 & 1 \\\\ 0 & 3 \\end{pmatrix}$.\n1) Montrer que $A$ est diagonalisable et trouver $P$ et $D$ telles que $A = PDP^{-1}$.\n2) Calculer $A^n$ pour $n \\in \\mathbb{N}$.",
+    "hints": [
+      "Chercher les valeurs propres (racines du polynôme caractéristique).",
+      "Si $A = PDP^{-1}$, alors $A^n = PD^nP^{-1}$."
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Valeurs propres",
+        "content": "$\\det(A - \\lambda I) = (2-\\lambda)(3-\\lambda) - 0 = (2-\\lambda)(3-\\lambda)$.\nValeurs propres: $\\lambda_1 = 2$ et $\\lambda_2 = 3$."
+      },
+      {
+        "step": 2,
+        "title": "Vecteurs propres",
+        "content": "Pour $\\lambda = 2$: $(A-2I)v = 0$ donne $v_1 = \\begin{pmatrix} 1 \\\\ 0 \\end{pmatrix}$.\nPour $\\lambda = 3$: $(A-3I)v = 0$ donne $v_2 = \\begin{pmatrix} 1 \\\\ 1 \\end{pmatrix}$."
+      },
+      {
+        "step": 3,
+        "title": "Diagonalisation",
+        "content": "$P = \\begin{pmatrix} 1 & 1 \\\\ 0 & 1 \\end{pmatrix}$, $D = \\begin{pmatrix} 2 & 0 \\\\ 0 & 3 \\end{pmatrix}$.\n$P^{-1} = \\begin{pmatrix} 1 & -1 \\\\ 0 & 1 \\end{pmatrix}$."
+      },
+      {
+        "step": 4,
+        "title": "Calcul de $A^n$",
+        "content": "$A^n = PD^nP^{-1}$ avec $D^n = \\begin{pmatrix} 2^n & 0 \\\\ 0 & 3^n \\end{pmatrix}$.\n$A^n = \\begin{pmatrix} 2^n & 3^n - 2^n \\\\ 0 & 3^n \\end{pmatrix}$."
+      }
+    ],
+    "method": "La diagonalisation simplifie le calcul des puissances de matrices.",
+    "commonMistakes": [
+      "Se tromper dans le calcul de $P^{-1}$.",
+      "Oublier de vérifier que $A = PDP^{-1}$."
+    ],
+    "tags": ["matrices", "diagonalisation", "puissance"],
+    "isComprehension": false
+  },
+  {
+    "id": "ex-avance-019",
+    "lessonId": "integrales",
+    "title": "Calcul d'aire entre deux courbes",
+    "difficulty": 4,
+    "statement": "Calculer l'aire de la région délimitée par les courbes $y = x^2$ et $y = 2x$ pour $x \\in [0, 2]$.",
+    "hints": [
+      "Déterminer d'abord quelle courbe est au-dessus de l'autre.",
+      "L'aire est $\\int_a^b |f(x) - g(x)| dx$."
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Position relative",
+        "content": "Intersection: $x^2 = 2x \\Rightarrow x(x-2) = 0$, donc $x = 0$ ou $x = 2$.\nPour $x \\in ]0, 2[$: $2x > x^2$ (exemple: en $x=1$, $2 > 1$)."
+      },
+      {
+        "step": 2,
+        "title": "Calcul de l'aire",
+        "content": "$\\mathcal{A} = \\int_0^2 (2x - x^2) dx = \\left[x^2 - \\frac{x^3}{3}\\right]_0^2$."
+      },
+      {
+        "step": 3,
+        "title": "Évaluation",
+        "content": "$\\mathcal{A} = \\left(4 - \\frac{8}{3}\\right) - 0 = \\frac{12 - 8}{3} = \\frac{4}{3}$ unités d'aire."
+      }
+    ],
+    "method": "Pour l'aire entre deux courbes: intégrer la différence (courbe supérieure - courbe inférieure).",
+    "commonMistakes": [
+      "Inverser l'ordre des fonctions.",
+      "Oublier de déterminer les bornes d'intégration."
+    ],
+    "tags": ["intégrales", "aire", "courbes"],
+    "isComprehension": false
+  },
+  {
+    "id": "ex-avance-020",
+    "lessonId": "complexes-introduction",
+    "title": "Module et argument : $z = \\frac{1+i\\sqrt{3}}{1-i}$",
+    "difficulty": 5,
+    "statement": "Soit $z = \\frac{1+i\\sqrt{3}}{1-i}$.\n1) Mettre $z$ sous forme algébrique $a + ib$.\n2) Calculer le module et l'argument de $z$.\n3) Écrire $z$ sous forme exponentielle.",
+    "hints": [
+      "Multiplier numérateur et dénominateur par le conjugué du dénominateur.",
+      "$|z_1/z_2| = |z_1|/|z_2|$ et $\\arg(z_1/z_2) = \\arg(z_1) - \\arg(z_2)$."
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Forme algébrique",
+        "content": "$z = \\frac{(1+i\\sqrt{3})(1+i)}{(1-i)(1+i)} = \\frac{1+i+i\\sqrt{3}-\\sqrt{3}}{2}$.\n$z = \\frac{(1-\\sqrt{3}) + i(1+\\sqrt{3})}{2}$."
+      },
+      {
+        "step": 2,
+        "title": "Module",
+        "content": "$|1+i\\sqrt{3}| = \\sqrt{1+3} = 2$ et $|1-i| = \\sqrt{2}$.\n$|z| = \\frac{2}{\\sqrt{2}} = \\sqrt{2}$."
+      },
+      {
+        "step": 3,
+        "title": "Argument",
+        "content": "$\\arg(1+i\\sqrt{3}) = \\frac{\\pi}{3}$ et $\\arg(1-i) = -\\frac{\\pi}{4}$.\n$\\arg(z) = \\frac{\\pi}{3} - (-\\frac{\\pi}{4}) = \\frac{\\pi}{3} + \\frac{\\pi}{4} = \\frac{7\\pi}{12}$."
+      },
+      {
+        "step": 4,
+        "title": "Forme exponentielle",
+        "content": "$z = \\sqrt{2} e^{i\\frac{7\\pi}{12}}$."
+      }
+    ],
+    "method": "Pour un quotient de complexes, utiliser les propriétés du module et de l'argument.",
+    "commonMistakes": [
+      "Erreur de signe dans l'argument du dénominateur.",
+      "Oublier de simplifier la forme algébrique."
+    ],
+    "tags": ["complexes", "module", "argument", "forme exponentielle"],
+    "isComprehension": false
+  },
+  {
+    "id": "ex-avance-021",
+    "lessonId": "bezout",
+    "title": "Équation diophantienne : $12x + 7y = 1$",
+    "difficulty": 4,
+    "statement": "1) Montrer que $\\text{pgcd}(12, 7) = 1$.\n2) Trouver une solution particulière de $12x + 7y = 1$.\n3) Donner toutes les solutions entières.",
+    "hints": [
+      "Utiliser l'algorithme d'Euclide étendu.",
+      "Si $(x_0, y_0)$ est une solution, toutes les solutions sont $(x_0 + 7k, y_0 - 12k)$."
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "PGCD par Euclide",
+        "content": "$12 = 1 \\times 7 + 5$\n$7 = 1 \\times 5 + 2$\n$5 = 2 \\times 2 + 1$\n$2 = 2 \\times 1 + 0$\nDonc $\\text{pgcd}(12, 7) = 1$."
+      },
+      {
+        "step": 2,
+        "title": "Remontée de Bézout",
+        "content": "$1 = 5 - 2 \\times 2 = 5 - 2(7 - 5) = 3 \\times 5 - 2 \\times 7$\n$= 3(12 - 7) - 2 \\times 7 = 3 \\times 12 - 5 \\times 7$.\nSolution particulière: $x_0 = 3$, $y_0 = -5$."
+      },
+      {
+        "step": 3,
+        "title": "Solutions générales",
+        "content": "Toutes les solutions: $\\begin{cases} x = 3 + 7k \\\\ y = -5 - 12k \\end{cases}$ pour $k \\in \\mathbb{Z}$."
+      }
+    ],
+    "method": "L'équation $ax + by = c$ a des solutions entières ssi $\\text{pgcd}(a,b)$ divise $c$.",
+    "commonMistakes": [
+      "Se tromper dans la remontée de l'algorithme d'Euclide.",
+      "Oublier le paramètre $k$ dans les solutions générales."
+    ],
+    "tags": ["arithmétique", "Bézout", "équation diophantienne"],
+    "isComprehension": false
+  },
+  {
+    "id": "ex-avance-022",
+    "lessonId": "vecteurs-espace",
+    "title": "Base de l'espace et coordonnées",
+    "difficulty": 4,
+    "statement": "Les vecteurs $\\vec{u}(1, 1, 0)$, $\\vec{v}(1, 0, 1)$, $\\vec{w}(0, 1, 1)$ forment-ils une base de l'espace ?\nSi oui, exprimer $\\vec{e}(2, 3, 1)$ dans cette base.",
+    "hints": [
+      "Trois vecteurs forment une base ssi leur déterminant est non nul.",
+      "Résoudre $\\alpha \\vec{u} + \\beta \\vec{v} + \\gamma \\vec{w} = \\vec{e}$."
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Déterminant",
+        "content": "$\\det(\\vec{u}, \\vec{v}, \\vec{w}) = \\begin{vmatrix} 1 & 1 & 0 \\\\ 1 & 0 & 1 \\\\ 0 & 1 & 1 \\end{vmatrix}$\n$= 1(0-1) - 1(1-0) + 0 = -1 - 1 = -2 \\neq 0$.\nDonc c'est une base."
+      },
+      {
+        "step": 2,
+        "title": "Décomposition",
+        "content": "On cherche $\\alpha, \\beta, \\gamma$ tels que:\n$\\alpha + \\beta = 2$\n$\\alpha + \\gamma = 3$\n$\\beta + \\gamma = 1$"
+      },
+      {
+        "step": 3,
+        "title": "Résolution",
+        "content": "En additionnant: $2(\\alpha + \\beta + \\gamma) = 6$, donc $\\alpha + \\beta + \\gamma = 3$.\n$\\gamma = 3 - 2 = 1$, $\\beta = 1 - 1 = 0$, $\\alpha = 2 - 0 = 2$.\n$\\vec{e} = 2\\vec{u} + 0\\vec{v} + 1\\vec{w}$."
+      }
+    ],
+    "method": "Pour vérifier qu'on a une base: calculer le déterminant. Pour décomposer: résoudre un système.",
+    "commonMistakes": [
+      "Erreur dans le calcul du déterminant 3×3.",
+      "Se tromper dans la résolution du système."
+    ],
+    "tags": ["vecteurs", "base", "déterminant", "coordonnées"],
+    "isComprehension": false
+  },
+  {
+    "id": "ex-avance-023",
+    "lessonId": "continuite",
+    "title": "TVI : existence d'une racine",
+    "difficulty": 4,
+    "statement": "Soit $f(x) = x^3 + x - 1$.\n1) Montrer que $f$ est continue et strictement croissante sur $\\mathbb{R}$.\n2) Montrer que l'équation $f(x) = 0$ admet une unique solution $\\alpha$.\n3) Donner un encadrement de $\\alpha$ à $10^{-1}$ près.",
+    "hints": [
+      "Étudier le signe de $f'(x)$.",
+      "Utiliser le TVI après avoir trouvé un changement de signe."
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Continuité et croissance",
+        "content": "$f$ est polynomiale donc continue sur $\\mathbb{R}$.\n$f'(x) = 3x^2 + 1 > 0$ pour tout $x$.\nDonc $f$ est strictement croissante."
+      },
+      {
+        "step": 2,
+        "title": "Existence et unicité",
+        "content": "$f(0) = -1 < 0$ et $f(1) = 1 > 0$.\nPar le TVI, il existe $\\alpha \\in ]0, 1[$ tel que $f(\\alpha) = 0$.\nComme $f$ est strictement croissante, cette solution est unique."
+      },
+      {
+        "step": 3,
+        "title": "Encadrement",
+        "content": "$f(0.6) = 0.216 + 0.6 - 1 = -0.184 < 0$.\n$f(0.7) = 0.343 + 0.7 - 1 = 0.043 > 0$.\nDonc $\\alpha \\in ]0.6, 0.7[$, soit $\\alpha \\approx 0.7$ à $10^{-1}$ près."
+      }
+    ],
+    "method": "TVI + stricte monotonie = existence et unicité. Dichotomie pour l'encadrement.",
+    "commonMistakes": [
+      "Oublier de justifier la stricte croissance pour l'unicité.",
+      "Ne pas vérifier le changement de signe."
+    ],
+    "tags": ["continuité", "TVI", "racine", "encadrement"],
+    "isComprehension": false
+  },
+  {
+    "id": "ex-avance-024",
+    "lessonId": "divisibilite",
+    "title": "Montrer que $n^3 - n$ est divisible par 6",
+    "difficulty": 4,
+    "statement": "Montrer que pour tout entier $n$, $n^3 - n$ est divisible par 6.",
+    "hints": [
+      "Factoriser: $n^3 - n = n(n^2 - 1) = n(n-1)(n+1)$.",
+      "Produit de 3 entiers consécutifs."
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Factorisation",
+        "content": "$n^3 - n = n(n^2 - 1) = n(n-1)(n+1) = (n-1)n(n+1)$.\nC'est le produit de trois entiers consécutifs."
+      },
+      {
+        "step": 2,
+        "title": "Divisibilité par 2",
+        "content": "Parmi trois entiers consécutifs, au moins un est pair.\nDonc $(n-1)n(n+1)$ est divisible par 2."
+      },
+      {
+        "step": 3,
+        "title": "Divisibilité par 3",
+        "content": "Parmi trois entiers consécutifs, exactement un est divisible par 3.\nDonc $(n-1)n(n+1)$ est divisible par 3."
+      },
+      {
+        "step": 4,
+        "title": "Conclusion",
+        "content": "Comme 2 et 3 sont premiers entre eux et divisent tous deux $(n-1)n(n+1)$,\nalors $6 = 2 \\times 3$ divise $(n-1)n(n+1) = n^3 - n$."
+      }
+    ],
+    "method": "Pour la divisibilité par un produit: montrer la divisibilité par chaque facteur premier.",
+    "commonMistakes": [
+      "Oublier de justifier que 2 et 3 sont premiers entre eux.",
+      "Ne pas factoriser complètement."
+    ],
+    "tags": ["arithmétique", "divisibilité", "entiers consécutifs"],
+    "isComprehension": false
+  },
+  {
+    "id": "ex-avance-025",
+    "lessonId": "exponentielle",
+    "title": "Équation différentielle : $y' = 2y + e^x$",
+    "difficulty": 5,
+    "statement": "Résoudre sur $\\mathbb{R}$ l'équation différentielle $y' - 2y = e^x$.",
+    "hints": [
+      "Résoudre d'abord l'équation homogène $y' - 2y = 0$.",
+      "Chercher une solution particulière de la forme $y_p = ae^x$."
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Équation homogène",
+        "content": "$y' - 2y = 0 \\Rightarrow y_h = Ce^{2x}$ où $C \\in \\mathbb{R}$."
+      },
+      {
+        "step": 2,
+        "title": "Solution particulière",
+        "content": "Cherchons $y_p = ae^x$.\n$y_p' = ae^x$.\n$y_p' - 2y_p = ae^x - 2ae^x = -ae^x = e^x$.\nDonc $a = -1$ et $y_p = -e^x$."
+      },
+      {
+        "step": 3,
+        "title": "Solution générale",
+        "content": "$y = y_h + y_p = Ce^{2x} - e^x$ où $C \\in \\mathbb{R}$."
+      }
+    ],
+    "method": "Pour les EDO linéaires du premier ordre: solution générale = solution homogène + solution particulière.",
+    "commonMistakes": [
+      "Oublier la constante $C$ dans la solution homogène.",
+      "Se tromper dans le calcul de $a$."
+    ],
+    "tags": ["équations différentielles", "exponentielle", "premier ordre"],
+    "isComprehension": false
   }
 ]
