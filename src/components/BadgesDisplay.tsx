@@ -73,6 +73,7 @@ export function BadgesDisplay({ showAll = false, maxDisplay = 6, className }: Ba
 
 function BadgeCard({ badge, isUnlocked, unlockedAt }: { badge: Badge; isUnlocked: boolean; unlockedAt?: string }) {
   const [showTooltip, setShowTooltip] = useState(false)
+  const isSecret = badge.isSecret && !isUnlocked
 
   return (
     <div
@@ -85,26 +86,37 @@ function BadgeCard({ badge, isUnlocked, unlockedAt }: { badge: Badge; isUnlocked
           'flex flex-col items-center justify-center rounded-xl border-2 p-3 transition-all',
           isUnlocked
             ? 'border-amber-200 bg-gradient-to-br from-amber-50 to-orange-50 dark:border-amber-800 dark:from-amber-900/30 dark:to-orange-900/30'
-            : 'border-slate-200 bg-slate-50 opacity-50 grayscale dark:border-slate-700 dark:bg-slate-800'
+            : isSecret
+              ? 'border-purple-200 bg-gradient-to-br from-purple-50 to-slate-50 dark:border-purple-800 dark:from-purple-900/20 dark:to-slate-800'
+              : 'border-slate-200 bg-slate-50 opacity-50 grayscale dark:border-slate-700 dark:bg-slate-800'
         )}
       >
-        <span className="text-2xl">{badge.icon}</span>
+        <span className="text-2xl">{isSecret ? '🔐' : badge.icon}</span>
         <span className={cn(
           'mt-1 text-center text-xs font-medium',
-          isUnlocked ? 'text-amber-700 dark:text-amber-300' : 'text-slate-500 dark:text-slate-400'
+          isUnlocked
+            ? 'text-amber-700 dark:text-amber-300'
+            : isSecret
+              ? 'text-purple-600 dark:text-purple-400'
+              : 'text-slate-500 dark:text-slate-400'
         )}>
-          {badge.name}
+          {isSecret ? '???' : badge.name}
         </span>
-        {!isUnlocked && (
+        {!isUnlocked && !isSecret && (
           <Lock className="absolute right-1 top-1 h-3 w-3 text-slate-400" />
+        )}
+        {isSecret && (
+          <span className="absolute -right-1 -top-1 text-xs">✨</span>
         )}
       </div>
 
       {/* Tooltip */}
       {showTooltip && (
         <div className="absolute bottom-full left-1/2 z-50 mb-2 -translate-x-1/2 whitespace-nowrap rounded-lg bg-slate-900 px-3 py-2 text-xs text-white shadow-lg dark:bg-slate-700">
-          <div className="font-semibold">{badge.name}</div>
-          <div className="text-slate-300">{badge.description}</div>
+          <div className="font-semibold">{isSecret ? 'Succès secret' : badge.name}</div>
+          <div className="text-slate-300">
+            {isSecret ? 'Découvre les conditions pour débloquer ce badge mystérieux...' : badge.description}
+          </div>
           {unlockedAt && (
             <div className="mt-1 text-emerald-400">
               Débloqué le {new Date(unlockedAt).toLocaleDateString('fr-FR')}
@@ -145,6 +157,7 @@ export function BadgesModal({ open, onClose }: BadgesModalProps) {
     { id: 'quizzes', name: 'QCM', icon: '📝' },
     { id: 'streaks', name: 'Séries', icon: '🔥' },
     { id: 'special', name: 'Spéciaux', icon: '✨' },
+    { id: 'secret', name: 'Secrets', icon: '🔐' },
   ]
 
   return (
