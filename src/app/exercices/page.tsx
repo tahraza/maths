@@ -3,14 +3,14 @@ import ExercisesClient from './ExercisesClient'
 
 function LoadingFallback() {
   return (
-    <div className="min-h-screen bg-slate-50 py-8">
+    <div className="min-h-screen bg-slate-50 py-8 dark:bg-slate-900">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="animate-pulse">
-          <div className="h-8 w-48 bg-slate-200 rounded mb-4"></div>
-          <div className="h-4 w-96 bg-slate-200 rounded mb-8"></div>
+          <div className="h-8 w-48 bg-slate-200 rounded mb-4 dark:bg-slate-700"></div>
+          <div className="h-4 w-96 bg-slate-200 rounded mb-8 dark:bg-slate-700"></div>
           <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
             {[1, 2, 3, 4, 5, 6].map((i) => (
-              <div key={i} className="h-40 bg-slate-200 rounded-xl"></div>
+              <div key={i} className="h-40 bg-slate-200 rounded-xl dark:bg-slate-700"></div>
             ))}
           </div>
         </div>
