@@ -615,78 +615,12 @@ export const useStore = create<Store>()(
       },
 
       // Synchroniser les points de gamification rétroactivement
-      // à partir des données existantes (pour les utilisateurs existants)
+      // DÉSACTIVÉ: Cette fonction causait des duplications de points
+      // Les points sont maintenant accordés correctement lors des activités
       syncGamificationPoints: () => {
-        const state = get()
-        const gamification = useGamificationStore.getState()
-
-        // Calculer les points qui auraient dû être accordés
-        let pointsToSync = 0
-        let lessonsToSync = 0
-        let exercisesToSync = 0
-        let quizzesToSync = 0
-
-        // Compter les leçons maîtrisées
-        Object.values(state.lessonProgress).forEach((progress) => {
-          if (progress.status === 'mastered') {
-            pointsToSync += POINTS.LESSON_COMPLETED
-            lessonsToSync++
-          }
-        })
-
-        // Compter les exercices complétés
-        Object.values(state.exerciseProgress).forEach((progress) => {
-          if (progress.status === 'completed') {
-            pointsToSync += POINTS.EXERCISE_CORRECT
-            exercisesToSync++
-          }
-        })
-
-        // Compter les QCM
-        state.quizAttempts.forEach((attempt) => {
-          pointsToSync += POINTS.QUIZ_COMPLETED
-          quizzesToSync++
-          if (attempt.score === 100) {
-            pointsToSync += POINTS.QUIZ_PERFECT
-          }
-        })
-
-        // Compter les flashcards
-        Object.values(state.flashcardProgress).forEach((progress) => {
-          if (progress.status === 'mastered') {
-            pointsToSync += POINTS.FLASHCARD_MASTERED
-          }
-        })
-
-        // Vérifier si la synchronisation est nécessaire
-        // (si les points actuels sont significativement inférieurs aux points calculés)
-        const currentPoints = gamification.totalPoints
-        const pointsDifference = pointsToSync - currentPoints
-
-        if (pointsDifference > 0) {
-          // Synchroniser les stats
-          if (lessonsToSync > gamification.totalLessonsCompleted) {
-            for (let i = gamification.totalLessonsCompleted; i < lessonsToSync; i++) {
-              gamification.incrementStat('lessons')
-            }
-          }
-          if (exercisesToSync > gamification.totalExercisesCompleted) {
-            for (let i = gamification.totalExercisesCompleted; i < exercisesToSync; i++) {
-              gamification.incrementStat('exercises')
-            }
-          }
-          if (quizzesToSync > gamification.totalQuizzesCompleted) {
-            for (let i = gamification.totalQuizzesCompleted; i < quizzesToSync; i++) {
-              gamification.incrementStat('quizzes')
-            }
-          }
-
-          // Ajouter les points manquants
-          gamification.addPoints(pointsDifference, 'Synchronisation des points rétroactifs')
-
-          return { synced: true, pointsAdded: pointsDifference }
-        }
-
+        // Ne plus synchroniser rétroactivement - retourner simplement "pas de sync"
+        // Les anciens utilisateurs garderont leurs points actuels (même si gonflés)
+        // Les nouveaux points seront accordés correctement avec l'anti-farming
         return { synced: false, pointsAdded: 0 }
       },
 
