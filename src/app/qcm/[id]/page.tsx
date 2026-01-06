@@ -12,6 +12,7 @@ import {
   Trophy,
   Target,
   BookOpen,
+  Star,
 } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { useStore } from '@/store/useStore'
@@ -246,7 +247,7 @@ export default function QCMPage({ params }: PageProps) {
       }
     })
     const score = Math.round((correctCount / totalQuestions) * 100)
-    const passed = score >= quiz.passingScore
+    const passed = score >= (quiz.passingScore ?? 70)
 
     return (
       <div className="min-h-screen bg-slate-50 py-8">
@@ -378,9 +379,24 @@ export default function QCMPage({ params }: PageProps) {
         {/* Header */}
         <div className="mb-6">
           <div className="flex items-center justify-between mb-2">
-            <span className="text-sm text-slate-600">
-              {quiz.type === 'pre' ? 'QCM de diagnostic' : 'QCM de validation'}
-            </span>
+            <div className="flex items-center gap-3">
+              <span className="text-sm text-slate-600">
+                {quiz.type === 'pre' ? 'QCM de diagnostic' : 'QCM de validation'}
+              </span>
+              <div className="flex items-center gap-0.5" title={`Difficulté ${quiz.difficulty || 2}/5`}>
+                {[1, 2, 3, 4, 5].map((level) => (
+                  <Star
+                    key={level}
+                    className={cn(
+                      'h-3.5 w-3.5',
+                      level <= (quiz.difficulty || 2)
+                        ? 'text-amber-400 fill-amber-400'
+                        : 'text-slate-300'
+                    )}
+                  />
+                ))}
+              </div>
+            </div>
             <span className="text-sm font-medium text-slate-900">
               Question {currentQuestion + 1} / {totalQuestions}
             </span>

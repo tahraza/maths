@@ -20,7 +20,12 @@
       {
         "id": "q2",
         "question": "Si $(u_n)$ est géométrique de premier terme $u_0 = 2$ et de raison $q = 3$, alors $u_2$ vaut :",
-        "options": ["6", "8", "18", "12"],
+        "options": [
+          "6",
+          "8",
+          "18",
+          "12"
+        ],
         "correctAnswer": 2,
         "explanation": "$u_2 = u_0 \\times q^2 = 2 \\times 3^2 = 2 \\times 9 = 18$"
       },
@@ -39,11 +44,17 @@
       {
         "id": "q4",
         "question": "La somme $1 + 2 + 3 + \\cdots + 100$ vaut :",
-        "options": ["5000", "5050", "10000", "10100"],
+        "options": [
+          "5000",
+          "5050",
+          "10000",
+          "10100"
+        ],
         "correctAnswer": 1,
         "explanation": "C'est la somme des 100 premiers entiers : $\\frac{100 \\times 101}{2} = 5050$"
       }
-    ]
+    ],
+    "difficulty": 1
   },
   {
     "id": "post-suites-definition",
@@ -54,14 +65,24 @@
       {
         "id": "q1",
         "question": "Soit $(u_n)$ arithmétique avec $u_3 = 10$ et $u_7 = 22$. La raison $r$ vaut :",
-        "options": ["2", "3", "4", "6"],
+        "options": [
+          "2",
+          "3",
+          "4",
+          "6"
+        ],
         "correctAnswer": 1,
         "explanation": "$u_7 - u_3 = 4r = 22 - 10 = 12$, donc $r = 3$."
       },
       {
         "id": "q2",
         "question": "Pour $(u_n)$ géométrique de raison $q > 0$, $\\lim_{n \\to +\\infty} u_n = 0$ si :",
-        "options": ["$q > 1$", "$q = 1$", "$0 < q < 1$", "$q < 0$"],
+        "options": [
+          "$q > 1$",
+          "$q = 1$",
+          "$0 < q < 1$",
+          "$q < 0$"
+        ],
         "correctAnswer": 2,
         "explanation": "Une suite géométrique converge vers 0 si et seulement si $|q| < 1$."
       },
@@ -92,11 +113,17 @@
       {
         "id": "q5",
         "question": "Si $u_{n+1} = 2u_n - 3$ et $u_0 = 5$, alors $u_1$ vaut :",
-        "options": ["2", "7", "10", "5"],
+        "options": [
+          "2",
+          "7",
+          "10",
+          "5"
+        ],
         "correctAnswer": 1,
         "explanation": "$u_1 = 2 \\times 5 - 3 = 10 - 3 = 7$."
       }
-    ]
+    ],
+    "difficulty": 2
   },
   {
     "id": "pre-derivation",
@@ -107,14 +134,24 @@
       {
         "id": "q1",
         "question": "La dérivée de $f(x) = x^3$ est :",
-        "options": ["$x^2$", "$3x^2$", "$3x^3$", "$x^4/4$"],
+        "options": [
+          "$x^2$",
+          "$3x^2$",
+          "$3x^3$",
+          "$x^4/4$"
+        ],
         "correctAnswer": 1,
         "explanation": "$(x^n)' = nx^{n-1}$, donc $(x^3)' = 3x^2$."
       },
       {
         "id": "q2",
         "question": "La dérivée de $e^x$ est :",
-        "options": ["$xe^{x-1}$", "$e^x$", "$e^{x-1}$", "$\\frac{1}{e^x}$"],
+        "options": [
+          "$xe^{x-1}$",
+          "$e^x$",
+          "$e^{x-1}$",
+          "$\\frac{1}{e^x}$"
+        ],
         "correctAnswer": 1,
         "explanation": "L'exponentielle est sa propre dérivée : $(e^x)' = e^x$."
       },
@@ -142,7 +179,8 @@
         "correctAnswer": 1,
         "explanation": "L'équation de la tangente est $y = f'(a)(x - a) + f(a)$."
       }
-    ]
+    ],
+    "difficulty": 1
   },
   {
     "id": "post-derivation",
@@ -210,7 +248,8 @@
         "correctAnswer": 1,
         "explanation": "$f(2) = 4$, $f'(x) = 2x$ donc $f'(2) = 4$. Tangente : $y = 4(x-2) + 4 = 4x - 4$."
       }
-    ]
+    ],
+    "difficulty": 2
   },
   {
     "id": "pre-exponentielle",
@@ -221,21 +260,36 @@
       {
         "id": "q1",
         "question": "$e^0$ vaut :",
-        "options": ["0", "1", "$e$", "Undefined"],
+        "options": [
+          "0",
+          "1",
+          "$e$",
+          "Undefined"
+        ],
         "correctAnswer": 1,
         "explanation": "Par définition, $e^0 = 1$ (comme toute puissance d'exposant 0)."
       },
       {
         "id": "q2",
         "question": "$e^a \\times e^b$ égale :",
-        "options": ["$e^{ab}$", "$e^{a+b}$", "$e^a + e^b$", "$(e^a)^b$"],
+        "options": [
+          "$e^{ab}$",
+          "$e^{a+b}$",
+          "$e^a + e^b$",
+          "$(e^a)^b$"
+        ],
         "correctAnswer": 1,
         "explanation": "Propriété fondamentale : $e^a \\times e^b = e^{a+b}$."
       },
       {
         "id": "q3",
         "question": "$\\lim_{x \\to +\\infty} e^x$ vaut :",
-        "options": ["$0$", "$1$", "$+\\infty$", "$e$"],
+        "options": [
+          "$0$",
+          "$1$",
+          "$+\\infty$",
+          "$e$"
+        ],
         "correctAnswer": 2,
         "explanation": "L'exponentielle tend vers $+\\infty$ quand $x \\to +\\infty$."
       },
@@ -251,7 +305,8 @@
         "correctAnswer": 2,
         "explanation": "$e^x > 0$ pour tout $x$, donc $e^x = 0$ n'a pas de solution."
       }
-    ]
+    ],
+    "difficulty": 2
   },
   {
     "id": "post-exponentielle",
@@ -262,28 +317,48 @@
       {
         "id": "q1",
         "question": "La solution de $e^{2x} = e^5$ est :",
-        "options": ["$x = 5$", "$x = 2.5$", "$x = 10$", "$x = \\frac{5}{e^2}$"],
+        "options": [
+          "$x = 5$",
+          "$x = 2.5$",
+          "$x = 10$",
+          "$x = \\frac{5}{e^2}$"
+        ],
         "correctAnswer": 1,
         "explanation": "Par injectivité : $2x = 5$, donc $x = 2.5$."
       },
       {
         "id": "q2",
         "question": "La dérivée de $f(x) = e^{3x+1}$ est :",
-        "options": ["$e^{3x+1}$", "$3e^{3x+1}$", "$(3x+1)e^{3x}$", "$e^{3x}$"],
+        "options": [
+          "$e^{3x+1}$",
+          "$3e^{3x+1}$",
+          "$(3x+1)e^{3x}$",
+          "$e^{3x}$"
+        ],
         "correctAnswer": 1,
         "explanation": "$(e^{u})' = u' e^{u}$, donc $(e^{3x+1})' = 3e^{3x+1}$."
       },
       {
         "id": "q3",
         "question": "$\\lim_{x \\to +\\infty} \\frac{e^x}{x}$ vaut :",
-        "options": ["$0$", "$1$", "$+\\infty$", "$e$"],
+        "options": [
+          "$0$",
+          "$1$",
+          "$+\\infty$",
+          "$e$"
+        ],
         "correctAnswer": 2,
         "explanation": "La croissance exponentielle l'emporte : $\\lim \\frac{e^x}{x} = +\\infty$."
       },
       {
         "id": "q4",
         "question": "Simplifier $\\frac{e^{2x}}{e^{x-1}}$ :",
-        "options": ["$e^{x+1}$", "$e^{x-1}$", "$e^{3x-1}$", "$e^{2x-x+1}$"],
+        "options": [
+          "$e^{x+1}$",
+          "$e^{x-1}$",
+          "$e^{3x-1}$",
+          "$e^{2x-x+1}$"
+        ],
         "correctAnswer": 0,
         "explanation": "$\\frac{e^{2x}}{e^{x-1}} = e^{2x-(x-1)} = e^{2x-x+1} = e^{x+1}$."
       },
@@ -299,7 +374,8 @@
         "correctAnswer": 2,
         "explanation": "Posons $X = e^x$. $X^2 - 3X + 2 = 0$, donc $X = 1$ ou $X = 2$. Ainsi $x = 0$ ou $x = \\ln 2$."
       }
-    ]
+    ],
+    "difficulty": 3
   },
   {
     "id": "pre-logarithme",
@@ -310,32 +386,53 @@
       {
         "id": "q1",
         "question": "$\\ln(1)$ vaut :",
-        "options": ["$0$", "$1$", "$e$", "Undefined"],
+        "options": [
+          "$0$",
+          "$1$",
+          "$e$",
+          "Undefined"
+        ],
         "correctAnswer": 0,
         "explanation": "$\\ln(1) = 0$ car $e^0 = 1$."
       },
       {
         "id": "q2",
         "question": "$\\ln(e)$ vaut :",
-        "options": ["$0$", "$1$", "$e$", "$\\frac{1}{e}$"],
+        "options": [
+          "$0$",
+          "$1$",
+          "$e$",
+          "$\\frac{1}{e}$"
+        ],
         "correctAnswer": 1,
         "explanation": "$\\ln(e) = 1$ car $e^1 = e$."
       },
       {
         "id": "q3",
         "question": "$\\ln(ab)$ égale :",
-        "options": ["$\\ln(a) \\times \\ln(b)$", "$\\ln(a) + \\ln(b)$", "$\\frac{\\ln(a)}{\\ln(b)}$", "$\\ln(a^b)$"],
+        "options": [
+          "$\\ln(a) \\times \\ln(b)$",
+          "$\\ln(a) + \\ln(b)$",
+          "$\\frac{\\ln(a)}{\\ln(b)}$",
+          "$\\ln(a^b)$"
+        ],
         "correctAnswer": 1,
         "explanation": "Propriété fondamentale : $\\ln(ab) = \\ln(a) + \\ln(b)$."
       },
       {
         "id": "q4",
         "question": "L'ensemble de définition de $\\ln(x)$ est :",
-        "options": ["$\\mathbb{R}$", "$\\mathbb{R}^+$", "$]0, +\\infty[$", "$[1, +\\infty[$"],
+        "options": [
+          "$\\mathbb{R}$",
+          "$\\mathbb{R}^+$",
+          "$]0, +\\infty[$",
+          "$[1, +\\infty[$"
+        ],
         "correctAnswer": 2,
         "explanation": "Le logarithme n'est défini que pour $x > 0$."
       }
-    ]
+    ],
+    "difficulty": 2
   },
   {
     "id": "post-logarithme",
@@ -346,39 +443,65 @@
       {
         "id": "q1",
         "question": "Simplifier $\\ln(8) - \\ln(2)$ :",
-        "options": ["$\\ln(4)$", "$\\ln(6)$", "$3$", "$2\\ln(2)$"],
+        "options": [
+          "$\\ln(4)$",
+          "$\\ln(6)$",
+          "$3$",
+          "$2\\ln(2)$"
+        ],
         "correctAnswer": 3,
         "explanation": "$\\ln(8) - \\ln(2) = \\ln(8/2) = \\ln(4) = \\ln(2^2) = 2\\ln(2)$."
       },
       {
         "id": "q2",
         "question": "La solution de $\\ln(x) = 2$ est :",
-        "options": ["$x = 2$", "$x = e^2$", "$x = \\sqrt{e}$", "$x = 2e$"],
+        "options": [
+          "$x = 2$",
+          "$x = e^2$",
+          "$x = \\sqrt{e}$",
+          "$x = 2e$"
+        ],
         "correctAnswer": 1,
         "explanation": "$\\ln(x) = 2 \\Leftrightarrow x = e^2$."
       },
       {
         "id": "q3",
         "question": "La dérivée de $f(x) = \\ln(2x+1)$ est :",
-        "options": ["$\\frac{1}{2x+1}$", "$\\frac{2}{2x+1}$", "$\\frac{1}{2(2x+1)}$", "$\\ln(2)$"],
+        "options": [
+          "$\\frac{1}{2x+1}$",
+          "$\\frac{2}{2x+1}$",
+          "$\\frac{1}{2(2x+1)}$",
+          "$\\ln(2)$"
+        ],
         "correctAnswer": 1,
         "explanation": "$(\\ln u)' = \\frac{u'}{u}$, donc $(\\ln(2x+1))' = \\frac{2}{2x+1}$."
       },
       {
         "id": "q4",
         "question": "$\\lim_{x \\to 0^+} x \\ln(x)$ vaut :",
-        "options": ["$-\\infty$", "$+\\infty$", "$0$", "$1$"],
+        "options": [
+          "$-\\infty$",
+          "$+\\infty$",
+          "$0$",
+          "$1$"
+        ],
         "correctAnswer": 2,
         "explanation": "C'est une forme indéterminée $0 \\times (-\\infty)$, mais la limite vaut $0$ (croissance comparée)."
       },
       {
         "id": "q5",
         "question": "$2\\ln(3) + \\ln(4)$ égale :",
-        "options": ["$\\ln(36)$", "$\\ln(18)$", "$\\ln(24)$", "$6\\ln(2)$"],
+        "options": [
+          "$\\ln(36)$",
+          "$\\ln(18)$",
+          "$\\ln(24)$",
+          "$6\\ln(2)$"
+        ],
         "correctAnswer": 0,
         "explanation": "$2\\ln(3) + \\ln(4) = \\ln(3^2) + \\ln(4) = \\ln(9) + \\ln(4) = \\ln(36)$."
       }
-    ]
+    ],
+    "difficulty": 3
   },
   {
     "id": "pre-probabilites-va",
@@ -401,7 +524,12 @@
       {
         "id": "q2",
         "question": "Si $X \\sim \\mathcal{B}(n, p)$, alors $E(X)$ vaut :",
-        "options": ["$np$", "$n(1-p)$", "$\\frac{n}{p}$", "$np(1-p)$"],
+        "options": [
+          "$np$",
+          "$n(1-p)$",
+          "$\\frac{n}{p}$",
+          "$np(1-p)$"
+        ],
         "correctAnswer": 0,
         "explanation": "Pour une loi binomiale, $E(X) = np$."
       },
@@ -420,11 +548,17 @@
       {
         "id": "q4",
         "question": "$\\binom{5}{2}$ vaut :",
-        "options": ["$5$", "$10$", "$20$", "$25$"],
+        "options": [
+          "$5$",
+          "$10$",
+          "$20$",
+          "$25$"
+        ],
         "correctAnswer": 1,
         "explanation": "$\\binom{5}{2} = \\frac{5!}{2!3!} = \\frac{5 \\times 4}{2} = 10$."
       }
-    ]
+    ],
+    "difficulty": 2
   },
   {
     "id": "post-probabilites-va",
@@ -435,21 +569,36 @@
       {
         "id": "q1",
         "question": "Si $X \\sim \\mathcal{B}(10, 0.3)$, alors $V(X)$ vaut :",
-        "options": ["$3$", "$2.1$", "$0.7$", "$7$"],
+        "options": [
+          "$3$",
+          "$2.1$",
+          "$0.7$",
+          "$7$"
+        ],
         "correctAnswer": 1,
         "explanation": "$V(X) = np(1-p) = 10 \\times 0.3 \\times 0.7 = 2.1$."
       },
       {
         "id": "q2",
         "question": "Pour $X \\sim \\mathcal{B}(4, 0.5)$, $P(X = 2)$ vaut :",
-        "options": ["$\\frac{1}{4}$", "$\\frac{3}{8}$", "$\\frac{1}{2}$", "$\\frac{6}{16}$"],
+        "options": [
+          "$\\frac{1}{4}$",
+          "$\\frac{3}{8}$",
+          "$\\frac{1}{2}$",
+          "$\\frac{6}{16}$"
+        ],
         "correctAnswer": 1,
         "explanation": "$P(X=2) = \\binom{4}{2}(0.5)^2(0.5)^2 = 6 \\times \\frac{1}{16} = \\frac{6}{16} = \\frac{3}{8}$."
       },
       {
         "id": "q3",
         "question": "Si $E(X) = 5$ et $E(Y) = 3$, alors $E(2X + Y)$ vaut :",
-        "options": ["$8$", "$13$", "$16$", "$11$"],
+        "options": [
+          "$8$",
+          "$13$",
+          "$16$",
+          "$11$"
+        ],
         "correctAnswer": 1,
         "explanation": "$E(2X + Y) = 2E(X) + E(Y) = 2 \\times 5 + 3 = 13$."
       },
@@ -477,7 +626,8 @@
         "correctAnswer": 1,
         "explanation": "Un schéma de Bernoulli = répétition d'épreuves indépendantes avec probabilité de succès constante."
       }
-    ]
+    ],
+    "difficulty": 3
   },
   {
     "id": "pre-primitives",
@@ -488,21 +638,36 @@
       {
         "id": "q1",
         "question": "Une primitive de $f(x) = 2x$ est :",
-        "options": ["$x^2$", "$2$", "$x^2 + C$", "$\\frac{x^2}{2}$"],
+        "options": [
+          "$x^2$",
+          "$2$",
+          "$x^2 + C$",
+          "$\\frac{x^2}{2}$"
+        ],
         "correctAnswer": 0,
         "explanation": "Si $F(x) = x^2$, alors $F'(x) = 2x$. Note : $x^2 + C$ est la forme générale."
       },
       {
         "id": "q2",
         "question": "L'intégrale $\\int_0^1 x \\, dx$ vaut :",
-        "options": ["$0$", "$1$", "$\\frac{1}{2}$", "$2$"],
+        "options": [
+          "$0$",
+          "$1$",
+          "$\\frac{1}{2}$",
+          "$2$"
+        ],
         "correctAnswer": 2,
         "explanation": "$\\int_0^1 x\\,dx = [\\frac{x^2}{2}]_0^1 = \\frac{1}{2} - 0 = \\frac{1}{2}$."
       },
       {
         "id": "q3",
         "question": "Une primitive de $e^x$ est :",
-        "options": ["$e^x$", "$xe^{x-1}$", "$\\frac{e^{x+1}}{x+1}$", "$e^{x-1}$"],
+        "options": [
+          "$e^x$",
+          "$xe^{x-1}$",
+          "$\\frac{e^{x+1}}{x+1}$",
+          "$e^{x-1}$"
+        ],
         "correctAnswer": 0,
         "explanation": "L'exponentielle est sa propre primitive : $(e^x)' = e^x$."
       },
@@ -518,7 +683,8 @@
         "correctAnswer": 1,
         "explanation": "L'intégrale représente l'aire algébrique entre la courbe et l'axe des abscisses."
       }
-    ]
+    ],
+    "difficulty": 2
   },
   {
     "id": "post-primitives",
@@ -529,28 +695,48 @@
       {
         "id": "q1",
         "question": "Une primitive de $f(x) = \\frac{1}{x}$ sur $]0, +\\infty[$ est :",
-        "options": ["$-\\frac{1}{x^2}$", "$\\ln(x)$", "$\\ln|x|$", "$x\\ln(x)$"],
+        "options": [
+          "$-\\frac{1}{x^2}$",
+          "$\\ln(x)$",
+          "$\\ln|x|$",
+          "$x\\ln(x)$"
+        ],
         "correctAnswer": 1,
         "explanation": "Sur $]0,+\\infty[$, $(\\ln x)' = \\frac{1}{x}$, donc $\\ln(x)$ est une primitive."
       },
       {
         "id": "q2",
         "question": "$\\int_1^e \\frac{1}{x}\\,dx$ vaut :",
-        "options": ["$0$", "$1$", "$e$", "$e - 1$"],
+        "options": [
+          "$0$",
+          "$1$",
+          "$e$",
+          "$e - 1$"
+        ],
         "correctAnswer": 1,
         "explanation": "$\\int_1^e \\frac{1}{x}dx = [\\ln x]_1^e = \\ln(e) - \\ln(1) = 1 - 0 = 1$."
       },
       {
         "id": "q3",
         "question": "Une primitive de $\\cos(x)$ est :",
-        "options": ["$-\\sin(x)$", "$\\sin(x)$", "$-\\cos(x)$", "$\\tan(x)$"],
+        "options": [
+          "$-\\sin(x)$",
+          "$\\sin(x)$",
+          "$-\\cos(x)$",
+          "$\\tan(x)$"
+        ],
         "correctAnswer": 1,
         "explanation": "$(\\sin x)' = \\cos x$, donc $\\sin(x)$ est une primitive de $\\cos(x)$."
       },
       {
         "id": "q4",
         "question": "$\\int_0^2 (3x^2 + 1)\\,dx$ vaut :",
-        "options": ["$8$", "$10$", "$12$", "$14$"],
+        "options": [
+          "$8$",
+          "$10$",
+          "$12$",
+          "$14$"
+        ],
         "correctAnswer": 1,
         "explanation": "$\\int_0^2 (3x^2+1)dx = [x^3 + x]_0^2 = (8+2) - 0 = 10$."
       },
@@ -566,7 +752,8 @@
         "correctAnswer": 1,
         "explanation": "Deux primitives d'une même fonction diffèrent d'une constante."
       }
-    ]
+    ],
+    "difficulty": 3
   },
   {
     "id": "pre-recurrence",
@@ -622,7 +809,8 @@
         "correctAnswer": 2,
         "explanation": "Sans initialisation, on n'a pas de point de départ : rien n'est prouvé."
       }
-    ]
+    ],
+    "difficulty": 2
   },
   {
     "id": "post-recurrence",
@@ -633,7 +821,12 @@
       {
         "id": "q1",
         "question": "Pour montrer $P(n)$ vraie pour tout $n \\geq 5$, l'initialisation se fait en :",
-        "options": ["$n = 0$", "$n = 1$", "$n = 5$", "$n = 4$"],
+        "options": [
+          "$n = 0$",
+          "$n = 1$",
+          "$n = 5$",
+          "$n = 4$"
+        ],
         "correctAnswer": 2,
         "explanation": "On initialise au premier rang concerné : ici $n = 5$."
       },
@@ -685,7 +878,8 @@
         "correctAnswer": 0,
         "explanation": "On vérifie pour $n=5$ : $2^5 = 32 > 25 = 5^2$. C'est vrai."
       }
-    ]
+    ],
+    "difficulty": 3
   },
   {
     "id": "pre-complexes-introduction",
@@ -696,32 +890,53 @@
       {
         "id": "q1",
         "question": "$i^2$ vaut :",
-        "options": ["$1$", "$-1$", "$i$", "$-i$"],
+        "options": [
+          "$1$",
+          "$-1$",
+          "$i$",
+          "$-i$"
+        ],
         "correctAnswer": 1,
         "explanation": "Par définition du nombre imaginaire : $i^2 = -1$."
       },
       {
         "id": "q2",
         "question": "La partie imaginaire de $z = 3 + 5i$ est :",
-        "options": ["$3$", "$5$", "$5i$", "$3 + 5i$"],
+        "options": [
+          "$3$",
+          "$5$",
+          "$5i$",
+          "$3 + 5i$"
+        ],
         "correctAnswer": 1,
         "explanation": "Pour $z = a + bi$, la partie imaginaire est $b$. Ici, $\\text{Im}(z) = 5$."
       },
       {
         "id": "q3",
         "question": "Le conjugué de $z = 2 - 3i$ est :",
-        "options": ["$-2 + 3i$", "$2 + 3i$", "$-2 - 3i$", "$3 - 2i$"],
+        "options": [
+          "$-2 + 3i$",
+          "$2 + 3i$",
+          "$-2 - 3i$",
+          "$3 - 2i$"
+        ],
         "correctAnswer": 1,
         "explanation": "Le conjugué de $a + bi$ est $a - bi$. Ici $\\bar{z} = 2 + 3i$."
       },
       {
         "id": "q4",
         "question": "Le module de $z = 3 + 4i$ vaut :",
-        "options": ["$7$", "$5$", "$25$", "$\\sqrt{7}$"],
+        "options": [
+          "$7$",
+          "$5$",
+          "$25$",
+          "$\\sqrt{7}$"
+        ],
         "correctAnswer": 1,
         "explanation": "$|z| = \\sqrt{3^2 + 4^2} = \\sqrt{9+16} = \\sqrt{25} = 5$."
       }
-    ]
+    ],
+    "difficulty": 2
   },
   {
     "id": "post-complexes-introduction",
@@ -732,28 +947,48 @@
       {
         "id": "q1",
         "question": "$(1 + i)^2$ vaut :",
-        "options": ["$2$", "$2i$", "$0$", "$1 + 2i$"],
+        "options": [
+          "$2$",
+          "$2i$",
+          "$0$",
+          "$1 + 2i$"
+        ],
         "correctAnswer": 1,
         "explanation": "$(1+i)^2 = 1 + 2i + i^2 = 1 + 2i - 1 = 2i$."
       },
       {
         "id": "q2",
         "question": "$z \\times \\bar{z}$ égale toujours :",
-        "options": ["$|z|$", "$|z|^2$", "$2\\text{Re}(z)$", "$2i\\text{Im}(z)$"],
+        "options": [
+          "$|z|$",
+          "$|z|^2$",
+          "$2\\text{Re}(z)$",
+          "$2i\\text{Im}(z)$"
+        ],
         "correctAnswer": 1,
         "explanation": "Si $z = a+bi$, alors $z\\bar{z} = (a+bi)(a-bi) = a^2 + b^2 = |z|^2$."
       },
       {
         "id": "q3",
         "question": "L'inverse de $z = 1 + i$ est :",
-        "options": ["$1 - i$", "$\\frac{1-i}{2}$", "$\\frac{1+i}{2}$", "$-1 - i$"],
+        "options": [
+          "$1 - i$",
+          "$\\frac{1-i}{2}$",
+          "$\\frac{1+i}{2}$",
+          "$-1 - i$"
+        ],
         "correctAnswer": 1,
         "explanation": "$\\frac{1}{1+i} = \\frac{1-i}{(1+i)(1-i)} = \\frac{1-i}{2}$."
       },
       {
         "id": "q4",
         "question": "$i^{2024}$ vaut :",
-        "options": ["$1$", "$-1$", "$i$", "$-i$"],
+        "options": [
+          "$1$",
+          "$-1$",
+          "$i$",
+          "$-i$"
+        ],
         "correctAnswer": 0,
         "explanation": "$i^4 = 1$, et $2024 = 4 \\times 506$, donc $i^{2024} = (i^4)^{506} = 1$."
       },
@@ -769,7 +1004,8 @@
         "correctAnswer": 2,
         "explanation": "$z^2 = -4 \\Leftrightarrow z = \\pm\\sqrt{-4} = \\pm 2i$."
       }
-    ]
+    ],
+    "difficulty": 3
   },
   {
     "id": "pre-complexes-geometrie",
@@ -780,7 +1016,12 @@
       {
         "id": "q1",
         "question": "L'affixe du point $M(3, -2)$ est :",
-        "options": ["$3 - 2i$", "$-2 + 3i$", "$3 + 2i$", "$-3 + 2i$"],
+        "options": [
+          "$3 - 2i$",
+          "$-2 + 3i$",
+          "$3 + 2i$",
+          "$-3 + 2i$"
+        ],
         "correctAnswer": 0,
         "explanation": "Le point $(x, y)$ a pour affixe $z = x + yi$. Donc $M(3,-2)$ a pour affixe $3 - 2i$."
       },
@@ -799,7 +1040,12 @@
       {
         "id": "q3",
         "question": "L'argument de $z = -1$ est :",
-        "options": ["$0$", "$\\frac{\\pi}{2}$", "$\\pi$", "$-\\pi$"],
+        "options": [
+          "$0$",
+          "$\\frac{\\pi}{2}$",
+          "$\\pi$",
+          "$-\\pi$"
+        ],
         "correctAnswer": 2,
         "explanation": "$-1$ est sur l'axe réel négatif, donc $\\arg(-1) = \\pi$."
       },
@@ -815,7 +1061,8 @@
         "correctAnswer": 2,
         "explanation": "$|z| = 2$ signifie distance à l'origine = 2, c'est un cercle de centre O et rayon 2."
       }
-    ]
+    ],
+    "difficulty": 3
   },
   {
     "id": "post-complexes-geometrie",
@@ -883,7 +1130,8 @@
         "correctAnswer": 1,
         "explanation": "L'argument d'un produit est la somme des arguments (modulo $2\\pi$)."
       }
-    ]
+    ],
+    "difficulty": 4
   },
   {
     "id": "pre-matrices-operations",
@@ -939,7 +1187,8 @@
         "correctAnswer": 1,
         "explanation": "Pour $AB$ : nb colonnes de A = nb lignes de B."
       }
-    ]
+    ],
+    "difficulty": 2
   },
   {
     "id": "post-matrices-operations",
@@ -998,11 +1247,17 @@
       {
         "id": "q5",
         "question": "La trace de $\\begin{pmatrix}2&3\\\\1&5\\end{pmatrix}$ vaut :",
-        "options": ["$5$", "$7$", "$11$", "$6$"],
+        "options": [
+          "$5$",
+          "$7$",
+          "$11$",
+          "$6$"
+        ],
         "correctAnswer": 1,
         "explanation": "La trace est la somme des éléments diagonaux : $2 + 5 = 7$."
       }
-    ]
+    ],
+    "difficulty": 3
   },
   {
     "id": "pre-divisibilite",
@@ -1025,14 +1280,24 @@
       {
         "id": "q2",
         "question": "Le reste de la division euclidienne de 17 par 5 est :",
-        "options": ["2", "3", "4", "5"],
+        "options": [
+          "2",
+          "3",
+          "4",
+          "5"
+        ],
         "correctAnswer": 0,
         "explanation": "$17 = 5 \\times 3 + 2$, donc le reste est 2."
       },
       {
         "id": "q3",
         "question": "Le PGCD de 12 et 18 est :",
-        "options": ["2", "3", "6", "36"],
+        "options": [
+          "2",
+          "3",
+          "6",
+          "36"
+        ],
         "correctAnswer": 2,
         "explanation": "Les diviseurs communs sont 1, 2, 3, 6. Le plus grand est 6."
       },
@@ -1048,7 +1313,8 @@
         "correctAnswer": 1,
         "explanation": "Premiers entre eux = PGCD égal à 1 (pas de diviseur commun autre que 1)."
       }
-    ]
+    ],
+    "difficulty": 2
   },
   {
     "id": "post-divisibilite",
@@ -1059,14 +1325,24 @@
       {
         "id": "q1",
         "question": "Par l'algorithme d'Euclide, pgcd(48, 18) vaut :",
-        "options": ["2", "3", "6", "9"],
+        "options": [
+          "2",
+          "3",
+          "6",
+          "9"
+        ],
         "correctAnswer": 2,
         "explanation": "$48 = 18 \\times 2 + 12$, $18 = 12 \\times 1 + 6$, $12 = 6 \\times 2 + 0$. Donc pgcd = 6."
       },
       {
         "id": "q2",
         "question": "Si pgcd(a,b) = d, alors ppcm(a,b) = :",
-        "options": ["$\\frac{ab}{d}$", "$ab \\times d$", "$a + b$", "$d$"],
+        "options": [
+          "$\\frac{ab}{d}$",
+          "$ab \\times d$",
+          "$a + b$",
+          "$d$"
+        ],
         "correctAnswer": 0,
         "explanation": "Relation fondamentale : $\\text{pgcd}(a,b) \\times \\text{ppcm}(a,b) = ab$."
       },
@@ -1106,7 +1382,8 @@
         "correctAnswer": 2,
         "explanation": "Si $d$ divise $a$ et $b$, il divise toute combinaison linéaire, donc $a+b$ et $a-b$."
       }
-    ]
+    ],
+    "difficulty": 3
   },
   {
     "id": "pre-congruences",
@@ -1117,7 +1394,12 @@
       {
         "id": "q1",
         "question": "$17 \\equiv ? \\pmod{5}$",
-        "options": ["0", "2", "3", "7"],
+        "options": [
+          "0",
+          "2",
+          "3",
+          "7"
+        ],
         "correctAnswer": 1,
         "explanation": "$17 = 5 \\times 3 + 2$, donc $17 \\equiv 2 \\pmod{5}$."
       },
@@ -1136,7 +1418,12 @@
       {
         "id": "q3",
         "question": "Le reste de $2^{10}$ modulo 3 est :",
-        "options": ["0", "1", "2", "3"],
+        "options": [
+          "0",
+          "1",
+          "2",
+          "3"
+        ],
         "correctAnswer": 1,
         "explanation": "$2 \\equiv -1 \\pmod{3}$, donc $2^{10} \\equiv (-1)^{10} = 1 \\pmod{3}$."
       },
@@ -1152,7 +1439,8 @@
         "correctAnswer": 0,
         "explanation": "Les congruences sont compatibles avec la multiplication : $ac \\equiv bd \\pmod{n}$."
       }
-    ]
+    ],
+    "difficulty": 3
   },
   {
     "id": "post-congruences",
@@ -1163,28 +1451,48 @@
       {
         "id": "q1",
         "question": "Par le petit théorème de Fermat, $3^6 \\equiv ? \\pmod{7}$",
-        "options": ["0", "1", "3", "6"],
+        "options": [
+          "0",
+          "1",
+          "3",
+          "6"
+        ],
         "correctAnswer": 1,
         "explanation": "7 premier, $3 \\not\\equiv 0$, donc $3^{7-1} = 3^6 \\equiv 1 \\pmod{7}$."
       },
       {
         "id": "q2",
         "question": "L'inverse de 3 modulo 7 est :",
-        "options": ["2", "3", "5", "6"],
+        "options": [
+          "2",
+          "3",
+          "5",
+          "6"
+        ],
         "correctAnswer": 2,
         "explanation": "$3 \\times 5 = 15 = 7 \\times 2 + 1 \\equiv 1 \\pmod{7}$, donc $3^{-1} \\equiv 5$."
       },
       {
         "id": "q3",
         "question": "Le dernier chiffre de $3^{100}$ est :",
-        "options": ["1", "3", "7", "9"],
+        "options": [
+          "1",
+          "3",
+          "7",
+          "9"
+        ],
         "correctAnswer": 0,
         "explanation": "$3^1=3, 3^2=9, 3^3=27, 3^4=81$. Période 4. $100 = 4 \\times 25$, donc $3^{100} \\equiv 1 \\pmod{10}$."
       },
       {
         "id": "q4",
         "question": "$-5 \\equiv ? \\pmod{7}$",
-        "options": ["-5", "2", "5", "12"],
+        "options": [
+          "-5",
+          "2",
+          "5",
+          "12"
+        ],
         "correctAnswer": 1,
         "explanation": "$-5 = -7 + 2 \\equiv 2 \\pmod{7}$."
       },
@@ -1200,7 +1508,8 @@
         "correctAnswer": 1,
         "explanation": "On multiplie par $5^{-1} \\pmod{7}$. $5 \\times 3 = 15 \\equiv 1$, donc $x \\equiv 3 \\times 3 = 9 \\equiv 2$."
       }
-    ]
+    ],
+    "difficulty": 4
   },
   {
     "id": "pre-bezout",
@@ -1256,7 +1565,8 @@
         "correctAnswer": 1,
         "explanation": "Euclide étendu trouve $u, v$ tels que $au + bv = \\text{pgcd}(a,b)$."
       }
-    ]
+    ],
+    "difficulty": 3
   },
   {
     "id": "post-bezout",
@@ -1291,7 +1601,12 @@
       {
         "id": "q3",
         "question": "L'inverse de 7 modulo 11 est calculé par Bézout. $7^{-1} \\equiv ? \\pmod{11}$",
-        "options": ["2", "5", "7", "8"],
+        "options": [
+          "2",
+          "5",
+          "7",
+          "8"
+        ],
         "correctAnswer": 3,
         "explanation": "$7 \\times 8 = 56 = 11 \\times 5 + 1 \\equiv 1 \\pmod{11}$."
       },
@@ -1319,7 +1634,8 @@
         "correctAnswer": 0,
         "explanation": "pgcd(35, 15) = 5, donc les coefficients vérifient $35u + 15v = 5$."
       }
-    ]
+    ],
+    "difficulty": 4
   },
   {
     "id": "pre-implication-equivalence",
@@ -1327,11 +1643,56 @@
     "type": "pre",
     "title": "Diagnostic : Logique et raisonnement",
     "questions": [
-      {"id": "q1", "question": "La contraposée de \"P ⟹ Q\" est :", "options": ["Q ⟹ P", "non P ⟹ non Q", "non Q ⟹ non P", "P et non Q"], "correctAnswer": 2, "explanation": "La contraposée de P ⟹ Q est non Q ⟹ non P."},
-      {"id": "q2", "question": "\"P ⟺ Q\" signifie :", "options": ["P ou Q", "P et Q", "P ⟹ Q seulement", "P ⟹ Q et Q ⟹ P"], "correctAnswer": 3, "explanation": "L'équivalence signifie que les deux implications sont vraies."},
-      {"id": "q3", "question": "La négation de \"P ⟹ Q\" est :", "options": ["P et non Q", "non P", "non Q", "non P ou Q"], "correctAnswer": 0, "explanation": "La négation de P ⟹ Q est P et non Q."},
-      {"id": "q4", "question": "Dans un raisonnement par l'absurde, on suppose :", "options": ["Ce qu'on veut démontrer", "Le contraire de ce qu'on veut démontrer", "Une hypothèse supplémentaire", "Rien"], "correctAnswer": 1, "explanation": "On suppose le contraire puis on arrive à une contradiction."}
-    ]
+      {
+        "id": "q1",
+        "question": "La contraposée de \"P ⟹ Q\" est :",
+        "options": [
+          "Q ⟹ P",
+          "non P ⟹ non Q",
+          "non Q ⟹ non P",
+          "P et non Q"
+        ],
+        "correctAnswer": 2,
+        "explanation": "La contraposée de P ⟹ Q est non Q ⟹ non P."
+      },
+      {
+        "id": "q2",
+        "question": "\"P ⟺ Q\" signifie :",
+        "options": [
+          "P ou Q",
+          "P et Q",
+          "P ⟹ Q seulement",
+          "P ⟹ Q et Q ⟹ P"
+        ],
+        "correctAnswer": 3,
+        "explanation": "L'équivalence signifie que les deux implications sont vraies."
+      },
+      {
+        "id": "q3",
+        "question": "La négation de \"P ⟹ Q\" est :",
+        "options": [
+          "P et non Q",
+          "non P",
+          "non Q",
+          "non P ou Q"
+        ],
+        "correctAnswer": 0,
+        "explanation": "La négation de P ⟹ Q est P et non Q."
+      },
+      {
+        "id": "q4",
+        "question": "Dans un raisonnement par l'absurde, on suppose :",
+        "options": [
+          "Ce qu'on veut démontrer",
+          "Le contraire de ce qu'on veut démontrer",
+          "Une hypothèse supplémentaire",
+          "Rien"
+        ],
+        "correctAnswer": 1,
+        "explanation": "On suppose le contraire puis on arrive à une contradiction."
+      }
+    ],
+    "difficulty": 1
   },
   {
     "id": "post-implication-equivalence",
@@ -1339,11 +1700,56 @@
     "type": "post",
     "title": "Validation : Logique et raisonnement",
     "questions": [
-      {"id": "q1", "question": "L'implication \"n² pair ⟹ n pair\" est équivalente à :", "options": ["n pair ⟹ n² pair", "n impair ⟹ n² impair", "n² impair ⟹ n impair", "n impair ⟹ n² pair"], "correctAnswer": 1, "explanation": "La contraposée est : n impair ⟹ n² impair."},
-      {"id": "q2", "question": "Pour montrer P ⟺ Q, on doit prouver :", "options": ["P seulement", "Q seulement", "P ⟹ Q seulement", "P ⟹ Q et Q ⟹ P"], "correctAnswer": 3, "explanation": "Une équivalence nécessite les deux sens."},
-      {"id": "q3", "question": "Si (P ⟹ Q) est vraie et Q est fausse, alors :", "options": ["P est vraie", "P est fausse", "On ne peut rien dire", "P ⟺ Q"], "correctAnswer": 1, "explanation": "Par contraposée : non Q ⟹ non P."},
-      {"id": "q4", "question": "\"n multiple de 6\" est condition ... pour \"n pair\" :", "options": ["Nécessaire", "Suffisante", "Nécessaire et suffisante", "Ni l'un ni l'autre"], "correctAnswer": 1, "explanation": "Tout multiple de 6 est pair, mais pas l'inverse."}
-    ]
+      {
+        "id": "q1",
+        "question": "L'implication \"n² pair ⟹ n pair\" est équivalente à :",
+        "options": [
+          "n pair ⟹ n² pair",
+          "n impair ⟹ n² impair",
+          "n² impair ⟹ n impair",
+          "n impair ⟹ n² pair"
+        ],
+        "correctAnswer": 1,
+        "explanation": "La contraposée est : n impair ⟹ n² impair."
+      },
+      {
+        "id": "q2",
+        "question": "Pour montrer P ⟺ Q, on doit prouver :",
+        "options": [
+          "P seulement",
+          "Q seulement",
+          "P ⟹ Q seulement",
+          "P ⟹ Q et Q ⟹ P"
+        ],
+        "correctAnswer": 3,
+        "explanation": "Une équivalence nécessite les deux sens."
+      },
+      {
+        "id": "q3",
+        "question": "Si (P ⟹ Q) est vraie et Q est fausse, alors :",
+        "options": [
+          "P est vraie",
+          "P est fausse",
+          "On ne peut rien dire",
+          "P ⟺ Q"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Par contraposée : non Q ⟹ non P."
+      },
+      {
+        "id": "q4",
+        "question": "\"n multiple de 6\" est condition ... pour \"n pair\" :",
+        "options": [
+          "Nécessaire",
+          "Suffisante",
+          "Nécessaire et suffisante",
+          "Ni l'un ni l'autre"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Tout multiple de 6 est pair, mais pas l'inverse."
+      }
+    ],
+    "difficulty": 2
   },
   {
     "id": "pre-suites-limites",
@@ -1351,11 +1757,56 @@
     "type": "pre",
     "title": "Diagnostic : Limites de suites",
     "questions": [
-      {"id": "q1", "question": "$\\lim_{n \\to +\\infty} \\frac{1}{n}$ vaut :", "options": ["1", "0", "+∞", "-∞"], "correctAnswer": 1, "explanation": "1/n tend vers 0 quand n tend vers l'infini."},
-      {"id": "q2", "question": "$\\lim_{n \\to +\\infty} q^n$ avec $q = 0.5$ vaut :", "options": ["+∞", "0", "1", "-∞"], "correctAnswer": 1, "explanation": "Pour |q| < 1, qⁿ → 0."},
-      {"id": "q3", "question": "La forme $\\frac{\\infty}{\\infty}$ est :", "options": ["Égale à 1", "Égale à 0", "Indéterminée", "Égale à +∞"], "correctAnswer": 2, "explanation": "C'est une forme indéterminée qu'il faut lever."},
-      {"id": "q4", "question": "$\\lim_{n \\to +\\infty} (-1)^n$ :", "options": ["= 1", "= -1", "= 0", "n'existe pas"], "correctAnswer": 3, "explanation": "La suite alterne et n'a pas de limite."}
-    ]
+      {
+        "id": "q1",
+        "question": "$\\lim_{n \\to +\\infty} \\frac{1}{n}$ vaut :",
+        "options": [
+          "1",
+          "0",
+          "+∞",
+          "-∞"
+        ],
+        "correctAnswer": 1,
+        "explanation": "1/n tend vers 0 quand n tend vers l'infini."
+      },
+      {
+        "id": "q2",
+        "question": "$\\lim_{n \\to +\\infty} q^n$ avec $q = 0.5$ vaut :",
+        "options": [
+          "+∞",
+          "0",
+          "1",
+          "-∞"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Pour |q| < 1, qⁿ → 0."
+      },
+      {
+        "id": "q3",
+        "question": "La forme $\\frac{\\infty}{\\infty}$ est :",
+        "options": [
+          "Égale à 1",
+          "Égale à 0",
+          "Indéterminée",
+          "Égale à +∞"
+        ],
+        "correctAnswer": 2,
+        "explanation": "C'est une forme indéterminée qu'il faut lever."
+      },
+      {
+        "id": "q4",
+        "question": "$\\lim_{n \\to +\\infty} (-1)^n$ :",
+        "options": [
+          "= 1",
+          "= -1",
+          "= 0",
+          "n'existe pas"
+        ],
+        "correctAnswer": 3,
+        "explanation": "La suite alterne et n'a pas de limite."
+      }
+    ],
+    "difficulty": 2
   },
   {
     "id": "post-suites-limites",
@@ -1363,11 +1814,56 @@
     "type": "post",
     "title": "Validation : Limites de suites",
     "questions": [
-      {"id": "q1", "question": "$\\lim_{n \\to +\\infty} \\frac{3n^2 + 1}{n^2 - 2}$ vaut :", "options": ["0", "1", "3", "+∞"], "correctAnswer": 2, "explanation": "On factorise par n² : limite = 3/1 = 3."},
-      {"id": "q2", "question": "Par croissance comparée, $\\lim \\frac{2^n}{n^{100}}$ vaut :", "options": ["0", "1", "+∞", "n'existe pas"], "correctAnswer": 2, "explanation": "L'exponentielle domine toute puissance."},
-      {"id": "q3", "question": "Si $u_n \\leq v_n \\leq w_n$ et $u_n, w_n \\to \\ell$, alors :", "options": ["$v_n \\to \\ell$", "$v_n \\to 0$", "On ne peut rien dire", "$v_n$ diverge"], "correctAnswer": 0, "explanation": "C'est le théorème des gendarmes."},
-      {"id": "q4", "question": "$\\lim_{n \\to +\\infty} (\\sqrt{n+1} - \\sqrt{n})$ vaut :", "options": ["1", "0", "+∞", "-∞"], "correctAnswer": 1, "explanation": "On multiplie par l'expression conjuguée pour obtenir 0."}
-    ]
+      {
+        "id": "q1",
+        "question": "$\\lim_{n \\to +\\infty} \\frac{3n^2 + 1}{n^2 - 2}$ vaut :",
+        "options": [
+          "0",
+          "1",
+          "3",
+          "+∞"
+        ],
+        "correctAnswer": 2,
+        "explanation": "On factorise par n² : limite = 3/1 = 3."
+      },
+      {
+        "id": "q2",
+        "question": "Par croissance comparée, $\\lim \\frac{2^n}{n^{100}}$ vaut :",
+        "options": [
+          "0",
+          "1",
+          "+∞",
+          "n'existe pas"
+        ],
+        "correctAnswer": 2,
+        "explanation": "L'exponentielle domine toute puissance."
+      },
+      {
+        "id": "q3",
+        "question": "Si $u_n \\leq v_n \\leq w_n$ et $u_n, w_n \\to \\ell$, alors :",
+        "options": [
+          "$v_n \\to \\ell$",
+          "$v_n \\to 0$",
+          "On ne peut rien dire",
+          "$v_n$ diverge"
+        ],
+        "correctAnswer": 0,
+        "explanation": "C'est le théorème des gendarmes."
+      },
+      {
+        "id": "q4",
+        "question": "$\\lim_{n \\to +\\infty} (\\sqrt{n+1} - \\sqrt{n})$ vaut :",
+        "options": [
+          "1",
+          "0",
+          "+∞",
+          "-∞"
+        ],
+        "correctAnswer": 1,
+        "explanation": "On multiplie par l'expression conjuguée pour obtenir 0."
+      }
+    ],
+    "difficulty": 3
   },
   {
     "id": "pre-suites-convergence",
@@ -1375,11 +1871,56 @@
     "type": "pre",
     "title": "Diagnostic : Convergence des suites",
     "questions": [
-      {"id": "q1", "question": "Une suite croissante et majorée est :", "options": ["Divergente", "Convergente", "Non bornée", "Constante"], "correctAnswer": 1, "explanation": "C'est le théorème de la limite monotone."},
-      {"id": "q2", "question": "Deux suites adjacentes convergent vers :", "options": ["Deux limites différentes", "La même limite", "Aucune limite", "+∞"], "correctAnswer": 1, "explanation": "Par définition des suites adjacentes."},
-      {"id": "q3", "question": "Si $u_{n+1} = f(u_n)$ converge vers $\\ell$, alors :", "options": ["$f(\\ell) = 0$", "$f(\\ell) = \\ell$", "$f'(\\ell) = 0$", "$\\ell = u_0$"], "correctAnswer": 1, "explanation": "La limite est un point fixe de f."},
-      {"id": "q4", "question": "Une suite bornée est forcément :", "options": ["Convergente", "Monotone", "Ni l'un ni l'autre nécessairement", "Constante"], "correctAnswer": 2, "explanation": "Exemple : $(-1)^n$ est bornée mais divergente."}
-    ]
+      {
+        "id": "q1",
+        "question": "Une suite croissante et majorée est :",
+        "options": [
+          "Divergente",
+          "Convergente",
+          "Non bornée",
+          "Constante"
+        ],
+        "correctAnswer": 1,
+        "explanation": "C'est le théorème de la limite monotone."
+      },
+      {
+        "id": "q2",
+        "question": "Deux suites adjacentes convergent vers :",
+        "options": [
+          "Deux limites différentes",
+          "La même limite",
+          "Aucune limite",
+          "+∞"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Par définition des suites adjacentes."
+      },
+      {
+        "id": "q3",
+        "question": "Si $u_{n+1} = f(u_n)$ converge vers $\\ell$, alors :",
+        "options": [
+          "$f(\\ell) = 0$",
+          "$f(\\ell) = \\ell$",
+          "$f'(\\ell) = 0$",
+          "$\\ell = u_0$"
+        ],
+        "correctAnswer": 1,
+        "explanation": "La limite est un point fixe de f."
+      },
+      {
+        "id": "q4",
+        "question": "Une suite bornée est forcément :",
+        "options": [
+          "Convergente",
+          "Monotone",
+          "Ni l'un ni l'autre nécessairement",
+          "Constante"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Exemple : $(-1)^n$ est bornée mais divergente."
+      }
+    ],
+    "difficulty": 3
   },
   {
     "id": "post-suites-convergence",
@@ -1387,11 +1928,56 @@
     "type": "post",
     "title": "Validation : Convergence des suites",
     "questions": [
-      {"id": "q1", "question": "La suite $u_{n+1} = \\sqrt{2 + u_n}$ avec $u_0 = 0$ converge vers :", "options": ["0", "1", "2", "$\\sqrt{2}$"], "correctAnswer": 2, "explanation": "On résout ℓ = √(2+ℓ), soit ℓ² - ℓ - 2 = 0, d'où ℓ = 2."},
-      {"id": "q2", "question": "Pour montrer qu'une suite récurrente converge, on peut :", "options": ["Calculer sa limite directement", "Montrer qu'elle est monotone et bornée", "Vérifier que $u_0 = 0$", "Calculer $u_{100}$"], "correctAnswer": 1, "explanation": "C'est le théorème de la limite monotone."},
-      {"id": "q3", "question": "Si $(u_n)$ ↑ et $(v_n)$ ↓ avec $v_n - u_n \\to 0$, les suites sont :", "options": ["Divergentes", "Adjacentes", "Constantes", "Périodiques"], "correctAnswer": 1, "explanation": "C'est la définition des suites adjacentes."},
-      {"id": "q4", "question": "Le point fixe de $f(x) = 0.5x + 1$ est :", "options": ["0", "1", "2", "-1"], "correctAnswer": 2, "explanation": "On résout ℓ = 0.5ℓ + 1, soit 0.5ℓ = 1, ℓ = 2."}
-    ]
+      {
+        "id": "q1",
+        "question": "La suite $u_{n+1} = \\sqrt{2 + u_n}$ avec $u_0 = 0$ converge vers :",
+        "options": [
+          "0",
+          "1",
+          "2",
+          "$\\sqrt{2}$"
+        ],
+        "correctAnswer": 2,
+        "explanation": "On résout ℓ = √(2+ℓ), soit ℓ² - ℓ - 2 = 0, d'où ℓ = 2."
+      },
+      {
+        "id": "q2",
+        "question": "Pour montrer qu'une suite récurrente converge, on peut :",
+        "options": [
+          "Calculer sa limite directement",
+          "Montrer qu'elle est monotone et bornée",
+          "Vérifier que $u_0 = 0$",
+          "Calculer $u_{100}$"
+        ],
+        "correctAnswer": 1,
+        "explanation": "C'est le théorème de la limite monotone."
+      },
+      {
+        "id": "q3",
+        "question": "Si $(u_n)$ ↑ et $(v_n)$ ↓ avec $v_n - u_n \\to 0$, les suites sont :",
+        "options": [
+          "Divergentes",
+          "Adjacentes",
+          "Constantes",
+          "Périodiques"
+        ],
+        "correctAnswer": 1,
+        "explanation": "C'est la définition des suites adjacentes."
+      },
+      {
+        "id": "q4",
+        "question": "Le point fixe de $f(x) = 0.5x + 1$ est :",
+        "options": [
+          "0",
+          "1",
+          "2",
+          "-1"
+        ],
+        "correctAnswer": 2,
+        "explanation": "On résout ℓ = 0.5ℓ + 1, soit 0.5ℓ = 1, ℓ = 2."
+      }
+    ],
+    "difficulty": 4
   },
   {
     "id": "pre-limites-fonctions",
@@ -1399,11 +1985,56 @@
     "type": "pre",
     "title": "Diagnostic : Limites de fonctions",
     "questions": [
-      {"id": "q1", "question": "$\\lim_{x \\to +\\infty} e^x$ vaut :", "options": ["0", "1", "+∞", "-∞"], "correctAnswer": 2, "explanation": "L'exponentielle tend vers +∞ en +∞."},
-      {"id": "q2", "question": "$\\lim_{x \\to 0^+} \\ln(x)$ vaut :", "options": ["0", "1", "+∞", "-∞"], "correctAnswer": 3, "explanation": "Le logarithme tend vers -∞ en 0⁺."},
-      {"id": "q3", "question": "Une asymptote horizontale y = ℓ signifie :", "options": ["f(0) = ℓ", "f'(x) = 0", "$\\lim_{x \\to ±\\infty} f(x) = \\ell$", "f est constante"], "correctAnswer": 2, "explanation": "C'est la définition d'une asymptote horizontale."},
-      {"id": "q4", "question": "$\\lim_{x \\to 2} \\frac{x^2 - 4}{x - 2}$ vaut :", "options": ["0", "4", "+∞", "Forme indéterminée"], "correctAnswer": 1, "explanation": "On factorise : (x-2)(x+2)/(x-2) = x+2 → 4."}
-    ]
+      {
+        "id": "q1",
+        "question": "$\\lim_{x \\to +\\infty} e^x$ vaut :",
+        "options": [
+          "0",
+          "1",
+          "+∞",
+          "-∞"
+        ],
+        "correctAnswer": 2,
+        "explanation": "L'exponentielle tend vers +∞ en +∞."
+      },
+      {
+        "id": "q2",
+        "question": "$\\lim_{x \\to 0^+} \\ln(x)$ vaut :",
+        "options": [
+          "0",
+          "1",
+          "+∞",
+          "-∞"
+        ],
+        "correctAnswer": 3,
+        "explanation": "Le logarithme tend vers -∞ en 0⁺."
+      },
+      {
+        "id": "q3",
+        "question": "Une asymptote horizontale y = ℓ signifie :",
+        "options": [
+          "f(0) = ℓ",
+          "f'(x) = 0",
+          "$\\lim_{x \\to ±\\infty} f(x) = \\ell$",
+          "f est constante"
+        ],
+        "correctAnswer": 2,
+        "explanation": "C'est la définition d'une asymptote horizontale."
+      },
+      {
+        "id": "q4",
+        "question": "$\\lim_{x \\to 2} \\frac{x^2 - 4}{x - 2}$ vaut :",
+        "options": [
+          "0",
+          "4",
+          "+∞",
+          "Forme indéterminée"
+        ],
+        "correctAnswer": 1,
+        "explanation": "On factorise : (x-2)(x+2)/(x-2) = x+2 → 4."
+      }
+    ],
+    "difficulty": 2
   },
   {
     "id": "post-limites-fonctions",
@@ -1411,11 +2042,56 @@
     "type": "post",
     "title": "Validation : Limites de fonctions",
     "questions": [
-      {"id": "q1", "question": "$\\lim_{x \\to +\\infty} \\frac{\\ln(x)}{x}$ vaut :", "options": ["0", "1", "+∞", "-∞"], "correctAnswer": 0, "explanation": "Par croissance comparée, ln est dominé par x."},
-      {"id": "q2", "question": "$\\lim_{x \\to 0^+} x\\ln(x)$ vaut :", "options": ["0", "1", "+∞", "-∞"], "correctAnswer": 0, "explanation": "Croissance comparée : x l'emporte sur ln(x)."},
-      {"id": "q3", "question": "L'asymptote oblique de $f(x) = \\frac{x^2}{x-1}$ est :", "options": ["y = x", "y = x + 1", "y = x - 1", "Il n'y en a pas"], "correctAnswer": 1, "explanation": "Division : x²/(x-1) = x + 1 + 1/(x-1)."},
-      {"id": "q4", "question": "$\\lim_{x \\to 1^+} \\frac{1}{x-1}$ vaut :", "options": ["0", "1", "+∞", "-∞"], "correctAnswer": 2, "explanation": "Quand x → 1⁺, x-1 → 0⁺, donc 1/(x-1) → +∞."}
-    ]
+      {
+        "id": "q1",
+        "question": "$\\lim_{x \\to +\\infty} \\frac{\\ln(x)}{x}$ vaut :",
+        "options": [
+          "0",
+          "1",
+          "+∞",
+          "-∞"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Par croissance comparée, ln est dominé par x."
+      },
+      {
+        "id": "q2",
+        "question": "$\\lim_{x \\to 0^+} x\\ln(x)$ vaut :",
+        "options": [
+          "0",
+          "1",
+          "+∞",
+          "-∞"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Croissance comparée : x l'emporte sur ln(x)."
+      },
+      {
+        "id": "q3",
+        "question": "L'asymptote oblique de $f(x) = \\frac{x^2}{x-1}$ est :",
+        "options": [
+          "y = x",
+          "y = x + 1",
+          "y = x - 1",
+          "Il n'y en a pas"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Division : x²/(x-1) = x + 1 + 1/(x-1)."
+      },
+      {
+        "id": "q4",
+        "question": "$\\lim_{x \\to 1^+} \\frac{1}{x-1}$ vaut :",
+        "options": [
+          "0",
+          "1",
+          "+∞",
+          "-∞"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Quand x → 1⁺, x-1 → 0⁺, donc 1/(x-1) → +∞."
+      }
+    ],
+    "difficulty": 3
   },
   {
     "id": "pre-continuite",
@@ -1423,11 +2099,56 @@
     "type": "pre",
     "title": "Diagnostic : Continuité",
     "questions": [
-      {"id": "q1", "question": "f est continue en a si :", "options": ["f(a) existe", "lim f(x) existe en a", "lim f(x) = f(a)", "f est dérivable en a"], "correctAnswer": 2, "explanation": "Continuité = la limite égale la valeur."},
-      {"id": "q2", "question": "Le TVI s'applique aux fonctions :", "options": ["Dérivables", "Continues", "Monotones", "Bornées"], "correctAnswer": 1, "explanation": "Le théorème des valeurs intermédiaires nécessite la continuité."},
-      {"id": "q3", "question": "Si f continue sur [a,b] avec f(a)f(b) < 0, alors :", "options": ["f s'annule sur ]a,b[", "f est constante", "f est dérivable", "f n'a pas de maximum"], "correctAnswer": 0, "explanation": "C'est le corollaire du TVI."},
-      {"id": "q4", "question": "Une fonction polynôme est continue sur :", "options": ["[0, 1]", "]0, +∞[", "ℝ", "ℝ*"], "correctAnswer": 2, "explanation": "Les polynômes sont continus sur ℝ entier."}
-    ]
+      {
+        "id": "q1",
+        "question": "f est continue en a si :",
+        "options": [
+          "f(a) existe",
+          "lim f(x) existe en a",
+          "lim f(x) = f(a)",
+          "f est dérivable en a"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Continuité = la limite égale la valeur."
+      },
+      {
+        "id": "q2",
+        "question": "Le TVI s'applique aux fonctions :",
+        "options": [
+          "Dérivables",
+          "Continues",
+          "Monotones",
+          "Bornées"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Le théorème des valeurs intermédiaires nécessite la continuité."
+      },
+      {
+        "id": "q3",
+        "question": "Si f continue sur [a,b] avec f(a)f(b) < 0, alors :",
+        "options": [
+          "f s'annule sur ]a,b[",
+          "f est constante",
+          "f est dérivable",
+          "f n'a pas de maximum"
+        ],
+        "correctAnswer": 0,
+        "explanation": "C'est le corollaire du TVI."
+      },
+      {
+        "id": "q4",
+        "question": "Une fonction polynôme est continue sur :",
+        "options": [
+          "[0, 1]",
+          "]0, +∞[",
+          "ℝ",
+          "ℝ*"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Les polynômes sont continus sur ℝ entier."
+      }
+    ],
+    "difficulty": 2
   },
   {
     "id": "post-continuite",
@@ -1435,11 +2156,56 @@
     "type": "post",
     "title": "Validation : Continuité",
     "questions": [
-      {"id": "q1", "question": "L'équation $x^3 + x - 1 = 0$ admet une solution dans :", "options": ["]-∞, 0[", "[0, 1]", "]1, +∞[", "Aucun intervalle"], "correctAnswer": 1, "explanation": "f(0) = -1 < 0 et f(1) = 1 > 0, donc par TVI..."},
-      {"id": "q2", "question": "Si f continue et strictement croissante sur [a,b], l'équation f(x) = k a :", "options": ["0 solution", "1 solution", "2 solutions", "∞ solutions"], "correctAnswer": 1, "explanation": "Monotone + continue = bijection."},
-      {"id": "q3", "question": "$f(x) = \\frac{x^2-1}{x-1}$ peut être prolongée par continuité en x = 1 avec f(1) = :", "options": ["0", "1", "2", "Impossible"], "correctAnswer": 2, "explanation": "lim = (x+1) → 2, donc f(1) = 2."},
-      {"id": "q4", "question": "L'image de [0, 2] par $f(x) = x^2 - 2x$ est :", "options": ["[-1, 0]", "[0, 4]", "[-1, 4]", "[0, 2]"], "correctAnswer": 0, "explanation": "Min en x=1 : f(1)=-1, max aux bornes : f(0)=f(2)=0."}
-    ]
+      {
+        "id": "q1",
+        "question": "L'équation $x^3 + x - 1 = 0$ admet une solution dans :",
+        "options": [
+          "]-∞, 0[",
+          "[0, 1]",
+          "]1, +∞[",
+          "Aucun intervalle"
+        ],
+        "correctAnswer": 1,
+        "explanation": "f(0) = -1 < 0 et f(1) = 1 > 0, donc par TVI..."
+      },
+      {
+        "id": "q2",
+        "question": "Si f continue et strictement croissante sur [a,b], l'équation f(x) = k a :",
+        "options": [
+          "0 solution",
+          "1 solution",
+          "2 solutions",
+          "∞ solutions"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Monotone + continue = bijection."
+      },
+      {
+        "id": "q3",
+        "question": "$f(x) = \\frac{x^2-1}{x-1}$ peut être prolongée par continuité en x = 1 avec f(1) = :",
+        "options": [
+          "0",
+          "1",
+          "2",
+          "Impossible"
+        ],
+        "correctAnswer": 2,
+        "explanation": "lim = (x+1) → 2, donc f(1) = 2."
+      },
+      {
+        "id": "q4",
+        "question": "L'image de [0, 2] par $f(x) = x^2 - 2x$ est :",
+        "options": [
+          "[-1, 0]",
+          "[0, 4]",
+          "[-1, 4]",
+          "[0, 2]"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Min en x=1 : f(1)=-1, max aux bornes : f(0)=f(2)=0."
+      }
+    ],
+    "difficulty": 3
   },
   {
     "id": "pre-convexite",
@@ -1447,11 +2213,56 @@
     "type": "pre",
     "title": "Diagnostic : Convexité",
     "questions": [
-      {"id": "q1", "question": "Une fonction est convexe si f'' est :", "options": ["Positive", "Négative", "Nulle", "Croissante"], "correctAnswer": 0, "explanation": "f convexe ⟺ f'' ≥ 0."},
-      {"id": "q2", "question": "Un point d'inflexion est un point où :", "options": ["f = 0", "f' = 0", "f'' change de signe", "f a un extremum"], "correctAnswer": 2, "explanation": "C'est là où la convexité change."},
-      {"id": "q3", "question": "$e^x$ est :", "options": ["Convexe", "Concave", "Ni l'un ni l'autre", "Les deux"], "correctAnswer": 0, "explanation": "$(e^x)'' = e^x > 0$, donc convexe."},
-      {"id": "q4", "question": "Une fonction convexe est au-dessus de ses :", "options": ["Asymptotes", "Tangentes", "Cordes", "Primitives"], "correctAnswer": 1, "explanation": "Propriété fondamentale de la convexité."}
-    ]
+      {
+        "id": "q1",
+        "question": "Une fonction est convexe si f'' est :",
+        "options": [
+          "Positive",
+          "Négative",
+          "Nulle",
+          "Croissante"
+        ],
+        "correctAnswer": 0,
+        "explanation": "f convexe ⟺ f'' ≥ 0."
+      },
+      {
+        "id": "q2",
+        "question": "Un point d'inflexion est un point où :",
+        "options": [
+          "f = 0",
+          "f' = 0",
+          "f'' change de signe",
+          "f a un extremum"
+        ],
+        "correctAnswer": 2,
+        "explanation": "C'est là où la convexité change."
+      },
+      {
+        "id": "q3",
+        "question": "$e^x$ est :",
+        "options": [
+          "Convexe",
+          "Concave",
+          "Ni l'un ni l'autre",
+          "Les deux"
+        ],
+        "correctAnswer": 0,
+        "explanation": "$(e^x)'' = e^x > 0$, donc convexe."
+      },
+      {
+        "id": "q4",
+        "question": "Une fonction convexe est au-dessus de ses :",
+        "options": [
+          "Asymptotes",
+          "Tangentes",
+          "Cordes",
+          "Primitives"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Propriété fondamentale de la convexité."
+      }
+    ],
+    "difficulty": 2
   },
   {
     "id": "post-convexite",
@@ -1459,11 +2270,56 @@
     "type": "post",
     "title": "Validation : Convexité",
     "questions": [
-      {"id": "q1", "question": "Pour $f(x) = x^3$, le point d'inflexion est en x = :", "options": ["0", "1", "-1", "Aucun"], "correctAnswer": 0, "explanation": "f''(x) = 6x change de signe en x = 0."},
-      {"id": "q2", "question": "L'inégalité $e^x \\geq 1 + x$ découle de la convexité de $e^x$ et de :", "options": ["f(0) = 1", "La tangente en x = 0", "f'(0) = 1", "Toutes ces raisons"], "correctAnswer": 3, "explanation": "Convexe ⟹ au-dessus de sa tangente en 0 : y = 1 + x."},
-      {"id": "q3", "question": "$f(x) = \\ln(x)$ est :", "options": ["Convexe sur ]0, +∞[", "Concave sur ]0, +∞[", "Ni l'un ni l'autre", "Convexe puis concave"], "correctAnswer": 1, "explanation": "f''(x) = -1/x² < 0, donc concave."},
-      {"id": "q4", "question": "Si f''(a) = 0 mais f'' ne change pas de signe en a, alors :", "options": ["a est point d'inflexion", "a n'est pas point d'inflexion", "f a un extremum en a", "f(a) = 0"], "correctAnswer": 1, "explanation": "Il faut un changement de signe pour un point d'inflexion."}
-    ]
+      {
+        "id": "q1",
+        "question": "Pour $f(x) = x^3$, le point d'inflexion est en x = :",
+        "options": [
+          "0",
+          "1",
+          "-1",
+          "Aucun"
+        ],
+        "correctAnswer": 0,
+        "explanation": "f''(x) = 6x change de signe en x = 0."
+      },
+      {
+        "id": "q2",
+        "question": "L'inégalité $e^x \\geq 1 + x$ découle de la convexité de $e^x$ et de :",
+        "options": [
+          "f(0) = 1",
+          "La tangente en x = 0",
+          "f'(0) = 1",
+          "Toutes ces raisons"
+        ],
+        "correctAnswer": 3,
+        "explanation": "Convexe ⟹ au-dessus de sa tangente en 0 : y = 1 + x."
+      },
+      {
+        "id": "q3",
+        "question": "$f(x) = \\ln(x)$ est :",
+        "options": [
+          "Convexe sur ]0, +∞[",
+          "Concave sur ]0, +∞[",
+          "Ni l'un ni l'autre",
+          "Convexe puis concave"
+        ],
+        "correctAnswer": 1,
+        "explanation": "f''(x) = -1/x² < 0, donc concave."
+      },
+      {
+        "id": "q4",
+        "question": "Si f''(a) = 0 mais f'' ne change pas de signe en a, alors :",
+        "options": [
+          "a est point d'inflexion",
+          "a n'est pas point d'inflexion",
+          "f a un extremum en a",
+          "f(a) = 0"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Il faut un changement de signe pour un point d'inflexion."
+      }
+    ],
+    "difficulty": 3
   },
   {
     "id": "pre-trigonometrie-bases",
@@ -1471,11 +2327,56 @@
     "type": "pre",
     "title": "Diagnostic : Trigonométrie",
     "questions": [
-      {"id": "q1", "question": "$\\cos(\\pi/3)$ vaut :", "options": ["0", "1/2", "$\\sqrt{2}/2$", "$\\sqrt{3}/2$"], "correctAnswer": 1, "explanation": "Valeur remarquable : cos(π/3) = 1/2."},
-      {"id": "q2", "question": "$\\sin^2(x) + \\cos^2(x)$ = :", "options": ["0", "1", "2", "sin(2x)"], "correctAnswer": 1, "explanation": "Relation fondamentale de trigonométrie."},
-      {"id": "q3", "question": "$\\cos(2x)$ = :", "options": ["2cos(x)", "$\\cos^2(x) - \\sin^2(x)$", "2cos(x)sin(x)", "cos(x) + sin(x)"], "correctAnswer": 1, "explanation": "Formule de duplication."},
-      {"id": "q4", "question": "π radians = ... degrés :", "options": ["90°", "180°", "270°", "360°"], "correctAnswer": 1, "explanation": "π rad = 180°."}
-    ]
+      {
+        "id": "q1",
+        "question": "$\\cos(\\pi/3)$ vaut :",
+        "options": [
+          "0",
+          "1/2",
+          "$\\sqrt{2}/2$",
+          "$\\sqrt{3}/2$"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Valeur remarquable : cos(π/3) = 1/2."
+      },
+      {
+        "id": "q2",
+        "question": "$\\sin^2(x) + \\cos^2(x)$ = :",
+        "options": [
+          "0",
+          "1",
+          "2",
+          "sin(2x)"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Relation fondamentale de trigonométrie."
+      },
+      {
+        "id": "q3",
+        "question": "$\\cos(2x)$ = :",
+        "options": [
+          "2cos(x)",
+          "$\\cos^2(x) - \\sin^2(x)$",
+          "2cos(x)sin(x)",
+          "cos(x) + sin(x)"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Formule de duplication."
+      },
+      {
+        "id": "q4",
+        "question": "π radians = ... degrés :",
+        "options": [
+          "90°",
+          "180°",
+          "270°",
+          "360°"
+        ],
+        "correctAnswer": 1,
+        "explanation": "π rad = 180°."
+      }
+    ],
+    "difficulty": 1
   },
   {
     "id": "post-trigonometrie-bases",
@@ -1483,11 +2384,56 @@
     "type": "post",
     "title": "Validation : Trigonométrie",
     "questions": [
-      {"id": "q1", "question": "$\\cos(5\\pi/12) = \\cos(\\pi/4 + \\pi/6)$ = :", "options": ["$(\\sqrt{6}-\\sqrt{2})/4$", "$(\\sqrt{6}+\\sqrt{2})/4$", "$(\\sqrt{3}-1)/2$", "1/2"], "correctAnswer": 0, "explanation": "cos(a+b) = cos(a)cos(b) - sin(a)sin(b)."},
-      {"id": "q2", "question": "Linéariser $\\cos^2(x)$ donne :", "options": ["$(1+\\cos(2x))/2$", "$(1-\\cos(2x))/2$", "cos(2x)", "2cos(x)"], "correctAnswer": 0, "explanation": "Formule de linéarisation."},
-      {"id": "q3", "question": "$\\sin(2x)$ = :", "options": ["2sin(x)", "$\\sin^2(x)$", "2sin(x)cos(x)", "cos(2x)"], "correctAnswer": 2, "explanation": "Formule de duplication."},
-      {"id": "q4", "question": "$\\cos(-x)$ = :", "options": ["-cos(x)", "cos(x)", "sin(x)", "-sin(x)"], "correctAnswer": 1, "explanation": "Le cosinus est une fonction paire."}
-    ]
+      {
+        "id": "q1",
+        "question": "$\\cos(5\\pi/12) = \\cos(\\pi/4 + \\pi/6)$ = :",
+        "options": [
+          "$(\\sqrt{6}-\\sqrt{2})/4$",
+          "$(\\sqrt{6}+\\sqrt{2})/4$",
+          "$(\\sqrt{3}-1)/2$",
+          "1/2"
+        ],
+        "correctAnswer": 0,
+        "explanation": "cos(a+b) = cos(a)cos(b) - sin(a)sin(b)."
+      },
+      {
+        "id": "q2",
+        "question": "Linéariser $\\cos^2(x)$ donne :",
+        "options": [
+          "$(1+\\cos(2x))/2$",
+          "$(1-\\cos(2x))/2$",
+          "cos(2x)",
+          "2cos(x)"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Formule de linéarisation."
+      },
+      {
+        "id": "q3",
+        "question": "$\\sin(2x)$ = :",
+        "options": [
+          "2sin(x)",
+          "$\\sin^2(x)$",
+          "2sin(x)cos(x)",
+          "cos(2x)"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Formule de duplication."
+      },
+      {
+        "id": "q4",
+        "question": "$\\cos(-x)$ = :",
+        "options": [
+          "-cos(x)",
+          "cos(x)",
+          "sin(x)",
+          "-sin(x)"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Le cosinus est une fonction paire."
+      }
+    ],
+    "difficulty": 2
   },
   {
     "id": "pre-fonctions-trigo",
@@ -1495,11 +2441,56 @@
     "type": "pre",
     "title": "Diagnostic : Fonctions trigonométriques",
     "questions": [
-      {"id": "q1", "question": "La dérivée de $\\sin(x)$ est :", "options": ["-cos(x)", "cos(x)", "sin(x)", "-sin(x)"], "correctAnswer": 1, "explanation": "$(\\sin(x))' = \\cos(x)$."},
-      {"id": "q2", "question": "La période de $\\sin(x)$ est :", "options": ["π", "2π", "π/2", "4π"], "correctAnswer": 1, "explanation": "sin est 2π-périodique."},
-      {"id": "q3", "question": "Les solutions de $\\cos(x) = 1/2$ sur $[0, 2\\pi]$ sont :", "options": ["π/3 seulement", "5π/3 seulement", "π/3 et 5π/3", "2π/3 et 4π/3"], "correctAnswer": 2, "explanation": "cos(x) = 1/2 pour x = ±π/3 + 2kπ."},
-      {"id": "q4", "question": "$\\int \\cos(x) dx$ = :", "options": ["-sin(x) + C", "sin(x) + C", "cos(x) + C", "-cos(x) + C"], "correctAnswer": 1, "explanation": "La primitive de cos est sin."}
-    ]
+      {
+        "id": "q1",
+        "question": "La dérivée de $\\sin(x)$ est :",
+        "options": [
+          "-cos(x)",
+          "cos(x)",
+          "sin(x)",
+          "-sin(x)"
+        ],
+        "correctAnswer": 1,
+        "explanation": "$(\\sin(x))' = \\cos(x)$."
+      },
+      {
+        "id": "q2",
+        "question": "La période de $\\sin(x)$ est :",
+        "options": [
+          "π",
+          "2π",
+          "π/2",
+          "4π"
+        ],
+        "correctAnswer": 1,
+        "explanation": "sin est 2π-périodique."
+      },
+      {
+        "id": "q3",
+        "question": "Les solutions de $\\cos(x) = 1/2$ sur $[0, 2\\pi]$ sont :",
+        "options": [
+          "π/3 seulement",
+          "5π/3 seulement",
+          "π/3 et 5π/3",
+          "2π/3 et 4π/3"
+        ],
+        "correctAnswer": 2,
+        "explanation": "cos(x) = 1/2 pour x = ±π/3 + 2kπ."
+      },
+      {
+        "id": "q4",
+        "question": "$\\int \\cos(x) dx$ = :",
+        "options": [
+          "-sin(x) + C",
+          "sin(x) + C",
+          "cos(x) + C",
+          "-cos(x) + C"
+        ],
+        "correctAnswer": 1,
+        "explanation": "La primitive de cos est sin."
+      }
+    ],
+    "difficulty": 2
   },
   {
     "id": "post-fonctions-trigo",
@@ -1507,11 +2498,56 @@
     "type": "post",
     "title": "Validation : Fonctions trigonométriques",
     "questions": [
-      {"id": "q1", "question": "La dérivée de $\\sin(3x)$ est :", "options": ["cos(3x)", "3cos(3x)", "-3cos(3x)", "cos(x)"], "correctAnswer": 1, "explanation": "Règle de la chaîne : 3cos(3x)."},
-      {"id": "q2", "question": "$\\int \\sin(2x) dx$ = :", "options": ["cos(2x)/2 + C", "-cos(2x)/2 + C", "2cos(2x) + C", "-2cos(2x) + C"], "correctAnswer": 1, "explanation": "∫sin(ax)dx = -cos(ax)/a + C."},
-      {"id": "q3", "question": "La période de $\\sin(2x)$ est :", "options": ["2π", "π", "π/2", "4π"], "correctAnswer": 1, "explanation": "Période = 2π/ω = 2π/2 = π."},
-      {"id": "q4", "question": "$\\tan(x) = \\sin(x)/\\cos(x)$, donc $(\\tan(x))'$ = :", "options": ["$1/\\cos^2(x)$", "$-1/\\sin^2(x)$", "$1 + \\tan^2(x)$", "A et C"], "correctAnswer": 3, "explanation": "(tan)' = 1/cos² = 1 + tan²."}
-    ]
+      {
+        "id": "q1",
+        "question": "La dérivée de $\\sin(3x)$ est :",
+        "options": [
+          "cos(3x)",
+          "3cos(3x)",
+          "-3cos(3x)",
+          "cos(x)"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Règle de la chaîne : 3cos(3x)."
+      },
+      {
+        "id": "q2",
+        "question": "$\\int \\sin(2x) dx$ = :",
+        "options": [
+          "cos(2x)/2 + C",
+          "-cos(2x)/2 + C",
+          "2cos(2x) + C",
+          "-2cos(2x) + C"
+        ],
+        "correctAnswer": 1,
+        "explanation": "∫sin(ax)dx = -cos(ax)/a + C."
+      },
+      {
+        "id": "q3",
+        "question": "La période de $\\sin(2x)$ est :",
+        "options": [
+          "2π",
+          "π",
+          "π/2",
+          "4π"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Période = 2π/ω = 2π/2 = π."
+      },
+      {
+        "id": "q4",
+        "question": "$\\tan(x) = \\sin(x)/\\cos(x)$, donc $(\\tan(x))'$ = :",
+        "options": [
+          "$1/\\cos^2(x)$",
+          "$-1/\\sin^2(x)$",
+          "$1 + \\tan^2(x)$",
+          "A et C"
+        ],
+        "correctAnswer": 3,
+        "explanation": "(tan)' = 1/cos² = 1 + tan²."
+      }
+    ],
+    "difficulty": 3
   },
   {
     "id": "pre-integrales",
@@ -1519,11 +2555,56 @@
     "type": "pre",
     "title": "Diagnostic : Intégrales",
     "questions": [
-      {"id": "q1", "question": "$\\int_0^1 x^2 dx$ = :", "options": ["1/2", "1/3", "1", "2/3"], "correctAnswer": 1, "explanation": "$[x^3/3]_0^1 = 1/3$."},
-      {"id": "q2", "question": "Si $f \\geq 0$, $\\int_a^b f(x)dx$ représente :", "options": ["La dérivée", "L'aire sous la courbe", "La tangente", "Le maximum"], "correctAnswer": 1, "explanation": "Interprétation géométrique de l'intégrale."},
-      {"id": "q3", "question": "$\\int_a^b f + \\int_b^c f$ = :", "options": ["$\\int_a^c f$", "$\\int_b^a f$", "0", "$2\\int_a^b f$"], "correctAnswer": 0, "explanation": "Relation de Chasles."},
-      {"id": "q4", "question": "$\\int_b^a f(x)dx$ = :", "options": ["$\\int_a^b f(x)dx$", "$-\\int_a^b f(x)dx$", "0", "F(a) - F(b)"], "correctAnswer": 1, "explanation": "Inverser les bornes change le signe."}
-    ]
+      {
+        "id": "q1",
+        "question": "$\\int_0^1 x^2 dx$ = :",
+        "options": [
+          "1/2",
+          "1/3",
+          "1",
+          "2/3"
+        ],
+        "correctAnswer": 1,
+        "explanation": "$[x^3/3]_0^1 = 1/3$."
+      },
+      {
+        "id": "q2",
+        "question": "Si $f \\geq 0$, $\\int_a^b f(x)dx$ représente :",
+        "options": [
+          "La dérivée",
+          "L'aire sous la courbe",
+          "La tangente",
+          "Le maximum"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Interprétation géométrique de l'intégrale."
+      },
+      {
+        "id": "q3",
+        "question": "$\\int_a^b f + \\int_b^c f$ = :",
+        "options": [
+          "$\\int_a^c f$",
+          "$\\int_b^a f$",
+          "0",
+          "$2\\int_a^b f$"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Relation de Chasles."
+      },
+      {
+        "id": "q4",
+        "question": "$\\int_b^a f(x)dx$ = :",
+        "options": [
+          "$\\int_a^b f(x)dx$",
+          "$-\\int_a^b f(x)dx$",
+          "0",
+          "F(a) - F(b)"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Inverser les bornes change le signe."
+      }
+    ],
+    "difficulty": 3
   },
   {
     "id": "post-integrales",
@@ -1531,11 +2612,56 @@
     "type": "post",
     "title": "Validation : Intégrales",
     "questions": [
-      {"id": "q1", "question": "$\\int_0^{\\ln 2} e^x dx$ = :", "options": ["1", "2", "e", "e - 1"], "correctAnswer": 0, "explanation": "$[e^x]_0^{\\ln 2} = 2 - 1 = 1$."},
-      {"id": "q2", "question": "La valeur moyenne de f sur [a,b] est :", "options": ["f(b)-f(a)", "$\\int_a^b f/(b-a)$", "(f(a)+f(b))/2", "max f - min f"], "correctAnswer": 1, "explanation": "Définition de la valeur moyenne."},
-      {"id": "q3", "question": "L'aire entre y = x et y = x² sur [0,1] vaut :", "options": ["1/2", "1/3", "1/6", "1/4"], "correctAnswer": 2, "explanation": "$\\int_0^1 (x - x^2)dx = [x^2/2 - x^3/3]_0^1 = 1/6$."},
-      {"id": "q4", "question": "$\\int_0^\\pi \\sin(x) dx$ = :", "options": ["0", "1", "2", "π"], "correctAnswer": 2, "explanation": "$[-\\cos(x)]_0^\\pi = -(-1) - (-1) = 2$."}
-    ]
+      {
+        "id": "q1",
+        "question": "$\\int_0^{\\ln 2} e^x dx$ = :",
+        "options": [
+          "1",
+          "2",
+          "e",
+          "e - 1"
+        ],
+        "correctAnswer": 0,
+        "explanation": "$[e^x]_0^{\\ln 2} = 2 - 1 = 1$."
+      },
+      {
+        "id": "q2",
+        "question": "La valeur moyenne de f sur [a,b] est :",
+        "options": [
+          "f(b)-f(a)",
+          "$\\int_a^b f/(b-a)$",
+          "(f(a)+f(b))/2",
+          "max f - min f"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Définition de la valeur moyenne."
+      },
+      {
+        "id": "q3",
+        "question": "L'aire entre y = x et y = x² sur [0,1] vaut :",
+        "options": [
+          "1/2",
+          "1/3",
+          "1/6",
+          "1/4"
+        ],
+        "correctAnswer": 2,
+        "explanation": "$\\int_0^1 (x - x^2)dx = [x^2/2 - x^3/3]_0^1 = 1/6$."
+      },
+      {
+        "id": "q4",
+        "question": "$\\int_0^\\pi \\sin(x) dx$ = :",
+        "options": [
+          "0",
+          "1",
+          "2",
+          "π"
+        ],
+        "correctAnswer": 2,
+        "explanation": "$[-\\cos(x)]_0^\\pi = -(-1) - (-1) = 2$."
+      }
+    ],
+    "difficulty": 4
   },
   {
     "id": "pre-loi-normale",
@@ -1543,11 +2669,56 @@
     "type": "pre",
     "title": "Diagnostic : Loi normale",
     "questions": [
-      {"id": "q1", "question": "Pour $X \\sim \\mathcal{N}(\\mu, \\sigma^2)$, $E(X)$ = :", "options": ["σ²", "σ", "μ", "0"], "correctAnswer": 2, "explanation": "μ est l'espérance de la loi normale."},
-      {"id": "q2", "question": "Pour centrer-réduire $X \\sim \\mathcal{N}(\\mu, \\sigma^2)$, on pose $Z$ = :", "options": ["X - μ", "(X - μ)/σ", "X/σ", "X - σ"], "correctAnswer": 1, "explanation": "Z = (X - μ)/σ suit N(0, 1)."},
-      {"id": "q3", "question": "La règle des 68-95-99 dit que $P(\\mu-\\sigma \\leq X \\leq \\mu+\\sigma)$ ≈ :", "options": ["68%", "95%", "99%", "50%"], "correctAnswer": 0, "explanation": "Environ 68% dans un écart-type."},
-      {"id": "q4", "question": "$\\mathcal{N}(0, 1)$ est appelée loi normale :", "options": ["Standard", "Centrée réduite", "Binomiale", "A et B"], "correctAnswer": 3, "explanation": "C'est la loi normale centrée réduite (ou standard)."}
-    ]
+      {
+        "id": "q1",
+        "question": "Pour $X \\sim \\mathcal{N}(\\mu, \\sigma^2)$, $E(X)$ = :",
+        "options": [
+          "σ²",
+          "σ",
+          "μ",
+          "0"
+        ],
+        "correctAnswer": 2,
+        "explanation": "μ est l'espérance de la loi normale."
+      },
+      {
+        "id": "q2",
+        "question": "Pour centrer-réduire $X \\sim \\mathcal{N}(\\mu, \\sigma^2)$, on pose $Z$ = :",
+        "options": [
+          "X - μ",
+          "(X - μ)/σ",
+          "X/σ",
+          "X - σ"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Z = (X - μ)/σ suit N(0, 1)."
+      },
+      {
+        "id": "q3",
+        "question": "La règle des 68-95-99 dit que $P(\\mu-\\sigma \\leq X \\leq \\mu+\\sigma)$ ≈ :",
+        "options": [
+          "68%",
+          "95%",
+          "99%",
+          "50%"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Environ 68% dans un écart-type."
+      },
+      {
+        "id": "q4",
+        "question": "$\\mathcal{N}(0, 1)$ est appelée loi normale :",
+        "options": [
+          "Standard",
+          "Centrée réduite",
+          "Binomiale",
+          "A et B"
+        ],
+        "correctAnswer": 3,
+        "explanation": "C'est la loi normale centrée réduite (ou standard)."
+      }
+    ],
+    "difficulty": 3
   },
   {
     "id": "post-loi-normale",
@@ -1555,11 +2726,56 @@
     "type": "post",
     "title": "Validation : Loi normale",
     "questions": [
-      {"id": "q1", "question": "Pour $X \\sim \\mathcal{N}(100, 25)$, σ = :", "options": ["25", "5", "100", "10"], "correctAnswer": 1, "explanation": "σ² = 25 donc σ = 5."},
-      {"id": "q2", "question": "Pour $Z \\sim \\mathcal{N}(0, 1)$, $P(-1.96 \\leq Z \\leq 1.96)$ ≈ :", "options": ["68%", "90%", "95%", "99%"], "correctAnswer": 2, "explanation": "C'est l'intervalle de confiance à 95%."},
-      {"id": "q3", "question": "Si $X \\sim \\mathcal{N}(50, 100)$, $P(X \\leq 60) = P(Z \\leq ...)$ :", "options": ["0.1", "1", "10", "0.6"], "correctAnswer": 1, "explanation": "Z = (60-50)/10 = 1."},
-      {"id": "q4", "question": "La binomiale $\\mathcal{B}(n,p)$ s'approche de $\\mathcal{N}(np, np(1-p))$ si :", "options": ["n petit", "n grand", "p = 0.5", "p proche de 0"], "correctAnswer": 1, "explanation": "Approximation normale pour n grand."}
-    ]
+      {
+        "id": "q1",
+        "question": "Pour $X \\sim \\mathcal{N}(100, 25)$, σ = :",
+        "options": [
+          "25",
+          "5",
+          "100",
+          "10"
+        ],
+        "correctAnswer": 1,
+        "explanation": "σ² = 25 donc σ = 5."
+      },
+      {
+        "id": "q2",
+        "question": "Pour $Z \\sim \\mathcal{N}(0, 1)$, $P(-1.96 \\leq Z \\leq 1.96)$ ≈ :",
+        "options": [
+          "68%",
+          "90%",
+          "95%",
+          "99%"
+        ],
+        "correctAnswer": 2,
+        "explanation": "C'est l'intervalle de confiance à 95%."
+      },
+      {
+        "id": "q3",
+        "question": "Si $X \\sim \\mathcal{N}(50, 100)$, $P(X \\leq 60) = P(Z \\leq ...)$ :",
+        "options": [
+          "0.1",
+          "1",
+          "10",
+          "0.6"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Z = (60-50)/10 = 1."
+      },
+      {
+        "id": "q4",
+        "question": "La binomiale $\\mathcal{B}(n,p)$ s'approche de $\\mathcal{N}(np, np(1-p))$ si :",
+        "options": [
+          "n petit",
+          "n grand",
+          "p = 0.5",
+          "p proche de 0"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Approximation normale pour n grand."
+      }
+    ],
+    "difficulty": 4
   },
   {
     "id": "pre-complexes-formes",
@@ -1567,11 +2783,56 @@
     "type": "pre",
     "title": "Diagnostic : Formes des complexes",
     "questions": [
-      {"id": "q1", "question": "La forme exponentielle de z utilise :", "options": ["z = a + ib", "z = re^{iθ}", "z = r(cos θ + i sin θ)", "B et C"], "correctAnswer": 3, "explanation": "Formes trigonométrique et exponentielle."},
-      {"id": "q2", "question": "Le module de $1 + i$ est :", "options": ["1", "2", "$\\sqrt{2}$", "i"], "correctAnswer": 2, "explanation": "|1+i| = √(1² + 1²) = √2."},
-      {"id": "q3", "question": "$e^{i\\pi}$ = :", "options": ["1", "-1", "i", "-i"], "correctAnswer": 1, "explanation": "Identité d'Euler."},
-      {"id": "q4", "question": "L'argument de -1 est :", "options": ["0", "π/2", "π", "2π"], "correctAnswer": 2, "explanation": "-1 = e^{iπ}, donc arg(-1) = π."}
-    ]
+      {
+        "id": "q1",
+        "question": "La forme exponentielle de z utilise :",
+        "options": [
+          "z = a + ib",
+          "z = re^{iθ}",
+          "z = r(cos θ + i sin θ)",
+          "B et C"
+        ],
+        "correctAnswer": 3,
+        "explanation": "Formes trigonométrique et exponentielle."
+      },
+      {
+        "id": "q2",
+        "question": "Le module de $1 + i$ est :",
+        "options": [
+          "1",
+          "2",
+          "$\\sqrt{2}$",
+          "i"
+        ],
+        "correctAnswer": 2,
+        "explanation": "|1+i| = √(1² + 1²) = √2."
+      },
+      {
+        "id": "q3",
+        "question": "$e^{i\\pi}$ = :",
+        "options": [
+          "1",
+          "-1",
+          "i",
+          "-i"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Identité d'Euler."
+      },
+      {
+        "id": "q4",
+        "question": "L'argument de -1 est :",
+        "options": [
+          "0",
+          "π/2",
+          "π",
+          "2π"
+        ],
+        "correctAnswer": 2,
+        "explanation": "-1 = e^{iπ}, donc arg(-1) = π."
+      }
+    ],
+    "difficulty": 3
   },
   {
     "id": "post-complexes-formes",
@@ -1579,11 +2840,56 @@
     "type": "post",
     "title": "Validation : Formes des complexes",
     "questions": [
-      {"id": "q1", "question": "$(1 + i)^8$ = :", "options": ["16", "-16", "16i", "-16i"], "correctAnswer": 0, "explanation": "$1+i = \\sqrt{2} e^{i\\pi/4}$, donc $(1+i)^8 = 16 e^{2i\\pi} = 16$."},
-      {"id": "q2", "question": "Les racines cubiques de 1 forment :", "options": ["Une droite", "Un triangle équilatéral", "Un carré", "Un pentagone"], "correctAnswer": 1, "explanation": "3 racines régulièrement espacées sur le cercle."},
-      {"id": "q3", "question": "$\\cos \\theta = (e^{i\\theta} + e^{-i\\theta})/...$ :", "options": ["1", "2", "i", "2i"], "correctAnswer": 1, "explanation": "Formule d'Euler pour le cosinus."},
-      {"id": "q4", "question": "Par Moivre, $(\\cos \\theta + i \\sin \\theta)^n$ = :", "options": ["$\\cos(n\\theta) + i \\sin(n\\theta)$", "$n \\cos \\theta + ni \\sin \\theta$", "$\\cos^n\\theta + i \\sin^n\\theta$", "$e^{n\\theta}$"], "correctAnswer": 0, "explanation": "Formule de Moivre."}
-    ]
+      {
+        "id": "q1",
+        "question": "$(1 + i)^8$ = :",
+        "options": [
+          "16",
+          "-16",
+          "16i",
+          "-16i"
+        ],
+        "correctAnswer": 0,
+        "explanation": "$1+i = \\sqrt{2} e^{i\\pi/4}$, donc $(1+i)^8 = 16 e^{2i\\pi} = 16$."
+      },
+      {
+        "id": "q2",
+        "question": "Les racines cubiques de 1 forment :",
+        "options": [
+          "Une droite",
+          "Un triangle équilatéral",
+          "Un carré",
+          "Un pentagone"
+        ],
+        "correctAnswer": 1,
+        "explanation": "3 racines régulièrement espacées sur le cercle."
+      },
+      {
+        "id": "q3",
+        "question": "$\\cos \\theta = (e^{i\\theta} + e^{-i\\theta})/...$ :",
+        "options": [
+          "1",
+          "2",
+          "i",
+          "2i"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Formule d'Euler pour le cosinus."
+      },
+      {
+        "id": "q4",
+        "question": "Par Moivre, $(\\cos \\theta + i \\sin \\theta)^n$ = :",
+        "options": [
+          "$\\cos(n\\theta) + i \\sin(n\\theta)$",
+          "$n \\cos \\theta + ni \\sin \\theta$",
+          "$\\cos^n\\theta + i \\sin^n\\theta$",
+          "$e^{n\\theta}$"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Formule de Moivre."
+      }
+    ],
+    "difficulty": 4
   },
   {
     "id": "pre-matrices-systemes",
@@ -1591,11 +2897,56 @@
     "type": "pre",
     "title": "Diagnostic : Systèmes linéaires",
     "questions": [
-      {"id": "q1", "question": "Le système AX = B a une unique solution si :", "options": ["A est carrée", "det(A) ≠ 0", "B = 0", "A = I"], "correctAnswer": 1, "explanation": "A doit être inversible."},
-      {"id": "q2", "question": "Pour $A = \\begin{pmatrix}a&b\\\\c&d\\end{pmatrix}$, det(A) = :", "options": ["a + d", "ac - bd", "ad - bc", "ad + bc"], "correctAnswer": 2, "explanation": "Formule du déterminant 2×2."},
-      {"id": "q3", "question": "Si det(A) = 0, le système AX = B :", "options": ["A une unique solution", "N'a pas de solution", "A 0 ou ∞ solutions", "Est impossible"], "correctAnswer": 2, "explanation": "Matrice singulière : 0 ou infinité de solutions."},
-      {"id": "q4", "question": "La solution de AX = B est X = :", "options": ["$A^{-1}B$", "$BA^{-1}$", "B/A", "A - B"], "correctAnswer": 0, "explanation": "On multiplie par $A^{-1}$ à gauche."}
-    ]
+      {
+        "id": "q1",
+        "question": "Le système AX = B a une unique solution si :",
+        "options": [
+          "A est carrée",
+          "det(A) ≠ 0",
+          "B = 0",
+          "A = I"
+        ],
+        "correctAnswer": 1,
+        "explanation": "A doit être inversible."
+      },
+      {
+        "id": "q2",
+        "question": "Pour $A = \\begin{pmatrix}a&b\\\\c&d\\end{pmatrix}$, det(A) = :",
+        "options": [
+          "a + d",
+          "ac - bd",
+          "ad - bc",
+          "ad + bc"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Formule du déterminant 2×2."
+      },
+      {
+        "id": "q3",
+        "question": "Si det(A) = 0, le système AX = B :",
+        "options": [
+          "A une unique solution",
+          "N'a pas de solution",
+          "A 0 ou ∞ solutions",
+          "Est impossible"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Matrice singulière : 0 ou infinité de solutions."
+      },
+      {
+        "id": "q4",
+        "question": "La solution de AX = B est X = :",
+        "options": [
+          "$A^{-1}B$",
+          "$BA^{-1}$",
+          "B/A",
+          "A - B"
+        ],
+        "correctAnswer": 0,
+        "explanation": "On multiplie par $A^{-1}$ à gauche."
+      }
+    ],
+    "difficulty": 3
   },
   {
     "id": "post-matrices-systemes",
@@ -1603,11 +2954,56 @@
     "type": "post",
     "title": "Validation : Systèmes linéaires",
     "questions": [
-      {"id": "q1", "question": "L'inverse de $\\begin{pmatrix}2&1\\\\5&3\\end{pmatrix}$ est :", "options": ["$\\begin{pmatrix}3&-1\\\\-5&2\\end{pmatrix}$", "$\\begin{pmatrix}-3&1\\\\5&-2\\end{pmatrix}$", "$\\begin{pmatrix}3&1\\\\5&2\\end{pmatrix}$", "N'existe pas"], "correctAnswer": 0, "explanation": "det = 1, inverse = $\\begin{pmatrix}3&-1\\\\-5&2\\end{pmatrix}$."},
-      {"id": "q2", "question": "Après pivot de Gauss, une ligne 0 = c (c≠0) signifie :", "options": ["Solution unique", "Infinité de solutions", "Aucune solution", "Erreur de calcul"], "correctAnswer": 2, "explanation": "C'est une contradiction."},
-      {"id": "q3", "question": "$\\det\\begin{pmatrix}1&2&3\\\\4&5&6\\\\7&8&9\\end{pmatrix}$ = :", "options": ["0", "1", "-1", "3"], "correctAnswer": 0, "explanation": "Les lignes sont liées (L3 = 2L2 - L1)."},
-      {"id": "q4", "question": "Formules de Cramer : x = det(.)/det(A) où . est A avec :", "options": ["Colonne de B ajoutée", "Colonne de x remplacée par B", "Ligne supprimée", "Transposée"], "correctAnswer": 1, "explanation": "On remplace la colonne de l'inconnue par B."}
-    ]
+      {
+        "id": "q1",
+        "question": "L'inverse de $\\begin{pmatrix}2&1\\\\5&3\\end{pmatrix}$ est :",
+        "options": [
+          "$\\begin{pmatrix}3&-1\\\\-5&2\\end{pmatrix}$",
+          "$\\begin{pmatrix}-3&1\\\\5&-2\\end{pmatrix}$",
+          "$\\begin{pmatrix}3&1\\\\5&2\\end{pmatrix}$",
+          "N'existe pas"
+        ],
+        "correctAnswer": 0,
+        "explanation": "det = 1, inverse = $\\begin{pmatrix}3&-1\\\\-5&2\\end{pmatrix}$."
+      },
+      {
+        "id": "q2",
+        "question": "Après pivot de Gauss, une ligne 0 = c (c≠0) signifie :",
+        "options": [
+          "Solution unique",
+          "Infinité de solutions",
+          "Aucune solution",
+          "Erreur de calcul"
+        ],
+        "correctAnswer": 2,
+        "explanation": "C'est une contradiction."
+      },
+      {
+        "id": "q3",
+        "question": "$\\det\\begin{pmatrix}1&2&3\\\\4&5&6\\\\7&8&9\\end{pmatrix}$ = :",
+        "options": [
+          "0",
+          "1",
+          "-1",
+          "3"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Les lignes sont liées (L3 = 2L2 - L1)."
+      },
+      {
+        "id": "q4",
+        "question": "Formules de Cramer : x = det(.)/det(A) où . est A avec :",
+        "options": [
+          "Colonne de B ajoutée",
+          "Colonne de x remplacée par B",
+          "Ligne supprimée",
+          "Transposée"
+        ],
+        "correctAnswer": 1,
+        "explanation": "On remplace la colonne de l'inconnue par B."
+      }
+    ],
+    "difficulty": 4
   },
   {
     "id": "pre-graphes-introduction",
@@ -1615,11 +3011,56 @@
     "type": "pre",
     "title": "Diagnostic : Introduction aux graphes",
     "questions": [
-      {"id": "q1", "question": "Un graphe est constitué de :", "options": ["Points et segments", "Sommets et arêtes", "Noeuds et liens", "Toutes ces réponses"], "correctAnswer": 3, "explanation": "Différentes terminologies pour la même chose."},
-      {"id": "q2", "question": "Le degré d'un sommet est :", "options": ["Son numéro", "Le nombre de ses voisins", "Le nombre d'arêtes incidentes", "B et C"], "correctAnswer": 3, "explanation": "Nombre de voisins = nombre d'arêtes touchant le sommet."},
-      {"id": "q3", "question": "La somme des degrés vaut :", "options": ["Le nombre de sommets", "Le nombre d'arêtes", "2 × nombre d'arêtes", "Le nombre de cycles"], "correctAnswer": 2, "explanation": "Théorème des poignées de main."},
-      {"id": "q4", "question": "Un graphe connexe permet d'aller :", "options": ["Du premier au dernier sommet", "De tout sommet à tout autre", "Du sommet 1 au sommet 2", "Nulle part"], "correctAnswer": 1, "explanation": "Définition de la connexité."}
-    ]
+      {
+        "id": "q1",
+        "question": "Un graphe est constitué de :",
+        "options": [
+          "Points et segments",
+          "Sommets et arêtes",
+          "Noeuds et liens",
+          "Toutes ces réponses"
+        ],
+        "correctAnswer": 3,
+        "explanation": "Différentes terminologies pour la même chose."
+      },
+      {
+        "id": "q2",
+        "question": "Le degré d'un sommet est :",
+        "options": [
+          "Son numéro",
+          "Le nombre de ses voisins",
+          "Le nombre d'arêtes incidentes",
+          "B et C"
+        ],
+        "correctAnswer": 3,
+        "explanation": "Nombre de voisins = nombre d'arêtes touchant le sommet."
+      },
+      {
+        "id": "q3",
+        "question": "La somme des degrés vaut :",
+        "options": [
+          "Le nombre de sommets",
+          "Le nombre d'arêtes",
+          "2 × nombre d'arêtes",
+          "Le nombre de cycles"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Théorème des poignées de main."
+      },
+      {
+        "id": "q4",
+        "question": "Un graphe connexe permet d'aller :",
+        "options": [
+          "Du premier au dernier sommet",
+          "De tout sommet à tout autre",
+          "Du sommet 1 au sommet 2",
+          "Nulle part"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Définition de la connexité."
+      }
+    ],
+    "difficulty": 2
   },
   {
     "id": "post-graphes-introduction",
@@ -1627,11 +3068,56 @@
     "type": "post",
     "title": "Validation : Introduction aux graphes",
     "questions": [
-      {"id": "q1", "question": "Un arbre à n sommets a ... arêtes :", "options": ["n", "n - 1", "n + 1", "2n"], "correctAnswer": 1, "explanation": "Propriété fondamentale des arbres."},
-      {"id": "q2", "question": "Dans $K_5$ (complet à 5 sommets), le nombre d'arêtes est :", "options": ["5", "10", "20", "25"], "correctAnswer": 1, "explanation": "C(5,2) = 5×4/2 = 10."},
-      {"id": "q3", "question": "La matrice d'adjacence d'un graphe non orienté est :", "options": ["Triangulaire", "Symétrique", "Diagonale", "Nulle"], "correctAnswer": 1, "explanation": "$M_{ij} = M_{ji}$ car arête = arête."},
-      {"id": "q4", "question": "Le nombre de sommets de degré impair est toujours :", "options": ["Impair", "Pair", "Nul", "Égal à n"], "correctAnswer": 1, "explanation": "Conséquence du théorème des poignées de main."}
-    ]
+      {
+        "id": "q1",
+        "question": "Un arbre à n sommets a ... arêtes :",
+        "options": [
+          "n",
+          "n - 1",
+          "n + 1",
+          "2n"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Propriété fondamentale des arbres."
+      },
+      {
+        "id": "q2",
+        "question": "Dans $K_5$ (complet à 5 sommets), le nombre d'arêtes est :",
+        "options": [
+          "5",
+          "10",
+          "20",
+          "25"
+        ],
+        "correctAnswer": 1,
+        "explanation": "C(5,2) = 5×4/2 = 10."
+      },
+      {
+        "id": "q3",
+        "question": "La matrice d'adjacence d'un graphe non orienté est :",
+        "options": [
+          "Triangulaire",
+          "Symétrique",
+          "Diagonale",
+          "Nulle"
+        ],
+        "correctAnswer": 1,
+        "explanation": "$M_{ij} = M_{ji}$ car arête = arête."
+      },
+      {
+        "id": "q4",
+        "question": "Le nombre de sommets de degré impair est toujours :",
+        "options": [
+          "Impair",
+          "Pair",
+          "Nul",
+          "Égal à n"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Conséquence du théorème des poignées de main."
+      }
+    ],
+    "difficulty": 3
   },
   {
     "id": "pre-graphes-parcours",
@@ -1639,11 +3125,56 @@
     "type": "pre",
     "title": "Diagnostic : Parcours de graphes",
     "questions": [
-      {"id": "q1", "question": "BFS utilise une :", "options": ["Pile", "File", "Liste", "Arbre"], "correctAnswer": 1, "explanation": "Breadth-First Search = file (FIFO)."},
-      {"id": "q2", "question": "DFS utilise une :", "options": ["Pile", "File", "Liste", "Arbre"], "correctAnswer": 0, "explanation": "Depth-First Search = pile (LIFO) ou récursion."},
-      {"id": "q3", "question": "Un cycle eulérien passe par toutes les :", "options": ["Arêtes une fois", "Sommets une fois", "Arêtes et sommets", "Rien de spécial"], "correctAnswer": 0, "explanation": "Eulérien = chaque arête exactement une fois."},
-      {"id": "q4", "question": "Un cycle hamiltonien passe par tous les :", "options": ["Arêtes une fois", "Sommets une fois", "Arêtes et sommets", "Rien de spécial"], "correctAnswer": 1, "explanation": "Hamiltonien = chaque sommet exactement une fois."}
-    ]
+      {
+        "id": "q1",
+        "question": "BFS utilise une :",
+        "options": [
+          "Pile",
+          "File",
+          "Liste",
+          "Arbre"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Breadth-First Search = file (FIFO)."
+      },
+      {
+        "id": "q2",
+        "question": "DFS utilise une :",
+        "options": [
+          "Pile",
+          "File",
+          "Liste",
+          "Arbre"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Depth-First Search = pile (LIFO) ou récursion."
+      },
+      {
+        "id": "q3",
+        "question": "Un cycle eulérien passe par toutes les :",
+        "options": [
+          "Arêtes une fois",
+          "Sommets une fois",
+          "Arêtes et sommets",
+          "Rien de spécial"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Eulérien = chaque arête exactement une fois."
+      },
+      {
+        "id": "q4",
+        "question": "Un cycle hamiltonien passe par tous les :",
+        "options": [
+          "Arêtes une fois",
+          "Sommets une fois",
+          "Arêtes et sommets",
+          "Rien de spécial"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Hamiltonien = chaque sommet exactement une fois."
+      }
+    ],
+    "difficulty": 3
   },
   {
     "id": "post-graphes-parcours",
@@ -1651,11 +3182,56 @@
     "type": "post",
     "title": "Validation : Parcours de graphes",
     "questions": [
-      {"id": "q1", "question": "Un graphe connexe a un cycle eulérien ssi :", "options": ["Il a 2 sommets de degré impair", "Tous les degrés sont pairs", "Il a au moins un cycle", "Il est complet"], "correctAnswer": 1, "explanation": "Théorème d'Euler."},
-      {"id": "q2", "question": "BFS trouve le plus court chemin en :", "options": ["Nombre d'arêtes", "Poids total", "Temps", "Tous les cas"], "correctAnswer": 0, "explanation": "BFS = plus court en nombre d'arêtes (non pondéré)."},
-      {"id": "q3", "question": "Les 7 ponts de Königsberg n'ont pas de solution car :", "options": ["Plus de 2 sommets ont un degré impair", "Le graphe n'est pas connexe", "Il y a trop de ponts", "Les degrés sont tous pairs"], "correctAnswer": 0, "explanation": "4 sommets de degré impair : pas de chemin eulérien."},
-      {"id": "q4", "question": "DFS permet de détecter les :", "options": ["Plus courts chemins", "Cycles", "Arbres couvrants", "B et C"], "correctAnswer": 3, "explanation": "DFS détecte les cycles et construit des arbres."}
-    ]
+      {
+        "id": "q1",
+        "question": "Un graphe connexe a un cycle eulérien ssi :",
+        "options": [
+          "Il a 2 sommets de degré impair",
+          "Tous les degrés sont pairs",
+          "Il a au moins un cycle",
+          "Il est complet"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Théorème d'Euler."
+      },
+      {
+        "id": "q2",
+        "question": "BFS trouve le plus court chemin en :",
+        "options": [
+          "Nombre d'arêtes",
+          "Poids total",
+          "Temps",
+          "Tous les cas"
+        ],
+        "correctAnswer": 0,
+        "explanation": "BFS = plus court en nombre d'arêtes (non pondéré)."
+      },
+      {
+        "id": "q3",
+        "question": "Les 7 ponts de Königsberg n'ont pas de solution car :",
+        "options": [
+          "Plus de 2 sommets ont un degré impair",
+          "Le graphe n'est pas connexe",
+          "Il y a trop de ponts",
+          "Les degrés sont tous pairs"
+        ],
+        "correctAnswer": 0,
+        "explanation": "4 sommets de degré impair : pas de chemin eulérien."
+      },
+      {
+        "id": "q4",
+        "question": "DFS permet de détecter les :",
+        "options": [
+          "Plus courts chemins",
+          "Cycles",
+          "Arbres couvrants",
+          "B et C"
+        ],
+        "correctAnswer": 3,
+        "explanation": "DFS détecte les cycles et construit des arbres."
+      }
+    ],
+    "difficulty": 4
   },
   {
     "id": "pre-vecteurs-espace",
@@ -1663,11 +3239,56 @@
     "type": "pre",
     "title": "Diagnostic : Vecteurs dans l'espace",
     "questions": [
-      {"id": "q1", "question": "Dans l'espace, un point est repéré par :", "options": ["2 coordonnées", "3 coordonnées", "4 coordonnées", "1 coordonnée"], "correctAnswer": 1, "explanation": "Dans l'espace 3D, on utilise les coordonnées (x, y, z)."},
-      {"id": "q2", "question": "Si $A(1, 2, 3)$ et $B(4, 5, 6)$, alors $\\overrightarrow{AB}$ a pour coordonnées :", "options": ["$(5, 7, 9)$", "$(3, 3, 3)$", "$(-3, -3, -3)$", "$(4, 10, 18)$"], "correctAnswer": 1, "explanation": "$\\overrightarrow{AB} = (x_B - x_A, y_B - y_A, z_B - z_A) = (3, 3, 3)$."},
-      {"id": "q3", "question": "La norme du vecteur $\\vec{u}(1, 2, 2)$ vaut :", "options": ["$5$", "$3$", "$9$", "$\\sqrt{5}$"], "correctAnswer": 1, "explanation": "$\\|\\vec{u}\\| = \\sqrt{1^2 + 2^2 + 2^2} = \\sqrt{9} = 3$."},
-      {"id": "q4", "question": "Deux vecteurs colinéaires ont :", "options": ["La même norme", "La même direction", "Les mêmes coordonnées", "Le même sens"], "correctAnswer": 1, "explanation": "Colinéaires signifie même direction (mais pas forcément même sens ou norme)."}
-    ]
+      {
+        "id": "q1",
+        "question": "Dans l'espace, un point est repéré par :",
+        "options": [
+          "2 coordonnées",
+          "3 coordonnées",
+          "4 coordonnées",
+          "1 coordonnée"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Dans l'espace 3D, on utilise les coordonnées (x, y, z)."
+      },
+      {
+        "id": "q2",
+        "question": "Si $A(1, 2, 3)$ et $B(4, 5, 6)$, alors $\\overrightarrow{AB}$ a pour coordonnées :",
+        "options": [
+          "$(5, 7, 9)$",
+          "$(3, 3, 3)$",
+          "$(-3, -3, -3)$",
+          "$(4, 10, 18)$"
+        ],
+        "correctAnswer": 1,
+        "explanation": "$\\overrightarrow{AB} = (x_B - x_A, y_B - y_A, z_B - z_A) = (3, 3, 3)$."
+      },
+      {
+        "id": "q3",
+        "question": "La norme du vecteur $\\vec{u}(1, 2, 2)$ vaut :",
+        "options": [
+          "$5$",
+          "$3$",
+          "$9$",
+          "$\\sqrt{5}$"
+        ],
+        "correctAnswer": 1,
+        "explanation": "$\\|\\vec{u}\\| = \\sqrt{1^2 + 2^2 + 2^2} = \\sqrt{9} = 3$."
+      },
+      {
+        "id": "q4",
+        "question": "Deux vecteurs colinéaires ont :",
+        "options": [
+          "La même norme",
+          "La même direction",
+          "Les mêmes coordonnées",
+          "Le même sens"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Colinéaires signifie même direction (mais pas forcément même sens ou norme)."
+      }
+    ],
+    "difficulty": 2
   },
   {
     "id": "post-vecteurs-espace",
@@ -1675,12 +3296,68 @@
     "type": "post",
     "title": "Validation : Vecteurs dans l'espace",
     "questions": [
-      {"id": "q1", "question": "Le milieu de $[A(2, 4, 6), B(4, 2, 0)]$ a pour coordonnées :", "options": ["$(3, 3, 3)$", "$(6, 6, 6)$", "$(1, 1, 3)$", "$(2, 2, 6)$"], "correctAnswer": 0, "explanation": "Milieu : $((2+4)/2, (4+2)/2, (6+0)/2) = (3, 3, 3)$."},
-      {"id": "q2", "question": "Pour que $\\vec{u}(2, -4, 6)$ et $\\vec{v}(-1, a, -3)$ soient colinéaires, $a$ vaut :", "options": ["$-2$", "$2$", "$4$", "$-4$"], "correctAnswer": 1, "explanation": "$\\vec{v} = -\\frac{1}{2}\\vec{u}$ donc $a = -\\frac{1}{2} \\times (-4) = 2$."},
-      {"id": "q3", "question": "Le déterminant de trois vecteurs coplanaires vaut :", "options": ["$1$", "$-1$", "$0$", "Leur produit"], "correctAnswer": 2, "explanation": "Trois vecteurs sont coplanaires ssi leur déterminant est nul."},
-      {"id": "q4", "question": "La distance $AB$ avec $A(1, 0, 0)$ et $B(0, 1, 1)$ vaut :", "options": ["$\\sqrt{2}$", "$\\sqrt{3}$", "$2$", "$3$"], "correctAnswer": 1, "explanation": "$AB = \\sqrt{1 + 1 + 1} = \\sqrt{3}$."},
-      {"id": "q5", "question": "Si $\\det(\\vec{u}, \\vec{v}, \\vec{w}) \\neq 0$, les vecteurs sont :", "options": ["Colinéaires", "Coplanaires", "Non coplanaires", "Nuls"], "correctAnswer": 2, "explanation": "Un déterminant non nul indique que les vecteurs forment une base de l'espace."}
-    ]
+      {
+        "id": "q1",
+        "question": "Le milieu de $[A(2, 4, 6), B(4, 2, 0)]$ a pour coordonnées :",
+        "options": [
+          "$(3, 3, 3)$",
+          "$(6, 6, 6)$",
+          "$(1, 1, 3)$",
+          "$(2, 2, 6)$"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Milieu : $((2+4)/2, (4+2)/2, (6+0)/2) = (3, 3, 3)$."
+      },
+      {
+        "id": "q2",
+        "question": "Pour que $\\vec{u}(2, -4, 6)$ et $\\vec{v}(-1, a, -3)$ soient colinéaires, $a$ vaut :",
+        "options": [
+          "$-2$",
+          "$2$",
+          "$4$",
+          "$-4$"
+        ],
+        "correctAnswer": 1,
+        "explanation": "$\\vec{v} = -\\frac{1}{2}\\vec{u}$ donc $a = -\\frac{1}{2} \\times (-4) = 2$."
+      },
+      {
+        "id": "q3",
+        "question": "Le déterminant de trois vecteurs coplanaires vaut :",
+        "options": [
+          "$1$",
+          "$-1$",
+          "$0$",
+          "Leur produit"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Trois vecteurs sont coplanaires ssi leur déterminant est nul."
+      },
+      {
+        "id": "q4",
+        "question": "La distance $AB$ avec $A(1, 0, 0)$ et $B(0, 1, 1)$ vaut :",
+        "options": [
+          "$\\sqrt{2}$",
+          "$\\sqrt{3}$",
+          "$2$",
+          "$3$"
+        ],
+        "correctAnswer": 1,
+        "explanation": "$AB = \\sqrt{1 + 1 + 1} = \\sqrt{3}$."
+      },
+      {
+        "id": "q5",
+        "question": "Si $\\det(\\vec{u}, \\vec{v}, \\vec{w}) \\neq 0$, les vecteurs sont :",
+        "options": [
+          "Colinéaires",
+          "Coplanaires",
+          "Non coplanaires",
+          "Nuls"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Un déterminant non nul indique que les vecteurs forment une base de l'espace."
+      }
+    ],
+    "difficulty": 3
   },
   {
     "id": "pre-produit-scalaire-espace",
@@ -1688,11 +3365,56 @@
     "type": "pre",
     "title": "Diagnostic : Produit scalaire dans l'espace",
     "questions": [
-      {"id": "q1", "question": "Le produit scalaire de deux vecteurs donne :", "options": ["Un vecteur", "Un nombre réel", "Une matrice", "Un point"], "correctAnswer": 1, "explanation": "Le produit scalaire est un scalaire (nombre réel)."},
-      {"id": "q2", "question": "Si $\\vec{u} \\cdot \\vec{v} = 0$, les vecteurs sont :", "options": ["Colinéaires", "Orthogonaux", "De même norme", "Égaux"], "correctAnswer": 1, "explanation": "Le produit scalaire nul caractérise l'orthogonalité."},
-      {"id": "q3", "question": "$\\vec{u}(1, 2, 3) \\cdot \\vec{v}(4, 5, 6)$ vaut :", "options": ["$15$", "$32$", "$21$", "$27$"], "correctAnswer": 1, "explanation": "$1×4 + 2×5 + 3×6 = 4 + 10 + 18 = 32$."},
-      {"id": "q4", "question": "$\\|\\vec{u}\\|^2$ est égal à :", "options": ["$\\vec{u} \\cdot \\vec{u}$", "$2\\vec{u}$", "$\\vec{u}^2$", "$\\sqrt{\\vec{u}}$"], "correctAnswer": 0, "explanation": "Par définition, $\\vec{u} \\cdot \\vec{u} = \\|\\vec{u}\\|^2$."}
-    ]
+      {
+        "id": "q1",
+        "question": "Le produit scalaire de deux vecteurs donne :",
+        "options": [
+          "Un vecteur",
+          "Un nombre réel",
+          "Une matrice",
+          "Un point"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Le produit scalaire est un scalaire (nombre réel)."
+      },
+      {
+        "id": "q2",
+        "question": "Si $\\vec{u} \\cdot \\vec{v} = 0$, les vecteurs sont :",
+        "options": [
+          "Colinéaires",
+          "Orthogonaux",
+          "De même norme",
+          "Égaux"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Le produit scalaire nul caractérise l'orthogonalité."
+      },
+      {
+        "id": "q3",
+        "question": "$\\vec{u}(1, 2, 3) \\cdot \\vec{v}(4, 5, 6)$ vaut :",
+        "options": [
+          "$15$",
+          "$32$",
+          "$21$",
+          "$27$"
+        ],
+        "correctAnswer": 1,
+        "explanation": "$1×4 + 2×5 + 3×6 = 4 + 10 + 18 = 32$."
+      },
+      {
+        "id": "q4",
+        "question": "$\\|\\vec{u}\\|^2$ est égal à :",
+        "options": [
+          "$\\vec{u} \\cdot \\vec{u}$",
+          "$2\\vec{u}$",
+          "$\\vec{u}^2$",
+          "$\\sqrt{\\vec{u}}$"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Par définition, $\\vec{u} \\cdot \\vec{u} = \\|\\vec{u}\\|^2$."
+      }
+    ],
+    "difficulty": 2
   },
   {
     "id": "post-produit-scalaire-espace",
@@ -1700,12 +3422,68 @@
     "type": "post",
     "title": "Validation : Produit scalaire dans l'espace",
     "questions": [
-      {"id": "q1", "question": "L'angle entre $\\vec{u}(1, 0, 0)$ et $\\vec{v}(0, 1, 0)$ vaut :", "options": ["$0$", "$\\frac{\\pi}{4}$", "$\\frac{\\pi}{2}$", "$\\pi$"], "correctAnswer": 2, "explanation": "$\\vec{u} \\cdot \\vec{v} = 0$ donc $\\cos\\theta = 0$ donc $\\theta = \\frac{\\pi}{2}$."},
-      {"id": "q2", "question": "Si $\\vec{u} \\cdot \\vec{v} < 0$, l'angle entre eux est :", "options": ["Aigu", "Droit", "Obtus", "Plat"], "correctAnswer": 2, "explanation": "$\\cos\\theta < 0$ signifie $\\theta > \\frac{\\pi}{2}$, angle obtus."},
-      {"id": "q3", "question": "La projection de $\\vec{u}$ sur $\\vec{v}$ est un vecteur :", "options": ["Perpendiculaire à $\\vec{v}$", "Colinéaire à $\\vec{v}$", "Égal à $\\vec{u}$", "De norme 1"], "correctAnswer": 1, "explanation": "La projection sur $\\vec{v}$ est colinéaire à $\\vec{v}$."},
-      {"id": "q4", "question": "$\\vec{u}(1, 1, 1) \\cdot \\vec{v}(1, -1, 0)$ vaut :", "options": ["$2$", "$0$", "$1$", "$-1$"], "correctAnswer": 1, "explanation": "$1×1 + 1×(-1) + 1×0 = 1 - 1 + 0 = 0$. Ils sont orthogonaux."},
-      {"id": "q5", "question": "$\\cos\\theta = \\frac{\\vec{u} \\cdot \\vec{v}}{\\|\\vec{u}\\| \\|\\vec{v}\\|}$ donne pour $\\vec{u}(1,0,1)$ et $\\vec{v}(0,1,1)$ :", "options": ["$\\frac{1}{2}$", "$\\frac{1}{\\sqrt{2}}$", "$\\frac{\\sqrt{2}}{2}$", "$\\frac{1}{4}$"], "correctAnswer": 0, "explanation": "$\\vec{u}\\cdot\\vec{v}=1$, $\\|\\vec{u}\\|=\\|\\vec{v}\\|=\\sqrt{2}$, donc $\\cos\\theta = \\frac{1}{2}$."}
-    ]
+      {
+        "id": "q1",
+        "question": "L'angle entre $\\vec{u}(1, 0, 0)$ et $\\vec{v}(0, 1, 0)$ vaut :",
+        "options": [
+          "$0$",
+          "$\\frac{\\pi}{4}$",
+          "$\\frac{\\pi}{2}$",
+          "$\\pi$"
+        ],
+        "correctAnswer": 2,
+        "explanation": "$\\vec{u} \\cdot \\vec{v} = 0$ donc $\\cos\\theta = 0$ donc $\\theta = \\frac{\\pi}{2}$."
+      },
+      {
+        "id": "q2",
+        "question": "Si $\\vec{u} \\cdot \\vec{v} < 0$, l'angle entre eux est :",
+        "options": [
+          "Aigu",
+          "Droit",
+          "Obtus",
+          "Plat"
+        ],
+        "correctAnswer": 2,
+        "explanation": "$\\cos\\theta < 0$ signifie $\\theta > \\frac{\\pi}{2}$, angle obtus."
+      },
+      {
+        "id": "q3",
+        "question": "La projection de $\\vec{u}$ sur $\\vec{v}$ est un vecteur :",
+        "options": [
+          "Perpendiculaire à $\\vec{v}$",
+          "Colinéaire à $\\vec{v}$",
+          "Égal à $\\vec{u}$",
+          "De norme 1"
+        ],
+        "correctAnswer": 1,
+        "explanation": "La projection sur $\\vec{v}$ est colinéaire à $\\vec{v}$."
+      },
+      {
+        "id": "q4",
+        "question": "$\\vec{u}(1, 1, 1) \\cdot \\vec{v}(1, -1, 0)$ vaut :",
+        "options": [
+          "$2$",
+          "$0$",
+          "$1$",
+          "$-1$"
+        ],
+        "correctAnswer": 1,
+        "explanation": "$1×1 + 1×(-1) + 1×0 = 1 - 1 + 0 = 0$. Ils sont orthogonaux."
+      },
+      {
+        "id": "q5",
+        "question": "$\\cos\\theta = \\frac{\\vec{u} \\cdot \\vec{v}}{\\|\\vec{u}\\| \\|\\vec{v}\\|}$ donne pour $\\vec{u}(1,0,1)$ et $\\vec{v}(0,1,1)$ :",
+        "options": [
+          "$\\frac{1}{2}$",
+          "$\\frac{1}{\\sqrt{2}}$",
+          "$\\frac{\\sqrt{2}}{2}$",
+          "$\\frac{1}{4}$"
+        ],
+        "correctAnswer": 0,
+        "explanation": "$\\vec{u}\\cdot\\vec{v}=1$, $\\|\\vec{u}\\|=\\|\\vec{v}\\|=\\sqrt{2}$, donc $\\cos\\theta = \\frac{1}{2}$."
+      }
+    ],
+    "difficulty": 3
   },
   {
     "id": "pre-droites-plans-espace",
@@ -1713,11 +3491,56 @@
     "type": "pre",
     "title": "Diagnostic : Droites et plans de l'espace",
     "questions": [
-      {"id": "q1", "question": "Une droite dans l'espace est définie par :", "options": ["1 équation", "2 équations", "Un point et un vecteur directeur", "3 points"], "correctAnswer": 2, "explanation": "Un point et un vecteur directeur suffisent à définir une droite."},
-      {"id": "q2", "question": "L'équation $2x - y + 3z - 5 = 0$ représente :", "options": ["Une droite", "Un plan", "Un point", "Une sphère"], "correctAnswer": 1, "explanation": "Une équation linéaire en x, y, z définit un plan."},
-      {"id": "q3", "question": "Le vecteur normal au plan $x + 2y - z = 0$ est :", "options": ["$(1, 2, 1)$", "$(1, 2, -1)$", "$(1, -2, 1)$", "$(0, 0, 0)$"], "correctAnswer": 1, "explanation": "Les coefficients a, b, c donnent le vecteur normal $(1, 2, -1)$."},
-      {"id": "q4", "question": "Deux droites non coplanaires sont dites :", "options": ["Parallèles", "Sécantes", "Confondues", "Gauches"], "correctAnswer": 3, "explanation": "Des droites non coplanaires sont appelées droites gauches."}
-    ]
+      {
+        "id": "q1",
+        "question": "Une droite dans l'espace est définie par :",
+        "options": [
+          "1 équation",
+          "2 équations",
+          "Un point et un vecteur directeur",
+          "3 points"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Un point et un vecteur directeur suffisent à définir une droite."
+      },
+      {
+        "id": "q2",
+        "question": "L'équation $2x - y + 3z - 5 = 0$ représente :",
+        "options": [
+          "Une droite",
+          "Un plan",
+          "Un point",
+          "Une sphère"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Une équation linéaire en x, y, z définit un plan."
+      },
+      {
+        "id": "q3",
+        "question": "Le vecteur normal au plan $x + 2y - z = 0$ est :",
+        "options": [
+          "$(1, 2, 1)$",
+          "$(1, 2, -1)$",
+          "$(1, -2, 1)$",
+          "$(0, 0, 0)$"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Les coefficients a, b, c donnent le vecteur normal $(1, 2, -1)$."
+      },
+      {
+        "id": "q4",
+        "question": "Deux droites non coplanaires sont dites :",
+        "options": [
+          "Parallèles",
+          "Sécantes",
+          "Confondues",
+          "Gauches"
+        ],
+        "correctAnswer": 3,
+        "explanation": "Des droites non coplanaires sont appelées droites gauches."
+      }
+    ],
+    "difficulty": 3
   },
   {
     "id": "post-droites-plans-espace",
@@ -1725,12 +3548,68 @@
     "type": "post",
     "title": "Validation : Droites et plans de l'espace",
     "questions": [
-      {"id": "q1", "question": "La droite passant par $A(1,0,0)$ de direction $\\vec{u}(1,1,1)$ a pour équation paramétrique :", "options": ["$x=1+t, y=t, z=t$", "$x=t, y=1+t, z=t$", "$x=1, y=1, z=1$", "$x+y+z=1$"], "correctAnswer": 0, "explanation": "$(x,y,z) = (1,0,0) + t(1,1,1) = (1+t, t, t)$."},
-      {"id": "q2", "question": "Une droite de vecteur directeur $\\vec{u}$ est parallèle à un plan de vecteur normal $\\vec{n}$ si :", "options": ["$\\vec{u} = \\vec{n}$", "$\\vec{u} \\cdot \\vec{n} = 0$", "$\\vec{u} \\cdot \\vec{n} = 1$", "$\\vec{u} \\parallel \\vec{n}$"], "correctAnswer": 1, "explanation": "Parallèle au plan signifie perpendiculaire au vecteur normal."},
-      {"id": "q3", "question": "L'intersection d'une droite et d'un plan peut être :", "options": ["Un point, une droite ou vide", "Toujours un point", "Toujours une droite", "Un plan"], "correctAnswer": 0, "explanation": "Sécante (1 point), contenue (droite), ou parallèle (vide)."},
-      {"id": "q4", "question": "Pour trouver l'intersection droite-plan, on :", "options": ["Égalise les vecteurs", "Substitue les équations paramétriques dans l'équation du plan", "Calcule le produit scalaire", "Additionne les équations"], "correctAnswer": 1, "explanation": "On remplace x, y, z dans ax+by+cz+d=0 puis on résout en t."},
-      {"id": "q5", "question": "Deux plans $P_1$ et $P_2$ sont perpendiculaires si :", "options": ["$\\vec{n_1} \\cdot \\vec{n_2} = 0$", "$\\vec{n_1} \\parallel \\vec{n_2}$", "$\\vec{n_1} = \\vec{n_2}$", "Ils n'ont pas d'intersection"], "correctAnswer": 0, "explanation": "Plans perpendiculaires ssi leurs normales sont orthogonales."}
-    ]
+      {
+        "id": "q1",
+        "question": "La droite passant par $A(1,0,0)$ de direction $\\vec{u}(1,1,1)$ a pour équation paramétrique :",
+        "options": [
+          "$x=1+t, y=t, z=t$",
+          "$x=t, y=1+t, z=t$",
+          "$x=1, y=1, z=1$",
+          "$x+y+z=1$"
+        ],
+        "correctAnswer": 0,
+        "explanation": "$(x,y,z) = (1,0,0) + t(1,1,1) = (1+t, t, t)$."
+      },
+      {
+        "id": "q2",
+        "question": "Une droite de vecteur directeur $\\vec{u}$ est parallèle à un plan de vecteur normal $\\vec{n}$ si :",
+        "options": [
+          "$\\vec{u} = \\vec{n}$",
+          "$\\vec{u} \\cdot \\vec{n} = 0$",
+          "$\\vec{u} \\cdot \\vec{n} = 1$",
+          "$\\vec{u} \\parallel \\vec{n}$"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Parallèle au plan signifie perpendiculaire au vecteur normal."
+      },
+      {
+        "id": "q3",
+        "question": "L'intersection d'une droite et d'un plan peut être :",
+        "options": [
+          "Un point, une droite ou vide",
+          "Toujours un point",
+          "Toujours une droite",
+          "Un plan"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Sécante (1 point), contenue (droite), ou parallèle (vide)."
+      },
+      {
+        "id": "q4",
+        "question": "Pour trouver l'intersection droite-plan, on :",
+        "options": [
+          "Égalise les vecteurs",
+          "Substitue les équations paramétriques dans l'équation du plan",
+          "Calcule le produit scalaire",
+          "Additionne les équations"
+        ],
+        "correctAnswer": 1,
+        "explanation": "On remplace x, y, z dans ax+by+cz+d=0 puis on résout en t."
+      },
+      {
+        "id": "q5",
+        "question": "Deux plans $P_1$ et $P_2$ sont perpendiculaires si :",
+        "options": [
+          "$\\vec{n_1} \\cdot \\vec{n_2} = 0$",
+          "$\\vec{n_1} \\parallel \\vec{n_2}$",
+          "$\\vec{n_1} = \\vec{n_2}$",
+          "Ils n'ont pas d'intersection"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Plans perpendiculaires ssi leurs normales sont orthogonales."
+      }
+    ],
+    "difficulty": 4
   },
   {
     "id": "pre-orthogonalite-espace",
@@ -1738,11 +3617,56 @@
     "type": "pre",
     "title": "Diagnostic : Orthogonalité dans l'espace",
     "questions": [
-      {"id": "q1", "question": "Une droite perpendiculaire à un plan est :", "options": ["Parallèle à ce plan", "Contenue dans ce plan", "Orthogonale à toute droite du plan", "Sécante en deux points"], "correctAnswer": 2, "explanation": "Perpendiculaire au plan = orthogonale à toutes les droites du plan passant par le point d'intersection."},
-      {"id": "q2", "question": "Le projeté orthogonal d'un point sur un plan est :", "options": ["Le point le plus éloigné", "Le point le plus proche", "L'intersection avec l'axe", "Le milieu"], "correctAnswer": 1, "explanation": "La projection orthogonale minimise la distance."},
-      {"id": "q3", "question": "La distance d'un point à un plan se mesure :", "options": ["Horizontalement", "Verticalement", "Perpendiculairement au plan", "Parallèlement au plan"], "correctAnswer": 2, "explanation": "La distance est toujours mesurée perpendiculairement."},
-      {"id": "q4", "question": "$(d) \\perp (P)$ si le vecteur directeur de $(d)$ est :", "options": ["Dans le plan", "Colinéaire au vecteur normal", "Orthogonal au vecteur normal", "Nul"], "correctAnswer": 1, "explanation": "Droite perpendiculaire = direction colinéaire à la normale du plan."}
-    ]
+      {
+        "id": "q1",
+        "question": "Une droite perpendiculaire à un plan est :",
+        "options": [
+          "Parallèle à ce plan",
+          "Contenue dans ce plan",
+          "Orthogonale à toute droite du plan",
+          "Sécante en deux points"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Perpendiculaire au plan = orthogonale à toutes les droites du plan passant par le point d'intersection."
+      },
+      {
+        "id": "q2",
+        "question": "Le projeté orthogonal d'un point sur un plan est :",
+        "options": [
+          "Le point le plus éloigné",
+          "Le point le plus proche",
+          "L'intersection avec l'axe",
+          "Le milieu"
+        ],
+        "correctAnswer": 1,
+        "explanation": "La projection orthogonale minimise la distance."
+      },
+      {
+        "id": "q3",
+        "question": "La distance d'un point à un plan se mesure :",
+        "options": [
+          "Horizontalement",
+          "Verticalement",
+          "Perpendiculairement au plan",
+          "Parallèlement au plan"
+        ],
+        "correctAnswer": 2,
+        "explanation": "La distance est toujours mesurée perpendiculairement."
+      },
+      {
+        "id": "q4",
+        "question": "$(d) \\perp (P)$ si le vecteur directeur de $(d)$ est :",
+        "options": [
+          "Dans le plan",
+          "Colinéaire au vecteur normal",
+          "Orthogonal au vecteur normal",
+          "Nul"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Droite perpendiculaire = direction colinéaire à la normale du plan."
+      }
+    ],
+    "difficulty": 3
   },
   {
     "id": "post-orthogonalite-espace",
@@ -1750,12 +3674,68 @@
     "type": "post",
     "title": "Validation : Orthogonalité dans l'espace",
     "questions": [
-      {"id": "q1", "question": "La distance du point $M(1, 2, 3)$ au plan $x + y + z = 0$ vaut :", "options": ["$6$", "$2\\sqrt{3}$", "$\\frac{6}{\\sqrt{3}}$", "$\\sqrt{6}$"], "correctAnswer": 1, "explanation": "$d = \\frac{|1+2+3|}{\\sqrt{1+1+1}} = \\frac{6}{\\sqrt{3}} = 2\\sqrt{3}$."},
-      {"id": "q2", "question": "Pour trouver le projeté de $M$ sur $(P)$, on cherche l'intersection de :", "options": ["$(P)$ et un plan parallèle", "$(P)$ et la droite passant par $M$ perpendiculaire à $(P)$", "$(P)$ et l'axe des x", "Deux plans quelconques"], "correctAnswer": 1, "explanation": "Le projeté est sur la perpendiculaire au plan passant par M."},
-      {"id": "q3", "question": "Si $H$ est le projeté de $M$ sur $(P)$, alors $MH$ est :", "options": ["Parallèle à $(P)$", "Contenu dans $(P)$", "Perpendiculaire à $(P)$", "Tangent à $(P)$"], "correctAnswer": 2, "explanation": "Par définition de la projection orthogonale."},
-      {"id": "q4", "question": "La distance de $O(0,0,0)$ au plan $2x - 2y + z - 9 = 0$ vaut :", "options": ["$9$", "$3$", "$\\frac{9}{3}$", "$\\frac{9}{\\sqrt{9}}$"], "correctAnswer": 1, "explanation": "$d = \\frac{|-9|}{\\sqrt{4+4+1}} = \\frac{9}{3} = 3$."},
-      {"id": "q5", "question": "Le projeté de $M(3, 0, 0)$ sur la droite passant par $O$ de direction $(1, 1, 1)$ :", "options": ["Est sur l'axe Ox", "A ses trois coordonnées égales", "Est à l'origine", "N'existe pas"], "correctAnswer": 1, "explanation": "Le projeté est sur la droite, donc de la forme $(t, t, t)$."}
-    ]
+      {
+        "id": "q1",
+        "question": "La distance du point $M(1, 2, 3)$ au plan $x + y + z = 0$ vaut :",
+        "options": [
+          "$6$",
+          "$2\\sqrt{3}$",
+          "$\\frac{6}{\\sqrt{3}}$",
+          "$\\sqrt{6}$"
+        ],
+        "correctAnswer": 1,
+        "explanation": "$d = \\frac{|1+2+3|}{\\sqrt{1+1+1}} = \\frac{6}{\\sqrt{3}} = 2\\sqrt{3}$."
+      },
+      {
+        "id": "q2",
+        "question": "Pour trouver le projeté de $M$ sur $(P)$, on cherche l'intersection de :",
+        "options": [
+          "$(P)$ et un plan parallèle",
+          "$(P)$ et la droite passant par $M$ perpendiculaire à $(P)$",
+          "$(P)$ et l'axe des x",
+          "Deux plans quelconques"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Le projeté est sur la perpendiculaire au plan passant par M."
+      },
+      {
+        "id": "q3",
+        "question": "Si $H$ est le projeté de $M$ sur $(P)$, alors $MH$ est :",
+        "options": [
+          "Parallèle à $(P)$",
+          "Contenu dans $(P)$",
+          "Perpendiculaire à $(P)$",
+          "Tangent à $(P)$"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Par définition de la projection orthogonale."
+      },
+      {
+        "id": "q4",
+        "question": "La distance de $O(0,0,0)$ au plan $2x - 2y + z - 9 = 0$ vaut :",
+        "options": [
+          "$9$",
+          "$3$",
+          "$\\frac{9}{3}$",
+          "$\\frac{9}{\\sqrt{9}}$"
+        ],
+        "correctAnswer": 1,
+        "explanation": "$d = \\frac{|-9|}{\\sqrt{4+4+1}} = \\frac{9}{3} = 3$."
+      },
+      {
+        "id": "q5",
+        "question": "Le projeté de $M(3, 0, 0)$ sur la droite passant par $O$ de direction $(1, 1, 1)$ :",
+        "options": [
+          "Est sur l'axe Ox",
+          "A ses trois coordonnées égales",
+          "Est à l'origine",
+          "N'existe pas"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Le projeté est sur la droite, donc de la forme $(t, t, t)$."
+      }
+    ],
+    "difficulty": 4
   },
   {
     "id": "pre-variables-aleatoires",
@@ -1763,11 +3743,56 @@
     "type": "pre",
     "title": "Diagnostic : Variables aléatoires",
     "questions": [
-      {"id": "q1", "question": "Une variable aléatoire associe à chaque issue :", "options": ["Une probabilité", "Un nombre réel", "Un événement", "Un univers"], "correctAnswer": 1, "explanation": "Une VA est une fonction de l'univers vers les réels."},
-      {"id": "q2", "question": "L'espérance $E(X)$ représente :", "options": ["La valeur la plus probable", "La moyenne théorique", "L'écart-type", "La variance"], "correctAnswer": 1, "explanation": "L'espérance est la moyenne pondérée par les probabilités."},
-      {"id": "q3", "question": "Si $X$ prend les valeurs 1 et 2 avec probabilités 0.5 chacune, $E(X)$ vaut :", "options": ["1", "1.5", "2", "3"], "correctAnswer": 1, "explanation": "$E(X) = 1 \\times 0.5 + 2 \\times 0.5 = 1.5$."},
-      {"id": "q4", "question": "La variance mesure :", "options": ["La valeur moyenne", "La dispersion", "La probabilité maximale", "Le nombre de valeurs"], "correctAnswer": 1, "explanation": "La variance mesure comment les valeurs s'écartent de l'espérance."}
-    ]
+      {
+        "id": "q1",
+        "question": "Une variable aléatoire associe à chaque issue :",
+        "options": [
+          "Une probabilité",
+          "Un nombre réel",
+          "Un événement",
+          "Un univers"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Une VA est une fonction de l'univers vers les réels."
+      },
+      {
+        "id": "q2",
+        "question": "L'espérance $E(X)$ représente :",
+        "options": [
+          "La valeur la plus probable",
+          "La moyenne théorique",
+          "L'écart-type",
+          "La variance"
+        ],
+        "correctAnswer": 1,
+        "explanation": "L'espérance est la moyenne pondérée par les probabilités."
+      },
+      {
+        "id": "q3",
+        "question": "Si $X$ prend les valeurs 1 et 2 avec probabilités 0.5 chacune, $E(X)$ vaut :",
+        "options": [
+          "1",
+          "1.5",
+          "2",
+          "3"
+        ],
+        "correctAnswer": 1,
+        "explanation": "$E(X) = 1 \\times 0.5 + 2 \\times 0.5 = 1.5$."
+      },
+      {
+        "id": "q4",
+        "question": "La variance mesure :",
+        "options": [
+          "La valeur moyenne",
+          "La dispersion",
+          "La probabilité maximale",
+          "Le nombre de valeurs"
+        ],
+        "correctAnswer": 1,
+        "explanation": "La variance mesure comment les valeurs s'écartent de l'espérance."
+      }
+    ],
+    "difficulty": 2
   },
   {
     "id": "post-variables-aleatoires",
@@ -1775,12 +3800,68 @@
     "type": "post",
     "title": "Validation : Variables aléatoires",
     "questions": [
-      {"id": "q1", "question": "La formule de König-Huygens est :", "options": ["$V(X) = E(X)^2$", "$V(X) = E(X^2) - E(X)^2$", "$V(X) = E(X^2) + E(X)^2$", "$V(X) = E(X) - E(X^2)$"], "correctAnswer": 1, "explanation": "C'est la formule pratique pour calculer la variance."},
-      {"id": "q2", "question": "Si $E(X) = 3$ et $E(X^2) = 10$, alors $V(X)$ vaut :", "options": ["7", "1", "13", "10"], "correctAnswer": 1, "explanation": "$V(X) = 10 - 3^2 = 10 - 9 = 1$."},
-      {"id": "q3", "question": "$E(2X + 5)$ si $E(X) = 4$ vaut :", "options": ["9", "13", "8", "10"], "correctAnswer": 1, "explanation": "$E(2X + 5) = 2E(X) + 5 = 2 \\times 4 + 5 = 13$."},
-      {"id": "q4", "question": "$V(3X)$ si $V(X) = 4$ vaut :", "options": ["12", "36", "7", "9"], "correctAnswer": 1, "explanation": "$V(aX) = a^2 V(X) = 9 \\times 4 = 36$."},
-      {"id": "q5", "question": "L'écart-type $\\sigma(X)$ si $V(X) = 16$ vaut :", "options": ["16", "4", "256", "8"], "correctAnswer": 1, "explanation": "$\\sigma = \\sqrt{V(X)} = \\sqrt{16} = 4$."}
-    ]
+      {
+        "id": "q1",
+        "question": "La formule de König-Huygens est :",
+        "options": [
+          "$V(X) = E(X)^2$",
+          "$V(X) = E(X^2) - E(X)^2$",
+          "$V(X) = E(X^2) + E(X)^2$",
+          "$V(X) = E(X) - E(X^2)$"
+        ],
+        "correctAnswer": 1,
+        "explanation": "C'est la formule pratique pour calculer la variance."
+      },
+      {
+        "id": "q2",
+        "question": "Si $E(X) = 3$ et $E(X^2) = 10$, alors $V(X)$ vaut :",
+        "options": [
+          "7",
+          "1",
+          "13",
+          "10"
+        ],
+        "correctAnswer": 1,
+        "explanation": "$V(X) = 10 - 3^2 = 10 - 9 = 1$."
+      },
+      {
+        "id": "q3",
+        "question": "$E(2X + 5)$ si $E(X) = 4$ vaut :",
+        "options": [
+          "9",
+          "13",
+          "8",
+          "10"
+        ],
+        "correctAnswer": 1,
+        "explanation": "$E(2X + 5) = 2E(X) + 5 = 2 \\times 4 + 5 = 13$."
+      },
+      {
+        "id": "q4",
+        "question": "$V(3X)$ si $V(X) = 4$ vaut :",
+        "options": [
+          "12",
+          "36",
+          "7",
+          "9"
+        ],
+        "correctAnswer": 1,
+        "explanation": "$V(aX) = a^2 V(X) = 9 \\times 4 = 36$."
+      },
+      {
+        "id": "q5",
+        "question": "L'écart-type $\\sigma(X)$ si $V(X) = 16$ vaut :",
+        "options": [
+          "16",
+          "4",
+          "256",
+          "8"
+        ],
+        "correctAnswer": 1,
+        "explanation": "$\\sigma = \\sqrt{V(X)} = \\sqrt{16} = 4$."
+      }
+    ],
+    "difficulty": 3
   },
   {
     "id": "pre-loi-binomiale",
@@ -1788,11 +3869,56 @@
     "type": "pre",
     "title": "Diagnostic : Loi binomiale",
     "questions": [
-      {"id": "q1", "question": "Une épreuve de Bernoulli a :", "options": ["3 issues", "2 issues", "n issues", "1 issue"], "correctAnswer": 1, "explanation": "Succès ou échec : deux issues possibles."},
-      {"id": "q2", "question": "$\\binom{5}{2}$ vaut :", "options": ["25", "10", "7", "20"], "correctAnswer": 1, "explanation": "$\\binom{5}{2} = \\frac{5!}{2!3!} = \\frac{120}{2 \\times 6} = 10$."},
-      {"id": "q3", "question": "Si $X \\sim \\mathcal{B}(10, 0.5)$, $E(X)$ vaut :", "options": ["10", "5", "0.5", "50"], "correctAnswer": 1, "explanation": "$E(X) = np = 10 \\times 0.5 = 5$."},
-      {"id": "q4", "question": "Un schéma de Bernoulli nécessite des épreuves :", "options": ["Dépendantes", "Indépendantes", "Avec remise obligatoire", "Sans répétition"], "correctAnswer": 1, "explanation": "L'indépendance est une condition essentielle."}
-    ]
+      {
+        "id": "q1",
+        "question": "Une épreuve de Bernoulli a :",
+        "options": [
+          "3 issues",
+          "2 issues",
+          "n issues",
+          "1 issue"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Succès ou échec : deux issues possibles."
+      },
+      {
+        "id": "q2",
+        "question": "$\\binom{5}{2}$ vaut :",
+        "options": [
+          "25",
+          "10",
+          "7",
+          "20"
+        ],
+        "correctAnswer": 1,
+        "explanation": "$\\binom{5}{2} = \\frac{5!}{2!3!} = \\frac{120}{2 \\times 6} = 10$."
+      },
+      {
+        "id": "q3",
+        "question": "Si $X \\sim \\mathcal{B}(10, 0.5)$, $E(X)$ vaut :",
+        "options": [
+          "10",
+          "5",
+          "0.5",
+          "50"
+        ],
+        "correctAnswer": 1,
+        "explanation": "$E(X) = np = 10 \\times 0.5 = 5$."
+      },
+      {
+        "id": "q4",
+        "question": "Un schéma de Bernoulli nécessite des épreuves :",
+        "options": [
+          "Dépendantes",
+          "Indépendantes",
+          "Avec remise obligatoire",
+          "Sans répétition"
+        ],
+        "correctAnswer": 1,
+        "explanation": "L'indépendance est une condition essentielle."
+      }
+    ],
+    "difficulty": 2
   },
   {
     "id": "post-loi-binomiale",
@@ -1800,11 +3926,67 @@
     "type": "post",
     "title": "Validation : Loi binomiale",
     "questions": [
-      {"id": "q1", "question": "$P(X = k)$ pour $X \\sim \\mathcal{B}(n,p)$ est :", "options": ["$p^k(1-p)^{n-k}$", "$\\binom{n}{k}p^k(1-p)^{n-k}$", "$np$", "$\\binom{n}{k}p^n$"], "correctAnswer": 1, "explanation": "C'est la formule complète de la loi binomiale."},
-      {"id": "q2", "question": "La variance de $X \\sim \\mathcal{B}(n,p)$ est :", "options": ["$np$", "$np(1-p)$", "$p(1-p)$", "$n(1-p)$"], "correctAnswer": 1, "explanation": "$V(X) = npq$ avec $q = 1-p$."},
-      {"id": "q3", "question": "Pour $X \\sim \\mathcal{B}(20, 0.3)$, $E(X)$ et $V(X)$ valent :", "options": ["6 et 4.2", "6 et 6", "20 et 0.3", "0.3 et 20"], "correctAnswer": 0, "explanation": "$E = 20 \\times 0.3 = 6$ et $V = 20 \\times 0.3 \\times 0.7 = 4.2$."},
-      {"id": "q4", "question": "$P(X \\geq 1)$ pour $X \\sim \\mathcal{B}(n,p)$ égale :", "options": ["$1 - P(X = 0)$", "$P(X = 1)$", "$1 - P(X = 1)$", "$P(X \\leq 1)$"], "correctAnswer": 0, "explanation": "C'est le complémentaire de 'aucun succès'."},
-      {"id": "q5", "question": "$\\binom{n}{k} = \\binom{n}{n-k}$ s'appelle :", "options": ["Formule de Pascal", "Symétrie des coefficients", "Formule de Bernoulli", "Théorème binomial"], "correctAnswer": 1, "explanation": "Choisir k parmi n = choisir n-k à exclure."}
-    ]
+      {
+        "id": "q1",
+        "question": "$P(X = k)$ pour $X \\sim \\mathcal{B}(n,p)$ est :",
+        "options": [
+          "$p^k(1-p)^{n-k}$",
+          "$\\binom{n}{k}p^k(1-p)^{n-k}$",
+          "$np$",
+          "$\\binom{n}{k}p^n$"
+        ],
+        "correctAnswer": 1,
+        "explanation": "C'est la formule complète de la loi binomiale."
+      },
+      {
+        "id": "q2",
+        "question": "La variance de $X \\sim \\mathcal{B}(n,p)$ est :",
+        "options": [
+          "$np$",
+          "$np(1-p)$",
+          "$p(1-p)$",
+          "$n(1-p)$"
+        ],
+        "correctAnswer": 1,
+        "explanation": "$V(X) = npq$ avec $q = 1-p$."
+      },
+      {
+        "id": "q3",
+        "question": "Pour $X \\sim \\mathcal{B}(20, 0.3)$, $E(X)$ et $V(X)$ valent :",
+        "options": [
+          "6 et 4.2",
+          "6 et 6",
+          "20 et 0.3",
+          "0.3 et 20"
+        ],
+        "correctAnswer": 0,
+        "explanation": "$E = 20 \\times 0.3 = 6$ et $V = 20 \\times 0.3 \\times 0.7 = 4.2$."
+      },
+      {
+        "id": "q4",
+        "question": "$P(X \\geq 1)$ pour $X \\sim \\mathcal{B}(n,p)$ égale :",
+        "options": [
+          "$1 - P(X = 0)$",
+          "$P(X = 1)$",
+          "$1 - P(X = 1)$",
+          "$P(X \\leq 1)$"
+        ],
+        "correctAnswer": 0,
+        "explanation": "C'est le complémentaire de 'aucun succès'."
+      },
+      {
+        "id": "q5",
+        "question": "$\\binom{n}{k} = \\binom{n}{n-k}$ s'appelle :",
+        "options": [
+          "Formule de Pascal",
+          "Symétrie des coefficients",
+          "Formule de Bernoulli",
+          "Théorème binomial"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Choisir k parmi n = choisir n-k à exclure."
+      }
+    ],
+    "difficulty": 3
   }
 ]

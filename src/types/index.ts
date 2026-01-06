@@ -73,9 +73,10 @@ export interface Quiz {
   lessonId: string
   type: QuizType
   title: string
-  description: string
+  description?: string
+  difficulty: DifficultyLevel
   questions: QuizQuestion[]
-  passingScore: number // pourcentage minimum pour valider
+  passingScore?: number // pourcentage minimum pour valider
 }
 
 export interface QuizAttempt {
