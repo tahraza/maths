@@ -117,6 +117,9 @@ interface GamificationState {
   lessonsCompletedSpe: number
   lessonsCompletedExpertes: number
 
+  // Anti-farming: track completed items (XP once only)
+  completedGuidedExercises: string[]
+
   // Actions
   addPoints: (points: number, reason: string) => void
   updateStreak: () => void
@@ -159,6 +162,9 @@ export const useGamificationStore = create<GamificationState>()(
       weekendDaysStudied: [],
       lessonsCompletedSpe: 0,
       lessonsCompletedExpertes: 0,
+
+      // Anti-farming: track completed items
+      completedGuidedExercises: [],
 
       addPoints: (points, reason) => {
         const today = new Date().toISOString().split('T')[0]
@@ -401,14 +407,21 @@ export const useGamificationStore = create<GamificationState>()(
       },
 
       recordExerciseCompleted: (exerciseId, isCorrect) => {
-        const { recordActivity, incrementStat, addPoints } = get()
+        const { recordActivity, incrementStat, addPoints, completedGuidedExercises } = get()
+        const alreadyCompleted = completedGuidedExercises.includes(exerciseId)
 
         recordActivity('exercise', exerciseId)
-        incrementStat('exercises')
 
-        if (isCorrect) {
+        // XP seulement la première fois (anti-farming)
+        if (isCorrect && !alreadyCompleted) {
+          incrementStat('exercises')
           incrementStat('correctAnswers')
-          addPoints(POINTS.EXERCISE_CORRECT, 'Exercice réussi')
+          addPoints(POINTS.EXERCISE_CORRECT, 'Exercice guidé réussi')
+
+          // Marquer comme complété
+          set((state) => ({
+            completedGuidedExercises: [...state.completedGuidedExercises, exerciseId]
+          }))
         }
       },
 

@@ -165,13 +165,19 @@ export function MentalMath({ onBack }: MentalMathProps) {
   // Enregistrer le score à la fin
   useEffect(() => {
     if (gameState === 'finished' && score > 0) {
-      recordMentalMathScore(score, difficulty)
+      const result = recordMentalMathScore(score, difficulty)
 
-      // XP: 5 par point, bonus si > 20
-      let xpEarned = score * 5
-      if (score > 20) xpEarned += 50
+      // XP seulement si nouveau record (évite le farming)
+      if (result.isNewHighScore) {
+        // XP basé sur la différence avec l'ancien record
+        const improvement = score - result.previousHigh
+        let xpEarned = improvement * 5
+        if (score > 20 && result.previousHigh <= 20) xpEarned += 50 // Bonus premier 20+ seulement
 
-      addPoints(xpEarned, `Mini-jeu calcul mental: ${score} pts`)
+        if (xpEarned > 0) {
+          addPoints(xpEarned, `Nouveau record calcul mental: ${score} pts`)
+        }
+      }
     }
   }, [gameState, score, difficulty, recordMentalMathScore, addPoints])
 

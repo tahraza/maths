@@ -19,8 +19,8 @@ interface MiniGamesState {
   memoryHistory: GameScore[]
 
   // Actions
-  recordMentalMathScore: (score: number, difficulty: string) => void
-  recordMemoryScore: (score: number, category: string) => void
+  recordMentalMathScore: (score: number, difficulty: string) => { isNewHighScore: boolean; previousHigh: number }
+  recordMemoryScore: (score: number, category: string) => { isNewHighScore: boolean; previousHigh: number }
   getTotalGamesPlayed: () => number
   getBestScores: () => { mentalMath: number; memory: number }
 }
@@ -38,6 +38,8 @@ export const useMiniGamesStore = create<MiniGamesState>()(
 
       recordMentalMathScore: (score, difficulty) => {
         const today = new Date().toISOString().split('T')[0]
+        const previousHigh = get().mentalMathHighScore
+        const isNewHighScore = score > previousHigh
 
         set((state) => ({
           mentalMathHighScore: Math.max(state.mentalMathHighScore, score),
@@ -47,10 +49,14 @@ export const useMiniGamesStore = create<MiniGamesState>()(
             { score, date: today, difficulty }
           ],
         }))
+
+        return { isNewHighScore, previousHigh }
       },
 
       recordMemoryScore: (score, category) => {
         const today = new Date().toISOString().split('T')[0]
+        const previousHigh = get().memoryHighScore
+        const isNewHighScore = score > previousHigh
 
         set((state) => ({
           memoryHighScore: Math.max(state.memoryHighScore, score),
@@ -60,6 +66,8 @@ export const useMiniGamesStore = create<MiniGamesState>()(
             { score, date: today, difficulty: category }
           ],
         }))
+
+        return { isNewHighScore, previousHigh }
       },
 
       getTotalGamesPlayed: () => {

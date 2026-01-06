@@ -126,8 +126,15 @@ export function FormulaMemory({ onBack }: FormulaMemoryProps) {
       const timeBonus = Math.max(0, (120 - elapsedTime) * 2)
       const score = matchedPairs.length * 10 + moveBonus + timeBonus
 
-      recordMemoryScore(score, category)
-      addPoints(score, `Mini-jeu mémory: ${matchedPairs.length} paires`)
+      const result = recordMemoryScore(score, category)
+
+      // XP seulement si nouveau record (évite le farming)
+      if (result.isNewHighScore) {
+        const improvement = score - result.previousHigh
+        if (improvement > 0) {
+          addPoints(improvement, `Nouveau record mémory: ${score} pts`)
+        }
+      }
     }
   }, [matchedPairs, category, gameState, moves, elapsedTime, recordMemoryScore, addPoints])
 

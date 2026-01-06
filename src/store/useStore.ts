@@ -353,15 +353,22 @@ export const useStore = create<Store>()(
         const gamification = useGamificationStore.getState()
         gamification.recordActivity('flashcard', flashcardId)
 
-        // Points pour réponse correcte (good ou easy)
-        if (response === 'good' || response === 'easy') {
-          gamification.addPoints(POINTS.FLASHCARD_CORRECT, 'Flashcard réussie')
-          gamification.incrementStat('correctAnswers')
-        }
+        // XP seulement si la carte n'est PAS déjà maîtrisée (anti-farming)
+        if (!wasAlreadyMastered) {
+          // Points pour réponse correcte (good ou easy)
+          if (response === 'good' || response === 'easy') {
+            gamification.addPoints(POINTS.FLASHCARD_CORRECT, 'Flashcard réussie')
+            gamification.incrementStat('correctAnswers')
+            gamification.recordFlashcardCorrect() // Pour le badge flash-master
+          } else {
+            // Mauvaise réponse - reset le streak
+            gamification.resetFlashcardStreak()
+          }
 
-        // Bonus si la flashcard est nouvellement maîtrisée
-        if (newStatus === 'mastered' && !wasAlreadyMastered) {
-          gamification.addPoints(POINTS.FLASHCARD_MASTERED, 'Flashcard maîtrisée !')
+          // Bonus si la flashcard est nouvellement maîtrisée
+          if (newStatus === 'mastered') {
+            gamification.addPoints(POINTS.FLASHCARD_MASTERED, 'Flashcard maîtrisée !')
+          }
         }
       },
 
@@ -376,6 +383,15 @@ export const useStore = create<Store>()(
 
       // === QCM ===
       addQuizAttempt: (attempt) => {
+        // Seuil de réussite par défaut (70%)
+        const PASSING_THRESHOLD = 70
+        const isPassing = attempt.score >= PASSING_THRESHOLD
+
+        // Vérifier si c'est la première fois qu'on réussit ce QCM (anti-farming)
+        const previousAttempts = get().quizAttempts.filter(a => a.quizId === attempt.quizId)
+        const hadPreviousSuccess = previousAttempts.some(a => a.score >= PASSING_THRESHOLD)
+        const hadPreviousPerfect = previousAttempts.some(a => a.score === 100)
+
         set((state) => ({
           quizAttempts: [...state.quizAttempts, attempt],
           stats: {
@@ -388,14 +404,22 @@ export const useStore = create<Store>()(
         }))
         get().recordActivity('quiz', attempt.quizId)
 
-        // Accorder les points de gamification pour le QCM
+        // Accorder les points de gamification SEULEMENT la première réussite
         const gamification = useGamificationStore.getState()
-        gamification.addPoints(POINTS.QUIZ_COMPLETED, 'QCM terminé')
-        gamification.incrementStat('quizzes')
         gamification.recordActivity('quiz', attempt.quizId)
 
-        // Bonus si score parfait (100%)
-        if (attempt.score === 100) {
+        if (isPassing && !hadPreviousSuccess) {
+          // Première réussite de ce QCM
+          gamification.addPoints(POINTS.QUIZ_COMPLETED, 'QCM réussi')
+          gamification.incrementStat('quizzes')
+          gamification.recordPerfectQuiz() // Pour le badge perfectionist-streak
+        } else if (!isPassing) {
+          // Échec - reset le streak de QCM parfaits
+          gamification.resetPerfectQuizStreak()
+        }
+
+        // Bonus si premier score parfait (100%) pour ce QCM
+        if (attempt.score === 100 && !hadPreviousPerfect) {
           gamification.addPoints(POINTS.QUIZ_PERFECT, 'QCM parfait !')
         }
       },
