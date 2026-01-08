@@ -147,6 +147,31 @@
     @apply text-slate-700 mb-2 dark:text-slate-300;
   }
 
+  /* Tables */
+  .lesson-content .table-wrapper {
+    @apply my-6 overflow-x-auto rounded-lg border border-slate-200 dark:border-slate-700;
+  }
+
+  .lesson-content table {
+    @apply w-full border-collapse text-sm;
+  }
+
+  .lesson-content thead {
+    @apply bg-slate-100 dark:bg-slate-800;
+  }
+
+  .lesson-content th {
+    @apply px-4 py-3 text-left font-semibold text-slate-700 dark:text-slate-200;
+  }
+
+  .lesson-content td {
+    @apply border-t border-slate-200 px-4 py-3 text-slate-600 dark:border-slate-700 dark:text-slate-300;
+  }
+
+  .lesson-content tbody tr:hover {
+    @apply bg-slate-50 dark:bg-slate-800/50;
+  }
+
   /* Math blocks */
   .math-block {
     @apply my-6 overflow-x-auto rounded-lg bg-slate-50 p-4 dark:bg-slate-800;

@@ -9,8 +9,27 @@ interface LessonContentProps {
 
 // Process markdown with KaTeX math rendering
 function processContent(content: string): string {
+  let processed = content
+
+  // Markdown tables (must be processed BEFORE KaTeX to avoid splitting issues)
+  processed = processed.replace(
+    /^\|(.+)\|\s*\n\|[-:\s|]+\|\s*\n((?:\|.+\|\s*\n?)+)/gm,
+    (_, headerRow, bodyRows) => {
+      const headers = headerRow.split('|').map((h: string) => h.trim()).filter(Boolean)
+      const headerHtml = headers.map((h: string) => `<th>${h}</th>`).join('')
+
+      const rows = bodyRows.trim().split('\n')
+      const bodyHtml = rows.map((row: string) => {
+        const cells = row.split('|').map((c: string) => c.trim()).filter(Boolean)
+        return `<tr>${cells.map((c: string) => `<td>${c}</td>`).join('')}</tr>`
+      }).join('')
+
+      return `<div class="table-wrapper"><table><thead><tr>${headerHtml}</tr></thead><tbody>${bodyHtml}</tbody></table></div>`
+    }
+  )
+
   // Process display math blocks ($$...$$)
-  let processed = content.replace(/\$\$([\s\S]*?)\$\$/g, (_, math) => {
+  processed = processed.replace(/\$\$([\s\S]*?)\$\$/g, (_, math) => {
     try {
       const html = katex.renderToString(math.trim(), {
         displayMode: true,
@@ -112,10 +131,10 @@ function processContent(content: string): string {
   processed = processed.replace(/\n\n+/g, '</p><p>')
   processed = `<p>${processed}</p>`
 
-  // Clean up empty paragraphs
+  // Clean up empty paragraphs and fix block elements inside paragraphs
   processed = processed.replace(/<p>\s*<\/p>/g, '')
-  processed = processed.replace(/<p>(\s*<(?:h[1-6]|div|ul|ol))/g, '$1')
-  processed = processed.replace(/(<\/(?:h[1-6]|div|ul|ol)>\s*)<\/p>/g, '$1')
+  processed = processed.replace(/<p>(\s*<(?:h[1-6]|div|ul|ol|table))/g, '$1')
+  processed = processed.replace(/(<\/(?:h[1-6]|div|ul|ol|table)>\s*)<\/p>/g, '$1')
 
   return processed
 }
