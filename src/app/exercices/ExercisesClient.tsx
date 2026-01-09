@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react'
 import { useSearchParams, useRouter } from 'next/navigation'
 import Link from 'next/link'
-import { ClipboardList, Tag, ChevronRight, Filter } from 'lucide-react'
+import { ClipboardList, Tag, ChevronRight, Filter, Infinity } from 'lucide-react'
 import { getDifficultyLabel, getDifficultyColor } from '@/lib/utils'
 import MathText from '@/components/MathText'
 
@@ -114,13 +114,24 @@ export default function ExercisesClient() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="mb-8">
-          <h1 className="text-3xl font-bold text-slate-900 flex items-center gap-3 dark:text-slate-100">
-            <ClipboardList className="h-8 w-8 text-amber-600" />
-            Exercices
-          </h1>
-          <p className="mt-2 text-slate-600 dark:text-slate-400">
-            {exercises.length} exercices corrigés avec indices et solutions détaillées
-          </p>
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+            <div>
+              <h1 className="text-3xl font-bold text-slate-900 flex items-center gap-3 dark:text-slate-100">
+                <ClipboardList className="h-8 w-8 text-amber-600" />
+                Exercices
+              </h1>
+              <p className="mt-2 text-slate-600 dark:text-slate-400">
+                {exercises.length} exercices corrigés avec indices et solutions détaillées
+              </p>
+            </div>
+            <Link
+              href="/exercices/generateur"
+              className="btn btn-primary flex items-center gap-2 self-start"
+            >
+              <Infinity className="h-5 w-5" />
+              Générateur infini
+            </Link>
+          </div>
         </div>
 
         {/* Filters */}
