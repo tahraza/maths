@@ -117,7 +117,7 @@ export function NormalDistribution({
 
   // Empirical rule areas
   const empiricalAreas = useMemo(() => {
-    if (!showEmpiricalRule || highlightRule === null) return []
+    if (!showEmpiricalRule || highlightRule === null) return ''
 
     const sigmas = highlightRule
     const a = mu - sigmas * sigma
