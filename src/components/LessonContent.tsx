@@ -10,6 +10,7 @@ import {
   SequencePlot,
   ComplexPlane,
   GraphVisualization,
+  ComplexMultiplication,
 } from './InteractiveGraphs'
 
 interface LessonContentProps {
@@ -267,6 +268,8 @@ function GraphRenderer({ config }: { config: GraphConfig }) {
         return <ComplexPlane {...(props as React.ComponentProps<typeof ComplexPlane>)} />
       case 'GraphVisualization':
         return <GraphVisualization {...(props as React.ComponentProps<typeof GraphVisualization>)} />
+      case 'ComplexMultiplication':
+        return <ComplexMultiplication {...(props as React.ComponentProps<typeof ComplexMultiplication>)} />
       default:
         return <div className="text-danger-600">Type de graphe inconnu: {config.type}</div>
     }
