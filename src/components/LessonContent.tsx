@@ -22,6 +22,7 @@ import {
   SlopeField,
   MarkovChain,
   SieveOfEratosthenes,
+  ProbabilityTree,
 } from './InteractiveGraphs'
 
 interface LessonContentProps {
@@ -303,6 +304,8 @@ function GraphRenderer({ config }: { config: GraphConfig }) {
         return <MarkovChain {...(props as React.ComponentProps<typeof MarkovChain>)} />
       case 'SieveOfEratosthenes':
         return <SieveOfEratosthenes {...(props as React.ComponentProps<typeof SieveOfEratosthenes>)} />
+      case 'ProbabilityTree':
+        return <ProbabilityTree {...(props as React.ComponentProps<typeof ProbabilityTree>)} />
       default:
         return <div className="text-danger-600">Type de graphe inconnu: {config.type}</div>
     }
