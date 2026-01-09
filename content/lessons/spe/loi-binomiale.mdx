@@ -153,8 +153,7 @@ Utilise la fonction `binomCdf(n, p, k)` ou équivalent.
 
 ## Exemples résolus
 
-### Exemple 1 : QCM au hasard
-
+:::example[QCM au hasard]
 Un QCM a 10 questions avec 4 choix chacune. On répond au hasard. Soit $X$ le nombre de bonnes réponses.
 
 **Modélisation** : $X \sim \mathcal{B}(10, 0.25)$
@@ -164,9 +163,9 @@ $$P(X = 3) = \binom{10}{3} \times 0.25^3 \times 0.75^7$$
 $$= 120 \times 0.015625 \times 0.1335 \approx 0.250$$
 
 **Espérance** : $E(X) = 10 \times 0.25 = 2.5$ bonnes réponses en moyenne.
+:::
 
-### Exemple 2 : Contrôle qualité
-
+:::example[Controle qualite]
 Une machine produit 5% de pièces défectueuses. On prélève 20 pièces. Soit $X$ le nombre de pièces défectueuses.
 
 $X \sim \mathcal{B}(20, 0.05)$
@@ -178,9 +177,9 @@ $$= 1 \times 1 \times 0.358 + 20 \times 0.05 \times 0.377$$
 $$= 0.358 + 0.377 = 0.735$$
 
 **Espérance** : $E(X) = 20 \times 0.05 = 1$ pièce défectueuse en moyenne.
+:::
 
-### Exemple 3 : Lancer de dé
-
+:::example[Lancer de de]
 On lance un dé 12 fois. Soit $X$ le nombre de 6 obtenus.
 
 $X \sim \mathcal{B}(12, \frac{1}{6})$
@@ -192,12 +191,13 @@ $$= 66 \times \frac{1}{36} \times 0.162 \approx 0.296$$
 **Espérance** : $E(X) = 12 \times \frac{1}{6} = 2$
 
 **Écart-type** : $\sigma = \sqrt{12 \times \frac{1}{6} \times \frac{5}{6}} = \sqrt{\frac{10}{6}} \approx 1.29$
+:::
 
-### Exemple 4 : Intervalle de fluctuation
-
+:::example[Intervalle de fluctuation]
 Pour $X \sim \mathcal{B}(100, 0.5)$, on a $E(X) = 50$ et $\sigma = 5$.
 
 Par l'approximation normale, 95% des valeurs sont dans $[E - 2\sigma, E + 2\sigma] = [40, 60]$.
+:::
 
 ## Erreurs fréquentes
 

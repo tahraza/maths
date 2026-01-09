@@ -78,8 +78,7 @@ Si $u_{n+1} = f(u_n)$ et si on sait que $(u_n)$ converge vers $\ell$ :
 
 ## Exemples résolus
 
-### Exemple 1 : Suite récurrente avec convergence
-
+:::example[Suite recurrente avec convergence]
 Soit $(u_n)$ définie par $u_0 = 0$ et $u_{n+1} = \sqrt{2 + u_n}$.
 
 **Étape 1 : Montrer que $0 \leq u_n \leq 2$ pour tout $n$ (par récurrence)**
@@ -116,9 +115,9 @@ $(\ell - 2)(\ell + 1) = 0$
 Donc $\ell = 2$ ou $\ell = -1$.
 
 Comme $\ell \geq 0$, on a $\ell = 2$.
+:::
 
-### Exemple 2 : Suites adjacentes
-
+:::example[Suites adjacentes]
 Soit $u_n = \sum_{k=0}^{n} \frac{1}{k!}$ et $v_n = u_n + \frac{1}{n \cdot n!}$.
 
 **Montrer que $(u_n)$ et $(v_n)$ sont adjacentes.**
@@ -135,9 +134,9 @@ Soit $u_n = \sum_{k=0}^{n} \frac{1}{k!}$ et $v_n = u_n + \frac{1}{n \cdot n!}$.
 Les suites sont adjacentes, donc convergent vers une même limite.
 
 (Cette limite est $e$, le nombre d'Euler !)
+:::
 
-### Exemple 3 : Suite définie par moyenne
-
+:::example[Suite definie par moyenne]
 Soit $u_0 = a > 0$, $v_0 = b > a$, et pour $n \geq 0$ :
 $$u_{n+1} = \sqrt{u_n v_n} \quad \text{et} \quad v_{n+1} = \frac{u_n + v_n}{2}$$
 
@@ -156,6 +155,7 @@ $v_{n+1} - u_{n+1} = \frac{u_n + v_n}{2} - \sqrt{u_n v_n} = \frac{(\sqrt{v_n} - 
 On peut montrer que $v_n - u_n \to 0$.
 
 Les suites sont adjacentes et convergent vers la **moyenne arithmético-géométrique** de $a$ et $b$.
+:::
 
 ## Cas particuliers importants
 

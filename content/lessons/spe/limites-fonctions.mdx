@@ -129,8 +129,7 @@ Pour une fraction de polynômes ou avec $e^x$, $\ln(x)$ :
 
 ## Exemples résolus
 
-### Exemple 1 : Forme $\frac{0}{0}$
-
+:::example[Forme 0/0]
 Calculer $\displaystyle\lim_{x \to 2} \frac{x^2 - 4}{x - 2}$.
 
 **Forme** : $\frac{0}{0}$ car numérateur et dénominateur s'annulent en $x = 2$.
@@ -140,9 +139,9 @@ Factorisation : $x^2 - 4 = (x-2)(x+2)$
 $$\frac{x^2 - 4}{x - 2} = \frac{(x-2)(x+2)}{x-2} = x + 2 \quad \text{pour } x \neq 2$$
 
 Donc $\displaystyle\lim_{x \to 2} \frac{x^2 - 4}{x - 2} = 2 + 2 = 4$
+:::
 
-### Exemple 2 : Croissance comparée
-
+:::example[Croissance comparée]
 Calculer $\displaystyle\lim_{x \to +\infty} \frac{x^3}{e^x}$.
 
 **Forme** : $\frac{\infty}{\infty}$
@@ -150,9 +149,9 @@ Calculer $\displaystyle\lim_{x \to +\infty} \frac{x^3}{e^x}$.
 Par croissance comparée : $e^x$ domine toute puissance de $x$.
 
 Donc $\displaystyle\lim_{x \to +\infty} \frac{x^3}{e^x} = 0$
+:::
 
-### Exemple 3 : Limite en un point avec $\ln$
-
+:::example[Limite en un point avec ln]
 Calculer $\displaystyle\lim_{x \to 0^+} x \ln(x)$.
 
 **Forme** : $0 \times (-\infty)$
@@ -160,9 +159,9 @@ Calculer $\displaystyle\lim_{x \to 0^+} x \ln(x)$.
 Par croissance comparée : $\displaystyle\lim_{x \to 0^+} x \ln(x) = 0$
 
 (Le facteur $x$ qui tend vers 0 l'emporte sur $\ln(x)$ qui tend vers $-\infty$)
+:::
 
-### Exemple 4 : Asymptotes
-
+:::example[Asymptotes]
 Soit $f(x) = \frac{x^2 + 1}{x - 1}$.
 
 **Domaine** : $D_f = \mathbb{R} \setminus \{1\}$
@@ -186,9 +185,9 @@ Donc $f(x) = x + 1 + \frac{2}{x-1}$
 $b = \displaystyle\lim_{x \to +\infty} [f(x) - x] = 1 + 0 = 1$
 
 La droite $y = x + 1$ est asymptote oblique en $\pm\infty$.
+:::
 
-### Exemple 5 : Théorème des gendarmes
-
+:::example[Théorème des gendarmes]
 Montrer que $\displaystyle\lim_{x \to +\infty} \frac{\sin(x)}{x} = 0$.
 
 On sait que $-1 \leq \sin(x) \leq 1$ pour tout $x$.
@@ -198,6 +197,7 @@ Pour $x > 0$ : $-\frac{1}{x} \leq \frac{\sin(x)}{x} \leq \frac{1}{x}$
 Or $\displaystyle\lim_{x \to +\infty} \frac{1}{x} = \lim_{x \to +\infty} \left(-\frac{1}{x}\right) = 0$
 
 Par le théorème des gendarmes : $\displaystyle\lim_{x \to +\infty} \frac{\sin(x)}{x} = 0$
+:::
 
 ## Erreurs fréquentes
 

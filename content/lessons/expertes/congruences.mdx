@@ -119,8 +119,7 @@ Pour trouver $a^{-1} \pmod{n}$ (existe si $\text{pgcd}(a,n) = 1$) :
 
 ## Exemples résolus
 
-### Exemple 1 : Calcul de reste
-
+:::example[Calcul de reste]
 Calculer le reste de $3^{100}$ dans la division par $7$.
 
 Par le petit théorème de Fermat (7 premier, 3 non divisible par 7) :
@@ -131,9 +130,9 @@ $100 = 6 \times 16 + 4$, donc $3^{100} = (3^6)^{16} \times 3^4 \equiv 1^{16} \ti
 $3^4 = 81 = 7 \times 11 + 4$, donc $3^4 \equiv 4 \pmod{7}$
 
 **Réponse** : le reste est $4$.
+:::
 
-### Exemple 2 : Critère de divisibilité par 9
-
+:::example[Critere de divisibilite par 9]
 Montrer que $n \equiv S(n) \pmod{9}$ où $S(n)$ est la somme des chiffres.
 
 Si $n = a_k 10^k + a_{k-1} 10^{k-1} + \cdots + a_1 \times 10 + a_0$
@@ -143,9 +142,9 @@ Or $10 \equiv 1 \pmod{9}$, donc $10^j \equiv 1 \pmod{9}$ pour tout $j$.
 $n \equiv a_k + a_{k-1} + \cdots + a_1 + a_0 = S(n) \pmod{9}$
 
 Donc $9 | n \Leftrightarrow 9 | S(n)$.
+:::
 
-### Exemple 3 : Équation de congruence
-
+:::example[Equation de congruence]
 Résoudre $5x \equiv 3 \pmod{7}$.
 
 $\text{pgcd}(5, 7) = 1$, donc il existe une solution unique modulo 7.
@@ -157,9 +156,9 @@ $5^{-1} \equiv 3 \pmod{7}$
 $x \equiv 3 \times 3 = 9 \equiv 2 \pmod{7}$
 
 **Solution** : $x \equiv 2 \pmod{7}$, soit $x \in \{..., -5, 2, 9, 16, ...\}$
+:::
 
-### Exemple 4 : Dernier chiffre
-
+:::example[Dernier chiffre]
 Quel est le dernier chiffre de $7^{2023}$ ?
 
 Le dernier chiffre, c'est le reste modulo 10.
@@ -171,6 +170,7 @@ La période est 4. $2023 = 4 \times 505 + 3$
 $7^{2023} \equiv 7^3 \equiv 3 \pmod{10}$
 
 **Réponse** : le dernier chiffre est 3.
+:::
 
 ## Erreurs fréquentes
 

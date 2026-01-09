@@ -77,8 +77,7 @@ Conclure : "Donc $P(n+1)$ est vraie."
 
 ## Exemples résolus
 
-### Exemple 1 : Somme des entiers
-
+:::example[Somme des entiers]
 Démontrer que pour tout $n \geq 0$ : $\sum_{k=0}^{n} k = \frac{n(n+1)}{2}$
 
 **Propriété** : Pour $n \geq 0$, notons $P(n)$ : "$0 + 1 + 2 + \cdots + n = \frac{n(n+1)}{2}$"
@@ -100,9 +99,9 @@ $$= \frac{n(n+1)}{2} + (n+1) = (n+1)\left(\frac{n}{2} + 1\right) = (n+1) \cdot \
 Donc $P(n+1)$ est vraie. ✓
 
 **Conclusion** : Par récurrence, $P(n)$ est vraie pour tout $n \geq 0$.
+:::
 
-### Exemple 2 : Inégalité
-
+:::example[Inégalité]
 Démontrer que pour tout $n \geq 3$ : $2^n > 2n + 1$
 
 **Propriété** : Pour $n \geq 3$, notons $P(n)$ : "$2^n > 2n + 1$"
@@ -125,9 +124,9 @@ Plus simplement : $4n + 2 - (2n + 3) = 2n - 1 > 0$ pour $n \geq 1$.
 Donc $2^{n+1} > 4n + 2 > 2n + 3$, c'est-à-dire $P(n+1)$ vraie. ✓
 
 **Conclusion** : Par récurrence, pour tout $n \geq 3$, $2^n > 2n + 1$.
+:::
 
-### Exemple 3 : Suite définie par récurrence
-
+:::example[Suite définie par récurrence]
 Soit $(u_n)$ définie par $u_0 = 1$ et $u_{n+1} = 2u_n + 1$.
 
 Démontrer que $u_n = 2^{n+1} - 1$ pour tout $n \geq 0$.
@@ -143,6 +142,7 @@ $$u_{n+1} = 2u_n + 1 = 2(2^{n+1} - 1) + 1 = 2^{n+2} - 2 + 1 = 2^{n+2} - 1 = 2^{(
 Donc $P(n+1)$ est vraie. ✓
 
 **Conclusion** : Par récurrence, $u_n = 2^{n+1} - 1$ pour tout $n \geq 0$.
+:::
 
 ## Erreurs fréquentes
 

@@ -151,8 +151,7 @@ $$z_k = \sqrt[n]{\rho} \cdot e^{i\frac{\varphi + 2k\pi}{n}} \quad \text{pour } k
 
 ## Exemples résolus
 
-### Exemple 1 : Conversion
-
+:::example[Conversion]
 Mettre $z = 1 + i$ sous forme exponentielle.
 
 **Module** : $r = \sqrt{1^2 + 1^2} = \sqrt{2}$
@@ -161,9 +160,9 @@ Mettre $z = 1 + i$ sous forme exponentielle.
 $\cos\theta = \frac{1}{\sqrt{2}}$, $\sin\theta = \frac{1}{\sqrt{2}}$ → $\theta = \frac{\pi}{4}$
 
 **Résultat** : $z = \sqrt{2}e^{i\pi/4}$
+:::
 
-### Exemple 2 : Puissance
-
+:::example[Puissance]
 Calculer $(1 + i)^{10}$.
 
 On a $1 + i = \sqrt{2}e^{i\pi/4}$.
@@ -173,9 +172,9 @@ $(1 + i)^{10} = (\sqrt{2})^{10} e^{i \cdot 10\pi/4} = 32 e^{i \cdot 5\pi/2}$
 Or $\frac{5\pi}{2} = \frac{\pi}{2} + 2\pi$, donc $e^{i5\pi/2} = e^{i\pi/2} = i$.
 
 **Résultat** : $(1 + i)^{10} = 32i$
+:::
 
-### Exemple 3 : Racines de l'unité
-
+:::example[Racines de l unite]
 Trouver les racines cubiques de 1.
 
 On cherche $z^3 = 1 = e^{i \cdot 0}$.
@@ -185,9 +184,9 @@ Les solutions sont $z_k = e^{i\frac{2k\pi}{3}}$ pour $k = 0, 1, 2$.
 - $z_0 = e^{i \cdot 0} = 1$
 - $z_1 = e^{i\frac{2\pi}{3}} = -\frac{1}{2} + i\frac{\sqrt{3}}{2}$
 - $z_2 = e^{i\frac{4\pi}{3}} = -\frac{1}{2} - i\frac{\sqrt{3}}{2}$
+:::
 
-### Exemple 4 : Formule de Moivre pour $\cos(3\theta)$
-
+:::example[Formule de Moivre pour cos 3 theta]
 Exprimer $\cos(3\theta)$ en fonction de $\cos\theta$.
 
 Par Moivre : $\cos(3\theta) + i\sin(3\theta) = (\cos\theta + i\sin\theta)^3$
@@ -200,9 +199,9 @@ Partie réelle : $\cos(3\theta) = \cos^3\theta - 3\cos\theta\sin^2\theta$
 
 Avec $\sin^2\theta = 1 - \cos^2\theta$ :
 $\cos(3\theta) = \cos^3\theta - 3\cos\theta(1 - \cos^2\theta) = 4\cos^3\theta - 3\cos\theta$
+:::
 
-### Exemple 5 : Linéarisation
-
+:::example[Linearisation]
 Linéariser $\cos^2\theta$.
 
 $\cos\theta = \frac{e^{i\theta} + e^{-i\theta}}{2}$
@@ -210,6 +209,7 @@ $\cos\theta = \frac{e^{i\theta} + e^{-i\theta}}{2}$
 $\cos^2\theta = \frac{(e^{i\theta} + e^{-i\theta})^2}{4} = \frac{e^{2i\theta} + 2 + e^{-2i\theta}}{4}$
 
 $= \frac{2\cos(2\theta) + 2}{4} = \frac{1 + \cos(2\theta)}{2}$
+:::
 
 ## Erreurs fréquentes
 

@@ -137,8 +137,7 @@ En pratique, on utilise : $I_{95} \approx \left[p - \frac{1}{\sqrt{n}}, p + \fra
 
 ## Exemples résolus
 
-### Exemple 1 : Probabilité avec loi normale
-
+:::example[Probabilite avec loi normale]
 Soit $X \sim \mathcal{N}(100, 225)$ (donc $\mu = 100$, $\sigma = 15$).
 
 Calculer $P(85 \leq X \leq 115)$.
@@ -151,9 +150,9 @@ Par symétrie :
 $$P(-1 \leq Z \leq 1) = 2P(Z \leq 1) - 1 \approx 2 \times 0.8413 - 1 = 0.6826$$
 
 Environ **68%** (cohérent avec la règle 68-95-99).
+:::
 
-### Exemple 2 : Trouver un seuil
-
+:::example[Trouver un seuil]
 Une machine produit des pièces dont le diamètre suit $\mathcal{N}(50, 4)$ (en mm).
 
 On veut que 95% des pièces aient un diamètre inférieur à $d$. Trouver $d$.
@@ -164,9 +163,9 @@ Pour $Z \sim \mathcal{N}(0, 1)$ : $P(Z \leq 1.645) = 0.95$
 
 Donc : $\frac{d - 50}{2} = 1.645$
 $d = 50 + 2 \times 1.645 = 53.29$ mm
+:::
 
-### Exemple 3 : Approximation de la binomiale
-
+:::example[Approximation de la binomiale]
 On lance 100 fois une pièce équilibrée. Quelle est la probabilité d'obtenir entre 45 et 55 piles ?
 
 $X \sim \mathcal{B}(100, 0.5)$
@@ -180,9 +179,9 @@ $$= P(-1.1 \leq Z \leq 1.1)$$
 $$\approx 2 \times 0.8643 - 1 = 0.7286$$
 
 Environ **73%**.
+:::
 
-### Exemple 4 : Intervalle de confiance
-
+:::example[Intervalle de confiance]
 Dans un sondage de 1000 personnes, 520 sont favorables à une mesure.
 
 Calculer un intervalle de confiance à 95% pour la proportion réelle.
@@ -197,6 +196,7 @@ $$= \left[0.52 - 1.96\sqrt{\frac{0.52 \times 0.48}{1000}}, 0.52 + 1.96\sqrt{\fra
 $$\approx [0.52 - 0.031, 0.52 + 0.031] = [0.489, 0.551]$$
 
 On peut affirmer avec 95% de confiance que la proportion réelle est entre **48.9% et 55.1%**.
+:::
 
 ## Erreurs fréquentes
 

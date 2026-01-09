@@ -116,8 +116,7 @@ Utile pour des inégalités comme $e^x \geq 1 + x$.
 
 ## Exemples résolus
 
-### Exemple 1 : Convexité de l'exponentielle
-
+:::example[Convexité de l'exponentielle]
 Étudier la convexité de $f(x) = e^x$.
 
 $f'(x) = e^x$
@@ -132,9 +131,9 @@ Comme $e^x > 0$ pour tout $x \in \mathbb{R}$, on a $f''(x) > 0$.
 En particulier, la tangente en $x = 0$ est $y = 1 + x$.
 
 Donc : $e^x \geq 1 + x$ pour tout $x \in \mathbb{R}$.
+:::
 
-### Exemple 2 : Point d'inflexion
-
+:::example[Point d'inflexion]
 Soit $f(x) = x^3 - 3x^2 + 2x$.
 
 $f'(x) = 3x^2 - 6x + 2$
@@ -149,9 +148,9 @@ Signe de $f''$ :
 $f''$ change de signe en $x = 1$.
 
 Point d'inflexion : $(1, f(1)) = (1, 1 - 3 + 2) = (1, 0)$
+:::
 
-### Exemple 3 : Tableau complet
-
+:::example[Tableau complet]
 Soit $f(x) = x^4 - 2x^2$.
 
 $f'(x) = 4x^3 - 4x = 4x(x^2 - 1) = 4x(x-1)(x+1)$
@@ -169,9 +168,9 @@ $f''(x) = 0$ si $x = \pm\frac{1}{\sqrt{3}}$
 **Points d'inflexion** en $x = \pm\frac{1}{\sqrt{3}}$
 
 Coordonnées : $f\left(\frac{1}{\sqrt{3}}\right) = \frac{1}{9} - \frac{2}{3} = -\frac{5}{9}$
+:::
 
-### Exemple 4 : Inégalité par convexité
-
+:::example[Inégalité par convexité]
 Montrer que $\ln(x) \leq x - 1$ pour tout $x > 0$.
 
 Soit $f(x) = \ln(x)$.
@@ -185,9 +184,9 @@ La courbe est donc **en-dessous** de ses tangentes.
 Tangente en $x = 1$ : $y = f(1) + f'(1)(x - 1) = 0 + 1 \cdot (x - 1) = x - 1$
 
 Donc : $\ln(x) \leq x - 1$ pour tout $x > 0$, avec égalité uniquement en $x = 1$.
+:::
 
-### Exemple 5 : Inégalité de Jensen
-
+:::example[Inégalité de Jensen]
 Montrer que pour $a, b > 0$ : $\sqrt{ab} \leq \frac{a + b}{2}$ (inégalité arithmético-géométrique).
 
 Soit $f(x) = \ln(x)$, concave.
@@ -201,6 +200,7 @@ $$\ln\left(\frac{a + b}{2}\right) \geq \frac{\ln(a) + \ln(b)}{2} = \ln(\sqrt{ab}
 Par croissance de l'exponentielle :
 
 $$\frac{a + b}{2} \geq \sqrt{ab}$$
+:::
 
 ## Erreurs fréquentes
 

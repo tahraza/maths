@@ -116,8 +116,7 @@ L'algorithme termine car les restes forment une suite strictement décroissante 
 
 ## Exemples résolus
 
-### Exemple 1 : Divisibilité
-
+:::example[Divisibilité]
 Montrer que $6 | (n^3 - n)$ pour tout $n \in \mathbb{Z}$.
 
 $n^3 - n = n(n^2 - 1) = n(n-1)(n+1) = (n-1)n(n+1)$
@@ -127,9 +126,9 @@ C'est le produit de trois entiers consécutifs.
 - Parmi trois entiers consécutifs, l'un est divisible par 2 (pair).
 - Parmi trois entiers consécutifs, l'un est divisible par 3.
 - Donc $(n-1)n(n+1)$ est divisible par $2 \times 3 = 6$.
+:::
 
-### Exemple 2 : Division euclidienne
-
+:::example[Division euclidienne]
 Effectuer la division euclidienne de $247$ par $13$.
 
 $247 = 13 \times 19 + 0$
@@ -139,9 +138,9 @@ Vérifions : $13 \times 19 = 247$ ✓
 Quotient $q = 19$, reste $r = 0$.
 
 Donc $13 | 247$.
+:::
 
-### Exemple 3 : Algorithme d'Euclide
-
+:::example[Algorithme d'Euclide]
 Calculer $\text{pgcd}(252, 180)$.
 
 $252 = 180 \times 1 + 72$
@@ -151,9 +150,9 @@ $72 = 36 \times 2 + 0$
 Le dernier reste non nul est $36$.
 
 Donc $\text{pgcd}(252, 180) = 36$.
+:::
 
-### Exemple 4 : PPCM
-
+:::example[PPCM]
 Calculer $\text{ppcm}(12, 18)$.
 
 D'abord, $\text{pgcd}(12, 18) = 6$ (par Euclide ou inspection).
@@ -161,9 +160,9 @@ D'abord, $\text{pgcd}(12, 18) = 6$ (par Euclide ou inspection).
 $\text{ppcm}(12, 18) = \frac{12 \times 18}{6} = \frac{216}{6} = 36$
 
 Vérifions : $36 = 3 \times 12 = 2 \times 18$ ✓
+:::
 
-### Exemple 5 : Nombres premiers entre eux
-
+:::example[Nombres premiers entre eux]
 $15$ et $28$ sont-ils premiers entre eux ?
 
 $28 = 15 \times 1 + 13$
@@ -174,6 +173,7 @@ $2 = 1 \times 2 + 0$
 $\text{pgcd}(15, 28) = 1$
 
 Oui, $15$ et $28$ sont premiers entre eux.
+:::
 
 ## Erreurs fréquentes
 

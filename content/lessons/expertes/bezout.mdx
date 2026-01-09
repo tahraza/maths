@@ -106,8 +106,7 @@ Pour trouver $a^{-1} \pmod{n}$ (si $\text{pgcd}(a,n) = 1$) :
 
 ## Exemples résolus
 
-### Exemple 1 : Coefficients de Bézout
-
+:::example[Coefficients de Bezout]
 Trouver $u, v$ tels que $54u + 21v = \text{pgcd}(54, 21)$.
 
 **Algorithme d'Euclide** :
@@ -126,9 +125,9 @@ $3 = 2(54 - 21 \times 2) - 21 = 2 \times 54 - 5 \times 21$
 Donc $u = 2$, $v = -5$.
 
 Vérification : $54 \times 2 + 21 \times (-5) = 108 - 105 = 3$ ✓
+:::
 
-### Exemple 2 : Équation diophantienne
-
+:::example[Equation diophantienne]
 Résoudre $12x + 8y = 20$.
 
 $d = \text{pgcd}(12, 8) = 4$. Or $4 | 20$, donc des solutions existent.
@@ -143,9 +142,9 @@ Vérification : $12 \times 5 + 8 \times (-5) = 60 - 40 = 20$ ✓
 **Solution générale** : $x = 5 + 2k$, $y = -5 - 3k$, $k \in \mathbb{Z}$
 
 (car $\frac{b}{d} = \frac{8}{4} = 2$ et $\frac{a}{d} = \frac{12}{4} = 3$)
+:::
 
-### Exemple 3 : Inverse modulaire
-
+:::example[Inverse modulaire]
 Calculer $7^{-1} \pmod{11}$.
 
 $\text{pgcd}(7, 11) = 1$, l'inverse existe.
@@ -161,9 +160,9 @@ $-3 \equiv 8 \pmod{11}$
 **Réponse** : $7^{-1} \equiv 8 \pmod{11}$
 
 Vérification : $7 \times 8 = 56 = 11 \times 5 + 1 \equiv 1 \pmod{11}$ ✓
+:::
 
-### Exemple 4 : Application du lemme de Gauss
-
+:::example[Application du lemme de Gauss]
 Montrer que si $7 | (3n + 2)$ et $7 | (4n + 5)$, alors $7 | n$.
 
 Si $7 | (3n + 2)$ et $7 | (4n + 5)$, alors $7 | 4(3n + 2) - 3(4n + 5) = 12n + 8 - 12n - 15 = -7$.
@@ -179,6 +178,7 @@ $n \equiv 5 \times 5 = 25 \equiv 4 \pmod{7}$.
 De $7 | (4n + 5)$ : $4n \equiv -5 \equiv 2 \pmod{7}$, $n \equiv 2 \times 2 = 4 \pmod{7}$ (car $4^{-1} \equiv 2$).
 
 Cohérent. Les conditions imposent $n \equiv 4 \pmod{7}$, pas $n \equiv 0$.
+:::
 
 ## Erreurs fréquentes
 

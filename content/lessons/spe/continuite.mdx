@@ -117,8 +117,7 @@ Pour encadrer la solution $c$ de $f(x) = 0$ :
 
 ## Exemples résolus
 
-### Exemple 1 : Vérifier la continuité
-
+:::example[Vérifier la continuité]
 La fonction $f(x) = \frac{x^2 - 1}{x - 1}$ est-elle continue en $x = 1$ ?
 
 $f$ n'est pas définie en $x = 1$ (division par 0).
@@ -128,9 +127,9 @@ Calculons la limite : $\displaystyle\lim_{x \to 1} \frac{x^2 - 1}{x - 1} = \lim_
 La limite existe mais $f(1)$ n'existe pas : $f$ n'est pas continue en 1.
 
 **Prolongement par continuité** : on peut définir $\tilde{f}(x) = x + 1$ pour tout $x \in \mathbb{R}$.
+:::
 
-### Exemple 2 : TVI pour existence de solution
-
+:::example[TVI pour existence de solution]
 Montrer que l'équation $x^3 + x - 1 = 0$ admet une solution dans $[0, 1]$.
 
 Soit $f(x) = x^3 + x - 1$.
@@ -142,9 +141,9 @@ Soit $f(x) = x^3 + x - 1$.
 $f(0)$ et $f(1)$ sont de signes contraires.
 
 Par le TVI, il existe $c \in ]0, 1[$ tel que $f(c) = 0$.
+:::
 
-### Exemple 3 : Unicité
-
+:::example[Unicité de la solution]
 Montrer que l'équation $x^3 + x - 1 = 0$ a une unique solution dans $\mathbb{R}$.
 
 $f(x) = x^3 + x - 1$
@@ -160,9 +159,9 @@ De plus :
 $f$ réalise une bijection de $\mathbb{R}$ sur $\mathbb{R}$.
 
 Donc l'équation $f(x) = 0$ a une **unique** solution.
+:::
 
-### Exemple 4 : Encadrement par dichotomie
-
+:::example[Encadrement par dichotomie]
 Encadrer la solution de $x^3 + x - 1 = 0$ à $0.1$ près.
 
 On sait que $c \in ]0, 1[$.
@@ -182,9 +181,9 @@ Donc $c \in ]0.625, 0.75[$.
 **Étape 4** : $f(0.6875) = 0.325 + 0.6875 - 1 = 0.0125 > 0$
 
 Donc $c \in ]0.625, 0.6875[$, soit $c \approx 0.68$ à $0.1$ près.
+:::
 
-### Exemple 5 : Image d'un intervalle
-
+:::example[Image d'un intervalle]
 Déterminer l'image de $[0, 2]$ par $f(x) = x^2 - 2x$.
 
 $f'(x) = 2x - 2 = 0 \Leftrightarrow x = 1$
@@ -196,6 +195,7 @@ Tableau de variations sur $[0, 2]$ :
 Minimum : $f(1) = -1$, Maximum : $f(0) = f(2) = 0$
 
 **Image** : $f([0, 2]) = [-1, 0]$
+:::
 
 ## Erreurs fréquentes
 

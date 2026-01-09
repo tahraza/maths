@@ -92,8 +92,35 @@ function processContent(content: string): string {
   processed = processed.replace(
     /:::example(?:\[([^\]]*)\])?\s*\n([\s\S]*?):::/g,
     (_, title, content) => {
-      const titleHtml = title ? `<strong class="text-slate-700">${title}</strong>` : '<strong class="text-slate-700">Exemple</strong>'
+      const titleHtml = title ? `<strong class="text-cyan-700 dark:text-cyan-400">${title}</strong>` : '<strong class="text-cyan-700 dark:text-cyan-400">Exemple</strong>'
       return `<div class="example-box">${titleHtml}<div class="mt-2">${content}</div></div>`
+    }
+  )
+
+  // :::remark
+  processed = processed.replace(
+    /:::remark(?:\[([^\]]*)\])?\s*\n([\s\S]*?):::/g,
+    (_, title, content) => {
+      const titleHtml = title ? `<strong class="text-indigo-700 dark:text-indigo-400">${title}</strong>` : '<strong class="text-indigo-700 dark:text-indigo-400">Remarque</strong>'
+      return `<div class="remark-box">${titleHtml}<div class="mt-2">${content}</div></div>`
+    }
+  )
+
+  // :::proof
+  processed = processed.replace(
+    /:::proof(?:\[([^\]]*)\])?\s*\n([\s\S]*?):::/g,
+    (_, title, content) => {
+      const titleHtml = title ? `<strong class="text-slate-700 dark:text-slate-300">${title}</strong>` : '<strong class="text-slate-700 dark:text-slate-300">Démonstration</strong>'
+      return `<div class="proof-box">${titleHtml}<div class="mt-2">${content}</div></div>`
+    }
+  )
+
+  // :::exercise
+  processed = processed.replace(
+    /:::exercise(?:\[([^\]]*)\])?\s*\n([\s\S]*?):::/g,
+    (_, title, content) => {
+      const titleHtml = title ? `<strong class="text-orange-700 dark:text-orange-400">${title}</strong>` : '<strong class="text-orange-700 dark:text-orange-400">Exercice</strong>'
+      return `<div class="exercise-box">${titleHtml}<div class="mt-2">${content}</div></div>`
     }
   )
 

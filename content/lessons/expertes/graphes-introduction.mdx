@@ -156,8 +156,7 @@ Propriétés équivalentes pour un graphe à $n$ sommets :
 
 ## Exemples résolus
 
-### Exemple 1 : Calcul des degrés
-
+:::example[Calcul des degres]
 Soit le graphe avec $S = \{A, B, C, D, E\}$ et arêtes $\{AB, BC, CD, DE, EA, AC\}$.
 
 **Degrés** :
@@ -168,9 +167,9 @@ Soit le graphe avec $S = \{A, B, C, D, E\}$ et arêtes $\{AB, BC, CD, DE, EA, AC
 - $d(E) = 2$ (voisins : A, D)
 
 **Vérification** : $3 + 2 + 3 + 2 + 2 = 12 = 2 \times 6$ arêtes ✓
+:::
 
-### Exemple 2 : Matrice d'adjacence
-
+:::example[Matrice d adjacence]
 Graphe avec sommets 1, 2, 3, 4 et arêtes $\{12, 13, 23, 34\}$.
 
 $$M = \begin{pmatrix} 0 & 1 & 1 & 0 \\ 1 & 0 & 1 & 0 \\ 1 & 1 & 0 & 1 \\ 0 & 0 & 1 & 0 \end{pmatrix}$$
@@ -178,9 +177,9 @@ $$M = \begin{pmatrix} 0 & 1 & 1 & 0 \\ 1 & 0 & 1 & 0 \\ 1 & 1 & 0 & 1 \\ 0 & 0 &
 Calculons $M^2$ pour trouver les chaînes de longueur 2 :
 - $(M^2)_{14}$ = ? C'est le nombre de chaînes de longueur 2 entre 1 et 4.
 - Chemins possibles : 1→3→4. Donc $(M^2)_{14} = 1$.
+:::
 
-### Exemple 3 : Connexité
-
+:::example[Connexite]
 Graphe $S = \{A, B, C, D, E, F\}$, arêtes $\{AB, BC, DE, EF\}$.
 
 Ce graphe a **deux composantes connexes** :
@@ -188,9 +187,9 @@ Ce graphe a **deux composantes connexes** :
 - $\{D, E, F\}$
 
 Il n'est pas connexe car il n'existe pas de chaîne de A à D.
+:::
 
-### Exemple 4 : Est-ce un arbre ?
-
+:::example[Est-ce un arbre]
 Graphe à 5 sommets et 5 arêtes.
 
 Pour être un arbre, il faudrait $n - 1 = 4$ arêtes.
@@ -198,6 +197,7 @@ Pour être un arbre, il faudrait $n - 1 = 4$ arêtes.
 Avec 5 arêtes et 5 sommets, le graphe contient au moins un cycle.
 
 **Ce n'est pas un arbre.**
+:::
 
 ## Erreurs fréquentes
 

@@ -150,16 +150,15 @@ Les "dimensions intérieures" doivent être égales.
 
 ## Exemples résolus
 
-### Exemple 1 : Somme et produit par scalaire
-
+:::example[Somme et produit par scalaire]
 $A = \begin{pmatrix} 1 & 2 \\ 3 & -1 \end{pmatrix}$ et $B = \begin{pmatrix} 0 & -1 \\ 2 & 4 \end{pmatrix}$
 
 **Somme** : $A + B = \begin{pmatrix} 1 & 1 \\ 5 & 3 \end{pmatrix}$
 
 **Produit par scalaire** : $2A = \begin{pmatrix} 2 & 4 \\ 6 & -2 \end{pmatrix}$
+:::
 
-### Exemple 2 : Produit matriciel
-
+:::example[Produit matriciel]
 $A = \begin{pmatrix} 1 & 2 \\ 3 & 4 \end{pmatrix}$ et $B = \begin{pmatrix} 5 & 6 \\ 7 & 8 \end{pmatrix}$
 
 $$AB = \begin{pmatrix} 1 \times 5 + 2 \times 7 & 1 \times 6 + 2 \times 8 \\ 3 \times 5 + 4 \times 7 & 3 \times 6 + 4 \times 8 \end{pmatrix} = \begin{pmatrix} 19 & 22 \\ 43 & 50 \end{pmatrix}$$
@@ -167,20 +166,21 @@ $$AB = \begin{pmatrix} 1 \times 5 + 2 \times 7 & 1 \times 6 + 2 \times 8 \\ 3 \t
 $$BA = \begin{pmatrix} 5 \times 1 + 6 \times 3 & 5 \times 2 + 6 \times 4 \\ 7 \times 1 + 8 \times 3 & 7 \times 2 + 8 \times 4 \end{pmatrix} = \begin{pmatrix} 23 & 34 \\ 31 & 46 \end{pmatrix}$$
 
 On vérifie que $AB \neq BA$.
+:::
 
-### Exemple 3 : Produit avec tailles différentes
-
+:::example[Produit avec tailles differentes]
 $A = \begin{pmatrix} 1 & 2 & 3 \\ 4 & 5 & 6 \end{pmatrix}$ ($2 \times 3$) et $B = \begin{pmatrix} 1 \\ 2 \\ 3 \end{pmatrix}$ ($3 \times 1$)
 
 $AB$ est défini car $3 = 3$. Taille de $AB$ : $2 \times 1$.
 
 $$AB = \begin{pmatrix} 1 \times 1 + 2 \times 2 + 3 \times 3 \\ 4 \times 1 + 5 \times 2 + 6 \times 3 \end{pmatrix} = \begin{pmatrix} 14 \\ 32 \end{pmatrix}$$
+:::
 
-### Exemple 4 : Transposée
-
+:::example[Transposee]
 $A = \begin{pmatrix} 1 & 2 & 3 \\ 4 & 5 & 6 \end{pmatrix}$
 
 $A^T = \begin{pmatrix} 1 & 4 \\ 2 & 5 \\ 3 & 6 \end{pmatrix}$
+:::
 
 ## Erreurs fréquentes
 

@@ -161,8 +161,7 @@ En clair : **les puissances l'emportent sur le logarithme**.
 
 ## Exemples résolus
 
-### Exemple 1 : Limite d'une fraction polynomiale
-
+:::example[Limite d'une fraction polynomiale]
 Calculer $\displaystyle\lim_{n \to +\infty} \frac{3n^2 - 2n + 1}{5n^2 + n}$.
 
 **Forme** : $\frac{\infty}{\infty}$
@@ -174,9 +173,9 @@ $$\frac{3n^2 - 2n + 1}{5n^2 + n} = \frac{n^2(3 - \frac{2}{n} + \frac{1}{n^2})}{n
 Quand $n \to +\infty$ : $\frac{2}{n} \to 0$, $\frac{1}{n^2} \to 0$, $\frac{1}{n} \to 0$
 
 Donc $\displaystyle\lim_{n \to +\infty} \frac{3n^2 - 2n + 1}{5n^2 + n} = \frac{3}{5}$
+:::
 
-### Exemple 2 : Forme $\infty - \infty$
-
+:::example[Forme infini moins infini]
 Calculer $\displaystyle\lim_{n \to +\infty} (\sqrt{n+1} - \sqrt{n})$.
 
 **Forme** : $\infty - \infty$
@@ -188,9 +187,9 @@ $$\sqrt{n+1} - \sqrt{n} = \frac{(\sqrt{n+1} - \sqrt{n})(\sqrt{n+1} + \sqrt{n})}{
 Quand $n \to +\infty$ : $\sqrt{n+1} + \sqrt{n} \to +\infty$
 
 Donc $\displaystyle\lim_{n \to +\infty} (\sqrt{n+1} - \sqrt{n}) = 0$
+:::
 
-### Exemple 3 : Théorème des gendarmes
-
+:::example[Théorème des gendarmes]
 Montrer que $\displaystyle\lim_{n \to +\infty} \frac{\sin(n)}{n} = 0$.
 
 On sait que $-1 \leq \sin(n) \leq 1$ pour tout $n$.
@@ -200,9 +199,9 @@ Donc $-\frac{1}{n} \leq \frac{\sin(n)}{n} \leq \frac{1}{n}$
 Or $\displaystyle\lim_{n \to +\infty} \frac{1}{n} = \lim_{n \to +\infty} \left(-\frac{1}{n}\right) = 0$
 
 Par le théorème des gendarmes : $\displaystyle\lim_{n \to +\infty} \frac{\sin(n)}{n} = 0$
+:::
 
-### Exemple 4 : Croissance comparée
-
+:::example[Croissance comparée]
 Calculer $\displaystyle\lim_{n \to +\infty} \frac{2^n}{n^{100}}$.
 
 **Forme** : $\frac{\infty}{\infty}$
@@ -210,6 +209,7 @@ Calculer $\displaystyle\lim_{n \to +\infty} \frac{2^n}{n^{100}}$.
 Par croissance comparée, l'exponentielle $2^n$ croît plus vite que toute puissance de $n$.
 
 Donc $\displaystyle\lim_{n \to +\infty} \frac{2^n}{n^{100}} = +\infty$
+:::
 
 ## Erreurs fréquentes
 

@@ -199,7 +199,19 @@
   }
 
   .example-box {
-    @apply my-6 rounded-lg border border-slate-200 bg-white p-4 dark:border-slate-700 dark:bg-slate-800;
+    @apply my-6 rounded-lg border-l-4 border-cyan-500 bg-cyan-50 p-4 dark:bg-cyan-900/20;
+  }
+
+  .remark-box {
+    @apply my-6 rounded-lg border-l-4 border-indigo-500 bg-indigo-50 p-4 dark:bg-indigo-900/20;
+  }
+
+  .proof-box {
+    @apply my-6 rounded-lg border border-slate-300 bg-slate-50 p-4 dark:border-slate-600 dark:bg-slate-800/50;
+  }
+
+  .exercise-box {
+    @apply my-6 rounded-lg border-l-4 border-orange-500 bg-orange-50 p-4 dark:bg-orange-900/20;
   }
 
   .warning-box {
