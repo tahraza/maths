@@ -84,7 +84,7 @@ export function ComplexPlane({
       )}
 
       <div className="overflow-hidden rounded" style={{ height }}>
-        <Mafs viewBox={{ x: domain, y: domain }} preserveAspectRatio="contain">
+        <Mafs viewBox={{ x: domain, y: domain }} preserveAspectRatio="contain" zoom={{ min: 0.5, max: 4 }}>
           <Coordinates.Cartesian
             xAxis={{ labels: (x) => (x === 0 ? '' : x.toString()) }}
             yAxis={{ labels: (y) => (y === 0 ? '' : `${y}i`) }}

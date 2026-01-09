@@ -165,7 +165,7 @@ export function SequencePlot({
       </div>
 
       <div className="overflow-hidden rounded" style={{ height }}>
-        <Mafs viewBox={{ x: xDomain, y: computedYDomain }} preserveAspectRatio={false}>
+        <Mafs viewBox={{ x: xDomain, y: computedYDomain }} preserveAspectRatio={false} zoom={{ min: 0.5, max: 4 }}>
           <Coordinates.Cartesian />
 
           {/* Points de la suite */}

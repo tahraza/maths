@@ -187,7 +187,7 @@ export function IntegralVisualization({
       </div>
 
       <div className="overflow-hidden rounded" style={{ height }}>
-        <Mafs viewBox={{ x: xDomain, y: yDomain }} preserveAspectRatio={false}>
+        <Mafs viewBox={{ x: xDomain, y: yDomain }} preserveAspectRatio={false} zoom={{ min: 0.5, max: 4 }}>
           <Coordinates.Cartesian />
 
           {/* Rectangles de Riemann */}

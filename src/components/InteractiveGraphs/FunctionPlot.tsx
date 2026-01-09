@@ -91,6 +91,7 @@ export function FunctionPlot({
         <Mafs
           viewBox={{ x: xDomain, y: yDomain }}
           preserveAspectRatio={false}
+          zoom={{ min: 0.5, max: 4 }}
         >
           <Coordinates.Cartesian />
 
