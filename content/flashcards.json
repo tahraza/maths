@@ -1710,5 +1710,113 @@
     "tags": ["combinatoire", "permutation", "anagramme"],
     "level": 2,
     "category": "method"
+  },
+  {
+    "id": "fc-equadiff-001",
+    "lessonId": "equations-differentielles",
+    "front": "Solutions de l'équation y' = ay",
+    "back": "y(x) = Ce^(ax) où C est une constante réelle.",
+    "tags": ["équations différentielles", "homogène"],
+    "level": 1,
+    "category": "formula"
+  },
+  {
+    "id": "fc-equadiff-002",
+    "lessonId": "equations-differentielles",
+    "front": "Solutions de l'équation y' = ay + b (a ≠ 0)",
+    "back": "y(x) = Ce^(ax) - b/a. La solution particulière constante est -b/a.",
+    "tags": ["équations différentielles", "second membre"],
+    "level": 1,
+    "category": "formula"
+  },
+  {
+    "id": "fc-equadiff-003",
+    "lessonId": "equations-differentielles",
+    "front": "Solution particulière constante de y' = ay + b",
+    "back": "y₀ = -b/a. On la trouve en posant y' = 0 : 0 = ay + b ⟹ y = -b/a.",
+    "tags": ["équations différentielles", "astuce"],
+    "level": 2,
+    "category": "method"
+  },
+  {
+    "id": "fc-equadiff-004",
+    "lessonId": "equations-differentielles",
+    "front": "Que permet une condition initiale y(x₀) = y₀ ?",
+    "back": "Elle détermine la constante C et donne une unique solution (problème de Cauchy).",
+    "tags": ["équations différentielles", "condition initiale"],
+    "level": 1,
+    "category": "definition"
+  },
+  {
+    "id": "fc-equadiff-005",
+    "lessonId": "equations-differentielles",
+    "front": "Limite de y(x) = Ce^(ax) + k quand x → +∞ si a < 0",
+    "back": "La limite est k. Le terme Ce^(ax) tend vers 0 car a < 0.",
+    "tags": ["équations différentielles", "limite"],
+    "level": 2,
+    "category": "property"
+  },
+  {
+    "id": "fc-equadiff-006",
+    "lessonId": "equations-differentielles",
+    "front": "Comment vérifier qu'une fonction est solution ?",
+    "back": "Calculer y' et vérifier que l'équation y' = ay + b est satisfaite.",
+    "tags": ["équations différentielles", "méthode"],
+    "level": 1,
+    "category": "method"
+  },
+  {
+    "id": "fc-equadiff-007",
+    "lessonId": "equations-differentielles",
+    "front": "Équation caractéristique de ay'' + by' + cy = 0",
+    "back": "ar² + br + c = 0. Les racines donnent la forme des solutions.",
+    "tags": ["équations différentielles", "second ordre"],
+    "level": 3,
+    "category": "formula"
+  },
+  {
+    "id": "fc-equadiff-008",
+    "lessonId": "equations-differentielles",
+    "front": "Solutions de y'' - 4y = 0",
+    "back": "y(x) = Ae^(2x) + Be^(-2x). Équation caractéristique : r² - 4 = 0 ⟹ r = ±2.",
+    "tags": ["équations différentielles", "second ordre", "exemple"],
+    "level": 3,
+    "category": "example"
+  },
+  {
+    "id": "fc-equadiff-009",
+    "lessonId": "equations-differentielles",
+    "front": "Piège : signe de la solution particulière",
+    "back": "Pour y' = ay + b, c'est -b/a (pas +b/a). Vérifier : 0 = a(-b/a) + b = 0 ✓",
+    "tags": ["équations différentielles", "erreur"],
+    "level": 2,
+    "category": "trap"
+  },
+  {
+    "id": "fc-equadiff-010",
+    "lessonId": "equations-differentielles",
+    "front": "Résoudre y' = 2y avec y(0) = 3",
+    "back": "Solution générale : Ce^(2x). Condition : C = 3. Réponse : y(x) = 3e^(2x).",
+    "tags": ["équations différentielles", "condition initiale", "exemple"],
+    "level": 2,
+    "category": "example"
+  },
+  {
+    "id": "fc-equadiff-011",
+    "lessonId": "equations-differentielles",
+    "front": "Structure de la solution générale de y' = ay + b",
+    "back": "Solution = (Sol. équation homogène) + (Sol. particulière) = Ce^(ax) + (-b/a)",
+    "tags": ["équations différentielles", "structure"],
+    "level": 2,
+    "category": "method"
+  },
+  {
+    "id": "fc-equadiff-012",
+    "lessonId": "equations-differentielles",
+    "front": "Application : décroissance radioactive m'(t) = -λm(t)",
+    "back": "m(t) = m₀e^(-λt) où m₀ est la masse initiale. C'est une décroissance exponentielle.",
+    "tags": ["équations différentielles", "application", "physique"],
+    "level": 2,
+    "category": "example"
   }
 ]

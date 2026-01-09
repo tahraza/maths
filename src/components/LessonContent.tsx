@@ -115,11 +115,23 @@ function processContent(content: string): string {
     }
   )
 
-  // :::exercise
+  // :::exercise (with collapsible solution)
   processed = processed.replace(
     /:::exercise(?:\[([^\]]*)\])?\s*\n([\s\S]*?):::/g,
     (_, title, content) => {
       const titleHtml = title ? `<strong class="text-orange-700 dark:text-orange-400">${title}</strong>` : '<strong class="text-orange-700 dark:text-orange-400">Exercice</strong>'
+
+      // Split content at **Solution** marker (various formats)
+      const solutionMatch = content.match(/\*\*Solution\s*:?\*\*\s*([\s\S]*)$/)
+
+      if (solutionMatch) {
+        const problemPart = content.slice(0, solutionMatch.index).trim()
+        const solutionPart = solutionMatch[1].trim()
+
+        return `<div class="exercise-box">${titleHtml}<div class="mt-2">${problemPart}</div><details class="exercise-solution"><summary class="exercise-solution-toggle">Voir la solution</summary><div class="exercise-solution-content">${solutionPart}</div></details></div>`
+      }
+
+      // No solution marker found, render as before
       return `<div class="exercise-box">${titleHtml}<div class="mt-2">${content}</div></div>`
     }
   )

@@ -1,0 +1,365 @@
+---
+id: "equations-differentielles"
+title: "Équations différentielles"
+track: "spe"
+level: 3
+prerequisites: ["primitives", "exponentielle"]
+tags: ["équations différentielles", "primitive", "exponentielle", "modélisation"]
+estimatedTime: 55
+chapter: "integration"
+order: 3
+---
+
+# Équations différentielles
+
+## Intuition et analogie
+
+Jusqu'à présent, tu as résolu des équations où l'inconnue était un **nombre** (par exemple $2x + 5 = 0$). Une équation différentielle est une équation où l'inconnue est une **fonction**, et qui met en relation cette fonction avec ses dérivées.
+
+**Analogie du GPS défectueux** : Imagine que tu es en voiture avec un GPS qui ne te donne que ta **vitesse** mais pas ta position. Tu sais que "ta vitesse est proportionnelle à la distance qu'il te reste à parcourir" (plus tu es loin, plus tu vas vite).
+
+- L'**équation différentielle**, c'est cette règle qui relie ta vitesse (la dérivée $y'$) à ta position ($y$).
+- **Résoudre l'équation**, c'est retrouver ta position $y(t)$ à chaque instant.
+- La **condition initiale**, c'est ton point de départ. Sans elle, tu connais la *forme* du trajet, mais pas *où* il commence (c'est la constante $C$).
+
+**Analogie de la population de bactéries** : Une population de bactéries se reproduit à un taux proportionnel à sa taille. Plus il y a de bactéries, plus elles se multiplient vite. Si $P(t)$ est la population à l'instant $t$, alors $P'(t) = kP(t)$ : c'est une équation différentielle !
+
+## Objectifs de cette leçon
+
+À la fin de cette leçon, tu sauras :
+- Reconnaître et résoudre les équations $y' = ay$
+- Résoudre les équations $y' = ay + b$
+- Utiliser une condition initiale pour trouver une solution unique
+- Appliquer ces méthodes à des problèmes concrets
+
+## Prérequis (rappel express)
+
+- **Dérivation** : $(e^{ax})' = ae^{ax}$
+- **Exponentielle** : propriétés de $e^x$
+- **Primitives** : notion de primitive d'une fonction
+
+## Qu'est-ce qu'une équation différentielle ?
+
+:::definition
+**Équation différentielle**
+
+Une **équation différentielle** est une équation dont l'inconnue est une fonction $y$ (ou $f$) et qui fait intervenir cette fonction et ses dérivées ($y'$, $y''$, etc.).
+
+L'**ordre** de l'équation est l'ordre de la plus haute dérivée qui apparaît.
+:::
+
+:::example[Types d'équations différentielles]
+- $y' = 3y$ : équation du **premier ordre** (seule $y'$ apparaît)
+- $y' = 2x$ : équation du premier ordre (se résout par primitivation)
+- $y'' + 4y = 0$ : équation du **second ordre** ($y''$ apparaît)
+:::
+
+:::tip
+**Résoudre** une équation différentielle, c'est trouver **toutes** les fonctions $y$ qui la vérifient. On parle de **solution générale**.
+
+Avec une **condition initiale** (ex: $y(0) = 5$), on trouve **une seule** solution : la **solution particulière**.
+:::
+
+## Équation $y' = ay$ (équation homogène)
+
+:::definition
+**Équation différentielle homogène du premier ordre**
+
+Soit $a$ un réel. L'équation $y' = ay$ est appelée équation différentielle **homogène**.
+
+**Forme des solutions** : Les solutions sont les fonctions de la forme :
+$$y(x) = Ce^{ax}$$
+où $C$ est une constante réelle quelconque.
+:::
+
+:::property[Démonstration]
+Montrons que $y(x) = Ce^{ax}$ est solution :
+- $y'(x) = C \cdot ae^{ax} = aCe^{ax} = ay(x)$ ✓
+
+Montrons que ce sont les seules solutions :
+- Soit $y$ une solution de $y' = ay$. Posons $g(x) = y(x)e^{-ax}$.
+- $g'(x) = y'(x)e^{-ax} + y(x) \cdot (-a)e^{-ax} = e^{-ax}(y'(x) - ay(x)) = 0$
+- Donc $g$ est constante : $g(x) = C$, soit $y(x) = Ce^{ax}$.
+:::
+
+:::example[Résolution de $y' = 3y$]
+Ici $a = 3$.
+
+**Solution générale** : $y(x) = Ce^{3x}$ où $C \in \mathbb{R}$.
+
+**Vérification** : $(Ce^{3x})' = 3Ce^{3x} = 3y$ ✓
+:::
+
+:::example[Résolution de $y' + 5y = 0$]
+On réécrit : $y' = -5y$, donc $a = -5$.
+
+**Solution générale** : $y(x) = Ce^{-5x}$ où $C \in \mathbb{R}$.
+:::
+
+:::warning
+**Attention à la forme de l'équation !**
+
+L'équation doit être sous la forme $y' = ay$ pour appliquer directement la formule.
+
+- $y' + 2y = 0$ se réécrit $y' = -2y$ donc $a = -2$
+- $3y' = 6y$ se réécrit $y' = 2y$ donc $a = 2$
+:::
+
+## Équation $y' = ay + b$
+
+:::definition
+**Équation avec second membre constant**
+
+Soit $a \neq 0$ et $b$ des réels. Les solutions de l'équation $y' = ay + b$ sont :
+$$y(x) = Ce^{ax} - \frac{b}{a}$$
+où $C$ est une constante réelle quelconque.
+:::
+
+:::method[Méthode de résolution]
+**Étape 1** : Trouver la **solution particulière constante**
+
+Si $y$ est constante, alors $y' = 0$. L'équation devient :
+$$0 = ay + b \implies y = -\frac{b}{a}$$
+
+Cette valeur $y_0 = -\frac{b}{a}$ est la **solution stationnaire**.
+
+**Étape 2** : Résoudre l'équation **homogène** associée $y' = ay$
+
+Les solutions sont $y_H(x) = Ce^{ax}$.
+
+**Étape 3** : La solution générale est la **somme** :
+$$y(x) = \underbrace{Ce^{ax}}_{\text{sol. homogène}} + \underbrace{\left(-\frac{b}{a}\right)}_{\text{sol. particulière}}$$
+:::
+
+:::example[Résolution de $y' = 2y - 6$]
+**Identification** : $a = 2$ et $b = -6$.
+
+**Solution particulière constante** :
+$$y_0 = -\frac{b}{a} = -\frac{-6}{2} = 3$$
+
+**Solution homogène** ($y' = 2y$) : $Ce^{2x}$
+
+**Solution générale** :
+$$y(x) = Ce^{2x} + 3$$
+
+**Vérification** : $y' = 2Ce^{2x}$ et $2y - 6 = 2(Ce^{2x} + 3) - 6 = 2Ce^{2x}$ ✓
+:::
+
+:::example[Résolution de $y' + y = 4$]
+On réécrit : $y' = -y + 4$, donc $a = -1$ et $b = 4$.
+
+**Solution particulière** : $y_0 = -\frac{4}{-1} = 4$
+
+**Solution homogène** : $Ce^{-x}$
+
+**Solution générale** : $y(x) = Ce^{-x} + 4$
+:::
+
+## Condition initiale
+
+:::definition
+**Problème de Cauchy**
+
+Une **condition initiale** est une condition de la forme $y(x_0) = y_0$ qui fixe la valeur de la solution en un point.
+
+Le problème de trouver la solution vérifiant cette condition s'appelle **problème de Cauchy**.
+:::
+
+:::property[Existence et unicité]
+Pour l'équation $y' = ay + b$ avec la condition initiale $y(x_0) = y_0$, il existe **une et une seule** solution.
+:::
+
+:::method[Trouver la solution avec condition initiale]
+1. Écrire la solution générale : $y(x) = Ce^{ax} - \frac{b}{a}$
+2. Remplacer $x$ par $x_0$ et $y$ par $y_0$
+3. Résoudre pour trouver $C$
+4. Écrire la solution particulière
+:::
+
+:::example[Exemple complet]
+Résoudre $y' = -2y + 6$ avec $y(0) = 1$.
+
+**Étape 1** : Solution générale
+
+$a = -2$, $b = 6$, donc $y_0 = -\frac{6}{-2} = 3$
+
+$$y(x) = Ce^{-2x} + 3$$
+
+**Étape 2** : Condition initiale
+
+$$y(0) = Ce^0 + 3 = C + 3 = 1$$
+
+Donc $C = -2$.
+
+**Solution** : $y(x) = -2e^{-2x} + 3$
+
+**Vérification** :
+- $y(0) = -2 \cdot 1 + 3 = 1$ ✓
+- $y' = 4e^{-2x}$ et $-2y + 6 = -2(-2e^{-2x} + 3) + 6 = 4e^{-2x}$ ✓
+:::
+
+:::example[Décroissance radioactive]
+La masse $m(t)$ d'un élément radioactif vérifie $m'(t) = -\lambda m(t)$ où $\lambda > 0$ est la constante de désintégration.
+
+Si la masse initiale est $m_0$, trouver $m(t)$.
+
+**Solution générale** : $m(t) = Ce^{-\lambda t}$
+
+**Condition initiale** : $m(0) = C = m_0$
+
+**Solution** : $m(t) = m_0 e^{-\lambda t}$
+
+C'est la loi de décroissance radioactive exponentielle.
+:::
+
+## Comportement asymptotique
+
+:::property[Limite des solutions]
+Pour $y(x) = Ce^{ax} + y_0$ avec $y_0 = -\frac{b}{a}$ :
+
+- Si $a < 0$ : $\lim_{x \to +\infty} y(x) = y_0$ (convergence vers la solution stationnaire)
+- Si $a > 0$ : $\lim_{x \to +\infty} y(x) = \pm\infty$ (divergence)
+:::
+
+:::example[Interprétation physique]
+Pour $y' = -0.5y + 10$ avec $y(0) = 0$ :
+
+**Solution** : $y(x) = -20e^{-0.5x} + 20 = 20(1 - e^{-0.5x})$
+
+Quand $x \to +\infty$ : $y(x) \to 20$
+
+**Interprétation** : C'est la charge d'un condensateur qui tend vers sa valeur d'équilibre.
+:::
+
+## Équation $y' = f(x)$ (cas particulier)
+
+:::tip
+Si l'équation ne contient pas $y$ à droite, c'est simplement un calcul de **primitive**.
+:::
+
+:::example[Résolution de $y' = 2x + 1$]
+On cherche une primitive de $2x + 1$.
+
+**Solution générale** : $y(x) = x^2 + x + C$
+
+Avec $y(0) = 3$ : $C = 3$, donc $y(x) = x^2 + x + 3$.
+:::
+
+## Mini-exercices
+
+:::exercise[Exercice 1]
+Résoudre $y' = 4y$.
+
+**Solution** : $y(x) = Ce^{4x}$ où $C \in \mathbb{R}$.
+:::
+
+:::exercise[Exercice 2]
+Résoudre $y' = -3y + 9$.
+
+**Solution** :
+- Solution particulière : $y_0 = -\frac{9}{-3} = 3$
+- Solution homogène : $Ce^{-3x}$
+- Solution générale : $y(x) = Ce^{-3x} + 3$
+:::
+
+:::exercise[Exercice 3]
+Résoudre $y' = 2y$ avec $y(0) = 5$.
+
+**Solution** :
+- Solution générale : $y(x) = Ce^{2x}$
+- Condition : $y(0) = C = 5$
+- Solution : $y(x) = 5e^{2x}$
+:::
+
+:::exercise[Exercice 4]
+Résoudre $y' + y = 3$ avec $y(0) = 0$.
+
+**Solution** :
+- Réécriture : $y' = -y + 3$, donc $a = -1$, $b = 3$
+- Solution particulière : $y_0 = 3$
+- Solution générale : $y(x) = Ce^{-x} + 3$
+- Condition : $y(0) = C + 3 = 0$, donc $C = -3$
+- Solution : $y(x) = -3e^{-x} + 3 = 3(1 - e^{-x})$
+:::
+
+:::exercise[Exercice 5]
+Vérifier que $y(x) = 2e^{3x} - 1$ est solution de $y' = 3y + 3$.
+
+**Solution** :
+- $y' = 6e^{3x}$
+- $3y + 3 = 3(2e^{3x} - 1) + 3 = 6e^{3x} - 3 + 3 = 6e^{3x}$
+- On a bien $y' = 3y + 3$ ✓
+:::
+
+## Introduction aux équations du second ordre
+
+:::definition
+**Équation du second ordre à coefficients constants**
+
+L'équation $ay'' + by' + cy = 0$ (avec $a \neq 0$) se résout à l'aide de l'**équation caractéristique** :
+$$ar^2 + br + c = 0$$
+:::
+
+:::property[Forme des solutions selon le discriminant]
+Soit $\Delta = b^2 - 4ac$ le discriminant.
+
+**Cas $\Delta > 0$** : deux racines réelles distinctes $r_1$ et $r_2$
+$$y(x) = Ae^{r_1 x} + Be^{r_2 x}$$
+
+**Cas $\Delta = 0$** : une racine double $r_0 = -\frac{b}{2a}$
+$$y(x) = (Ax + B)e^{r_0 x}$$
+
+**Cas $\Delta < 0$** : (hors programme Spécialité, vu en Maths Expertes)
+:::
+
+:::example[Résolution de $y'' - 4y = 0$]
+**Équation caractéristique** : $r^2 - 4 = 0$
+
+**Racines** : $r^2 = 4 \implies r = \pm 2$
+
+Donc $r_1 = 2$ et $r_2 = -2$ ($\Delta > 0$).
+
+**Solution générale** : $y(x) = Ae^{2x} + Be^{-2x}$
+:::
+
+## Erreurs fréquentes
+
+:::warning
+**Erreur 1** : Oublier la constante $C$
+
+Sans $C$, tu donnes une seule solution, pas toutes. La solution générale contient **toujours** une constante.
+
+**Erreur 2** : Se tromper de signe dans la solution particulière
+
+Pour $y' = ay + b$, la solution particulière est $-\frac{b}{a}$ et non $\frac{b}{a}$.
+
+**Vérification** : si $y = -\frac{b}{a}$ est constant, alors $y' = 0$ et $ay + b = a \cdot (-\frac{b}{a}) + b = -b + b = 0$ ✓
+
+**Erreur 3** : Confondre $y' = ay$ et $y' = ay + b$
+
+- $y' = 2y$ → solutions : $Ce^{2x}$
+- $y' = 2y + 4$ → solutions : $Ce^{2x} - 2$ (ne pas oublier $-\frac{b}{a} = -2$)
+
+**Erreur 4** : Mal appliquer la condition initiale
+
+La condition $y(0) = 5$ signifie qu'on remplace $x$ par $0$ dans la solution, pas dans l'équation.
+:::
+
+## Mini-résumé à apprendre
+
+**Équation homogène** $y' = ay$ :
+$$y(x) = Ce^{ax}$$
+
+**Équation avec second membre** $y' = ay + b$ ($a \neq 0$) :
+$$y(x) = Ce^{ax} - \frac{b}{a}$$
+
+**Condition initiale** : fixe la valeur de $C$ pour obtenir une solution unique.
+
+**Comportement** : si $a < 0$, les solutions convergent vers $-\frac{b}{a}$.
+
+## Ponts vers autres chapitres
+
+- **Primitives** : $y' = f(x)$ se résout par primitivation
+- **Exponentielle** : les solutions font intervenir $e^{ax}$
+- **Suites** : analogie avec les suites géométriques $u_{n+1} = qu_n$
+- **Physique** : désintégration radioactive, circuits RC, cinétique chimique

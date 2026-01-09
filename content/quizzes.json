@@ -4162,5 +4162,203 @@
       }
     ],
     "difficulty": 2
+  },
+  {
+    "id": "pre-equations-differentielles",
+    "lessonId": "equations-differentielles",
+    "type": "pre",
+    "title": "Diagnostic : Équations différentielles",
+    "questions": [
+      {
+        "id": "q1",
+        "question": "Quelle est la dérivée de $e^{3x}$ ?",
+        "options": [
+          "$e^{3x}$",
+          "$3e^{3x}$",
+          "$e^{3}$",
+          "$3xe^{3x-1}$"
+        ],
+        "correctAnswer": 1,
+        "explanation": "$(e^{ax})' = ae^{ax}$. Ici $a = 3$, donc $(e^{3x})' = 3e^{3x}$."
+      },
+      {
+        "id": "q2",
+        "question": "Une équation différentielle a pour inconnue :",
+        "options": [
+          "Un nombre",
+          "Une fonction",
+          "Une dérivée",
+          "Un polynôme"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Contrairement aux équations classiques, l'inconnue est une fonction $y(x)$."
+      },
+      {
+        "id": "q3",
+        "question": "Que vaut $e^0$ ?",
+        "options": [
+          "0",
+          "1",
+          "$e$",
+          "Indéfini"
+        ],
+        "correctAnswer": 1,
+        "explanation": "$e^0 = 1$ pour tout $a$, car $a^0 = 1$."
+      },
+      {
+        "id": "q4",
+        "question": "Si $f(x) = Ce^{2x}$, alors $f(0)$ vaut :",
+        "options": [
+          "0",
+          "$C$",
+          "$2C$",
+          "$e^{2C}$"
+        ],
+        "correctAnswer": 1,
+        "explanation": "$f(0) = Ce^{2 \\times 0} = Ce^0 = C \\times 1 = C$."
+      },
+      {
+        "id": "q5",
+        "question": "$\\lim_{x \\to +\\infty} e^{-x}$ vaut :",
+        "options": [
+          "$+\\infty$",
+          "$-\\infty$",
+          "0",
+          "1"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Quand $x \\to +\\infty$, $-x \\to -\\infty$, donc $e^{-x} \\to 0$."
+      }
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "post-equations-differentielles",
+    "lessonId": "equations-differentielles",
+    "type": "post",
+    "title": "Validation : Équations différentielles",
+    "questions": [
+      {
+        "id": "q1",
+        "question": "Quelle est la solution générale de $y' = 3y$ ?",
+        "options": [
+          "$y = 3x + C$",
+          "$y = Ce^{3x}$",
+          "$y = Ce^{-3x}$",
+          "$y = e^{3x} + C$"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Les solutions de $y' = ay$ sont $y(x) = Ce^{ax}$."
+      },
+      {
+        "id": "q2",
+        "question": "Pour $y' = ay + b$ avec $a \\neq 0$, la solution particulière constante est :",
+        "options": [
+          "$b/a$",
+          "$-b/a$",
+          "$a/b$",
+          "$-a/b$"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Si $y$ est constant, $y' = 0$, donc $0 = ay + b \\Rightarrow y = -b/a$."
+      },
+      {
+        "id": "q3",
+        "question": "Résoudre $y' = 2y$ avec $y(0) = 5$ donne :",
+        "options": [
+          "$y = 5e^{2x}$",
+          "$y = 2e^{5x}$",
+          "$y = e^{2x} + 5$",
+          "$y = 5e^{-2x}$"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Solution générale : $Ce^{2x}$. Condition : $C = 5$. Donc $y = 5e^{2x}$."
+      },
+      {
+        "id": "q4",
+        "question": "Les solutions de $y' = -y + 4$ sont :",
+        "options": [
+          "$y = Ce^{-x}$",
+          "$y = Ce^{x} + 4$",
+          "$y = Ce^{-x} + 4$",
+          "$y = Ce^{-x} - 4$"
+        ],
+        "correctAnswer": 2,
+        "explanation": "$a = -1$, $b = 4$. Solution particulière : $-b/a = 4$. Donc $y = Ce^{-x} + 4$."
+      },
+      {
+        "id": "q5",
+        "question": "Si $y' = -2y + 6$ et $y(0) = 3$, alors $\\lim_{x \\to +\\infty} y(x)$ vaut :",
+        "options": [
+          "0",
+          "3",
+          "6",
+          "$+\\infty$"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Solution stationnaire : $-6/(-2) = 3$. Comme $a < 0$, la solution converge vers 3."
+      },
+      {
+        "id": "q6",
+        "question": "Combien de constantes arbitraires dans la solution générale d'une équation du 1er ordre ?",
+        "options": [
+          "0",
+          "1",
+          "2",
+          "Ça dépend"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Il y a une seule constante $C$, déterminée par une condition initiale."
+      },
+      {
+        "id": "q7",
+        "question": "L'équation $y' = f(x)$ (sans $y$ à droite) se résout par :",
+        "options": [
+          "Calcul de dérivée",
+          "Calcul de primitive",
+          "Équation caractéristique",
+          "Intégration par parties"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Trouver $y$ tel que $y' = f(x)$ revient à trouver une primitive de $f$."
+      },
+      {
+        "id": "q8",
+        "question": "Quelle équation a pour solution $y(x) = e^{-2x}$ ?",
+        "options": [
+          "$y' = 2y$",
+          "$y' = -2y$",
+          "$y' = y - 2$",
+          "$y' = -2$"
+        ],
+        "correctAnswer": 1,
+        "explanation": "$(e^{-2x})' = -2e^{-2x} = -2y$, donc l'équation est $y' = -2y$."
+      },
+      {
+        "id": "q9",
+        "question": "Pour vérifier qu'une fonction est solution, on doit :",
+        "options": [
+          "Calculer sa primitive",
+          "Calculer sa dérivée et vérifier l'équation",
+          "Résoudre l'équation caractéristique",
+          "Trouver la condition initiale"
+        ],
+        "correctAnswer": 1,
+        "explanation": "On calcule $y'$ et on vérifie que $y' = ay + b$ est satisfaite."
+      },
+      {
+        "id": "q10",
+        "question": "L'équation $y'' - 9y = 0$ est du :",
+        "options": [
+          "Premier ordre",
+          "Second ordre",
+          "Troisième ordre",
+          "Ce n'est pas une équation différentielle"
+        ],
+        "correctAnswer": 1,
+        "explanation": "La présence de $y''$ (dérivée seconde) indique le second ordre."
+      }
+    ],
+    "difficulty": 2
   }
 ]

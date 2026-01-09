@@ -468,6 +468,84 @@
         { "instruction": "Calcule le résultat final.", "hint": "$\\frac{5!}{2!}$", "solution": "$\\frac{120}{2} = 60$ anagrammes." }
       ],
       "finalAnswer": "$\\frac{5!}{2!} = 60$ anagrammes"
+    },
+    {
+      "id": "equadiff-homogene",
+      "title": "Équation homogène",
+      "theme": "Équations différentielles",
+      "difficulty": "facile",
+      "duration": 8,
+      "description": "Résoudre une équation de la forme y' = ay.",
+      "problem": "Résoudre l'équation différentielle $y' + 5y = 0$.",
+      "steps": [
+        { "instruction": "Écris l'équation sous la forme $y' = ay$.", "hint": "Isole $y'$ d'un côté.", "solution": "$y' = -5y$. Donc $a = -5$." },
+        { "instruction": "Applique la formule du cours.", "hint": "Les solutions de $y' = ay$ sont $Ce^{ax}$.", "solution": "Les solutions sont $y(x) = Ce^{-5x}$ où $C \\in \\mathbb{R}$." },
+        { "instruction": "Vérifie ta réponse.", "hint": "Calcule $y'$ et vérifie que $y' = -5y$.", "solution": "$y' = -5Ce^{-5x} = -5y$ ✓" }
+      ],
+      "finalAnswer": "$y(x) = Ce^{-5x}$ où $C \\in \\mathbb{R}$"
+    },
+    {
+      "id": "equadiff-second-membre",
+      "title": "Équation avec second membre",
+      "theme": "Équations différentielles",
+      "difficulty": "moyen",
+      "duration": 12,
+      "description": "Résoudre y' = ay + b.",
+      "problem": "Résoudre l'équation $2y' - 4y = 6$.",
+      "steps": [
+        { "instruction": "Mets l'équation sous la forme $y' = ay + b$.", "hint": "Divise tout par 2 pour isoler $y'$.", "solution": "$y' = 2y + 3$. Donc $a = 2$ et $b = 3$." },
+        { "instruction": "Trouve la solution particulière constante.", "hint": "$y_0 = -b/a$.", "solution": "$y_0 = -\\frac{3}{2} = -1.5$" },
+        { "instruction": "Résous l'équation homogène $y' = 2y$.", "hint": "Solutions de la forme $Ce^{ax}$.", "solution": "$y_H(x) = Ce^{2x}$" },
+        { "instruction": "Écris la solution générale.", "hint": "Solution générale = homogène + particulière.", "solution": "$y(x) = Ce^{2x} - 1.5$" }
+      ],
+      "finalAnswer": "$y(x) = Ce^{2x} - \\frac{3}{2}$"
+    },
+    {
+      "id": "equadiff-cauchy",
+      "title": "Problème de Cauchy",
+      "theme": "Équations différentielles",
+      "difficulty": "moyen",
+      "duration": 12,
+      "description": "Trouver l'unique solution passant par un point.",
+      "problem": "Résoudre $y' = 3y$ avec $y(0) = 4$.",
+      "steps": [
+        { "instruction": "Écris la solution générale.", "hint": "C'est une équation homogène.", "solution": "$y(x) = Ce^{3x}$" },
+        { "instruction": "Utilise la condition initiale pour trouver $C$.", "hint": "Remplace $x$ par $0$ et $y$ par $4$.", "solution": "$y(0) = Ce^0 = C = 4$" },
+        { "instruction": "Écris la solution particulière.", "solution": "$y(x) = 4e^{3x}$" }
+      ],
+      "finalAnswer": "$y(x) = 4e^{3x}$"
+    },
+    {
+      "id": "equadiff-verification",
+      "title": "Vérification de solution",
+      "theme": "Équations différentielles",
+      "difficulty": "facile",
+      "duration": 8,
+      "description": "Vérifier qu'une fonction est solution.",
+      "problem": "Montrer que $u(x) = -x - 1$ est solution de $y' = y + x$.",
+      "steps": [
+        { "instruction": "Calcule la dérivée de $u$.", "hint": "Dérivée de $-x - 1$.", "solution": "$u'(x) = -1$" },
+        { "instruction": "Calcule $u(x) + x$.", "hint": "Remplace $y$ par $u(x)$.", "solution": "$u(x) + x = (-x - 1) + x = -1$" },
+        { "instruction": "Compare les deux résultats.", "solution": "$u'(x) = -1$ et $u(x) + x = -1$. Donc $u' = u + x$ ✓" }
+      ],
+      "finalAnswer": "$u(x) = -x - 1$ est bien solution"
+    },
+    {
+      "id": "equadiff-physique",
+      "title": "Modélisation physique",
+      "theme": "Équations différentielles",
+      "difficulty": "moyen",
+      "duration": 15,
+      "description": "Équation issue de la physique.",
+      "problem": "La tension $u(t)$ d'un condensateur vérifie $u'(t) + 2u(t) = 10$ avec $u(0) = 0$. Exprimer $u(t)$ et déterminer sa limite.",
+      "steps": [
+        { "instruction": "Identifie le type d'équation.", "hint": "C'est de la forme $y' = ay + b$.", "solution": "$u' = -2u + 10$. Donc $a = -2$ et $b = 10$." },
+        { "instruction": "Trouve la solution particulière.", "hint": "$u_0 = -b/a$.", "solution": "$u_0 = -\\frac{10}{-2} = 5$" },
+        { "instruction": "Écris la solution générale.", "solution": "$u(t) = Ce^{-2t} + 5$" },
+        { "instruction": "Applique la condition initiale.", "hint": "$u(0) = 0$.", "solution": "$0 = C + 5$, donc $C = -5$. Ainsi $u(t) = -5e^{-2t} + 5 = 5(1 - e^{-2t})$" },
+        { "instruction": "Calcule la limite quand $t \\to +\\infty$.", "hint": "Que vaut $e^{-2t}$ en $+\\infty$ ?", "solution": "$\\lim_{t \\to +\\infty} e^{-2t} = 0$, donc $\\lim u(t) = 5$." }
+      ],
+      "finalAnswer": "$u(t) = 5(1 - e^{-2t})$, limite = 5 V"
     }
   ]
 }
