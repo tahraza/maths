@@ -19,6 +19,7 @@ import {
   SequenceConvergence,
   NormalDistribution,
   BinomialDistribution,
+  SlopeField,
 } from './InteractiveGraphs'
 
 interface LessonContentProps {
@@ -294,6 +295,8 @@ function GraphRenderer({ config }: { config: GraphConfig }) {
         return <NormalDistribution {...(props as React.ComponentProps<typeof NormalDistribution>)} />
       case 'BinomialDistribution':
         return <BinomialDistribution {...(props as React.ComponentProps<typeof BinomialDistribution>)} />
+      case 'SlopeField':
+        return <SlopeField {...(props as React.ComponentProps<typeof SlopeField>)} />
       default:
         return <div className="text-danger-600">Type de graphe inconnu: {config.type}</div>
     }
