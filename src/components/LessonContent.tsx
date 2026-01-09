@@ -18,6 +18,7 @@ import {
   MovingTangent,
   SequenceConvergence,
   NormalDistribution,
+  BinomialDistribution,
 } from './InteractiveGraphs'
 
 interface LessonContentProps {
@@ -291,6 +292,8 @@ function GraphRenderer({ config }: { config: GraphConfig }) {
         return <SequenceConvergence {...(props as React.ComponentProps<typeof SequenceConvergence>)} />
       case 'NormalDistribution':
         return <NormalDistribution {...(props as React.ComponentProps<typeof NormalDistribution>)} />
+      case 'BinomialDistribution':
+        return <BinomialDistribution {...(props as React.ComponentProps<typeof BinomialDistribution>)} />
       default:
         return <div className="text-danger-600">Type de graphe inconnu: {config.type}</div>
     }
