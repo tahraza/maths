@@ -1,0 +1,365 @@
+---
+id: "nombres-premiers"
+title: "Nombres premiers"
+track: "expertes"
+level: 2
+prerequisites: ["divisibilite"]
+tags: ["nombres premiers", "arithmétique", "décomposition", "Fermat", "primalité"]
+estimatedTime: 50
+chapter: "arithmetique"
+order: 2
+---
+
+# Nombres premiers
+
+## Intuition et analogie
+
+**Les atomes des mathématiques** : En chimie, toute matière est composée d'atomes. L'eau est H₂O, le sel est NaCl. De la même façon, les nombres premiers sont les "atomes" des entiers : tout nombre entier supérieur à 1 peut être "construit" uniquement à partir de nombres premiers par multiplication.
+
+**Analogie du coffre-fort** : Imagine que tu multiplies deux très grands nombres premiers $p$ et $q$. Obtenir le produit $n = p \times q$ est facile (quelques secondes). Mais retrouver $p$ et $q$ à partir de $n$ ? C'est comme chercher la combinaison d'un coffre-fort sans indice : extrêmement difficile ! C'est ce principe qui protège tes transactions bancaires (cryptographie RSA).
+
+**Analogie des briques LEGO** : Les nombres premiers sont comme des briques LEGO de base qui ne peuvent pas être décomposées. Tout assemblage (tout entier) peut être déconstruit en ces briques élémentaires, et cette déconstruction est unique.
+
+## Objectifs de cette leçon
+
+À la fin de cette leçon, tu sauras :
+- Définir et reconnaître un nombre premier
+- Tester efficacement si un nombre est premier
+- Décomposer un entier en produit de facteurs premiers
+- Compter les diviseurs d'un entier
+- Appliquer le Petit Théorème de Fermat
+
+## Prérequis (rappel express)
+
+- **Divisibilité** : $a | b$ signifie qu'il existe $k$ tel que $b = ka$
+- **PGCD** : plus grand diviseur commun à deux entiers
+- **Division euclidienne** : $a = bq + r$ avec $0 \leq r < b$
+
+## Définition et premiers exemples
+
+:::definition
+**Nombre premier**
+
+Un entier naturel $n$ est un **nombre premier** s'il admet exactement deux diviseurs positifs : $1$ et lui-même.
+:::
+
+:::example[Exemples et contre-exemples]
+**Sont premiers** : $2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31...$
+
+**Ne sont pas premiers** :
+- $1$ : n'a qu'un seul diviseur (lui-même) → **pas premier**
+- $0$ : admet une infinité de diviseurs → **pas premier**
+- $4 = 2 \times 2$ : diviseurs : $1, 2, 4$ → **pas premier** (composé)
+- $15 = 3 \times 5$ : diviseurs : $1, 3, 5, 15$ → **pas premier**
+:::
+
+:::warning
+**Le cas de 1**
+
+L'erreur la plus fréquente est de considérer $1$ comme premier. Rappelle-toi : un nombre premier a **exactement deux** diviseurs. Or $1$ n'a qu'un seul diviseur (lui-même).
+
+Cette convention n'est pas arbitraire : elle garantit l'unicité de la décomposition en facteurs premiers.
+:::
+
+:::property[Le seul premier pair]
+$2$ est le **seul** nombre premier pair.
+
+**Démonstration** : Tout nombre pair $n > 2$ s'écrit $n = 2k$ avec $k > 1$. Donc $n$ admet au moins trois diviseurs : $1$, $2$ et $n$. Il n'est pas premier.
+:::
+
+## Test de primalité
+
+:::theorem[Critère de la racine carrée]
+Si un entier $n > 1$ n'est pas premier, alors il admet un diviseur premier $p$ tel que :
+$$p \leq \sqrt{n}$$
+:::
+
+:::proof[Démonstration]
+Si $n$ n'est pas premier, on peut écrire $n = a \times b$ avec $1 < a \leq b < n$.
+
+Si $a > \sqrt{n}$, alors $b \geq a > \sqrt{n}$, donc $ab > n$. Contradiction.
+
+Donc $a \leq \sqrt{n}$. Comme $a > 1$, il admet un diviseur premier $p \leq a \leq \sqrt{n}$.
+:::
+
+:::method[Test de primalité]
+Pour savoir si $n$ est premier :
+
+1. Calculer $\sqrt{n}$ (approximativement)
+2. Lister les nombres premiers $p \leq \sqrt{n}$
+3. Tester si l'un d'eux divise $n$
+4. **Si aucun ne divise $n$** → $n$ est premier
+5. **Si l'un divise $n$** → $n$ est composé
+:::
+
+:::example[139 est-il premier ?]
+**Étape 1** : $\sqrt{139} \approx 11,8$
+
+**Étape 2** : Premiers $\leq 11$ : $2, 3, 5, 7, 11$
+
+**Étape 3** : Tests
+- $139$ est impair → non divisible par $2$
+- Somme des chiffres : $1 + 3 + 9 = 13$ → non divisible par $3$
+- Ne finit pas par $0$ ou $5$ → non divisible par $5$
+- $139 = 7 \times 19 + 6$ → non divisible par $7$
+- $139 = 11 \times 12 + 7$ → non divisible par $11$
+
+**Conclusion** : $139$ est premier.
+:::
+
+:::exercise[Mini-exercice 1]
+Le nombre $221$ est-il premier ?
+
+**Solution** :
+$\sqrt{221} \approx 14,9$. Premiers à tester : $2, 3, 5, 7, 11, 13$.
+- Impair → pas $2$
+- $2 + 2 + 1 = 5$ → pas $3$
+- Finit par $1$ → pas $5$
+- $221 = 7 \times 31 + 4$ → pas $7$
+- $221 = 11 \times 20 + 1$ → pas $11$
+- $221 = 13 \times 17 = 221$ ✓
+
+Donc $221 = 13 \times 17$ n'est **pas premier**.
+:::
+
+## Théorème Fondamental de l'Arithmétique
+
+:::theorem[Décomposition en facteurs premiers]
+Tout entier $n \geq 2$ se décompose de manière **unique** (à l'ordre des facteurs près) en un produit de nombres premiers :
+$$n = p_1^{\alpha_1} \times p_2^{\alpha_2} \times \cdots \times p_k^{\alpha_k}$$
+où les $p_i$ sont des premiers distincts et les $\alpha_i \geq 1$.
+:::
+
+:::tip
+**Unicité = puissance**
+
+C'est l'unicité qui rend ce théorème si puissant. Il n'y a qu'**une seule façon** de construire chaque nombre à partir des "briques" premières.
+
+Par exemple, $12 = 2^2 \times 3$ et c'est la seule décomposition possible.
+:::
+
+:::method[Décomposition pratique]
+Pour décomposer $n$ :
+
+1. Diviser par $2$ tant que possible
+2. Puis par $3$, puis par $5$, etc.
+3. Continuer jusqu'à obtenir $1$
+4. Écrire le produit des facteurs trouvés
+:::
+
+:::example[Décomposition de 360]
+$360 = 2 \times 180 = 2^2 \times 90 = 2^3 \times 45 = 2^3 \times 3 \times 15 = 2^3 \times 3^2 \times 5$
+
+**Résultat** : $360 = 2^3 \times 3^2 \times 5$
+
+**Vérification** : $8 \times 9 \times 5 = 72 \times 5 = 360$ ✓
+:::
+
+:::exercise[Mini-exercice 2]
+Décomposer $1764$ en produit de facteurs premiers.
+
+**Solution** :
+$1764 = 2 \times 882 = 2^2 \times 441 = 2^2 \times 3 \times 147 = 2^2 \times 3^2 \times 49 = 2^2 \times 3^2 \times 7^2$
+
+Donc $1764 = 2^2 \times 3^2 \times 7^2 = (2 \times 3 \times 7)^2 = 42^2$
+
+Remarque : $1764$ est un carré parfait !
+:::
+
+## Nombre de diviseurs
+
+:::property[Formule du nombre de diviseurs]
+Si $n = p_1^{\alpha_1} \times p_2^{\alpha_2} \times \cdots \times p_k^{\alpha_k}$, alors le nombre de diviseurs positifs de $n$ est :
+$$\tau(n) = (\alpha_1 + 1)(\alpha_2 + 1) \cdots (\alpha_k + 1)$$
+:::
+
+:::proof[Justification]
+Un diviseur de $n$ s'écrit $d = p_1^{a_1} \times \cdots \times p_k^{a_k}$ avec $0 \leq a_i \leq \alpha_i$.
+
+Pour chaque $p_i$, il y a $(\alpha_i + 1)$ choix possibles pour l'exposant $a_i$ (de $0$ à $\alpha_i$).
+
+Le nombre total de diviseurs est donc le produit de ces choix.
+:::
+
+:::example[Diviseurs de 360]
+$360 = 2^3 \times 3^2 \times 5^1$
+
+Nombre de diviseurs : $(3+1)(2+1)(1+1) = 4 \times 3 \times 2 = 24$
+
+Les 24 diviseurs de 360 sont : 1, 2, 3, 4, 5, 6, 8, 9, 10, 12, 15, 18, 20, 24, 30, 36, 40, 45, 60, 72, 90, 120, 180, 360.
+:::
+
+:::exercise[Mini-exercice 3]
+Combien de diviseurs possède $n = 2^5 \times 7^2$ ?
+
+**Solution** :
+Nombre de diviseurs = $(5+1)(2+1) = 6 \times 3 = 18$ diviseurs.
+:::
+
+## Infinité des nombres premiers
+
+:::theorem[Théorème d'Euclide]
+Il existe une **infinité** de nombres premiers.
+:::
+
+:::proof[Démonstration par l'absurde]
+Supposons qu'il n'existe qu'un nombre fini de premiers : $p_1, p_2, \ldots, p_n$.
+
+Considérons $N = p_1 \times p_2 \times \cdots \times p_n + 1$.
+
+Pour tout $i$, on a $N = p_i \times (p_1 \cdots p_{i-1} \cdot p_{i+1} \cdots p_n) + 1$.
+
+Donc la division de $N$ par $p_i$ donne un reste de $1$ : aucun $p_i$ ne divise $N$.
+
+Or $N > 1$, donc $N$ admet un diviseur premier. Ce diviseur n'est aucun des $p_i$.
+
+**Contradiction** : on a trouvé un premier non listé. Donc il y a une infinité de premiers.
+:::
+
+:::remark[Remarque importante]
+Cette démonstration ne dit **pas** que $N$ est premier ! Par exemple :
+- $2 \times 3 + 1 = 7$ est premier
+- $2 \times 3 \times 5 + 1 = 31$ est premier
+- $2 \times 3 \times 5 \times 7 + 1 = 211$ est premier
+- Mais $2 \times 3 \times 5 \times 7 \times 11 \times 13 + 1 = 30031 = 59 \times 509$
+:::
+
+## Le Petit Théorème de Fermat
+
+:::theorem[Petit Théorème de Fermat]
+Si $p$ est un nombre premier et $a$ un entier **non divisible par $p$**, alors :
+$$a^{p-1} \equiv 1 \pmod{p}$$
+
+Forme équivalente : pour tout entier $a$ :
+$$a^p \equiv a \pmod{p}$$
+:::
+
+:::example[Vérification avec $p = 5$ et $a = 3$]
+$3^{5-1} = 3^4 = 81$
+
+$81 = 16 \times 5 + 1$, donc $81 \equiv 1 \pmod{5}$ ✓
+
+Le théorème est vérifié.
+:::
+
+:::method[Application du Petit Fermat]
+Pour calculer $a^n \pmod{p}$ avec $p$ premier et $p \nmid a$ :
+
+1. Réduire l'exposant : $n = (p-1)q + r$ avec $0 \leq r < p-1$
+2. Par Fermat : $a^{p-1} \equiv 1 \pmod{p}$
+3. Donc $a^n = (a^{p-1})^q \times a^r \equiv 1^q \times a^r \equiv a^r \pmod{p}$
+:::
+
+:::example[Calcul de $2^{100} \pmod{13}$]
+$13$ est premier et $13 \nmid 2$.
+
+$100 = 12 \times 8 + 4$ (car $p - 1 = 12$)
+
+Par Fermat : $2^{12} \equiv 1 \pmod{13}$
+
+Donc $2^{100} = (2^{12})^8 \times 2^4 \equiv 1^8 \times 16 \equiv 16 \pmod{13}$
+
+$16 = 13 + 3$, donc $2^{100} \equiv 3 \pmod{13}$
+:::
+
+:::exercise[Mini-exercice 4]
+Calculer le reste de la division de $7^{50}$ par $11$.
+
+**Solution** :
+$11$ est premier et $11 \nmid 7$.
+
+Par Fermat : $7^{10} \equiv 1 \pmod{11}$
+
+$50 = 10 \times 5$, donc $7^{50} = (7^{10})^5 \equiv 1^5 \equiv 1 \pmod{11}$
+
+Le reste est $1$.
+:::
+
+:::warning
+**La réciproque est fausse !**
+
+Si $a^{p-1} \equiv 1 \pmod{p}$, cela ne signifie **pas** que $p$ est premier.
+
+Il existe des "nombres de Carmichael" (pseudo-premiers) qui vérifient cette propriété sans être premiers. Exemple : $561 = 3 \times 11 \times 17$.
+:::
+
+## Applications : PGCD et PPCM
+
+:::property[PGCD via la décomposition]
+Si $a = \prod p_i^{\alpha_i}$ et $b = \prod p_i^{\beta_i}$ (en mettant des exposants nuls si nécessaire), alors :
+$$\text{pgcd}(a, b) = \prod p_i^{\min(\alpha_i, \beta_i)}$$
+:::
+
+:::property[PPCM via la décomposition]
+$$\text{ppcm}(a, b) = \prod p_i^{\max(\alpha_i, \beta_i)}$$
+:::
+
+:::property[Relation PGCD-PPCM]
+$$\text{pgcd}(a, b) \times \text{ppcm}(a, b) = a \times b$$
+:::
+
+:::example[Calcul avec 60 et 84]
+$60 = 2^2 \times 3 \times 5$
+
+$84 = 2^2 \times 3 \times 7$
+
+**PGCD** : $2^{\min(2,2)} \times 3^{\min(1,1)} \times 5^{\min(1,0)} \times 7^{\min(0,1)} = 2^2 \times 3 = 12$
+
+**PPCM** : $2^2 \times 3 \times 5 \times 7 = 420$
+
+**Vérification** : $12 \times 420 = 5040 = 60 \times 84$ ✓
+:::
+
+:::exercise[Mini-exercice 5]
+Calculer le PGCD et le PPCM de $126$ et $270$.
+
+**Solution** :
+$126 = 2 \times 63 = 2 \times 9 \times 7 = 2 \times 3^2 \times 7$
+
+$270 = 27 \times 10 = 3^3 \times 2 \times 5 = 2 \times 3^3 \times 5$
+
+**PGCD** : $2^1 \times 3^2 = 18$
+
+**PPCM** : $2 \times 3^3 \times 5 \times 7 = 2 \times 27 \times 35 = 1890$
+
+Vérification : $18 \times 1890 = 34020 = 126 \times 270$ ✓
+:::
+
+## Erreurs fréquentes
+
+:::warning
+**Erreur 1 : Oublier que 1 n'est pas premier**
+
+Un nombre premier a **exactement 2** diviseurs. Le nombre 1 n'a qu'un seul diviseur.
+
+**Erreur 2 : S'arrêter trop tôt dans le test de primalité**
+
+Il faut tester **tous** les premiers jusqu'à $\sqrt{n}$, pas seulement quelques-uns.
+
+**Erreur 3 : Confondre nombre de diviseurs et liste des diviseurs**
+
+La formule $(\alpha_1 + 1)(\alpha_2 + 1)\cdots$ donne le **nombre** de diviseurs, pas leur liste.
+
+**Erreur 4 : Mal appliquer Fermat**
+
+Le théorème s'applique quand $p$ est premier ET $p$ ne divise pas $a$. Si $p | a$, alors $a^{p-1} \equiv 0 \pmod{p}$, pas $1$.
+:::
+
+## Mini-résumé à apprendre
+
+| Concept | Formule / Définition |
+|---------|---------------------|
+| Nombre premier | Exactement 2 diviseurs : 1 et lui-même |
+| Test de primalité | Tester les premiers $p \leq \sqrt{n}$ |
+| Décomposition | $n = p_1^{\alpha_1} \times \cdots \times p_k^{\alpha_k}$ (unique) |
+| Nombre de diviseurs | $(\alpha_1 + 1) \times \cdots \times (\alpha_k + 1)$ |
+| Petit Fermat | $a^{p-1} \equiv 1 \pmod{p}$ si $p$ premier, $p \nmid a$ |
+| PGCD | Produit des $p_i^{\min(\alpha_i, \beta_i)}$ |
+| PPCM | Produit des $p_i^{\max(\alpha_i, \beta_i)}$ |
+
+## Ponts vers autres chapitres
+
+- **Divisibilité** : les nombres premiers sont les "briques élémentaires" de la divisibilité
+- **Congruences** : le Petit Théorème de Fermat est fondamental pour les calculs modulaires
+- **Bézout** : deux nombres sont premiers entre eux ssi il existe $u, v$ tels que $au + bv = 1$
+- **Cryptographie** : RSA repose sur la difficulté de factoriser de grands entiers

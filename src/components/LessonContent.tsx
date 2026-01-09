@@ -58,14 +58,14 @@ function processContent(content: string): string {
   // :::definition
   processed = processed.replace(
     /:::definition\s*\n([\s\S]*?):::/g,
-    '<div class="definition-box"><strong class="text-primary-700">Définition</strong><div class="mt-2">$1</div></div>'
+    '<div class="definition-box"><strong class="text-primary-700 dark:text-primary-400">Définition</strong><div class="mt-2">$1</div></div>'
   )
 
   // :::theorem
   processed = processed.replace(
     /:::theorem(?:\[([^\]]*)\])?\s*\n([\s\S]*?):::/g,
     (_, title, content) => {
-      const titleHtml = title ? `<strong class="text-amber-700">${title}</strong>` : '<strong class="text-amber-700">Théorème</strong>'
+      const titleHtml = title ? `<strong class="text-amber-700 dark:text-amber-400">${title}</strong>` : '<strong class="text-amber-700 dark:text-amber-400">Théorème</strong>'
       return `<div class="theorem-box">${titleHtml}<div class="mt-2">${content}</div></div>`
     }
   )
@@ -74,7 +74,7 @@ function processContent(content: string): string {
   processed = processed.replace(
     /:::property(?:\[([^\]]*)\])?\s*\n([\s\S]*?):::/g,
     (_, title, content) => {
-      const titleHtml = title ? `<strong class="text-emerald-700">${title}</strong>` : '<strong class="text-emerald-700">Propriété</strong>'
+      const titleHtml = title ? `<strong class="text-emerald-700 dark:text-emerald-400">${title}</strong>` : '<strong class="text-emerald-700 dark:text-emerald-400">Propriété</strong>'
       return `<div class="property-box">${titleHtml}<div class="mt-2">${content}</div></div>`
     }
   )
@@ -83,7 +83,7 @@ function processContent(content: string): string {
   processed = processed.replace(
     /:::method(?:\[([^\]]*)\])?\s*\n([\s\S]*?):::/g,
     (_, title, content) => {
-      const titleHtml = title ? `<strong class="text-purple-700">${title}</strong>` : '<strong class="text-purple-700">Méthode</strong>'
+      const titleHtml = title ? `<strong class="text-purple-700 dark:text-purple-400">${title}</strong>` : '<strong class="text-purple-700 dark:text-purple-400">Méthode</strong>'
       return `<div class="method-box">${titleHtml}<div class="mt-2">${content}</div></div>`
     }
   )
@@ -139,13 +139,22 @@ function processContent(content: string): string {
   // :::warning
   processed = processed.replace(
     /:::warning\s*\n([\s\S]*?):::/g,
-    '<div class="warning-box"><strong class="text-danger-700">Attention</strong><div class="mt-2">$1</div></div>'
+    '<div class="warning-box"><strong class="text-danger-700 dark:text-danger-400">Attention</strong><div class="mt-2">$1</div></div>'
+  )
+
+  // :::erreur (common mistakes / pitfalls)
+  processed = processed.replace(
+    /:::erreur(?:\[([^\]]*)\])?\s*\n([\s\S]*?):::/g,
+    (_, title, content) => {
+      const titleHtml = title ? `<strong class="text-rose-700 dark:text-rose-400">${title}</strong>` : '<strong class="text-rose-700 dark:text-rose-400">Erreur fréquente</strong>'
+      return `<div class="erreur-box">${titleHtml}<div class="mt-2">${content}</div></div>`
+    }
   )
 
   // :::tip
   processed = processed.replace(
     /:::tip\s*\n([\s\S]*?):::/g,
-    '<div class="tip-box"><strong class="text-success-700">Astuce</strong><div class="mt-2">$1</div></div>'
+    '<div class="tip-box"><strong class="text-success-700 dark:text-success-400">Astuce</strong><div class="mt-2">$1</div></div>'
   )
 
   // Process basic markdown

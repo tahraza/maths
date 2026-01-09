@@ -5303,5 +5303,233 @@
     ],
     "tags": ["équations différentielles", "limite", "variations"],
     "isComprehension": false
+  },
+  {
+    "id": "ex-prem-001",
+    "lessonId": "nombres-premiers",
+    "title": "Test de primalité",
+    "difficulty": 1,
+    "statement": "En utilisant la méthode de la racine carrée, déterminer si les nombres suivants sont premiers :\n\n1. $101$\n2. $237$\n3. $289$",
+    "hints": [
+      "Calcule √n pour chaque nombre.",
+      "Liste les nombres premiers à tester (≤ √n).",
+      "Utilise les critères de divisibilité (par 2, 3, 5...)."
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Test de 101",
+        "content": "$\\sqrt{101} \\approx 10,05$. Premiers à tester : 2, 3, 5, 7.\n\n- 101 impair → pas divisible par 2\n- $1+0+1=2$ → pas divisible par 3\n- Finit par 1 → pas divisible par 5\n- $101 = 7 \\times 14 + 3$ → pas divisible par 7\n\n**Conclusion : 101 est premier.**"
+      },
+      {
+        "step": 2,
+        "title": "Test de 237",
+        "content": "$\\sqrt{237} \\approx 15,4$. Premiers à tester : 2, 3, 5, 7, 11, 13.\n\n- 237 impair → pas divisible par 2\n- $2+3+7=12$ divisible par 3 → **237 = 3 × 79**\n\n**Conclusion : 237 n'est pas premier.**"
+      },
+      {
+        "step": 3,
+        "title": "Test de 289",
+        "content": "$\\sqrt{289} = 17$ exactement !\n\nDonc $289 = 17 \\times 17 = 17^2$.\n\n**Conclusion : 289 n'est pas premier (c'est 17²).**"
+      }
+    ],
+    "method": "Pour tester si n est premier : calculer √n, puis tester tous les premiers p ≤ √n.",
+    "commonMistakes": [
+      "Tester au-delà de √n (inutile)",
+      "Oublier de tester certains premiers",
+      "Ne pas reconnaître un carré parfait"
+    ],
+    "tags": ["arithmétique", "nombres premiers", "primalité"],
+    "isComprehension": true
+  },
+  {
+    "id": "ex-prem-002",
+    "lessonId": "nombres-premiers",
+    "title": "Décomposition en facteurs premiers",
+    "difficulty": 2,
+    "statement": "Décomposer les nombres suivants en produits de facteurs premiers :\n\n1. $180$\n2. $504$\n3. $1225$",
+    "hints": [
+      "Commence par diviser par 2 tant que possible.",
+      "Puis par 3, puis par 5, etc.",
+      "Pour 1225, remarque que c'est 5² × quelque chose..."
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Décomposition de 180",
+        "content": "$180 = 2 \\times 90 = 2^2 \\times 45 = 2^2 \\times 9 \\times 5 = 2^2 \\times 3^2 \\times 5$\n\n**180 = 2² × 3² × 5**"
+      },
+      {
+        "step": 2,
+        "title": "Décomposition de 504",
+        "content": "$504 = 2 \\times 252 = 2^2 \\times 126 = 2^3 \\times 63 = 2^3 \\times 9 \\times 7 = 2^3 \\times 3^2 \\times 7$\n\n**504 = 2³ × 3² × 7**"
+      },
+      {
+        "step": 3,
+        "title": "Décomposition de 1225",
+        "content": "$1225 = 5 \\times 245 = 5^2 \\times 49 = 5^2 \\times 7^2$\n\nRemarque : $1225 = (5 \\times 7)^2 = 35^2$ (carré parfait !)\n\n**1225 = 5² × 7²**"
+      }
+    ],
+    "method": "Diviser successivement par les plus petits premiers possibles jusqu'à obtenir 1.",
+    "commonMistakes": [
+      "S'arrêter avant d'avoir fini (le résultat doit être 1)",
+      "Oublier de factoriser complètement (ex: écrire 9 au lieu de 3²)"
+    ],
+    "tags": ["arithmétique", "décomposition", "facteurs premiers"],
+    "isComprehension": false
+  },
+  {
+    "id": "ex-prem-003",
+    "lessonId": "nombres-premiers",
+    "title": "Nombre de diviseurs",
+    "difficulty": 2,
+    "statement": "1. Décomposer $600$ en facteurs premiers.\n2. Déterminer le nombre de diviseurs de $600$.\n3. Citer 3 diviseurs de $600$ autres que 1 et 600.",
+    "hints": [
+      "600 = 6 × 100 = ...",
+      "Utilise la formule τ(n) = (α₁+1)(α₂+1)...",
+      "Un diviseur s'obtient en choisissant des exposants ≤ ceux de la décomposition."
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Décomposition",
+        "content": "$600 = 6 \\times 100 = 2 \\times 3 \\times 4 \\times 25 = 2^3 \\times 3 \\times 5^2$\n\n**600 = 2³ × 3¹ × 5²**"
+      },
+      {
+        "step": 2,
+        "title": "Nombre de diviseurs",
+        "content": "Formule : $\\tau(n) = (\\alpha_1 + 1)(\\alpha_2 + 1)(\\alpha_3 + 1)$\n\n$\\tau(600) = (3+1)(1+1)(2+1) = 4 \\times 2 \\times 3 = 24$\n\n**600 a 24 diviseurs.**"
+      },
+      {
+        "step": 3,
+        "title": "Exemples de diviseurs",
+        "content": "Quelques diviseurs de 600 :\n- $2^1 \\times 3^0 \\times 5^0 = 2$\n- $2^2 \\times 3^1 \\times 5^0 = 12$\n- $2^3 \\times 3^0 \\times 5^2 = 200$\n\n**Exemples : 2, 12, 200** (mais aussi 3, 4, 5, 6, 8, 10, 15, 20, 24, 25, 30, 40, 50, 60, 75, 100, 120, 150, 200, 300)"
+      }
+    ],
+    "method": "τ(p₁^α₁ × ... × pₖ^αₖ) = (α₁+1) × ... × (αₖ+1)",
+    "commonMistakes": [
+      "Oublier le +1 dans la formule",
+      "Mal compter les exposants dans la décomposition"
+    ],
+    "tags": ["arithmétique", "diviseurs", "formule"],
+    "isComprehension": false
+  },
+  {
+    "id": "ex-prem-004",
+    "lessonId": "nombres-premiers",
+    "title": "Application du Petit Théorème de Fermat",
+    "difficulty": 3,
+    "statement": "1. Vérifier que 13 est premier.\n2. Calculer le reste de la division de $5^{100}$ par 13.\n3. Calculer le reste de $7^{2024}$ par 13.",
+    "hints": [
+      "√13 ≈ 3,6, donc tester 2 et 3 suffit.",
+      "Par Fermat : 5^12 ≡ 1 (mod 13). Écris 100 = 12q + r.",
+      "Pour 2024, idem : 2024 = 12 × 168 + 8."
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Primalité de 13",
+        "content": "$\\sqrt{13} \\approx 3,6$. Premiers à tester : 2, 3.\n\n- 13 impair → pas divisible par 2\n- $1+3=4$ → pas divisible par 3\n\n**13 est premier.**"
+      },
+      {
+        "step": 2,
+        "title": "Calcul de 5^100 mod 13",
+        "content": "Par Fermat : $5^{12} \\equiv 1 \\pmod{13}$\n\n$100 = 12 \\times 8 + 4$\n\n$5^{100} = (5^{12})^8 \\times 5^4 \\equiv 1^8 \\times 5^4 \\equiv 5^4 \\pmod{13}$\n\n$5^2 = 25 = 2 \\times 13 - 1 \\equiv -1 \\pmod{13}$\n\n$5^4 = (5^2)^2 \\equiv (-1)^2 = 1 \\pmod{13}$\n\n**Le reste est 1.**"
+      },
+      {
+        "step": 3,
+        "title": "Calcul de 7^2024 mod 13",
+        "content": "$2024 = 12 \\times 168 + 8$\n\n$7^{2024} \\equiv 7^8 \\pmod{13}$\n\n$7^2 = 49 = 3 \\times 13 + 10 \\equiv 10 \\equiv -3 \\pmod{13}$\n\n$7^4 \\equiv (-3)^2 = 9 \\pmod{13}$\n\n$7^8 \\equiv 9^2 = 81 = 6 \\times 13 + 3 \\equiv 3 \\pmod{13}$\n\n**Le reste est 3.**"
+      }
+    ],
+    "method": "Par Fermat : a^(p-1) ≡ 1 (mod p). Réduire l'exposant modulo (p-1).",
+    "commonMistakes": [
+      "Appliquer Fermat quand p n'est pas premier",
+      "Oublier de vérifier que p ne divise pas a",
+      "Se tromper dans la division euclidienne de l'exposant"
+    ],
+    "tags": ["arithmétique", "Fermat", "congruences"],
+    "isComprehension": false
+  },
+  {
+    "id": "ex-prem-005",
+    "lessonId": "nombres-premiers",
+    "title": "PGCD et PPCM par décomposition",
+    "difficulty": 2,
+    "statement": "Soient $a = 1260$ et $b = 1386$.\n\n1. Décomposer $a$ et $b$ en facteurs premiers.\n2. Calculer $\\text{pgcd}(a, b)$ et $\\text{ppcm}(a, b)$.\n3. Vérifier que $\\text{pgcd}(a,b) \\times \\text{ppcm}(a,b) = a \\times b$.",
+    "hints": [
+      "1260 = 4 × 315 = 4 × 9 × 35 = ...",
+      "1386 = 2 × 693 = 2 × 9 × 77 = ...",
+      "PGCD : min des exposants. PPCM : max des exposants."
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Décompositions",
+        "content": "$1260 = 4 \\times 315 = 4 \\times 9 \\times 35 = 2^2 \\times 3^2 \\times 5 \\times 7$\n\n$1386 = 2 \\times 693 = 2 \\times 9 \\times 77 = 2 \\times 3^2 \\times 7 \\times 11$"
+      },
+      {
+        "step": 2,
+        "title": "Calcul du PGCD",
+        "content": "On prend le **minimum** des exposants pour chaque premier :\n\n| Premier | Exp. dans 1260 | Exp. dans 1386 | Min |\n|---------|----------------|----------------|-----|\n| 2 | 2 | 1 | 1 |\n| 3 | 2 | 2 | 2 |\n| 5 | 1 | 0 | 0 |\n| 7 | 1 | 1 | 1 |\n| 11 | 0 | 1 | 0 |\n\n$\\text{pgcd}(1260, 1386) = 2^1 \\times 3^2 \\times 7^1 = 2 \\times 9 \\times 7 = 126$"
+      },
+      {
+        "step": 3,
+        "title": "Calcul du PPCM",
+        "content": "On prend le **maximum** des exposants :\n\n$\\text{ppcm}(1260, 1386) = 2^2 \\times 3^2 \\times 5^1 \\times 7^1 \\times 11^1$\n$= 4 \\times 9 \\times 5 \\times 7 \\times 11 = 13860$"
+      },
+      {
+        "step": 4,
+        "title": "Vérification",
+        "content": "$\\text{pgcd} \\times \\text{ppcm} = 126 \\times 13860 = 1746360$\n\n$a \\times b = 1260 \\times 1386 = 1746360$ ✓"
+      }
+    ],
+    "method": "PGCD : produit des p^min(αᵢ,βᵢ). PPCM : produit des p^max(αᵢ,βᵢ).",
+    "commonMistakes": [
+      "Confondre min et max pour PGCD et PPCM",
+      "Oublier les premiers qui n'apparaissent que dans un des nombres"
+    ],
+    "tags": ["arithmétique", "pgcd", "ppcm", "décomposition"],
+    "isComprehension": false
+  },
+  {
+    "id": "ex-prem-006",
+    "lessonId": "nombres-premiers",
+    "title": "Preuve de l'infinité des premiers",
+    "difficulty": 3,
+    "statement": "1. Supposons qu'il n'existe qu'un nombre fini de nombres premiers $p_1, p_2, \\ldots, p_n$. Former le nombre $N = p_1 \\times p_2 \\times \\cdots \\times p_n + 1$.\n2. Montrer qu'aucun des $p_i$ ne divise $N$.\n3. En déduire une contradiction et conclure.\n4. Application : si les seuls premiers étaient 2, 3, 5, que vaudrait $N$ ? Est-il premier ?",
+    "hints": [
+      "Que donne le reste de N divisé par pᵢ ?",
+      "N admet-il un diviseur premier ?",
+      "Calculer N = 2×3×5 + 1 et tester sa primalité."
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Construction de N",
+        "content": "$N = p_1 \\times p_2 \\times \\cdots \\times p_n + 1$\n\nC'est le produit de tous les premiers (supposés finis) plus 1."
+      },
+      {
+        "step": 2,
+        "title": "Non-divisibilité",
+        "content": "Pour tout $i$, on a $N = p_i \\times (p_1 \\cdots p_{i-1} \\cdot p_{i+1} \\cdots p_n) + 1$.\n\nDonc $N \\equiv 1 \\pmod{p_i}$.\n\nLe reste de la division de $N$ par $p_i$ est 1, donc **aucun $p_i$ ne divise $N$**."
+      },
+      {
+        "step": 3,
+        "title": "Contradiction",
+        "content": "Or $N > 1$, donc $N$ admet au moins un diviseur premier.\n\nCe diviseur premier n'est aucun des $p_i$.\n\n**Contradiction** avec l'hypothèse que $p_1, \\ldots, p_n$ sont TOUS les premiers.\n\nConclusion : **il existe une infinité de nombres premiers**."
+      },
+      {
+        "step": 4,
+        "title": "Application numérique",
+        "content": "$N = 2 \\times 3 \\times 5 + 1 = 30 + 1 = 31$\n\n$\\sqrt{31} \\approx 5,6$. Tester 2, 3, 5 : aucun ne divise 31.\n\n**31 est premier.**\n\n(Attention : $N$ n'est pas toujours premier ! Par exemple $2 \\times 3 \\times 5 \\times 7 \\times 11 \\times 13 + 1 = 30031 = 59 \\times 509$)"
+      }
+    ],
+    "method": "Preuve par l'absurde : si les premiers étaient finis, on pourrait construire un nombre non divisible par aucun d'eux.",
+    "commonMistakes": [
+      "Croire que N est toujours premier (il a juste un diviseur premier non listé)",
+      "Ne pas comprendre la structure du raisonnement par l'absurde"
+    ],
+    "tags": ["arithmétique", "nombres premiers", "démonstration", "Euclide"],
+    "isComprehension": false
   }
 ]

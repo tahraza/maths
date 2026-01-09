@@ -4360,5 +4360,207 @@
       }
     ],
     "difficulty": 2
+  },
+  {
+    "id": "pre-quiz-nombres-premiers",
+    "lessonId": "nombres-premiers",
+    "type": "pre",
+    "title": "Diagnostic : Nombres premiers",
+    "description": "Teste tes connaissances préalables sur la divisibilité et les nombres premiers.",
+    "questions": [
+      {
+        "id": "q1",
+        "question": "Que signifie « $a$ divise $b$ » ?",
+        "options": [
+          "$a = kb$ pour un entier $k$",
+          "$b = ka$ pour un entier $k$",
+          "$a < b$",
+          "$a$ et $b$ sont premiers"
+        ],
+        "correctAnswer": 1,
+        "explanation": "$a | b$ signifie qu'il existe $k$ entier tel que $b = ka$."
+      },
+      {
+        "id": "q2",
+        "question": "Le nombre 1 est-il premier ?",
+        "options": [
+          "Oui",
+          "Non",
+          "Ça dépend",
+          "C'est le plus petit premier"
+        ],
+        "correctAnswer": 1,
+        "explanation": "1 n'est pas premier car il n'a qu'un seul diviseur (lui-même). Un premier a exactement 2 diviseurs."
+      },
+      {
+        "id": "q3",
+        "question": "Quel est le seul nombre premier pair ?",
+        "options": [
+          "0",
+          "1",
+          "2",
+          "4"
+        ],
+        "correctAnswer": 2,
+        "explanation": "2 est le seul premier pair. Tout autre nombre pair est divisible par 2, donc a au moins 3 diviseurs."
+      },
+      {
+        "id": "q4",
+        "question": "Quels sont les diviseurs de 6 ?",
+        "options": [
+          "1, 2, 3",
+          "1, 2, 3, 6",
+          "2, 3, 6",
+          "1, 6"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Les diviseurs de 6 sont : 1, 2, 3 et 6."
+      },
+      {
+        "id": "q5",
+        "question": "Qu'est-ce que le PGCD de deux nombres ?",
+        "options": [
+          "Leur produit",
+          "Le plus grand nombre qui les divise tous les deux",
+          "Le plus petit nombre divisible par les deux",
+          "Leur somme"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Le PGCD (Plus Grand Commun Diviseur) est le plus grand entier qui divise les deux nombres."
+      }
+    ],
+    "difficulty": 1,
+    "passingScore": 60
+  },
+  {
+    "id": "post-quiz-nombres-premiers",
+    "lessonId": "nombres-premiers",
+    "type": "post",
+    "title": "Validation : Nombres premiers",
+    "description": "Vérifie ta maîtrise des nombres premiers après la leçon.",
+    "questions": [
+      {
+        "id": "q1",
+        "question": "Un nombre premier a :",
+        "options": [
+          "Exactement 1 diviseur",
+          "Exactement 2 diviseurs",
+          "Au moins 2 diviseurs",
+          "Un nombre pair de diviseurs"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Un nombre premier a exactement 2 diviseurs : 1 et lui-même."
+      },
+      {
+        "id": "q2",
+        "question": "Pour tester si $n$ est premier, on teste les diviseurs premiers jusqu'à :",
+        "options": [
+          "$n$",
+          "$n/2$",
+          "$\\sqrt{n}$",
+          "$n-1$"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Si $n$ n'est pas premier, il admet un diviseur premier $\\leq \\sqrt{n}$."
+      },
+      {
+        "id": "q3",
+        "question": "La décomposition de 12 en facteurs premiers est :",
+        "options": [
+          "$3 \\times 4$",
+          "$2 \\times 6$",
+          "$2^2 \\times 3$",
+          "$2 \\times 3 \\times 2$"
+        ],
+        "correctAnswer": 2,
+        "explanation": "$12 = 4 \\times 3 = 2^2 \\times 3$. Les autres options contiennent des nombres non premiers."
+      },
+      {
+        "id": "q4",
+        "question": "Combien de diviseurs a $n = 2^3 \\times 5^2$ ?",
+        "options": [
+          "6",
+          "12",
+          "5",
+          "15"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Nombre de diviseurs = $(3+1)(2+1) = 4 \\times 3 = 12$."
+      },
+      {
+        "id": "q5",
+        "question": "Le Théorème Fondamental de l'Arithmétique affirme que :",
+        "options": [
+          "Il existe une infinité de premiers",
+          "Tout entier $\\geq 2$ se décompose de façon unique en facteurs premiers",
+          "Le PGCD divise toujours le PPCM",
+          "Les premiers sont tous impairs"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Chaque entier $\\geq 2$ a une unique décomposition en facteurs premiers (à l'ordre près)."
+      },
+      {
+        "id": "q6",
+        "question": "D'après le Petit Théorème de Fermat, si $p$ est premier et $p \\nmid a$, alors :",
+        "options": [
+          "$a^p \\equiv 0 \\pmod{p}$",
+          "$a^{p-1} \\equiv 1 \\pmod{p}$",
+          "$a^p \\equiv a^{p-1} \\pmod{p}$",
+          "$a \\equiv 1 \\pmod{p}$"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Le Petit Théorème de Fermat : $a^{p-1} \\equiv 1 \\pmod{p}$ si $p$ premier et $p \\nmid a$."
+      },
+      {
+        "id": "q7",
+        "question": "Le nombre 91 est-il premier ?",
+        "options": [
+          "Oui",
+          "Non, $91 = 7 \\times 13$",
+          "Non, $91 = 9 \\times 10 + 1$",
+          "On ne peut pas savoir"
+        ],
+        "correctAnswer": 1,
+        "explanation": "$91 = 7 \\times 13$, donc 91 n'est pas premier."
+      },
+      {
+        "id": "q8",
+        "question": "Pour calculer le PGCD via la décomposition, on prend :",
+        "options": [
+          "Le maximum des exposants",
+          "Le minimum des exposants",
+          "La somme des exposants",
+          "Le produit des exposants"
+        ],
+        "correctAnswer": 1,
+        "explanation": "PGCD = produit des $p^{\\min(\\alpha_i, \\beta_i)}$."
+      },
+      {
+        "id": "q9",
+        "question": "Combien existe-t-il de nombres premiers ?",
+        "options": [
+          "Un nombre fini très grand",
+          "Une infinité",
+          "On ne sait pas",
+          "Exactement 25"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Théorème d'Euclide : il existe une infinité de nombres premiers."
+      },
+      {
+        "id": "q10",
+        "question": "Si $a^{p-1} \\equiv 1 \\pmod{p}$, alors $p$ est :",
+        "options": [
+          "Certainement premier",
+          "Certainement composé",
+          "Probablement premier mais pas sûr",
+          "Divisible par $a$"
+        ],
+        "correctAnswer": 2,
+        "explanation": "La réciproque de Fermat est fausse ! Il existe des pseudo-premiers (nombres de Carmichael)."
+      }
+    ],
+    "difficulty": 2,
+    "passingScore": 70
   }
 ]

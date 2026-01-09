@@ -248,6 +248,10 @@
     @apply my-6 rounded-lg border-l-4 border-danger-500 bg-danger-50 p-4 dark:bg-red-900/20;
   }
 
+  .erreur-box {
+    @apply my-6 rounded-lg border-l-4 border-rose-500 bg-rose-50 p-4 dark:bg-rose-900/20;
+  }
+
   .tip-box {
     @apply my-6 rounded-lg border-l-4 border-success-500 bg-success-50 p-4 dark:bg-green-900/20;
   }

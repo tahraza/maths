@@ -1818,5 +1818,113 @@
     "tags": ["équations différentielles", "application", "physique"],
     "level": 2,
     "category": "example"
+  },
+  {
+    "id": "fc-prem-001",
+    "lessonId": "nombres-premiers",
+    "front": "Définition d'un nombre premier",
+    "back": "Un entier naturel qui admet exactement DEUX diviseurs positifs : 1 et lui-même.",
+    "tags": ["arithmétique", "nombres premiers", "définition"],
+    "level": 1,
+    "category": "definition"
+  },
+  {
+    "id": "fc-prem-002",
+    "lessonId": "nombres-premiers",
+    "front": "Le nombre 1 est-il premier ?",
+    "back": "NON ! 1 n'a qu'un seul diviseur. Un nombre premier doit avoir exactement 2 diviseurs.",
+    "tags": ["arithmétique", "nombres premiers", "piège"],
+    "level": 1,
+    "category": "trap"
+  },
+  {
+    "id": "fc-prem-003",
+    "lessonId": "nombres-premiers",
+    "front": "Quel est le seul nombre premier pair ?",
+    "back": "2. Tout autre nombre pair est divisible par 2, donc a au moins 3 diviseurs.",
+    "tags": ["arithmétique", "nombres premiers"],
+    "level": 1,
+    "category": "definition"
+  },
+  {
+    "id": "fc-prem-004",
+    "lessonId": "nombres-premiers",
+    "front": "Critère de la racine carrée pour le test de primalité",
+    "back": "Si n n'est pas premier, il admet un diviseur premier p ≤ √n. Il suffit de tester les premiers ≤ √n.",
+    "tags": ["arithmétique", "nombres premiers", "méthode"],
+    "level": 2,
+    "category": "method"
+  },
+  {
+    "id": "fc-prem-005",
+    "lessonId": "nombres-premiers",
+    "front": "Théorème Fondamental de l'Arithmétique",
+    "back": "Tout entier n ≥ 2 se décompose de manière UNIQUE en produit de facteurs premiers.",
+    "tags": ["arithmétique", "décomposition", "théorème"],
+    "level": 2,
+    "category": "definition"
+  },
+  {
+    "id": "fc-prem-006",
+    "lessonId": "nombres-premiers",
+    "front": "Formule du nombre de diviseurs",
+    "back": "Si n = p₁^α₁ × ... × pₖ^αₖ, alors τ(n) = (α₁+1)(α₂+1)...(αₖ+1).",
+    "tags": ["arithmétique", "diviseurs", "formule"],
+    "level": 2,
+    "category": "formula"
+  },
+  {
+    "id": "fc-prem-007",
+    "lessonId": "nombres-premiers",
+    "front": "Théorème d'Euclide sur les nombres premiers",
+    "back": "Il existe une INFINITÉ de nombres premiers.",
+    "tags": ["arithmétique", "nombres premiers", "théorème"],
+    "level": 2,
+    "category": "definition"
+  },
+  {
+    "id": "fc-prem-008",
+    "lessonId": "nombres-premiers",
+    "front": "Petit Théorème de Fermat",
+    "back": "Si p est premier et p ∤ a, alors a^(p-1) ≡ 1 (mod p).",
+    "tags": ["arithmétique", "Fermat", "congruence"],
+    "level": 3,
+    "category": "formula"
+  },
+  {
+    "id": "fc-prem-009",
+    "lessonId": "nombres-premiers",
+    "front": "PGCD via la décomposition en facteurs premiers",
+    "back": "pgcd(a,b) = produit des p^min(αᵢ,βᵢ) (prendre l'exposant minimum).",
+    "tags": ["arithmétique", "pgcd", "méthode"],
+    "level": 2,
+    "category": "formula"
+  },
+  {
+    "id": "fc-prem-010",
+    "lessonId": "nombres-premiers",
+    "front": "PPCM via la décomposition en facteurs premiers",
+    "back": "ppcm(a,b) = produit des p^max(αᵢ,βᵢ) (prendre l'exposant maximum).",
+    "tags": ["arithmétique", "ppcm", "méthode"],
+    "level": 2,
+    "category": "formula"
+  },
+  {
+    "id": "fc-prem-011",
+    "lessonId": "nombres-premiers",
+    "front": "Piège : réciproque du Petit Fermat",
+    "back": "Si a^(p-1) ≡ 1 (mod p), p n'est PAS forcément premier ! (pseudo-premiers de Carmichael)",
+    "tags": ["arithmétique", "Fermat", "piège"],
+    "level": 3,
+    "category": "trap"
+  },
+  {
+    "id": "fc-prem-012",
+    "lessonId": "nombres-premiers",
+    "front": "Relation PGCD × PPCM",
+    "back": "pgcd(a,b) × ppcm(a,b) = a × b",
+    "tags": ["arithmétique", "pgcd", "ppcm", "formule"],
+    "level": 2,
+    "category": "formula"
   }
 ]

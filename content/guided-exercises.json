@@ -546,6 +546,91 @@
         { "instruction": "Calcule la limite quand $t \\to +\\infty$.", "hint": "Que vaut $e^{-2t}$ en $+\\infty$ ?", "solution": "$\\lim_{t \\to +\\infty} e^{-2t} = 0$, donc $\\lim u(t) = 5$." }
       ],
       "finalAnswer": "$u(t) = 5(1 - e^{-2t})$, limite = 5 V"
+    },
+    {
+      "id": "prem-test-primalite",
+      "title": "Tester la primalité d'un nombre",
+      "theme": "Nombres premiers",
+      "difficulty": "facile",
+      "duration": 10,
+      "description": "Déterminer si un nombre est premier.",
+      "problem": "Le nombre 157 est-il premier ?",
+      "steps": [
+        { "instruction": "Calcule la racine carrée approximative de 157.", "hint": "Encadre 157 entre deux carrés parfaits : $144 < 157 < 169$.", "solution": "$\\sqrt{157} \\approx 12,5$" },
+        { "instruction": "Liste les nombres premiers à tester.", "hint": "Quels sont les premiers $\\leq 12$ ?", "solution": "Les premiers à tester sont : 2, 3, 5, 7, 11." },
+        { "instruction": "Teste la divisibilité par 2.", "hint": "157 est-il pair ou impair ?", "solution": "157 est impair, donc non divisible par 2." },
+        { "instruction": "Teste la divisibilité par 3.", "hint": "Calcule la somme des chiffres.", "solution": "$1+5+7=13$, non divisible par 3." },
+        { "instruction": "Teste la divisibilité par 5, 7 et 11.", "hint": "Pour 5 : regarde le dernier chiffre. Pour 7 et 11 : calcule les restes.", "solution": "Finit par 7 → pas 5. $157 = 7 \\times 22 + 3$ → pas 7. $157 = 11 \\times 14 + 3$ → pas 11." },
+        { "instruction": "Conclus.", "solution": "Aucun premier $\\leq \\sqrt{157}$ ne divise 157. **157 est premier.**" }
+      ],
+      "finalAnswer": "157 est un nombre premier"
+    },
+    {
+      "id": "prem-decomposition",
+      "title": "Décomposition et nombre de diviseurs",
+      "theme": "Nombres premiers",
+      "difficulty": "moyen",
+      "duration": 12,
+      "description": "Décomposer un nombre et compter ses diviseurs.",
+      "problem": "Décomposer 360 en produit de facteurs premiers et déterminer son nombre de diviseurs.",
+      "steps": [
+        { "instruction": "Divise 360 par 2 autant que possible.", "hint": "360 est pair...", "solution": "$360 = 2 \\times 180 = 2^2 \\times 90 = 2^3 \\times 45$" },
+        { "instruction": "Continue avec 3.", "hint": "$45 = 9 \\times 5$...", "solution": "$45 = 3 \\times 15 = 3^2 \\times 5$. Donc $360 = 2^3 \\times 3^2 \\times 5$." },
+        { "instruction": "Identifie les exposants.", "solution": "$\\alpha_1 = 3$ (pour 2), $\\alpha_2 = 2$ (pour 3), $\\alpha_3 = 1$ (pour 5)." },
+        { "instruction": "Applique la formule du nombre de diviseurs.", "hint": "$\\tau(n) = (\\alpha_1+1)(\\alpha_2+1)(\\alpha_3+1)$", "solution": "$\\tau(360) = (3+1)(2+1)(1+1) = 4 \\times 3 \\times 2 = 24$" }
+      ],
+      "finalAnswer": "$360 = 2^3 \\times 3^2 \\times 5$ avec 24 diviseurs"
+    },
+    {
+      "id": "prem-fermat",
+      "title": "Application du Petit Fermat",
+      "theme": "Nombres premiers",
+      "difficulty": "moyen",
+      "duration": 12,
+      "description": "Calculer un reste en utilisant le Petit Théorème de Fermat.",
+      "problem": "Quel est le reste de la division de $3^{50}$ par 7 ?",
+      "steps": [
+        { "instruction": "Vérifie les conditions d'application.", "hint": "7 est-il premier ? 7 divise-t-il 3 ?", "solution": "7 est premier et $7 \\nmid 3$. On peut appliquer Fermat." },
+        { "instruction": "Applique le Petit Théorème de Fermat.", "hint": "$a^{p-1} \\equiv 1 \\pmod{p}$", "solution": "$3^{7-1} = 3^6 \\equiv 1 \\pmod{7}$" },
+        { "instruction": "Décompose l'exposant 50.", "hint": "Écris $50 = 6q + r$ avec $0 \\leq r < 6$.", "solution": "$50 = 6 \\times 8 + 2$" },
+        { "instruction": "Simplifie $3^{50}$ modulo 7.", "solution": "$3^{50} = (3^6)^8 \\times 3^2 \\equiv 1^8 \\times 9 \\equiv 9 \\pmod{7}$" },
+        { "instruction": "Calcule le reste final.", "hint": "$9 = 7 + 2$", "solution": "$9 \\equiv 2 \\pmod{7}$. Le reste est **2**." }
+      ],
+      "finalAnswer": "Le reste est 2"
+    },
+    {
+      "id": "prem-pgcd-ppcm",
+      "title": "Calcul de PGCD et PPCM",
+      "theme": "Nombres premiers",
+      "difficulty": "moyen",
+      "duration": 15,
+      "description": "Utiliser la décomposition pour PGCD et PPCM.",
+      "problem": "Calculer le PGCD et le PPCM de 84 et 90.",
+      "steps": [
+        { "instruction": "Décompose 84 en facteurs premiers.", "hint": "$84 = 4 \\times 21 = ...$", "solution": "$84 = 4 \\times 21 = 2^2 \\times 3 \\times 7$" },
+        { "instruction": "Décompose 90 en facteurs premiers.", "hint": "$90 = 9 \\times 10 = ...$", "solution": "$90 = 9 \\times 10 = 3^2 \\times 2 \\times 5 = 2 \\times 3^2 \\times 5$" },
+        { "instruction": "Calcule le PGCD.", "hint": "Prends le min des exposants pour chaque premier.", "solution": "$\\text{pgcd} = 2^{\\min(2,1)} \\times 3^{\\min(1,2)} = 2^1 \\times 3^1 = 6$" },
+        { "instruction": "Calcule le PPCM.", "hint": "Prends le max des exposants pour chaque premier.", "solution": "$\\text{ppcm} = 2^2 \\times 3^2 \\times 5 \\times 7 = 4 \\times 9 \\times 5 \\times 7 = 1260$" },
+        { "instruction": "Vérifie avec la relation PGCD × PPCM = a × b.", "solution": "$6 \\times 1260 = 7560 = 84 \\times 90$ ✓" }
+      ],
+      "finalAnswer": "PGCD = 6, PPCM = 1260"
+    },
+    {
+      "id": "prem-euclide-infini",
+      "title": "Preuve de l'infinité des premiers",
+      "theme": "Nombres premiers",
+      "difficulty": "difficile",
+      "duration": 15,
+      "description": "Comprendre la démonstration d'Euclide.",
+      "problem": "Démontrer qu'il existe une infinité de nombres premiers.",
+      "steps": [
+        { "instruction": "Suppose par l'absurde qu'il n'y a qu'un nombre fini de premiers.", "hint": "Appelle-les $p_1, p_2, ..., p_n$.", "solution": "Supposons $\\{p_1, p_2, ..., p_n\\}$ l'ensemble de TOUS les nombres premiers." },
+        { "instruction": "Construis le nombre $N = p_1 \\times p_2 \\times ... \\times p_n + 1$.", "solution": "$N$ est le produit de tous les premiers plus 1." },
+        { "instruction": "Montre qu'aucun $p_i$ ne divise $N$.", "hint": "Quel est le reste de $N$ divisé par $p_i$ ?", "solution": "$N = p_i \\times (\\text{autres premiers}) + 1 \\equiv 1 \\pmod{p_i}$. Le reste est 1, donc $p_i \\nmid N$." },
+        { "instruction": "Trouve une contradiction.", "hint": "$N > 1$, donc $N$ a un diviseur premier...", "solution": "$N > 1$ admet un diviseur premier $p$. Ce $p$ n'est aucun des $p_i$. **Contradiction** : on a trouvé un premier hors de la liste." },
+        { "instruction": "Conclus.", "solution": "L'hypothèse est fausse. Il existe une **infinité de nombres premiers**." }
+      ],
+      "finalAnswer": "Il existe une infinité de nombres premiers (Théorème d'Euclide)"
     }
   ]
 }
