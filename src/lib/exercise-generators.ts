@@ -846,6 +846,873 @@ const trigoEquation: ExerciseGenerator = {
   }
 }
 
+// --- PRIMITIVES ---
+const primitivePuissance: ExerciseGenerator = {
+  id: 'primitive-puissance',
+  category: 'Primitives',
+  title: 'Primitive d\'une puissance',
+  description: 'Trouver la primitive de x^n',
+  difficulty: 1,
+  chapter: 'primitives',
+  generate: () => {
+    const n = randChoice([2, 3, 4, 5, -1, -2, -3])
+    const a = randNonZero(-4, 4)
+
+    let f: string
+    let F: string
+    let solution: string
+
+    if (n === -1) {
+      f = `\\frac{${a}}{x}`
+      F = `${a}\\ln|x|`
+      solution = `La primitive de $\\frac{1}{x}$ est $\\ln|x|$.\n\nDonc une primitive de $\\frac{${a}}{x}$ est $${F} + C$.`
+    } else if (n < 0) {
+      f = `\\frac{${a}}{x^{${-n}}}`
+      const newExp = n + 1
+      const coef = a / (n + 1)
+      const [num, den] = simplifyFraction(a, n + 1)
+      F = newExp === -1 ? `\\frac{${num}}{${den}x}` : `\\frac{${num}}{${den}}x^{${newExp}}`
+      solution = `On écrit $\\frac{${a}}{x^{${-n}}} = ${a}x^{${n}}$.\n\nUne primitive de $x^n$ est $\\frac{x^{n+1}}{n+1}$ pour $n \\neq -1$.\n\nDonc une primitive est $\\frac{${a}x^{${n+1}}}{${n+1}} = ${F} + C$.`
+    } else {
+      f = `${a}x^{${n}}`
+      const [num, den] = simplifyFraction(a, n + 1)
+      F = den === 1 ? `${num}x^{${n+1}}` : `\\frac{${num}}{${den}}x^{${n+1}}`
+      solution = `Une primitive de $x^n$ est $\\frac{x^{n+1}}{n+1}$.\n\nDonc une primitive de $${f}$ est $\\frac{${a}x^{${n+1}}}{${n+1}} = ${F} + C$.`
+    }
+
+    return {
+      id: `prim-puis-${Date.now()}`,
+      category: 'Primitives',
+      title: 'Primitive d\'une puissance',
+      difficulty: 1,
+      statement: `Déterminer une primitive de $f(x) = ${f}$.`,
+      hints: [
+        'Une primitive de $x^n$ est $\\frac{x^{n+1}}{n+1}$ pour $n \\neq -1$',
+        'Une primitive de $\\frac{1}{x}$ est $\\ln|x|$'
+      ],
+      solution,
+      answer: `$F(x) = ${F} + C$`,
+      params: { n, a }
+    }
+  }
+}
+
+const primitiveExponentielle: ExerciseGenerator = {
+  id: 'primitive-exp',
+  category: 'Primitives',
+  title: 'Primitive avec exponentielle',
+  description: 'Trouver la primitive de e^(ax+b)',
+  difficulty: 2,
+  chapter: 'primitives',
+  generate: () => {
+    const a = randNonZero(-4, 4)
+    const b = randInt(-5, 5)
+    const k = randNonZero(-3, 3)
+
+    const expo = b === 0 ? `${a}x` : `${a}x ${b >= 0 ? '+' : '-'} ${Math.abs(b)}`
+    const f = k === 1 ? `e^{${expo}}` : `${k}e^{${expo}}`
+
+    const [num, den] = simplifyFraction(k, a)
+    const coefStr = den === 1 ? `${num}` : `\\frac{${num}}{${den}}`
+    const F = `${coefStr}e^{${expo}}`
+
+    return {
+      id: `prim-exp-${Date.now()}`,
+      category: 'Primitives',
+      title: 'Primitive exponentielle',
+      difficulty: 2,
+      statement: `Déterminer une primitive de $f(x) = ${f}$.`,
+      hints: [
+        'Une primitive de $e^{ax+b}$ est $\\frac{1}{a}e^{ax+b}$',
+        `Ici $a = ${a}$`
+      ],
+      solution: `Une primitive de $e^{ax+b}$ est $\\frac{1}{a}e^{ax+b}$.\n\n` +
+        `Ici, on a $e^{${expo}}$ avec $a = ${a}$.\n\n` +
+        `Donc une primitive de $e^{${expo}}$ est $\\frac{1}{${a}}e^{${expo}}$.\n\n` +
+        `Pour $f(x) = ${f}$, une primitive est $${k} \\times \\frac{1}{${a}}e^{${expo}} = ${F} + C$.`,
+      answer: `$F(x) = ${F} + C$`,
+      params: { a, b, k }
+    }
+  }
+}
+
+// --- CONTINUITÉ ---
+const continuitePoint: ExerciseGenerator = {
+  id: 'continuite-point',
+  category: 'Continuité',
+  title: 'Continuité en un point',
+  description: 'Étudier la continuité d\'une fonction en un point',
+  difficulty: 2,
+  chapter: 'continuite',
+  generate: () => {
+    const a = randNonZero(-3, 3)
+    const b = randInt(-5, 5)
+    const x0 = randInt(-2, 2)
+
+    // f(x) = (ax+b)/(x-x0) pour x ≠ x0, f(x0) = k
+    // Limite en x0 = ∞ donc discontinuité
+    const type = randChoice(['discontinue', 'prolongeable'])
+
+    if (type === 'discontinue') {
+      const c = randNonZero(-4, 4)
+      const fDef = `f(x) = \\begin{cases} \\frac{${a}x ${b >= 0 ? '+' : '-'} ${Math.abs(b)}}{x ${x0 >= 0 ? '-' : '+'} ${Math.abs(x0)}} & \\text{si } x \\neq ${x0} \\\\ ${c} & \\text{si } x = ${x0} \\end{cases}`
+
+      return {
+        id: `cont-pt-${Date.now()}`,
+        category: 'Continuité',
+        title: 'Continuité en un point',
+        difficulty: 2,
+        statement: `Soit $${fDef}$.\n\nLa fonction $f$ est-elle continue en $x_0 = ${x0}$ ?`,
+        hints: [
+          'Une fonction est continue en $x_0$ si $\\lim_{x \\to x_0} f(x) = f(x_0)$',
+          'Calcule la limite en $x_0$'
+        ],
+        solution: `Calculons $\\lim_{x \\to ${x0}} f(x)$.\n\n` +
+          `Quand $x \\to ${x0}$, le numérateur $\\to ${a * x0 + b}$ et le dénominateur $\\to 0$.\n\n` +
+          `Donc $\\lim_{x \\to ${x0}} f(x) = ${a * x0 + b !== 0 ? '\\pm\\infty' : '\\text{forme indéterminée}'}$.\n\n` +
+          `Or $f(${x0}) = ${c}$ est fini.\n\n` +
+          `Donc **$f$ n'est pas continue en $${x0}$** (la limite n'existe pas ou est infinie).`,
+        answer: `$f$ n'est pas continue en $${x0}$`,
+        params: { a, b, x0, c }
+      }
+    } else {
+      // Cas prolongeable : f(x) = (x² - x0²)/(x - x0) = x + x0 pour x ≠ x0
+      const fDef = `f(x) = \\frac{x^2 - ${x0*x0}}{x ${x0 >= 0 ? '-' : '+'} ${Math.abs(x0)}} \\text{ pour } x \\neq ${x0}`
+
+      return {
+        id: `cont-pt-${Date.now()}`,
+        category: 'Continuité',
+        title: 'Prolongement par continuité',
+        difficulty: 2,
+        statement: `Soit $${fDef}$.\n\nPeut-on prolonger $f$ par continuité en $${x0}$ ?`,
+        hints: [
+          'Factorise le numérateur avec $a^2 - b^2 = (a-b)(a+b)$',
+          'Simplifie pour lever l\'indétermination'
+        ],
+        solution: `On factorise : $x^2 - ${x0*x0} = (x - ${x0})(x + ${x0})$.\n\n` +
+          `Pour $x \\neq ${x0}$ :\n` +
+          `$f(x) = \\frac{(x - ${x0})(x + ${x0})}{x - ${x0}} = x + ${x0}$\n\n` +
+          `Donc $\\lim_{x \\to ${x0}} f(x) = ${x0} + ${x0} = ${2*x0}$.\n\n` +
+          `On peut prolonger $f$ par continuité en posant $f(${x0}) = ${2*x0}$.`,
+        answer: `Oui, $f(${x0}) = ${2*x0}$`,
+        params: { a: 1, b: 0, x0, c: 0 }
+      }
+    }
+  }
+}
+
+const continuiteIntervalle: ExerciseGenerator = {
+  id: 'continuite-tvi',
+  category: 'Continuité',
+  title: 'Théorème des valeurs intermédiaires',
+  description: 'Appliquer le TVI pour montrer l\'existence d\'une solution',
+  difficulty: 3,
+  chapter: 'continuite',
+  generate: () => {
+    const a = randNonZero(1, 3)
+    const b = randInt(-4, 4)
+    const c = randInt(-5, 5)
+
+    // f(x) = ax³ + bx + c, chercher une racine
+    const f = `${formatTerm(a, 'x', 3, true)}${formatTerm(b, 'x', 1)}${formatTerm(c, '', 0)}`
+
+    const evalF = (x: number) => a * x * x * x + b * x + c
+
+    // Trouver un intervalle où f change de signe
+    let x1 = -3, x2 = 3
+    while (evalF(x1) * evalF(x2) > 0 && x1 > -10) {
+      x1--
+      x2++
+    }
+
+    const f1 = evalF(x1)
+    const f2 = evalF(x2)
+
+    return {
+      id: `cont-tvi-${Date.now()}`,
+      category: 'Continuité',
+      title: 'Théorème des valeurs intermédiaires',
+      difficulty: 3,
+      statement: `Soit $f(x) = ${f}$.\n\nMontrer que l'équation $f(x) = 0$ admet au moins une solution sur $[${x1}, ${x2}]$.`,
+      hints: [
+        '$f$ est une fonction polynomiale, donc continue sur $\\mathbb{R}$',
+        'Calcule $f(${x1})$ et $f(${x2})$ puis applique le TVI'
+      ],
+      solution: `$f$ est une fonction polynomiale, donc **continue** sur $\\mathbb{R}$, en particulier sur $[${x1}, ${x2}]$.\n\n` +
+        `Calculons :\n` +
+        `$f(${x1}) = ${a} \\times (${x1})^3 + ${b} \\times (${x1}) + ${c} = ${f1}$\n` +
+        `$f(${x2}) = ${a} \\times ${x2}^3 + ${b} \\times ${x2} + ${c} = ${f2}$\n\n` +
+        `On a $f(${x1}) = ${f1} ${f1 < 0 ? '<' : '>'} 0$ et $f(${x2}) = ${f2} ${f2 < 0 ? '<' : '>'} 0$.\n\n` +
+        `$0$ est compris entre $f(${x1})$ et $f(${x2})$.\n\n` +
+        `D'après le **théorème des valeurs intermédiaires**, il existe $c \\in ]${x1}, ${x2}[$ tel que $f(c) = 0$.`,
+      answer: `Le TVI garantit l'existence d'une solution dans $]${x1}, ${x2}[$`,
+      params: { a, b, c, x1, x2 }
+    }
+  }
+}
+
+// --- CONVEXITÉ ---
+const convexiteEtude: ExerciseGenerator = {
+  id: 'convexite-etude',
+  category: 'Convexité',
+  title: 'Étude de convexité',
+  description: 'Déterminer les intervalles de convexité et concavité',
+  difficulty: 2,
+  chapter: 'convexite',
+  generate: () => {
+    const a = randNonZero(-3, 3)
+    const b = randInt(-4, 4)
+    const c = randInt(-5, 5)
+    const d = randInt(-5, 5)
+
+    // f(x) = ax³ + bx² + cx + d
+    // f'(x) = 3ax² + 2bx + c
+    // f''(x) = 6ax + 2b
+    // f''(x) = 0 <=> x = -b/(3a)
+
+    const f = `${formatTerm(a, 'x', 3, true)}${formatTerm(b, 'x', 2)}${formatTerm(c, 'x', 1)}${formatTerm(d, '', 0)}`
+    const fPrime = `${formatTerm(3*a, 'x', 2, true)}${formatTerm(2*b, 'x', 1)}${formatTerm(c, '', 0)}`
+    const fSeconde = `${formatTerm(6*a, 'x', 1, true)}${formatTerm(2*b, '', 0)}`
+
+    const [inflexNum, inflexDen] = simplifyFraction(-b, 3*a)
+    const inflexStr = inflexDen === 1 ? `${inflexNum}` : `\\frac{${inflexNum}}{${inflexDen}}`
+    const inflexVal = -b / (3*a)
+
+    const convexe = a > 0 ? `]${inflexStr}, +\\infty[` : `]-\\infty, ${inflexStr}[`
+    const concave = a > 0 ? `]-\\infty, ${inflexStr}[` : `]${inflexStr}, +\\infty[`
+
+    return {
+      id: `conv-etude-${Date.now()}`,
+      category: 'Convexité',
+      title: 'Étude de convexité',
+      difficulty: 2,
+      statement: `Soit $f(x) = ${f}$.\n\nDéterminer les intervalles de convexité et de concavité de $f$.`,
+      hints: [
+        'Calcule $f\'\'(x)$',
+        '$f$ convexe $\\Leftrightarrow f\'\'(x) \\geq 0$',
+        '$f$ concave $\\Leftrightarrow f\'\'(x) \\leq 0$'
+      ],
+      solution: `$f'(x) = ${fPrime}$\n\n` +
+        `$f''(x) = ${fSeconde}$\n\n` +
+        `$f''(x) = 0 \\Leftrightarrow ${6*a}x + ${2*b} = 0 \\Leftrightarrow x = ${inflexStr}$\n\n` +
+        `**Signe de $f''(x)$** :\n` +
+        `- Si $x < ${inflexStr}$ : $f''(x) ${a > 0 ? '<' : '>'} 0$\n` +
+        `- Si $x > ${inflexStr}$ : $f''(x) ${a > 0 ? '>' : '<'} 0$\n\n` +
+        `**Conclusion** :\n` +
+        `- $f$ est **convexe** sur $${convexe}$\n` +
+        `- $f$ est **concave** sur $${concave}$\n` +
+        `- Point d'inflexion en $x = ${inflexStr}$`,
+      answer: `Convexe sur $${convexe}$, concave sur $${concave}$`,
+      params: { a, b, c, d }
+    }
+  }
+}
+
+const convexiteInegalite: ExerciseGenerator = {
+  id: 'convexite-ineg',
+  category: 'Convexité',
+  title: 'Inégalité par convexité',
+  description: 'Démontrer une inégalité grâce à la convexité',
+  difficulty: 3,
+  chapter: 'convexite',
+  generate: () => {
+    const type = randChoice(['exp', 'ln'])
+
+    if (type === 'exp') {
+      const a = randChoice([1, 2])
+      const b = randChoice([1, 2])
+      const sum = a + b
+
+      return {
+        id: `conv-ineg-${Date.now()}`,
+        category: 'Convexité',
+        title: 'Inégalité de convexité',
+        difficulty: 3,
+        statement: `Montrer que pour tous réels $x, y$ :\n$$\\frac{e^x + e^y}{2} \\geq e^{\\frac{x+y}{2}}$$`,
+        hints: [
+          'La fonction exponentielle est convexe',
+          'Utilise l\'inégalité de Jensen/convexité'
+        ],
+        solution: `La fonction $f(t) = e^t$ est convexe sur $\\mathbb{R}$ car $f''(t) = e^t > 0$.\n\n` +
+          `Par définition de la convexité, pour $\\lambda = \\frac{1}{2}$ :\n` +
+          `$$f\\left(\\frac{x+y}{2}\\right) \\leq \\frac{f(x) + f(y)}{2}$$\n\n` +
+          `C'est-à-dire :\n` +
+          `$$e^{\\frac{x+y}{2}} \\leq \\frac{e^x + e^y}{2}$$\n\n` +
+          `Ce qui démontre l'inégalité demandée.`,
+        answer: `L'inégalité découle de la convexité de $e^x$`,
+        params: {}
+      }
+    } else {
+      return {
+        id: `conv-ineg-${Date.now()}`,
+        category: 'Convexité',
+        title: 'Inégalité de convexité',
+        difficulty: 3,
+        statement: `Montrer que pour tous $x, y > 0$ :\n$$\\ln\\left(\\frac{x+y}{2}\\right) \\geq \\frac{\\ln x + \\ln y}{2}$$`,
+        hints: [
+          'La fonction $\\ln$ est concave sur $]0, +\\infty[$',
+          'Pour une fonction concave, l\'inégalité de Jensen est inversée'
+        ],
+        solution: `La fonction $f(t) = \\ln(t)$ est concave sur $]0, +\\infty[$ car $f''(t) = -\\frac{1}{t^2} < 0$.\n\n` +
+          `Pour une fonction **concave**, l'inégalité de Jensen s'inverse :\n` +
+          `$$f\\left(\\frac{x+y}{2}\\right) \\geq \\frac{f(x) + f(y)}{2}$$\n\n` +
+          `C'est-à-dire :\n` +
+          `$$\\ln\\left(\\frac{x+y}{2}\\right) \\geq \\frac{\\ln x + \\ln y}{2}$$\n\n` +
+          `Ce qui démontre l'inégalité demandée.\n\n` +
+          `*Remarque* : Cela équivaut à $\\frac{x+y}{2} \\geq \\sqrt{xy}$ (inégalité arithmético-géométrique).`,
+        answer: `L'inégalité découle de la concavité de $\\ln$`,
+        params: {}
+      }
+    }
+  }
+}
+
+// --- LOI NORMALE ---
+const loiNormaleCalcul: ExerciseGenerator = {
+  id: 'normale-calcul',
+  category: 'Loi normale',
+  title: 'Calcul de probabilité (loi normale)',
+  description: 'Calculer une probabilité avec la loi normale centrée réduite',
+  difficulty: 2,
+  chapter: 'loi-normale',
+  generate: () => {
+    const a = randChoice([0.5, 1, 1.5, 2, 2.5])
+    const type = randChoice(['inf', 'sup', 'intervalle'])
+
+    // Valeurs approchées de Φ(x) pour certains x
+    const phi: Record<number, number> = {
+      0.5: 0.6915,
+      1: 0.8413,
+      1.5: 0.9332,
+      2: 0.9772,
+      2.5: 0.9938
+    }
+
+    if (type === 'inf') {
+      return {
+        id: `norm-calc-${Date.now()}`,
+        category: 'Loi normale',
+        title: 'Probabilité (loi normale)',
+        difficulty: 2,
+        statement: `Soit $Z$ une variable aléatoire suivant la loi normale centrée réduite $\\mathcal{N}(0,1)$.\n\nCalculer $P(Z \\leq ${a})$.`,
+        hints: [
+          'Utilise la table de la loi normale ou la calculatrice',
+          '$P(Z \\leq a) = \\Phi(a)$ où $\\Phi$ est la fonction de répartition'
+        ],
+        solution: `$P(Z \\leq ${a}) = \\Phi(${a})$\n\n` +
+          `D'après la table de la loi normale :\n` +
+          `$\\Phi(${a}) \\approx ${phi[a]}$\n\n` +
+          `Donc $P(Z \\leq ${a}) \\approx ${phi[a]}$.`,
+        answer: `$P(Z \\leq ${a}) \\approx ${phi[a]}$`,
+        params: { a }
+      }
+    } else if (type === 'sup') {
+      return {
+        id: `norm-calc-${Date.now()}`,
+        category: 'Loi normale',
+        title: 'Probabilité (loi normale)',
+        difficulty: 2,
+        statement: `Soit $Z \\sim \\mathcal{N}(0,1)$.\n\nCalculer $P(Z \\geq ${a})$.`,
+        hints: [
+          '$P(Z \\geq a) = 1 - P(Z < a) = 1 - \\Phi(a)$',
+          'La loi normale est continue donc $P(Z \\geq a) = P(Z > a)$'
+        ],
+        solution: `$P(Z \\geq ${a}) = 1 - P(Z < ${a}) = 1 - \\Phi(${a})$\n\n` +
+          `$= 1 - ${phi[a]} = ${(1 - phi[a]).toFixed(4)}$`,
+        answer: `$P(Z \\geq ${a}) \\approx ${(1 - phi[a]).toFixed(4)}$`,
+        params: { a }
+      }
+    } else {
+      const b = a + randChoice([0.5, 1])
+      return {
+        id: `norm-calc-${Date.now()}`,
+        category: 'Loi normale',
+        title: 'Probabilité (loi normale)',
+        difficulty: 2,
+        statement: `Soit $Z \\sim \\mathcal{N}(0,1)$.\n\nCalculer $P(-${a} \\leq Z \\leq ${a})$.`,
+        hints: [
+          'Utilise la symétrie de la loi normale : $\\Phi(-a) = 1 - \\Phi(a)$',
+          '$P(-a \\leq Z \\leq a) = 2\\Phi(a) - 1$'
+        ],
+        solution: `$P(-${a} \\leq Z \\leq ${a}) = \\Phi(${a}) - \\Phi(-${a})$\n\n` +
+          `Par symétrie de la loi normale : $\\Phi(-${a}) = 1 - \\Phi(${a})$\n\n` +
+          `Donc $P(-${a} \\leq Z \\leq ${a}) = \\Phi(${a}) - (1 - \\Phi(${a})) = 2\\Phi(${a}) - 1$\n\n` +
+          `$= 2 \\times ${phi[a]} - 1 = ${(2 * phi[a] - 1).toFixed(4)}$`,
+        answer: `$P(-${a} \\leq Z \\leq ${a}) \\approx ${(2 * phi[a] - 1).toFixed(4)}$`,
+        params: { a }
+      }
+    }
+  }
+}
+
+const loiNormaleNonCentree: ExerciseGenerator = {
+  id: 'normale-generale',
+  category: 'Loi normale',
+  title: 'Loi normale générale',
+  description: 'Centrer et réduire une variable normale',
+  difficulty: 3,
+  chapter: 'loi-normale',
+  generate: () => {
+    const mu = randInt(50, 150)
+    const sigma = randChoice([5, 10, 15, 20])
+    const x = mu + randChoice([-2, -1, 1, 2]) * sigma
+
+    const z = (x - mu) / sigma
+    const phi: Record<string, number> = { '-2': 0.0228, '-1': 0.1587, '1': 0.8413, '2': 0.9772 }
+
+    return {
+      id: `norm-gen-${Date.now()}`,
+      category: 'Loi normale',
+      title: 'Loi normale générale',
+      difficulty: 3,
+      statement: `Une variable $X$ suit la loi $\\mathcal{N}(${mu}, ${sigma}^2)$.\n\nCalculer $P(X \\leq ${x})$.`,
+      hints: [
+        'Centre et réduis : $Z = \\frac{X - \\mu}{\\sigma}$ suit $\\mathcal{N}(0,1)$',
+        `Ici $\\mu = ${mu}$ et $\\sigma = ${sigma}$`
+      ],
+      solution: `On centre et réduit : $Z = \\frac{X - ${mu}}{${sigma}}$ suit $\\mathcal{N}(0,1)$.\n\n` +
+        `$P(X \\leq ${x}) = P\\left(\\frac{X - ${mu}}{${sigma}} \\leq \\frac{${x} - ${mu}}{${sigma}}\\right)$\n\n` +
+        `$= P\\left(Z \\leq \\frac{${x - mu}}{${sigma}}\\right) = P(Z \\leq ${z})$\n\n` +
+        `$= \\Phi(${z}) \\approx ${phi[z.toString()]}$`,
+      answer: `$P(X \\leq ${x}) \\approx ${phi[z.toString()]}$`,
+      params: { mu, sigma, x }
+    }
+  }
+}
+
+// --- RÉCURRENCE ---
+const recurrenceSomme: ExerciseGenerator = {
+  id: 'recurrence-somme',
+  category: 'Récurrence',
+  title: 'Somme par récurrence',
+  description: 'Démontrer une formule de somme par récurrence',
+  difficulty: 2,
+  chapter: 'recurrence',
+  generate: () => {
+    const type = randChoice(['carres', 'puissances2', 'arithmetique'])
+
+    if (type === 'carres') {
+      return {
+        id: `rec-somme-${Date.now()}`,
+        category: 'Récurrence',
+        title: 'Somme des carrés',
+        difficulty: 2,
+        statement: `Démontrer par récurrence que pour tout $n \\geq 1$ :\n$$\\sum_{k=1}^{n} k^2 = \\frac{n(n+1)(2n+1)}{6}$$`,
+        hints: [
+          'Initialisation : vérifie pour $n = 1$',
+          'Hérédité : suppose la propriété vraie au rang $n$, démontre-la au rang $n+1$'
+        ],
+        solution: `**Initialisation** ($n = 1$) :\n` +
+          `$\\sum_{k=1}^{1} k^2 = 1$ et $\\frac{1 \\times 2 \\times 3}{6} = 1$ ✓\n\n` +
+          `**Hérédité** : Supposons $P(n)$ vraie.\n` +
+          `$\\sum_{k=1}^{n+1} k^2 = \\sum_{k=1}^{n} k^2 + (n+1)^2$\n\n` +
+          `$= \\frac{n(n+1)(2n+1)}{6} + (n+1)^2$ (par hypothèse de récurrence)\n\n` +
+          `$= \\frac{n(n+1)(2n+1) + 6(n+1)^2}{6}$\n\n` +
+          `$= \\frac{(n+1)[n(2n+1) + 6(n+1)]}{6}$\n\n` +
+          `$= \\frac{(n+1)(2n^2 + 7n + 6)}{6}$\n\n` +
+          `$= \\frac{(n+1)(n+2)(2n+3)}{6}$\n\n` +
+          `C'est bien la formule au rang $n+1$. ✓\n\n` +
+          `**Conclusion** : Par récurrence, la propriété est vraie pour tout $n \\geq 1$.`,
+        answer: `Démontré par récurrence`,
+        params: {}
+      }
+    } else if (type === 'puissances2') {
+      return {
+        id: `rec-somme-${Date.now()}`,
+        category: 'Récurrence',
+        title: 'Somme des puissances de 2',
+        difficulty: 2,
+        statement: `Démontrer par récurrence que pour tout $n \\geq 0$ :\n$$\\sum_{k=0}^{n} 2^k = 2^{n+1} - 1$$`,
+        hints: [
+          'Initialisation : vérifie pour $n = 0$',
+          'Hérédité : ajoute $2^{n+1}$ des deux côtés'
+        ],
+        solution: `**Initialisation** ($n = 0$) :\n` +
+          `$\\sum_{k=0}^{0} 2^k = 2^0 = 1$ et $2^1 - 1 = 1$ ✓\n\n` +
+          `**Hérédité** : Supposons la propriété vraie au rang $n$.\n` +
+          `$\\sum_{k=0}^{n+1} 2^k = \\sum_{k=0}^{n} 2^k + 2^{n+1}$\n\n` +
+          `$= (2^{n+1} - 1) + 2^{n+1}$ (par H.R.)\n\n` +
+          `$= 2 \\times 2^{n+1} - 1 = 2^{n+2} - 1$ ✓\n\n` +
+          `**Conclusion** : Par récurrence, la propriété est vraie pour tout $n \\geq 0$.`,
+        answer: `Démontré par récurrence`,
+        params: {}
+      }
+    } else {
+      const r = randInt(2, 5)
+      return {
+        id: `rec-somme-${Date.now()}`,
+        category: 'Récurrence',
+        title: 'Somme arithmétique',
+        difficulty: 2,
+        statement: `Démontrer par récurrence que pour tout $n \\geq 1$ :\n$$\\sum_{k=1}^{n} k = \\frac{n(n+1)}{2}$$`,
+        hints: [
+          'Initialisation : vérifie pour $n = 1$',
+          'Hérédité : ajoute $(n+1)$ des deux côtés'
+        ],
+        solution: `**Initialisation** ($n = 1$) :\n` +
+          `$\\sum_{k=1}^{1} k = 1$ et $\\frac{1 \\times 2}{2} = 1$ ✓\n\n` +
+          `**Hérédité** : Supposons la propriété vraie au rang $n$.\n` +
+          `$\\sum_{k=1}^{n+1} k = \\sum_{k=1}^{n} k + (n+1)$\n\n` +
+          `$= \\frac{n(n+1)}{2} + (n+1)$ (par H.R.)\n\n` +
+          `$= \\frac{n(n+1) + 2(n+1)}{2} = \\frac{(n+1)(n+2)}{2}$ ✓\n\n` +
+          `**Conclusion** : Par récurrence, la propriété est vraie pour tout $n \\geq 1$.`,
+        answer: `Démontré par récurrence`,
+        params: {}
+      }
+    }
+  }
+}
+
+const recurrenceInegalite: ExerciseGenerator = {
+  id: 'recurrence-ineg',
+  category: 'Récurrence',
+  title: 'Inégalité par récurrence',
+  description: 'Démontrer une inégalité par récurrence',
+  difficulty: 3,
+  chapter: 'recurrence',
+  generate: () => {
+    const type = randChoice(['factorielle', 'exponentielle'])
+
+    if (type === 'factorielle') {
+      return {
+        id: `rec-ineg-${Date.now()}`,
+        category: 'Récurrence',
+        title: 'Factorielle et puissance',
+        difficulty: 3,
+        statement: `Démontrer par récurrence que pour tout $n \\geq 4$ :\n$$n! > 2^n$$`,
+        hints: [
+          'Initialisation : vérifie pour $n = 4$',
+          'Utilise que $(n+1)! = (n+1) \\times n!$'
+        ],
+        solution: `**Initialisation** ($n = 4$) :\n` +
+          `$4! = 24$ et $2^4 = 16$. On a bien $24 > 16$ ✓\n\n` +
+          `**Hérédité** : Supposons $n! > 2^n$ pour un $n \\geq 4$.\n` +
+          `$(n+1)! = (n+1) \\times n!$\n\n` +
+          `$> (n+1) \\times 2^n$ (par H.R.)\n\n` +
+          `Or pour $n \\geq 4$, on a $n + 1 \\geq 5 > 2$, donc :\n` +
+          `$(n+1) \\times 2^n > 2 \\times 2^n = 2^{n+1}$ ✓\n\n` +
+          `**Conclusion** : Par récurrence, $n! > 2^n$ pour tout $n \\geq 4$.`,
+        answer: `Démontré par récurrence`,
+        params: {}
+      }
+    } else {
+      return {
+        id: `rec-ineg-${Date.now()}`,
+        category: 'Récurrence',
+        title: 'Croissance exponentielle',
+        difficulty: 3,
+        statement: `Démontrer par récurrence que pour tout $n \\geq 1$ :\n$$2^n > n$$`,
+        hints: [
+          'Initialisation : vérifie pour $n = 1$',
+          'Utilise $2^{n+1} = 2 \\times 2^n$'
+        ],
+        solution: `**Initialisation** ($n = 1$) :\n` +
+          `$2^1 = 2 > 1$ ✓\n\n` +
+          `**Hérédité** : Supposons $2^n > n$ pour un $n \\geq 1$.\n` +
+          `$2^{n+1} = 2 \\times 2^n > 2n$ (par H.R.)\n\n` +
+          `Il suffit de montrer que $2n \\geq n + 1$, i.e. $n \\geq 1$.\n\n` +
+          `C'est vrai par hypothèse, donc $2^{n+1} > 2n \\geq n + 1$ ✓\n\n` +
+          `**Conclusion** : Par récurrence, $2^n > n$ pour tout $n \\geq 1$.`,
+        answer: `Démontré par récurrence`,
+        params: {}
+      }
+    }
+  }
+}
+
+// --- ARITHMÉTIQUE ---
+const arithmetiquePGCD: ExerciseGenerator = {
+  id: 'arith-pgcd',
+  category: 'Arithmétique',
+  title: 'Calcul du PGCD',
+  description: 'Calculer le PGCD avec l\'algorithme d\'Euclide',
+  difficulty: 2,
+  chapter: 'divisibilite',
+  generate: () => {
+    const a = randInt(50, 200)
+    const b = randInt(20, a - 1)
+
+    // Algorithme d'Euclide
+    const steps: string[] = []
+    let x = a, y = b
+    while (y !== 0) {
+      const q = Math.floor(x / y)
+      const r = x % y
+      steps.push(`$${x} = ${q} \\times ${y} + ${r}$`)
+      x = y
+      y = r
+    }
+    const pgcd = x
+
+    return {
+      id: `arith-pgcd-${Date.now()}`,
+      category: 'Arithmétique',
+      title: 'PGCD (Euclide)',
+      difficulty: 2,
+      statement: `Calculer $\\text{PGCD}(${a}, ${b})$ en utilisant l'algorithme d'Euclide.`,
+      hints: [
+        'Effectue des divisions euclidiennes successives',
+        'Le PGCD est le dernier reste non nul'
+      ],
+      solution: `**Algorithme d'Euclide** :\n\n` +
+        steps.join('\n\n') +
+        `\n\nLe dernier reste non nul est **${pgcd}**.\n\n` +
+        `Donc $\\text{PGCD}(${a}, ${b}) = ${pgcd}$.`,
+      answer: `$\\text{PGCD}(${a}, ${b}) = ${pgcd}$`,
+      params: { a, b }
+    }
+  }
+}
+
+const arithmetiqueCongruence: ExerciseGenerator = {
+  id: 'arith-cong',
+  category: 'Arithmétique',
+  title: 'Calcul de congruence',
+  description: 'Calculer le reste d\'une division',
+  difficulty: 2,
+  chapter: 'congruences',
+  generate: () => {
+    const base = randInt(2, 9)
+    const exp = randInt(10, 30)
+    const mod = randChoice([3, 7, 9, 11])
+
+    // Calcul du reste de base^exp mod m
+    let result = 1
+    let currentBase = base % mod
+    let e = exp
+    while (e > 0) {
+      if (e % 2 === 1) {
+        result = (result * currentBase) % mod
+      }
+      currentBase = (currentBase * currentBase) % mod
+      e = Math.floor(e / 2)
+    }
+
+    return {
+      id: `arith-cong-${Date.now()}`,
+      category: 'Arithmétique',
+      title: 'Congruence',
+      difficulty: 2,
+      statement: `Quel est le reste de la division euclidienne de $${base}^{${exp}}$ par $${mod}$ ?`,
+      hints: [
+        'Trouve d\'abord la période des puissances modulo $' + mod + '$',
+        'Utilise les propriétés des congruences'
+      ],
+      solution: `Calculons les puissances de $${base}$ modulo $${mod}$ :\n\n` +
+        `$${base}^1 \\equiv ${base % mod} \\pmod{${mod}}$\n` +
+        `$${base}^2 \\equiv ${(base * base) % mod} \\pmod{${mod}}$\n` +
+        `$${base}^3 \\equiv ${(base * base * base) % mod} \\pmod{${mod}}$\n` +
+        `...\n\n` +
+        `En calculant (ou par exponentiation rapide) :\n` +
+        `$${base}^{${exp}} \\equiv ${result} \\pmod{${mod}}$\n\n` +
+        `Le reste est **${result}**.`,
+      answer: `Le reste est $${result}$`,
+      params: { base, exp, mod }
+    }
+  }
+}
+
+const arithmetiqueBezout: ExerciseGenerator = {
+  id: 'arith-bezout',
+  category: 'Arithmétique',
+  title: 'Identité de Bézout',
+  description: 'Trouver les coefficients de Bézout',
+  difficulty: 3,
+  chapter: 'bezout',
+  generate: () => {
+    // Choisir deux nombres premiers entre eux
+    let a = randInt(15, 50)
+    let b = randInt(10, a - 1)
+    while (gcd(a, b) !== 1) {
+      a = randInt(15, 50)
+      b = randInt(10, a - 1)
+    }
+
+    // Algorithme d'Euclide étendu
+    function extendedGcd(a: number, b: number): [number, number, number] {
+      if (b === 0) return [a, 1, 0]
+      const [g, x1, y1] = extendedGcd(b, a % b)
+      return [g, y1, x1 - Math.floor(a / b) * y1]
+    }
+
+    const [, u, v] = extendedGcd(a, b)
+
+    return {
+      id: `arith-bezout-${Date.now()}`,
+      category: 'Arithmétique',
+      title: 'Coefficients de Bézout',
+      difficulty: 3,
+      statement: `Trouver des entiers $u$ et $v$ tels que $${a}u + ${b}v = 1$.`,
+      hints: [
+        'Vérifie d\'abord que $\\text{PGCD}(${a}, ${b}) = 1$',
+        'Utilise l\'algorithme d\'Euclide étendu'
+      ],
+      solution: `Les nombres $${a}$ et $${b}$ sont premiers entre eux (PGCD = 1).\n\n` +
+        `Par l'algorithme d'Euclide étendu, on trouve :\n` +
+        `$u = ${u}$ et $v = ${v}$\n\n` +
+        `**Vérification** : $${a} \\times (${u}) + ${b} \\times (${v}) = ${a * u} + ${b * v} = 1$ ✓`,
+      answer: `$u = ${u}$, $v = ${v}$`,
+      params: { a, b, u, v }
+    }
+  }
+}
+
+// --- MATRICES ---
+const matriceOperations: ExerciseGenerator = {
+  id: 'matrice-ops',
+  category: 'Matrices',
+  title: 'Opérations sur les matrices',
+  description: 'Calculer un produit de matrices 2×2',
+  difficulty: 2,
+  chapter: 'matrices-operations',
+  generate: () => {
+    const a11 = randInt(-3, 3), a12 = randInt(-3, 3)
+    const a21 = randInt(-3, 3), a22 = randInt(-3, 3)
+    const b11 = randInt(-3, 3), b12 = randInt(-3, 3)
+    const b21 = randInt(-3, 3), b22 = randInt(-3, 3)
+
+    // Produit AB
+    const c11 = a11 * b11 + a12 * b21
+    const c12 = a11 * b12 + a12 * b22
+    const c21 = a21 * b11 + a22 * b21
+    const c22 = a21 * b12 + a22 * b22
+
+    return {
+      id: `mat-ops-${Date.now()}`,
+      category: 'Matrices',
+      title: 'Produit matriciel',
+      difficulty: 2,
+      statement: `Calculer $AB$ où :\n$$A = \\begin{pmatrix} ${a11} & ${a12} \\\\ ${a21} & ${a22} \\end{pmatrix} \\quad B = \\begin{pmatrix} ${b11} & ${b12} \\\\ ${b21} & ${b22} \\end{pmatrix}$$`,
+      hints: [
+        '$(AB)_{ij} = \\sum_k A_{ik} B_{kj}$',
+        'Ligne de $A$ × Colonne de $B$'
+      ],
+      solution: `$AB = \\begin{pmatrix} ${a11} & ${a12} \\\\ ${a21} & ${a22} \\end{pmatrix} \\begin{pmatrix} ${b11} & ${b12} \\\\ ${b21} & ${b22} \\end{pmatrix}$\n\n` +
+        `$(AB)_{11} = ${a11} \\times ${b11} + ${a12} \\times ${b21} = ${c11}$\n` +
+        `$(AB)_{12} = ${a11} \\times ${b12} + ${a12} \\times ${b22} = ${c12}$\n` +
+        `$(AB)_{21} = ${a21} \\times ${b11} + ${a22} \\times ${b21} = ${c21}$\n` +
+        `$(AB)_{22} = ${a21} \\times ${b12} + ${a22} \\times ${b22} = ${c22}$\n\n` +
+        `$$AB = \\begin{pmatrix} ${c11} & ${c12} \\\\ ${c21} & ${c22} \\end{pmatrix}$$`,
+      answer: `$AB = \\begin{pmatrix} ${c11} & ${c12} \\\\ ${c21} & ${c22} \\end{pmatrix}$`,
+      params: { a11, a12, a21, a22, b11, b12, b21, b22 }
+    }
+  }
+}
+
+const matriceDeterminant: ExerciseGenerator = {
+  id: 'matrice-det',
+  category: 'Matrices',
+  title: 'Déterminant et inverse',
+  description: 'Calculer le déterminant et l\'inverse d\'une matrice 2×2',
+  difficulty: 2,
+  chapter: 'matrices-operations',
+  generate: () => {
+    // Générer une matrice inversible
+    let a = randInt(-4, 4), b = randInt(-4, 4)
+    let c = randInt(-4, 4), d = randInt(-4, 4)
+    let det = a * d - b * c
+    while (det === 0) {
+      a = randInt(-4, 4); b = randInt(-4, 4)
+      c = randInt(-4, 4); d = randInt(-4, 4)
+      det = a * d - b * c
+    }
+
+    return {
+      id: `mat-det-${Date.now()}`,
+      category: 'Matrices',
+      title: 'Déterminant et inverse',
+      difficulty: 2,
+      statement: `Soit $A = \\begin{pmatrix} ${a} & ${b} \\\\ ${c} & ${d} \\end{pmatrix}$.\n\n1. Calculer $\\det(A)$.\n2. La matrice est-elle inversible ? Si oui, calculer $A^{-1}$.`,
+      hints: [
+        '$\\det(A) = ad - bc$',
+        '$A^{-1} = \\frac{1}{\\det(A)} \\begin{pmatrix} d & -b \\\\ -c & a \\end{pmatrix}$'
+      ],
+      solution: `**1.** $\\det(A) = ${a} \\times ${d} - ${b} \\times ${c} = ${a*d} - ${b*c} = ${det}$\n\n` +
+        `**2.** $\\det(A) = ${det} \\neq 0$, donc $A$ est **inversible**.\n\n` +
+        `$A^{-1} = \\frac{1}{${det}} \\begin{pmatrix} ${d} & ${-b} \\\\ ${-c} & ${a} \\end{pmatrix}$\n\n` +
+        (Math.abs(det) === 1
+          ? `$A^{-1} = \\begin{pmatrix} ${d * (det > 0 ? 1 : -1)} & ${-b * (det > 0 ? 1 : -1)} \\\\ ${-c * (det > 0 ? 1 : -1)} & ${a * (det > 0 ? 1 : -1)} \\end{pmatrix}$`
+          : `$A^{-1} = \\begin{pmatrix} \\frac{${d}}{${det}} & \\frac{${-b}}{${det}} \\\\ \\frac{${-c}}{${det}} & \\frac{${a}}{${det}} \\end{pmatrix}$`),
+      answer: `$\\det(A) = ${det}$, $A^{-1} = \\frac{1}{${det}} \\begin{pmatrix} ${d} & ${-b} \\\\ ${-c} & ${a} \\end{pmatrix}$`,
+      params: { a, b, c, d, det }
+    }
+  }
+}
+
+// --- GÉOMÉTRIE DANS L'ESPACE ---
+const geometrieVecteurs: ExerciseGenerator = {
+  id: 'geo-vecteurs',
+  category: 'Géométrie',
+  title: 'Calculs vectoriels dans l\'espace',
+  description: 'Produit scalaire et norme dans l\'espace',
+  difficulty: 2,
+  chapter: 'vecteurs-espace',
+  generate: () => {
+    const ux = randInt(-4, 4), uy = randInt(-4, 4), uz = randInt(-4, 4)
+    const vx = randInt(-4, 4), vy = randInt(-4, 4), vz = randInt(-4, 4)
+
+    const prodScal = ux * vx + uy * vy + uz * vz
+    const normeU = Math.sqrt(ux * ux + uy * uy + uz * uz)
+    const normeV = Math.sqrt(vx * vx + vy * vy + vz * vz)
+
+    return {
+      id: `geo-vect-${Date.now()}`,
+      category: 'Géométrie',
+      title: 'Produit scalaire',
+      difficulty: 2,
+      statement: `Soient $\\vec{u} = \\begin{pmatrix} ${ux} \\\\ ${uy} \\\\ ${uz} \\end{pmatrix}$ et $\\vec{v} = \\begin{pmatrix} ${vx} \\\\ ${vy} \\\\ ${vz} \\end{pmatrix}$.\n\n1. Calculer $\\vec{u} \\cdot \\vec{v}$.\n2. Calculer $\\|\\vec{u}\\|$.`,
+      hints: [
+        '$\\vec{u} \\cdot \\vec{v} = x_u x_v + y_u y_v + z_u z_v$',
+        '$\\|\\vec{u}\\| = \\sqrt{x^2 + y^2 + z^2}$'
+      ],
+      solution: `**1.** $\\vec{u} \\cdot \\vec{v} = ${ux} \\times ${vx} + ${uy} \\times ${vy} + ${uz} \\times ${vz}$\n` +
+        `$= ${ux * vx} + ${uy * vy} + ${uz * vz} = ${prodScal}$\n\n` +
+        `**2.** $\\|\\vec{u}\\| = \\sqrt{${ux}^2 + ${uy}^2 + ${uz}^2} = \\sqrt{${ux*ux + uy*uy + uz*uz}}$\n` +
+        (Number.isInteger(normeU)
+          ? `$= ${normeU}$`
+          : `$\\approx ${normeU.toFixed(2)}$`),
+      answer: `$\\vec{u} \\cdot \\vec{v} = ${prodScal}$, $\\|\\vec{u}\\| = \\sqrt{${ux*ux + uy*uy + uz*uz}}$`,
+      params: { ux, uy, uz, vx, vy, vz }
+    }
+  }
+}
+
+const geometriePlanEquation: ExerciseGenerator = {
+  id: 'geo-plan',
+  category: 'Géométrie',
+  title: 'Équation de plan',
+  description: 'Trouver l\'équation d\'un plan',
+  difficulty: 3,
+  chapter: 'vecteurs-espace',
+  generate: () => {
+    const a = randNonZero(-4, 4), b = randNonZero(-4, 4), c = randNonZero(-4, 4)
+    const x0 = randInt(-3, 3), y0 = randInt(-3, 3), z0 = randInt(-3, 3)
+    const d = -(a * x0 + b * y0 + c * z0)
+
+    return {
+      id: `geo-plan-${Date.now()}`,
+      category: 'Géométrie',
+      title: 'Équation de plan',
+      difficulty: 3,
+      statement: `Déterminer une équation cartésienne du plan $\\mathcal{P}$ passant par $A(${x0}, ${y0}, ${z0})$ et de vecteur normal $\\vec{n} = \\begin{pmatrix} ${a} \\\\ ${b} \\\\ ${c} \\end{pmatrix}$.`,
+      hints: [
+        'L\'équation est de la forme $ax + by + cz + d = 0$',
+        'Les coefficients $a, b, c$ sont les coordonnées du vecteur normal',
+        'Trouve $d$ en utilisant les coordonnées du point $A$'
+      ],
+      solution: `L'équation du plan est $${a}x + ${b}y + ${c}z + d = 0$.\n\n` +
+        `Le point $A(${x0}, ${y0}, ${z0})$ appartient au plan, donc :\n` +
+        `$${a} \\times ${x0} + ${b} \\times ${y0} + ${c} \\times ${z0} + d = 0$\n` +
+        `$${a * x0} + ${b * y0} + ${c * z0} + d = 0$\n` +
+        `$${a * x0 + b * y0 + c * z0} + d = 0$\n` +
+        `$d = ${d}$\n\n` +
+        `**Équation du plan** : $${a}x ${b >= 0 ? '+' : '-'} ${Math.abs(b)}y ${c >= 0 ? '+' : '-'} ${Math.abs(c)}z ${d >= 0 ? '+' : '-'} ${Math.abs(d)} = 0$`,
+      answer: `$${a}x ${b >= 0 ? '+' : '-'} ${Math.abs(b)}y ${c >= 0 ? '+' : '-'} ${Math.abs(c)}z ${d >= 0 ? '+' : '-'} ${Math.abs(d)} = 0$`,
+      params: { a, b, c, d, x0, y0, z0 }
+    }
+  }
+}
+
 // Liste de tous les générateurs
 export const generators: ExerciseGenerator[] = [
   // Dérivation
@@ -877,6 +1744,31 @@ export const generators: ExerciseGenerator[] = [
   logarithmeEquation,
   // Trigonométrie
   trigoEquation,
+  // Primitives
+  primitivePuissance,
+  primitiveExponentielle,
+  // Continuité
+  continuitePoint,
+  continuiteIntervalle,
+  // Convexité
+  convexiteEtude,
+  convexiteInegalite,
+  // Loi normale
+  loiNormaleCalcul,
+  loiNormaleNonCentree,
+  // Récurrence
+  recurrenceSomme,
+  recurrenceInegalite,
+  // Arithmétique
+  arithmetiquePGCD,
+  arithmetiqueCongruence,
+  arithmetiqueBezout,
+  // Matrices
+  matriceOperations,
+  matriceDeterminant,
+  // Géométrie dans l'espace
+  geometrieVecteurs,
+  geometriePlanEquation,
 ]
 
 // Grouper par chapitre
