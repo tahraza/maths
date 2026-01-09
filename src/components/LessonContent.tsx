@@ -1,15 +1,67 @@
 'use client'
 
-import { useMemo } from 'react'
+import { useMemo, useEffect, useRef, useState } from 'react'
+import { createPortal } from 'react-dom'
 import katex from 'katex'
+import {
+  FunctionPlot,
+  LimitVisualization,
+  IntegralVisualization,
+  SequencePlot,
+  ComplexPlane,
+} from './InteractiveGraphs'
 
 interface LessonContentProps {
   content: string
 }
 
+interface GraphConfig {
+  id: string
+  type: string
+  props: Record<string, unknown>
+}
+
+// Extract graph configurations from content
+function extractGraphs(content: string): { processed: string; graphs: GraphConfig[] } {
+  const graphs: GraphConfig[] = []
+  let graphIndex = 0
+
+  const processed = content.replace(
+    /:::graph\[(\w+)\]\s*\n([\s\S]*?):::/g,
+    (_, type, propsStr) => {
+      const id = `graph-${graphIndex++}`
+      try {
+        // Parse props as JSON-like format
+        const props: Record<string, unknown> = {}
+        const lines = propsStr.trim().split('\n')
+        for (const line of lines) {
+          const match = line.match(/^(\w+)\s*[:=]\s*(.+)$/)
+          if (match) {
+            const [, key, value] = match
+            // Try to parse as JSON, otherwise keep as string
+            try {
+              props[key] = JSON.parse(value)
+            } catch {
+              props[key] = value.trim().replace(/^["']|["']$/g, '')
+            }
+          }
+        }
+        graphs.push({ id, type, props })
+      } catch (e) {
+        console.error('Error parsing graph props:', e)
+      }
+      return `<div id="${id}" class="interactive-graph-container"></div>`
+    }
+  )
+
+  return { processed, graphs }
+}
+
 // Process markdown with KaTeX math rendering
-function processContent(content: string): string {
-  let processed = content
+function processContent(content: string): { html: string; graphs: GraphConfig[] } {
+  // First extract graphs
+  const { processed: withoutGraphs, graphs } = extractGraphs(content)
+  let processed = withoutGraphs
 
   // Markdown tables (must be processed BEFORE KaTeX to avoid splitting issues)
   processed = processed.replace(
@@ -184,16 +236,59 @@ function processContent(content: string): string {
   processed = processed.replace(/<p>(\s*<(?:h[1-6]|div|ul|ol|table))/g, '$1')
   processed = processed.replace(/(<\/(?:h[1-6]|div|ul|ol|table)>\s*)<\/p>/g, '$1')
 
-  return processed
+  return { html: processed, graphs }
+}
+
+// Graph renderer component
+function GraphRenderer({ config }: { config: GraphConfig }) {
+  const [container, setContainer] = useState<HTMLElement | null>(null)
+
+  useEffect(() => {
+    const el = document.getElementById(config.id)
+    if (el) setContainer(el)
+  }, [config.id])
+
+  if (!container) return null
+
+  const GraphComponent = (() => {
+    // Cast through unknown to satisfy TypeScript
+    const props = config.props as unknown
+    switch (config.type) {
+      case 'FunctionPlot':
+        return <FunctionPlot {...(props as React.ComponentProps<typeof FunctionPlot>)} />
+      case 'LimitVisualization':
+        return <LimitVisualization {...(props as React.ComponentProps<typeof LimitVisualization>)} />
+      case 'IntegralVisualization':
+        return <IntegralVisualization {...(props as React.ComponentProps<typeof IntegralVisualization>)} />
+      case 'SequencePlot':
+        return <SequencePlot {...(props as React.ComponentProps<typeof SequencePlot>)} />
+      case 'ComplexPlane':
+        return <ComplexPlane {...(props as React.ComponentProps<typeof ComplexPlane>)} />
+      default:
+        return <div className="text-danger-600">Type de graphe inconnu: {config.type}</div>
+    }
+  })()
+
+  return createPortal(GraphComponent, container)
 }
 
 export function LessonContent({ content }: LessonContentProps) {
-  const processedContent = useMemo(() => processContent(content), [content])
+  const { html, graphs } = useMemo(() => processContent(content), [content])
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
 
   return (
-    <div
-      className="lesson-content"
-      dangerouslySetInnerHTML={{ __html: processedContent }}
-    />
+    <>
+      <div
+        className="lesson-content"
+        dangerouslySetInnerHTML={{ __html: html }}
+      />
+      {mounted && graphs.map((config) => (
+        <GraphRenderer key={config.id} config={config} />
+      ))}
+    </>
   )
 }
