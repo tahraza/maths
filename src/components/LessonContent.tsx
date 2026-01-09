@@ -20,6 +20,7 @@ import {
   NormalDistribution,
   BinomialDistribution,
   SlopeField,
+  MarkovChain,
 } from './InteractiveGraphs'
 
 interface LessonContentProps {
@@ -297,6 +298,8 @@ function GraphRenderer({ config }: { config: GraphConfig }) {
         return <BinomialDistribution {...(props as React.ComponentProps<typeof BinomialDistribution>)} />
       case 'SlopeField':
         return <SlopeField {...(props as React.ComponentProps<typeof SlopeField>)} />
+      case 'MarkovChain':
+        return <MarkovChain {...(props as React.ComponentProps<typeof MarkovChain>)} />
       default:
         return <div className="text-danger-600">Type de graphe inconnu: {config.type}</div>
     }
