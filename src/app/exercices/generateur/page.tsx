@@ -27,6 +27,14 @@ const categoryColors: Record<string, string> = {
   'Exponentielle': 'bg-orange-100 text-orange-800 dark:bg-orange-900 dark:text-orange-200',
   'Logarithme': 'bg-teal-100 text-teal-800 dark:bg-teal-900 dark:text-teal-200',
   'Trigonométrie': 'bg-rose-100 text-rose-800 dark:bg-rose-900 dark:text-rose-200',
+  'Primitives': 'bg-sky-100 text-sky-800 dark:bg-sky-900 dark:text-sky-200',
+  'Continuité': 'bg-violet-100 text-violet-800 dark:bg-violet-900 dark:text-violet-200',
+  'Convexité': 'bg-fuchsia-100 text-fuchsia-800 dark:bg-fuchsia-900 dark:text-fuchsia-200',
+  'Loi normale': 'bg-emerald-100 text-emerald-800 dark:bg-emerald-900 dark:text-emerald-200',
+  'Récurrence': 'bg-lime-100 text-lime-800 dark:bg-lime-900 dark:text-lime-200',
+  'Arithmétique': 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200',
+  'Matrices': 'bg-stone-100 text-stone-800 dark:bg-stone-800 dark:text-stone-200',
+  'Géométrie': 'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200',
 }
 
 const difficultyLabels = ['', 'Facile', 'Accessible', 'Intermédiaire', 'Avancé', 'Expert']
