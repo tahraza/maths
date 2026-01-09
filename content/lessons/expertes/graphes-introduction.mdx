@@ -18,6 +18,30 @@ Un graphe modélise des relations : amis sur un réseau social, routes entre vil
 
 La théorie des graphes permet de répondre à des questions comme : peut-on visiter toutes les villes en passant une seule fois par chaque route ?
 
+:::example[Application : Réseau social]
+Imagine un réseau social avec 6 utilisateurs : Alice, Bob, Clara, David, Emma et Félix.
+
+**Les amitiés (arêtes)** :
+- Alice est amie avec Bob, Clara et David
+- Bob est ami avec Clara
+- Clara est amie avec Emma
+- David est ami avec Félix
+
+**Questions qu'on peut résoudre avec les graphes** :
+- Alice peut-elle contacter Félix via ses amis ? → Oui, chemin : Alice → David → Félix
+- Qui a le plus d'amis ? → Alice (degré 3)
+- Y a-t-il quelqu'un isolé ? → Non, le graphe est connexe
+- Combien de "poignées de main" au total ? → 6 arêtes (vérification : somme des degrés = 12 = 2×6)
+:::
+
+:::graph[GraphVisualization]
+vertices: [{"id":"A","label":"Alice","x":0,"y":2},{"id":"B","label":"Bob","x":1,"y":3},{"id":"C","label":"Clara","x":2,"y":2},{"id":"D","label":"David","x":1,"y":1},{"id":"E","label":"Emma","x":3,"y":2},{"id":"F","label":"Félix","x":2,"y":0}]
+edges: [{"from":"A","to":"B"},{"from":"A","to":"C"},{"from":"A","to":"D"},{"from":"B","to":"C"},{"from":"C","to":"E"},{"from":"D","to":"F"}]
+title: Réseau social : cliquez sur un sommet pour explorer ses connexions
+showDegrees: true
+showMatrix: false
+:::
+
 ## Objectifs de cette leçon
 
 À la fin de cette leçon, tu sauras :
@@ -197,6 +221,92 @@ Pour être un arbre, il faudrait $n - 1 = 4$ arêtes.
 Avec 5 arêtes et 5 sommets, le graphe contient au moins un cycle.
 
 **Ce n'est pas un arbre.**
+:::
+
+## Algorithmes de parcours
+
+Les algorithmes de parcours permettent d'explorer systématiquement tous les sommets d'un graphe. Ils sont fondamentaux pour résoudre de nombreux problèmes.
+
+:::method[Parcours en largeur (BFS - Breadth-First Search)]
+Le BFS explore le graphe **niveau par niveau** : d'abord tous les voisins directs, puis les voisins des voisins, etc.
+
+**Principe** :
+1. Partir d'un sommet source $s$
+2. Visiter tous les voisins de $s$ (distance 1)
+3. Puis tous les voisins non visités des sommets de distance 1 (distance 2)
+4. Continuer jusqu'à avoir visité tous les sommets accessibles
+
+**Utilité** : Trouver le **plus court chemin** (en nombre d'arêtes) entre deux sommets.
+:::
+
+:::example[BFS pas à pas]
+Graphe : A—B—C, A—D, B—E, D—E
+
+Parcours BFS depuis A :
+1. **File** : [A] → Visite A, ajoute voisins B et D
+2. **File** : [B, D] → Visite B, ajoute voisins non visités C et E
+3. **File** : [D, C, E] → Visite D, E déjà dans la file
+4. **File** : [C, E] → Visite C (pas de nouveau voisin)
+5. **File** : [E] → Visite E (tous voisins déjà visités)
+
+**Ordre de visite** : A → B → D → C → E
+
+**Distances depuis A** : A(0), B(1), D(1), C(2), E(2)
+:::
+
+:::method[Parcours en profondeur (DFS - Depth-First Search)]
+Le DFS explore le graphe en allant **le plus loin possible** avant de revenir en arrière.
+
+**Principe** :
+1. Partir d'un sommet source $s$
+2. Visiter un voisin non visité, puis un voisin de ce voisin, etc.
+3. Quand on est bloqué (plus de voisin non visité), revenir en arrière
+4. Continuer jusqu'à avoir visité tous les sommets accessibles
+
+**Utilité** : Détecter des **cycles**, trouver des **composantes connexes**, résoudre des labyrinthes.
+:::
+
+:::example[DFS pas à pas]
+Même graphe : A—B—C, A—D, B—E, D—E
+
+Parcours DFS depuis A (en choisissant le premier voisin alphabétiquement) :
+1. Visite A, va vers B (premier voisin)
+2. Visite B, va vers C (premier voisin non visité)
+3. Visite C, pas de voisin non visité → **retour** à B
+4. B : va vers E (autre voisin non visité)
+5. Visite E, voisins B et D, D non visité → va vers D
+6. Visite D, voisins A et E déjà visités → **retour**
+
+**Ordre de visite** : A → B → C → E → D
+
+Le DFS explore "en profondeur" : A→B→C, puis remonte pour explorer E→D.
+:::
+
+:::property[Complexité des parcours]
+Pour un graphe à $n$ sommets et $m$ arêtes :
+- **BFS** et **DFS** ont une complexité $O(n + m)$
+- Chaque sommet est visité une fois, chaque arête examinée une fois
+:::
+
+:::graph[GraphVisualization]
+vertices: [{"id":"A","label":"A","x":0,"y":1},{"id":"B","label":"B","x":1,"y":2},{"id":"C","label":"C","x":2,"y":2},{"id":"D","label":"D","x":0,"y":0},{"id":"E","label":"E","x":1,"y":0}]
+edges: [{"from":"A","to":"B"},{"from":"A","to":"D"},{"from":"B","to":"C"},{"from":"B","to":"E"},{"from":"D","to":"E"}]
+title: Graphe interactif : cliquez pour explorer (le numéro indique l'ordre de visite)
+showDegrees: true
+showMatrix: true
+:::
+
+:::example[Application : Chemin le plus court]
+Dans le réseau social précédent, quel est le chemin le plus court entre Alice et Emma ?
+
+**BFS depuis Alice** :
+- Distance 0 : Alice
+- Distance 1 : Bob, Clara, David
+- Distance 2 : Emma (via Clara), Félix (via David)
+
+**Réponse** : Alice → Clara → Emma (2 arêtes)
+
+Le BFS garantit qu'on trouve d'abord le chemin le plus court !
 :::
 
 ## Erreurs fréquentes

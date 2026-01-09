@@ -9,6 +9,7 @@ import {
   IntegralVisualization,
   SequencePlot,
   ComplexPlane,
+  GraphVisualization,
 } from './InteractiveGraphs'
 
 interface LessonContentProps {
@@ -264,6 +265,8 @@ function GraphRenderer({ config }: { config: GraphConfig }) {
         return <SequencePlot {...(props as React.ComponentProps<typeof SequencePlot>)} />
       case 'ComplexPlane':
         return <ComplexPlane {...(props as React.ComponentProps<typeof ComplexPlane>)} />
+      case 'GraphVisualization':
+        return <GraphVisualization {...(props as React.ComponentProps<typeof GraphVisualization>)} />
       default:
         return <div className="text-danger-600">Type de graphe inconnu: {config.type}</div>
     }

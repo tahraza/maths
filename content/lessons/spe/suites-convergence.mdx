@@ -46,6 +46,18 @@ title: Exploration : suite récurrente u(n+1) = 0.5×u(n) + 1 (converge vers 2)
 
 Ce théorème est fondamental : il garantit l'existence d'une limite sans la calculer explicitement.
 
+:::remark[Pourquoi ce théorème est vrai ? (intuition)]
+Imagine une suite croissante majorée par $M$. Les termes $u_0, u_1, u_2, \ldots$ forment une séquence de points sur la droite réelle qui :
+1. **Montent toujours** (croissance)
+2. **Ne dépassent jamais $M$** (majoration)
+
+Ces points s'accumulent donc quelque part sous $M$. Ils ne peuvent pas "sauter" au-dessus de leur accumulation car ils sont croissants.
+
+**Visuellement** : les points se tassent de plus en plus près d'une valeur limite $\ell \leq M$.
+
+C'est le principe de "l'escalier qui monte mais est bloqué par un plafond" : il finit par se stabiliser à une certaine hauteur.
+:::
+
 :::definition
 **Suites adjacentes**
 
@@ -180,6 +192,61 @@ Si $u_{n+1} = au_n + b$ avec $a \neq 1$ :
 Si $f$ est continue et $(u_n)$ converge vers $\ell$, alors $f(\ell) = \ell$.
 
 Les candidats pour $\ell$ sont les **points fixes** de $f$.
+:::
+
+## Points fixes multiples : comment choisir ?
+
+:::example[Suite avec deux points fixes]
+Soit $u_{n+1} = u_n^2 - u_n + 1$ avec différentes valeurs de $u_0$.
+
+**Recherche des points fixes** : $\ell = \ell^2 - \ell + 1$
+$\Leftrightarrow \ell^2 - 2\ell + 1 = 0$
+$\Leftrightarrow (\ell - 1)^2 = 0$
+$\Leftrightarrow \ell = 1$
+
+Ici, il n'y a qu'un seul point fixe : $\ell = 1$.
+
+**Mais attention** : la suite ne converge pas toujours vers ce point fixe !
+- Si $u_0 = 0$ : $u_1 = 1$, $u_2 = 1$, ... → converge vers 1
+- Si $u_0 = 2$ : $u_1 = 3$, $u_2 = 7$, $u_3 = 43$, ... → diverge vers $+\infty$
+:::
+
+:::example[Deux points fixes, un seul attractif]
+Soit $u_{n+1} = \frac{1}{2}(u_n + \frac{2}{u_n})$ pour $u_0 > 0$ (méthode de Héron pour $\sqrt{2}$).
+
+**Points fixes** : $\ell = \frac{1}{2}(\ell + \frac{2}{\ell})$
+$\Leftrightarrow 2\ell = \ell + \frac{2}{\ell}$
+$\Leftrightarrow \ell = \frac{2}{\ell}$
+$\Leftrightarrow \ell^2 = 2$
+
+Donc $\ell = \sqrt{2}$ ou $\ell = -\sqrt{2}$.
+
+**Mais** : pour $u_0 > 0$, tous les termes sont positifs, donc la suite ne peut converger que vers $\sqrt{2}$.
+
+Vérifions avec $u_0 = 1$ :
+- $u_1 = \frac{1}{2}(1 + 2) = 1.5$
+- $u_2 = \frac{1}{2}(1.5 + \frac{2}{1.5}) = 1.4167$
+- $u_3 = \frac{1}{2}(1.4167 + \frac{2}{1.4167}) = 1.4142...$
+
+La convergence est très rapide vers $\sqrt{2} \approx 1.4142$ !
+:::
+
+:::graph[SequencePlot]
+type: recursive
+u0: 1
+recursiveFn: 0.5*(u + 2/u)
+terms: 8
+showLimit: true
+title: Méthode de Héron : convergence ultra-rapide vers √2
+:::
+
+:::method[Identifier le bon point fixe]
+Quand l'équation $f(\ell) = \ell$ a plusieurs solutions :
+
+1. **Éliminer les impossibles** : si $u_n > 0$ pour tout $n$, éliminer les points fixes négatifs
+2. **Utiliser la monotonie** : si $(u_n)$ est croissante, la limite est $\geq u_0$
+3. **Critère de stabilité** : si $|f'(\ell)| < 1$, le point fixe $\ell$ est **attractif**
+4. **Tester numériquement** : calculer quelques termes pour voir vers où va la suite
 :::
 
 ## Erreurs fréquentes

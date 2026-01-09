@@ -182,6 +182,87 @@ $A = \begin{pmatrix} 1 & 2 & 3 \\ 4 & 5 & 6 \end{pmatrix}$
 $A^T = \begin{pmatrix} 1 & 4 \\ 2 & 5 \\ 3 & 6 \end{pmatrix}$
 :::
 
+## Application : Systèmes linéaires
+
+:::property[Écriture matricielle d'un système]
+Un système de $n$ équations à $p$ inconnues peut s'écrire sous forme matricielle :
+
+$$AX = B$$
+
+où :
+- $A$ est la matrice des coefficients (taille $n \times p$)
+- $X$ est le vecteur des inconnues (taille $p \times 1$)
+- $B$ est le vecteur des seconds membres (taille $n \times 1$)
+:::
+
+:::example[Système linéaire en écriture matricielle]
+Soit le système :
+$$\begin{cases} 2x + 3y = 8 \\ x - y = 1 \end{cases}$$
+
+**Écriture matricielle** : $AX = B$ avec
+
+$$A = \begin{pmatrix} 2 & 3 \\ 1 & -1 \end{pmatrix}, \quad X = \begin{pmatrix} x \\ y \end{pmatrix}, \quad B = \begin{pmatrix} 8 \\ 1 \end{pmatrix}$$
+
+**Vérification** :
+$$AX = \begin{pmatrix} 2 & 3 \\ 1 & -1 \end{pmatrix} \begin{pmatrix} x \\ y \end{pmatrix} = \begin{pmatrix} 2x + 3y \\ x - y \end{pmatrix}$$
+
+On retrouve bien le système de départ !
+
+**Résolution** (par substitution) : $x = 1 + y$, donc $2(1+y) + 3y = 8$, soit $5y = 6$, $y = 1.2$ et $x = 2.2$.
+
+**Vérification** :
+$$A \begin{pmatrix} 2.2 \\ 1.2 \end{pmatrix} = \begin{pmatrix} 4.4 + 3.6 \\ 2.2 - 1.2 \end{pmatrix} = \begin{pmatrix} 8 \\ 1 \end{pmatrix} = B \quad \checkmark$$
+:::
+
+:::remark[Intérêt de l'écriture matricielle]
+L'écriture $AX = B$ permet :
+- De manipuler le système comme une équation algébrique
+- D'utiliser l'inverse de $A$ (si elle existe) : $X = A^{-1}B$
+- De résoudre plusieurs systèmes avec la même matrice $A$
+- D'étudier l'existence et l'unicité des solutions via le déterminant
+:::
+
+## Non-commutativité : un exemple frappant
+
+:::example[AB et BA radicalement différents]
+Considérons :
+$$A = \begin{pmatrix} 1 & 2 \\ 0 & 0 \end{pmatrix} \quad \text{et} \quad B = \begin{pmatrix} 0 & 0 \\ 3 & 4 \end{pmatrix}$$
+
+**Calcul de AB** :
+$$AB = \begin{pmatrix} 1 & 2 \\ 0 & 0 \end{pmatrix} \begin{pmatrix} 0 & 0 \\ 3 & 4 \end{pmatrix} = \begin{pmatrix} 6 & 8 \\ 0 & 0 \end{pmatrix}$$
+
+**Calcul de BA** :
+$$BA = \begin{pmatrix} 0 & 0 \\ 3 & 4 \end{pmatrix} \begin{pmatrix} 1 & 2 \\ 0 & 0 \end{pmatrix} = \begin{pmatrix} 0 & 0 \\ 3 & 6 \end{pmatrix}$$
+
+**Observation choc** :
+- $AB$ a ses coefficients non nuls en **haut**
+- $BA$ a ses coefficients non nuls en **bas**
+- Les matrices $AB$ et $BA$ n'ont **aucun coefficient en commun** (sauf les zéros) !
+:::
+
+:::example[Cas extrême : AB = 0 mais BA ≠ 0]
+$$A = \begin{pmatrix} 0 & 1 \\ 0 & 0 \end{pmatrix} \quad \text{et} \quad B = \begin{pmatrix} 0 & 0 \\ 0 & 1 \end{pmatrix}$$
+
+$$AB = \begin{pmatrix} 0 & 1 \\ 0 & 0 \end{pmatrix} \begin{pmatrix} 0 & 0 \\ 0 & 1 \end{pmatrix} = \begin{pmatrix} 0 & 1 \\ 0 & 0 \end{pmatrix} \neq O$$
+
+$$BA = \begin{pmatrix} 0 & 0 \\ 0 & 1 \end{pmatrix} \begin{pmatrix} 0 & 1 \\ 0 & 0 \end{pmatrix} = \begin{pmatrix} 0 & 0 \\ 0 & 0 \end{pmatrix} = O$$
+
+**Conclusion stupéfiante** : On peut avoir $AB \neq O$ alors que $BA = O$ !
+
+Cela prouve qu'on ne peut **jamais** simplifier par une matrice dans une équation.
+:::
+
+:::erreur[Piège classique]
+Si $AB = AC$, peut-on conclure que $B = C$ ?
+
+**NON !** Contrairement aux nombres réels, on ne peut pas "simplifier" par $A$.
+
+Contre-exemple :
+$$A = \begin{pmatrix} 1 & 1 \\ 2 & 2 \end{pmatrix}, \quad B = \begin{pmatrix} 1 & 0 \\ 0 & 0 \end{pmatrix}, \quad C = \begin{pmatrix} 0 & 0 \\ 1 & 0 \end{pmatrix}$$
+
+On vérifie que $AB = AC = \begin{pmatrix} 1 & 0 \\ 2 & 0 \end{pmatrix}$ mais $B \neq C$.
+:::
+
 ## Erreurs fréquentes
 
 :::warning
