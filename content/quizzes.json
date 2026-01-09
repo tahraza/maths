@@ -3988,5 +3988,179 @@
       }
     ],
     "difficulty": 3
+  },
+  {
+    "id": "pre-combinatoire",
+    "lessonId": "combinatoire",
+    "type": "pre",
+    "title": "Diagnostic : Combinatoire et dénombrement",
+    "questions": [
+      {
+        "id": "q1",
+        "question": "Combien vaut $5!$ (factorielle de 5) ?",
+        "options": [
+          "25",
+          "120",
+          "60",
+          "720"
+        ],
+        "correctAnswer": 1,
+        "explanation": "$5! = 5 \\times 4 \\times 3 \\times 2 \\times 1 = 120$"
+      },
+      {
+        "id": "q2",
+        "question": "Un code de cadenas à 3 chiffres (0-9) utilise quel modèle ?",
+        "options": [
+          "Combinaisons",
+          "Arrangements",
+          "k-uplets (listes)",
+          "Permutations"
+        ],
+        "correctAnswer": 2,
+        "explanation": "L'ordre compte (123 ≠ 321) et la répétition est permise (111 est valide). C'est un k-uplet."
+      },
+      {
+        "id": "q3",
+        "question": "Choisir 2 délégués parmi 30 élèves (sans distinction de rôle) utilise :",
+        "options": [
+          "Arrangements",
+          "Combinaisons",
+          "Permutations",
+          "k-uplets"
+        ],
+        "correctAnswer": 1,
+        "explanation": "L'ordre ne compte pas (les 2 délégués sont équivalents), sans répétition : combinaisons."
+      },
+      {
+        "id": "q4",
+        "question": "Combien vaut $0!$ par convention ?",
+        "options": [
+          "0",
+          "1",
+          "Indéfini",
+          "n"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Par convention, $0! = 1$. C'est essentiel pour que les formules fonctionnent."
+      },
+      {
+        "id": "q5",
+        "question": "Le principe multiplicatif s'applique quand on fait :",
+        "options": [
+          "Un choix parmi plusieurs options exclusives",
+          "Deux choix successifs indépendants",
+          "Une sélection sans remise",
+          "Un tirage aléatoire"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Le principe multiplicatif (ET PUIS) : on fait un choix, puis un autre indépendamment."
+      }
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "post-combinatoire",
+    "lessonId": "combinatoire",
+    "type": "post",
+    "title": "Validation : Combinatoire et dénombrement",
+    "questions": [
+      {
+        "id": "q1",
+        "question": "Combien de codes à 4 chiffres (0-9) avec répétition possible ?",
+        "options": [
+          "$10^4 = 10\\,000$",
+          "$10! / 6! = 5\\,040$",
+          "$\\binom{10}{4} = 210$",
+          "$4^{10}$"
+        ],
+        "correctAnswer": 0,
+        "explanation": "C'est un k-uplet : $n^k = 10^4 = 10\\,000$."
+      },
+      {
+        "id": "q2",
+        "question": "Combien d'anagrammes du mot \"GARE\" (4 lettres distinctes) ?",
+        "options": [
+          "4",
+          "16",
+          "24",
+          "256"
+        ],
+        "correctAnswer": 2,
+        "explanation": "$4! = 4 \\times 3 \\times 2 \\times 1 = 24$ anagrammes."
+      },
+      {
+        "id": "q3",
+        "question": "Que vaut $\\binom{10}{3}$ ?",
+        "options": [
+          "30",
+          "120",
+          "720",
+          "1000"
+        ],
+        "correctAnswer": 1,
+        "explanation": "$\\binom{10}{3} = \\frac{10 \\times 9 \\times 8}{3!} = \\frac{720}{6} = 120$"
+      },
+      {
+        "id": "q4",
+        "question": "Dans un tournoi de 8 joueurs, chacun rencontre tous les autres une fois. Combien de matchs ?",
+        "options": [
+          "56",
+          "64",
+          "28",
+          "36"
+        ],
+        "correctAnswer": 2,
+        "explanation": "$\\binom{8}{2} = \\frac{8 \\times 7}{2} = 28$ paires de joueurs."
+      },
+      {
+        "id": "q5",
+        "question": "Quelle relation est la relation de Pascal ?",
+        "options": [
+          "$\\binom{n}{k} = \\binom{n}{n-k}$",
+          "$\\binom{n}{k} + \\binom{n}{k+1} = \\binom{n+1}{k+1}$",
+          "$\\sum_{k=0}^n \\binom{n}{k} = 2^n$",
+          "$n! = n \\times (n-1)!$"
+        ],
+        "correctAnswer": 1,
+        "explanation": "La relation de Pascal permet de construire le triangle de Pascal ligne par ligne."
+      },
+      {
+        "id": "q6",
+        "question": "Combien de sous-ensembles possède un ensemble à 5 éléments ?",
+        "options": [
+          "5",
+          "25",
+          "32",
+          "120"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Un ensemble à $n$ éléments a $2^n$ sous-ensembles. Ici $2^5 = 32$."
+      },
+      {
+        "id": "q7",
+        "question": "Pour élire un président et un vice-président parmi 20 candidats, on utilise :",
+        "options": [
+          "Combinaisons : $\\binom{20}{2}$",
+          "Arrangements : $A_{20}^2$",
+          "Permutations : $20!$",
+          "k-uplets : $20^2$"
+        ],
+        "correctAnswer": 1,
+        "explanation": "L'ordre compte (président ≠ vice-président), sans répétition : arrangement."
+      },
+      {
+        "id": "q8",
+        "question": "Combien d'anagrammes pour \"ABBA\" ?",
+        "options": [
+          "24",
+          "12",
+          "6",
+          "4"
+        ],
+        "correctAnswer": 2,
+        "explanation": "$\\frac{4!}{2! \\times 2!} = \\frac{24}{4} = 6$ (2 A et 2 B identiques)."
+      }
+    ],
+    "difficulty": 2
   }
 ]

@@ -391,6 +391,83 @@
         { "instruction": "Écris la solution générale.", "hint": "$(x, y) = (x_0 + \\frac{b}{d}k, y_0 - \\frac{a}{d}k)$", "solution": "$x = -6 + 8k$ et $y = 4 - 5k$, $k \\in \\mathbb{Z}$" }
       ],
       "finalAnswer": "Solutions : $(x, y) = (-6 + 8k, 4 - 5k)$ pour $k \\in \\mathbb{Z}$"
+    },
+    {
+      "id": "comb-digicode",
+      "title": "Le Digicode",
+      "theme": "Combinatoire",
+      "difficulty": "facile",
+      "duration": 10,
+      "description": "Choisir le bon modèle de dénombrement pour un code.",
+      "problem": "Un digicode possède 10 chiffres (0-9) et 2 lettres (A, B). Un code est constitué de 4 caractères. Combien de codes sont possibles ?",
+      "steps": [
+        { "instruction": "Détermine la taille de l'ensemble total de caractères.", "hint": "Il y a 10 chiffres et 2 lettres.", "solution": "$n = 10 + 2 = 12$ caractères disponibles." },
+        { "instruction": "L'ordre compte-t-il et y a-t-il remise ?", "hint": "Le code 12AA est-il différent de AA12 ? Peut-on réutiliser le même caractère ?", "solution": "L'ordre compte (1234 ≠ 4321) et la répétition est permise (1111 est valide). C'est un k-uplet." },
+        { "instruction": "Applique la formule des k-uplets.", "hint": "$n^k$ avec $n=12$ et $k=4$.", "solution": "$12^4 = 20\\,736$ codes possibles." }
+      ],
+      "finalAnswer": "$12^4 = 20\\,736$ codes possibles"
+    },
+    {
+      "id": "comb-tierce",
+      "title": "Le Tiercé",
+      "theme": "Combinatoire",
+      "difficulty": "facile",
+      "duration": 10,
+      "description": "Dénombrement avec ordre mais sans répétition.",
+      "problem": "15 chevaux sont au départ d'une course. Combien d'arrivées (Tiercé : 3 premiers) dans l'ordre sont possibles ?",
+      "steps": [
+        { "instruction": "Identifie le type de tirage.", "hint": "L'ordre compte-t-il ? Un cheval peut-il arriver plusieurs fois ?", "solution": "L'ordre compte (1er ≠ 2ème ≠ 3ème) et un cheval n'arrive qu'une fois. C'est un arrangement." },
+        { "instruction": "Applique la formule des arrangements.", "hint": "15 possibilités pour le 1er, puis 14 pour le 2ème...", "solution": "$A_{15}^3 = 15 \\times 14 \\times 13 = 2\\,730$ arrivées." }
+      ],
+      "finalAnswer": "$A_{15}^3 = 2\\,730$ tiercés dans l'ordre"
+    },
+    {
+      "id": "comb-loto",
+      "title": "Grille de Loto",
+      "theme": "Combinatoire",
+      "difficulty": "moyen",
+      "duration": 15,
+      "description": "Utilisation des combinaisons.",
+      "problem": "On coche 6 numéros sur une grille de 49. Combien de grilles différentes peut-on remplir ?",
+      "steps": [
+        { "instruction": "L'ordre compte-t-il ?", "hint": "Cocher 5 puis 12 est-il différent de cocher 12 puis 5 ?", "solution": "Non, l'ordre ne compte pas. C'est une combinaison." },
+        { "instruction": "Y a-t-il répétition ?", "hint": "Peut-on cocher deux fois le même numéro ?", "solution": "Non, chaque numéro n'apparaît qu'une fois sur la grille." },
+        { "instruction": "Applique la formule des combinaisons.", "hint": "$\\binom{n}{k}$ avec $n=49$ et $k=6$.", "solution": "$\\binom{49}{6} = \\frac{49 \\times 48 \\times 47 \\times 46 \\times 45 \\times 44}{6!}$" },
+        { "instruction": "Calcule le résultat.", "hint": "$6! = 720$.", "solution": "$\\binom{49}{6} = \\frac{10\\,068\\,347\\,520}{720} = 13\\,983\\,816$ grilles." }
+      ],
+      "finalAnswer": "$\\binom{49}{6} = 13\\,983\\,816$ grilles possibles"
+    },
+    {
+      "id": "comb-poker",
+      "title": "Main de Poker avec contrainte",
+      "theme": "Combinatoire",
+      "difficulty": "moyen",
+      "duration": 15,
+      "description": "Combinaisons avec conditions multiples.",
+      "problem": "Dans un jeu de 32 cartes (4 Rois, 4 Dames, etc.), combien de mains de 5 cartes contiennent exactement 3 Rois ?",
+      "steps": [
+        { "instruction": "Décompose le problème en deux choix indépendants.", "hint": "Il faut choisir les Rois ET les autres cartes.", "solution": "1) Choisir 3 Rois parmi 4. 2) Choisir 2 non-Rois parmi 28." },
+        { "instruction": "Calcule le nombre de façons de choisir les Rois.", "hint": "C'est $\\binom{4}{3}$.", "solution": "$\\binom{4}{3} = 4$ façons." },
+        { "instruction": "Calcule le nombre de façons de choisir les non-Rois.", "hint": "Il reste 32 - 4 = 28 cartes qui ne sont pas des Rois.", "solution": "$\\binom{28}{2} = \\frac{28 \\times 27}{2} = 378$ façons." },
+        { "instruction": "Applique le principe multiplicatif.", "hint": "Choix des Rois ET PUIS choix des autres.", "solution": "$4 \\times 378 = 1\\,512$ mains." }
+      ],
+      "finalAnswer": "$\\binom{4}{3} \\times \\binom{28}{2} = 1\\,512$ mains"
+    },
+    {
+      "id": "comb-anagramme",
+      "title": "Anagrammes d'un mot",
+      "theme": "Combinatoire",
+      "difficulty": "moyen",
+      "duration": 12,
+      "description": "Permutation avec éléments répétés.",
+      "problem": "Combien d'anagrammes peut-on former avec le mot \"POMME\" ?",
+      "steps": [
+        { "instruction": "Compte les lettres et identifie les répétitions.", "hint": "Liste chaque lettre et son nombre d'occurrences.", "solution": "POMME = 5 lettres : P(1), O(1), M(2), E(1)." },
+        { "instruction": "Sans répétition, combien y aurait-il d'anagrammes ?", "hint": "C'est une permutation de 5 éléments.", "solution": "$5! = 120$ si toutes les lettres étaient distinctes." },
+        { "instruction": "Corrige pour les lettres identiques.", "hint": "Divise par le nombre de permutations des lettres identiques.", "solution": "Les 2 M sont interchangeables, donc on divise par $2! = 2$." },
+        { "instruction": "Calcule le résultat final.", "hint": "$\\frac{5!}{2!}$", "solution": "$\\frac{120}{2} = 60$ anagrammes." }
+      ],
+      "finalAnswer": "$\\frac{5!}{2!} = 60$ anagrammes"
     }
   ]
 }

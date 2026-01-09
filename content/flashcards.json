@@ -1602,5 +1602,113 @@
     "tags": ["graphes", "DFS"],
     "level": 2,
     "category": "method"
+  },
+  {
+    "id": "fc-comb-001",
+    "lessonId": "combinatoire",
+    "front": "Quelle est la formule pour le nombre de k-uplets (listes) ?",
+    "back": "n^k — Ordre compte, répétition permise. Exemple : codes PIN, mots de passe.",
+    "tags": ["combinatoire", "k-uplet"],
+    "level": 1,
+    "category": "formula"
+  },
+  {
+    "id": "fc-comb-002",
+    "lessonId": "combinatoire",
+    "front": "Quelle est la définition de n! (factorielle) ?",
+    "back": "n! = n × (n-1) × ... × 2 × 1. Convention : 0! = 1.",
+    "tags": ["combinatoire", "factorielle"],
+    "level": 1,
+    "category": "definition"
+  },
+  {
+    "id": "fc-comb-003",
+    "lessonId": "combinatoire",
+    "front": "Formule du nombre d'arrangements de k parmi n",
+    "back": "A(n,k) = n!/(n-k)! = n × (n-1) × ... × (n-k+1). Ordre compte, pas de répétition.",
+    "tags": ["combinatoire", "arrangement"],
+    "level": 1,
+    "category": "formula"
+  },
+  {
+    "id": "fc-comb-004",
+    "lessonId": "combinatoire",
+    "front": "Formule des combinaisons (k parmi n)",
+    "back": "C(n,k) = n! / (k!(n-k)!) — L'ordre ne compte PAS, pas de répétition.",
+    "tags": ["combinatoire", "combinaison", "binomial"],
+    "level": 1,
+    "category": "formula"
+  },
+  {
+    "id": "fc-comb-005",
+    "lessonId": "combinatoire",
+    "front": "Quand utiliser les combinaisons ?",
+    "back": "Quand l'ORDRE NE COMPTE PAS et SANS répétition. Ex : choisir une équipe, une main de cartes.",
+    "tags": ["combinatoire", "méthode"],
+    "level": 1,
+    "category": "method"
+  },
+  {
+    "id": "fc-comb-006",
+    "lessonId": "combinatoire",
+    "front": "Quand utiliser les arrangements ?",
+    "back": "Quand l'ORDRE COMPTE et SANS répétition. Ex : podium, classement, élection de postes distincts.",
+    "tags": ["combinatoire", "méthode"],
+    "level": 1,
+    "category": "method"
+  },
+  {
+    "id": "fc-comb-007",
+    "lessonId": "combinatoire",
+    "front": "Relation de Pascal",
+    "back": "C(n,k) + C(n,k+1) = C(n+1,k+1). Chaque nombre du triangle est la somme des deux au-dessus.",
+    "tags": ["combinatoire", "Pascal", "propriété"],
+    "level": 2,
+    "category": "property"
+  },
+  {
+    "id": "fc-comb-008",
+    "lessonId": "combinatoire",
+    "front": "Propriété de symétrie des coefficients binomiaux",
+    "back": "C(n,k) = C(n,n-k). Choisir k à garder = choisir n-k à jeter.",
+    "tags": ["combinatoire", "symétrie", "propriété"],
+    "level": 1,
+    "category": "property"
+  },
+  {
+    "id": "fc-comb-009",
+    "lessonId": "combinatoire",
+    "front": "Somme de tous les coefficients binomiaux pour n fixé",
+    "back": "Σ C(n,k) pour k de 0 à n = 2^n. C'est le nombre total de sous-ensembles d'un ensemble à n éléments.",
+    "tags": ["combinatoire", "propriété"],
+    "level": 2,
+    "category": "property"
+  },
+  {
+    "id": "fc-comb-010",
+    "lessonId": "combinatoire",
+    "front": "Principe multiplicatif (ET PUIS)",
+    "back": "Card(A × B) = Card(A) × Card(B). Quand on fait un choix PUIS un autre indépendamment.",
+    "tags": ["combinatoire", "principe"],
+    "level": 1,
+    "category": "definition"
+  },
+  {
+    "id": "fc-comb-011",
+    "lessonId": "combinatoire",
+    "front": "Principe additif (OU)",
+    "back": "Card(A ∪ B) = Card(A) + Card(B) si A et B sont disjoints. Sinon : Card(A) + Card(B) - Card(A ∩ B).",
+    "tags": ["combinatoire", "principe"],
+    "level": 1,
+    "category": "definition"
+  },
+  {
+    "id": "fc-comb-012",
+    "lessonId": "combinatoire",
+    "front": "Combien d'anagrammes pour un mot de n lettres distinctes ?",
+    "back": "n! (permutations). Si lettres répétées : diviser par les factorielles des répétitions.",
+    "tags": ["combinatoire", "permutation", "anagramme"],
+    "level": 2,
+    "category": "method"
   }
 ]

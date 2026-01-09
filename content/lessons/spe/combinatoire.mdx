@@ -1,0 +1,389 @@
+---
+id: "combinatoire"
+title: "Combinatoire et dénombrement"
+track: "spe"
+level: 2
+prerequisites: ["recurrence"]
+tags: ["combinatoire", "dénombrement", "factorielle", "arrangements", "combinaisons", "binôme"]
+estimatedTime: 55
+chapter: "probas"
+order: 0
+---
+
+# Combinatoire et dénombrement
+
+## Intuition et analogie
+
+Imagine que tu dois ranger ta bibliothèque. Tu as 5 livres et 5 places. De combien de façons peux-tu les disposer ? Compter "à la main" devient vite impossible quand les nombres grandissent. Le **dénombrement** est l'art de compter intelligemment, sans énumérer tous les cas.
+
+**Analogie de la tirelire** : Pour compter les pièces d'une tirelire, on ne les compte pas en vrac. On fait des piles par valeur : les pièces de 1€, les pièces de 50 centimes, etc. Le dénombrement, c'est l'art de faire ces "petits tas" mathématiques en identifiant le bon modèle.
+
+## Objectifs de cette leçon
+
+À la fin de cette leçon, tu sauras :
+- Utiliser les principes additif et multiplicatif
+- Calculer des factorielles et des coefficients binomiaux
+- Distinguer arrangements, permutations et combinaisons
+- Choisir le bon modèle selon le problème
+
+## Prérequis (rappel express)
+
+- **Ensembles** : notion d'ensemble, d'élément, de cardinal
+- **Opérations** : multiplication, factorielle
+
+## Les principes fondamentaux
+
+:::definition
+**Cardinal d'un ensemble**
+
+Le **cardinal** d'un ensemble fini $E$, noté $\text{Card}(E)$ ou $|E|$, est le nombre d'éléments de $E$.
+
+Exemple : $E = \{a, b, c\}$ a pour cardinal $\text{Card}(E) = 3$.
+:::
+
+:::property[Principe additif (OU)]
+Si $A$ et $B$ sont deux ensembles **disjoints** (sans élément commun), alors :
+$$\text{Card}(A \cup B) = \text{Card}(A) + \text{Card}(B)$$
+
+**Mot-clé** : "OU" (l'un ou l'autre, mais pas les deux)
+
+Plus généralement, si $A$ et $B$ ne sont pas disjoints :
+$$\text{Card}(A \cup B) = \text{Card}(A) + \text{Card}(B) - \text{Card}(A \cap B)$$
+:::
+
+:::example[Principe additif]
+Au restaurant, tu choisis fromage OU dessert. Il y a 4 fromages et 6 desserts.
+
+Nombre de choix possibles : $4 + 6 = 10$
+:::
+
+:::property[Principe multiplicatif (ET PUIS)]
+Le **produit cartésien** $A \times B$ est l'ensemble des couples $(a, b)$ avec $a \in A$ et $b \in B$.
+$$\text{Card}(A \times B) = \text{Card}(A) \times \text{Card}(B)$$
+
+**Mot-clé** : "ET PUIS" (une chose puis une autre, indépendamment)
+:::
+
+:::example[Principe multiplicatif]
+Au restaurant, tu choisis une entrée ET PUIS un plat. Il y a 3 entrées et 5 plats.
+
+Nombre de menus possibles : $3 \times 5 = 15$
+:::
+
+## La factorielle
+
+:::definition
+**Factorielle**
+
+Pour tout entier naturel $n \geq 1$, la **factorielle** de $n$, notée $n!$, est :
+$$n! = n \times (n-1) \times (n-2) \times \cdots \times 2 \times 1$$
+
+Par convention : $0! = 1$
+:::
+
+:::example[Calculs de factorielles]
+- $1! = 1$
+- $2! = 2 \times 1 = 2$
+- $3! = 3 \times 2 \times 1 = 6$
+- $4! = 4 \times 3 \times 2 \times 1 = 24$
+- $5! = 5 \times 4! = 120$
+- $10! = 3\,628\,800$
+:::
+
+:::tip
+La factorielle croît très vite ! Pour $n \geq 13$, $n!$ dépasse le milliard.
+
+Astuce de calcul : $n! = n \times (n-1)!$
+:::
+
+## Les quatre modèles de dénombrement
+
+Pour choisir la bonne formule, pose-toi **deux questions** :
+1. **L'ordre est-il important ?** (Est-ce que ABC ≠ BAC ?)
+2. **Y a-t-il répétition possible ?** (Peut-on réutiliser un élément ?)
+
+### Modèle 1 : Les k-uplets (listes)
+
+:::definition
+**k-uplets (Ordre OUI, Répétition OUI)**
+
+Un **k-uplet** (ou liste ordonnée) de $k$ éléments choisis dans un ensemble à $n$ éléments est une suite ordonnée où la répétition est permise.
+
+**Formule** : $n^k$
+
+**Modèle concret** : Tirages successifs **avec remise**
+:::
+
+:::example[Code de digicode]
+Un digicode a 10 chiffres (0-9). Un code fait 4 chiffres.
+
+- L'ordre compte : 1234 ≠ 4321
+- La répétition est permise : 1111 est valide
+
+Nombre de codes : $10^4 = 10\,000$
+:::
+
+:::example[Mots avec répétition]
+Combien de "mots" de 3 lettres peut-on former avec l'alphabet (26 lettres) ?
+
+Réponse : $26^3 = 17\,576$ mots possibles
+:::
+
+### Modèle 2 : Les arrangements
+
+:::definition
+**Arrangements (Ordre OUI, Répétition NON)**
+
+Un **arrangement** de $k$ éléments parmi $n$ est une liste ordonnée de $k$ éléments **distincts**.
+
+**Formule** :
+$$A_n^k = n \times (n-1) \times \cdots \times (n-k+1) = \frac{n!}{(n-k)!}$$
+
+**Modèle concret** : Tirages successifs **sans remise** où l'ordre compte
+:::
+
+:::example[Tiercé dans l'ordre]
+Dans une course de 15 chevaux, combien de tiercés (3 premiers) dans l'ordre ?
+
+- L'ordre compte : le 1er n'est pas le 2ème
+- Pas de répétition : un cheval n'arrive qu'une fois
+
+$$A_{15}^3 = 15 \times 14 \times 13 = 2\,730$$
+:::
+
+:::example[Podium]
+Dans une classe de 30 élèves, de combien de façons peut-on élire un président, un vice-président et un trésorier (3 postes distincts) ?
+
+$$A_{30}^3 = 30 \times 29 \times 28 = 24\,360$$
+:::
+
+### Modèle 3 : Les permutations
+
+:::definition
+**Permutations (Ordre OUI, tous les éléments)**
+
+Une **permutation** d'un ensemble à $n$ éléments est un arrangement de **tous** les éléments.
+
+**Formule** : $n!$
+
+**Modèle concret** : Ranger tous les objets dans un certain ordre
+:::
+
+:::example[Anagrammes]
+Combien d'anagrammes du mot "MATHS" (5 lettres distinctes) ?
+
+Réponse : $5! = 120$ anagrammes
+:::
+
+:::example[File d'attente]
+De combien de façons peuvent se placer 8 personnes dans une file d'attente ?
+
+Réponse : $8! = 40\,320$ façons
+:::
+
+:::warning
+**Attention aux lettres répétées !**
+
+Pour "POMME" (5 lettres dont 2 M), on divise par le nombre de façons de permuter les lettres identiques :
+$$\frac{5!}{2!} = \frac{120}{2} = 60$$ anagrammes
+:::
+
+### Modèle 4 : Les combinaisons
+
+:::definition
+**Combinaisons (Ordre NON, Répétition NON)**
+
+Une **combinaison** de $k$ éléments parmi $n$ est un **sous-ensemble** de $k$ éléments (l'ordre ne compte pas).
+
+**Notation** : $\binom{n}{k}$ (lire "k parmi n")
+
+**Formule** :
+$$\binom{n}{k} = \frac{n!}{k!(n-k)!} = \frac{A_n^k}{k!}$$
+
+**Modèle concret** : Tirages simultanés (une main de cartes)
+:::
+
+:::example[Loto]
+On coche 6 numéros parmi 49. Combien de grilles possibles ?
+
+- L'ordre ne compte pas : cocher 5 puis 12 = cocher 12 puis 5
+- Pas de répétition : on ne coche pas deux fois le même numéro
+
+$$\binom{49}{6} = \frac{49!}{6! \times 43!} = \frac{49 \times 48 \times 47 \times 46 \times 45 \times 44}{6!} = 13\,983\,816$$
+:::
+
+:::example[Délégués de classe]
+Dans une classe de 30 élèves, de combien de façons peut-on choisir 2 délégués ?
+
+$$\binom{30}{2} = \frac{30 \times 29}{2 \times 1} = \frac{870}{2} = 435$$
+:::
+
+## Propriétés des coefficients binomiaux
+
+:::property[Propriétés fondamentales]
+Pour tous entiers $0 \leq k \leq n$ :
+
+**Cas particuliers** :
+$$\binom{n}{0} = 1 \quad \text{et} \quad \binom{n}{n} = 1$$
+$$\binom{n}{1} = n$$
+
+**Symétrie** :
+$$\binom{n}{k} = \binom{n}{n-k}$$
+
+*Interprétation* : Choisir $k$ éléments à garder revient à choisir $n-k$ éléments à jeter.
+:::
+
+:::property[Relation de Pascal]
+$$\binom{n}{k} + \binom{n}{k+1} = \binom{n+1}{k+1}$$
+
+Cette relation permet de construire le **triangle de Pascal** ligne par ligne.
+:::
+
+:::example[Triangle de Pascal]
+```
+n=0:           1
+n=1:          1   1
+n=2:        1   2   1
+n=3:       1   3   3   1
+n=4:      1   4   6   4   1
+n=5:     1   5  10  10   5   1
+```
+
+Chaque nombre est la somme des deux nombres au-dessus.
+:::
+
+:::property[Somme des coefficients binomiaux]
+$$\sum_{k=0}^{n} \binom{n}{k} = 2^n$$
+
+*Interprétation* : C'est le nombre total de sous-ensembles d'un ensemble à $n$ éléments.
+:::
+
+## Récapitulatif : quelle méthode choisir ?
+
+| Modèle | Ordre ? | Répétition ? | Formule |
+|--------|---------|--------------|---------|
+| k-uplet (liste) | OUI | OUI | $n^k$ |
+| Arrangement | OUI | NON | $\frac{n!}{(n-k)!}$ |
+| Permutation | OUI | NON (tous) | $n!$ |
+| Combinaison | NON | NON | $\binom{n}{k}$ |
+
+:::method[Arbre de décision]
+1. **L'ordre compte-t-il ?**
+   - Si NON → **Combinaisons** $\binom{n}{k}$
+   - Si OUI → Question 2
+
+2. **Peut-on répéter les éléments ?**
+   - Si OUI → **k-uplets** $n^k$
+   - Si NON → Question 3
+
+3. **Prend-on tous les éléments ?**
+   - Si OUI → **Permutations** $n!$
+   - Si NON → **Arrangements** $\frac{n!}{(n-k)!}$
+:::
+
+## Exemples résolus
+
+:::example[Le menu du restaurant]
+Un menu comprend : 1 entrée parmi 4, 1 plat parmi 3, 1 dessert parmi 5.
+
+Combien de menus différents ?
+
+**Analyse** : On choisit une entrée ET PUIS un plat ET PUIS un dessert. C'est le principe multiplicatif.
+
+**Calcul** : $4 \times 3 \times 5 = 60$ menus
+:::
+
+:::example[Équipe de basket]
+Dans un club de 12 joueurs, de combien de façons peut-on former une équipe de 5 joueurs ?
+
+**Analyse** : L'ordre ne compte pas (une équipe est un ensemble de joueurs). C'est une combinaison.
+
+**Calcul** : $\binom{12}{5} = \frac{12!}{5! \times 7!} = \frac{12 \times 11 \times 10 \times 9 \times 8}{120} = 792$ équipes
+:::
+
+:::example[Plaque d'immatriculation]
+Une plaque a 2 lettres (parmi 26) puis 3 chiffres (parmi 10). Combien de plaques possibles ?
+
+**Analyse** : L'ordre compte et la répétition est permise. C'est un k-uplet.
+
+**Calcul** : $26^2 \times 10^3 = 676 \times 1000 = 676\,000$ plaques
+:::
+
+:::example[Main de poker avec condition]
+Combien de mains de 5 cartes contiennent exactement 3 Rois ? (jeu de 32 cartes, 4 Rois)
+
+**Analyse** : On décompose le problème :
+1. Choisir 3 Rois parmi 4
+2. Choisir 2 autres cartes parmi les 28 non-Rois
+
+**Calcul** : $\binom{4}{3} \times \binom{28}{2} = 4 \times 378 = 1\,512$ mains
+:::
+
+## Mini-exercices
+
+:::exercise[Exercice 1]
+Combien de nombres à 3 chiffres peut-on former avec les chiffres 1, 2, 3, 4, 5 (avec répétition possible) ?
+
+**Solution** : C'est un k-uplet de 3 parmi 5. Réponse : $5^3 = 125$
+:::
+
+:::exercise[Exercice 2]
+De combien de façons peut-on ranger 6 livres différents sur une étagère ?
+
+**Solution** : C'est une permutation de 6 éléments. Réponse : $6! = 720$
+:::
+
+:::exercise[Exercice 3]
+Calculer $\binom{8}{3}$.
+
+**Solution** : $\binom{8}{3} = \frac{8 \times 7 \times 6}{3 \times 2 \times 1} = \frac{336}{6} = 56$
+:::
+
+:::exercise[Exercice 4]
+Un tournoi de tennis compte 8 joueurs. Chaque joueur rencontre tous les autres une seule fois. Combien de matchs sont joués ?
+
+**Solution** : On compte les paires de joueurs (l'ordre ne compte pas). C'est $\binom{8}{2} = \frac{8 \times 7}{2} = 28$ matchs.
+:::
+
+## Erreurs fréquentes
+
+:::warning
+**Erreur 1** : Confondre arrangement et combinaison
+
+- Choisir un président et un vice-président → Arrangement (l'ordre compte)
+- Choisir 2 délégués → Combinaison (l'ordre ne compte pas)
+
+**Erreur 2** : Oublier la convention $0! = 1$
+
+Cette convention est essentielle pour que les formules fonctionnent. Par exemple, $\binom{n}{0} = \frac{n!}{0! \times n!} = 1$.
+
+**Erreur 3** : Mal identifier la répétition
+
+Un code PIN peut avoir deux fois le même chiffre (répétition). Une main de cartes ne peut pas avoir deux fois la même carte (pas de répétition).
+
+**Erreur 4** : Oublier de diviser pour les combinaisons
+
+$\binom{n}{k} = \frac{A_n^k}{k!}$ : on divise par $k!$ pour éliminer les ordres équivalents.
+:::
+
+## Mini-résumé à apprendre
+
+**Factorielle** : $n! = n \times (n-1) \times \cdots \times 1$, avec $0! = 1$
+
+**Formules essentielles** :
+- k-uplets : $n^k$ (ordre + répétition)
+- Arrangements : $\frac{n!}{(n-k)!}$ (ordre, pas de répétition)
+- Permutations : $n!$ (tous les éléments ordonnés)
+- Combinaisons : $\binom{n}{k} = \frac{n!}{k!(n-k)!}$ (pas d'ordre)
+
+**Propriétés de $\binom{n}{k}$** :
+- $\binom{n}{k} = \binom{n}{n-k}$ (symétrie)
+- $\binom{n}{k} + \binom{n}{k+1} = \binom{n+1}{k+1}$ (Pascal)
+- $\sum_{k=0}^{n} \binom{n}{k} = 2^n$
+
+## Ponts vers autres chapitres
+
+- **Probabilités** : la combinatoire est essentielle pour calculer des probabilités
+- **Loi binomiale** : les coefficients binomiaux apparaissent dans la formule
+- **Formule du binôme** : $(a+b)^n = \sum_{k=0}^{n} \binom{n}{k} a^k b^{n-k}$
+- **Récurrence** : démontrer des propriétés sur les coefficients binomiaux

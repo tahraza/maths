@@ -4889,5 +4889,192 @@
     ],
     "tags": ["équations différentielles", "exponentielle", "premier ordre"],
     "isComprehension": false
+  },
+  {
+    "id": "ex-comb-001",
+    "lessonId": "combinatoire",
+    "title": "Code de cadenas",
+    "difficulty": 1,
+    "statement": "Un cadenas a un code à 4 chiffres (de 0 à 9).\n\n1. Combien de codes différents sont possibles ?\n2. Combien de codes sont possibles si tous les chiffres doivent être différents ?",
+    "hints": [
+      "Pour la question 1, l'ordre compte et la répétition est permise.",
+      "Pour la question 2, l'ordre compte mais sans répétition."
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Codes avec répétition (question 1)",
+        "content": "C'est un k-uplet de 4 parmi 10.\n\nFormule : $n^k = 10^4 = 10\\,000$ codes possibles."
+      },
+      {
+        "step": 2,
+        "title": "Codes sans répétition (question 2)",
+        "content": "C'est un arrangement de 4 parmi 10.\n\n$A_{10}^4 = 10 \\times 9 \\times 8 \\times 7 = 5\\,040$ codes possibles."
+      }
+    ],
+    "method": "Identifie d'abord si l'ordre compte et s'il y a répétition, puis applique la formule correspondante.",
+    "commonMistakes": [
+      "Confondre k-uplet et arrangement",
+      "Utiliser les combinaisons alors que l'ordre compte"
+    ],
+    "tags": ["combinatoire", "k-uplet", "arrangement"],
+    "isComprehension": true
+  },
+  {
+    "id": "ex-comb-002",
+    "lessonId": "combinatoire",
+    "title": "Équipe de délégués",
+    "difficulty": 1,
+    "statement": "Une classe de 32 élèves doit élire 2 délégués.\n\n1. De combien de façons peut-on choisir 2 délégués ?\n2. Si on distingue un délégué titulaire et un suppléant, combien de choix possibles ?",
+    "hints": [
+      "Question 1 : l'ordre ne compte pas (les 2 délégués sont équivalents).",
+      "Question 2 : l'ordre compte (titulaire ≠ suppléant)."
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Deux délégués équivalents (question 1)",
+        "content": "C'est une combinaison de 2 parmi 32.\n\n$\\binom{32}{2} = \\frac{32 \\times 31}{2} = \\frac{992}{2} = 496$ façons."
+      },
+      {
+        "step": 2,
+        "title": "Titulaire et suppléant (question 2)",
+        "content": "C'est un arrangement de 2 parmi 32.\n\n$A_{32}^2 = 32 \\times 31 = 992$ façons."
+      }
+    ],
+    "method": "Combinaisons si les rôles sont identiques, arrangements si les rôles sont distincts.",
+    "commonMistakes": [
+      "Utiliser les arrangements quand l'ordre ne compte pas",
+      "Oublier de diviser par 2! pour les combinaisons"
+    ],
+    "tags": ["combinatoire", "combinaison", "arrangement"],
+    "isComprehension": true
+  },
+  {
+    "id": "ex-comb-003",
+    "lessonId": "combinatoire",
+    "title": "Anagrammes avec lettres répétées",
+    "difficulty": 2,
+    "statement": "Combien d'anagrammes différents peut-on former avec le mot \"STATISTIQUE\" ?",
+    "hints": [
+      "Compte d'abord le nombre total de lettres.",
+      "Identifie les lettres qui se répètent et combien de fois.",
+      "Divise par les factorielles des répétitions."
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Comptage des lettres",
+        "content": "STATISTIQUE = 11 lettres au total\n\nS: 2 fois, T: 3 fois, A: 1 fois, I: 2 fois, Q: 1 fois, U: 1 fois, E: 1 fois"
+      },
+      {
+        "step": 2,
+        "title": "Application de la formule",
+        "content": "Nombre d'anagrammes = $\\frac{11!}{2! \\times 3! \\times 2!}$\n\n$= \\frac{39\\,916\\,800}{2 \\times 6 \\times 2} = \\frac{39\\,916\\,800}{24} = 1\\,663\\,200$"
+      }
+    ],
+    "method": "Pour les anagrammes avec répétitions : n! / (n₁! × n₂! × ...) où nᵢ est le nombre de répétitions de chaque lettre.",
+    "commonMistakes": [
+      "Oublier de diviser par les factorielles des répétitions",
+      "Mal compter les occurrences de chaque lettre"
+    ],
+    "tags": ["combinatoire", "permutation", "anagramme"],
+    "isComprehension": false
+  },
+  {
+    "id": "ex-comb-004",
+    "lessonId": "combinatoire",
+    "title": "Main de cartes avec condition",
+    "difficulty": 2,
+    "statement": "Dans un jeu de 52 cartes, on tire une main de 5 cartes.\n\n1. Combien de mains contiennent exactement 3 cœurs ?\n2. Combien de mains contiennent au moins un As ?",
+    "hints": [
+      "Question 1 : décompose en deux choix indépendants (cœurs ET autres).",
+      "Question 2 : utilise le complémentaire (aucun As est plus simple à calculer)."
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Question 1 : exactement 3 cœurs",
+        "content": "• Choisir 3 cœurs parmi 13 : $\\binom{13}{3} = 286$\n• Choisir 2 non-cœurs parmi 39 : $\\binom{39}{2} = 741$\n\nPrincipe multiplicatif : $286 \\times 741 = 211\\,926$ mains."
+      },
+      {
+        "step": 2,
+        "title": "Question 2 : au moins un As",
+        "content": "Total de mains : $\\binom{52}{5} = 2\\,598\\,960$\n\nMains sans As (0 As parmi 4, 5 cartes parmi les 48 non-As) : $\\binom{48}{5} = 1\\,712\\,304$\n\nMains avec au moins un As : $2\\,598\\,960 - 1\\,712\\,304 = 886\\,656$"
+      }
+    ],
+    "method": "Pour 'au moins un', utiliser P(≥1) = 1 - P(=0). Pour 'exactement k', décomposer en choix indépendants.",
+    "commonMistakes": [
+      "Calculer directement 'au moins' au lieu d'utiliser le complémentaire",
+      "Oublier le principe multiplicatif pour les choix indépendants"
+    ],
+    "tags": ["combinatoire", "combinaison", "cartes"],
+    "isComprehension": false
+  },
+  {
+    "id": "ex-comb-005",
+    "lessonId": "combinatoire",
+    "title": "Le menu du restaurant",
+    "difficulty": 1,
+    "statement": "Un restaurant propose :\n- 4 entrées différentes\n- 6 plats différents\n- 3 desserts différents\n\n1. Combien de menus complets (entrée + plat + dessert) peut-on composer ?\n2. Combien de formules \"entrée + plat OU plat + dessert\" peut-on composer ?",
+    "hints": [
+      "Question 1 : principe multiplicatif (ET PUIS).",
+      "Question 2 : principe additif (OU), attention à ne pas compter deux fois !"
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Menus complets (question 1)",
+        "content": "Entrée ET PUIS plat ET PUIS dessert.\n\nPrincipe multiplicatif : $4 \\times 6 \\times 3 = 72$ menus."
+      },
+      {
+        "step": 2,
+        "title": "Formules partielles (question 2)",
+        "content": "• Formule entrée + plat : $4 \\times 6 = 24$\n• Formule plat + dessert : $6 \\times 3 = 18$\n\nCes deux ensembles sont disjoints (pas de chevauchement).\n\nPrincipe additif : $24 + 18 = 42$ formules."
+      }
+    ],
+    "method": "Multiplicatif pour 'ET PUIS' (choix successifs indépendants). Additif pour 'OU' (ensembles disjoints).",
+    "commonMistakes": [
+      "Additionner au lieu de multiplier pour des choix successifs",
+      "Oublier de soustraire l'intersection quand les ensembles ne sont pas disjoints"
+    ],
+    "tags": ["combinatoire", "principe multiplicatif", "principe additif"],
+    "isComprehension": true
+  },
+  {
+    "id": "ex-comb-006",
+    "lessonId": "combinatoire",
+    "title": "Coefficients binomiaux et triangle de Pascal",
+    "difficulty": 2,
+    "statement": "1. Calculer $\\binom{8}{3}$ et $\\binom{8}{5}$ sans calculatrice.\n2. Vérifier que $\\binom{7}{2} + \\binom{7}{3} = \\binom{8}{3}$.\n3. Combien de sous-ensembles possède un ensemble à 6 éléments ?",
+    "hints": [
+      "Utilisez la symétrie pour simplifier le calcul.",
+      "La relation de Pascal relie trois coefficients binomiaux.",
+      "Un ensemble à n éléments a 2^n sous-ensembles."
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Calcul de C(8,3) et C(8,5)",
+        "content": "$\\binom{8}{3} = \\frac{8 \\times 7 \\times 6}{3 \\times 2 \\times 1} = \\frac{336}{6} = 56$\n\nPar symétrie : $\\binom{8}{5} = \\binom{8}{3} = 56$"
+      },
+      {
+        "step": 2,
+        "title": "Vérification de Pascal",
+        "content": "$\\binom{7}{2} = \\frac{7 \\times 6}{2} = 21$\n\n$\\binom{7}{3} = \\frac{7 \\times 6 \\times 5}{6} = 35$\n\n$21 + 35 = 56 = \\binom{8}{3}$ ✓"
+      },
+      {
+        "step": 3,
+        "title": "Sous-ensembles",
+        "content": "Nombre de sous-ensembles d'un ensemble à 6 éléments : $2^6 = 64$"
+      }
+    ],
+    "method": "Utiliser la symétrie C(n,k) = C(n,n-k) et la relation de Pascal pour simplifier les calculs.",
+    "commonMistakes": [
+      "Calculer les deux coefficients séparément sans utiliser la symétrie",
+      "Confondre 2^n et n!"
+    ],
+    "tags": ["combinatoire", "binomial", "Pascal"],
+    "isComprehension": false
   }
 ]
