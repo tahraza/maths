@@ -21,6 +21,7 @@ import {
   BinomialDistribution,
   SlopeField,
   MarkovChain,
+  SieveOfEratosthenes,
 } from './InteractiveGraphs'
 
 interface LessonContentProps {
@@ -300,6 +301,8 @@ function GraphRenderer({ config }: { config: GraphConfig }) {
         return <SlopeField {...(props as React.ComponentProps<typeof SlopeField>)} />
       case 'MarkovChain':
         return <MarkovChain {...(props as React.ComponentProps<typeof MarkovChain>)} />
+      case 'SieveOfEratosthenes':
+        return <SieveOfEratosthenes {...(props as React.ComponentProps<typeof SieveOfEratosthenes>)} />
       default:
         return <div className="text-danger-600">Type de graphe inconnu: {config.type}</div>
     }
