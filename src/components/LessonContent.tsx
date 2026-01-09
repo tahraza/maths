@@ -11,6 +11,13 @@ import {
   ComplexPlane,
   GraphVisualization,
   ComplexMultiplication,
+  TrigonometricCircle,
+  MatrixTransformation,
+  RiemannSum,
+  EpsilonDelta,
+  MovingTangent,
+  SequenceConvergence,
+  NormalDistribution,
 } from './InteractiveGraphs'
 
 interface LessonContentProps {
@@ -270,6 +277,20 @@ function GraphRenderer({ config }: { config: GraphConfig }) {
         return <GraphVisualization {...(props as React.ComponentProps<typeof GraphVisualization>)} />
       case 'ComplexMultiplication':
         return <ComplexMultiplication {...(props as React.ComponentProps<typeof ComplexMultiplication>)} />
+      case 'TrigonometricCircle':
+        return <TrigonometricCircle {...(props as React.ComponentProps<typeof TrigonometricCircle>)} />
+      case 'MatrixTransformation':
+        return <MatrixTransformation {...(props as React.ComponentProps<typeof MatrixTransformation>)} />
+      case 'RiemannSum':
+        return <RiemannSum {...(props as React.ComponentProps<typeof RiemannSum>)} />
+      case 'EpsilonDelta':
+        return <EpsilonDelta {...(props as React.ComponentProps<typeof EpsilonDelta>)} />
+      case 'MovingTangent':
+        return <MovingTangent {...(props as React.ComponentProps<typeof MovingTangent>)} />
+      case 'SequenceConvergence':
+        return <SequenceConvergence {...(props as React.ComponentProps<typeof SequenceConvergence>)} />
+      case 'NormalDistribution':
+        return <NormalDistribution {...(props as React.ComponentProps<typeof NormalDistribution>)} />
       default:
         return <div className="text-danger-600">Type de graphe inconnu: {config.type}</div>
     }
