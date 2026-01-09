@@ -23,6 +23,7 @@ import {
   MarkovChain,
   SieveOfEratosthenes,
   ProbabilityTree,
+  PascalTriangle,
 } from './InteractiveGraphs'
 
 interface LessonContentProps {
@@ -306,6 +307,8 @@ function GraphRenderer({ config }: { config: GraphConfig }) {
         return <SieveOfEratosthenes {...(props as React.ComponentProps<typeof SieveOfEratosthenes>)} />
       case 'ProbabilityTree':
         return <ProbabilityTree {...(props as React.ComponentProps<typeof ProbabilityTree>)} />
+      case 'PascalTriangle':
+        return <PascalTriangle {...(props as React.ComponentProps<typeof PascalTriangle>)} />
       default:
         return <div className="text-danger-600">Type de graphe inconnu: {config.type}</div>
     }
