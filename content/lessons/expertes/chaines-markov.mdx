@@ -1,0 +1,322 @@
+---
+id: "chaines-markov"
+title: "Chaînes de Markov"
+track: "expertes"
+level: 3
+prerequisites: ["matrices-operations"]
+tags: ["matrices", "probabilités", "Markov", "graphe", "stochastique"]
+estimatedTime: 50
+chapter: "matrices"
+order: 3
+---
+
+# Chaînes de Markov
+
+## Intuition et analogie
+
+Imagine un jeu de l'Oie. Tu es sur une case, tu lances le dé, et tu avances. Pour savoir où tu vas te retrouver, **seule ta position actuelle compte** — peu importe si tu as mis 2 tours ou 20 tours pour y arriver, ou quel chemin tu as emprunté.
+
+Cette propriété s'appelle **"l'absence de mémoire"** : le futur ne dépend que du présent, pas du passé. C'est exactement le principe d'une chaîne de Markov.
+
+:::definition
+**Chaîne de Markov**
+
+Une suite de variables aléatoires $(X_n)$ est une **chaîne de Markov** si la probabilité d'être dans un état au temps $n+1$ ne dépend que de l'état au temps $n$, et non des états précédents :
+
+$$P(X_{n+1} = j \mid X_n = i, X_{n-1}, \ldots, X_0) = P(X_{n+1} = j \mid X_n = i)$$
+:::
+
+## Objectifs de cette leçon
+
+À la fin de cette leçon, tu sauras :
+- Modéliser une situation par un graphe probabiliste
+- Construire et lire une matrice de transition
+- Calculer l'évolution d'un système au fil du temps
+- Déterminer l'état stable d'une chaîne de Markov
+
+## Graphe probabiliste et matrice de transition
+
+### Graphe probabiliste
+
+On représente les états par les sommets d'un graphe orienté pondéré. Chaque arc porte la probabilité de passer d'un état à l'autre.
+
+:::definition
+**Coefficient de transition**
+
+Le poids de l'arc allant de l'état $i$ vers l'état $j$, noté $p_{i,j}$, est la probabilité conditionnelle :
+
+$$p_{i,j} = P(X_{n+1} = j \mid X_n = i)$$
+
+C'est la probabilité de passer à l'état $j$ sachant qu'on est à l'état $i$.
+:::
+
+### Matrice de transition
+
+:::definition
+**Matrice de transition**
+
+La **matrice de transition** $P$ est la matrice carrée qui regroupe toutes les probabilités de passage :
+
+$$P = \begin{pmatrix} p_{1,1} & p_{1,2} & \cdots \\ p_{2,1} & p_{2,2} & \cdots \\ \vdots & \vdots & \ddots \end{pmatrix}$$
+
+Chaque coefficient $p_{i,j}$ représente la probabilité de passer de l'état $i$ (ligne) à l'état $j$ (colonne).
+:::
+
+:::property[Matrice stochastique]
+La matrice de transition est une **matrice stochastique** : la somme des coefficients de chaque **ligne** vaut 1.
+
+$$\sum_{j=1}^{k} p_{i,j} = 1 \quad \text{pour chaque ligne } i$$
+
+Cela traduit le fait que depuis un état, on doit obligatoirement aller quelque part (y compris rester sur place).
+:::
+
+### Exemple : Bus ou Vélo
+
+Agathe va à l'école en Bus (B) ou en Vélo (V) chaque jour.
+- Si elle prend le **Bus**, le lendemain elle reprend le Bus avec probabilité 0,3.
+- Si elle prend le **Vélo**, le lendemain elle prend le Bus avec probabilité 0,4.
+
+**États** : 1 = Bus, 2 = Vélo
+
+**Construction de la matrice** :
+- Ligne 1 (depuis Bus) : $p_{1,1} = 0,3$ donc $p_{1,2} = 0,7$
+- Ligne 2 (depuis Vélo) : $p_{2,1} = 0,4$ donc $p_{2,2} = 0,6$
+
+$$P = \begin{pmatrix} 0,3 & 0,7 \\ 0,4 & 0,6 \end{pmatrix}$$
+
+:::erreur[Lecture du graphe]
+La flèche qui part de $i$ et arrive en $j$ donne le coefficient $p_{i,j}$.
+
+**Attention** : c'est la **ligne** qui indique l'état de départ, la **colonne** l'état d'arrivée.
+:::
+
+## Évolution du système
+
+### Distribution de probabilité
+
+:::definition
+**Vecteur d'état**
+
+On note $\pi_n$ la **matrice ligne** représentant la distribution de probabilité à l'étape $n$ :
+
+$$\pi_n = \begin{pmatrix} P(X_n = 1) & P(X_n = 2) & \cdots \end{pmatrix}$$
+:::
+
+### Théorème d'évolution
+
+:::theorem[Formule de récurrence]
+Pour passer de l'étape $n$ à l'étape $n+1$, on multiplie la matrice ligne par la matrice de transition :
+
+$$\pi_{n+1} = \pi_n \times P$$
+:::
+
+:::theorem[Formule du terme général]
+L'état à l'étape $n$ s'exprime en fonction de l'état initial $\pi_0$ :
+
+$$\pi_n = \pi_0 \times P^n$$
+:::
+
+:::erreur[Ordre de multiplication]
+On écrit $\pi_{n+1} = \pi_n \times P$ (matrice ligne à gauche, matrice carrée à droite).
+
+**Ne pas écrire** $P \times \pi_n$ : c'est dimensionnellement impossible car $(k \times k) \times (1 \times k)$ n'a pas de sens.
+
+L'opération correcte est $(1 \times k) \times (k \times k) = (1 \times k)$.
+:::
+
+### Mini-exercice 1
+
+:::example[Calcul de l'évolution]
+Avec la matrice $P = \begin{pmatrix} 0,3 & 0,7 \\ 0,4 & 0,6 \end{pmatrix}$, si le lundi (jour 0) Agathe prend le Bus ($\pi_0 = \begin{pmatrix} 1 & 0 \end{pmatrix}$), quelle est la probabilité qu'elle prenne le bus le mercredi (jour 2) ?
+
+<details>
+<summary>**Solution**</summary>
+
+On calcule $\pi_2 = \pi_0 \times P^2$.
+
+**Étape 1** : Calculer $P^2$
+
+$$P^2 = \begin{pmatrix} 0,3 & 0,7 \\ 0,4 & 0,6 \end{pmatrix} \times \begin{pmatrix} 0,3 & 0,7 \\ 0,4 & 0,6 \end{pmatrix}$$
+
+$$= \begin{pmatrix} 0,09 + 0,28 & 0,21 + 0,42 \\ 0,12 + 0,24 & 0,28 + 0,36 \end{pmatrix} = \begin{pmatrix} 0,37 & 0,63 \\ 0,36 & 0,64 \end{pmatrix}$$
+
+**Étape 2** : Calculer $\pi_2$
+
+$$\pi_2 = \begin{pmatrix} 1 & 0 \end{pmatrix} \times \begin{pmatrix} 0,37 & 0,63 \\ 0,36 & 0,64 \end{pmatrix} = \begin{pmatrix} 0,37 & 0,63 \end{pmatrix}$$
+
+**Réponse** : La probabilité qu'Agathe prenne le bus mercredi est **0,37**.
+</details>
+:::
+
+## État stable (distribution invariante)
+
+### Définition
+
+Quand une chaîne de Markov évolue longtemps, les probabilités finissent souvent par se stabiliser, quelle que soit la distribution initiale.
+
+:::definition
+**État stable (ou distribution invariante)**
+
+Un état stable est une matrice ligne $\pi = \begin{pmatrix} x & y & \cdots \end{pmatrix}$ vérifiant :
+
+1. $\pi = \pi \times P$ (l'état ne change plus après transition)
+2. $x + y + \cdots = 1$ (c'est une distribution de probabilité)
+:::
+
+### Théorème de convergence
+
+:::theorem[Convergence vers l'état stable]
+Si la matrice de transition $P$ (ou une de ses puissances $P^m$) ne contient pas de 0, alors la suite $(\pi_n)$ converge vers l'**unique** état stable $\pi$, quel que soit l'état initial $\pi_0$.
+:::
+
+### Méthode de résolution
+
+:::method[Trouver l'état stable]
+Pour un système à 2 états avec $\pi = \begin{pmatrix} x & y \end{pmatrix}$ :
+
+1. Écrire le système $\pi P = \pi$ : cela donne une équation sur $x$ et $y$
+2. Ajouter la contrainte $x + y = 1$
+3. Résoudre le système d'équations
+:::
+
+:::erreur[Oublier la contrainte de somme]
+Le système $\pi P = \pi$ donne souvent des équations liées (par exemple $0 = 0$) ou une infinité de solutions.
+
+**Il faut impérativement** ajouter l'équation $x + y = 1$ pour trouver l'unique solution.
+:::
+
+### Mini-exercice 2
+
+:::example[Recherche de l'état stable]
+Trouver l'état stable pour la matrice $P = \begin{pmatrix} 0,3 & 0,7 \\ 0,4 & 0,6 \end{pmatrix}$.
+
+<details>
+<summary>**Solution**</summary>
+
+On cherche $\pi = \begin{pmatrix} x & y \end{pmatrix}$ tel que $\pi P = \pi$ et $x + y = 1$.
+
+**Système issu de $\pi P = \pi$** :
+
+$$\begin{pmatrix} x & y \end{pmatrix} \times \begin{pmatrix} 0,3 & 0,7 \\ 0,4 & 0,6 \end{pmatrix} = \begin{pmatrix} x & y \end{pmatrix}$$
+
+Première composante : $0,3x + 0,4y = x$
+
+**Résolution avec $y = 1 - x$** :
+
+$$0,3x + 0,4(1-x) = x$$
+$$0,3x + 0,4 - 0,4x = x$$
+$$0,4 = x - 0,3x + 0,4x$$
+$$0,4 = 1,1x$$
+$$x = \frac{0,4}{1,1} = \frac{4}{11}$$
+
+Donc $y = 1 - \frac{4}{11} = \frac{7}{11}$
+
+**État stable** : $\pi = \begin{pmatrix} \frac{4}{11} & \frac{7}{11} \end{pmatrix}$
+
+Interprétation : à long terme, Agathe prend le bus environ 36% du temps et le vélo 64% du temps.
+</details>
+:::
+
+### Mini-exercice 3
+
+:::example[Vérification d'un état stable]
+La matrice $P = \begin{pmatrix} 0,8 & 0,2 \\ 0,1 & 0,9 \end{pmatrix}$ admet-elle $\pi = \begin{pmatrix} \frac{1}{3} & \frac{2}{3} \end{pmatrix}$ comme état stable ?
+
+<details>
+<summary>**Solution**</summary>
+
+**Étape 1** : Vérifier que $\pi$ est une distribution de probabilité.
+
+$\frac{1}{3} + \frac{2}{3} = 1$ ✓
+
+**Étape 2** : Calculer $\pi \times P$.
+
+$$\begin{pmatrix} \frac{1}{3} & \frac{2}{3} \end{pmatrix} \times \begin{pmatrix} 0,8 & 0,2 \\ 0,1 & 0,9 \end{pmatrix}$$
+
+Première composante : $\frac{1}{3} \times 0,8 + \frac{2}{3} \times 0,1 = \frac{0,8}{3} + \frac{0,2}{3} = \frac{1}{3}$ ✓
+
+Deuxième composante : $\frac{1}{3} \times 0,2 + \frac{2}{3} \times 0,9 = \frac{0,2}{3} + \frac{1,8}{3} = \frac{2}{3}$ ✓
+
+**Conclusion** : On retrouve $\pi = \begin{pmatrix} \frac{1}{3} & \frac{2}{3} \end{pmatrix}$. C'est bien un état stable.
+</details>
+:::
+
+## Récapitulatif
+
+| Concept | Formule / Astuce |
+|---------|------------------|
+| Matrice de transition | Matrice carrée, somme de chaque **ligne** = 1 |
+| Vecteur d'état | Matrice **ligne** $\pi_n$ |
+| Transition | $\pi_{n+1} = \pi_n \times P$ |
+| Terme général | $\pi_n = \pi_0 \times P^n$ |
+| État stable | Résoudre $\pi P = \pi$ **ET** $\sum x_i = 1$ |
+
+## Erreurs fréquentes
+
+:::erreur[Confusion ligne/colonne]
+Les états $\pi_n$ sont des matrices **LIGNES**, pas des colonnes.
+
+L'opération est $(1 \times k) \times (k \times k) = (1 \times k)$.
+:::
+
+:::erreur[Confusion dans la lecture]
+Le coefficient $p_{i,j}$ est la probabilité de passer **de** l'état $i$ **vers** l'état $j$.
+
+- La **ligne** indique l'état de départ
+- La **colonne** indique l'état d'arrivée
+:::
+
+:::warning
+**Attention au cas particulier** : Si la matrice de transition est l'identité, le système ne change jamais d'état. L'état stable est alors égal à l'état initial, quel qu'il soit.
+:::
+
+## Exemple complet : Modélisation
+
+:::example[Le fumeur]
+Un fumeur essaie d'arrêter. On modélise :
+- État N (Non-fumeur) : s'il ne fume pas un jour, il a 90% de chance de ne pas fumer le lendemain
+- État F (Fumeur) : s'il fume un jour, il a 60% de chance de ne pas fumer le lendemain
+
+**Question** : Construire la matrice de transition et trouver l'état stable.
+
+<details>
+<summary>**Solution**</summary>
+
+**Construction de la matrice** (États : 1 = N, 2 = F) :
+- Depuis N : $p_{1,1} = 0,9$ (rester N), donc $p_{1,2} = 0,1$ (passer à F)
+- Depuis F : $p_{2,1} = 0,6$ (passer à N), donc $p_{2,2} = 0,4$ (rester F)
+
+$$P = \begin{pmatrix} 0,9 & 0,1 \\ 0,6 & 0,4 \end{pmatrix}$$
+
+**Recherche de l'état stable** :
+
+$\pi P = \pi$ avec $\pi = \begin{pmatrix} x & y \end{pmatrix}$ :
+
+$0,9x + 0,6y = x$ et $x + y = 1$
+
+En substituant $y = 1 - x$ :
+$0,9x + 0,6(1-x) = x$
+$0,9x + 0,6 - 0,6x = x$
+$0,3x + 0,6 = x$
+$0,6 = 0,7x$
+$x = \frac{6}{7}$
+
+Donc $y = \frac{1}{7}$.
+
+**Conclusion** : À long terme, la personne est non-fumeur $\frac{6}{7} \approx 86\%$ du temps.
+</details>
+:::
+
+## Points clés à retenir
+
+1. **Propriété de Markov** : le futur ne dépend que du présent
+2. **Matrice stochastique** : somme des lignes = 1
+3. **Évolution** : $\pi_{n+1} = \pi_n \times P$ (ligne × carrée)
+4. **État stable** : résoudre $\pi P = \pi$ avec $\sum x_i = 1$
+5. **Convergence** : si pas de 0 dans $P$, convergence vers un unique état stable
+
+## Ponts vers autres chapitres
+
+- **Matrices** : puissances de matrices, opérations
+- **Probabilités** : distributions, espérance
+- **Graphes** : graphes orientés pondérés

@@ -5531,5 +5531,448 @@
     ],
     "tags": ["arithmétique", "nombres premiers", "démonstration", "Euclide"],
     "isComprehension": false
+  },
+  {
+    "id": "ex-eqpoly-001",
+    "lessonId": "equations-polynomiales-complexes",
+    "title": "Équation du second degré avec discriminant négatif",
+    "difficulty": 1,
+    "statement": "Résoudre dans $\\mathbb{C}$ les équations suivantes :\n1. $z^2 + 9 = 0$\n2. $z^2 - 4z + 13 = 0$",
+    "hints": [
+      "Pour (1), isoler z² puis prendre les racines carrées.",
+      "Pour (2), calculer le discriminant Δ = b² - 4ac."
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Résolution de z² + 9 = 0",
+        "content": "$z^2 = -9$\n\n$z = \\pm\\sqrt{-9} = \\pm 3i$\n\n**Solutions : $z = 3i$ et $z = -3i$**"
+      },
+      {
+        "step": 2,
+        "title": "Résolution de z² - 4z + 13 = 0",
+        "content": "$a = 1$, $b = -4$, $c = 13$\n\n$\\Delta = 16 - 52 = -36 < 0$\n\n$z = \\frac{4 \\pm i\\sqrt{36}}{2} = \\frac{4 \\pm 6i}{2}$\n\n**Solutions : $z_1 = 2 - 3i$ et $z_2 = 2 + 3i$**"
+      }
+    ],
+    "method": "Pour Δ < 0, les solutions sont z = (-b ± i√(-Δ)) / 2a.",
+    "commonMistakes": [
+      "Oublier le i dans la formule",
+      "Se tromper dans le signe sous la racine"
+    ],
+    "tags": ["complexes", "équation second degré", "discriminant"],
+    "isComprehension": false
+  },
+  {
+    "id": "ex-eqpoly-002",
+    "lessonId": "equations-polynomiales-complexes",
+    "title": "Racines carrées d'un nombre complexe",
+    "difficulty": 2,
+    "statement": "Déterminer les racines carrées de $Z = 5 - 12i$.\n\nOn cherche $\\delta = x + iy$ tel que $\\delta^2 = Z$.",
+    "hints": [
+      "Calculer d'abord |Z| = √(25 + 144).",
+      "Poser le système : x² - y² = 5, 2xy = -12, x² + y² = |Z|.",
+      "Additionner et soustraire les équations pour isoler x² et y²."
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Calcul du module",
+        "content": "$|Z| = \\sqrt{25 + 144} = \\sqrt{169} = 13$"
+      },
+      {
+        "step": 2,
+        "title": "Système d'équations",
+        "content": "$(1)$ $x^2 - y^2 = 5$\n$(2)$ $2xy = -12$\n$(3)$ $x^2 + y^2 = 13$"
+      },
+      {
+        "step": 3,
+        "title": "Résolution pour x² et y²",
+        "content": "$(1) + (3)$ : $2x^2 = 18$ donc $x^2 = 9$, soit $x = \\pm 3$\n\n$(3) - (1)$ : $2y^2 = 8$ donc $y^2 = 4$, soit $y = \\pm 2$"
+      },
+      {
+        "step": 4,
+        "title": "Signe de xy",
+        "content": "$2xy = -12 < 0$, donc $x$ et $y$ sont de **signes opposés**.\n\nLes couples sont $(3, -2)$ et $(-3, 2)$.\n\n**Racines carrées : $\\delta_1 = 3 - 2i$ et $\\delta_2 = -3 + 2i$**"
+      }
+    ],
+    "method": "Utiliser x² = (A + |Z|)/2 et y² = (|Z| - A)/2, puis le signe de B pour associer.",
+    "commonMistakes": [
+      "Oublier de calculer le module",
+      "Se tromper dans le signe de xy"
+    ],
+    "tags": ["complexes", "racine carrée", "méthode"],
+    "isComprehension": false
+  },
+  {
+    "id": "ex-eqpoly-003",
+    "lessonId": "equations-polynomiales-complexes",
+    "title": "Système somme-produit",
+    "difficulty": 2,
+    "statement": "Trouver deux nombres complexes $z_1$ et $z_2$ dont :\n- la somme vaut $4$\n- le produit vaut $5$",
+    "hints": [
+      "z₁ et z₂ sont solutions de l'équation Z² - SZ + P = 0.",
+      "Calculer le discriminant de Z² - 4Z + 5 = 0."
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Formation de l'équation",
+        "content": "Si $S = z_1 + z_2 = 4$ et $P = z_1 \\cdot z_2 = 5$, alors $z_1$ et $z_2$ sont les racines de :\n$$Z^2 - SZ + P = 0$$\n$$Z^2 - 4Z + 5 = 0$$"
+      },
+      {
+        "step": 2,
+        "title": "Calcul du discriminant",
+        "content": "$\\Delta = 16 - 20 = -4 < 0$"
+      },
+      {
+        "step": 3,
+        "title": "Solutions",
+        "content": "$z = \\frac{4 \\pm i\\sqrt{4}}{2} = \\frac{4 \\pm 2i}{2}$\n\n**$z_1 = 2 - i$ et $z_2 = 2 + i$**"
+      },
+      {
+        "step": 4,
+        "title": "Vérification",
+        "content": "$z_1 + z_2 = (2-i) + (2+i) = 4$ ✓\n$z_1 \\cdot z_2 = (2-i)(2+i) = 4 + 1 = 5$ ✓"
+      }
+    ],
+    "method": "Utiliser les relations de Viète : somme = -b/a, produit = c/a.",
+    "commonMistakes": [
+      "Oublier le signe dans Z² - SZ + P"
+    ],
+    "tags": ["complexes", "somme produit", "Viète"],
+    "isComprehension": false
+  },
+  {
+    "id": "ex-eqpoly-004",
+    "lessonId": "equations-polynomiales-complexes",
+    "title": "Équation bicarrée",
+    "difficulty": 2,
+    "statement": "Résoudre dans $\\mathbb{C}$ l'équation : $z^4 + 4z^2 - 21 = 0$",
+    "hints": [
+      "Poser Z = z² pour se ramener à une équation du second degré.",
+      "Résoudre en Z, puis revenir à z."
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Changement de variable",
+        "content": "Posons $Z = z^2$. L'équation devient :\n$$Z^2 + 4Z - 21 = 0$$"
+      },
+      {
+        "step": 2,
+        "title": "Résolution en Z",
+        "content": "$\\Delta = 16 + 84 = 100$\n\n$Z = \\frac{-4 \\pm 10}{2}$\n\n$Z_1 = 3$ et $Z_2 = -7$"
+      },
+      {
+        "step": 3,
+        "title": "Retour à z",
+        "content": "**Pour $Z_1 = 3$** : $z^2 = 3$ donc $z = \\pm\\sqrt{3}$\n\n**Pour $Z_2 = -7$** : $z^2 = -7$ donc $z = \\pm i\\sqrt{7}$"
+      },
+      {
+        "step": 4,
+        "title": "Solutions",
+        "content": "**$S = \\{\\sqrt{3}, -\\sqrt{3}, i\\sqrt{7}, -i\\sqrt{7}\\}$**\n\n4 solutions, ce qui est cohérent avec le degré 4."
+      }
+    ],
+    "method": "Changement de variable Z = z² pour les équations bicarrées.",
+    "commonMistakes": [
+      "Oublier les solutions complexes pour z² = -7",
+      "Ne pas revenir à la variable z"
+    ],
+    "tags": ["complexes", "équation bicarrée", "changement de variable"],
+    "isComprehension": false
+  },
+  {
+    "id": "ex-eqpoly-005",
+    "lessonId": "equations-polynomiales-complexes",
+    "title": "Factorisation d'un polynôme de degré 3",
+    "difficulty": 2,
+    "statement": "Soit $P(z) = z^3 + z^2 - 4z - 4$.\n1. Vérifier que $z = 2$ est racine de $P$.\n2. Factoriser $P(z)$.\n3. Résoudre $P(z) = 0$ dans $\\mathbb{C}$.",
+    "hints": [
+      "Calculer P(2).",
+      "Factoriser par (z - 2) en identifiant les coefficients.",
+      "Résoudre l'équation quadratique restante."
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Vérification de la racine",
+        "content": "$P(2) = 8 + 4 - 8 - 4 = 0$ ✓\n\nDonc $z = 2$ est bien racine."
+      },
+      {
+        "step": 2,
+        "title": "Factorisation",
+        "content": "On cherche $P(z) = (z-2)(z^2 + az + b)$.\n\nEn développant et identifiant :\n$z^3 + az^2 + bz - 2z^2 - 2az - 2b = z^3 + (a-2)z^2 + (b-2a)z - 2b$\n\n$a - 2 = 1 \\Rightarrow a = 3$\n$-2b = -4 \\Rightarrow b = 2$\n\n**$P(z) = (z-2)(z^2 + 3z + 2)$**"
+      },
+      {
+        "step": 3,
+        "title": "Résolution de z² + 3z + 2 = 0",
+        "content": "$\\Delta = 9 - 8 = 1$\n\n$z = \\frac{-3 \\pm 1}{2}$\n\n$z = -1$ ou $z = -2$"
+      },
+      {
+        "step": 4,
+        "title": "Solutions complètes",
+        "content": "**$S = \\{2, -1, -2\\}$**\n\nToutes les racines sont réelles dans ce cas."
+      }
+    ],
+    "method": "Racine évidente → factorisation → résolution de l'équation de degré inférieur.",
+    "commonMistakes": [
+      "Erreur de calcul dans la factorisation",
+      "Ne pas vérifier la racine évidente"
+    ],
+    "tags": ["complexes", "polynôme", "factorisation"],
+    "isComprehension": false
+  },
+  {
+    "id": "ex-eqpoly-006",
+    "lessonId": "equations-polynomiales-complexes",
+    "title": "Racines de l'unité et géométrie",
+    "difficulty": 3,
+    "statement": "On considère les racines quatrièmes de l'unité.\n1. Déterminer ces racines sous forme algébrique.\n2. Montrer que leur somme est nulle.\n3. Montrer que les points images forment un carré inscrit dans le cercle unité.",
+    "hints": [
+      "Utiliser la formule ωₖ = e^(i·2kπ/4) pour k = 0, 1, 2, 3.",
+      "Calculer la somme géométrique.",
+      "Vérifier l'équidistance et l'angle entre sommets consécutifs."
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Calcul des racines",
+        "content": "$\\omega_k = e^{i\\frac{k\\pi}{2}}$ pour $k = 0, 1, 2, 3$\n\n$\\omega_0 = e^0 = 1$\n$\\omega_1 = e^{i\\frac{\\pi}{2}} = i$\n$\\omega_2 = e^{i\\pi} = -1$\n$\\omega_3 = e^{i\\frac{3\\pi}{2}} = -i$\n\n**Racines : $\\{1, i, -1, -i\\}$**"
+      },
+      {
+        "step": 2,
+        "title": "Somme des racines",
+        "content": "$1 + i + (-1) + (-i) = 0$ ✓\n\nOu par la formule : $\\sum_{k=0}^{3} \\omega_1^k = \\frac{1 - i^4}{1 - i} = \\frac{1-1}{1-i} = 0$"
+      },
+      {
+        "step": 3,
+        "title": "Interprétation géométrique",
+        "content": "Les 4 points sont :\n- $M_0(1, 0)$\n- $M_1(0, 1)$\n- $M_2(-1, 0)$\n- $M_3(0, -1)$\n\nChaque point est à distance 1 de l'origine (sur le cercle unité).\n\nL'angle entre deux sommets consécutifs est $\\frac{2\\pi}{4} = \\frac{\\pi}{2} = 90°$.\n\nC'est bien un **carré** inscrit dans le cercle unité."
+      }
+    ],
+    "method": "Les racines n-ièmes de l'unité forment un polygone régulier à n côtés.",
+    "commonMistakes": [
+      "Oublier que ω₀ = 1 (pas 0)",
+      "Confondre argument et module"
+    ],
+    "tags": ["complexes", "racines unité", "géométrie"],
+    "isComprehension": false
+  },
+  {
+    "id": "ex-markov-001",
+    "lessonId": "chaines-markov",
+    "title": "Météo probabiliste",
+    "difficulty": 2,
+    "statement": "Dans un pays tropical, s'il fait beau (B) un jour, il fera beau le lendemain avec une probabilité de 0,8. S'il pleut (P), il pleuvra encore le lendemain avec une probabilité de 0,6.\n1. Écrire la matrice de transition $M$ (ordre des états : B, P).\n2. S'il fait beau lundi ($\\pi_0 = (1 \\; 0)$), quelle est la probabilité qu'il pleuve mercredi ?",
+    "hints": [
+      "Ligne 1 : depuis B (somme = 1)",
+      "Ligne 2 : depuis P (somme = 1)",
+      "Calculer π₂ = π₀ × M²"
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Construction de la matrice",
+        "content": "Depuis B : $p_{B,B} = 0,8$ donc $p_{B,P} = 0,2$\n\nDepuis P : $p_{P,P} = 0,6$ donc $p_{P,B} = 0,4$\n\n$$M = \\begin{pmatrix} 0,8 & 0,2 \\\\ 0,4 & 0,6 \\end{pmatrix}$$"
+      },
+      {
+        "step": 2,
+        "title": "Calcul de M²",
+        "content": "$$M^2 = \\begin{pmatrix} 0,8 & 0,2 \\\\ 0,4 & 0,6 \\end{pmatrix} \\times \\begin{pmatrix} 0,8 & 0,2 \\\\ 0,4 & 0,6 \\end{pmatrix}$$\n\n$$= \\begin{pmatrix} 0,64 + 0,08 & 0,16 + 0,12 \\\\ 0,32 + 0,24 & 0,08 + 0,36 \\end{pmatrix} = \\begin{pmatrix} 0,72 & 0,28 \\\\ 0,56 & 0,44 \\end{pmatrix}$$"
+      },
+      {
+        "step": 3,
+        "title": "Calcul de π₂",
+        "content": "$$\\pi_2 = \\pi_0 \\times M^2 = \\begin{pmatrix} 1 & 0 \\end{pmatrix} \\times \\begin{pmatrix} 0,72 & 0,28 \\\\ 0,56 & 0,44 \\end{pmatrix} = \\begin{pmatrix} 0,72 & 0,28 \\end{pmatrix}$$\n\n**Probabilité de pluie mercredi : 0,28 = 28%**"
+      }
+    ],
+    "method": "Construire la matrice (somme des lignes = 1), puis utiliser πₙ = π₀ × Mⁿ.",
+    "commonMistakes": [
+      "Confondre ligne et colonne dans la matrice",
+      "Oublier que la somme de chaque ligne = 1"
+    ],
+    "tags": ["markov", "matrice de transition", "probabilités"],
+    "isComprehension": false
+  },
+  {
+    "id": "ex-markov-002",
+    "lessonId": "chaines-markov",
+    "title": "Random Walk sur un triangle",
+    "difficulty": 2,
+    "statement": "Un pion se déplace sur les sommets d'un triangle ABC. S'il est sur un sommet, il va sur l'un des deux autres de manière équiprobable.\n1. Donner la matrice de transition $T$ (ordre A, B, C).\n2. Vérifier que $T$ est stochastique.\n3. Déterminer l'état stable par symétrie, puis le vérifier par calcul.",
+    "hints": [
+      "Depuis chaque sommet, proba 1/2 d'aller sur chaque autre",
+      "Matrice stochastique = somme des lignes = 1",
+      "Par symétrie, chaque état a la même probabilité"
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Construction de T",
+        "content": "Depuis A : on va vers B ou C avec proba 1/2 chacun\n\n$$T = \\begin{pmatrix} 0 & 1/2 & 1/2 \\\\ 1/2 & 0 & 1/2 \\\\ 1/2 & 1/2 & 0 \\end{pmatrix}$$"
+      },
+      {
+        "step": 2,
+        "title": "Vérification stochastique",
+        "content": "Ligne 1 : $0 + 1/2 + 1/2 = 1$ ✓\nLigne 2 : $1/2 + 0 + 1/2 = 1$ ✓\nLigne 3 : $1/2 + 1/2 + 0 = 1$ ✓\n\n$T$ est bien stochastique."
+      },
+      {
+        "step": 3,
+        "title": "État stable par symétrie",
+        "content": "Par symétrie du triangle, $\\pi = (1/3 \\; 1/3 \\; 1/3)$.\n\n**Vérification** :\n$\\pi \\times T = (1/3 \\; 1/3 \\; 1/3) \\times T$\n\nPremière composante : $0 + 1/6 + 1/6 = 1/3$ ✓\n\nMême calcul pour les autres. Donc $\\pi T = \\pi$."
+      }
+    ],
+    "method": "Exploiter les symétries pour deviner l'état stable, puis vérifier πT = π.",
+    "commonMistakes": [
+      "Mettre des 1/3 sur la diagonale (on ne peut pas rester sur place)",
+      "Oublier de vérifier le calcul"
+    ],
+    "tags": ["markov", "symétrie", "état stable"],
+    "isComprehension": false
+  },
+  {
+    "id": "ex-markov-003",
+    "lessonId": "chaines-markov",
+    "title": "Parts de marché",
+    "difficulty": 3,
+    "statement": "Deux agences A et B se partagent le marché. Chaque année :\n- A conserve 80% de ses clients, 20% partent chez B\n- B conserve 70% de ses clients, 30% partent chez A\n\n1. Donner la matrice de transition $P$.\n2. En 2020, A possède 40% du marché. Quelle sera la répartition en 2021 ?\n3. Calculer la répartition à long terme (état stable).",
+    "hints": [
+      "États : A et B, transitions annuelles",
+      "π₁ = π₀ × P",
+      "État stable : πP = π et x + y = 1"
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Matrice de transition",
+        "content": "$$P = \\begin{pmatrix} 0,8 & 0,2 \\\\ 0,3 & 0,7 \\end{pmatrix}$$"
+      },
+      {
+        "step": 2,
+        "title": "Répartition 2021",
+        "content": "$\\pi_0 = (0,4 \\; 0,6)$\n\n$\\pi_1 = \\pi_0 \\times P = (0,4 \\times 0,8 + 0,6 \\times 0,3 \\;\\; 0,4 \\times 0,2 + 0,6 \\times 0,7)$\n\n$= (0,32 + 0,18 \\;\\; 0,08 + 0,42) = (0,50 \\; 0,50)$\n\n**En 2021 : 50% pour A, 50% pour B**"
+      },
+      {
+        "step": 3,
+        "title": "État stable",
+        "content": "On cherche $\\pi = (x \\; y)$ tel que $\\pi P = \\pi$ et $x + y = 1$.\n\n$0,8x + 0,3y = x \\Rightarrow 0,3y = 0,2x \\Rightarrow y = \\frac{2}{3}x$\n\nAvec $x + y = 1$ : $x + \\frac{2}{3}x = 1 \\Rightarrow \\frac{5}{3}x = 1 \\Rightarrow x = 0,6$\n\nDonc $y = 0,4$.\n\n**À long terme : 60% pour A, 40% pour B**"
+      }
+    ],
+    "method": "Pour l'état stable, résoudre le système πP = π avec la contrainte Σ = 1.",
+    "commonMistakes": [
+      "Oublier la contrainte x + y = 1",
+      "Inverser les probabilités de rester/partir"
+    ],
+    "tags": ["markov", "état stable", "application"],
+    "isComprehension": false
+  },
+  {
+    "id": "ex-markov-004",
+    "lessonId": "chaines-markov",
+    "title": "Matrice générique et état stable",
+    "difficulty": 3,
+    "statement": "Soit $P = \\begin{pmatrix} a & 1-a \\\\ 1-b & b \\end{pmatrix}$ avec $a, b \\in ]0,1[$.\n1. Vérifier que $P$ est stochastique.\n2. Exprimer l'état stable $\\pi = (x \\; y)$ en fonction de $a$ et $b$.\n3. Application : si $a = 0,9$ et $b = 0,8$, calculer l'état stable.",
+    "hints": [
+      "Somme des lignes = 1 ?",
+      "Résoudre ax + (1-b)y = x avec x + y = 1",
+      "Application numérique directe"
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Vérification stochastique",
+        "content": "Ligne 1 : $a + (1-a) = 1$ ✓\nLigne 2 : $(1-b) + b = 1$ ✓\n\n$P$ est bien stochastique."
+      },
+      {
+        "step": 2,
+        "title": "État stable général",
+        "content": "$ax + (1-b)y = x \\Rightarrow (1-b)y = (1-a)x$\n\nAvec $y = 1 - x$ :\n$(1-b)(1-x) = (1-a)x$\n$(1-b) - (1-b)x = (1-a)x$\n$(1-b) = (1-a)x + (1-b)x = (2-a-b)x$\n\n$$x = \\frac{1-b}{2-a-b} \\quad \\text{et} \\quad y = \\frac{1-a}{2-a-b}$$"
+      },
+      {
+        "step": 3,
+        "title": "Application numérique",
+        "content": "Avec $a = 0,9$ et $b = 0,8$ :\n\n$x = \\frac{1-0,8}{2-0,9-0,8} = \\frac{0,2}{0,3} = \\frac{2}{3}$\n\n$y = \\frac{1-0,9}{0,3} = \\frac{0,1}{0,3} = \\frac{1}{3}$\n\n**État stable : $(2/3 \\; 1/3)$**"
+      }
+    ],
+    "method": "Résolution paramétrique de πP = π avec contrainte de somme.",
+    "commonMistakes": [
+      "Se tromper dans les substitutions algébriques",
+      "Oublier de vérifier que la matrice est bien stochastique"
+    ],
+    "tags": ["markov", "état stable", "paramétrique"],
+    "isComprehension": false
+  },
+  {
+    "id": "ex-markov-005",
+    "lessonId": "chaines-markov",
+    "title": "Marche aléatoire sur une ligne",
+    "difficulty": 3,
+    "statement": "Une puce saute sur une ligne graduée entre les points 1, 2 et 3.\n- De 1, elle va toujours en 2\n- De 3, elle va toujours en 2\n- De 2, elle va en 1 ou 3 avec probabilité 0,5 chacune\n\n1. Écrire la matrice de transition $P$.\n2. Calculer $P^2$.\n3. Peut-on aller de 1 à 3 en exactement 2 étapes ? Quelle probabilité ?",
+    "hints": [
+      "Depuis 1 : on va en 2 avec proba 1",
+      "P² donne les probabilités en 2 étapes",
+      "Regarder le coefficient (1,3) de P²"
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Matrice de transition",
+        "content": "$$P = \\begin{pmatrix} 0 & 1 & 0 \\\\ 0,5 & 0 & 0,5 \\\\ 0 & 1 & 0 \\end{pmatrix}$$\n\n(lignes : état de départ ; colonnes : état d'arrivée)"
+      },
+      {
+        "step": 2,
+        "title": "Calcul de P²",
+        "content": "$$P^2 = P \\times P$$\n\nLigne 1 × colonne 1 : $0 \\times 0 + 1 \\times 0,5 + 0 \\times 0 = 0,5$\nLigne 1 × colonne 2 : $0 \\times 1 + 1 \\times 0 + 0 \\times 1 = 0$\nLigne 1 × colonne 3 : $0 \\times 0 + 1 \\times 0,5 + 0 \\times 0 = 0,5$\n\n$$P^2 = \\begin{pmatrix} 0,5 & 0 & 0,5 \\\\ 0 & 1 & 0 \\\\ 0,5 & 0 & 0,5 \\end{pmatrix}$$"
+      },
+      {
+        "step": 3,
+        "title": "Probabilité 1 → 3 en 2 étapes",
+        "content": "Le coefficient $(P^2)_{1,3} = 0,5$.\n\n**Oui, on peut aller de 1 à 3 en 2 étapes avec probabilité 0,5.**\n\nChemin : $1 \\to 2 \\to 3$ (le seul possible)."
+      }
+    ],
+    "method": "Pⁿ donne les probabilités de transition en n étapes.",
+    "commonMistakes": [
+      "Mettre des probabilités non nulles sur la diagonale de P quand on ne peut pas rester",
+      "Oublier que P² calcule les probabilités en 2 étapes"
+    ],
+    "tags": ["markov", "puissance de matrice", "marche aléatoire"],
+    "isComprehension": false
+  },
+  {
+    "id": "ex-markov-006",
+    "lessonId": "chaines-markov",
+    "title": "Modélisation : le fumeur",
+    "difficulty": 2,
+    "statement": "Un fumeur essaie d'arrêter. S'il ne fume pas un jour (N), il a 90% de chance de ne pas fumer le lendemain. S'il fume (F), il a 60% de chance de ne pas fumer le lendemain.\n1. Construire la matrice de transition (états : N, F).\n2. Trouver la répartition à long terme.\n3. Interpréter le résultat.",
+    "hints": [
+      "Depuis N : 90% vers N, 10% vers F",
+      "Depuis F : 60% vers N, 40% vers F",
+      "État stable : πP = π"
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Matrice de transition",
+        "content": "$$P = \\begin{pmatrix} 0,9 & 0,1 \\\\ 0,6 & 0,4 \\end{pmatrix}$$"
+      },
+      {
+        "step": 2,
+        "title": "Calcul de l'état stable",
+        "content": "$\\pi P = \\pi$ avec $\\pi = (x \\; y)$ :\n\n$0,9x + 0,6y = x \\Rightarrow 0,6y = 0,1x \\Rightarrow y = \\frac{x}{6}$\n\nAvec $x + y = 1$ :\n$x + \\frac{x}{6} = 1 \\Rightarrow \\frac{7x}{6} = 1 \\Rightarrow x = \\frac{6}{7}$\n\nDonc $y = \\frac{1}{7}$.\n\n**État stable : $(6/7 \\; 1/7)$**"
+      },
+      {
+        "step": 3,
+        "title": "Interprétation",
+        "content": "$6/7 \\approx 86\\%$ et $1/7 \\approx 14\\%$\n\n**À long terme, la personne est non-fumeur environ 86% du temps.**\n\nLe modèle prédit un arrêt du tabac progressif et durable."
+      }
+    ],
+    "method": "Modélisation par chaîne de Markov puis calcul de l'état stable pour le comportement à long terme.",
+    "commonMistakes": [
+      "Confondre les probabilités de transition",
+      "Oublier d'interpréter le résultat"
+    ],
+    "tags": ["markov", "modélisation", "état stable"],
+    "isComprehension": false
   }
 ]

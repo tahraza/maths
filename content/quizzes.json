@@ -4562,5 +4562,390 @@
     ],
     "difficulty": 2,
     "passingScore": 70
+  },
+  {
+    "id": "pre-quiz-equations-polynomiales-complexes",
+    "lessonId": "equations-polynomiales-complexes",
+    "type": "pre",
+    "title": "Diagnostic : Équations polynomiales complexes",
+    "questions": [
+      {
+        "id": "q1",
+        "question": "Le nombre complexe $i$ vérifie :",
+        "options": [
+          "$i^2 = 1$",
+          "$i^2 = -1$",
+          "$i^2 = i$",
+          "$i^2 = 0$"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Par définition, $i$ est le nombre imaginaire tel que $i^2 = -1$."
+      },
+      {
+        "id": "q2",
+        "question": "Le module de $z = 3 + 4i$ vaut :",
+        "options": [
+          "7",
+          "5",
+          "25",
+          "12"
+        ],
+        "correctAnswer": 1,
+        "explanation": "$|z| = \\sqrt{3^2 + 4^2} = \\sqrt{9 + 16} = \\sqrt{25} = 5$."
+      },
+      {
+        "id": "q3",
+        "question": "La forme exponentielle de $z = 1 + i$ s'écrit :",
+        "options": [
+          "$\\sqrt{2} e^{i\\pi/4}$",
+          "$2 e^{i\\pi/4}$",
+          "$e^{i\\pi/2}$",
+          "$\\sqrt{2} e^{i\\pi/2}$"
+        ],
+        "correctAnswer": 0,
+        "explanation": "$|z| = \\sqrt{2}$ et $\\arg(z) = \\pi/4$, donc $z = \\sqrt{2} e^{i\\pi/4}$."
+      },
+      {
+        "id": "q4",
+        "question": "Le discriminant de $z^2 - 6z + 25 = 0$ vaut :",
+        "options": [
+          "36",
+          "-64",
+          "64",
+          "0"
+        ],
+        "correctAnswer": 1,
+        "explanation": "$\\Delta = 36 - 4 \\times 25 = 36 - 100 = -64$."
+      },
+      {
+        "id": "q5",
+        "question": "Le conjugué de $z = 2 - 3i$ est :",
+        "options": [
+          "$-2 + 3i$",
+          "$2 + 3i$",
+          "$-2 - 3i$",
+          "$3 - 2i$"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Le conjugué change le signe de la partie imaginaire : $\\bar{z} = 2 + 3i$."
+      }
+    ],
+    "difficulty": 1,
+    "passingScore": 60
+  },
+  {
+    "id": "post-quiz-equations-polynomiales-complexes",
+    "lessonId": "equations-polynomiales-complexes",
+    "type": "post",
+    "title": "Quiz : Équations polynomiales complexes",
+    "questions": [
+      {
+        "id": "q1",
+        "question": "Les solutions de $z^2 + 2z + 2 = 0$ sont :",
+        "options": [
+          "$-1 + i$ et $-1 - i$",
+          "$1 + i$ et $1 - i$",
+          "$2i$ et $-2i$",
+          "Pas de solution"
+        ],
+        "correctAnswer": 0,
+        "explanation": "$\\Delta = 4 - 8 = -4$. $z = \\frac{-2 \\pm 2i}{2} = -1 \\pm i$."
+      },
+      {
+        "id": "q2",
+        "question": "Peut-on écrire $\\sqrt{3 - 4i}$ ?",
+        "options": [
+          "Oui, c'est $\\sqrt{5}$",
+          "Non, cette notation est interdite pour les complexes",
+          "Oui, c'est $2 - i$",
+          "Oui, si on précise le module"
+        ],
+        "correctAnswer": 1,
+        "explanation": "La notation $\\sqrt{}$ est réservée aux réels positifs. On écrit \"soit $\\delta$ tel que $\\delta^2 = 3-4i$\"."
+      },
+      {
+        "id": "q3",
+        "question": "Si les coefficients d'une équation quadratique sont réels et $\\Delta < 0$, les solutions sont :",
+        "options": [
+          "Réelles et distinctes",
+          "Complexes conjuguées",
+          "Complexes mais pas conjuguées",
+          "Imaginaires pures"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Avec des coefficients réels et $\\Delta < 0$, les solutions sont toujours complexes conjuguées."
+      },
+      {
+        "id": "q4",
+        "question": "Combien de solutions a l'équation $z^5 = 1$ dans $\\mathbb{C}$ ?",
+        "options": [
+          "1",
+          "2",
+          "5",
+          "0"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Il y a exactement 5 racines cinquièmes de l'unité (théorème fondamental de l'algèbre)."
+      },
+      {
+        "id": "q5",
+        "question": "Les racines n-ièmes de l'unité sont de la forme :",
+        "options": [
+          "$e^{ik\\pi/n}$",
+          "$e^{i2k\\pi/n}$ pour $k = 0, ..., n-1$",
+          "$\\cos(k) + i\\sin(k)$",
+          "$e^{k\\pi}$"
+        ],
+        "correctAnswer": 1,
+        "explanation": "$\\omega_k = e^{i \\cdot 2k\\pi/n}$ pour $k$ allant de $0$ à $n-1$."
+      },
+      {
+        "id": "q6",
+        "question": "La somme des racines cubiques de l'unité vaut :",
+        "options": [
+          "1",
+          "3",
+          "0",
+          "$i$"
+        ],
+        "correctAnswer": 2,
+        "explanation": "$1 + j + j^2 = 0$ (propriété fondamentale des racines de l'unité)."
+      },
+      {
+        "id": "q7",
+        "question": "Si $P(3) = 0$, alors on peut factoriser $P(z)$ par :",
+        "options": [
+          "$(z + 3)$",
+          "$(z - 3)$",
+          "$(z^2 - 3)$",
+          "$3z$"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Si $\\alpha$ est racine, $P(z)$ est divisible par $(z - \\alpha)$."
+      },
+      {
+        "id": "q8",
+        "question": "Pour trouver $\\delta$ tel que $\\delta^2 = A + iB$, on résout le système :",
+        "options": [
+          "$x^2 - y^2 = A$ et $2xy = B$",
+          "$x^2 + y^2 = A$ et $xy = B$",
+          "$x - y = A$ et $xy = B$",
+          "$x^2 = A$ et $y^2 = B$"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Partie réelle : $x^2 - y^2 = A$. Partie imaginaire : $2xy = B$."
+      },
+      {
+        "id": "q9",
+        "question": "L'interprétation géométrique des racines 6-ièmes de l'unité est :",
+        "options": [
+          "Un triangle équilatéral",
+          "Un carré",
+          "Un hexagone régulier",
+          "Une droite"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Les racines n-ièmes forment un polygone régulier à n côtés inscrit dans le cercle unité."
+      },
+      {
+        "id": "q10",
+        "question": "Si les coefficients de $az^2 + bz + c = 0$ sont complexes, les solutions sont-elles toujours conjuguées ?",
+        "options": [
+          "Oui, toujours",
+          "Non, seulement si les coefficients sont réels",
+          "Non, jamais",
+          "Oui, si $\\Delta < 0$"
+        ],
+        "correctAnswer": 1,
+        "explanation": "La propriété des racines conjuguées ne s'applique QUE si les coefficients sont réels."
+      }
+    ],
+    "difficulty": 2,
+    "passingScore": 70
+  },
+  {
+    "id": "pre-chaines-markov",
+    "lessonId": "chaines-markov",
+    "type": "pre",
+    "title": "Diagnostic : Chaînes de Markov",
+    "questions": [
+      {
+        "id": "q1",
+        "question": "Une matrice de transition est une matrice où :",
+        "options": [
+          "La somme des colonnes vaut 1",
+          "La somme des lignes vaut 1",
+          "Le déterminant est 1",
+          "Tous les coefficients sont égaux"
+        ],
+        "correctAnswer": 1,
+        "explanation": "C'est une matrice stochastique : la somme des probabilités partant d'un état (ligne) doit être 1."
+      },
+      {
+        "id": "q2",
+        "question": "Si l'état actuel est $\\pi_n$, l'état suivant $\\pi_{n+1}$ est :",
+        "options": [
+          "$P \\times \\pi_n$",
+          "$\\pi_n \\times P$",
+          "$\\pi_n + P$",
+          "$P^n \\times \\pi_0$"
+        ],
+        "correctAnswer": 1,
+        "explanation": "On multiplie la matrice ligne à gauche par la matrice carrée à droite."
+      },
+      {
+        "id": "q3",
+        "question": "Une chaîne de Markov est un processus :",
+        "options": [
+          "Sans mémoire",
+          "À mémoire infinie",
+          "Déterministe",
+          "Chaotique"
+        ],
+        "correctAnswer": 0,
+        "explanation": "L'état futur ne dépend que de l'état présent, pas du passé."
+      },
+      {
+        "id": "q4",
+        "question": "Quelle est la dimension d'une matrice de transition pour 3 états ?",
+        "options": [
+          "$1 \\times 3$",
+          "$3 \\times 1$",
+          "$3 \\times 3$",
+          "Infini"
+        ],
+        "correctAnswer": 2,
+        "explanation": "C'est une matrice carrée dont la taille correspond au nombre d'états."
+      }
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "post-chaines-markov",
+    "lessonId": "chaines-markov",
+    "type": "post",
+    "title": "Validation : Chaînes de Markov",
+    "questions": [
+      {
+        "id": "q1",
+        "question": "Une distribution invariante (ou état stable) $\\pi$ vérifie :",
+        "options": [
+          "$\\pi P = P$",
+          "$\\pi P = \\pi$",
+          "$P \\pi = \\pi$",
+          "$\\pi = 0$"
+        ],
+        "correctAnswer": 1,
+        "explanation": "C'est la définition d'un état stable : il ne change plus après multiplication par P."
+      },
+      {
+        "id": "q2",
+        "question": "Dans un graphe probabiliste, la somme des poids des flèches partant d'un sommet vaut :",
+        "options": [
+          "0",
+          "0.5",
+          "1",
+          "Cela dépend du sommet"
+        ],
+        "correctAnswer": 2,
+        "explanation": "C'est la somme des probabilités des événements possibles partant de cet état."
+      },
+      {
+        "id": "q3",
+        "question": "Si $\\pi = (0,2 \\quad x)$ est une distribution de probabilité, que vaut $x$ ?",
+        "options": [
+          "0,2",
+          "0,8",
+          "1",
+          "On ne peut pas savoir"
+        ],
+        "correctAnswer": 1,
+        "explanation": "La somme des probabilités de la distribution doit valoir 1. Donc $x = 1 - 0,2 = 0,8$."
+      },
+      {
+        "id": "q4",
+        "question": "Pour trouver l'état stable, quelle équation est souvent oubliée mais nécessaire ?",
+        "options": [
+          "$x = ax + by$",
+          "$x + y = 1$",
+          "$y = cx + dy$",
+          "$x = y$"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Le système $\\pi P = \\pi$ est souvent lié. L'équation de normalisation $x+y=1$ est nécessaire."
+      },
+      {
+        "id": "q5",
+        "question": "Si la suite converge vers un état stable $\\pi$, la limite de $\\pi_n$ dépend-elle de l'état initial ?",
+        "options": [
+          "Oui, toujours",
+          "Non, jamais (si la matrice est primitive)",
+          "Seulement si $\\pi_0$ contient des zéros",
+          "Oui, si les coefficients sont négatifs"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Si la matrice ne contient pas de zéros (ou une de ses puissances), la convergence est indépendante de l'état initial."
+      },
+      {
+        "id": "q6",
+        "question": "Si $P = \\begin{pmatrix} 0 & 1 \\\\ 1 & 0 \\end{pmatrix}$, que vaut $P^2$ ?",
+        "options": [
+          "$P$",
+          "La matrice identité $I$",
+          "La matrice nulle",
+          "$\\begin{pmatrix} 1 & 1 \\\\ 1 & 1 \\end{pmatrix}$"
+        ],
+        "correctAnswer": 1,
+        "explanation": "On échange les états à chaque étape. En deux étapes, on revient au départ : $P^2 = I$."
+      },
+      {
+        "id": "q7",
+        "question": "Pour calculer l'état à l'étape $n$, on utilise :",
+        "options": [
+          "$\\pi_n = \\pi_0 + P^n$",
+          "$\\pi_n = \\pi_0 \\times P^n$",
+          "$\\pi_n = P^n \\times \\pi_0$",
+          "$\\pi_n = n \\times \\pi_0$"
+        ],
+        "correctAnswer": 1,
+        "explanation": "$\\pi_n = \\pi_0 \\times P^n$ (matrice ligne multipliée par puissance de P)."
+      },
+      {
+        "id": "q8",
+        "question": "Dans une matrice de transition, le coefficient $p_{i,j}$ représente :",
+        "options": [
+          "La probabilité de passer de $j$ à $i$",
+          "La probabilité de passer de $i$ à $j$",
+          "La probabilité de rester en $i$",
+          "Le produit des états $i$ et $j$"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Convention : ligne = état de départ, colonne = état d'arrivée."
+      },
+      {
+        "id": "q9",
+        "question": "Vrai ou Faux : Une matrice de transition est toujours symétrique.",
+        "options": [
+          "Vrai",
+          "Faux"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Faux ! Il n'y a aucune raison que $P(i \\to j)$ soit égal à $P(j \\to i)$."
+      },
+      {
+        "id": "q10",
+        "question": "Si la matrice de transition est l'identité, que se passe-t-il ?",
+        "options": [
+          "Le système converge vers $(0,5 \\quad 0,5)$",
+          "Le système ne change jamais d'état",
+          "Le système oscille",
+          "Le système diverge"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Avec $P = I$, on a $\\pi_{n+1} = \\pi_n \\times I = \\pi_n$. Le système reste stable."
+      }
+    ],
+    "difficulty": 2,
+    "passingScore": 70
   }
 ]

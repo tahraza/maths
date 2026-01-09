@@ -1,0 +1,388 @@
+---
+id: "equations-polynomiales-complexes"
+title: "Équations polynomiales dans C"
+track: "expertes"
+level: 3
+prerequisites: ["complexes-introduction", "complexes-formes"]
+tags: ["complexes", "équations", "polynômes", "racines", "discriminant", "unité"]
+estimatedTime: 55
+chapter: "complexes"
+order: 4
+---
+
+# Équations polynomiales dans C
+
+## Intuition et analogie
+
+**L'extension de notre boîte à outils** : Dans $\mathbb{R}$, l'équation $x^2 = -1$ est un mur infranchissable. C'est comme vouloir payer une dette de 5€ avec uniquement des pièces positives : impossible ! Les nombres complexes sont une extension naturelle qui brise ce mur. Avec $i^2 = -1$, toutes les équations polynomiales trouvent enfin des solutions.
+
+**Analogie du puzzle complet** : Imagine un puzzle où certaines pièces semblent manquer dans $\mathbb{R}$. L'équation $x^2 + 1 = 0$ n'a pas de solution réelle : c'est un trou dans le puzzle. Dans $\mathbb{C}$, le puzzle est **complet** : chaque équation polynomiale de degré $n$ a exactement $n$ solutions (comptées avec multiplicité). C'est le **Théorème fondamental de l'algèbre**.
+
+**Analogie du cercle des racines** : Les racines $n$-ièmes de l'unité sont comme les heures sur une horloge. Pour $n = 12$, tu obtiens les positions 12h, 1h, 2h, ..., 11h réparties uniformément sur le cadran. Ces points forment un polygone régulier parfait inscrit dans le cercle unité.
+
+## Objectifs de cette leçon
+
+À la fin de cette leçon, tu sauras :
+- Résoudre toute équation du second degré dans $\mathbb{C}$
+- Trouver les racines carrées d'un nombre complexe
+- Factoriser un polynôme grâce aux racines évidentes
+- Déterminer les racines $n$-ièmes de l'unité
+- Éviter les pièges classiques du calcul complexe
+
+## Prérequis (rappel express)
+
+- **Nombre complexe** : $z = a + ib$ avec $a, b \in \mathbb{R}$
+- **Module** : $|z| = \sqrt{a^2 + b^2}$
+- **Forme exponentielle** : $z = re^{i\theta}$
+- **Conjugué** : $\bar{z} = a - ib$
+
+## Équations du second degré à coefficients réels
+
+:::definition
+**Équation du second degré**
+
+Une équation du second degré dans $\mathbb{C}$ s'écrit :
+$$az^2 + bz + c = 0$$
+avec $a \neq 0$. Le **discriminant** est $\Delta = b^2 - 4ac$.
+:::
+
+:::theorem[Solutions selon le signe du discriminant (coefficients réels)]
+Soit $az^2 + bz + c = 0$ avec $a, b, c \in \mathbb{R}$ et $a \neq 0$.
+
+**Si $\Delta > 0$** : Deux solutions réelles distinctes
+$$z_1 = \frac{-b - \sqrt{\Delta}}{2a} \quad \text{et} \quad z_2 = \frac{-b + \sqrt{\Delta}}{2a}$$
+
+**Si $\Delta = 0$** : Une solution réelle double
+$$z_0 = \frac{-b}{2a}$$
+
+**Si $\Delta < 0$** : Deux solutions complexes conjuguées
+$$z_1 = \frac{-b - i\sqrt{-\Delta}}{2a} \quad \text{et} \quad z_2 = \frac{-b + i\sqrt{-\Delta}}{2a}$$
+:::
+
+:::property[Conjugaison des racines]
+Quand les coefficients sont **réels** et $\Delta < 0$, les deux solutions sont **conjuguées** : $z_2 = \bar{z_1}$.
+
+C'est logique : si $z$ est solution, alors $\bar{z}$ aussi car $\overline{az^2 + bz + c} = a\bar{z}^2 + b\bar{z} + c$ (les coefficients sont réels).
+:::
+
+:::example[Résolution de $z^2 - 4z + 13 = 0$]
+**Étape 1** : Identifier $a = 1$, $b = -4$, $c = 13$
+
+**Étape 2** : Calculer $\Delta = (-4)^2 - 4 \times 1 \times 13 = 16 - 52 = -36$
+
+**Étape 3** : $\Delta < 0$, donc solutions complexes conjuguées :
+$$z_1 = \frac{4 - i\sqrt{36}}{2} = \frac{4 - 6i}{2} = 2 - 3i$$
+$$z_2 = \frac{4 + 6i}{2} = 2 + 3i$$
+
+**Vérification** : $(2-3i)^2 - 4(2-3i) + 13 = 4 - 12i + 9i^2 - 8 + 12i + 13 = 4 - 9 - 8 + 13 = 0$ ✓
+:::
+
+:::exercise[Mini-exercice 1]
+Résoudre $z^2 + z + 1 = 0$ dans $\mathbb{C}$.
+
+**Solution** :
+$\Delta = 1 - 4 = -3 < 0$
+
+$z_1 = \frac{-1 - i\sqrt{3}}{2}$ et $z_2 = \frac{-1 + i\sqrt{3}}{2}$
+
+Ce sont les racines cubiques de l'unité autres que 1 (notées $j$ et $j^2$).
+:::
+
+## Racines carrées d'un nombre complexe
+
+:::warning
+**Notation interdite**
+
+La notation $\sqrt{Z}$ pour $Z \in \mathbb{C}$ est **à bannir** ! La fonction racine carrée n'est pas définie de manière unique sur $\mathbb{C}$.
+
+On écrit : "Soit $\delta$ tel que $\delta^2 = Z$" et on **calcule** $\delta$.
+:::
+
+:::method[Trouver les racines carrées de $Z = A + iB$]
+On cherche $\delta = x + iy$ tel que $\delta^2 = Z$.
+
+**Système à résoudre** :
+1. $x^2 - y^2 = A$ (partie réelle de $\delta^2$)
+2. $2xy = B$ (partie imaginaire de $\delta^2$)
+3. $x^2 + y^2 = |Z| = \sqrt{A^2 + B^2}$ (module)
+
+**Méthode** :
+- De (1) + (3) : $2x^2 = A + |Z|$ donc $x^2 = \frac{A + |Z|}{2}$
+- De (3) - (1) : $2y^2 = |Z| - A$ donc $y^2 = \frac{|Z| - A}{2}$
+- Le signe de $xy$ est donné par (2) : $xy$ a le signe de $B$
+:::
+
+:::example[Racines carrées de $-3 + 4i$]
+On cherche $\delta = x + iy$ tel que $\delta^2 = -3 + 4i$.
+
+**Étape 1** : Module de $Z$ : $|Z| = \sqrt{9 + 16} = 5$
+
+**Étape 2** : Calcul de $x^2$ et $y^2$
+- $x^2 = \frac{-3 + 5}{2} = 1$ donc $x = \pm 1$
+- $y^2 = \frac{5 - (-3)}{2} = 4$ donc $y = \pm 2$
+
+**Étape 3** : Signe de $xy$
+$2xy = 4 > 0$, donc $x$ et $y$ sont de même signe.
+
+**Conclusion** : Les racines carrées sont $\delta_1 = 1 + 2i$ et $\delta_2 = -1 - 2i$.
+
+**Vérification** : $(1 + 2i)^2 = 1 + 4i + 4i^2 = 1 + 4i - 4 = -3 + 4i$ ✓
+:::
+
+:::exercise[Mini-exercice 2]
+Trouver les racines carrées de $Z = 3 - 4i$.
+
+**Solution** :
+$|Z| = \sqrt{9 + 16} = 5$
+
+$x^2 = \frac{3 + 5}{2} = 4$ donc $x = \pm 2$
+
+$y^2 = \frac{5 - 3}{2} = 1$ donc $y = \pm 1$
+
+$2xy = -4 < 0$, donc $x$ et $y$ sont de signes opposés.
+
+Les racines carrées sont $\delta_1 = 2 - i$ et $\delta_2 = -2 + i$.
+:::
+
+## Équations à coefficients complexes
+
+:::theorem[Cas général]
+Pour $az^2 + bz + c = 0$ avec $a, b, c \in \mathbb{C}$ et $a \neq 0$ :
+
+1. Calculer $\Delta = b^2 - 4ac$ (qui est complexe en général)
+2. Trouver $\delta$ tel que $\delta^2 = \Delta$
+3. Les solutions sont : $z_1 = \frac{-b - \delta}{2a}$ et $z_2 = \frac{-b + \delta}{2a}$
+:::
+
+:::erreur[Piège classique]
+Quand les coefficients sont **complexes**, les solutions ne sont **pas forcément conjuguées** !
+
+La propriété "$z$ solution $\Rightarrow$ $\bar{z}$ solution" n'est vraie **que** si les coefficients sont réels.
+:::
+
+:::example[Résolution de $z^2 + (1+2i)z + (-1+i) = 0$]
+**Étape 1** : Calcul du discriminant
+$$\Delta = (1+2i)^2 - 4(-1+i) = 1 + 4i - 4 + 4 - 4i = 1$$
+
+**Étape 2** : Racine de $\Delta$
+$\delta^2 = 1$ donc $\delta = \pm 1$
+
+**Étape 3** : Solutions
+$$z_1 = \frac{-(1+2i) - 1}{2} = \frac{-2 - 2i}{2} = -1 - i$$
+$$z_2 = \frac{-(1+2i) + 1}{2} = \frac{-2i}{2} = -i$$
+
+Note : $z_1$ et $z_2$ ne sont pas conjuguées !
+:::
+
+:::exercise[Mini-exercice 3]
+Résoudre $z^2 - 2iz - 3 = 0$.
+
+**Solution** :
+$\Delta = (-2i)^2 - 4 \times 1 \times (-3) = -4 + 12 = 8$
+
+$\delta = \pm 2\sqrt{2}$ (racines réelles de 8)
+
+$z_1 = \frac{2i - 2\sqrt{2}}{2} = i - \sqrt{2}$
+
+$z_2 = \frac{2i + 2\sqrt{2}}{2} = i + \sqrt{2}$
+:::
+
+## Polynômes et factorisation
+
+:::definition
+Un **polynôme** de degré $n$ s'écrit :
+$$P(z) = a_n z^n + a_{n-1} z^{n-1} + \cdots + a_1 z + a_0$$
+avec $a_n \neq 0$. Une **racine** de $P$ est un nombre $\alpha$ tel que $P(\alpha) = 0$.
+:::
+
+:::theorem[Théorème fondamental de l'algèbre]
+Tout polynôme de degré $n \geq 1$ à coefficients complexes admet **exactement $n$ racines** dans $\mathbb{C}$ (comptées avec leur multiplicité).
+:::
+
+:::theorem[Factorisation par une racine]
+Si $\alpha$ est une racine de $P(z)$, alors il existe un polynôme $Q(z)$ de degré $n-1$ tel que :
+$$P(z) = (z - \alpha) \cdot Q(z)$$
+:::
+
+:::method[Technique de la racine évidente]
+Pour résoudre une équation de degré $\geq 3$ :
+
+1. **Chercher une racine évidente** parmi : $0, \pm 1, \pm 2, i, -i, 2i, ...$
+2. **Factoriser** par $(z - \alpha)$
+3. **Résoudre** l'équation de degré inférieur
+
+Pour factoriser, utiliser la division euclidienne ou l'identification des coefficients.
+:::
+
+:::example[Résolution de $z^3 - 2z^2 + z - 2 = 0$]
+**Étape 1** : Racine évidente ?
+- $P(0) = -2 \neq 0$
+- $P(1) = 1 - 2 + 1 - 2 = -2 \neq 0$
+- $P(2) = 8 - 8 + 2 - 2 = 0$ ✓
+
+Donc $z = 2$ est racine.
+
+**Étape 2** : Factorisation
+On cherche $P(z) = (z-2)(z^2 + az + b)$.
+
+En développant : $(z-2)(z^2 + az + b) = z^3 + az^2 + bz - 2z^2 - 2az - 2b$
+$= z^3 + (a-2)z^2 + (b-2a)z - 2b$
+
+Par identification avec $z^3 - 2z^2 + z - 2$ :
+- $a - 2 = -2$ donc $a = 0$
+- $-2b = -2$ donc $b = 1$
+
+Donc $P(z) = (z-2)(z^2 + 1)$.
+
+**Étape 3** : Résolution de $z^2 + 1 = 0$
+$z^2 = -1$ donc $z = \pm i$
+
+**Solutions** : $\{2, i, -i\}$
+:::
+
+:::exercise[Mini-exercice 4]
+Résoudre $z^3 + z^2 + z + 1 = 0$. (Indice : $z = -1$ est-il racine ?)
+
+**Solution** :
+$P(-1) = -1 + 1 - 1 + 1 = 0$ ✓
+
+Factorisation : $P(z) = (z+1)(z^2 + 1)$
+(Car $z^3 + z^2 + z + 1 = z^2(z+1) + (z+1) = (z+1)(z^2+1)$)
+
+Résolution de $z^2 + 1 = 0$ : $z = \pm i$
+
+**Solutions** : $\{-1, i, -i\}$
+:::
+
+## Racines $n$-ièmes de l'unité
+
+:::definition
+Les **racines $n$-ièmes de l'unité** sont les solutions de l'équation $z^n = 1$.
+:::
+
+:::theorem[Formule des racines $n$-ièmes]
+Les $n$ racines $n$-ièmes de l'unité sont données par :
+$$\omega_k = e^{i\frac{2k\pi}{n}} = \cos\left(\frac{2k\pi}{n}\right) + i\sin\left(\frac{2k\pi}{n}\right)$$
+pour $k \in \{0, 1, 2, \ldots, n-1\}$.
+:::
+
+:::remark[Interprétation géométrique]
+Les points images des racines $n$-ièmes de l'unité forment un **polygone régulier à $n$ côtés** inscrit dans le cercle unité, avec un sommet en $z = 1$.
+
+- $n = 3$ : triangle équilatéral
+- $n = 4$ : carré (sommets en $1, i, -1, -i$)
+- $n = 6$ : hexagone régulier
+:::
+
+:::property[Somme des racines]
+Pour $n \geq 2$, la somme des racines $n$-ièmes de l'unité est **nulle** :
+$$\sum_{k=0}^{n-1} \omega_k = 0$$
+
+**Démonstration** : C'est une somme géométrique de raison $\omega_1 = e^{i\frac{2\pi}{n}} \neq 1$ :
+$$\sum_{k=0}^{n-1} \omega_1^k = \frac{1 - \omega_1^n}{1 - \omega_1} = \frac{1 - 1}{1 - \omega_1} = 0$$
+:::
+
+:::example[Racines cubiques de l'unité ($n = 3$)]
+Les solutions de $z^3 = 1$ sont :
+
+$\omega_0 = e^{i \cdot 0} = 1$
+
+$\omega_1 = e^{i\frac{2\pi}{3}} = \cos\frac{2\pi}{3} + i\sin\frac{2\pi}{3} = -\frac{1}{2} + i\frac{\sqrt{3}}{2}$
+
+$\omega_2 = e^{i\frac{4\pi}{3}} = \cos\frac{4\pi}{3} + i\sin\frac{4\pi}{3} = -\frac{1}{2} - i\frac{\sqrt{3}}{2}$
+
+On note souvent $j = \omega_1$ et $j^2 = \omega_2$. On a $1 + j + j^2 = 0$.
+:::
+
+:::example[Racines quatrièmes de l'unité ($n = 4$)]
+Les solutions de $z^4 = 1$ sont :
+
+$\omega_0 = 1$, $\omega_1 = e^{i\frac{\pi}{2}} = i$, $\omega_2 = e^{i\pi} = -1$, $\omega_3 = e^{i\frac{3\pi}{2}} = -i$
+
+Ces quatre points forment un **carré** inscrit dans le cercle unité.
+:::
+
+:::exercise[Mini-exercice 5]
+Déterminer les racines sixièmes de l'unité et vérifier que leur somme est nulle.
+
+**Solution** :
+$\omega_k = e^{i\frac{2k\pi}{6}} = e^{i\frac{k\pi}{3}}$ pour $k = 0, 1, 2, 3, 4, 5$
+
+- $\omega_0 = 1$
+- $\omega_1 = e^{i\frac{\pi}{3}} = \frac{1}{2} + i\frac{\sqrt{3}}{2}$
+- $\omega_2 = e^{i\frac{2\pi}{3}} = -\frac{1}{2} + i\frac{\sqrt{3}}{2}$
+- $\omega_3 = e^{i\pi} = -1$
+- $\omega_4 = e^{i\frac{4\pi}{3}} = -\frac{1}{2} - i\frac{\sqrt{3}}{2}$
+- $\omega_5 = e^{i\frac{5\pi}{3}} = \frac{1}{2} - i\frac{\sqrt{3}}{2}$
+
+Somme : $(1 - 1) + (\frac{1}{2} - \frac{1}{2} - \frac{1}{2} + \frac{1}{2}) + i(\frac{\sqrt{3}}{2} + \frac{\sqrt{3}}{2} - \frac{\sqrt{3}}{2} - \frac{\sqrt{3}}{2}) = 0$ ✓
+:::
+
+## Racines $n$-ièmes d'un nombre complexe
+
+:::method[Résolution de $z^n = Z$]
+Pour résoudre $z^n = Z$ avec $Z = re^{i\theta}$ :
+
+1. Écrire $Z$ en forme exponentielle : $Z = re^{i\theta}$
+2. Les $n$ solutions sont :
+$$z_k = \sqrt[n]{r} \cdot e^{i\frac{\theta + 2k\pi}{n}}$$
+pour $k \in \{0, 1, \ldots, n-1\}$
+:::
+
+:::example[Résolution de $z^3 = 8i$]
+**Étape 1** : Forme exponentielle de $8i$
+$8i = 8e^{i\frac{\pi}{2}}$ (module $8$, argument $\frac{\pi}{2}$)
+
+**Étape 2** : Application de la formule
+$z_k = \sqrt[3]{8} \cdot e^{i\frac{\frac{\pi}{2} + 2k\pi}{3}} = 2e^{i\frac{\pi + 4k\pi}{6}}$
+
+- $k = 0$ : $z_0 = 2e^{i\frac{\pi}{6}} = 2(\frac{\sqrt{3}}{2} + i\frac{1}{2}) = \sqrt{3} + i$
+- $k = 1$ : $z_1 = 2e^{i\frac{5\pi}{6}} = 2(-\frac{\sqrt{3}}{2} + i\frac{1}{2}) = -\sqrt{3} + i$
+- $k = 2$ : $z_2 = 2e^{i\frac{9\pi}{6}} = 2e^{i\frac{3\pi}{2}} = -2i$
+:::
+
+## Erreurs fréquentes à éviter
+
+:::erreur[Erreur 1 : Utiliser $\sqrt{}$ avec un complexe]
+**Faux** : $\sqrt{3-4i} = ...$
+
+**Correct** : "Soit $\delta$ tel que $\delta^2 = 3-4i$. On trouve $\delta = 2-i$ ou $\delta = -2+i$."
+:::
+
+:::erreur[Erreur 2 : Oublier le $i$ dans la formule]
+Pour $\Delta < 0$ (coefficients réels), les solutions sont :
+$$z = \frac{-b \pm i\sqrt{-\Delta}}{2a}$$
+
+Le $i$ vient du fait que $\sqrt{\Delta}$ n'existe pas, mais $\sqrt{-\Delta}$ oui (car $-\Delta > 0$).
+:::
+
+:::erreur[Erreur 3 : Croire que les racines sont toujours conjuguées]
+Les racines sont conjuguées **seulement** si les coefficients sont **réels**.
+
+Pour $z^2 + iz - 1 = 0$ : $\Delta = -1 + 4 = 3$, solutions $z = \frac{-i \pm \sqrt{3}}{2}$.
+
+Ces solutions ne sont pas conjuguées !
+:::
+
+:::erreur[Erreur 4 : Se tromper sur le nombre de racines $n$-ièmes]
+$z^n = 1$ a exactement $n$ solutions distinctes, pas plus, pas moins.
+
+$z^4 = 1$ a 4 solutions : $1, i, -1, -i$ (et pas seulement $\pm 1$).
+:::
+
+## Récapitulatif
+
+| Type d'équation | Méthode |
+|-----------------|---------|
+| $az^2 + bz + c = 0$ (réels) | Calculer $\Delta$. Si $\Delta < 0$ : $z = \frac{-b \pm i\sqrt{-\Delta}}{2a}$ |
+| $az^2 + bz + c = 0$ (complexes) | Trouver $\delta$ tel que $\delta^2 = \Delta$, puis $z = \frac{-b \pm \delta}{2a}$ |
+| $P(z) = 0$ (degré $n$) | Racine évidente + factorisation |
+| $z^n = 1$ | $z_k = e^{i\frac{2k\pi}{n}}$ pour $k = 0, \ldots, n-1$ |
+| $z^n = re^{i\theta}$ | $z_k = \sqrt[n]{r} \cdot e^{i\frac{\theta + 2k\pi}{n}}$ |
+
+## Ponts vers autres chapitres
+
+- **Complexes - Introduction** : définition de $i$ et forme algébrique
+- **Complexes - Formes** : forme exponentielle indispensable pour les racines $n$-ièmes
+- **Complexes - Géométrie** : interprétation géométrique des racines de l'unité
+- **Arithmétique** : les polynômes cyclotomiques relient racines de l'unité et nombres premiers

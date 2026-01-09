@@ -1926,5 +1926,221 @@
     "tags": ["arithmétique", "pgcd", "ppcm", "formule"],
     "level": 2,
     "category": "formula"
+  },
+  {
+    "id": "fc-eqpoly-001",
+    "lessonId": "equations-polynomiales-complexes",
+    "front": "Solutions de az² + bz + c = 0 (réels) si Δ < 0 ?",
+    "back": "z = (-b ± i√(-Δ)) / 2a. Deux solutions complexes conjuguées.",
+    "tags": ["complexes", "équation", "discriminant"],
+    "level": 2,
+    "category": "formula"
+  },
+  {
+    "id": "fc-eqpoly-002",
+    "lessonId": "equations-polynomiales-complexes",
+    "front": "Peut-on écrire √Z pour Z complexe ?",
+    "back": "NON ! On écrit : \"soit δ tel que δ² = Z\" et on calcule δ.",
+    "tags": ["complexes", "notation", "piège"],
+    "level": 2,
+    "category": "trap"
+  },
+  {
+    "id": "fc-eqpoly-003",
+    "lessonId": "equations-polynomiales-complexes",
+    "front": "Système pour trouver δ = x + iy tel que δ² = A + iB",
+    "back": "1) x² - y² = A, 2) 2xy = B, 3) x² + y² = √(A² + B²)",
+    "tags": ["complexes", "racine carrée", "méthode"],
+    "level": 3,
+    "category": "method"
+  },
+  {
+    "id": "fc-eqpoly-004",
+    "lessonId": "equations-polynomiales-complexes",
+    "front": "Si P(α) = 0, comment factoriser P(z) ?",
+    "back": "P(z) = (z - α) × Q(z) où Q est de degré n-1.",
+    "tags": ["complexes", "polynôme", "factorisation"],
+    "level": 2,
+    "category": "definition"
+  },
+  {
+    "id": "fc-eqpoly-005",
+    "lessonId": "equations-polynomiales-complexes",
+    "front": "Combien de solutions a zⁿ = 1 dans ℂ ?",
+    "back": "Exactement n solutions distinctes (racines n-ièmes de l'unité).",
+    "tags": ["complexes", "racines unité"],
+    "level": 2,
+    "category": "definition"
+  },
+  {
+    "id": "fc-eqpoly-006",
+    "lessonId": "equations-polynomiales-complexes",
+    "front": "Formule des racines n-ièmes de l'unité",
+    "back": "ωₖ = e^(i·2kπ/n) pour k = 0, 1, ..., n-1",
+    "tags": ["complexes", "racines unité", "formule"],
+    "level": 2,
+    "category": "formula"
+  },
+  {
+    "id": "fc-eqpoly-007",
+    "lessonId": "equations-polynomiales-complexes",
+    "front": "Somme des racines n-ièmes de l'unité (n ≥ 2)",
+    "back": "Σωₖ = 0 (somme nulle).",
+    "tags": ["complexes", "racines unité", "propriété"],
+    "level": 2,
+    "category": "formula"
+  },
+  {
+    "id": "fc-eqpoly-008",
+    "lessonId": "equations-polynomiales-complexes",
+    "front": "Quelles sont les racines cubiques de l'unité ?",
+    "back": "1, j = -1/2 + i√3/2, j² = -1/2 - i√3/2. On a 1 + j + j² = 0.",
+    "tags": ["complexes", "racines unité", "exemple"],
+    "level": 2,
+    "category": "definition"
+  },
+  {
+    "id": "fc-eqpoly-009",
+    "lessonId": "equations-polynomiales-complexes",
+    "front": "Les racines complexes sont-elles toujours conjuguées ?",
+    "back": "SEULEMENT si les coefficients sont réels ! Sinon non.",
+    "tags": ["complexes", "conjugué", "piège"],
+    "level": 2,
+    "category": "trap"
+  },
+  {
+    "id": "fc-eqpoly-010",
+    "lessonId": "equations-polynomiales-complexes",
+    "front": "Théorème fondamental de l'algèbre",
+    "back": "Tout polynôme de degré n ≥ 1 à coefficients complexes a exactement n racines dans ℂ.",
+    "tags": ["complexes", "polynôme", "théorème"],
+    "level": 3,
+    "category": "definition"
+  },
+  {
+    "id": "fc-eqpoly-011",
+    "lessonId": "equations-polynomiales-complexes",
+    "front": "Solutions de zⁿ = re^(iθ)",
+    "back": "zₖ = ⁿ√r · e^(i(θ + 2kπ)/n) pour k = 0, ..., n-1",
+    "tags": ["complexes", "racine n-ième", "formule"],
+    "level": 3,
+    "category": "formula"
+  },
+  {
+    "id": "fc-eqpoly-012",
+    "lessonId": "equations-polynomiales-complexes",
+    "front": "Interprétation géométrique des racines n-ièmes de l'unité",
+    "back": "Polygone régulier à n côtés inscrit dans le cercle unité, un sommet en z = 1.",
+    "tags": ["complexes", "géométrie", "racines unité"],
+    "level": 2,
+    "category": "definition"
+  },
+  {
+    "id": "fc-markov-001",
+    "lessonId": "chaines-markov",
+    "front": "Dans une chaîne de Markov, de quoi dépend l'état à l'instant n+1 ?",
+    "back": "Uniquement de l'état à l'instant n (propriété sans mémoire).",
+    "tags": ["markov", "définition"],
+    "level": 1,
+    "category": "definition"
+  },
+  {
+    "id": "fc-markov-002",
+    "lessonId": "chaines-markov",
+    "front": "Quelle est la particularité de la somme des coefficients d'une ligne d'une matrice de transition ?",
+    "back": "La somme vaut toujours 1 (matrice stochastique).",
+    "tags": ["markov", "matrice"],
+    "level": 1,
+    "category": "definition"
+  },
+  {
+    "id": "fc-markov-003",
+    "lessonId": "chaines-markov",
+    "front": "Formule de récurrence pour l'évolution d'une chaîne de Markov",
+    "back": "πₙ₊₁ = πₙ × P (matrice ligne × matrice de transition)",
+    "tags": ["markov", "formule"],
+    "level": 1,
+    "category": "formula"
+  },
+  {
+    "id": "fc-markov-004",
+    "lessonId": "chaines-markov",
+    "front": "Comment calculer l'état πₙ en fonction de l'état initial π₀ ?",
+    "back": "πₙ = π₀ × Pⁿ",
+    "tags": ["markov", "formule"],
+    "level": 2,
+    "category": "formula"
+  },
+  {
+    "id": "fc-markov-005",
+    "lessonId": "chaines-markov",
+    "front": "Quelles sont les deux conditions pour trouver un état stable π ?",
+    "back": "1) π × P = π  2) Σxᵢ = 1 (somme des composantes = 1)",
+    "tags": ["markov", "état stable"],
+    "level": 2,
+    "category": "definition"
+  },
+  {
+    "id": "fc-markov-006",
+    "lessonId": "chaines-markov",
+    "front": "Que représente le coefficient pᵢⱼ (ligne i, colonne j) d'une matrice de transition ?",
+    "back": "La probabilité de passer de l'état i vers l'état j.",
+    "tags": ["markov", "lecture"],
+    "level": 1,
+    "category": "definition"
+  },
+  {
+    "id": "fc-markov-007",
+    "lessonId": "chaines-markov",
+    "front": "Si une matrice de transition ne contient aucun 0, que peut-on dire de la convergence ?",
+    "back": "La suite des distributions converge vers un unique état stable, quel que soit l'état initial.",
+    "tags": ["markov", "convergence"],
+    "level": 2,
+    "category": "definition"
+  },
+  {
+    "id": "fc-markov-008",
+    "lessonId": "chaines-markov",
+    "front": "Comment appelle-t-on un graphe où les arêtes portent des probabilités de passage entre états ?",
+    "back": "Un graphe probabiliste.",
+    "tags": ["markov", "vocabulaire"],
+    "level": 1,
+    "category": "definition"
+  },
+  {
+    "id": "fc-markov-009",
+    "lessonId": "chaines-markov",
+    "front": "Piège : Une matrice de transition est-elle toujours symétrique ?",
+    "back": "FAUX ! Il n'y a aucune raison que P(i vers j) soit égal à P(j vers i).",
+    "tags": ["markov", "piège"],
+    "level": 2,
+    "category": "trap"
+  },
+  {
+    "id": "fc-markov-010",
+    "lessonId": "chaines-markov",
+    "front": "Piège : Quel est l'ordre de multiplication pour calculer πₙ₊₁ ?",
+    "back": "πₙ₊₁ = πₙ × P (ligne × carrée). NE PAS écrire P × πₙ !",
+    "tags": ["markov", "piège"],
+    "level": 2,
+    "category": "trap"
+  },
+  {
+    "id": "fc-markov-011",
+    "lessonId": "chaines-markov",
+    "front": "Si la matrice de transition est l'identité, que se passe-t-il ?",
+    "back": "Le système ne change jamais d'état. L'état stable = état initial.",
+    "tags": ["markov", "concept"],
+    "level": 2,
+    "category": "definition"
+  },
+  {
+    "id": "fc-markov-012",
+    "lessonId": "chaines-markov",
+    "front": "Erreur fréquente : que risque-t-on en résolvant πP = π seul ?",
+    "back": "Obtenir des équations liées (0 = 0) ou une infinité de solutions. Il FAUT ajouter Σxᵢ = 1.",
+    "tags": ["markov", "erreur"],
+    "level": 2,
+    "category": "trap"
   }
 ]

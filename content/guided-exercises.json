@@ -631,6 +631,169 @@
         { "instruction": "Conclus.", "solution": "L'hypothèse est fausse. Il existe une **infinité de nombres premiers**." }
       ],
       "finalAnswer": "Il existe une infinité de nombres premiers (Théorème d'Euclide)"
+    },
+    {
+      "id": "eqpoly-discriminant-negatif",
+      "title": "Équation du second degré (Δ < 0)",
+      "theme": "Équations polynomiales complexes",
+      "difficulty": "facile",
+      "duration": 10,
+      "description": "Résoudre une équation du second degré avec discriminant négatif.",
+      "problem": "Résoudre dans $\\mathbb{C}$ l'équation $z^2 - 2z + 5 = 0$.",
+      "steps": [
+        { "instruction": "Identifie les coefficients a, b, c.", "hint": "L'équation est de la forme $az^2 + bz + c = 0$.", "solution": "$a = 1$, $b = -2$, $c = 5$" },
+        { "instruction": "Calcule le discriminant $\\Delta = b^2 - 4ac$.", "hint": "Attention aux signes !", "solution": "$\\Delta = (-2)^2 - 4 \\times 1 \\times 5 = 4 - 20 = -16$" },
+        { "instruction": "Comme $\\Delta < 0$, utilise la formule avec $i$.", "hint": "$z = \\frac{-b \\pm i\\sqrt{-\\Delta}}{2a}$", "solution": "$z = \\frac{2 \\pm i\\sqrt{16}}{2} = \\frac{2 \\pm 4i}{2}$" },
+        { "instruction": "Simplifie pour obtenir les deux solutions.", "solution": "$z_1 = 1 - 2i$ et $z_2 = 1 + 2i$" },
+        { "instruction": "Vérifie que les solutions sont conjuguées.", "hint": "C'est toujours le cas quand les coefficients sont réels.", "solution": "$z_2 = \\overline{z_1}$ ✓ Les solutions sont bien conjuguées." }
+      ],
+      "finalAnswer": "$z_1 = 1 - 2i$ et $z_2 = 1 + 2i$"
+    },
+    {
+      "id": "eqpoly-racine-carree-complexe",
+      "title": "Racines carrées d'un complexe",
+      "theme": "Équations polynomiales complexes",
+      "difficulty": "moyen",
+      "duration": 15,
+      "description": "Trouver les racines carrées d'un nombre complexe.",
+      "problem": "Trouver les nombres complexes $\\delta = x + iy$ tels que $\\delta^2 = -3 + 4i$.",
+      "steps": [
+        { "instruction": "Calcule le module de $Z = -3 + 4i$.", "hint": "$|Z| = \\sqrt{a^2 + b^2}$", "solution": "$|Z| = \\sqrt{9 + 16} = \\sqrt{25} = 5$" },
+        { "instruction": "Écris le système d'équations.", "hint": "Parties réelle, imaginaire, et module.", "solution": "$(1)$ $x^2 - y^2 = -3$, $(2)$ $2xy = 4$, $(3)$ $x^2 + y^2 = 5$" },
+        { "instruction": "Trouve $x^2$ en additionnant (1) et (3).", "hint": "$(x^2 - y^2) + (x^2 + y^2) = ...$", "solution": "$2x^2 = 2$, donc $x^2 = 1$, soit $x = \\pm 1$" },
+        { "instruction": "Trouve $y^2$ en soustrayant (1) à (3).", "hint": "$(x^2 + y^2) - (x^2 - y^2) = ...$", "solution": "$2y^2 = 8$, donc $y^2 = 4$, soit $y = \\pm 2$" },
+        { "instruction": "Utilise le signe de $2xy = 4$ pour associer x et y.", "hint": "$xy > 0$ donc x et y sont de même signe.", "solution": "Les couples sont $(1, 2)$ et $(-1, -2)$." },
+        { "instruction": "Donne les deux racines carrées.", "solution": "$\\delta_1 = 1 + 2i$ et $\\delta_2 = -1 - 2i$" }
+      ],
+      "finalAnswer": "Les racines carrées sont $1 + 2i$ et $-1 - 2i$"
+    },
+    {
+      "id": "eqpoly-factorisation-degre3",
+      "title": "Factorisation d'un polynôme de degré 3",
+      "theme": "Équations polynomiales complexes",
+      "difficulty": "moyen",
+      "duration": 15,
+      "description": "Résoudre une équation de degré 3 par factorisation.",
+      "problem": "Résoudre $z^3 - 2z^2 + z - 2 = 0$.",
+      "steps": [
+        { "instruction": "Cherche une racine évidente parmi 0, ±1, ±2, i, -i.", "hint": "Calcule $P(2)$.", "solution": "$P(2) = 8 - 8 + 2 - 2 = 0$ ✓ Donc $z = 2$ est racine." },
+        { "instruction": "Factorise $P(z)$ par $(z - 2)$.", "hint": "Écris $P(z) = (z-2)(z^2 + az + b)$ et identifie.", "solution": "Par identification : $P(z) = (z - 2)(z^2 + 1)$" },
+        { "instruction": "Résous $z^2 + 1 = 0$.", "hint": "$z^2 = -1$", "solution": "$z^2 = -1$ donc $z = \\pm i$" },
+        { "instruction": "Donne l'ensemble des solutions.", "solution": "$S = \\{2, i, -i\\}$ (3 racines pour un polynôme de degré 3)" }
+      ],
+      "finalAnswer": "$S = \\{2, i, -i\\}$"
+    },
+    {
+      "id": "eqpoly-racines-unite",
+      "title": "Racines cubiques de l'unité",
+      "theme": "Équations polynomiales complexes",
+      "difficulty": "moyen",
+      "duration": 12,
+      "description": "Déterminer les racines n-ièmes de l'unité.",
+      "problem": "Résoudre $z^3 = 1$ et montrer que la somme des solutions est nulle.",
+      "steps": [
+        { "instruction": "Applique la formule $\\omega_k = e^{i\\frac{2k\\pi}{n}}$ pour $n = 3$.", "hint": "$k$ varie de 0 à $n-1$.", "solution": "$\\omega_k = e^{i\\frac{2k\\pi}{3}}$ pour $k = 0, 1, 2$" },
+        { "instruction": "Calcule $\\omega_0$.", "solution": "$\\omega_0 = e^{i \\cdot 0} = 1$" },
+        { "instruction": "Calcule $\\omega_1$ (souvent noté $j$).", "hint": "Utilise $e^{i\\theta} = \\cos\\theta + i\\sin\\theta$.", "solution": "$\\omega_1 = e^{i\\frac{2\\pi}{3}} = \\cos\\frac{2\\pi}{3} + i\\sin\\frac{2\\pi}{3} = -\\frac{1}{2} + i\\frac{\\sqrt{3}}{2}$" },
+        { "instruction": "Calcule $\\omega_2$ (souvent noté $j^2$).", "solution": "$\\omega_2 = e^{i\\frac{4\\pi}{3}} = -\\frac{1}{2} - i\\frac{\\sqrt{3}}{2}$" },
+        { "instruction": "Vérifie que la somme est nulle.", "hint": "Additionne les trois racines.", "solution": "$1 + (-\\frac{1}{2} + i\\frac{\\sqrt{3}}{2}) + (-\\frac{1}{2} - i\\frac{\\sqrt{3}}{2}) = 1 - 1 + 0i = 0$ ✓" }
+      ],
+      "finalAnswer": "Racines : $1$, $j = -\\frac{1}{2} + i\\frac{\\sqrt{3}}{2}$, $j^2 = -\\frac{1}{2} - i\\frac{\\sqrt{3}}{2}$. Somme = 0."
+    },
+    {
+      "id": "eqpoly-equation-bicarree",
+      "title": "Équation bicarrée",
+      "theme": "Équations polynomiales complexes",
+      "difficulty": "moyen",
+      "duration": 12,
+      "description": "Résoudre une équation bicarrée par changement de variable.",
+      "problem": "Résoudre dans $\\mathbb{C}$ : $z^4 - 5z^2 - 36 = 0$.",
+      "steps": [
+        { "instruction": "Pose le changement de variable $Z = z^2$.", "solution": "L'équation devient $Z^2 - 5Z - 36 = 0$." },
+        { "instruction": "Résous l'équation en $Z$.", "hint": "Calcule $\\Delta = 25 + 144$.", "solution": "$\\Delta = 169$, $Z = \\frac{5 \\pm 13}{2}$. Donc $Z_1 = 9$ et $Z_2 = -4$." },
+        { "instruction": "Reviens à $z$ pour $Z_1 = 9$.", "hint": "$z^2 = 9$", "solution": "$z = \\pm 3$" },
+        { "instruction": "Reviens à $z$ pour $Z_2 = -4$.", "hint": "$z^2 = -4$", "solution": "$z = \\pm 2i$" },
+        { "instruction": "Donne l'ensemble des solutions.", "solution": "$S = \\{3, -3, 2i, -2i\\}$ (4 solutions pour degré 4)" }
+      ],
+      "finalAnswer": "$S = \\{3, -3, 2i, -2i\\}$"
+    },
+    {
+      "id": "markov-lecture-graphe",
+      "title": "Lecture de graphe probabiliste",
+      "theme": "Chaînes de Markov",
+      "difficulty": "facile",
+      "duration": 10,
+      "description": "Passer d'un graphe à une matrice de transition.",
+      "problem": "On considère un graphe à deux états A et B. Une flèche boucle sur A avec 0,2. Une flèche va de A vers B avec 0,8. Une flèche va de B vers A avec 0,6. Écrire la matrice de transition $P$.",
+      "steps": [
+        { "instruction": "Détermine la probabilité de rester en B (B vers B).", "hint": "La somme des probabilités partant d'un nœud doit valoir 1.", "solution": "Partant de B, on va vers A avec 0,6. Donc on reste en B avec $1 - 0,6 = 0,4$." },
+        { "instruction": "Remplis la première ligne de la matrice (partant de A).", "hint": "Ligne 1 : proba A→A puis proba A→B.", "solution": "Ligne 1 : $(0,2 \\quad 0,8)$" },
+        { "instruction": "Remplis la deuxième ligne de la matrice (partant de B).", "hint": "Ligne 2 : proba B→A puis proba B→B.", "solution": "Ligne 2 : $(0,6 \\quad 0,4)$" },
+        { "instruction": "Écris la matrice complète.", "solution": "$P = \\begin{pmatrix} 0,2 & 0,8 \\\\ 0,6 & 0,4 \\end{pmatrix}$" }
+      ],
+      "finalAnswer": "$P = \\begin{pmatrix} 0,2 & 0,8 \\\\ 0,6 & 0,4 \\end{pmatrix}$"
+    },
+    {
+      "id": "markov-calcul-etat-suivant",
+      "title": "Calcul de l'état suivant",
+      "theme": "Chaînes de Markov",
+      "difficulty": "facile",
+      "duration": 10,
+      "description": "Utiliser la multiplication matricielle.",
+      "problem": "Soit la matrice $P = \\begin{pmatrix} 0,9 & 0,1 \\\\ 0,2 & 0,8 \\end{pmatrix}$. L'état initial est $\\pi_0 = (0,5 \\quad 0,5)$. Calculer $\\pi_1$.",
+      "steps": [
+        { "instruction": "Rappelle la formule de récurrence.", "hint": "C'est un produit matrice ligne par matrice carrée.", "solution": "$\\pi_1 = \\pi_0 \\times P$" },
+        { "instruction": "Calcule la première composante de $\\pi_1$.", "hint": "$0,5 \\times p_{1,1} + 0,5 \\times p_{2,1}$", "solution": "$0,5 \\times 0,9 + 0,5 \\times 0,2 = 0,45 + 0,1 = 0,55$" },
+        { "instruction": "Calcule la deuxième composante.", "hint": "Soit par calcul matriciel, soit par complément à 1.", "solution": "$1 - 0,55 = 0,45$ (ou $0,5 \\times 0,1 + 0,5 \\times 0,8 = 0,05 + 0,40 = 0,45$)" },
+        { "instruction": "Donne le résultat final.", "solution": "$\\pi_1 = (0,55 \\quad 0,45)$" }
+      ],
+      "finalAnswer": "$\\pi_1 = (0,55 \\quad 0,45)$"
+    },
+    {
+      "id": "markov-verification-stable",
+      "title": "Vérification d'état stable",
+      "theme": "Chaînes de Markov",
+      "difficulty": "moyen",
+      "duration": 12,
+      "description": "Vérifier si une distribution donnée est stable.",
+      "problem": "Matrice $P = \\begin{pmatrix} 0,8 & 0,2 \\\\ 0,1 & 0,9 \\end{pmatrix}$. On propose l'état $\\pi = (1/3 \\quad 2/3)$. Est-ce un état stable ?",
+      "steps": [
+        { "instruction": "Vérifie d'abord si $\\pi$ est une distribution de probabilité.", "hint": "La somme des termes vaut-elle 1 ?", "solution": "$1/3 + 2/3 = 1$. C'est bien une distribution." },
+        { "instruction": "Calcule le produit $\\pi \\times P$.", "hint": "Multiplie la ligne $(1/3 \\quad 2/3)$ par la matrice.", "solution": "Premier terme : $\\frac{1}{3} \\times 0,8 + \\frac{2}{3} \\times 0,1 = \\frac{0,8}{3} + \\frac{0,2}{3} = \\frac{1}{3}$.\n\nDeuxième terme : $\\frac{1}{3} \\times 0,2 + \\frac{2}{3} \\times 0,9 = \\frac{0,2}{3} + \\frac{1,8}{3} = \\frac{2}{3}$" },
+        { "instruction": "Conclus.", "hint": "Le résultat est-il égal à $\\pi$ ?", "solution": "On trouve $(1/3 \\quad 2/3)$ qui est égal à $\\pi$. **C'est donc un état stable.**" }
+      ],
+      "finalAnswer": "Oui, $\\pi = (1/3 \\quad 2/3)$ est un état stable"
+    },
+    {
+      "id": "markov-recherche-stable",
+      "title": "Recherche d'état stable (2×2)",
+      "theme": "Chaînes de Markov",
+      "difficulty": "moyen",
+      "duration": 15,
+      "description": "Résoudre le système d'équations.",
+      "problem": "Trouver l'état stable $\\pi = (x \\quad y)$ pour $P = \\begin{pmatrix} 0,5 & 0,5 \\\\ 0,4 & 0,6 \\end{pmatrix}$.",
+      "steps": [
+        { "instruction": "Pose le système d'équations issu de $\\pi P = \\pi$.", "hint": "$x = 0,5x + 0,4y$", "solution": "$x = 0,5x + 0,4y$" },
+        { "instruction": "Utilise la contrainte de probabilité pour éliminer $y$.", "hint": "$y = 1 - x$", "solution": "$x = 0,5x + 0,4(1 - x)$" },
+        { "instruction": "Résous l'équation pour $x$.", "hint": "Développe et regroupe les $x$.", "solution": "$x = 0,5x + 0,4 - 0,4x \\Rightarrow x = 0,1x + 0,4 \\Rightarrow 0,9x = 0,4 \\Rightarrow x = \\frac{4}{9}$" },
+        { "instruction": "Déduis $y$ et conclus.", "solution": "$y = 1 - \\frac{4}{9} = \\frac{5}{9}$. **État stable : $(\\frac{4}{9} \\quad \\frac{5}{9})$**" }
+      ],
+      "finalAnswer": "$\\pi = (\\frac{4}{9} \\quad \\frac{5}{9})$"
+    },
+    {
+      "id": "markov-modelisation",
+      "title": "Modélisation de problème",
+      "theme": "Chaînes de Markov",
+      "difficulty": "moyen",
+      "duration": 12,
+      "description": "Traduire un énoncé en chaîne de Markov.",
+      "problem": "Un fumeur essaie d'arrêter. S'il ne fume pas un jour (N), il a 90% de chance de ne pas fumer le lendemain. S'il fume (F), il a 60% de chance de ne pas fumer le lendemain. Construire la matrice de transition (États : 1 = N, 2 = F).",
+      "steps": [
+        { "instruction": "Identifie $p_{1,1}$ (N → N) et $p_{1,2}$ (N → F).", "hint": "Si N, 90% de chance de N.", "solution": "$p_{1,1} = 0,9$. Donc $p_{1,2} = 0,1$." },
+        { "instruction": "Identifie $p_{2,1}$ (F → N) et $p_{2,2}$ (F → F).", "hint": "Si F, 60% de chance de N.", "solution": "$p_{2,1} = 0,6$. Donc $p_{2,2} = 1 - 0,6 = 0,4$." },
+        { "instruction": "Écris la matrice de transition.", "solution": "$P = \\begin{pmatrix} 0,9 & 0,1 \\\\ 0,6 & 0,4 \\end{pmatrix}$" }
+      ],
+      "finalAnswer": "$P = \\begin{pmatrix} 0,9 & 0,1 \\\\ 0,6 & 0,4 \\end{pmatrix}$"
     }
   ]
 }
