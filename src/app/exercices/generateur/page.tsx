@@ -142,7 +142,7 @@ export default function GenerateurPage() {
     setPointsEarned(points)
     setHasValidated(true)
 
-    // Ajouter les points au store global
+    // Ajouter les points au store global (synchronisé auto avec pet store)
     if (points > 0) {
       addPoints(points, `Exercice généré: ${selectedGenerator.title}`)
       incrementStat('exercises')

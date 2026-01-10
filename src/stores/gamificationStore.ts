@@ -1,5 +1,6 @@
 import { create } from 'zustand'
 import { persist } from 'zustand/middleware'
+import { usePetStore } from './petStore'
 
 // Points values for different activities
 export const POINTS = {
@@ -203,6 +204,9 @@ export const useGamificationStore = create<GamificationState>()(
             totalDaysActive: newTotalDaysActive,
           }
         })
+
+        // Synchroniser avec le pet store (pour la boutique animal)
+        usePetStore.getState().addPetPoints(points)
 
         // Update streak
         get().updateStreak()
