@@ -15,7 +15,7 @@
     "id": "fc-suites-002",
     "lessonId": "suites-definition",
     "front": "Formule du terme général d'une suite arithmétique",
-    "back": "$u_n = u_0 + n \cdot r$ où $u_0$ est le premier terme et $r$ la raison",
+    "back": "$u_n = u_0 + n \\cdot r$ où $u_0$ est le premier terme et $r$ la raison",
     "tags": [
       "suites",
       "arithmétique",
@@ -53,7 +53,7 @@
     "id": "fc-derivation-001",
     "lessonId": "derivation",
     "front": "Dérivée de $x^n$",
-    "back": "$(x^n)' = n \cdot x^{n-1}$",
+    "back": "$(x^n)' = n \\cdot x^{n-1}$",
     "tags": [
       "dérivation",
       "formule"
@@ -174,7 +174,7 @@
     "id": "fc-ln-001",
     "lessonId": "logarithme",
     "front": "Définition du logarithme népérien",
-    "back": "$y = \ln(x) \Leftrightarrow e^y = x$. Le ln est la fonction réciproque de l'exponentielle.",
+    "back": "$y = \\ln(x) \\Leftrightarrow e^y = x$. Le ln est la fonction réciproque de l'exponentielle.",
     "tags": [
       "logarithme",
       "définition"
@@ -186,7 +186,7 @@
     "id": "fc-ln-002",
     "lessonId": "logarithme",
     "front": "ln(ab) = ?",
-    "back": "$\ln(ab) = \ln(a) + \ln(b)$ (ATTENTION : $\ln(a+b) \ne \ln(a) + \ln(b)$ !)",
+    "back": "$\\ln(ab) = \\ln(a) + \\ln(b)$ (ATTENTION : $\\ln(a+b) \ne \\ln(a) + \\ln(b)$ !)",
     "tags": [
       "logarithme",
       "formule"
@@ -235,7 +235,7 @@
     "id": "fc-proba-001",
     "lessonId": "probabilites-va",
     "front": "Formule de l'espérance E(X)",
-    "back": "$E(X) = \sum x_i \times P(X = x_i)$ (moyenne pondérée des valeurs)",
+    "back": "$E(X) = \\sum x_i \times P(X = x_i)$ (moyenne pondérée des valeurs)",
     "tags": [
       "probabilités",
       "espérance",
@@ -286,7 +286,7 @@
     "id": "fc-primitives-001",
     "lessonId": "primitives",
     "front": "Primitive de $x^n$ ($n \ne -1$)",
-    "back": "$\int x^n\,dx = \frac{x^{n+1}}{n+1} + C$",
+    "back": "$\\int x^n\\,dx = \frac{x^{n+1}}{n+1} + C$",
     "tags": [
       "primitives",
       "formule"
@@ -298,7 +298,7 @@
     "id": "fc-primitives-002",
     "lessonId": "primitives",
     "front": "Primitive de 1/x",
-    "back": "$\int \frac{1}{x}\,dx = \ln|x| + C$ (avec valeur absolue !)",
+    "back": "$\\int \frac{1}{x}\\,dx = \\ln|x| + C$ (avec valeur absolue !)",
     "tags": [
       "primitives",
       "formule"
@@ -310,7 +310,7 @@
     "id": "fc-primitives-003",
     "lessonId": "primitives",
     "front": "Formule de l'intégrale définie",
-    "back": "$\int_a^b f(x)\,dx = F(b) - F(a)$ où $F$ est une primitive de $f$",
+    "back": "$\\int_a^b f(x)\\,dx = F(b) - F(a)$ où $F$ est une primitive de $f$",
     "tags": [
       "intégrales",
       "formule"
@@ -322,7 +322,7 @@
     "id": "fc-recurrence-001",
     "lessonId": "recurrence",
     "front": "Les 3 étapes d'une récurrence",
-    "back": "1. Initialisation (vérifier $P(n_0)$) 2. Hérédité ($P(n) \Rightarrow P(n+1)$) 3. Conclusion",
+    "back": "1. Initialisation (vérifier $P(n_0)$) 2. Hérédité ($P(n) \\Rightarrow P(n+1)$) 3. Conclusion",
     "tags": [
       "récurrence",
       "méthode"
@@ -358,7 +358,7 @@
     "id": "fc-complexes-002",
     "lessonId": "complexes-introduction",
     "front": "Module d'un complexe z = a + bi",
-    "back": "$|z| = \sqrt{a^2 + b^2}$ (distance à l'origine)",
+    "back": "$|z| = \\sqrt{a^2 + b^2}$ (distance à l'origine)",
     "tags": [
       "complexes",
       "module",
@@ -432,8 +432,8 @@
   {
     "id": "fc-complexes-geo-003",
     "lessonId": "complexes-geometrie",
-    "front": "Rotation de centre $\Omega$ et d'angle $\theta$",
-    "back": "$z' - \omega = e^{i\theta}(z - \omega)$",
+    "front": "Rotation de centre $\\Omega$ et d'angle $\theta$",
+    "back": "$z' - \\omega = e^{i\theta}(z - \\omega)$",
     "tags": [
       "complexes",
       "géométrie",
@@ -483,7 +483,7 @@
     "id": "fc-divisibilite-001",
     "lessonId": "divisibilite",
     "front": "Définition : b | a",
-    "back": "b divise a signifie qu'il existe $k \in \mathbb{Z}$ tel que $a = kb$",
+    "back": "b divise a signifie qu'il existe $k \\in \\mathbb{Z}$ tel que $a = kb$",
     "tags": [
       "arithmétique",
       "divisibilité"
@@ -495,7 +495,7 @@
     "id": "fc-divisibilite-002",
     "lessonId": "divisibilite",
     "front": "Division euclidienne a = bq + r",
-    "back": "q est le quotient, r est le reste avec $0 \le r < b$",
+    "back": "q est le quotient, r est le reste avec $0 \\le r < b$",
     "tags": [
       "arithmétique",
       "division euclidienne"
@@ -507,7 +507,7 @@
     "id": "fc-divisibilite-003",
     "lessonId": "divisibilite",
     "front": "Relation PGCD $\times$ PPCM",
-    "back": "$\operatorname{pgcd}(a,b) \times \operatorname{ppcm}(a,b) = a \times b$",
+    "back": "$\\operatorname{pgcd}(a,b) \times \\operatorname{ppcm}(a,b) = a \times b$",
     "tags": [
       "arithmétique",
       "pgcd",
@@ -533,7 +533,7 @@
     "id": "fc-congruences-002",
     "lessonId": "congruences",
     "front": "Petit théorème de Fermat",
-    "back": "Si $p$ est premier et $p \nmid a$, alors $a^{p-1} \equiv 1 \pmod{p}$",
+    "back": "Si $p$ est premier et $p \nmid a$, alors $a^{p-1} \\equiv 1 \\pmod{p}$",
     "tags": [
       "congruences",
       "Fermat",
@@ -546,7 +546,7 @@
     "id": "fc-bezout-001",
     "lessonId": "bezout",
     "front": "Théorème de Bézout",
-    "back": "$\exists u,v \in \mathbb{Z}$ tels que $au + bv = \operatorname{pgcd}(a,b)$",
+    "back": "$\\exists u,v \\in \\mathbb{Z}$ tels que $au + bv = \\operatorname{pgcd}(a,b)$",
     "tags": [
       "arithmétique",
       "Bézout",
@@ -615,8 +615,8 @@
   {
     "id": "fc-ln-008",
     "lessonId": "logarithme",
-    "front": "$\ln(a^n) = ?$",
-    "back": "$\ln(a^n) = n \times \ln(a)$",
+    "front": "$\\ln(a^n) = ?$",
+    "back": "$\\ln(a^n) = n \times \\ln(a)$",
     "tags": [
       "logarithme",
       "formule"
@@ -627,8 +627,8 @@
   {
     "id": "fc-derivation-007",
     "lessonId": "derivation",
-    "front": "Dérivée de $\sin(x)$",
-    "back": "$(\sin(x))' = \cos(x)$",
+    "front": "Dérivée de $\\sin(x)$",
+    "back": "$(\\sin(x))' = \\cos(x)$",
     "tags": [
       "dérivation",
       "trigonométrie",
@@ -640,8 +640,8 @@
   {
     "id": "fc-derivation-008",
     "lessonId": "derivation",
-    "front": "Dérivée de $\cos(x)$",
-    "back": "$(\cos(x))' = -\sin(x)$ (ATTENTION au signe !)",
+    "front": "Dérivée de $\\cos(x)$",
+    "back": "$(\\cos(x))' = -\\sin(x)$ (ATTENTION au signe !)",
     "tags": [
       "dérivation",
       "trigonométrie",
@@ -654,7 +654,7 @@
     "id": "fc-primitives-004",
     "lessonId": "primitives",
     "front": "Primitive de $e^x$",
-    "back": "$\int e^x\,dx = e^x + C$",
+    "back": "$\\int e^x\\,dx = e^x + C$",
     "tags": [
       "primitives",
       "formule"
@@ -665,8 +665,8 @@
   {
     "id": "fc-primitives-005",
     "lessonId": "primitives",
-    "front": "Primitive de $\cos(x)$",
-    "back": "$\int \cos(x)\,dx = \sin(x) + C$",
+    "front": "Primitive de $\\cos(x)$",
+    "back": "$\\int \\cos(x)\\,dx = \\sin(x) + C$",
     "tags": [
       "primitives",
       "trigonométrie",
@@ -678,8 +678,8 @@
   {
     "id": "fc-primitives-006",
     "lessonId": "primitives",
-    "front": "Primitive de $\sin(x)$",
-    "back": "$\int \sin(x)\,dx = -\cos(x) + C$",
+    "front": "Primitive de $\\sin(x)$",
+    "back": "$\\int \\sin(x)\\,dx = -\\cos(x) + C$",
     "tags": [
       "primitives",
       "trigonométrie",
@@ -717,8 +717,8 @@
   {
     "id": "fc-suites-007",
     "lessonId": "suites-definition",
-    "front": "Limite de $q^n$ quand $n \to +\infty$",
-    "back": "Si $|q| < 1$ : $q^n \to 0$\nSi $q > 1$ : $q^n \to +\infty$\nSi $q \le -1$ : pas de limite",
+    "front": "Limite de $q^n$ quand $n \to +\\infty$",
+    "back": "Si $|q| < 1$ : $q^n \to 0$\nSi $q > 1$ : $q^n \to +\\infty$\nSi $q \\le -1$ : pas de limite",
     "tags": [
       "suites",
       "limite",
@@ -730,8 +730,8 @@
   {
     "id": "fc-derivation-009",
     "lessonId": "derivation",
-    "front": "Dérivée de $\sqrt{x}$",
-    "back": "$(\sqrt{x})' = \frac{1}{2\sqrt{x}} = \frac{1}{2}x^{-1/2}$",
+    "front": "Dérivée de $\\sqrt{x}$",
+    "back": "$(\\sqrt{x})' = \frac{1}{2\\sqrt{x}} = \frac{1}{2}x^{-1/2}$",
     "tags": [
       "dérivation",
       "formule"
@@ -816,7 +816,7 @@
     "id": "fc-ln-010",
     "lessonId": "logarithme",
     "front": "Piège courant avec le logarithme",
-    "back": "$\ln(a+b) \ne \ln(a) + \ln(b)$ ! C'est $\ln(ab) = \ln(a) + \ln(b)$",
+    "back": "$\\ln(a+b) \ne \\ln(a) + \\ln(b)$ ! C'est $\\ln(ab) = \\ln(a) + \\ln(b)$",
     "tags": [
       "logarithme",
       "erreur"
@@ -840,7 +840,7 @@
     "id": "fc-proba-005",
     "lessonId": "probabilites-va",
     "front": "Écart-type d'une loi binomiale",
-    "back": "$\sigma(X) = \sqrt{np(1-p)}$ pour $X \sim B(n,p)$",
+    "back": "$\\sigma(X) = \\sqrt{np(1-p)}$ pour $X \\sim B(n,p)$",
     "tags": [
       "probabilités",
       "binomiale",
@@ -853,7 +853,7 @@
     "id": "fc-proba-006",
     "lessonId": "probabilites-va",
     "front": "Formule des probabilités totales",
-    "back": "$P(B) = \sum_i P(B\mid A_i) \times P(A_i)$ où les $A_i$ forment une partition",
+    "back": "$P(B) = \\sum_i P(B\\mid A_i) \times P(A_i)$ où les $A_i$ forment une partition",
     "tags": [
       "probabilités",
       "conditionnelle",
@@ -866,7 +866,7 @@
     "id": "fc-proba-007",
     "lessonId": "probabilites-va",
     "front": "Formule de Bayes simplifiée",
-    "back": "$P(A\mid B) = \frac{P(B\mid A) \times P(A)}{P(B)}$",
+    "back": "$P(A\\mid B) = \frac{P(B\\mid A) \times P(A)}{P(B)}$",
     "tags": [
       "probabilités",
       "conditionnelle",
@@ -879,7 +879,7 @@
     "id": "fc-primitives-007",
     "lessonId": "primitives",
     "front": "Primitive de u'/u",
-    "back": "$\int \frac{u'}{u}\,dx = \ln|u| + C$",
+    "back": "$\\int \frac{u'}{u}\\,dx = \\ln|u| + C$",
     "tags": [
       "primitives",
       "formule"
@@ -891,7 +891,7 @@
     "id": "fc-primitives-008",
     "lessonId": "primitives",
     "front": "Primitive de $u'e^u$",
-    "back": "$\int u'e^u\,dx = e^u + C$",
+    "back": "$\\int u'e^u\\,dx = e^u + C$",
     "tags": [
       "primitives",
       "formule"
@@ -903,7 +903,7 @@
     "id": "fc-primitives-009",
     "lessonId": "primitives",
     "front": "Intégration par parties (IPP)",
-    "back": "$\int u v'\,dx = [uv] - \int u'v\,dx$",
+    "back": "$\\int u v'\\,dx = [uv] - \\int u'v\\,dx$",
     "tags": [
       "primitives",
       "IPP",
@@ -916,7 +916,7 @@
     "id": "fc-primitives-010",
     "lessonId": "primitives",
     "front": "Valeur moyenne d'une fonction",
-    "back": "$\mu = \frac{1}{b-a} \times \int_a^b f(x)\,dx$",
+    "back": "$\\mu = \frac{1}{b-a} \times \\int_a^b f(x)\\,dx$",
     "tags": [
       "primitives",
       "intégrale",
@@ -940,8 +940,8 @@
   {
     "id": "fc-recurrence-004",
     "lessonId": "recurrence",
-    "front": "Somme des carrés : $1^2 + 2^2 + \dots + n^2$",
-    "back": "$1^2 + 2^2 + \dots + n^2 = \frac{n(n+1)(2n+1)}{6}$",
+    "front": "Somme des carrés : $1^2 + 2^2 + \\dots + n^2$",
+    "back": "$1^2 + 2^2 + \\dots + n^2 = \frac{n(n+1)(2n+1)}{6}$",
     "tags": [
       "récurrence",
       "formule",
@@ -978,7 +978,7 @@
     "id": "fc-complexes-008",
     "lessonId": "complexes-introduction",
     "front": "Somme $z + \bar{z}$",
-    "back": "$z + \bar{z} = 2 \times \operatorname{Re}(z)$ (le double de la partie réelle)",
+    "back": "$z + \bar{z} = 2 \times \\operatorname{Re}(z)$ (le double de la partie réelle)",
     "tags": [
       "complexes",
       "formule"
@@ -990,7 +990,7 @@
     "id": "fc-complexes-geo-004",
     "lessonId": "complexes-geometrie",
     "front": "Forme trigonométrique d'un complexe",
-    "back": "$z = r(\cos\theta + i\sin\theta) = r \cdot e^{i\theta}$ avec $r = |z|$ et $\theta = \arg(z)$",
+    "back": "$z = r(\\cos\theta + i\\sin\theta) = r \\cdot e^{i\theta}$ avec $r = |z|$ et $\theta = \\arg(z)$",
     "tags": [
       "complexes",
       "géométrie",
@@ -1003,7 +1003,7 @@
     "id": "fc-complexes-geo-005",
     "lessonId": "complexes-geometrie",
     "front": "Formule d'Euler",
-    "back": "$e^{i\theta} = \cos\theta + i\sin\theta$",
+    "back": "$e^{i\theta} = \\cos\theta + i\\sin\theta$",
     "tags": [
       "complexes",
       "géométrie",
@@ -1029,7 +1029,7 @@
     "id": "fc-matrices-004",
     "lessonId": "matrices-operations",
     "front": "Inverse d'une matrice $2\times 2$",
-    "back": "Pour $A = \begin{pmatrix} a & b \\ c & d \end{pmatrix}$ : $A^{-1} = \frac{1}{\det A}\begin{pmatrix} d & -b \\ -c & a \end{pmatrix}$ avec $\det A = ad - bc$",
+    "back": "Pour $A = \begin{pmatrix} a & b \\ c & d \\end{pmatrix}$ : $A^{-1} = \frac{1}{\\det A}\begin{pmatrix} d & -b \\ -c & a \\end{pmatrix}$ avec $\\det A = ad - bc$",
     "tags": [
       "matrices",
       "inverse",
@@ -1042,7 +1042,7 @@
     "id": "fc-matrices-005",
     "lessonId": "matrices-operations",
     "front": "Condition pour que A soit inversible",
-    "back": "$A$ est inversible ssi $\det(A) \ne 0$",
+    "back": "$A$ est inversible ssi $\\det(A) \ne 0$",
     "tags": [
       "matrices",
       "inverse"
@@ -1116,7 +1116,7 @@
     "id": "fc-bezout-004",
     "lessonId": "bezout",
     "front": "Solution générale d'une équation diophantienne",
-    "back": "Si $ax + by = c$ admet $(x_0,y_0)$, alors toutes les solutions sont $x = x_0 + (b/d)k$, $y = y_0 - (a/d)k$ avec $d = \operatorname{pgcd}(a,b)$",
+    "back": "Si $ax + by = c$ admet $(x_0,y_0)$, alors toutes les solutions sont $x = x_0 + (b/d)k$, $y = y_0 - (a/d)k$ avec $d = \\operatorname{pgcd}(a,b)$",
     "tags": [
       "arithmétique",
       "diophantienne",
@@ -1129,7 +1129,7 @@
     "id": "fc-bezout-005",
     "lessonId": "bezout",
     "front": "Trouver l'inverse de a modulo n",
-    "back": "Utiliser Bézout : si $\operatorname{pgcd}(a,n) = 1$, alors $au + nv = 1$, donc $a^{-1} \equiv u \pmod{n}$",
+    "back": "Utiliser Bézout : si $\\operatorname{pgcd}(a,n) = 1$, alors $au + nv = 1$, donc $a^{-1} \\equiv u \\pmod{n}$",
     "tags": [
       "arithmétique",
       "Bézout",
@@ -1141,7 +1141,7 @@
   {
     "id": "fc-implic-001",
     "lessonId": "implication-equivalence",
-    "front": "$P \Rightarrow Q$ est FAUSSE ssi...",
+    "front": "$P \\Rightarrow Q$ est FAUSSE ssi...",
     "back": "P est VRAIE et Q est FAUSSE. C'est le seul cas où l'implication est fausse.",
     "tags": [
       "logique",
@@ -1153,8 +1153,8 @@
   {
     "id": "fc-implic-002",
     "lessonId": "implication-equivalence",
-    "front": "Contraposée de $P \Rightarrow Q$",
-    "back": "$\lnot Q \Rightarrow \lnot P$. Elle est ÉQUIVALENTE à l'implication originale.",
+    "front": "Contraposée de $P \\Rightarrow Q$",
+    "back": "$\\lnot Q \\Rightarrow \\lnot P$. Elle est ÉQUIVALENTE à l'implication originale.",
     "tags": [
       "logique",
       "contraposée"
@@ -1165,8 +1165,8 @@
   {
     "id": "fc-implic-003",
     "lessonId": "implication-equivalence",
-    "front": "Différence entre $\Rightarrow$ et $\Leftrightarrow$",
-    "back": "$P \Rightarrow Q$ : condition SUFFISANTE (P suffit pour Q)\n$P \Leftrightarrow Q$ : condition NÉCESSAIRE ET SUFFISANTE",
+    "front": "Différence entre $\\Rightarrow$ et $\\Leftrightarrow$",
+    "back": "$P \\Rightarrow Q$ : condition SUFFISANTE (P suffit pour Q)\n$P \\Leftrightarrow Q$ : condition NÉCESSAIRE ET SUFFISANTE",
     "tags": [
       "logique",
       "équivalence"
@@ -1178,7 +1178,7 @@
     "id": "fc-implic-004",
     "lessonId": "implication-equivalence",
     "front": "Piège : réciproque vs contraposée",
-    "back": "Réciproque de $P \Rightarrow Q$ : $Q \Rightarrow P$ (pas équivalente !)\nContraposée : $\lnot Q \Rightarrow \lnot P$ (équivalente)",
+    "back": "Réciproque de $P \\Rightarrow Q$ : $Q \\Rightarrow P$ (pas équivalente !)\nContraposée : $\\lnot Q \\Rightarrow \\lnot P$ (équivalente)",
     "tags": [
       "logique",
       "erreur"
@@ -1202,7 +1202,7 @@
     "id": "fc-suites-lim-002",
     "lessonId": "suites-limites",
     "front": "Formes indéterminées pour les suites",
-    "back": "$+\infty - \infty$, $0 \times \infty$, $\infty/\infty$, $0/0$",
+    "back": "$+\\infty - \\infty$, $0 \times \\infty$, $\\infty/\\infty$, $0/0$",
     "tags": [
       "suites",
       "limite"
@@ -1239,7 +1239,7 @@
     "id": "fc-suites-conv-001",
     "lessonId": "suites-convergence",
     "front": "Définition : suite convergente",
-    "back": "Une suite $(u_n)$ converge vers $\ell$ si pour tout $\varepsilon > 0$, il existe $N$ tel que $n \ge N \Rightarrow |u_n - \ell| < \varepsilon$",
+    "back": "Une suite $(u_n)$ converge vers $\\ell$ si pour tout $\\varepsilon > 0$, il existe $N$ tel que $n \\ge N \\Rightarrow |u_n - \\ell| < \\varepsilon$",
     "tags": [
       "suites",
       "convergence",
@@ -1277,8 +1277,8 @@
   {
     "id": "fc-suites-conv-004",
     "lessonId": "suites-convergence",
-    "front": "Piège : convergente $\Rightarrow$ bornée, mais...",
-    "back": "Suite convergente $\Rightarrow$ bornée : VRAI\nSuite bornée $\Rightarrow$ convergente : FAUX (ex: $(-1)^n$)",
+    "front": "Piège : convergente $\\Rightarrow$ bornée, mais...",
+    "back": "Suite convergente $\\Rightarrow$ bornée : VRAI\nSuite bornée $\\Rightarrow$ convergente : FAUX (ex: $(-1)^n$)",
     "tags": [
       "suites",
       "convergence",
@@ -1365,7 +1365,7 @@
     "id": "fc-contin-002",
     "lessonId": "continuite",
     "front": "Théorème des valeurs intermédiaires (TVI)",
-    "back": "Si $f$ continue sur $[a,b]$ et $k$ entre $f(a)$ et $f(b)$, alors $\exists c \in [a,b]$ tel que $f(c) = k$",
+    "back": "Si $f$ continue sur $[a,b]$ et $k$ entre $f(a)$ et $f(b)$, alors $\\exists c \\in [a,b]$ tel que $f(c) = k$",
     "tags": [
       "continuité",
       "TVI"
@@ -1377,7 +1377,7 @@
     "id": "fc-contin-003",
     "lessonId": "continuite",
     "front": "Corollaire du TVI pour les équations",
-    "back": "Si $f$ continue, $f(a)$ et $f(b)$ de signes contraires, alors $\exists c \in ]a,b[$ tel que $f(c) = 0$",
+    "back": "Si $f$ continue, $f(a)$ et $f(b)$ de signes contraires, alors $\\exists c \\in ]a,b[$ tel que $f(c) = 0$",
     "tags": [
       "continuité",
       "TVI",
@@ -1402,7 +1402,7 @@
     "id": "fc-convex-001",
     "lessonId": "convexite",
     "front": "f convexe ssi...",
-    "back": "$f''(x) \ge 0$ sur l'intervalle (la courbe est au-dessus de ses tangentes)",
+    "back": "$f''(x) \\ge 0$ sur l'intervalle (la courbe est au-dessus de ses tangentes)",
     "tags": [
       "convexité"
     ],
@@ -1413,7 +1413,7 @@
     "id": "fc-convex-002",
     "lessonId": "convexite",
     "front": "f concave ssi...",
-    "back": "$f''(x) \le 0$ sur l'intervalle (la courbe est en-dessous de ses tangentes)",
+    "back": "$f''(x) \\le 0$ sur l'intervalle (la courbe est en-dessous de ses tangentes)",
     "tags": [
       "convexité"
     ],
@@ -1436,7 +1436,7 @@
     "id": "fc-convex-004",
     "lessonId": "convexite",
     "front": "Inégalité de convexité (Jensen)",
-    "back": "Si $f$ convexe : $f((a+b)/2) \le (f(a)+f(b))/2$",
+    "back": "Si $f$ convexe : $f((a+b)/2) \\le (f(a)+f(b))/2$",
     "tags": [
       "convexité",
       "inégalité"
@@ -1447,8 +1447,8 @@
   {
     "id": "fc-trigo-base-001",
     "lessonId": "trigonometrie-bases",
-    "front": "$\cos^2 x + \sin^2 x = ?$",
-    "back": "$\cos^2 x + \sin^2 x = 1$ (relation fondamentale)",
+    "front": "$\\cos^2 x + \\sin^2 x = ?$",
+    "back": "$\\cos^2 x + \\sin^2 x = 1$ (relation fondamentale)",
     "tags": [
       "trigonométrie",
       "formule"
@@ -1459,8 +1459,8 @@
   {
     "id": "fc-trigo-base-002",
     "lessonId": "trigonometrie-bases",
-    "front": "Valeurs remarquables : $\cos(\pi/3)$ et $\sin(\pi/3)$",
-    "back": "$\cos(\pi/3) = 1/2$, $\sin(\pi/3) = \sqrt{3}/2$",
+    "front": "Valeurs remarquables : $\\cos(\\pi/3)$ et $\\sin(\\pi/3)$",
+    "back": "$\\cos(\\pi/3) = 1/2$, $\\sin(\\pi/3) = \\sqrt{3}/2$",
     "tags": [
       "trigonométrie",
       "valeurs"
@@ -1471,8 +1471,8 @@
   {
     "id": "fc-trigo-base-003",
     "lessonId": "trigonometrie-bases",
-    "front": "$\cos(\pi/4)$ et $\sin(\pi/4)$",
-    "back": "$\cos(\pi/4) = \sin(\pi/4) = \sqrt{2}/2$",
+    "front": "$\\cos(\\pi/4)$ et $\\sin(\\pi/4)$",
+    "back": "$\\cos(\\pi/4) = \\sin(\\pi/4) = \\sqrt{2}/2$",
     "tags": [
       "trigonométrie",
       "valeurs"
@@ -1483,8 +1483,8 @@
   {
     "id": "fc-trigo-base-004",
     "lessonId": "trigonometrie-bases",
-    "front": "$\cos(a+b) = ?$",
-    "back": "$\cos(a+b) = \cos(a)\cos(b) - \sin(a)\sin(b)$",
+    "front": "$\\cos(a+b) = ?$",
+    "back": "$\\cos(a+b) = \\cos(a)\\cos(b) - \\sin(a)\\sin(b)$",
     "tags": [
       "trigonométrie",
       "formule"
@@ -1495,8 +1495,8 @@
   {
     "id": "fc-trigo-base-005",
     "lessonId": "trigonometrie-bases",
-    "front": "$\sin(a+b) = ?$",
-    "back": "$\sin(a+b) = \sin(a)\cos(b) + \cos(a)\sin(b)$",
+    "front": "$\\sin(a+b) = ?$",
+    "back": "$\\sin(a+b) = \\sin(a)\\cos(b) + \\cos(a)\\sin(b)$",
     "tags": [
       "trigonométrie",
       "formule"
@@ -1507,8 +1507,8 @@
   {
     "id": "fc-fonc-trigo-001",
     "lessonId": "fonctions-trigo",
-    "front": "Période de $\cos(x)$ et $\sin(x)$",
-    "back": "Période = $2\pi$",
+    "front": "Période de $\\cos(x)$ et $\\sin(x)$",
+    "back": "Période = $2\\pi$",
     "tags": [
       "trigonométrie",
       "période"
@@ -1520,7 +1520,7 @@
     "id": "fc-fonc-trigo-002",
     "lessonId": "fonctions-trigo",
     "front": "Période de tan(x)",
-    "back": "Période = $\pi$",
+    "back": "Période = $\\pi$",
     "tags": [
       "trigonométrie",
       "période"
@@ -1532,7 +1532,7 @@
     "id": "fc-fonc-trigo-003",
     "lessonId": "fonctions-trigo",
     "front": "Dérivée de tan(x)",
-    "back": "$(\tan(x))' = 1 + \tan^2(x) = 1/\cos^2(x)$",
+    "back": "$(\tan(x))' = 1 + \tan^2(x) = 1/\\cos^2(x)$",
     "tags": [
       "trigonométrie",
       "dérivée"
@@ -1544,7 +1544,7 @@
     "id": "fc-fonc-trigo-004",
     "lessonId": "fonctions-trigo",
     "front": "Domaine de définition de tan(x)",
-    "back": "$\mathbb{R} \setminus \{\pi/2 + k\pi, k \in \mathbb{Z}\}$ (asymptotes où $\cos(x) = 0$)",
+    "back": "$\\mathbb{R} \\setminus \\{\\pi/2 + k\\pi, k \\in \\mathbb{Z}\\}$ (asymptotes où $\\cos(x) = 0$)",
     "tags": [
       "trigonométrie",
       "domaine"
@@ -1555,7 +1555,7 @@
   {
     "id": "fc-integ-001",
     "lessonId": "integrales",
-    "front": "Interprétation géométrique de $\int_a^b f(x)\,dx$",
+    "front": "Interprétation géométrique de $\\int_a^b f(x)\\,dx$",
     "back": "Aire algébrique entre la courbe et l'axe des x (positive au-dessus, négative en-dessous)",
     "tags": [
       "intégrale",
@@ -1568,7 +1568,7 @@
     "id": "fc-integ-002",
     "lessonId": "integrales",
     "front": "Relation de Chasles pour les intégrales",
-    "back": "$\int_a^b f + \int_b^c f = \int_a^c f$",
+    "back": "$\\int_a^b f + \\int_b^c f = \\int_a^c f$",
     "tags": [
       "intégrale",
       "formule"
@@ -1579,8 +1579,8 @@
   {
     "id": "fc-integ-003",
     "lessonId": "integrales",
-    "front": "$\int_a^b f = ?$",
-    "back": "$\int_a^b f = -\int_b^a f$ (inverser les bornes change le signe)",
+    "front": "$\\int_a^b f = ?$",
+    "back": "$\\int_a^b f = -\\int_b^a f$ (inverser les bornes change le signe)",
     "tags": [
       "intégrale",
       "formule"
@@ -1592,7 +1592,7 @@
     "id": "fc-integ-004",
     "lessonId": "integrales",
     "front": "Linéarité de l'intégrale",
-    "back": "$\int (\alpha f + \beta g) = \alpha \int f + \beta \int g$",
+    "back": "$\\int (\\alpha f + \beta g) = \\alpha \\int f + \beta \\int g$",
     "tags": [
       "intégrale",
       "formule"
@@ -1604,7 +1604,7 @@
     "id": "fc-integ-005",
     "lessonId": "integrales",
     "front": "Aire entre deux courbes",
-    "back": "Aire = $\int_a^b |f(x) - g(x)|\,dx$",
+    "back": "Aire = $\\int_a^b |f(x) - g(x)|\\,dx$",
     "tags": [
       "intégrale",
       "aire"
@@ -1616,7 +1616,7 @@
     "id": "fc-normale-001",
     "lessonId": "loi-normale",
     "front": "Notation de la loi normale centrée réduite",
-    "back": "$X \sim N(0, 1)$ : moyenne $\mu = 0$, écart-type $\sigma = 1$",
+    "back": "$X \\sim N(0, 1)$ : moyenne $\\mu = 0$, écart-type $\\sigma = 1$",
     "tags": [
       "probabilités",
       "normale"
@@ -1628,7 +1628,7 @@
     "id": "fc-normale-002",
     "lessonId": "loi-normale",
     "front": "Règle 68-95-99.7",
-    "back": "$P(\mu-\sigma < X < \mu+\sigma) \approx 68\%$\n$P(\mu-2\sigma < X < \mu+2\sigma) \approx 95\%$\n$P(\mu-3\sigma < X < \mu+3\sigma) \approx 99.7\%$",
+    "back": "$P(\\mu-\\sigma < X < \\mu+\\sigma) \\approx 68\\%$\n$P(\\mu-2\\sigma < X < \\mu+2\\sigma) \\approx 95\\%$\n$P(\\mu-3\\sigma < X < \\mu+3\\sigma) \\approx 99.7\\%$",
     "tags": [
       "probabilités",
       "normale"
@@ -1639,8 +1639,8 @@
   {
     "id": "fc-normale-003",
     "lessonId": "loi-normale",
-    "front": "Centrer-réduire $X \sim N(\mu, \sigma^2)$",
-    "back": "$Z = \frac{X - \mu}{\sigma}$ suit $N(0, 1)$",
+    "front": "Centrer-réduire $X \\sim N(\\mu, \\sigma^2)$",
+    "back": "$Z = \frac{X - \\mu}{\\sigma}$ suit $N(0, 1)$",
     "tags": [
       "probabilités",
       "normale"
@@ -1651,8 +1651,8 @@
   {
     "id": "fc-normale-004",
     "lessonId": "loi-normale",
-    "front": "$P(X \le -a)$ pour $X \sim N(0,1)$",
-    "back": "$P(X \le -a) = 1 - P(X \le a)$ par symétrie",
+    "front": "$P(X \\le -a)$ pour $X \\sim N(0,1)$",
+    "back": "$P(X \\le -a) = 1 - P(X \\le a)$ par symétrie",
     "tags": [
       "probabilités",
       "normale"
@@ -1677,7 +1677,7 @@
     "id": "fc-vect-esp-002",
     "lessonId": "vecteurs-espace",
     "front": "Condition de colinéarité dans l'espace",
-    "back": "$u$ et $v$ colinéaires $\Leftrightarrow$ $\exists k$ : $v = ku$ $\Leftrightarrow$ coordonnées proportionnelles",
+    "back": "$u$ et $v$ colinéaires $\\Leftrightarrow$ $\\exists k$ : $v = ku$ $\\Leftrightarrow$ coordonnées proportionnelles",
     "tags": [
       "géométrie",
       "vecteurs",
@@ -1690,7 +1690,7 @@
     "id": "fc-vect-esp-003",
     "lessonId": "vecteurs-espace",
     "front": "Condition de coplanarité (3 vecteurs)",
-    "back": "$u, v, w$ coplanaires $\Leftrightarrow$ $\det(u, v, w) = 0$",
+    "back": "$u, v, w$ coplanaires $\\Leftrightarrow$ $\\det(u, v, w) = 0$",
     "tags": [
       "géométrie",
       "vecteurs",
@@ -1715,7 +1715,7 @@
     "id": "fc-scal-esp-001",
     "lessonId": "produit-scalaire-espace",
     "front": "Produit scalaire avec coordonnées",
-    "back": "$u \cdot v = x_1x_2 + y_1y_2 + z_1z_2$",
+    "back": "$u \\cdot v = x_1x_2 + y_1y_2 + z_1z_2$",
     "tags": [
       "géométrie",
       "produit scalaire"
@@ -1727,7 +1727,7 @@
     "id": "fc-scal-esp-002",
     "lessonId": "produit-scalaire-espace",
     "front": "Norme d'un vecteur dans l'espace",
-    "back": "$\|u\| = \sqrt{x^2 + y^2 + z^2}$",
+    "back": "$\\|u\\| = \\sqrt{x^2 + y^2 + z^2}$",
     "tags": [
       "géométrie",
       "norme"
@@ -1739,7 +1739,7 @@
     "id": "fc-scal-esp-003",
     "lessonId": "produit-scalaire-espace",
     "front": "Condition d'orthogonalité",
-    "back": "$u \perp v \Leftrightarrow u \cdot v = 0$",
+    "back": "$u \\perp v \\Leftrightarrow u \\cdot v = 0$",
     "tags": [
       "géométrie",
       "orthogonalité"
@@ -1750,8 +1750,8 @@
   {
     "id": "fc-scal-esp-004",
     "lessonId": "produit-scalaire-espace",
-    "front": "Formule avec angle : $u \cdot v$",
-    "back": "$u \cdot v = \|u\| \times \|v\| \times \cos(\theta)$",
+    "front": "Formule avec angle : $u \\cdot v$",
+    "back": "$u \\cdot v = \\|u\\| \times \\|v\\| \times \\cos(\theta)$",
     "tags": [
       "géométrie",
       "produit scalaire",
@@ -1764,7 +1764,7 @@
     "id": "fc-droites-plans-001",
     "lessonId": "droites-plans-espace",
     "front": "Représentation paramétrique d'une droite",
-    "back": "$x = x_0 + ta$\n$y = y_0 + tb$, $t \in \mathbb{R}$\n$z = z_0 + tc$",
+    "back": "$x = x_0 + ta$\n$y = y_0 + tb$, $t \\in \\mathbb{R}$\n$z = z_0 + tc$",
     "tags": [
       "géométrie",
       "droite",
@@ -1790,7 +1790,7 @@
     "id": "fc-droites-plans-003",
     "lessonId": "droites-plans-espace",
     "front": "Droite parallèle à un plan",
-    "back": "$u \cdot n = 0$ (vecteur directeur orthogonal au vecteur normal)",
+    "back": "$u \\cdot n = 0$ (vecteur directeur orthogonal au vecteur normal)",
     "tags": [
       "géométrie",
       "parallèle"
@@ -1814,7 +1814,7 @@
     "id": "fc-ortho-esp-001",
     "lessonId": "orthogonalite-espace",
     "front": "Distance point-plan",
-    "back": "$d(M, P) = \frac{|ax_m + by_m + cz_m + d|}{\sqrt{a^2 + b^2 + c^2}}$",
+    "back": "$d(M, P) = \frac{|ax_m + by_m + cz_m + d|}{\\sqrt{a^2 + b^2 + c^2}}$",
     "tags": [
       "géométrie",
       "distance"
@@ -1850,7 +1850,7 @@
     "id": "fc-ortho-esp-004",
     "lessonId": "orthogonalite-espace",
     "front": "Piège : perpendiculaire vs parallèle",
-    "back": "$d \perp P$ : $u \parallel n$ (colinéaires)\n$d \parallel P$ : $u \cdot n = 0$ (orthogonaux)",
+    "back": "$d \\perp P$ : $u \\parallel n$ (colinéaires)\n$d \\parallel P$ : $u \\cdot n = 0$ (orthogonaux)",
     "tags": [
       "géométrie",
       "erreur"
@@ -1862,7 +1862,7 @@
     "id": "fc-va-001",
     "lessonId": "variables-aleatoires",
     "front": "Espérance E(X)",
-    "back": "$E(X) = \sum x_i \times P(X = x_i)$",
+    "back": "$E(X) = \\sum x_i \times P(X = x_i)$",
     "tags": [
       "probabilités",
       "espérance"
@@ -1973,7 +1973,7 @@
     "id": "fc-compl-formes-001",
     "lessonId": "complexes-formes",
     "front": "Forme exponentielle",
-    "back": "$z = r \times e^{i\theta}$ avec $r = |z|$ et $\theta = \arg(z)$",
+    "back": "$z = r \times e^{i\theta}$ avec $r = |z|$ et $\theta = \\arg(z)$",
     "tags": [
       "complexes",
       "forme exponentielle"
@@ -1985,7 +1985,7 @@
     "id": "fc-compl-formes-002",
     "lessonId": "complexes-formes",
     "front": "Formule de Moivre",
-    "back": "$(\cos\theta + i \sin\theta)^n = \cos(n\theta) + i \sin(n\theta)$",
+    "back": "$(\\cos\theta + i \\sin\theta)^n = \\cos(n\theta) + i \\sin(n\theta)$",
     "tags": [
       "complexes",
       "Moivre"
@@ -1997,7 +1997,7 @@
     "id": "fc-compl-formes-003",
     "lessonId": "complexes-formes",
     "front": "Racines n-ièmes de l'unité",
-    "back": "$z_k = e^{i \times 2k\pi/n}$ pour $k = 0, 1, \dots, n-1$",
+    "back": "$z_k = e^{i \times 2k\\pi/n}$ pour $k = 0, 1, \\dots, n-1$",
     "tags": [
       "complexes",
       "racines"
@@ -2008,8 +2008,8 @@
   {
     "id": "fc-compl-formes-004",
     "lessonId": "complexes-formes",
-    "front": "$e^{i\pi} = ?$",
-    "back": "$e^{i\pi} = -1$ (identité d'Euler)",
+    "front": "$e^{i\\pi} = ?$",
+    "back": "$e^{i\\pi} = -1$ (identité d'Euler)",
     "tags": [
       "complexes",
       "Euler"
@@ -2045,7 +2045,7 @@
     "id": "fc-mat-syst-003",
     "lessonId": "matrices-systemes",
     "front": "Système de Cramer",
-    "back": "Si $\det(A) \ne 0$, le système a une unique solution",
+    "back": "Si $\\det(A) \ne 0$, le système a une unique solution",
     "tags": [
       "matrices",
       "systèmes",
@@ -2083,7 +2083,7 @@
     "id": "fc-graphes-intro-002",
     "lessonId": "graphes-introduction",
     "front": "Théorème des poignées de main",
-    "back": "$\sum \deg(v) = 2 \times$ nombre d'arêtes",
+    "back": "$\\sum \\deg(v) = 2 \times$ nombre d'arêtes",
     "tags": [
       "graphes",
       "formule"
@@ -2179,7 +2179,7 @@
     "id": "fc-comb-002",
     "lessonId": "combinatoire",
     "front": "Quelle est la définition de n! (factorielle) ?",
-    "back": "$n! = n \times (n-1) \times \dots \times 2 \times 1$. Convention : $0! = 1$.",
+    "back": "$n! = n \times (n-1) \times \\dots \times 2 \times 1$. Convention : $0! = 1$.",
     "tags": [
       "combinatoire",
       "factorielle"
@@ -2191,7 +2191,7 @@
     "id": "fc-comb-003",
     "lessonId": "combinatoire",
     "front": "Formule du nombre d'arrangements de k parmi n",
-    "back": "$A(n,k) = \frac{n!}{(n-k)!} = n \times (n-1) \times \dots \times (n-k+1)$. Ordre compte, pas de répétition.",
+    "back": "$A(n,k) = \frac{n!}{(n-k)!} = n \times (n-1) \times \\dots \times (n-k+1)$. Ordre compte, pas de répétition.",
     "tags": [
       "combinatoire",
       "arrangement"
@@ -2266,7 +2266,7 @@
     "id": "fc-comb-009",
     "lessonId": "combinatoire",
     "front": "Somme de tous les coefficients binomiaux pour n fixé",
-    "back": "$\sum_{k=0}^{n} \binom{n}{k} = 2^n$. C'est le nombre total de sous-ensembles d'un ensemble à $n$ éléments.",
+    "back": "$\\sum_{k=0}^{n} \binom{n}{k} = 2^n$. C'est le nombre total de sous-ensembles d'un ensemble à $n$ éléments.",
     "tags": [
       "combinatoire",
       "propriété"
@@ -2278,7 +2278,7 @@
     "id": "fc-comb-010",
     "lessonId": "combinatoire",
     "front": "Principe multiplicatif (ET PUIS)",
-    "back": "$\mathrm{Card}(A \times B) = \mathrm{Card}(A) \times \mathrm{Card}(B)$. Quand on fait un choix PUIS un autre indépendamment.",
+    "back": "$\\mathrm{Card}(A \times B) = \\mathrm{Card}(A) \times \\mathrm{Card}(B)$. Quand on fait un choix PUIS un autre indépendamment.",
     "tags": [
       "combinatoire",
       "principe"
@@ -2290,7 +2290,7 @@
     "id": "fc-comb-011",
     "lessonId": "combinatoire",
     "front": "Principe additif (OU)",
-    "back": "$\mathrm{Card}(A \cup B) = \mathrm{Card}(A) + \mathrm{Card}(B)$ si $A$ et $B$ sont disjoints. Sinon : $\mathrm{Card}(A) + \mathrm{Card}(B) - \mathrm{Card}(A \cap B)$.",
+    "back": "$\\mathrm{Card}(A \\cup B) = \\mathrm{Card}(A) + \\mathrm{Card}(B)$ si $A$ et $B$ sont disjoints. Sinon : $\\mathrm{Card}(A) + \\mathrm{Card}(B) - \\mathrm{Card}(A \\cap B)$.",
     "tags": [
       "combinatoire",
       "principe"
@@ -2339,7 +2339,7 @@
     "id": "fc-equadiff-003",
     "lessonId": "equations-differentielles",
     "front": "Solution particulière constante de y' = ay + b",
-    "back": "$y_0 = -b/a$. On la trouve en posant $y' = 0$ : $0 = ay + b \Rightarrow y = -b/a$.",
+    "back": "$y_0 = -b/a$. On la trouve en posant $y' = 0$ : $0 = ay + b \\Rightarrow y = -b/a$.",
     "tags": [
       "équations différentielles",
       "astuce"
@@ -2362,7 +2362,7 @@
   {
     "id": "fc-equadiff-005",
     "lessonId": "equations-differentielles",
-    "front": "Limite de $y(x) = Ce^{ax} + k$ quand $x \to +\infty$ si $a < 0$",
+    "front": "Limite de $y(x) = Ce^{ax} + k$ quand $x \to +\\infty$ si $a < 0$",
     "back": "La limite est $k$. Le terme $Ce^{ax}$ tend vers 0 car $a < 0$.",
     "tags": [
       "équations différentielles",
@@ -2399,7 +2399,7 @@
     "id": "fc-equadiff-008",
     "lessonId": "equations-differentielles",
     "front": "Solutions de y'' - 4y = 0",
-    "back": "$y(x) = Ae^{2x} + Be^{-2x}$. Équation caractéristique : $r^2 - 4 = 0 \Rightarrow r = \pm 2$.",
+    "back": "$y(x) = Ae^{2x} + Be^{-2x}$. Équation caractéristique : $r^2 - 4 = 0 \\Rightarrow r = \\pm 2$.",
     "tags": [
       "équations différentielles",
       "second ordre",
@@ -2448,8 +2448,8 @@
   {
     "id": "fc-equadiff-012",
     "lessonId": "equations-differentielles",
-    "front": "Application : décroissance radioactive $m'(t) = -\lambda m(t)$",
-    "back": "$m(t) = m_0 e^{-\lambda t}$ où $m_0$ est la masse initiale. C'est une décroissance exponentielle.",
+    "front": "Application : décroissance radioactive $m'(t) = -\\lambda m(t)$",
+    "back": "$m(t) = m_0 e^{-\\lambda t}$ où $m_0$ est la masse initiale. C'est une décroissance exponentielle.",
     "tags": [
       "équations différentielles",
       "application",
@@ -2500,7 +2500,7 @@
     "id": "fc-prem-004",
     "lessonId": "nombres-premiers",
     "front": "Critère de la racine carrée pour le test de primalité",
-    "back": "Si $n$ n'est pas premier, il admet un diviseur premier $p \le \sqrt{n}$. Il suffit de tester les premiers $\le \sqrt{n}$.",
+    "back": "Si $n$ n'est pas premier, il admet un diviseur premier $p \\le \\sqrt{n}$. Il suffit de tester les premiers $\\le \\sqrt{n}$.",
     "tags": [
       "arithmétique",
       "nombres premiers",
@@ -2513,7 +2513,7 @@
     "id": "fc-prem-005",
     "lessonId": "nombres-premiers",
     "front": "Théorème Fondamental de l'Arithmétique",
-    "back": "Tout entier $n \ge 2$ se décompose de manière UNIQUE en produit de facteurs premiers.",
+    "back": "Tout entier $n \\ge 2$ se décompose de manière UNIQUE en produit de facteurs premiers.",
     "tags": [
       "arithmétique",
       "décomposition",
@@ -2526,7 +2526,7 @@
     "id": "fc-prem-006",
     "lessonId": "nombres-premiers",
     "front": "Formule du nombre de diviseurs",
-    "back": "Si $n = p_1^{\alpha_1} \times \dots \times p_k^{\alpha_k}$, alors $\tau(n) = (\alpha_1+1)(\alpha_2+1)\dots(\alpha_k+1)$.",
+    "back": "Si $n = p_1^{\\alpha_1} \times \\dots \times p_k^{\\alpha_k}$, alors $\tau(n) = (\\alpha_1+1)(\\alpha_2+1)\\dots(\\alpha_k+1)$.",
     "tags": [
       "arithmétique",
       "diviseurs",
@@ -2604,7 +2604,7 @@
     "id": "fc-prem-012",
     "lessonId": "nombres-premiers",
     "front": "Relation PGCD $\times$ PPCM",
-    "back": "$\operatorname{pgcd}(a,b) \times \operatorname{ppcm}(a,b) = a \times b$",
+    "back": "$\\operatorname{pgcd}(a,b) \times \\operatorname{ppcm}(a,b) = a \times b$",
     "tags": [
       "arithmétique",
       "pgcd",
@@ -2617,8 +2617,8 @@
   {
     "id": "fc-eqpoly-001",
     "lessonId": "equations-polynomiales-complexes",
-    "front": "Solutions de $az^2 + bz + c = 0$ (réels) si $\Delta < 0$ ?",
-    "back": "$z = \frac{-b \pm i\sqrt{-\Delta}}{2a}$. Deux solutions complexes conjuguées.",
+    "front": "Solutions de $az^2 + bz + c = 0$ (réels) si $\\Delta < 0$ ?",
+    "back": "$z = \frac{-b \\pm i\\sqrt{-\\Delta}}{2a}$. Deux solutions complexes conjuguées.",
     "tags": [
       "complexes",
       "équation",
@@ -2630,8 +2630,8 @@
   {
     "id": "fc-eqpoly-002",
     "lessonId": "equations-polynomiales-complexes",
-    "front": "Peut-on écrire $\sqrt{Z}$ pour $Z$ complexe ?",
-    "back": "NON ! On écrit : \"soit $\delta$ tel que $\delta^2 = Z$\" et on calcule $\delta$.",
+    "front": "Peut-on écrire $\\sqrt{Z}$ pour $Z$ complexe ?",
+    "back": "NON ! On écrit : \"soit $\\delta$ tel que $\\delta^2 = Z$\" et on calcule $\\delta$.",
     "tags": [
       "complexes",
       "notation",
@@ -2643,8 +2643,8 @@
   {
     "id": "fc-eqpoly-003",
     "lessonId": "equations-polynomiales-complexes",
-    "front": "Système pour trouver $\delta = x + iy$ tel que $\delta^2 = A + iB$",
-    "back": "1) $x^2 - y^2 = A$, 2) $2xy = B$, 3) $x^2 + y^2 = \sqrt{A^2 + B^2}$",
+    "front": "Système pour trouver $\\delta = x + iy$ tel que $\\delta^2 = A + iB$",
+    "back": "1) $x^2 - y^2 = A$, 2) $2xy = B$, 3) $x^2 + y^2 = \\sqrt{A^2 + B^2}$",
     "tags": [
       "complexes",
       "racine carrée",
@@ -2657,7 +2657,7 @@
     "id": "fc-eqpoly-004",
     "lessonId": "equations-polynomiales-complexes",
     "front": "Si P(α) = 0, comment factoriser P(z) ?",
-    "back": "$P(z) = (z - \alpha) \times Q(z)$ où $Q$ est de degré $n-1$.",
+    "back": "$P(z) = (z - \\alpha) \times Q(z)$ où $Q$ est de degré $n-1$.",
     "tags": [
       "complexes",
       "polynôme",
@@ -2669,7 +2669,7 @@
   {
     "id": "fc-eqpoly-005",
     "lessonId": "equations-polynomiales-complexes",
-    "front": "Combien de solutions a $z^n = 1$ dans $\mathbb{C}$ ?",
+    "front": "Combien de solutions a $z^n = 1$ dans $\\mathbb{C}$ ?",
     "back": "Exactement n solutions distinctes (racines n-ièmes de l'unité).",
     "tags": [
       "complexes",
@@ -2682,7 +2682,7 @@
     "id": "fc-eqpoly-006",
     "lessonId": "equations-polynomiales-complexes",
     "front": "Formule des racines n-ièmes de l'unité",
-    "back": "$\omega_k = e^{i\cdot 2k\pi/n}$ pour $k = 0, 1, \dots, n-1$",
+    "back": "$\\omega_k = e^{i\\cdot 2k\\pi/n}$ pour $k = 0, 1, \\dots, n-1$",
     "tags": [
       "complexes",
       "racines unité",
@@ -2694,8 +2694,8 @@
   {
     "id": "fc-eqpoly-007",
     "lessonId": "equations-polynomiales-complexes",
-    "front": "Somme des racines n-ièmes de l'unité ($n \ge 2$)",
-    "back": "$\sum \omega_k = 0$ (somme nulle).",
+    "front": "Somme des racines n-ièmes de l'unité ($n \\ge 2$)",
+    "back": "$\\sum \\omega_k = 0$ (somme nulle).",
     "tags": [
       "complexes",
       "racines unité",
@@ -2708,7 +2708,7 @@
     "id": "fc-eqpoly-008",
     "lessonId": "equations-polynomiales-complexes",
     "front": "Quelles sont les racines cubiques de l'unité ?",
-    "back": "$1$, $j = -1/2 + i\sqrt{3}/2$, $j^2 = -1/2 - i\sqrt{3}/2$. On a $1 + j + j^2 = 0$.",
+    "back": "$1$, $j = -1/2 + i\\sqrt{3}/2$, $j^2 = -1/2 - i\\sqrt{3}/2$. On a $1 + j + j^2 = 0$.",
     "tags": [
       "complexes",
       "racines unité",
@@ -2734,7 +2734,7 @@
     "id": "fc-eqpoly-010",
     "lessonId": "equations-polynomiales-complexes",
     "front": "Théorème fondamental de l'algèbre",
-    "back": "Tout polynôme de degré $n \ge 1$ à coefficients complexes a exactement $n$ racines dans $\mathbb{C}$.",
+    "back": "Tout polynôme de degré $n \\ge 1$ à coefficients complexes a exactement $n$ racines dans $\\mathbb{C}$.",
     "tags": [
       "complexes",
       "polynôme",
@@ -2747,7 +2747,7 @@
     "id": "fc-eqpoly-011",
     "lessonId": "equations-polynomiales-complexes",
     "front": "Solutions de $z^n = r e^{i\theta}$",
-    "back": "$z_k = \sqrt[n]{r} \cdot e^{i(\theta + 2k\pi)/n}$ pour $k = 0, \dots, n-1$",
+    "back": "$z_k = \\sqrt[n]{r} \\cdot e^{i(\theta + 2k\\pi)/n}$ pour $k = 0, \\dots, n-1$",
     "tags": [
       "complexes",
       "racine n-ième",
@@ -2797,7 +2797,7 @@
     "id": "fc-markov-003",
     "lessonId": "chaines-markov",
     "front": "Formule de récurrence pour l'évolution d'une chaîne de Markov",
-    "back": "$\pi_{n+1} = \pi_n \times P$ (matrice ligne × matrice de transition)",
+    "back": "$\\pi_{n+1} = \\pi_n \times P$ (matrice ligne × matrice de transition)",
     "tags": [
       "markov",
       "formule"
@@ -2808,8 +2808,8 @@
   {
     "id": "fc-markov-004",
     "lessonId": "chaines-markov",
-    "front": "Comment calculer l'état $\pi_n$ en fonction de l'état initial $\pi_0$ ?",
-    "back": "$\pi_n = \pi_0 \times P^n$",
+    "front": "Comment calculer l'état $\\pi_n$ en fonction de l'état initial $\\pi_0$ ?",
+    "back": "$\\pi_n = \\pi_0 \times P^n$",
     "tags": [
       "markov",
       "formule"
@@ -2820,8 +2820,8 @@
   {
     "id": "fc-markov-005",
     "lessonId": "chaines-markov",
-    "front": "Quelles sont les deux conditions pour trouver un état stable $\pi$ ?",
-    "back": "1) $\pi \times P = \pi$  2) $\sum x_i = 1$ (somme des composantes = 1)",
+    "front": "Quelles sont les deux conditions pour trouver un état stable $\\pi$ ?",
+    "back": "1) $\\pi \times P = \\pi$  2) $\\sum x_i = 1$ (somme des composantes = 1)",
     "tags": [
       "markov",
       "état stable"
@@ -2880,8 +2880,8 @@
   {
     "id": "fc-markov-010",
     "lessonId": "chaines-markov",
-    "front": "Piège : Quel est l'ordre de multiplication pour calculer $\pi_{n+1}$ ?",
-    "back": "$\pi_{n+1} = \pi_n \times P$ (ligne × carrée). NE PAS écrire $P \times \pi_n$ !",
+    "front": "Piège : Quel est l'ordre de multiplication pour calculer $\\pi_{n+1}$ ?",
+    "back": "$\\pi_{n+1} = \\pi_n \times P$ (ligne × carrée). NE PAS écrire $P \times \\pi_n$ !",
     "tags": [
       "markov",
       "piège"
@@ -2904,8 +2904,8 @@
   {
     "id": "fc-markov-012",
     "lessonId": "chaines-markov",
-    "front": "Erreur fréquente : que risque-t-on en résolvant $\pi P = \pi$ seul ?",
-    "back": "Obtenir des équations liées (0 = 0) ou une infinité de solutions. Il FAUT ajouter $\sum x_i = 1$.",
+    "front": "Erreur fréquente : que risque-t-on en résolvant $\\pi P = \\pi$ seul ?",
+    "back": "Obtenir des équations liées (0 = 0) ou une infinité de solutions. Il FAUT ajouter $\\sum x_i = 1$.",
     "tags": [
       "markov",
       "erreur"
@@ -2955,7 +2955,7 @@
   {
     "id": "fc-int-suites-lim-002",
     "lessonId": "suites-limites",
-    "front": "Interprétation de $\lim u_n = +\infty$",
+    "front": "Interprétation de $\\lim u_n = +\\infty$",
     "back": "Les termes dépassent toute borne fixée quand n grandit.",
     "tags": [
       "suites",
@@ -3151,7 +3151,7 @@
     "id": "fc-int-limites-fonctions-003",
     "lessonId": "limites-fonctions",
     "front": "Interprétation d’une asymptote horizontale y = L",
-    "back": "Quand $x \to \pm\infty$, $f(x)$ se rapproche de $L$.",
+    "back": "Quand $x \to \\pm\\infty$, $f(x)$ se rapproche de $L$.",
     "tags": [
       "limites",
       "asymptote",
