@@ -17,7 +17,7 @@ import {
 import { cn } from '@/lib/utils'
 import { useStore } from '@/store/useStore'
 import MathText from '@/components/MathText'
-import type { Quiz, QuizQuestion, QuizAttempt, PreQuizDiagnostic } from '@/types'
+import type { Quiz, QuizQuestion, QuizAttempt, PreQuizDiagnostic, Track } from '@/types'
 
 // Fisher-Yates shuffle that returns shuffled array with original indices
 function shuffleWithIndices<T>(array: T[]): { item: T; originalIndex: number }[] {
@@ -37,11 +37,16 @@ interface PageProps {
   params: { id: string }
 }
 
+type QuizWithLesson = Quiz & {
+  lessonSlug?: string
+  lessonTrack?: Track
+}
+
 export default function QCMPage({ params }: PageProps) {
   const router = useRouter()
   const { addQuizAttempt, updateLessonProgress } = useStore()
 
-  const [quiz, setQuiz] = useState<Quiz | null>(null)
+  const [quiz, setQuiz] = useState<QuizWithLesson | null>(null)
   const [loading, setLoading] = useState(true)
   const [currentQuestion, setCurrentQuestion] = useState(0)
   const [answers, setAnswers] = useState<Record<string, number | number[]>>({})
@@ -78,10 +83,10 @@ export default function QCMPage({ params }: PageProps) {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-slate-50 flex items-center justify-center">
+      <div className="min-h-screen bg-slate-50 flex items-center justify-center dark:bg-slate-900">
         <div className="text-center">
           <div className="h-8 w-8 animate-spin rounded-full border-4 border-primary-600 border-t-transparent mx-auto" />
-          <p className="mt-4 text-slate-600">Chargement du QCM...</p>
+          <p className="mt-4 text-slate-600 dark:text-slate-400">Chargement du QCM...</p>
         </div>
       </div>
     )
@@ -89,10 +94,10 @@ export default function QCMPage({ params }: PageProps) {
 
   if (!quiz) {
     return (
-      <div className="min-h-screen bg-slate-50 flex items-center justify-center">
+      <div className="min-h-screen bg-slate-50 flex items-center justify-center dark:bg-slate-900">
         <div className="text-center">
           <AlertTriangle className="h-12 w-12 text-warning-500 mx-auto" />
-          <h1 className="mt-4 text-xl font-semibold text-slate-900">QCM introuvable</h1>
+          <h1 className="mt-4 text-xl font-semibold text-slate-900 dark:text-slate-100">QCM introuvable</h1>
           <Link href="/lecons" className="mt-4 btn-primary inline-block">
             Retour aux leçons
           </Link>
@@ -248,15 +253,20 @@ export default function QCMPage({ params }: PageProps) {
     })
     const score = Math.round((correctCount / totalQuestions) * 100)
     const passed = score >= (quiz.passingScore ?? 70)
+    const lessonLink = quiz.lessonTrack && quiz.lessonSlug
+      ? `/lecons/${quiz.lessonTrack}/${quiz.lessonSlug}`
+      : '/lecons'
 
     return (
-      <div className="min-h-screen bg-slate-50 py-8">
+      <div className="min-h-screen bg-slate-50 py-8 dark:bg-slate-900">
         <div className="mx-auto max-w-2xl px-4">
           <div className="card text-center">
             {/* Score display */}
             <div className={cn(
               'mx-auto flex h-24 w-24 items-center justify-center rounded-full',
-              passed ? 'bg-success-100' : 'bg-warning-100'
+              passed
+                ? 'bg-success-100 dark:bg-success-900/30'
+                : 'bg-warning-100 dark:bg-warning-900/30'
             )}>
               {passed ? (
                 <Trophy className="h-12 w-12 text-success-600" />
@@ -265,14 +275,14 @@ export default function QCMPage({ params }: PageProps) {
               )}
             </div>
 
-            <h1 className="mt-6 text-2xl font-bold text-slate-900">
+            <h1 className="mt-6 text-2xl font-bold text-slate-900 dark:text-slate-100">
               {quiz.type === 'pre' ? 'Résultat du diagnostic' : 'Résultat du QCM'}
             </h1>
 
-            <div className="mt-4 text-5xl font-bold text-slate-900">
+            <div className="mt-4 text-5xl font-bold text-slate-900 dark:text-slate-100">
               {score}%
             </div>
-            <p className="mt-2 text-slate-600">
+            <p className="mt-2 text-slate-600 dark:text-slate-400">
               {correctCount} / {totalQuestions} bonnes réponses
             </p>
 
@@ -280,16 +290,16 @@ export default function QCMPage({ params }: PageProps) {
             {diagnostic && (
               <div className={cn(
                 'mt-6 rounded-lg p-4 text-left',
-                diagnostic.level === 'low' && 'bg-danger-50',
-                diagnostic.level === 'medium' && 'bg-warning-50',
-                diagnostic.level === 'high' && 'bg-success-50'
+                diagnostic.level === 'low' && 'bg-danger-50 dark:bg-danger-900/30',
+                diagnostic.level === 'medium' && 'bg-warning-50 dark:bg-warning-900/30',
+                diagnostic.level === 'high' && 'bg-success-50 dark:bg-success-900/30'
               )}>
-                <h2 className="font-semibold">
+                <h2 className="font-semibold text-slate-900 dark:text-slate-100">
                   {diagnostic.level === 'low' && 'Prérequis à revoir'}
                   {diagnostic.level === 'medium' && 'Quelques points à consolider'}
                   {diagnostic.level === 'high' && 'Excellentes bases !'}
                 </h2>
-                <ul className="mt-2 space-y-1 text-sm">
+                <ul className="mt-2 space-y-1 text-sm text-slate-700 dark:text-slate-200">
                   {diagnostic.recommendations.map((rec, i) => (
                     <li key={i} className="flex items-start gap-2">
                       <span className="mt-1">•</span>
@@ -304,9 +314,11 @@ export default function QCMPage({ params }: PageProps) {
             {quiz.type === 'post' && (
               <div className={cn(
                 'mt-6 rounded-lg p-4',
-                passed ? 'bg-success-50' : 'bg-warning-50'
+                passed
+                  ? 'bg-success-50 dark:bg-success-900/30'
+                  : 'bg-warning-50 dark:bg-warning-900/30'
               )}>
-                <p className="font-medium">
+                <p className="font-medium text-slate-900 dark:text-slate-100">
                   {passed
                     ? 'Bravo ! Tu maîtrises les notions de cette leçon.'
                     : 'Continue à travailler cette leçon pour mieux la maîtriser.'}
@@ -317,7 +329,7 @@ export default function QCMPage({ params }: PageProps) {
             {/* Action buttons */}
             <div className="mt-8 flex flex-col gap-3">
               <Link
-                href={`/lecons?id=${quiz.lessonId}`}
+                href={lessonLink}
                 className="btn-primary flex items-center justify-center gap-2"
               >
                 <BookOpen className="h-5 w-5" />
@@ -334,7 +346,7 @@ export default function QCMPage({ params }: PageProps) {
 
           {/* Review answers */}
           <div className="mt-8 card">
-            <h2 className="font-semibold text-slate-900 mb-4">Récapitulatif des réponses</h2>
+            <h2 className="font-semibold text-slate-900 mb-4 dark:text-slate-100">Récapitulatif des réponses</h2>
             <div className="space-y-4">
               {quiz.questions.map((q, index) => {
                 const userAnswer = answers[q.id]
@@ -345,7 +357,9 @@ export default function QCMPage({ params }: PageProps) {
                     key={q.id}
                     className={cn(
                       'rounded-lg border p-3',
-                      correct ? 'border-success-200 bg-success-50' : 'border-danger-200 bg-danger-50'
+                      correct
+                        ? 'border-success-200 bg-success-50 dark:border-success-800 dark:bg-success-900/20'
+                        : 'border-danger-200 bg-danger-50 dark:border-danger-800 dark:bg-danger-900/20'
                     )}
                   >
                     <div className="flex items-start gap-2">
@@ -355,8 +369,8 @@ export default function QCMPage({ params }: PageProps) {
                         <XCircle className="h-5 w-5 text-danger-600 flex-shrink-0 mt-0.5" />
                       )}
                       <div>
-                        <p className="font-medium text-sm">Question {index + 1}</p>
-                        <p className="text-sm text-slate-600 mt-1"><MathText text={q.explanation || ''} /></p>
+                        <p className="font-medium text-sm text-slate-900 dark:text-slate-100">Question {index + 1}</p>
+                        <p className="text-sm text-slate-600 mt-1 dark:text-slate-300"><MathText text={q.explanation || ''} /></p>
                       </div>
                     </div>
                   </div>
@@ -374,13 +388,13 @@ export default function QCMPage({ params }: PageProps) {
   const hasAnswered = userAnswer !== undefined
 
   return (
-    <div className="min-h-screen bg-slate-50 py-8">
+    <div className="min-h-screen bg-slate-50 py-8 dark:bg-slate-900">
       <div className="mx-auto max-w-2xl px-4">
         {/* Header */}
         <div className="mb-6">
           <div className="flex items-center justify-between mb-2">
             <div className="flex items-center gap-3">
-              <span className="text-sm text-slate-600">
+              <span className="text-sm text-slate-600 dark:text-slate-400">
                 {quiz.type === 'pre' ? 'QCM de diagnostic' : 'QCM de validation'}
               </span>
               <div className="flex items-center gap-0.5" title={`Difficulté ${quiz.difficulty || 2}/5`}>
@@ -391,13 +405,13 @@ export default function QCMPage({ params }: PageProps) {
                       'h-3.5 w-3.5',
                       level <= (quiz.difficulty || 2)
                         ? 'text-amber-400 fill-amber-400'
-                        : 'text-slate-300'
+                        : 'text-slate-300 dark:text-slate-600'
                     )}
                   />
                 ))}
               </div>
             </div>
-            <span className="text-sm font-medium text-slate-900">
+            <span className="text-sm font-medium text-slate-900 dark:text-slate-100">
               Question {currentQuestion + 1} / {totalQuestions}
             </span>
           </div>
@@ -411,7 +425,7 @@ export default function QCMPage({ params }: PageProps) {
 
         {/* Question card */}
         <div className="card">
-          <h2 className="text-lg font-medium text-slate-900 mb-6">
+          <h2 className="text-lg font-medium text-slate-900 mb-6 dark:text-slate-100">
             <MathText text={question.question} />
           </h2>
 
@@ -446,7 +460,7 @@ export default function QCMPage({ params }: PageProps) {
                     'flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full border-2 text-sm font-medium',
                     isSelected
                       ? 'border-primary-500 bg-primary-500 text-white'
-                      : 'border-slate-300'
+                      : 'border-slate-300 dark:border-slate-600'
                   )}>
                     {String.fromCharCode(65 + displayIndex)}
                   </div>
@@ -466,7 +480,9 @@ export default function QCMPage({ params }: PageProps) {
           {showExplanation && (
             <div className={cn(
               'mt-6 rounded-lg p-4',
-              isAnswerCorrect(question, userAnswer!) ? 'bg-success-50' : 'bg-danger-50'
+              isAnswerCorrect(question, userAnswer!)
+                ? 'bg-success-50 dark:bg-success-900/30'
+                : 'bg-danger-50 dark:bg-danger-900/30'
             )}>
               <div className="flex items-start gap-2">
                 {isAnswerCorrect(question, userAnswer!) ? (
@@ -475,10 +491,12 @@ export default function QCMPage({ params }: PageProps) {
                   <XCircle className="h-5 w-5 text-danger-600 flex-shrink-0 mt-0.5" />
                 )}
                 <div>
-                  <p className="font-medium">
+                  <p className="font-medium text-slate-900 dark:text-slate-100">
                     {isAnswerCorrect(question, userAnswer!) ? 'Correct !' : 'Incorrect'}
                   </p>
-                  <p className="mt-1 text-sm"><MathText text={question.explanation || ''} /></p>
+                  <p className="mt-1 text-sm text-slate-700 dark:text-slate-300">
+                    <MathText text={question.explanation || ''} />
+                  </p>
                 </div>
               </div>
             </div>
