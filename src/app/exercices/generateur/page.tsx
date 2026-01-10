@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useCallback } from 'react'
+import { useState, useCallback, useEffect } from 'react'
 import Link from 'next/link'
 import {
   Shuffle,
@@ -10,7 +10,12 @@ import {
   RefreshCw,
   ArrowLeft,
   Infinity,
-  BookOpen
+  BookOpen,
+  Trophy,
+  Flame,
+  Star,
+  Zap,
+  Target
 } from 'lucide-react'
 import { generators, generatorsByCategory, type GeneratedExercise, type ExerciseGenerator } from '@/lib/exercise-generators'
 import MathText from '@/components/MathText'
@@ -40,6 +45,28 @@ const categoryColors: Record<string, string> = {
 const difficultyLabels = ['', 'Facile', 'Accessible', 'Intermédiaire', 'Avancé', 'Expert']
 const difficultyColors = ['', 'bg-green-500', 'bg-lime-500', 'bg-yellow-500', 'bg-orange-500', 'bg-red-500']
 
+// Points de base par difficulté
+const difficultyPoints = [0, 10, 20, 30, 50, 80]
+
+// Clé localStorage
+const STORAGE_KEY = 'maths-generator-stats'
+
+interface GameStats {
+  totalPoints: number
+  totalExercises: number
+  currentStreak: number
+  bestStreak: number
+  exercisesByCategory: Record<string, number>
+}
+
+const defaultStats: GameStats = {
+  totalPoints: 0,
+  totalExercises: 0,
+  currentStreak: 0,
+  bestStreak: 0,
+  exercisesByCategory: {}
+}
+
 export default function GenerateurPage() {
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null)
   const [selectedGenerator, setSelectedGenerator] = useState<ExerciseGenerator | null>(null)
@@ -48,7 +75,84 @@ export default function GenerateurPage() {
   const [showSolution, setShowSolution] = useState(false)
   const [exerciseCount, setExerciseCount] = useState(0)
 
+  // Gamification state
+  const [stats, setStats] = useState<GameStats>(defaultStats)
+  const [pointsEarned, setPointsEarned] = useState<number | null>(null)
+  const [hasValidated, setHasValidated] = useState(false)
+  const [usedHints, setUsedHints] = useState(false)
+
   const categories = Object.keys(generatorsByCategory)
+
+  // Load stats from localStorage
+  useEffect(() => {
+    try {
+      const saved = localStorage.getItem(STORAGE_KEY)
+      if (saved) {
+        setStats(JSON.parse(saved))
+      }
+    } catch (e) {
+      console.error('Error loading stats:', e)
+    }
+  }, [])
+
+  // Save stats to localStorage
+  const saveStats = useCallback((newStats: GameStats) => {
+    setStats(newStats)
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(newStats))
+    } catch (e) {
+      console.error('Error saving stats:', e)
+    }
+  }, [])
+
+  // Calculate points for current exercise
+  const calculatePoints = useCallback(() => {
+    if (!selectedGenerator || hasValidated) return 0
+
+    const basePoints = difficultyPoints[selectedGenerator.difficulty] || 10
+
+    // Streak multiplier: +10% par exercice de la série (max +100%)
+    const streakMultiplier = 1 + Math.min(stats.currentStreak * 0.1, 1)
+
+    // Pénalité si indices utilisés: -30%
+    const hintPenalty = usedHints ? 0.7 : 1
+
+    // Si solution affichée avant validation: 0 points
+    if (showSolution && !hasValidated) return 0
+
+    return Math.round(basePoints * streakMultiplier * hintPenalty)
+  }, [selectedGenerator, stats.currentStreak, usedHints, showSolution, hasValidated])
+
+  // Validate exercise (user claims they solved it)
+  const validateExercise = useCallback(() => {
+    if (hasValidated || !selectedGenerator) return
+
+    const points = calculatePoints()
+    setPointsEarned(points)
+    setHasValidated(true)
+
+    const newStats: GameStats = {
+      totalPoints: stats.totalPoints + points,
+      totalExercises: stats.totalExercises + 1,
+      currentStreak: points > 0 ? stats.currentStreak + 1 : 0,
+      bestStreak: points > 0 ? Math.max(stats.bestStreak, stats.currentStreak + 1) : stats.bestStreak,
+      exercisesByCategory: {
+        ...stats.exercisesByCategory,
+        [selectedGenerator.category]: (stats.exercisesByCategory[selectedGenerator.category] || 0) + 1
+      }
+    }
+
+    saveStats(newStats)
+  }, [hasValidated, selectedGenerator, calculatePoints, stats, saveStats])
+
+  // Skip exercise (breaks streak)
+  const skipExercise = useCallback(() => {
+    if (!hasValidated && stats.currentStreak > 0) {
+      const newStats = { ...stats, currentStreak: 0 }
+      saveStats(newStats)
+    }
+    generateNewExercise()
+  }, [hasValidated, stats, saveStats])
 
   const generateNewExercise = useCallback(() => {
     if (selectedGenerator) {
@@ -56,6 +160,9 @@ export default function GenerateurPage() {
       setShowHints(false)
       setShowSolution(false)
       setExerciseCount(prev => prev + 1)
+      setHasValidated(false)
+      setPointsEarned(null)
+      setUsedHints(false)
     }
   }, [selectedGenerator])
 
@@ -65,6 +172,9 @@ export default function GenerateurPage() {
     setShowHints(false)
     setShowSolution(false)
     setExerciseCount(1)
+    setHasValidated(false)
+    setPointsEarned(null)
+    setUsedHints(false)
   }
 
   const goBack = () => {
@@ -72,14 +182,60 @@ export default function GenerateurPage() {
       setCurrentExercise(null)
       setSelectedGenerator(null)
       setExerciseCount(0)
+      setHasValidated(false)
+      setPointsEarned(null)
     } else if (selectedCategory) {
       setSelectedCategory(null)
     }
   }
 
+  const handleShowHints = () => {
+    if (!showHints && !hasValidated) {
+      setUsedHints(true)
+    }
+    setShowHints(!showHints)
+  }
+
+  const potentialPoints = calculatePoints()
+
   return (
     <div className="min-h-screen bg-slate-50 py-8 dark:bg-slate-900">
       <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+        {/* Stats Bar */}
+        <div className="mb-6 flex flex-wrap items-center justify-between gap-4 p-4 bg-gradient-to-r from-primary-50 to-amber-50 dark:from-primary-950 dark:to-amber-950 rounded-xl border border-primary-100 dark:border-primary-800">
+          <div className="flex items-center gap-6">
+            <div className="flex items-center gap-2">
+              <Trophy className="h-5 w-5 text-amber-500" />
+              <div>
+                <div className="text-xs text-slate-500 dark:text-slate-400">Total</div>
+                <div className="font-bold text-slate-900 dark:text-slate-100">{stats.totalPoints} pts</div>
+              </div>
+            </div>
+            <div className="flex items-center gap-2">
+              <Flame className={`h-5 w-5 ${stats.currentStreak > 0 ? 'text-orange-500' : 'text-slate-300 dark:text-slate-600'}`} />
+              <div>
+                <div className="text-xs text-slate-500 dark:text-slate-400">Série</div>
+                <div className="font-bold text-slate-900 dark:text-slate-100">{stats.currentStreak}</div>
+              </div>
+            </div>
+            <div className="flex items-center gap-2">
+              <Target className="h-5 w-5 text-primary-500" />
+              <div>
+                <div className="text-xs text-slate-500 dark:text-slate-400">Exercices</div>
+                <div className="font-bold text-slate-900 dark:text-slate-100">{stats.totalExercises}</div>
+              </div>
+            </div>
+          </div>
+          {stats.currentStreak >= 3 && (
+            <div className="flex items-center gap-1 px-3 py-1 bg-orange-100 dark:bg-orange-900 rounded-full">
+              <Zap className="h-4 w-4 text-orange-500" />
+              <span className="text-sm font-medium text-orange-700 dark:text-orange-300">
+                Bonus x{(1 + Math.min(stats.currentStreak * 0.1, 1)).toFixed(1)}
+              </span>
+            </div>
+          )}
+        </div>
+
         {/* Header */}
         <div className="mb-8">
           <div className="flex items-center gap-4 mb-4">
@@ -98,7 +254,7 @@ export default function GenerateurPage() {
           </div>
           <p className="text-slate-600 dark:text-slate-400">
             Entraîne-toi à l'infini avec des exercices générés aléatoirement.
-            Les valeurs changent à chaque fois, mais la méthode reste la même.
+            Gagne des points et maintiens ta série !
           </p>
         </div>
 
@@ -111,6 +267,7 @@ export default function GenerateurPage() {
             <div className="grid gap-3 md:grid-cols-2">
               {categories.map((category) => {
                 const gens = generatorsByCategory[category]
+                const completed = stats.exercisesByCategory[category] || 0
                 return (
                   <button
                     key={category}
@@ -123,9 +280,17 @@ export default function GenerateurPage() {
                       </span>
                       <ChevronRight className="h-5 w-5 text-slate-400 group-hover:text-primary-600 transition-colors" />
                     </div>
-                    <p className="mt-2 text-sm text-slate-600 dark:text-slate-400">
-                      {gens.length} type{gens.length > 1 ? 's' : ''} d'exercice{gens.length > 1 ? 's' : ''}
-                    </p>
+                    <div className="mt-2 flex items-center justify-between">
+                      <p className="text-sm text-slate-600 dark:text-slate-400">
+                        {gens.length} type{gens.length > 1 ? 's' : ''} d'exercice{gens.length > 1 ? 's' : ''}
+                      </p>
+                      {completed > 0 && (
+                        <span className="text-xs text-primary-600 dark:text-primary-400 flex items-center gap-1">
+                          <CheckCircle className="h-3 w-3" />
+                          {completed} fait{completed > 1 ? 's' : ''}
+                        </span>
+                      )}
+                    </div>
                   </button>
                 )
               })}
@@ -159,8 +324,15 @@ export default function GenerateurPage() {
                       </p>
                     </div>
                     <div className="flex items-center gap-2">
-                      <span className={`inline-block w-2 h-2 rounded-full ${difficultyColors[gen.difficulty]}`} />
-                      <span className="text-xs text-slate-500">{difficultyLabels[gen.difficulty]}</span>
+                      <div className="text-right">
+                        <div className="flex items-center gap-1">
+                          <span className={`inline-block w-2 h-2 rounded-full ${difficultyColors[gen.difficulty]}`} />
+                          <span className="text-xs text-slate-500">{difficultyLabels[gen.difficulty]}</span>
+                        </div>
+                        <div className="text-xs text-amber-600 dark:text-amber-400 font-medium">
+                          +{difficultyPoints[gen.difficulty]} pts
+                        </div>
+                      </div>
                       <ChevronRight className="h-5 w-5 text-slate-400 group-hover:text-primary-600 transition-colors" />
                     </div>
                   </div>
@@ -182,13 +354,26 @@ export default function GenerateurPage() {
                 <span className="text-sm text-slate-500 dark:text-slate-400">
                   Exercice #{exerciseCount}
                 </span>
+                {!hasValidated && !showSolution && (
+                  <span className="flex items-center gap-1 text-sm font-medium text-amber-600 dark:text-amber-400">
+                    <Star className="h-4 w-4" />
+                    {potentialPoints} pts
+                    {usedHints && <span className="text-xs">(-30%)</span>}
+                  </span>
+                )}
+                {pointsEarned !== null && (
+                  <span className={`flex items-center gap-1 text-sm font-bold ${pointsEarned > 0 ? 'text-green-600 dark:text-green-400' : 'text-slate-400'}`}>
+                    <Trophy className="h-4 w-4" />
+                    +{pointsEarned} pts
+                  </span>
+                )}
               </div>
               <button
-                onClick={generateNewExercise}
-                className="btn btn-primary flex items-center gap-2"
+                onClick={skipExercise}
+                className="btn btn-secondary flex items-center gap-2 text-sm"
               >
                 <RefreshCw className="h-4 w-4" />
-                Nouvel exercice
+                Passer
               </button>
             </div>
 
@@ -202,10 +387,41 @@ export default function GenerateurPage() {
               </div>
             </div>
 
+            {/* Validation Button */}
+            {!hasValidated && !showSolution && (
+              <div className="mb-6">
+                <button
+                  onClick={validateExercise}
+                  className="w-full btn bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600 text-white border-0 py-3 flex items-center justify-center gap-2 text-lg font-semibold shadow-lg"
+                >
+                  <CheckCircle className="h-5 w-5" />
+                  J'ai trouvé ! (+{potentialPoints} pts)
+                </button>
+                <p className="text-center text-xs text-slate-500 dark:text-slate-400 mt-2">
+                  Clique quand tu as résolu l'exercice pour gagner tes points
+                </p>
+              </div>
+            )}
+
+            {/* Points earned animation */}
+            {pointsEarned !== null && pointsEarned > 0 && (
+              <div className="mb-6 p-4 bg-gradient-to-r from-green-50 to-emerald-50 dark:from-green-950 dark:to-emerald-950 rounded-xl border border-green-200 dark:border-green-800 text-center">
+                <div className="flex items-center justify-center gap-2 text-green-700 dark:text-green-300">
+                  <Trophy className="h-6 w-6 text-amber-500" />
+                  <span className="text-2xl font-bold">+{pointsEarned} points !</span>
+                </div>
+                {stats.currentStreak >= 3 && (
+                  <p className="text-sm text-green-600 dark:text-green-400 mt-1">
+                    🔥 Série de {stats.currentStreak} ! Bonus actif !
+                  </p>
+                )}
+              </div>
+            )}
+
             {/* Actions */}
             <div className="flex flex-wrap gap-3 mb-6">
               <button
-                onClick={() => setShowHints(!showHints)}
+                onClick={handleShowHints}
                 className={`btn flex items-center gap-2 ${
                   showHints
                     ? 'bg-amber-100 text-amber-800 border-amber-200 dark:bg-amber-900 dark:text-amber-200 dark:border-amber-700'
@@ -214,6 +430,9 @@ export default function GenerateurPage() {
               >
                 <Lightbulb className="h-4 w-4" />
                 {showHints ? 'Masquer les indices' : 'Voir les indices'}
+                {!usedHints && !hasValidated && !showHints && (
+                  <span className="text-xs opacity-70">(-30%)</span>
+                )}
               </button>
               <button
                 onClick={() => setShowSolution(!showSolution)}
@@ -225,6 +444,9 @@ export default function GenerateurPage() {
               >
                 <CheckCircle className="h-4 w-4" />
                 {showSolution ? 'Masquer la solution' : 'Voir la solution'}
+                {!hasValidated && !showSolution && (
+                  <span className="text-xs opacity-70">(0 pts)</span>
+                )}
               </button>
             </div>
 
@@ -267,14 +489,14 @@ export default function GenerateurPage() {
             {/* Quick regenerate */}
             <div className="mt-8 text-center">
               <p className="text-sm text-slate-500 dark:text-slate-400 mb-3">
-                Tu maîtrises ? Passe à l'exercice suivant avec de nouvelles valeurs.
+                {hasValidated ? 'Bravo ! Passe à l\'exercice suivant.' : 'Tu maîtrises ? Passe à l\'exercice suivant.'}
               </p>
               <button
                 onClick={generateNewExercise}
                 className="btn btn-primary btn-lg flex items-center gap-2 mx-auto"
               >
                 <Shuffle className="h-5 w-5" />
-                Générer un nouvel exercice
+                Nouvel exercice
               </button>
             </div>
           </div>
