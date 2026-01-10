@@ -541,6 +541,15 @@ export default function GenerateurPage() {
                   <span className="text-xs opacity-70">(0 pts)</span>
                 )}
               </button>
+              {categoryToLesson[selectedGenerator.category] && (
+                <Link
+                  href={`/lecons/${categoryToLesson[selectedGenerator.category].track}/${categoryToLesson[selectedGenerator.category].slug}`}
+                  className="btn btn-secondary flex items-center gap-2"
+                >
+                  <BookOpen className="h-4 w-4" />
+                  Revoir le cours
+                </Link>
+              )}
             </div>
 
             {/* Indices */}
