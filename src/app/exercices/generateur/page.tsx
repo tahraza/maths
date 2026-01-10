@@ -42,6 +42,10 @@ const categoryColors: Record<string, string> = {
   'Arithmétique': 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200',
   'Matrices': 'bg-stone-100 text-stone-800 dark:bg-stone-800 dark:text-stone-200',
   'Géométrie': 'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200',
+  'Droites et plans': 'bg-slate-100 text-slate-800 dark:bg-slate-800 dark:text-slate-200',
+  'Logique': 'bg-gray-100 text-gray-800 dark:bg-gray-800 dark:text-gray-200',
+  'Chaînes de Markov': 'bg-amber-100 text-amber-800 dark:bg-amber-900 dark:text-amber-200',
+  'Graphes': 'bg-cyan-100 text-cyan-800 dark:bg-cyan-900 dark:text-cyan-200',
 }
 
 const difficultyLabels = ['', 'Facile', 'Accessible', 'Intermédiaire', 'Avancé', 'Expert']

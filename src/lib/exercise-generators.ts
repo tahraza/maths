@@ -1713,6 +1713,518 @@ const geometriePlanEquation: ExerciseGenerator = {
   }
 }
 
+// ==================== DROITES ET PLANS ====================
+
+const droiteParametrique: ExerciseGenerator = {
+  id: 'droite-param',
+  category: 'Droites et plans',
+  title: 'Équation paramétrique de droite',
+  description: 'Déterminer une représentation paramétrique d\'une droite',
+  difficulty: 2,
+  chapter: 'droites-plans-espace',
+  generate: () => {
+    const x1 = randInt(-3, 3), y1 = randInt(-3, 3), z1 = randInt(-3, 3)
+    const x2 = randInt(-3, 3), y2 = randInt(-3, 3), z2 = randInt(-3, 3)
+    // Vecteur directeur
+    const dx = x2 - x1, dy = y2 - y1, dz = z2 - z1
+
+    // S'assurer que le vecteur n'est pas nul
+    if (dx === 0 && dy === 0 && dz === 0) {
+      return droiteParametrique.generate()
+    }
+
+    return {
+      id: `droite-param-${Date.now()}`,
+      category: 'Droites et plans',
+      title: 'Équation paramétrique de droite',
+      difficulty: 2,
+      statement: `Déterminer une représentation paramétrique de la droite $(d)$ passant par $A(${x1}, ${y1}, ${z1})$ et $B(${x2}, ${y2}, ${z2})$.`,
+      hints: [
+        'Une droite passant par $A$ de vecteur directeur $\\vec{u}$ a pour équation $\\begin{cases} x = x_A + t \\cdot u_x \\\\ y = y_A + t \\cdot u_y \\\\ z = z_A + t \\cdot u_z \\end{cases}$',
+        'Le vecteur directeur est $\\vec{AB} = (x_B - x_A, y_B - y_A, z_B - z_A)$',
+      ],
+      solution: `**Vecteur directeur** : $\\vec{AB} = (${x2} - ${x1}, ${y2} - ${y1}, ${z2} - ${z1}) = (${dx}, ${dy}, ${dz})$\n\n` +
+        `**Représentation paramétrique** avec le point $A$ :\n` +
+        `$$\\begin{cases} x = ${x1} ${dx >= 0 ? '+' : '-'} ${Math.abs(dx)}t \\\\ y = ${y1} ${dy >= 0 ? '+' : '-'} ${Math.abs(dy)}t \\\\ z = ${z1} ${dz >= 0 ? '+' : '-'} ${Math.abs(dz)}t \\end{cases}, \\quad t \\in \\mathbb{R}$$`,
+      answer: `$\\begin{cases} x = ${x1} ${dx >= 0 ? '+' : '-'} ${Math.abs(dx)}t \\\\ y = ${y1} ${dy >= 0 ? '+' : '-'} ${Math.abs(dy)}t \\\\ z = ${z1} ${dz >= 0 ? '+' : '-'} ${Math.abs(dz)}t \\end{cases}$`,
+      params: { x1, y1, z1, x2, y2, z2, dx, dy, dz }
+    }
+  }
+}
+
+const intersectionDroitePlan: ExerciseGenerator = {
+  id: 'intersection-droite-plan',
+  category: 'Droites et plans',
+  title: 'Intersection droite et plan',
+  description: 'Calculer l\'intersection d\'une droite et d\'un plan',
+  difficulty: 3,
+  chapter: 'droites-plans-espace',
+  generate: () => {
+    // Plan ax + by + cz + d = 0
+    const a = randNonZero(-3, 3), b = randNonZero(-3, 3), c = randNonZero(-3, 3)
+    const d = randInt(-5, 5)
+
+    // Point de la droite et vecteur directeur
+    const x0 = randInt(-2, 2), y0 = randInt(-2, 2), z0 = randInt(-2, 2)
+    const ux = randNonZero(-2, 2), uy = randNonZero(-2, 2), uz = randNonZero(-2, 2)
+
+    // Vérifier que la droite n'est pas parallèle au plan
+    const dotProduct = a * ux + b * uy + c * uz
+    if (dotProduct === 0) {
+      return intersectionDroitePlan.generate()
+    }
+
+    // Calcul du paramètre t
+    const numerator = -(a * x0 + b * y0 + c * z0 + d)
+
+    // Pour avoir des valeurs entières, on choisit t simple
+    const t = 1
+    const xi = x0 + t * ux
+    const yi = y0 + t * uy
+    const zi = z0 + t * uz
+
+    // Recalculer d pour que l'intersection tombe en t=1
+    const newD = -(a * xi + b * yi + c * zi)
+
+    return {
+      id: `intersection-dp-${Date.now()}`,
+      category: 'Droites et plans',
+      title: 'Intersection droite et plan',
+      difficulty: 3,
+      statement: `Déterminer les coordonnées du point d'intersection de la droite $(d)$ et du plan $\\mathcal{P}$ :\n\n` +
+        `$(d) : \\begin{cases} x = ${x0} + ${ux}t \\\\ y = ${y0} + ${uy}t \\\\ z = ${z0} + ${uz}t \\end{cases}$ et $\\mathcal{P} : ${a}x ${b >= 0 ? '+' : '-'} ${Math.abs(b)}y ${c >= 0 ? '+' : '-'} ${Math.abs(c)}z ${newD >= 0 ? '+' : '-'} ${Math.abs(newD)} = 0$`,
+      hints: [
+        'Substitue les expressions de $x$, $y$, $z$ de la droite dans l\'équation du plan',
+        'Résous l\'équation en $t$',
+        'Remplace $t$ dans les équations paramétriques pour trouver les coordonnées',
+      ],
+      solution: `On substitue dans l'équation du plan :\n` +
+        `$${a}(${x0} + ${ux}t) ${b >= 0 ? '+' : '-'} ${Math.abs(b)}(${y0} + ${uy}t) ${c >= 0 ? '+' : '-'} ${Math.abs(c)}(${z0} + ${uz}t) ${newD >= 0 ? '+' : '-'} ${Math.abs(newD)} = 0$\n\n` +
+        `Après développement et simplification, on trouve $t = 1$.\n\n` +
+        `**Point d'intersection** : $I(${xi}, ${yi}, ${zi})$`,
+      answer: `$I(${xi}, ${yi}, ${zi})$`,
+      params: { a, b, c, d: newD, x0, y0, z0, ux, uy, uz, xi, yi, zi }
+    }
+  }
+}
+
+// ==================== LOGIQUE (Implication/Équivalence) ====================
+
+const logiqueContraposee: ExerciseGenerator = {
+  id: 'logique-contraposee',
+  category: 'Logique',
+  title: 'Contraposée d\'une implication',
+  description: 'Énoncer la contraposée d\'une proposition',
+  difficulty: 1,
+  chapter: 'implication-equivalence',
+  generate: () => {
+    const propositions = [
+      { p: 'n est pair', q: 'n² est pair', notP: 'n est impair', notQ: 'n² est impair' },
+      { p: 'x > 2', q: 'x² > 4', notP: 'x ≤ 2', notQ: 'x² ≤ 4' },
+      { p: 'f est dérivable', q: 'f est continue', notP: 'f n\'est pas dérivable', notQ: 'f n\'est pas continue' },
+      { p: 'ABCD est un carré', q: 'ABCD est un rectangle', notP: 'ABCD n\'est pas un carré', notQ: 'ABCD n\'est pas un rectangle' },
+      { p: 'x = 0', q: 'x² = 0', notP: 'x ≠ 0', notQ: 'x² ≠ 0' },
+      { p: 'n est divisible par 6', q: 'n est divisible par 3', notP: 'n n\'est pas divisible par 6', notQ: 'n n\'est pas divisible par 3' },
+    ]
+
+    const prop = randChoice(propositions)
+
+    return {
+      id: `logique-contra-${Date.now()}`,
+      category: 'Logique',
+      title: 'Contraposée',
+      difficulty: 1,
+      statement: `Énoncer la contraposée de l'implication suivante :\n\n« Si ${prop.p}, alors ${prop.q} »`,
+      hints: [
+        'La contraposée de « P ⟹ Q » est « non Q ⟹ non P »',
+        'On inverse et on nie les deux propositions',
+      ],
+      solution: `**Implication de départ** : ${prop.p} ⟹ ${prop.q}\n\n` +
+        `**Contraposée** : non Q ⟹ non P\n\n` +
+        `« Si ${prop.notQ}, alors ${prop.notP} »\n\n` +
+        `*Rappel : Une implication et sa contraposée sont logiquement équivalentes.*`,
+      answer: `« Si ${prop.notQ}, alors ${prop.notP} »`,
+      params: { p: prop.p, q: prop.q }
+    }
+  }
+}
+
+const logiqueReciproque: ExerciseGenerator = {
+  id: 'logique-reciproque',
+  category: 'Logique',
+  title: 'Réciproque et équivalence',
+  description: 'Identifier réciproque et étudier l\'équivalence',
+  difficulty: 2,
+  chapter: 'implication-equivalence',
+  generate: () => {
+    const propositions = [
+      { p: 'n² est pair', q: 'n est pair', equiv: true, explication: 'Un carré est pair si et seulement si le nombre est pair' },
+      { p: 'x² = 4', q: 'x = 2', equiv: false, explication: 'Faux car $x = -2$ vérifie aussi $x² = 4$' },
+      { p: 'x > 0 et y > 0', q: 'xy > 0', equiv: false, explication: 'Faux car $x < 0$ et $y < 0$ donne aussi $xy > 0$' },
+      { p: 'ABCD est un losange à angles droits', q: 'ABCD est un carré', equiv: true, explication: 'C\'est la définition du carré' },
+      { p: 'f\'(x) = 0', q: 'f admet un extremum en x', equiv: false, explication: 'Faux, par exemple $f(x) = x³$ en $x = 0$' },
+      { p: 'ab = 0', q: 'a = 0 ou b = 0', equiv: true, explication: 'Propriété fondamentale du produit nul' },
+    ]
+
+    const prop = randChoice(propositions)
+
+    return {
+      id: `logique-recip-${Date.now()}`,
+      category: 'Logique',
+      title: 'Réciproque et équivalence',
+      difficulty: 2,
+      statement: `Soit l'implication : « Si ${prop.p}, alors ${prop.q} »\n\n` +
+        `1. Énoncer la réciproque\n` +
+        `2. L'implication et sa réciproque sont-elles toutes deux vraies ? (Y a-t-il équivalence ?)`,
+      hints: [
+        'La réciproque de « P ⟹ Q » est « Q ⟹ P »',
+        'Il y a équivalence si les deux implications sont vraies',
+        'Cherche un contre-exemple pour montrer qu\'une implication est fausse',
+      ],
+      solution: `**1. Réciproque** : « Si ${prop.q}, alors ${prop.p} »\n\n` +
+        `**2. Équivalence** : ${prop.equiv ? 'Oui' : 'Non'}\n\n` +
+        `${prop.explication}`,
+      answer: prop.equiv ? 'Oui, il y a équivalence' : 'Non, pas d\'équivalence',
+      params: { p: prop.p, q: prop.q, equiv: prop.equiv }
+    }
+  }
+}
+
+// ==================== CHAÎNES DE MARKOV ====================
+
+const markovMatriceTransition: ExerciseGenerator = {
+  id: 'markov-transition',
+  category: 'Chaînes de Markov',
+  title: 'Matrice de transition',
+  description: 'Calculer une puissance de matrice de transition',
+  difficulty: 3,
+  chapter: 'chaines-markov',
+  generate: () => {
+    // Matrice 2x2 simple avec fractions simples
+    const choices = [
+      { a: 0.8, b: 0.2, c: 0.3, d: 0.7, aF: '0.8', bF: '0.2', cF: '0.3', dF: '0.7' },
+      { a: 0.6, b: 0.4, c: 0.5, d: 0.5, aF: '0.6', bF: '0.4', cF: '0.5', dF: '0.5' },
+      { a: 0.9, b: 0.1, c: 0.2, d: 0.8, aF: '0.9', bF: '0.1', cF: '0.2', dF: '0.8' },
+      { a: 0.7, b: 0.3, c: 0.4, d: 0.6, aF: '0.7', bF: '0.3', cF: '0.4', dF: '0.6' },
+    ]
+
+    const m = randChoice(choices)
+
+    // Calcul de P²
+    const p2_a = m.a * m.a + m.b * m.c
+    const p2_b = m.a * m.b + m.b * m.d
+    const p2_c = m.c * m.a + m.d * m.c
+    const p2_d = m.c * m.b + m.d * m.d
+
+    return {
+      id: `markov-trans-${Date.now()}`,
+      category: 'Chaînes de Markov',
+      title: 'Puissance de matrice',
+      difficulty: 3,
+      statement: `Soit la matrice de transition $P = \\begin{pmatrix} ${m.aF} & ${m.bF} \\\\ ${m.cF} & ${m.dF} \\end{pmatrix}$.\n\n` +
+        `Calculer $P^2$ et interpréter les coefficients.`,
+      hints: [
+        'Pour multiplier deux matrices 2×2, utilise la formule $(AB)_{ij} = \\sum_k A_{ik} B_{kj}$',
+        'Chaque coefficient $(P^2)_{ij}$ représente la probabilité d\'aller de l\'état $i$ à l\'état $j$ en 2 étapes',
+      ],
+      solution: `$P^2 = P \\times P = \\begin{pmatrix} ${m.aF} & ${m.bF} \\\\ ${m.cF} & ${m.dF} \\end{pmatrix} \\times \\begin{pmatrix} ${m.aF} & ${m.bF} \\\\ ${m.cF} & ${m.dF} \\end{pmatrix}$\n\n` +
+        `$P^2 = \\begin{pmatrix} ${p2_a.toFixed(2)} & ${p2_b.toFixed(2)} \\\\ ${p2_c.toFixed(2)} & ${p2_d.toFixed(2)} \\end{pmatrix}$\n\n` +
+        `**Interprétation** : $(P^2)_{ij}$ est la probabilité de passer de l'état $i$ à l'état $j$ en exactement 2 étapes.`,
+      answer: `$P^2 = \\begin{pmatrix} ${p2_a.toFixed(2)} & ${p2_b.toFixed(2)} \\\\ ${p2_c.toFixed(2)} & ${p2_d.toFixed(2)} \\end{pmatrix}$`,
+      params: { m, p2_a, p2_b, p2_c, p2_d }
+    }
+  }
+}
+
+const markovEtatStable: ExerciseGenerator = {
+  id: 'markov-stable',
+  category: 'Chaînes de Markov',
+  title: 'État stable',
+  description: 'Déterminer l\'état stable d\'une chaîne de Markov',
+  difficulty: 4,
+  chapter: 'chaines-markov',
+  generate: () => {
+    // Matrice avec état stable simple
+    // Pour a=1-p et b=p en haut, c=q et d=1-q en bas
+    // État stable : (q/(p+q), p/(p+q))
+    const p = randChoice([0.2, 0.3, 0.4, 0.5])
+    const q = randChoice([0.2, 0.3, 0.4, 0.5])
+
+    const pi1 = q / (p + q)
+    const pi2 = p / (p + q)
+
+    return {
+      id: `markov-stable-${Date.now()}`,
+      category: 'Chaînes de Markov',
+      title: 'État stable',
+      difficulty: 4,
+      statement: `Soit la matrice de transition $P = \\begin{pmatrix} ${(1-p).toFixed(1)} & ${p.toFixed(1)} \\\\ ${q.toFixed(1)} & ${(1-q).toFixed(1)} \\end{pmatrix}$.\n\n` +
+        `Déterminer le vecteur d'état stable $\\pi = (\\pi_1, \\pi_2)$.`,
+      hints: [
+        'L\'état stable vérifie $\\pi P = \\pi$ et $\\pi_1 + \\pi_2 = 1$',
+        'Écris le système d\'équations et résous',
+        'On obtient $\\pi_1 = \\frac{q}{p+q}$ et $\\pi_2 = \\frac{p}{p+q}$',
+      ],
+      solution: `On cherche $\\pi = (\\pi_1, \\pi_2)$ tel que $\\pi P = \\pi$ et $\\pi_1 + \\pi_2 = 1$.\n\n` +
+        `Le système donne :\n` +
+        `$\\begin{cases} ${(1-p).toFixed(1)} \\pi_1 + ${q.toFixed(1)} \\pi_2 = \\pi_1 \\\\ ${p.toFixed(1)} \\pi_1 + ${(1-q).toFixed(1)} \\pi_2 = \\pi_2 \\\\ \\pi_1 + \\pi_2 = 1 \\end{cases}$\n\n` +
+        `Après simplification : $${p.toFixed(1)} \\pi_1 = ${q.toFixed(1)} \\pi_2$\n\n` +
+        `Avec $\\pi_1 + \\pi_2 = 1$ :\n` +
+        `$\\pi_1 = \\frac{${q.toFixed(1)}}{${(p+q).toFixed(1)}} = ${pi1.toFixed(3)}$\n` +
+        `$\\pi_2 = \\frac{${p.toFixed(1)}}{${(p+q).toFixed(1)}} = ${pi2.toFixed(3)}$`,
+      answer: `$\\pi = (${pi1.toFixed(3)}, ${pi2.toFixed(3)})$`,
+      params: { p, q, pi1, pi2 }
+    }
+  }
+}
+
+// ==================== GRAPHES ====================
+
+const grapheDegre: ExerciseGenerator = {
+  id: 'graphe-degre',
+  category: 'Graphes',
+  title: 'Degré des sommets',
+  description: 'Calculer le degré des sommets d\'un graphe',
+  difficulty: 1,
+  chapter: 'graphes-introduction',
+  generate: () => {
+    // Générer un graphe simple avec 4-5 sommets
+    const n = randChoice([4, 5])
+    const sommets = ['A', 'B', 'C', 'D', 'E'].slice(0, n)
+
+    // Générer des arêtes aléatoirement
+    const aretes: [string, string][] = []
+    const degres: Record<string, number> = {}
+    sommets.forEach(s => degres[s] = 0)
+
+    for (let i = 0; i < n; i++) {
+      for (let j = i + 1; j < n; j++) {
+        if (Math.random() > 0.4) { // 60% de chance d'avoir une arête
+          aretes.push([sommets[i], sommets[j]])
+          degres[sommets[i]]++
+          degres[sommets[j]]++
+        }
+      }
+    }
+
+    // S'assurer qu'on a au moins quelques arêtes
+    if (aretes.length < 3) {
+      return grapheDegre.generate()
+    }
+
+    const aretesStr = aretes.map(([a, b]) => `${a}${b}`).join(', ')
+    const totalDegres = Object.values(degres).reduce((a, b) => a + b, 0)
+
+    return {
+      id: `graphe-degre-${Date.now()}`,
+      category: 'Graphes',
+      title: 'Degré des sommets',
+      difficulty: 1,
+      statement: `Soit le graphe $G$ d'ensemble de sommets $\\{${sommets.join(', ')}\\}$ et d'arêtes $\\{${aretesStr}\\}$.\n\n` +
+        `1. Donner le degré de chaque sommet.\n` +
+        `2. Vérifier la relation entre la somme des degrés et le nombre d'arêtes.`,
+      hints: [
+        'Le degré d\'un sommet est le nombre d\'arêtes incidentes à ce sommet',
+        'La somme des degrés vaut 2 fois le nombre d\'arêtes',
+      ],
+      solution: `**1. Degrés** :\n${sommets.map(s => `- $d(${s}) = ${degres[s]}$`).join('\n')}\n\n` +
+        `**2. Vérification** :\n` +
+        `Somme des degrés = ${totalDegres}\n` +
+        `Nombre d'arêtes = ${aretes.length}\n` +
+        `On vérifie : $${totalDegres} = 2 \\times ${aretes.length}$ ✓`,
+      answer: sommets.map(s => `$d(${s}) = ${degres[s]}$`).join(', '),
+      params: { sommets, aretes, degres }
+    }
+  }
+}
+
+const grapheEulerien: ExerciseGenerator = {
+  id: 'graphe-eulerien',
+  category: 'Graphes',
+  title: 'Graphe eulérien',
+  description: 'Déterminer si un graphe est eulérien',
+  difficulty: 2,
+  chapter: 'graphes-introduction',
+  generate: () => {
+    // Cas prédéfinis pour garantir la cohérence
+    const cases = [
+      {
+        sommets: ['A', 'B', 'C', 'D'],
+        aretes: ['AB', 'BC', 'CD', 'DA', 'AC'],
+        degres: { A: 3, B: 2, C: 3, D: 2 },
+        eulerien: false,
+        semiEulerien: true,
+        raison: 'Le graphe a exactement 2 sommets de degré impair (A et C), donc il est semi-eulérien (chaîne eulérienne de A à C).'
+      },
+      {
+        sommets: ['A', 'B', 'C', 'D'],
+        aretes: ['AB', 'BC', 'CD', 'DA', 'AC', 'BD'],
+        degres: { A: 3, B: 3, C: 3, D: 3 },
+        eulerien: false,
+        semiEulerien: false,
+        raison: 'Le graphe a 4 sommets de degré impair, donc il n\'est ni eulérien ni semi-eulérien.'
+      },
+      {
+        sommets: ['A', 'B', 'C', 'D'],
+        aretes: ['AB', 'BC', 'CD', 'DA'],
+        degres: { A: 2, B: 2, C: 2, D: 2 },
+        eulerien: true,
+        semiEulerien: true,
+        raison: 'Tous les sommets sont de degré pair, donc le graphe est eulérien (cycle eulérien).'
+      },
+    ]
+
+    const c = randChoice(cases)
+    const sommetImpairs = Object.entries(c.degres).filter(([_, d]) => d % 2 === 1).map(([s, _]) => s)
+
+    return {
+      id: `graphe-euler-${Date.now()}`,
+      category: 'Graphes',
+      title: 'Graphe eulérien',
+      difficulty: 2,
+      statement: `Soit le graphe $G$ de sommets $\\{${c.sommets.join(', ')}\\}$ et d'arêtes $\\{${c.aretes.join(', ')}\\}$.\n\n` +
+        `Le graphe est-il eulérien ? Semi-eulérien ?`,
+      hints: [
+        'Un graphe connexe est eulérien si tous ses sommets sont de degré pair',
+        'Un graphe connexe est semi-eulérien s\'il a exactement 2 sommets de degré impair',
+        'Calcule d\'abord le degré de chaque sommet',
+      ],
+      solution: `**Degrés** : ${c.sommets.map(s => `$d(${s}) = ${c.degres[s]}$`).join(', ')}\n\n` +
+        `**Sommets de degré impair** : ${sommetImpairs.length === 0 ? 'aucun' : sommetImpairs.join(', ')} (${sommetImpairs.length} sommet(s))\n\n` +
+        `**Conclusion** : ${c.raison}`,
+      answer: c.eulerien ? 'Eulérien' : (c.semiEulerien ? 'Semi-eulérien' : 'Ni eulérien ni semi-eulérien'),
+      params: c
+    }
+  }
+}
+
+const grapheColoration: ExerciseGenerator = {
+  id: 'graphe-coloration',
+  category: 'Graphes',
+  title: 'Coloration de graphe',
+  description: 'Trouver le nombre chromatique',
+  difficulty: 3,
+  chapter: 'graphes-parcours',
+  generate: () => {
+    const cases = [
+      {
+        nom: 'cycle à 4 sommets (C₄)',
+        sommets: ['A', 'B', 'C', 'D'],
+        aretes: ['AB', 'BC', 'CD', 'DA'],
+        chi: 2,
+        coloration: { A: 1, B: 2, C: 1, D: 2 },
+        explication: 'C\'est un cycle pair, donc $\\chi(G) = 2$.'
+      },
+      {
+        nom: 'cycle à 5 sommets (C₅)',
+        sommets: ['A', 'B', 'C', 'D', 'E'],
+        aretes: ['AB', 'BC', 'CD', 'DE', 'EA'],
+        chi: 3,
+        coloration: { A: 1, B: 2, C: 1, D: 2, E: 3 },
+        explication: 'C\'est un cycle impair, donc $\\chi(G) = 3$.'
+      },
+      {
+        nom: 'graphe complet K₄',
+        sommets: ['A', 'B', 'C', 'D'],
+        aretes: ['AB', 'AC', 'AD', 'BC', 'BD', 'CD'],
+        chi: 4,
+        coloration: { A: 1, B: 2, C: 3, D: 4 },
+        explication: 'C\'est un graphe complet à 4 sommets, donc $\\chi(K_4) = 4$.'
+      },
+    ]
+
+    const c = randChoice(cases)
+    const couleurs = ['rouge', 'bleu', 'vert', 'jaune']
+
+    return {
+      id: `graphe-color-${Date.now()}`,
+      category: 'Graphes',
+      title: 'Coloration de graphe',
+      difficulty: 3,
+      statement: `Soit $G$ le ${c.nom} avec sommets $\\{${c.sommets.join(', ')}\\}$ et arêtes $\\{${c.aretes.join(', ')}\\}$.\n\n` +
+        `Déterminer le nombre chromatique $\\chi(G)$ et donner une coloration optimale.`,
+      hints: [
+        'Le nombre chromatique est le plus petit nombre de couleurs nécessaires',
+        'Deux sommets adjacents doivent avoir des couleurs différentes',
+        'Pour un cycle pair : $\\chi = 2$, pour un cycle impair : $\\chi = 3$',
+      ],
+      solution: `${c.explication}\n\n` +
+        `**Nombre chromatique** : $\\chi(G) = ${c.chi}$\n\n` +
+        `**Coloration** :\n${c.sommets.map(s => `- ${s} : ${couleurs[c.coloration[s] - 1]}`).join('\n')}`,
+      answer: `$\\chi(G) = ${c.chi}$`,
+      params: c
+    }
+  }
+}
+
+const grapheDijkstra: ExerciseGenerator = {
+  id: 'graphe-dijkstra',
+  category: 'Graphes',
+  title: 'Plus court chemin (Dijkstra)',
+  description: 'Appliquer l\'algorithme de Dijkstra',
+  difficulty: 4,
+  chapter: 'graphes-parcours',
+  generate: () => {
+    // Graphe simple avec poids pour Dijkstra
+    const cases = [
+      {
+        sommets: ['A', 'B', 'C', 'D'],
+        aretes: [
+          { de: 'A', vers: 'B', poids: 4 },
+          { de: 'A', vers: 'C', poids: 2 },
+          { de: 'B', vers: 'C', poids: 1 },
+          { de: 'B', vers: 'D', poids: 5 },
+          { de: 'C', vers: 'D', poids: 8 },
+        ],
+        depart: 'A',
+        arrivee: 'D',
+        distances: { A: 0, B: 3, C: 2, D: 8 },
+        chemin: ['A', 'C', 'B', 'D'],
+        longueur: 8
+      },
+      {
+        sommets: ['A', 'B', 'C', 'D'],
+        aretes: [
+          { de: 'A', vers: 'B', poids: 1 },
+          { de: 'A', vers: 'C', poids: 4 },
+          { de: 'B', vers: 'C', poids: 2 },
+          { de: 'B', vers: 'D', poids: 6 },
+          { de: 'C', vers: 'D', poids: 3 },
+        ],
+        depart: 'A',
+        arrivee: 'D',
+        distances: { A: 0, B: 1, C: 3, D: 6 },
+        chemin: ['A', 'B', 'C', 'D'],
+        longueur: 6
+      },
+    ]
+
+    const c = randChoice(cases)
+    const aretesStr = c.aretes.map(a => `${a.de}${a.vers}(${a.poids})`).join(', ')
+
+    return {
+      id: `graphe-dijkstra-${Date.now()}`,
+      category: 'Graphes',
+      title: 'Algorithme de Dijkstra',
+      difficulty: 4,
+      statement: `Soit le graphe pondéré $G$ avec sommets $\\{${c.sommets.join(', ')}\\}$ et arêtes pondérées $\\{${aretesStr}\\}$.\n\n` +
+        `Appliquer l'algorithme de Dijkstra pour trouver le plus court chemin de ${c.depart} à ${c.arrivee}.`,
+      hints: [
+        'Initialise les distances : 0 pour le départ, +∞ pour les autres',
+        'À chaque étape, choisis le sommet non visité de plus petite distance',
+        'Mets à jour les distances des voisins si un chemin plus court est trouvé',
+      ],
+      solution: `**Algorithme de Dijkstra** :\n\n` +
+        `Distances finales depuis ${c.depart} :\n` +
+        `${c.sommets.map(s => `- $d(${s}) = ${c.distances[s]}$`).join('\n')}\n\n` +
+        `**Plus court chemin** de ${c.depart} à ${c.arrivee} : ${c.chemin.join(' → ')}\n\n` +
+        `**Longueur** : ${c.longueur}`,
+      answer: `Chemin : ${c.chemin.join(' → ')}, Longueur : ${c.longueur}`,
+      params: c
+    }
+  }
+}
+
 // Liste de tous les générateurs
 export const generators: ExerciseGenerator[] = [
   // Dérivation
@@ -1769,6 +2281,20 @@ export const generators: ExerciseGenerator[] = [
   // Géométrie dans l'espace
   geometrieVecteurs,
   geometriePlanEquation,
+  // Droites et plans
+  droiteParametrique,
+  intersectionDroitePlan,
+  // Logique
+  logiqueContraposee,
+  logiqueReciproque,
+  // Chaînes de Markov
+  markovMatriceTransition,
+  markovEtatStable,
+  // Graphes
+  grapheDegre,
+  grapheEulerien,
+  grapheColoration,
+  grapheDijkstra,
 ]
 
 // Grouper par chapitre

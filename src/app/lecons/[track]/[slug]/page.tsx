@@ -61,6 +61,12 @@ const lessonToGeneratorCategory: Record<string, string> = {
   'nombres-premiers': 'Arithmétique',
   'matrices-operations': 'Matrices',
   'matrices-systemes': 'Matrices',
+  // Nouveaux chapitres
+  'droites-plans-espace': 'Droites et plans',
+  'implication-equivalence': 'Logique',
+  'chaines-markov': 'Chaînes de Markov',
+  'graphes-introduction': 'Graphes',
+  'graphes-parcours': 'Graphes',
 }
 
 export async function generateStaticParams() {
