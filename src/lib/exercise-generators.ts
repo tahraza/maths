@@ -73,7 +73,7 @@ export interface GeneratedExercise {
   hints: string[]
   solution: string
   answer: string
-  params: Record<string, number | string>
+  params: Record<string, unknown>
 }
 
 export interface ExerciseGenerator {
@@ -2089,7 +2089,7 @@ const grapheEulerien: ExerciseGenerator = {
         'Un graphe connexe est semi-eulérien s\'il a exactement 2 sommets de degré impair',
         'Calcule d\'abord le degré de chaque sommet',
       ],
-      solution: `**Degrés** : ${c.sommets.map(s => `$d(${s}) = ${c.degres[s]}$`).join(', ')}\n\n` +
+      solution: `**Degrés** : ${c.sommets.map(s => `$d(${s}) = ${(c.degres as Record<string, number>)[s]}$`).join(', ')}\n\n` +
         `**Sommets de degré impair** : ${sommetImpairs.length === 0 ? 'aucun' : sommetImpairs.join(', ')} (${sommetImpairs.length} sommet(s))\n\n` +
         `**Conclusion** : ${c.raison}`,
       answer: c.eulerien ? 'Eulérien' : (c.semiEulerien ? 'Semi-eulérien' : 'Ni eulérien ni semi-eulérien'),
@@ -2150,7 +2150,7 @@ const grapheColoration: ExerciseGenerator = {
       ],
       solution: `${c.explication}\n\n` +
         `**Nombre chromatique** : $\\chi(G) = ${c.chi}$\n\n` +
-        `**Coloration** :\n${c.sommets.map(s => `- ${s} : ${couleurs[c.coloration[s] - 1]}`).join('\n')}`,
+        `**Coloration** :\n${c.sommets.map(s => `- ${s} : ${couleurs[(c.coloration as Record<string, number>)[s] - 1]}`).join('\n')}`,
       answer: `$\\chi(G) = ${c.chi}$`,
       params: c
     }
@@ -2216,7 +2216,7 @@ const grapheDijkstra: ExerciseGenerator = {
       ],
       solution: `**Algorithme de Dijkstra** :\n\n` +
         `Distances finales depuis ${c.depart} :\n` +
-        `${c.sommets.map(s => `- $d(${s}) = ${c.distances[s]}$`).join('\n')}\n\n` +
+        `${c.sommets.map(s => `- $d(${s}) = ${(c.distances as Record<string, number>)[s]}$`).join('\n')}\n\n` +
         `**Plus court chemin** de ${c.depart} à ${c.arrivee} : ${c.chemin.join(' → ')}\n\n` +
         `**Longueur** : ${c.longueur}`,
       answer: `Chemin : ${c.chemin.join(' → ')}, Longueur : ${c.longueur}`,

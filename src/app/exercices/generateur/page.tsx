@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useCallback, useEffect } from 'react'
+import { useState, useCallback, useEffect, Suspense } from 'react'
 import { useSearchParams } from 'next/navigation'
 import Link from 'next/link'
 import {
@@ -102,7 +102,7 @@ const defaultLocalStats: LocalStats = {
   totalGeneratorExercises: 0
 }
 
-export default function GenerateurPage() {
+function GenerateurContent() {
   const searchParams = useSearchParams()
   const initialCategory = searchParams.get('category')
 
@@ -1342,5 +1342,20 @@ export default function GenerateurPage() {
         </div>
       </div>
     </div>
+  )
+}
+
+export default function GenerateurPage() {
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-950 dark:to-slate-900 flex items-center justify-center">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary-600 mx-auto mb-4"></div>
+          <p className="text-slate-600 dark:text-slate-400">Chargement...</p>
+        </div>
+      </div>
+    }>
+      <GenerateurContent />
+    </Suspense>
   )
 }
