@@ -28,7 +28,7 @@
     "id": "fc-suites-003",
     "lessonId": "suites-definition",
     "front": "Formule du terme général d'une suite géométrique",
-    "back": "$u_n = u_0 \times q^n$ où $u_0$ est le premier terme et $q$ la raison",
+    "back": "$u_n = u_0 \\times q^n$ où $u_0$ est le premier terme et $q$ la raison",
     "tags": [
       "suites",
       "géométrique",
@@ -77,7 +77,7 @@
     "id": "fc-derivation-003",
     "lessonId": "derivation",
     "front": "Dérivée d'un quotient (u/v)'",
-    "back": "$(u/v)' = \frac{u'v - uv'}{v^2}$",
+    "back": "$(u/v)' = \\frac{u'v - uv'}{v^2}$",
     "tags": [
       "dérivation",
       "formule"
@@ -114,7 +114,7 @@
     "id": "fc-derivation-006",
     "lessonId": "derivation",
     "front": "Dérivée de $e^u$",
-    "back": "$(e^u)' = u' \times e^u$ (ne pas oublier $u'$ !)",
+    "back": "$(e^u)' = u' \\times e^u$ (ne pas oublier $u'$ !)",
     "tags": [
       "dérivation",
       "exponentielle",
@@ -139,7 +139,7 @@
     "id": "fc-exp-002",
     "lessonId": "exponentielle",
     "front": "$e^{a+b} = ?$",
-    "back": "$e^{a+b} = e^a \times e^b$ (ATTENTION : c'est un PRODUIT, pas une somme !)",
+    "back": "$e^{a+b} = e^a \\times e^b$ (ATTENTION : c'est un PRODUIT, pas une somme !)",
     "tags": [
       "exponentielle",
       "formule"
@@ -186,7 +186,7 @@
     "id": "fc-ln-002",
     "lessonId": "logarithme",
     "front": "ln(ab) = ?",
-    "back": "$\\ln(ab) = \\ln(a) + \\ln(b)$ (ATTENTION : $\\ln(a+b) \ne \\ln(a) + \\ln(b)$ !)",
+    "back": "$\\ln(ab) = \\ln(a) + \\ln(b)$ (ATTENTION : $\\ln(a+b) \\ne \\ln(a) + \\ln(b)$ !)",
     "tags": [
       "logarithme",
       "formule"
@@ -235,7 +235,7 @@
     "id": "fc-proba-001",
     "lessonId": "probabilites-va",
     "front": "Formule de l'espérance E(X)",
-    "back": "$E(X) = \\sum x_i \times P(X = x_i)$ (moyenne pondérée des valeurs)",
+    "back": "$E(X) = \\sum x_i \\times P(X = x_i)$ (moyenne pondérée des valeurs)",
     "tags": [
       "probabilités",
       "espérance",
@@ -260,7 +260,7 @@
     "id": "fc-proba-003",
     "lessonId": "probabilites-va",
     "front": "P(X = k) pour X ~ B(n, p)",
-    "back": "$P(X = k) = \binom{n}{k} p^k (1-p)^{n-k}$",
+    "back": "$P(X = k) = \\binom{n}{k} p^k (1-p)^{n-k}$",
     "tags": [
       "probabilités",
       "binomiale",
@@ -285,8 +285,8 @@
   {
     "id": "fc-primitives-001",
     "lessonId": "primitives",
-    "front": "Primitive de $x^n$ ($n \ne -1$)",
-    "back": "$\\int x^n\\,dx = \frac{x^{n+1}}{n+1} + C$",
+    "front": "Primitive de $x^n$ ($n \\ne -1$)",
+    "back": "$\\int x^n\\,dx = \\frac{x^{n+1}}{n+1} + C$",
     "tags": [
       "primitives",
       "formule"
@@ -298,7 +298,7 @@
     "id": "fc-primitives-002",
     "lessonId": "primitives",
     "front": "Primitive de 1/x",
-    "back": "$\\int \frac{1}{x}\\,dx = \\ln|x| + C$ (avec valeur absolue !)",
+    "back": "$\\int \\frac{1}{x}\\,dx = \\ln|x| + C$ (avec valeur absolue !)",
     "tags": [
       "primitives",
       "formule"
@@ -371,7 +371,7 @@
     "id": "fc-complexes-003",
     "lessonId": "complexes-introduction",
     "front": "Conjugué de z = a + bi",
-    "back": "$\bar{z} = a - bi$ (on change le signe de la partie imaginaire)",
+    "back": "$\\bar{z} = a - bi$ (on change le signe de la partie imaginaire)",
     "tags": [
       "complexes",
       "conjugué"
@@ -382,8 +382,8 @@
   {
     "id": "fc-complexes-004",
     "lessonId": "complexes-introduction",
-    "front": "Produit $z \times \bar{z}$",
-    "back": "$z \times \bar{z} = |z|^2 = a^2 + b^2$ (toujours réel positif)",
+    "front": "Produit $z \\times \\bar{z}$",
+    "back": "$z \\times \\bar{z} = |z|^2 = a^2 + b^2$ (toujours réel positif)",
     "tags": [
       "complexes",
       "formule"
@@ -395,7 +395,7 @@
     "id": "fc-complexes-005",
     "lessonId": "complexes-introduction",
     "front": "Comment diviser par un complexe z ?",
-    "back": "Multiplier numérateur et dénominateur par le conjugué $\bar{z}$",
+    "back": "Multiplier numérateur et dénominateur par le conjugué $\\bar{z}$",
     "tags": [
       "complexes",
       "méthode"
@@ -432,8 +432,8 @@
   {
     "id": "fc-complexes-geo-003",
     "lessonId": "complexes-geometrie",
-    "front": "Rotation de centre $\\Omega$ et d'angle $\theta$",
-    "back": "$z' - \\omega = e^{i\theta}(z - \\omega)$",
+    "front": "Rotation de centre $\\Omega$ et d'angle $\\theta$",
+    "back": "$z' - \\omega = e^{i\\theta}(z - \\omega)$",
     "tags": [
       "complexes",
       "géométrie",
@@ -447,7 +447,7 @@
     "id": "fc-matrices-001",
     "lessonId": "matrices-operations",
     "front": "Le produit matriciel est-il commutatif ?",
-    "back": "NON ! En général $AB \ne BA$",
+    "back": "NON ! En général $AB \\ne BA$",
     "tags": [
       "matrices"
     ],
@@ -506,8 +506,8 @@
   {
     "id": "fc-divisibilite-003",
     "lessonId": "divisibilite",
-    "front": "Relation PGCD $\times$ PPCM",
-    "back": "$\\operatorname{pgcd}(a,b) \times \\operatorname{ppcm}(a,b) = a \times b$",
+    "front": "Relation PGCD $\\times$ PPCM",
+    "back": "$\\operatorname{pgcd}(a,b) \\times \\operatorname{ppcm}(a,b) = a \\times b$",
     "tags": [
       "arithmétique",
       "pgcd",
@@ -533,7 +533,7 @@
     "id": "fc-congruences-002",
     "lessonId": "congruences",
     "front": "Petit théorème de Fermat",
-    "back": "Si $p$ est premier et $p \nmid a$, alors $a^{p-1} \\equiv 1 \\pmod{p}$",
+    "back": "Si $p$ est premier et $p \\nmid a$, alors $a^{p-1} \\equiv 1 \\pmod{p}$",
     "tags": [
       "congruences",
       "Fermat",
@@ -616,7 +616,7 @@
     "id": "fc-ln-008",
     "lessonId": "logarithme",
     "front": "$\\ln(a^n) = ?$",
-    "back": "$\\ln(a^n) = n \times \\ln(a)$",
+    "back": "$\\ln(a^n) = n \\times \\ln(a)$",
     "tags": [
       "logarithme",
       "formule"
@@ -692,7 +692,7 @@
     "id": "fc-suites-005",
     "lessonId": "suites-definition",
     "front": "Somme des n premiers termes d'une suite arithmétique",
-    "back": "$S_n = n \times (premier + dernier) / 2 = n \times (u_1 + u_n) / 2$",
+    "back": "$S_n = n \\times (premier + dernier) / 2 = n \\times (u_1 + u_n) / 2$",
     "tags": [
       "suites",
       "arithmétique",
@@ -705,7 +705,7 @@
     "id": "fc-suites-006",
     "lessonId": "suites-definition",
     "front": "Somme des n premiers termes d'une suite géométrique",
-    "back": "$S_n = u_1 \times \frac{1 - q^n}{1 - q}$ si $q \ne 1$",
+    "back": "$S_n = u_1 \\times \\frac{1 - q^n}{1 - q}$ si $q \\ne 1$",
     "tags": [
       "suites",
       "géométrique",
@@ -717,8 +717,8 @@
   {
     "id": "fc-suites-007",
     "lessonId": "suites-definition",
-    "front": "Limite de $q^n$ quand $n \to +\\infty$",
-    "back": "Si $|q| < 1$ : $q^n \to 0$\nSi $q > 1$ : $q^n \to +\\infty$\nSi $q \\le -1$ : pas de limite",
+    "front": "Limite de $q^n$ quand $n \\to +\\infty$",
+    "back": "Si $|q| < 1$ : $q^n \\to 0$\nSi $q > 1$ : $q^n \\to +\\infty$\nSi $q \\le -1$ : pas de limite",
     "tags": [
       "suites",
       "limite",
@@ -731,7 +731,7 @@
     "id": "fc-derivation-009",
     "lessonId": "derivation",
     "front": "Dérivée de $\\sqrt{x}$",
-    "back": "$(\\sqrt{x})' = \frac{1}{2\\sqrt{x}} = \frac{1}{2}x^{-1/2}$",
+    "back": "$(\\sqrt{x})' = \\frac{1}{2\\sqrt{x}} = \\frac{1}{2}x^{-1/2}$",
     "tags": [
       "dérivation",
       "formule"
@@ -743,7 +743,7 @@
     "id": "fc-derivation-010",
     "lessonId": "derivation",
     "front": "Piège : dérivée de (f+g) vs (fg)",
-    "back": "$(f+g)' = f' + g'$ MAIS $(fg)' \ne f'g'$ ! Il faut : $(fg)' = f'g + fg'$",
+    "back": "$(f+g)' = f' + g'$ MAIS $(fg)' \\ne f'g'$ ! Il faut : $(fg)' = f'g + fg'$",
     "tags": [
       "dérivation",
       "erreur"
@@ -755,7 +755,7 @@
     "id": "fc-derivation-011",
     "lessonId": "derivation",
     "front": "Dérivée de f(ax+b)",
-    "back": "$[f(ax+b)]' = a \times f'(ax+b)$ (ne pas oublier le coefficient $a$)",
+    "back": "$[f(ax+b)]' = a \\times f'(ax+b)$ (ne pas oublier le coefficient $a$)",
     "tags": [
       "dérivation",
       "composée",
@@ -768,7 +768,7 @@
     "id": "fc-exp-006",
     "lessonId": "exponentielle",
     "front": "$e^{a-b} = ?$",
-    "back": "$e^{a-b} = \frac{e^a}{e^b}$",
+    "back": "$e^{a-b} = \\frac{e^a}{e^b}$",
     "tags": [
       "exponentielle",
       "formule"
@@ -816,7 +816,7 @@
     "id": "fc-ln-010",
     "lessonId": "logarithme",
     "front": "Piège courant avec le logarithme",
-    "back": "$\\ln(a+b) \ne \\ln(a) + \\ln(b)$ ! C'est $\\ln(ab) = \\ln(a) + \\ln(b)$",
+    "back": "$\\ln(a+b) \\ne \\ln(a) + \\ln(b)$ ! C'est $\\ln(ab) = \\ln(a) + \\ln(b)$",
     "tags": [
       "logarithme",
       "erreur"
@@ -853,7 +853,7 @@
     "id": "fc-proba-006",
     "lessonId": "probabilites-va",
     "front": "Formule des probabilités totales",
-    "back": "$P(B) = \\sum_i P(B\\mid A_i) \times P(A_i)$ où les $A_i$ forment une partition",
+    "back": "$P(B) = \\sum_i P(B\\mid A_i) \\times P(A_i)$ où les $A_i$ forment une partition",
     "tags": [
       "probabilités",
       "conditionnelle",
@@ -866,7 +866,7 @@
     "id": "fc-proba-007",
     "lessonId": "probabilites-va",
     "front": "Formule de Bayes simplifiée",
-    "back": "$P(A\\mid B) = \frac{P(B\\mid A) \times P(A)}{P(B)}$",
+    "back": "$P(A\\mid B) = \\frac{P(B\\mid A) \\times P(A)}{P(B)}$",
     "tags": [
       "probabilités",
       "conditionnelle",
@@ -879,7 +879,7 @@
     "id": "fc-primitives-007",
     "lessonId": "primitives",
     "front": "Primitive de u'/u",
-    "back": "$\\int \frac{u'}{u}\\,dx = \\ln|u| + C$",
+    "back": "$\\int \\frac{u'}{u}\\,dx = \\ln|u| + C$",
     "tags": [
       "primitives",
       "formule"
@@ -916,7 +916,7 @@
     "id": "fc-primitives-010",
     "lessonId": "primitives",
     "front": "Valeur moyenne d'une fonction",
-    "back": "$\\mu = \frac{1}{b-a} \times \\int_a^b f(x)\\,dx$",
+    "back": "$\\mu = \\frac{1}{b-a} \\times \\int_a^b f(x)\\,dx$",
     "tags": [
       "primitives",
       "intégrale",
@@ -941,7 +941,7 @@
     "id": "fc-recurrence-004",
     "lessonId": "recurrence",
     "front": "Somme des carrés : $1^2 + 2^2 + \\dots + n^2$",
-    "back": "$1^2 + 2^2 + \\dots + n^2 = \frac{n(n+1)(2n+1)}{6}$",
+    "back": "$1^2 + 2^2 + \\dots + n^2 = \\frac{n(n+1)(2n+1)}{6}$",
     "tags": [
       "récurrence",
       "formule",
@@ -977,8 +977,8 @@
   {
     "id": "fc-complexes-008",
     "lessonId": "complexes-introduction",
-    "front": "Somme $z + \bar{z}$",
-    "back": "$z + \bar{z} = 2 \times \\operatorname{Re}(z)$ (le double de la partie réelle)",
+    "front": "Somme $z + \\bar{z}$",
+    "back": "$z + \\bar{z} = 2 \\times \\operatorname{Re}(z)$ (le double de la partie réelle)",
     "tags": [
       "complexes",
       "formule"
@@ -990,7 +990,7 @@
     "id": "fc-complexes-geo-004",
     "lessonId": "complexes-geometrie",
     "front": "Forme trigonométrique d'un complexe",
-    "back": "$z = r(\\cos\theta + i\\sin\theta) = r \\cdot e^{i\theta}$ avec $r = |z|$ et $\theta = \\arg(z)$",
+    "back": "$z = r(\\cos\\theta + i\\sin\\theta) = r \\cdot e^{i\\theta}$ avec $r = |z|$ et $\\theta = \\arg(z)$",
     "tags": [
       "complexes",
       "géométrie",
@@ -1003,7 +1003,7 @@
     "id": "fc-complexes-geo-005",
     "lessonId": "complexes-geometrie",
     "front": "Formule d'Euler",
-    "back": "$e^{i\theta} = \\cos\theta + i\\sin\theta$",
+    "back": "$e^{i\\theta} = \\cos\\theta + i\\sin\\theta$",
     "tags": [
       "complexes",
       "géométrie",
@@ -1015,8 +1015,8 @@
   {
     "id": "fc-complexes-geo-006",
     "lessonId": "complexes-geometrie",
-    "front": "$|z_1 \times z_2| = ?$",
-    "back": "$|z_1 \times z_2| = |z_1| \times |z_2|$ (les modules se multiplient)",
+    "front": "$|z_1 \\times z_2| = ?$",
+    "back": "$|z_1 \\times z_2| = |z_1| \\times |z_2|$ (les modules se multiplient)",
     "tags": [
       "complexes",
       "module",
@@ -1028,8 +1028,8 @@
   {
     "id": "fc-matrices-004",
     "lessonId": "matrices-operations",
-    "front": "Inverse d'une matrice $2\times 2$",
-    "back": "Pour $A = \begin{pmatrix} a & b \\ c & d \\end{pmatrix}$ : $A^{-1} = \frac{1}{\\det A}\begin{pmatrix} d & -b \\ -c & a \\end{pmatrix}$ avec $\\det A = ad - bc$",
+    "front": "Inverse d'une matrice $2\\times 2$",
+    "back": "Pour $A = \\begin{pmatrix} a & b \\ c & d \\end{pmatrix}$ : $A^{-1} = \\frac{1}{\\det A}\\begin{pmatrix} d & -b \\ -c & a \\end{pmatrix}$ avec $\\det A = ad - bc$",
     "tags": [
       "matrices",
       "inverse",
@@ -1042,7 +1042,7 @@
     "id": "fc-matrices-005",
     "lessonId": "matrices-operations",
     "front": "Condition pour que A soit inversible",
-    "back": "$A$ est inversible ssi $\\det(A) \ne 0$",
+    "back": "$A$ est inversible ssi $\\det(A) \\ne 0$",
     "tags": [
       "matrices",
       "inverse"
@@ -1091,7 +1091,7 @@
   {
     "id": "fc-congruences-003",
     "lessonId": "congruences",
-    "front": "Propriété de compatibilité avec $\times$ des congruences",
+    "front": "Propriété de compatibilité avec $\\times$ des congruences",
     "back": "Si a ≡ b (mod n) et c ≡ d (mod n), alors ac ≡ bd (mod n)",
     "tags": [
       "congruences",
@@ -1202,7 +1202,7 @@
     "id": "fc-suites-lim-002",
     "lessonId": "suites-limites",
     "front": "Formes indéterminées pour les suites",
-    "back": "$+\\infty - \\infty$, $0 \times \\infty$, $\\infty/\\infty$, $0/0$",
+    "back": "$+\\infty - \\infty$, $0 \\times \\infty$, $\\infty/\\infty$, $0/0$",
     "tags": [
       "suites",
       "limite"
@@ -1532,7 +1532,7 @@
     "id": "fc-fonc-trigo-003",
     "lessonId": "fonctions-trigo",
     "front": "Dérivée de tan(x)",
-    "back": "$(\tan(x))' = 1 + \tan^2(x) = 1/\\cos^2(x)$",
+    "back": "$(\\tan(x))' = 1 + \\tan^2(x) = 1/\\cos^2(x)$",
     "tags": [
       "trigonométrie",
       "dérivée"
@@ -1592,7 +1592,7 @@
     "id": "fc-integ-004",
     "lessonId": "integrales",
     "front": "Linéarité de l'intégrale",
-    "back": "$\\int (\\alpha f + \beta g) = \\alpha \\int f + \beta \\int g$",
+    "back": "$\\int (\\alpha f + \\beta g) = \\alpha \\int f + \\beta \\int g$",
     "tags": [
       "intégrale",
       "formule"
@@ -1640,7 +1640,7 @@
     "id": "fc-normale-003",
     "lessonId": "loi-normale",
     "front": "Centrer-réduire $X \\sim N(\\mu, \\sigma^2)$",
-    "back": "$Z = \frac{X - \\mu}{\\sigma}$ suit $N(0, 1)$",
+    "back": "$Z = \\frac{X - \\mu}{\\sigma}$ suit $N(0, 1)$",
     "tags": [
       "probabilités",
       "normale"
@@ -1702,7 +1702,7 @@
   {
     "id": "fc-vect-esp-004",
     "lessonId": "vecteurs-espace",
-    "front": "Formule du déterminant $3\times 3$",
+    "front": "Formule du déterminant $3\\times 3$",
     "back": "det = a(ei-fh) - b(di-fg) + c(dh-eg)",
     "tags": [
       "géométrie",
@@ -1751,7 +1751,7 @@
     "id": "fc-scal-esp-004",
     "lessonId": "produit-scalaire-espace",
     "front": "Formule avec angle : $u \\cdot v$",
-    "back": "$u \\cdot v = \\|u\\| \times \\|v\\| \times \\cos(\theta)$",
+    "back": "$u \\cdot v = \\|u\\| \\times \\|v\\| \\times \\cos(\\theta)$",
     "tags": [
       "géométrie",
       "produit scalaire",
@@ -1814,7 +1814,7 @@
     "id": "fc-ortho-esp-001",
     "lessonId": "orthogonalite-espace",
     "front": "Distance point-plan",
-    "back": "$d(M, P) = \frac{|ax_m + by_m + cz_m + d|}{\\sqrt{a^2 + b^2 + c^2}}$",
+    "back": "$d(M, P) = \\frac{|ax_m + by_m + cz_m + d|}{\\sqrt{a^2 + b^2 + c^2}}$",
     "tags": [
       "géométrie",
       "distance"
@@ -1862,7 +1862,7 @@
     "id": "fc-va-001",
     "lessonId": "variables-aleatoires",
     "front": "Espérance E(X)",
-    "back": "$E(X) = \\sum x_i \times P(X = x_i)$",
+    "back": "$E(X) = \\sum x_i \\times P(X = x_i)$",
     "tags": [
       "probabilités",
       "espérance"
@@ -1922,7 +1922,7 @@
     "id": "fc-binom-002",
     "lessonId": "loi-binomiale",
     "front": "Formule P(X = k) pour X ~ B(n,p)",
-    "back": "$P(X = k) = \binom{n}{k} p^k (1-p)^{n-k}$",
+    "back": "$P(X = k) = \\binom{n}{k} p^k (1-p)^{n-k}$",
     "tags": [
       "probabilités",
       "binomiale",
@@ -1947,7 +1947,7 @@
     "id": "fc-binom-004",
     "lessonId": "loi-binomiale",
     "front": "Coefficient binomial $C(n,k)$",
-    "back": "$C(n,k) = \frac{n!}{k!(n-k)!}$",
+    "back": "$C(n,k) = \\frac{n!}{k!(n-k)!}$",
     "tags": [
       "probabilités",
       "binomiale",
@@ -1973,7 +1973,7 @@
     "id": "fc-compl-formes-001",
     "lessonId": "complexes-formes",
     "front": "Forme exponentielle",
-    "back": "$z = r \times e^{i\theta}$ avec $r = |z|$ et $\theta = \\arg(z)$",
+    "back": "$z = r \\times e^{i\\theta}$ avec $r = |z|$ et $\\theta = \\arg(z)$",
     "tags": [
       "complexes",
       "forme exponentielle"
@@ -1985,7 +1985,7 @@
     "id": "fc-compl-formes-002",
     "lessonId": "complexes-formes",
     "front": "Formule de Moivre",
-    "back": "$(\\cos\theta + i \\sin\theta)^n = \\cos(n\theta) + i \\sin(n\theta)$",
+    "back": "$(\\cos\\theta + i \\sin\\theta)^n = \\cos(n\\theta) + i \\sin(n\\theta)$",
     "tags": [
       "complexes",
       "Moivre"
@@ -1997,7 +1997,7 @@
     "id": "fc-compl-formes-003",
     "lessonId": "complexes-formes",
     "front": "Racines n-ièmes de l'unité",
-    "back": "$z_k = e^{i \times 2k\\pi/n}$ pour $k = 0, 1, \\dots, n-1$",
+    "back": "$z_k = e^{i \\times 2k\\pi/n}$ pour $k = 0, 1, \\dots, n-1$",
     "tags": [
       "complexes",
       "racines"
@@ -2045,7 +2045,7 @@
     "id": "fc-mat-syst-003",
     "lessonId": "matrices-systemes",
     "front": "Système de Cramer",
-    "back": "Si $\\det(A) \ne 0$, le système a une unique solution",
+    "back": "Si $\\det(A) \\ne 0$, le système a une unique solution",
     "tags": [
       "matrices",
       "systèmes",
@@ -2083,7 +2083,7 @@
     "id": "fc-graphes-intro-002",
     "lessonId": "graphes-introduction",
     "front": "Théorème des poignées de main",
-    "back": "$\\sum \\deg(v) = 2 \times$ nombre d'arêtes",
+    "back": "$\\sum \\deg(v) = 2 \\times$ nombre d'arêtes",
     "tags": [
       "graphes",
       "formule"
@@ -2179,7 +2179,7 @@
     "id": "fc-comb-002",
     "lessonId": "combinatoire",
     "front": "Quelle est la définition de n! (factorielle) ?",
-    "back": "$n! = n \times (n-1) \times \\dots \times 2 \times 1$. Convention : $0! = 1$.",
+    "back": "$n! = n \\times (n-1) \\times \\dots \\times 2 \\times 1$. Convention : $0! = 1$.",
     "tags": [
       "combinatoire",
       "factorielle"
@@ -2191,7 +2191,7 @@
     "id": "fc-comb-003",
     "lessonId": "combinatoire",
     "front": "Formule du nombre d'arrangements de k parmi n",
-    "back": "$A(n,k) = \frac{n!}{(n-k)!} = n \times (n-1) \times \\dots \times (n-k+1)$. Ordre compte, pas de répétition.",
+    "back": "$A(n,k) = \\frac{n!}{(n-k)!} = n \\times (n-1) \\times \\dots \\times (n-k+1)$. Ordre compte, pas de répétition.",
     "tags": [
       "combinatoire",
       "arrangement"
@@ -2203,7 +2203,7 @@
     "id": "fc-comb-004",
     "lessonId": "combinatoire",
     "front": "Formule des combinaisons (k parmi n)",
-    "back": "$C(n,k) = \frac{n!}{k!(n-k)!}$ — L'ordre ne compte PAS, pas de répétition.",
+    "back": "$C(n,k) = \\frac{n!}{k!(n-k)!}$ — L'ordre ne compte PAS, pas de répétition.",
     "tags": [
       "combinatoire",
       "combinaison",
@@ -2266,7 +2266,7 @@
     "id": "fc-comb-009",
     "lessonId": "combinatoire",
     "front": "Somme de tous les coefficients binomiaux pour n fixé",
-    "back": "$\\sum_{k=0}^{n} \binom{n}{k} = 2^n$. C'est le nombre total de sous-ensembles d'un ensemble à $n$ éléments.",
+    "back": "$\\sum_{k=0}^{n} \\binom{n}{k} = 2^n$. C'est le nombre total de sous-ensembles d'un ensemble à $n$ éléments.",
     "tags": [
       "combinatoire",
       "propriété"
@@ -2278,7 +2278,7 @@
     "id": "fc-comb-010",
     "lessonId": "combinatoire",
     "front": "Principe multiplicatif (ET PUIS)",
-    "back": "$\\mathrm{Card}(A \times B) = \\mathrm{Card}(A) \times \\mathrm{Card}(B)$. Quand on fait un choix PUIS un autre indépendamment.",
+    "back": "$\\mathrm{Card}(A \\times B) = \\mathrm{Card}(A) \\times \\mathrm{Card}(B)$. Quand on fait un choix PUIS un autre indépendamment.",
     "tags": [
       "combinatoire",
       "principe"
@@ -2326,7 +2326,7 @@
   {
     "id": "fc-equadiff-002",
     "lessonId": "equations-differentielles",
-    "front": "Solutions de l'équation $y' = ay + b$ ($a \ne 0$)",
+    "front": "Solutions de l'équation $y' = ay + b$ ($a \\ne 0$)",
     "back": "$y(x) = Ce^{ax} - b/a$. La solution particulière constante est $-b/a$.",
     "tags": [
       "équations différentielles",
@@ -2362,7 +2362,7 @@
   {
     "id": "fc-equadiff-005",
     "lessonId": "equations-differentielles",
-    "front": "Limite de $y(x) = Ce^{ax} + k$ quand $x \to +\\infty$ si $a < 0$",
+    "front": "Limite de $y(x) = Ce^{ax} + k$ quand $x \\to +\\infty$ si $a < 0$",
     "back": "La limite est $k$. Le terme $Ce^{ax}$ tend vers 0 car $a < 0$.",
     "tags": [
       "équations différentielles",
@@ -2526,7 +2526,7 @@
     "id": "fc-prem-006",
     "lessonId": "nombres-premiers",
     "front": "Formule du nombre de diviseurs",
-    "back": "Si $n = p_1^{\\alpha_1} \times \\dots \times p_k^{\\alpha_k}$, alors $\tau(n) = (\\alpha_1+1)(\\alpha_2+1)\\dots(\\alpha_k+1)$.",
+    "back": "Si $n = p_1^{\\alpha_1} \\times \\dots \\times p_k^{\\alpha_k}$, alors $\\tau(n) = (\\alpha_1+1)(\\alpha_2+1)\\dots(\\alpha_k+1)$.",
     "tags": [
       "arithmétique",
       "diviseurs",
@@ -2603,8 +2603,8 @@
   {
     "id": "fc-prem-012",
     "lessonId": "nombres-premiers",
-    "front": "Relation PGCD $\times$ PPCM",
-    "back": "$\\operatorname{pgcd}(a,b) \times \\operatorname{ppcm}(a,b) = a \times b$",
+    "front": "Relation PGCD $\\times$ PPCM",
+    "back": "$\\operatorname{pgcd}(a,b) \\times \\operatorname{ppcm}(a,b) = a \\times b$",
     "tags": [
       "arithmétique",
       "pgcd",
@@ -2618,7 +2618,7 @@
     "id": "fc-eqpoly-001",
     "lessonId": "equations-polynomiales-complexes",
     "front": "Solutions de $az^2 + bz + c = 0$ (réels) si $\\Delta < 0$ ?",
-    "back": "$z = \frac{-b \\pm i\\sqrt{-\\Delta}}{2a}$. Deux solutions complexes conjuguées.",
+    "back": "$z = \\frac{-b \\pm i\\sqrt{-\\Delta}}{2a}$. Deux solutions complexes conjuguées.",
     "tags": [
       "complexes",
       "équation",
@@ -2657,7 +2657,7 @@
     "id": "fc-eqpoly-004",
     "lessonId": "equations-polynomiales-complexes",
     "front": "Si P(α) = 0, comment factoriser P(z) ?",
-    "back": "$P(z) = (z - \\alpha) \times Q(z)$ où $Q$ est de degré $n-1$.",
+    "back": "$P(z) = (z - \\alpha) \\times Q(z)$ où $Q$ est de degré $n-1$.",
     "tags": [
       "complexes",
       "polynôme",
@@ -2746,8 +2746,8 @@
   {
     "id": "fc-eqpoly-011",
     "lessonId": "equations-polynomiales-complexes",
-    "front": "Solutions de $z^n = r e^{i\theta}$",
-    "back": "$z_k = \\sqrt[n]{r} \\cdot e^{i(\theta + 2k\\pi)/n}$ pour $k = 0, \\dots, n-1$",
+    "front": "Solutions de $z^n = r e^{i\\theta}$",
+    "back": "$z_k = \\sqrt[n]{r} \\cdot e^{i(\\theta + 2k\\pi)/n}$ pour $k = 0, \\dots, n-1$",
     "tags": [
       "complexes",
       "racine n-ième",
@@ -2797,7 +2797,7 @@
     "id": "fc-markov-003",
     "lessonId": "chaines-markov",
     "front": "Formule de récurrence pour l'évolution d'une chaîne de Markov",
-    "back": "$\\pi_{n+1} = \\pi_n \times P$ (matrice ligne × matrice de transition)",
+    "back": "$\\pi_{n+1} = \\pi_n \\times P$ (matrice ligne × matrice de transition)",
     "tags": [
       "markov",
       "formule"
@@ -2809,7 +2809,7 @@
     "id": "fc-markov-004",
     "lessonId": "chaines-markov",
     "front": "Comment calculer l'état $\\pi_n$ en fonction de l'état initial $\\pi_0$ ?",
-    "back": "$\\pi_n = \\pi_0 \times P^n$",
+    "back": "$\\pi_n = \\pi_0 \\times P^n$",
     "tags": [
       "markov",
       "formule"
@@ -2821,7 +2821,7 @@
     "id": "fc-markov-005",
     "lessonId": "chaines-markov",
     "front": "Quelles sont les deux conditions pour trouver un état stable $\\pi$ ?",
-    "back": "1) $\\pi \times P = \\pi$  2) $\\sum x_i = 1$ (somme des composantes = 1)",
+    "back": "1) $\\pi \\times P = \\pi$  2) $\\sum x_i = 1$ (somme des composantes = 1)",
     "tags": [
       "markov",
       "état stable"
@@ -2881,7 +2881,7 @@
     "id": "fc-markov-010",
     "lessonId": "chaines-markov",
     "front": "Piège : Quel est l'ordre de multiplication pour calculer $\\pi_{n+1}$ ?",
-    "back": "$\\pi_{n+1} = \\pi_n \times P$ (ligne × carrée). NE PAS écrire $P \times \\pi_n$ !",
+    "back": "$\\pi_{n+1} = \\pi_n \\times P$ (ligne × carrée). NE PAS écrire $P \\times \\pi_n$ !",
     "tags": [
       "markov",
       "piège"
@@ -2942,7 +2942,7 @@
   {
     "id": "fc-int-suites-lim-001",
     "lessonId": "suites-limites",
-    "front": "Interprétation de lim u_n = ℓ",
+    "front": "Interprétation de $\\lim u_n = \\ell$",
     "back": "Les termes finissent par rester aussi proches de ℓ qu’on veut.",
     "tags": [
       "suites",
@@ -3151,7 +3151,7 @@
     "id": "fc-int-limites-fonctions-003",
     "lessonId": "limites-fonctions",
     "front": "Interprétation d’une asymptote horizontale y = L",
-    "back": "Quand $x \to \\pm\\infty$, $f(x)$ se rapproche de $L$.",
+    "back": "Quand $x \\to \\pm\\infty$, $f(x)$ se rapproche de $L$.",
     "tags": [
       "limites",
       "asymptote",
@@ -3229,7 +3229,7 @@
     "id": "fc-int-convexite-003",
     "lessonId": "convexite",
     "front": "Point d’inflexion : interprétation",
-    "back": "La courbe change de convexité (convexe $\to$ concave ou inversement).",
+    "back": "La courbe change de convexité (convexe $\\to$ concave ou inversement).",
     "tags": [
       "convexité",
       "inflexion",
@@ -3332,7 +3332,7 @@
   {
     "id": "fc-int-exp-005",
     "lessonId": "exponentielle",
-    "front": "Que vaut $lim_{x\to -infty} e^x$ ?",
+    "front": "Que vaut $\\lim_{x\\to -\\infty} e^x$ ?",
     "back": "La valeur tend vers 0 (approche de l’axe sans le toucher).",
     "tags": [
       "exponentielle",
@@ -3396,7 +3396,7 @@
   {
     "id": "fc-int-ln-004",
     "lessonId": "logarithme",
-    "front": "Pourquoi $ln(a+b)\neln(a)+ln(b)$ ?",
+    "front": "Pourquoi $ln(a+b)\\neln(a)+ln(b)$ ?",
     "back": "Contre-exemple : $ln(1+1)=ln(2)$ alors que $ln(1)+ln(1)=0$.",
     "tags": [
       "logarithme",
