@@ -224,6 +224,15 @@ function processContent(content: string): { html: string; graphs: GraphConfig[] 
     '<div class="tip-box"><strong class="text-success-700 dark:text-success-400">Astuce</strong><div class="mt-2">$1</div></div>'
   )
 
+  // :::mnemonic (memory aids / moyens mnémotechniques)
+  processed = processed.replace(
+    /:::mnemonic(?:\[([^\]]*)\])?\s*\n([\s\S]*?):::/g,
+    (_, title, content) => {
+      const titleHtml = title ? `<strong class="text-fuchsia-700 dark:text-fuchsia-400">${title}</strong>` : '<strong class="text-fuchsia-700 dark:text-fuchsia-400">Moyen mnémotechnique</strong>'
+      return `<div class="mnemonic-box">${titleHtml}<div class="mt-2">${content}</div></div>`
+    }
+  )
+
   // Process basic markdown
   // Headers
   processed = processed.replace(/^### (.*$)/gm, '<h3>$1</h3>')

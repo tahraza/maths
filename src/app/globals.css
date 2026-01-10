@@ -256,6 +256,15 @@
     @apply my-6 rounded-lg border-l-4 border-success-500 bg-success-50 p-4 dark:bg-green-900/20;
   }
 
+  .mnemonic-box {
+    @apply my-6 rounded-lg border-l-4 border-fuchsia-500 bg-gradient-to-r from-fuchsia-50 to-purple-50 p-4 dark:from-fuchsia-900/20 dark:to-purple-900/20;
+  }
+
+  .mnemonic-box::before {
+    content: '🧠';
+    @apply mr-2;
+  }
+
   /* Progress bar */
   .progress-bar {
     @apply h-2 w-full overflow-hidden rounded-full bg-slate-200 dark:bg-slate-700;

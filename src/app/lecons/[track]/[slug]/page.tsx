@@ -18,6 +18,8 @@ import { getTrackLabel, getTrackColor, getDifficultyLabel, getDifficultyColor, f
 import { LessonContent } from '@/components/LessonContent'
 import { LessonProgress } from '@/components/LessonProgress'
 import { RevisionSchedule } from '@/components/RevisionSchedule'
+import { MnemonicList, MnemonicSidebarWidget } from '@/components/MnemonicCard'
+import { getMnemonicsByLesson } from '@/data/mnemonics'
 import type { Track } from '@/types'
 
 interface PageProps {
@@ -89,6 +91,7 @@ export default function LessonPage({ params }: PageProps) {
   const flashcards = getFlashcardsByLesson(lesson.id)
   const preQuiz = getPreQuiz(lesson.id)
   const postQuiz = getPostQuiz(lesson.id)
+  const mnemonics = getMnemonicsByLesson(lesson.id)
 
   // Get prev/next lessons
   const allLessons = getAllLessons().filter((l) => l.track === lesson.track)
@@ -196,6 +199,13 @@ export default function LessonPage({ params }: PageProps) {
               <LessonContent content={lesson.content} />
             </div>
 
+            {/* Mnemonics section */}
+            {mnemonics.length > 0 && (
+              <div className="mt-6 card border-fuchsia-200 dark:border-fuchsia-800">
+                <MnemonicList mnemonics={mnemonics} title="Astuces pour retenir" />
+              </div>
+            )}
+
             {/* Post-quiz CTA */}
             {postQuiz && (
               <div className="mt-6 rounded-lg border border-success-200 bg-success-50 p-4 dark:border-success-800 dark:bg-success-900/20">
@@ -249,6 +259,9 @@ export default function LessonPage({ params }: PageProps) {
           <div className="space-y-6">
             {/* Revision schedule */}
             <RevisionSchedule lessonId={lesson.id} />
+
+            {/* Mnemonics sidebar widget */}
+            <MnemonicSidebarWidget mnemonics={mnemonics} />
 
             {/* Related exercises */}
             {exercises.length > 0 && (
