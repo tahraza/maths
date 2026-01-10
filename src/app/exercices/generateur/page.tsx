@@ -19,6 +19,7 @@ import {
 } from 'lucide-react'
 import { generators, generatorsByCategory, type GeneratedExercise, type ExerciseGenerator } from '@/lib/exercise-generators'
 import MathText from '@/components/MathText'
+import { useGamificationStore } from '@/stores/gamificationStore'
 
 const categoryColors: Record<string, string> = {
   'Dérivation': 'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200',
@@ -48,23 +49,19 @@ const difficultyColors = ['', 'bg-green-500', 'bg-lime-500', 'bg-yellow-500', 'b
 // Points de base par difficulté
 const difficultyPoints = [0, 10, 20, 30, 50, 80]
 
-// Clé localStorage
-const STORAGE_KEY = 'maths-generator-stats'
+// Clé localStorage pour stats locales du générateur (série, exercices par catégorie)
+const STORAGE_KEY = 'maths-generator-local'
 
-interface GameStats {
-  totalPoints: number
-  totalExercises: number
-  currentStreak: number
-  bestStreak: number
+interface LocalStats {
+  generatorStreak: number
   exercisesByCategory: Record<string, number>
+  totalGeneratorExercises: number
 }
 
-const defaultStats: GameStats = {
-  totalPoints: 0,
-  totalExercises: 0,
-  currentStreak: 0,
-  bestStreak: 0,
-  exercisesByCategory: {}
+const defaultLocalStats: LocalStats = {
+  generatorStreak: 0,
+  exercisesByCategory: {},
+  totalGeneratorExercises: 0
 }
 
 export default function GenerateurPage() {
@@ -75,33 +72,47 @@ export default function GenerateurPage() {
   const [showSolution, setShowSolution] = useState(false)
   const [exerciseCount, setExerciseCount] = useState(0)
 
-  // Gamification state
-  const [stats, setStats] = useState<GameStats>(defaultStats)
+  // Gamification globale (Zustand store)
+  const {
+    totalPoints,
+    currentStreak: globalStreak,
+    addPoints,
+    incrementStat,
+    recordExerciseWithoutHint,
+    resetExerciseHintStreak,
+    getLevel
+  } = useGamificationStore()
+
+  // Stats locales du générateur
+  const [localStats, setLocalStats] = useState<LocalStats>(defaultLocalStats)
   const [pointsEarned, setPointsEarned] = useState<number | null>(null)
   const [hasValidated, setHasValidated] = useState(false)
   const [usedHints, setUsedHints] = useState(false)
+  const [mounted, setMounted] = useState(false)
 
   const categories = Object.keys(generatorsByCategory)
+  const level = getLevel()
 
-  // Load stats from localStorage
+  // Load local stats from localStorage
   useEffect(() => {
+    setMounted(true)
     try {
       const saved = localStorage.getItem(STORAGE_KEY)
       if (saved) {
-        setStats(JSON.parse(saved))
+        setLocalStats(JSON.parse(saved))
       }
     } catch (e) {
-      console.error('Error loading stats:', e)
+      console.error('Error loading local stats:', e)
     }
   }, [])
 
-  // Save stats to localStorage
-  const saveStats = useCallback((newStats: GameStats) => {
-    setStats(newStats)
+  // Save local stats to localStorage
+  const saveLocalStats = useCallback((newStats: LocalStats) => {
+    setLocalStats(newStats)
     try {
       localStorage.setItem(STORAGE_KEY, JSON.stringify(newStats))
     } catch (e) {
-      console.error('Error saving stats:', e)
+      console.error('Error saving local stats:', e)
     }
   }, [])
 
@@ -111,8 +122,8 @@ export default function GenerateurPage() {
 
     const basePoints = difficultyPoints[selectedGenerator.difficulty] || 10
 
-    // Streak multiplier: +10% par exercice de la série (max +100%)
-    const streakMultiplier = 1 + Math.min(stats.currentStreak * 0.1, 1)
+    // Streak multiplier basé sur la série locale du générateur: +10% par exercice (max +100%)
+    const streakMultiplier = 1 + Math.min(localStats.generatorStreak * 0.1, 1)
 
     // Pénalité si indices utilisés: -30%
     const hintPenalty = usedHints ? 0.7 : 1
@@ -121,7 +132,7 @@ export default function GenerateurPage() {
     if (showSolution && !hasValidated) return 0
 
     return Math.round(basePoints * streakMultiplier * hintPenalty)
-  }, [selectedGenerator, stats.currentStreak, usedHints, showSolution, hasValidated])
+  }, [selectedGenerator, localStats.generatorStreak, usedHints, showSolution, hasValidated])
 
   // Validate exercise (user claims they solved it)
   const validateExercise = useCallback(() => {
@@ -131,28 +142,40 @@ export default function GenerateurPage() {
     setPointsEarned(points)
     setHasValidated(true)
 
-    const newStats: GameStats = {
-      totalPoints: stats.totalPoints + points,
-      totalExercises: stats.totalExercises + 1,
-      currentStreak: points > 0 ? stats.currentStreak + 1 : 0,
-      bestStreak: points > 0 ? Math.max(stats.bestStreak, stats.currentStreak + 1) : stats.bestStreak,
-      exercisesByCategory: {
-        ...stats.exercisesByCategory,
-        [selectedGenerator.category]: (stats.exercisesByCategory[selectedGenerator.category] || 0) + 1
+    // Ajouter les points au store global
+    if (points > 0) {
+      addPoints(points, `Exercice généré: ${selectedGenerator.title}`)
+      incrementStat('exercises')
+
+      // Track exercices sans indices pour badge secret
+      if (!usedHints) {
+        recordExerciseWithoutHint()
+      } else {
+        resetExerciseHintStreak()
       }
     }
 
-    saveStats(newStats)
-  }, [hasValidated, selectedGenerator, calculatePoints, stats, saveStats])
+    // Mettre à jour les stats locales
+    const newLocalStats: LocalStats = {
+      generatorStreak: points > 0 ? localStats.generatorStreak + 1 : 0,
+      exercisesByCategory: {
+        ...localStats.exercisesByCategory,
+        [selectedGenerator.category]: (localStats.exercisesByCategory[selectedGenerator.category] || 0) + 1
+      },
+      totalGeneratorExercises: localStats.totalGeneratorExercises + 1
+    }
+
+    saveLocalStats(newLocalStats)
+  }, [hasValidated, selectedGenerator, calculatePoints, usedHints, addPoints, incrementStat, recordExerciseWithoutHint, resetExerciseHintStreak, localStats, saveLocalStats])
 
   // Skip exercise (breaks streak)
   const skipExercise = useCallback(() => {
-    if (!hasValidated && stats.currentStreak > 0) {
-      const newStats = { ...stats, currentStreak: 0 }
-      saveStats(newStats)
+    if (!hasValidated && localStats.generatorStreak > 0) {
+      const newStats = { ...localStats, generatorStreak: 0 }
+      saveLocalStats(newStats)
     }
     generateNewExercise()
-  }, [hasValidated, stats, saveStats])
+  }, [hasValidated, localStats, saveLocalStats])
 
   const generateNewExercise = useCallback(() => {
     if (selectedGenerator) {
@@ -198,6 +221,25 @@ export default function GenerateurPage() {
 
   const potentialPoints = calculatePoints()
 
+  // Avoid hydration mismatch
+  if (!mounted) {
+    return (
+      <div className="min-h-screen bg-slate-50 py-8 dark:bg-slate-900">
+        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+          <div className="animate-pulse">
+            <div className="h-20 bg-slate-200 dark:bg-slate-700 rounded-xl mb-6"></div>
+            <div className="h-8 w-64 bg-slate-200 dark:bg-slate-700 rounded mb-4"></div>
+            <div className="grid gap-3 md:grid-cols-2">
+              {[1, 2, 3, 4].map((i) => (
+                <div key={i} className="h-24 bg-slate-200 dark:bg-slate-700 rounded-xl"></div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    )
+  }
+
   return (
     <div className="min-h-screen bg-slate-50 py-8 dark:bg-slate-900">
       <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
@@ -208,29 +250,36 @@ export default function GenerateurPage() {
               <Trophy className="h-5 w-5 text-amber-500" />
               <div>
                 <div className="text-xs text-slate-500 dark:text-slate-400">Total</div>
-                <div className="font-bold text-slate-900 dark:text-slate-100">{stats.totalPoints} pts</div>
+                <div className="font-bold text-slate-900 dark:text-slate-100">{totalPoints} pts</div>
               </div>
             </div>
             <div className="flex items-center gap-2">
-              <Flame className={`h-5 w-5 ${stats.currentStreak > 0 ? 'text-orange-500' : 'text-slate-300 dark:text-slate-600'}`} />
+              <Star className="h-5 w-5 text-primary-500" />
+              <div>
+                <div className="text-xs text-slate-500 dark:text-slate-400">Niveau</div>
+                <div className="font-bold text-slate-900 dark:text-slate-100">{level.level}</div>
+              </div>
+            </div>
+            <div className="flex items-center gap-2">
+              <Flame className={`h-5 w-5 ${localStats.generatorStreak > 0 ? 'text-orange-500' : 'text-slate-300 dark:text-slate-600'}`} />
               <div>
                 <div className="text-xs text-slate-500 dark:text-slate-400">Série</div>
-                <div className="font-bold text-slate-900 dark:text-slate-100">{stats.currentStreak}</div>
+                <div className="font-bold text-slate-900 dark:text-slate-100">{localStats.generatorStreak}</div>
               </div>
             </div>
             <div className="flex items-center gap-2">
-              <Target className="h-5 w-5 text-primary-500" />
+              <Target className="h-5 w-5 text-emerald-500" />
               <div>
-                <div className="text-xs text-slate-500 dark:text-slate-400">Exercices</div>
-                <div className="font-bold text-slate-900 dark:text-slate-100">{stats.totalExercises}</div>
+                <div className="text-xs text-slate-500 dark:text-slate-400">Générés</div>
+                <div className="font-bold text-slate-900 dark:text-slate-100">{localStats.totalGeneratorExercises}</div>
               </div>
             </div>
           </div>
-          {stats.currentStreak >= 3 && (
+          {localStats.generatorStreak >= 3 && (
             <div className="flex items-center gap-1 px-3 py-1 bg-orange-100 dark:bg-orange-900 rounded-full">
               <Zap className="h-4 w-4 text-orange-500" />
               <span className="text-sm font-medium text-orange-700 dark:text-orange-300">
-                Bonus x{(1 + Math.min(stats.currentStreak * 0.1, 1)).toFixed(1)}
+                Bonus x{(1 + Math.min(localStats.generatorStreak * 0.1, 1)).toFixed(1)}
               </span>
             </div>
           )}
@@ -267,7 +316,7 @@ export default function GenerateurPage() {
             <div className="grid gap-3 md:grid-cols-2">
               {categories.map((category) => {
                 const gens = generatorsByCategory[category]
-                const completed = stats.exercisesByCategory[category] || 0
+                const completed = localStats.exercisesByCategory[category] || 0
                 return (
                   <button
                     key={category}
@@ -410,9 +459,9 @@ export default function GenerateurPage() {
                   <Trophy className="h-6 w-6 text-amber-500" />
                   <span className="text-2xl font-bold">+{pointsEarned} points !</span>
                 </div>
-                {stats.currentStreak >= 3 && (
+                {localStats.generatorStreak >= 3 && (
                   <p className="text-sm text-green-600 dark:text-green-400 mt-1">
-                    🔥 Série de {stats.currentStreak} ! Bonus actif !
+                    🔥 Série de {localStats.generatorStreak} ! Bonus actif !
                   </p>
                 )}
               </div>
