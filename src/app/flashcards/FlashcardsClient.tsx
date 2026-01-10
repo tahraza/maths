@@ -17,6 +17,7 @@ import {
 } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { useStore } from '@/store/useStore'
+import MathText from '@/components/MathText'
 import type { Flashcard, FlashcardResponse } from '@/types'
 
 // Fisher-Yates shuffle
@@ -258,9 +259,10 @@ export default function FlashcardsClient() {
                     {currentFlashcard.category}
                   </span>
                 </div>
-                <p className="text-lg font-medium text-slate-900 dark:text-slate-100">
-                  {currentFlashcard.front}
-                </p>
+                <MathText
+                  text={currentFlashcard.front}
+                  className="text-lg font-medium text-slate-900 dark:text-slate-100"
+                />
                 <p className="mt-4 text-sm text-slate-400">
                   Cliquez ou appuyez sur Espace pour retourner
                 </p>
@@ -268,9 +270,10 @@ export default function FlashcardsClient() {
 
               {/* Back */}
               <div className="flashcard-back card flex flex-col items-center justify-center p-8 text-center bg-gradient-to-br from-purple-50 to-white dark:from-purple-900/20 dark:to-slate-800">
-                <p className="text-lg text-slate-900 dark:text-slate-100">
-                  {currentFlashcard.back}
-                </p>
+                <MathText
+                  text={currentFlashcard.back}
+                  className="text-lg text-slate-900 dark:text-slate-100"
+                />
               </div>
             </div>
           </div>
