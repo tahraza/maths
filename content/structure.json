@@ -93,20 +93,11 @@
         "title": "Probabilités",
         "track": "spe",
         "order": 8,
-        "description": "Variables aléatoires discrètes, loi binomiale",
-        "lessons": [
-          "variables-aleatoires",
-          "loi-binomiale"
-        ]
-      },
-      {
-        "id": "probas",
-        "title": "Dénombrement et lois usuelles",
-        "track": "spe",
-        "order": 9,
-        "description": "Combinatoire, loi normale, variables aléatoires",
+        "description": "Combinatoire, variables aléatoires et lois usuelles",
         "lessons": [
           "combinatoire",
+          "variables-aleatoires",
+          "loi-binomiale",
           "probabilites-va",
           "loi-normale"
         ]
