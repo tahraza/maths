@@ -150,8 +150,8 @@
   {
     "id": "fc-exp-003",
     "lessonId": "exponentielle",
-    "front": "lim(x→+∞) eˣ/xⁿ = ?",
-    "back": "lim(x→+∞) eˣ/xⁿ = +∞ (l'exponentielle domine toute puissance)",
+    "front": "$\\lim_{x\\to +\\infty} \\frac{e^x}{x^n} = ?$",
+    "back": "$\\lim_{x\\to +\\infty} \\frac{e^x}{x^n} = +\\infty$ (l'exponentielle domine toute puissance)",
     "tags": [
       "exponentielle",
       "limite"
@@ -791,8 +791,8 @@
   {
     "id": "fc-exp-008",
     "lessonId": "exponentielle",
-    "front": "Limite xⁿe⁻ˣ quand x → +∞",
-    "back": "lim(x→+∞) xⁿe⁻ˣ = 0 (l'exponentielle l'emporte)",
+    "front": "$\\lim_{x\\to +\\infty} x^n e^{-x}$",
+    "back": "$\\lim_{x\\to +\\infty} x^n e^{-x} = 0$ (l'exponentielle l'emporte)",
     "tags": [
       "exponentielle",
       "limite"
@@ -827,8 +827,8 @@
   {
     "id": "fc-ln-011",
     "lessonId": "logarithme",
-    "front": "Limite ln(x)/x quand x → +∞",
-    "back": "lim(x→+∞) ln(x)/x = 0 (croissance comparée)",
+    "front": "$\\lim_{x\\to +\\infty} \\frac{\\ln(x)}{x}$",
+    "back": "$\\lim_{x\\to +\\infty} \\frac{\\ln(x)}{x} = 0$ (croissance comparée)",
     "tags": [
       "logarithme",
       "limite"
@@ -1189,8 +1189,8 @@
   {
     "id": "fc-suites-lim-001",
     "lessonId": "suites-limites",
-    "front": "Limite de 1/n quand n → +∞",
-    "back": "lim(n→+∞) 1/n = 0",
+    "front": "Limite de $\\frac{1}{n}$ quand $n \\to +\\infty$",
+    "back": "$\\lim_{n\\to +\\infty} \\frac{1}{n} = 0$",
     "tags": [
       "suites",
       "limite"
@@ -1214,7 +1214,7 @@
     "id": "fc-suites-lim-003",
     "lessonId": "suites-limites",
     "front": "Théorème des gendarmes (suites)",
-    "back": "Si uₙ ≤ vₙ ≤ wₙ et lim uₙ = lim wₙ = ℓ, alors lim vₙ = ℓ",
+    "back": "Si $u_n \\le v_n \\le w_n$ et $\\lim u_n = \\lim w_n = \\ell$, alors $\\lim v_n = \\ell$",
     "tags": [
       "suites",
       "limite",
@@ -1227,7 +1227,7 @@
     "id": "fc-suites-lim-004",
     "lessonId": "suites-limites",
     "front": "Opérations sur les limites",
-    "back": "lim(uₙ + vₙ) = lim uₙ + lim vₙ (si pas indéterminé)\nlim(uₙ × vₙ) = lim uₙ × lim vₙ",
+    "back": "$\\lim(u_n + v_n) = \\lim u_n + \\lim v_n$ (si pas indéterminé)\n$\\lim(u_n \\times v_n) = \\lim u_n \\times \\lim v_n$",
     "tags": [
       "suites",
       "limite"
@@ -1265,7 +1265,7 @@
     "id": "fc-suites-conv-003",
     "lessonId": "suites-convergence",
     "front": "Suite adjacentes",
-    "back": "Si uₙ croissante, vₙ décroissante, et lim(vₙ - uₙ) = 0, alors elles convergent vers la même limite",
+    "back": "Si $u_n$ croissante, $v_n$ décroissante, et $\\lim(v_n - u_n) = 0$, alors elles convergent vers la même limite",
     "tags": [
       "suites",
       "convergence",
@@ -1290,8 +1290,8 @@
   {
     "id": "fc-lim-fonc-001",
     "lessonId": "limites-fonctions",
-    "front": "Limite de 1/x quand x → 0⁺",
-    "back": "lim(x→0⁺) 1/x = +∞",
+    "front": "Limite de $\\frac{1}{x}$ quand $x \\to 0^+$",
+    "back": "$\\lim_{x\\to 0^+} \\frac{1}{x} = +\\infty$",
     "tags": [
       "fonctions",
       "limite"
@@ -1302,8 +1302,8 @@
   {
     "id": "fc-lim-fonc-002",
     "lessonId": "limites-fonctions",
-    "front": "Limite de (eˣ - 1)/x quand x → 0",
-    "back": "lim(x→0) (eˣ - 1)/x = 1",
+    "front": "Limite de $\\frac{e^x - 1}{x}$ quand $x \\to 0$",
+    "back": "$\\lim_{x\\to 0} \\frac{e^x - 1}{x} = 1$",
     "tags": [
       "fonctions",
       "limite",
@@ -1315,8 +1315,8 @@
   {
     "id": "fc-lim-fonc-003",
     "lessonId": "limites-fonctions",
-    "front": "Limite de sin(x)/x quand x → 0",
-    "back": "lim(x→0) sin(x)/x = 1 (en radians !)",
+    "front": "Limite de $\\frac{\\sin(x)}{x}$ quand $x \\to 0$",
+    "back": "$\\lim_{x\\to 0} \\frac{\\sin(x)}{x} = 1$ (en radians !)",
     "tags": [
       "fonctions",
       "limite",
@@ -1329,7 +1329,7 @@
     "id": "fc-lim-fonc-004",
     "lessonId": "limites-fonctions",
     "front": "Asymptote horizontale",
-    "back": "y = ℓ est asymptote horizontale si lim(x→±∞) f(x) = ℓ",
+    "back": "y = $\\ell$ est asymptote horizontale si $\\lim_{x\\to \\pm\\infty} f(x) = \\ell$",
     "tags": [
       "fonctions",
       "asymptote"
@@ -1341,7 +1341,7 @@
     "id": "fc-lim-fonc-005",
     "lessonId": "limites-fonctions",
     "front": "Asymptote verticale",
-    "back": "x = a est asymptote verticale si lim(x→a) f(x) = ±∞",
+    "back": "x = $a$ est asymptote verticale si $\\lim_{x\\to a} f(x) = \\pm\\infty$",
     "tags": [
       "fonctions",
       "asymptote"
@@ -1353,7 +1353,7 @@
     "id": "fc-contin-001",
     "lessonId": "continuite",
     "front": "Définition : f continue en a",
-    "back": "f est continue en a si lim(x→a) f(x) = f(a)",
+    "back": "f est continue en $a$ si $\\lim_{x\\to a} f(x) = f(a)$",
     "tags": [
       "continuité",
       "définition"
