@@ -1,41 +1,33 @@
 # MathsTerminale - Application de Révision Interactive
 
-Une application web complète pour réviser les mathématiques de Terminale (Spécialité Maths et Maths Expertes) avec une approche pédagogique basée sur la répétition espacée et le testing effect.
+Une application web complète pour réviser les mathématiques de Terminale (Spécialité Maths et Maths Expertes) avec une approche pédagogique basée sur la répétition espacée et le testing effect, enrichie par des contenus interactifs.
 
 ## Fonctionnalités
 
-### Contenu Pédagogique
-- **12 leçons complètes** avec formules KaTeX, exemples résolus et erreurs fréquentes
-  - 6 leçons Spécialité : Suites, Dérivation, Exponentielle, Logarithme, Probabilités, Primitives, Récurrence
-  - 6 leçons Maths Expertes : Complexes (intro + géométrie), Matrices, Divisibilité, Congruences, Bézout
-- **60 flashcards** avec système de répétition espacée (algorithme SM-2)
-- **40 exercices** avec indices progressifs, solutions pas à pas et erreurs courantes
-- **Quiz pré/post-leçon** : diagnostic avant et validation après chaque leçon
+### Contenu pédagogique (données du dépôt)
+- **38 leçons** (25 Spécialité, 13 Expertes) au format Markdown/MDX avec blocs pédagogiques.
+- **165 exercices corrigés** + **49 exercices guidés** pas à pas.
+- **236 flashcards** avec répétition espacée (algorithme SM-2).
+- **76 QCM** pré/post-leçon pour diagnostic et validation.
+- **28 annales** du bac avec corrections.
 
-### Système d'Apprentissage
-- **Répétition espacée** : révisions planifiées à J+1, J+3, J+10, J+30, J+90
-- **Testing effect** : QCM diagnostiques pour identifier les lacunes
-- **Sessions de révision** : modes 10 min (express) et 25 min (pomodoro)
-- **Suivi de progression** : statistiques détaillées par leçon et par track
+### Apprentissage & progression
+- **Répétition espacée** : révisions planifiées à J+1, J+3, J+10, J+30, J+90.
+- **Sessions de révision** : modes 10 min (express) et 25 min (pomodoro).
+- **Parcours et statistiques** : suivi par leçon/track + stats globales.
+- **Gamification** : points, badges, mini-jeux et compagnon virtuel.
+- **Sauvegarde locale** : progression persistée dans localStorage.
 
-### Interface
-- Design moderne et responsive avec Tailwind CSS
-- Mode sombre/clair automatique
-- Rendu mathématique avec KaTeX
-- Recherche globale dans tout le contenu
-- Navigation intuitive par parcours d'apprentissage
+### Expérience
+- Rendu mathématique avec KaTeX.
+- Graphes interactifs (fonctions, suites, intégrales, probabilités, etc.).
+- Recherche globale dans tout le contenu (Fuse.js).
+- Thème clair/sombre automatique et interface responsive.
+- Carte conceptuelle pour naviguer dans les notions.
 
-## Stack Technique
+## Démarrage rapide
 
-- **Framework** : Next.js 14 (App Router)
-- **Langage** : TypeScript
-- **Styling** : Tailwind CSS
-- **State Management** : Zustand avec persistance localStorage
-- **Maths** : KaTeX pour le rendu des formules
-- **Contenu** : MDX pour les leçons, JSON pour les exercices/flashcards/quiz
-- **Icônes** : Lucide React
-
-## Installation
+Prérequis : Node.js (LTS) + npm.
 
 ```bash
 # Cloner le repository
@@ -47,51 +39,58 @@ npm install
 
 # Lancer en développement
 npm run dev
-
-# Build production
-npm run build
-npm start
 ```
 
-## Structure du Projet
+Ouvre ensuite `http://localhost:3000`.
+
+## Scripts utiles
+
+```bash
+npm run dev        # mode développement
+npm run build      # build production
+npm run start      # serveur Next.js en production
+npm run lint       # lint ESLint
+npm run type-check # vérification TypeScript
+```
+
+## Structure du projet
 
 ```
 maths/
-├── src/
-│   ├── app/                    # Pages Next.js (App Router)
-│   │   ├── page.tsx            # Page d'accueil
-│   │   ├── lecons/             # Liste et détail des leçons
-│   │   ├── exercices/          # Liste et détail des exercices
-│   │   ├── flashcards/         # Système de flashcards
-│   │   ├── qcm/                # Quiz pré/post leçon
-│   │   ├── parcours/           # Parcours d'apprentissage
-│   │   ├── revision/           # Sessions de révision
-│   │   ├── stats/              # Statistiques
-│   │   └── methode/            # Méthodologie d'apprentissage
-│   ├── components/             # Composants React
-│   │   ├── Navigation.tsx      # Barre de navigation
-│   │   ├── Footer.tsx          # Pied de page
-│   │   ├── LessonContent.tsx   # Rendu MDX avec KaTeX
-│   │   ├── LessonProgress.tsx  # Barre de progression
-│   │   └── ...
-│   ├── lib/                    # Utilitaires
-│   │   ├── content.ts          # Chargement du contenu
-│   │   └── utils.ts            # Fonctions utilitaires
-│   ├── store/                  # State management
-│   │   └── useStore.ts         # Store Zustand
-│   └── types/                  # Types TypeScript
-│       └── index.ts
 ├── content/                    # Contenu pédagogique
-│   ├── lessons/
-│   │   ├── spe/                # Leçons Spécialité
-│   │   └── expertes/           # Leçons Maths Expertes
-│   ├── exercises.json          # 40 exercices
-│   ├── flashcards.json         # 60 flashcards
-│   └── quizzes.json            # Quiz pré/post
+│   ├── lessons/                # Leçons (.mdx/.md)
+│   │   ├── spe/
+│   │   └── expertes/
+│   ├── exercises.json          # Exercices corrigés
+│   ├── guided-exercises.json   # Exercices guidés
+│   ├── flashcards.json         # Flashcards
+│   ├── quizzes.json            # QCM
+│   ├── annales.json            # Annales du bac
+│   └── paths.json              # Parcours (optionnel)
+├── docs/                       # PDFs de référence
+├── src/
+│   ├── app/                    # Routes Next.js (App Router)
+│   │   ├── annales/
+│   │   ├── carte-conceptuelle/
+│   │   ├── exercices/
+│   │   ├── exercices-guides/
+│   │   ├── flashcards/
+│   │   ├── lecons/
+│   │   ├── methode/
+│   │   ├── parcours/
+│   │   ├── qcm/
+│   │   ├── revision/
+│   │   ├── stats/
+│   │   └── api/                # API locales (contenu, recherche)
+│   ├── components/             # UI + graphes interactifs + mini-jeux
+│   ├── lib/                    # Chargement contenu + utilitaires
+│   ├── store/                  # Store principal (Zustand)
+│   ├── stores/                 # Stores gamification / mini-jeux
+│   └── types/
 └── public/                     # Assets statiques
 ```
 
-## Format des Leçons (MDX)
+## Format des leçons (MDX)
 
 ```mdx
 ---
@@ -136,9 +135,17 @@ Contenu de la définition avec $formules$ LaTeX.
 :::tip
 Astuce utile...
 :::
+
+:::graph[FunctionPlot]
+f: "x^2"
+xmin: -5
+xmax: 5
+:::
 ```
 
-## Format des Exercices (JSON)
+Blocs disponibles : `definition`, `theorem`, `property`, `method`, `example`, `remark`, `proof`, `exercise`, `warning`, `erreur`, `tip`, `mnemonic`, `graph`.
+
+## Format des exercices (JSON)
 
 ```json
 {
@@ -159,7 +166,7 @@ Astuce utile...
 }
 ```
 
-## Format des Flashcards (JSON)
+## Format des flashcards (JSON)
 
 ```json
 {
@@ -168,12 +175,12 @@ Astuce utile...
   "front": "Question (avec $LaTeX$)",
   "back": "Réponse (avec $formules$)",
   "category": "formula|definition|method|trap|interpretation",
-  "difficulty": 2,
+  "level": 2,
   "tags": ["suites"]
 }
 ```
 
-## Format des Quiz (JSON)
+## Format des QCM (JSON)
 
 ```json
 {
@@ -181,6 +188,7 @@ Astuce utile...
   "lessonId": "suites-definition",
   "type": "pre|post",
   "title": "Diagnostic : Suites",
+  "difficulty": 1,
   "questions": [
     {
       "id": "q1",
@@ -188,6 +196,55 @@ Astuce utile...
       "options": ["Option A", "Option B", "Option C", "Option D"],
       "correctAnswer": 0,
       "explanation": "Explication de la réponse..."
+    }
+  ]
+}
+```
+
+## Format des exercices guidés (JSON)
+
+```json
+{
+  "id": "gx-001",
+  "title": "Dériver un polynôme",
+  "theme": "Dérivation",
+  "difficulty": "facile|moyen|difficile",
+  "duration": 20,
+  "description": "...",
+  "problem": "Énoncé de l'exercice...",
+  "steps": [
+    {
+      "instruction": "Consigne",
+      "hint": "Indice",
+      "solution": "Solution"
+    }
+  ],
+  "finalAnswer": "Réponse finale"
+}
+```
+
+## Format des annales (JSON)
+
+```json
+{
+  "id": "annale-2023-1",
+  "year": 2023,
+  "session": "Juin",
+  "exerciseNumber": 1,
+  "title": "...",
+  "subject": "physique|chimie",
+  "themes": ["..."],
+  "points": 5,
+  "duration": 60,
+  "difficulty": "facile|moyen|difficile",
+  "description": "...",
+  "parts": [
+    {
+      "id": "A",
+      "title": "Partie A",
+      "questions": [
+        { "number": "1", "text": "Question...", "points": 1, "answer": "..." }
+      ]
     }
   ]
 }
@@ -224,27 +281,17 @@ L'application s'appuie sur des principes pédagogiques éprouvés :
 4. **Diagnostic** : QCM pré-leçon pour identifier les lacunes
 5. **Multi-représentations** : Même concept présenté de plusieurs façons
 
-## Développement
-
-```bash
-# Vérifier le typage
-npm run typecheck
-
-# Linter
-npm run lint
-
-# Build de production
-npm run build
-```
-
 ## Contribution
 
 Les contributions sont les bienvenues ! Pour ajouter du contenu :
 
 1. **Nouvelle leçon** : Créer un fichier `.mdx` dans `content/lessons/[track]/`
 2. **Nouveaux exercices** : Ajouter au fichier `content/exercises.json`
-3. **Nouvelles flashcards** : Ajouter au fichier `content/flashcards.json`
-4. **Nouveaux quiz** : Ajouter au fichier `content/quizzes.json`
+3. **Nouveaux exercices guidés** : Ajouter au fichier `content/guided-exercises.json`
+4. **Nouvelles flashcards** : Ajouter au fichier `content/flashcards.json`
+5. **Nouveaux quiz** : Ajouter au fichier `content/quizzes.json`
+6. **Nouvelles annales** : Ajouter au fichier `content/annales.json`
+7. **Parcours de révision** : Ajouter au fichier `content/paths.json` (optionnel)
 
 ## Licence
 
