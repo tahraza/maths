@@ -3120,5 +3120,472 @@
     ],
     "level": 1,
     "category": "interpretation"
+  },
+  {
+    "id": "fc-int-limites-fonctions-001",
+    "lessonId": "limites-fonctions",
+    "front": "Que signifie $\\lim_{x\\to a} f(x)=L$ ?",
+    "back": "f(x) se rapproche de L quand x s’approche de a, même si f(a) est différent ou non défini.",
+    "tags": [
+      "limites",
+      "fonctions",
+      "interprétation"
+    ],
+    "level": 1,
+    "category": "interpretation"
+  },
+  {
+    "id": "fc-int-limites-fonctions-002",
+    "lessonId": "limites-fonctions",
+    "front": "Pourquoi la limite peut-elle exister sans que f(a) soit définie ?",
+    "back": "La limite dépend des valeurs proches de a, pas de la valeur en a.",
+    "tags": [
+      "limites",
+      "fonction",
+      "interprétation"
+    ],
+    "level": 1,
+    "category": "interpretation"
+  },
+  {
+    "id": "fc-int-limites-fonctions-003",
+    "lessonId": "limites-fonctions",
+    "front": "Interprétation d’une asymptote horizontale y = L",
+    "back": "Quand x → ±∞, f(x) se rapproche de L.",
+    "tags": [
+      "limites",
+      "asymptote",
+      "interprétation"
+    ],
+    "level": 1,
+    "category": "interpretation"
+  },
+  {
+    "id": "fc-int-limites-fonctions-004",
+    "lessonId": "limites-fonctions",
+    "front": "Que signifie $\\lim_{x\\to a} f(x)=+\\infty$ ?",
+    "back": "Les valeurs de f(x) deviennent arbitrairement grandes près de a.",
+    "tags": [
+      "limites",
+      "infini",
+      "interprétation"
+    ],
+    "level": 1,
+    "category": "interpretation"
+  },
+  {
+    "id": "fc-int-limites-fonctions-005",
+    "lessonId": "limites-fonctions",
+    "front": "Pourquoi faut-il des limites gauche et droite égales ?",
+    "back": "Sinon la fonction approche deux valeurs différentes : la limite n’existe pas.",
+    "tags": [
+      "limites",
+      "gauche-droite",
+      "interprétation"
+    ],
+    "level": 2,
+    "category": "interpretation"
+  },
+  {
+    "id": "fc-int-limites-fonctions-006",
+    "lessonId": "limites-fonctions",
+    "front": "Que dit une forme indéterminée $0/0$ ?",
+    "back": "On ne peut pas conclure : il faut transformer l’expression.",
+    "tags": [
+      "limites",
+      "formes indéterminées",
+      "interprétation"
+    ],
+    "level": 2,
+    "category": "interpretation"
+  },
+  {
+    "id": "fc-int-convexite-001",
+    "lessonId": "convexite",
+    "front": "Interprétation de $f\"(x) > 0$",
+    "back": "Les pentes augmentent : la courbe est convexe.",
+    "tags": [
+      "convexité",
+      "dérivée seconde",
+      "interprétation"
+    ],
+    "level": 1,
+    "category": "interpretation"
+  },
+  {
+    "id": "fc-int-convexite-002",
+    "lessonId": "convexite",
+    "front": "Que signifie “courbe au-dessus de ses tangentes” ?",
+    "back": "C’est le signe d’une fonction convexe.",
+    "tags": [
+      "convexité",
+      "tangente",
+      "interprétation"
+    ],
+    "level": 1,
+    "category": "interpretation"
+  },
+  {
+    "id": "fc-int-convexite-003",
+    "lessonId": "convexite",
+    "front": "Point d’inflexion : interprétation",
+    "back": "La courbe change de convexité (convexe → concave ou inversement).",
+    "tags": [
+      "convexité",
+      "inflexion",
+      "interprétation"
+    ],
+    "level": 1,
+    "category": "interpretation"
+  },
+  {
+    "id": "fc-int-convexite-004",
+    "lessonId": "convexite",
+    "front": "$f\"(a)=0$ suffit-il pour un point d’inflexion ?",
+    "back": "Non. Exemple : $f(x)=x^4$ a $f\"(0)=0$ mais reste convexe.",
+    "tags": [
+      "convexité",
+      "contre-exemple",
+      "interprétation"
+    ],
+    "level": 2,
+    "category": "interpretation"
+  },
+  {
+    "id": "fc-int-convexite-005",
+    "lessonId": "convexite",
+    "front": "Convexe vs concave : différence graphique ?",
+    "back": "Convexe : la courbe est en dessous des cordes. Concave : au-dessus.",
+    "tags": [
+      "convexité",
+      "concavité",
+      "interprétation"
+    ],
+    "level": 1,
+    "category": "interpretation"
+  },
+  {
+    "id": "fc-int-convexite-006",
+    "lessonId": "convexite",
+    "front": "Pourquoi “f’ croissante ⇒ f convexe” ?",
+    "back": "Si les pentes augmentent, la courbe se “creuse” vers le haut.",
+    "tags": [
+      "convexité",
+      "dérivée première",
+      "interprétation"
+    ],
+    "level": 2,
+    "category": "interpretation"
+  },
+  {
+    "id": "fc-int-exp-001",
+    "lessonId": "exponentielle",
+    "front": "Interprétation de $y' = y$",
+    "back": "La vitesse de variation est proportionnelle à la valeur : croissance exponentielle.",
+    "tags": [
+      "exponentielle",
+      "croissance",
+      "interprétation"
+    ],
+    "level": 2,
+    "category": "interpretation"
+  },
+  {
+    "id": "fc-int-exp-002",
+    "lessonId": "exponentielle",
+    "front": "Pourquoi $e^x > 0$ pour tout x ?",
+    "back": "L’exponentielle est une fonction positive par définition et ne s’annule jamais.",
+    "tags": [
+      "exponentielle",
+      "signe",
+      "interprétation"
+    ],
+    "level": 1,
+    "category": "interpretation"
+  },
+  {
+    "id": "fc-int-exp-003",
+    "lessonId": "exponentielle",
+    "front": "Conséquence de l’injectivité de $e^x$",
+    "back": "$e^{u}=e^{v} Rightarrow u=v$ (utile pour résoudre les équations).",
+    "tags": [
+      "exponentielle",
+      "injectivité",
+      "interprétation"
+    ],
+    "level": 1,
+    "category": "interpretation"
+  },
+  {
+    "id": "fc-int-exp-004",
+    "lessonId": "exponentielle",
+    "front": "Interprétation de $e^{a+b}=e^a e^b$",
+    "back": "Addition dans l’exposant = multiplication des valeurs.",
+    "tags": [
+      "exponentielle",
+      "propriété",
+      "interprétation"
+    ],
+    "level": 1,
+    "category": "interpretation"
+  },
+  {
+    "id": "fc-int-exp-005",
+    "lessonId": "exponentielle",
+    "front": "Que vaut $lim_{x\to -infty} e^x$ ?",
+    "back": "La valeur tend vers 0 (approche de l’axe sans le toucher).",
+    "tags": [
+      "exponentielle",
+      "limites",
+      "interprétation"
+    ],
+    "level": 1,
+    "category": "interpretation"
+  },
+  {
+    "id": "fc-int-exp-006",
+    "lessonId": "exponentielle",
+    "front": "Quand modéliser une croissance exponentielle ?",
+    "back": "Quand la variation est proportionnelle à la quantité présente.",
+    "tags": [
+      "exponentielle",
+      "modélisation",
+      "interprétation"
+    ],
+    "level": 2,
+    "category": "interpretation"
+  },
+  {
+    "id": "fc-int-ln-001",
+    "lessonId": "logarithme",
+    "front": "Interprétation de $ln(x)$",
+    "back": "C’est l’exposant qu’il faut mettre à e pour obtenir x.",
+    "tags": [
+      "logarithme",
+      "interprétation"
+    ],
+    "level": 1,
+    "category": "interpretation"
+  },
+  {
+    "id": "fc-int-ln-002",
+    "lessonId": "logarithme",
+    "front": "Pourquoi $ln(x)$ est défini seulement pour x > 0 ?",
+    "back": "Parce que $e^y$ est toujours positif : on ne peut pas obtenir un nombre négatif.",
+    "tags": [
+      "logarithme",
+      "domaine",
+      "interprétation"
+    ],
+    "level": 1,
+    "category": "interpretation"
+  },
+  {
+    "id": "fc-int-ln-003",
+    "lessonId": "logarithme",
+    "front": "Interprétation de $ln(ab)=ln(a)+ln(b)$",
+    "back": "Le logarithme transforme les produits en sommes.",
+    "tags": [
+      "logarithme",
+      "propriété",
+      "interprétation"
+    ],
+    "level": 1,
+    "category": "interpretation"
+  },
+  {
+    "id": "fc-int-ln-004",
+    "lessonId": "logarithme",
+    "front": "Pourquoi $ln(a+b)\neln(a)+ln(b)$ ?",
+    "back": "Contre-exemple : $ln(1+1)=ln(2)$ alors que $ln(1)+ln(1)=0$.",
+    "tags": [
+      "logarithme",
+      "contre-exemple",
+      "interprétation"
+    ],
+    "level": 2,
+    "category": "interpretation"
+  },
+  {
+    "id": "fc-int-ln-005",
+    "lessonId": "logarithme",
+    "front": "Pourquoi $ln(x) < 0$ pour $0<x<1$ ?",
+    "back": "Parce que $e$ élevé à un exposant négatif donne un nombre entre 0 et 1.",
+    "tags": [
+      "logarithme",
+      "signe",
+      "interprétation"
+    ],
+    "level": 2,
+    "category": "interpretation"
+  },
+  {
+    "id": "fc-int-ln-006",
+    "lessonId": "logarithme",
+    "front": "Conséquence de la croissance de $ln$ sur les inégalités",
+    "back": "Si $0<a<b$, alors $ln(a)<ln(b)$ : l’ordre est conservé.",
+    "tags": [
+      "logarithme",
+      "inégalités",
+      "interprétation"
+    ],
+    "level": 1,
+    "category": "interpretation"
+  },
+  {
+    "id": "fc-int-congruences-001",
+    "lessonId": "congruences",
+    "front": "Interprétation de $a ≡ b ;[n]$",
+    "back": "a et b ont le même reste dans la division par n.",
+    "tags": [
+      "congruences",
+      "modulo",
+      "interprétation"
+    ],
+    "level": 1,
+    "category": "interpretation"
+  },
+  {
+    "id": "fc-int-congruences-002",
+    "lessonId": "congruences",
+    "front": "Pourquoi peut-on additionner des congruences ?",
+    "back": "Les différences restent des multiples de n, donc le reste est préservé.",
+    "tags": [
+      "congruences",
+      "opérations",
+      "interprétation"
+    ],
+    "level": 2,
+    "category": "interpretation"
+  },
+  {
+    "id": "fc-int-congruences-003",
+    "lessonId": "congruences",
+    "front": "Pourquoi la division n’est pas toujours possible en modulo ?",
+    "back": "On ne peut simplifier que si le facteur est premier avec n (PGCD = 1).",
+    "tags": [
+      "congruences",
+      "division",
+      "interprétation"
+    ],
+    "level": 2,
+    "category": "interpretation"
+  },
+  {
+    "id": "fc-int-congruences-004",
+    "lessonId": "congruences",
+    "front": "Interprétation d’un inverse modulaire",
+    "back": "Un nombre u tel que $au ≡ 1 ;[n]$ : il “annule” a en modulo n.",
+    "tags": [
+      "congruences",
+      "inverse",
+      "interprétation"
+    ],
+    "level": 2,
+    "category": "interpretation"
+  },
+  {
+    "id": "fc-int-congruences-005",
+    "lessonId": "congruences",
+    "front": "Que signifie résoudre $ax ≡ b ;[n]$ ?",
+    "back": "Trouver un reste x qui vérifie l’égalité modulo n.",
+    "tags": [
+      "congruences",
+      "équation",
+      "interprétation"
+    ],
+    "level": 1,
+    "category": "interpretation"
+  },
+  {
+    "id": "fc-int-congruences-006",
+    "lessonId": "congruences",
+    "front": "Pourquoi réduire avant de calculer en modulo ?",
+    "back": "On simplifie les nombres sans changer le reste, donc le calcul est plus rapide.",
+    "tags": [
+      "congruences",
+      "modulo",
+      "interprétation"
+    ],
+    "level": 1,
+    "category": "interpretation"
+  },
+  {
+    "id": "fc-int-matrices-systemes-001",
+    "lessonId": "matrices-systemes",
+    "front": "Interprétation de $AX=B$",
+    "back": "B est une combinaison linéaire des colonnes de A avec les coefficients de X.",
+    "tags": [
+      "matrices",
+      "systèmes",
+      "interprétation"
+    ],
+    "level": 2,
+    "category": "interpretation"
+  },
+  {
+    "id": "fc-int-matrices-systemes-002",
+    "lessonId": "matrices-systemes",
+    "front": "Que signifie $det(A)=0$ ?",
+    "back": "A n’est pas inversible : pas de solution unique.",
+    "tags": [
+      "matrices",
+      "déterminant",
+      "interprétation"
+    ],
+    "level": 1,
+    "category": "interpretation"
+  },
+  {
+    "id": "fc-int-matrices-systemes-003",
+    "lessonId": "matrices-systemes",
+    "front": "Pourquoi les opérations élémentaires conservent les solutions ?",
+    "back": "Elles correspondent à des combinaisons d’équations équivalentes.",
+    "tags": [
+      "matrices",
+      "Gauss",
+      "interprétation"
+    ],
+    "level": 2,
+    "category": "interpretation"
+  },
+  {
+    "id": "fc-int-matrices-systemes-004",
+    "lessonId": "matrices-systemes",
+    "front": "Interprétation de l’inverse $A^{-1}$",
+    "back": "C’est la transformation qui “annule” A : $A^{-1}A=I$.",
+    "tags": [
+      "matrices",
+      "inverse",
+      "interprétation"
+    ],
+    "level": 1,
+    "category": "interpretation"
+  },
+  {
+    "id": "fc-int-matrices-systemes-005",
+    "lessonId": "matrices-systemes",
+    "front": "Ligne $0=c$ après Gauss : que conclure ?",
+    "back": "Le système est incompatible : aucune solution.",
+    "tags": [
+      "matrices",
+      "systèmes",
+      "interprétation"
+    ],
+    "level": 1,
+    "category": "interpretation"
+  },
+  {
+    "id": "fc-int-matrices-systemes-006",
+    "lessonId": "matrices-systemes",
+    "front": "Autant de pivots que d’inconnues : que conclure ?",
+    "back": "Il y a une solution unique.",
+    "tags": [
+      "matrices",
+      "Gauss",
+      "interprétation"
+    ],
+    "level": 1,
+    "category": "interpretation"
   }
 ]

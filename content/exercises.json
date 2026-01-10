@@ -3403,7 +3403,7 @@
   },
   {
     "id": "ex-maths-027",
-    "lessonId": "fractions-simplification",
+    "lessonId": "limites-fonctions",
     "title": "Simplifier $\\frac{32}{40}$",
     "difficulty": 1,
     "statement": "Simplifier la fraction $\\dfrac{32}{40}$.",
@@ -3430,13 +3430,14 @@
     ],
     "tags": [
       "fractions",
-      "simplification"
+      "simplification",
+      "rappels"
     ],
     "isComprehension": false
   },
   {
     "id": "ex-maths-028",
-    "lessonId": "fractions-calcul",
+    "lessonId": "limites-fonctions",
     "title": "Fraction irréductible : $\\frac24-\\frac13$",
     "difficulty": 1,
     "statement": "Écrire sous forme de fraction irréductible : $\\dfrac24-\\dfrac13$.",
@@ -3462,13 +3463,14 @@
       "Additionner les dénominateurs (faux)."
     ],
     "tags": [
-      "fractions"
+      "fractions",
+      "rappels"
     ],
     "isComprehension": false
   },
   {
     "id": "ex-maths-030",
-    "lessonId": "fractions-comparaison",
+    "lessonId": "limites-fonctions",
     "title": "Comparer $\\frac35$ et $\\frac59$",
     "difficulty": 1,
     "statement": "Comparer $\\dfrac35$ et $\\dfrac59$ (>,<,=).",
@@ -3495,13 +3497,14 @@
     ],
     "tags": [
       "fractions",
-      "comparaison"
+      "comparaison",
+      "rappels"
     ],
     "isComprehension": false
   },
   {
     "id": "ex-maths-032",
-    "lessonId": "second-degre-racines",
+    "lessonId": "limites-fonctions",
     "title": "Racines évidentes : $x^2-5x+6=0$",
     "difficulty": 1,
     "statement": "Résoudre : $x^2-5x+6=0$.",
@@ -3528,13 +3531,14 @@
     ],
     "tags": [
       "second degré",
-      "Vieta"
+      "Vieta",
+      "rappels"
     ],
     "isComprehension": false
   },
   {
     "id": "ex-maths-033",
-    "lessonId": "second-degre-param",
+    "lessonId": "limites-fonctions",
     "title": "Racine double selon $m$ : $x^2-(2m+3)x+m^2=0$",
     "difficulty": 4,
     "statement": "Déterminer $m$ pour que l'équation $x^2-(2m+3)x+m^2=0$ admette une racine double, et donner cette racine.",
@@ -3567,13 +3571,14 @@
     "tags": [
       "second degré",
       "paramètre",
-      "discriminant"
+      "discriminant",
+      "rappels"
     ],
     "isComprehension": false
   },
   {
     "id": "ex-maths-034",
-    "lessonId": "puissances",
+    "lessonId": "limites-fonctions",
     "title": "Calculer sous forme de puissance de 10 : $10^5\\cdot10^3$",
     "difficulty": 1,
     "statement": "Donner le résultat sous la forme d'une puissance de 10 : $10^5\\cdot10^3$.",
@@ -3600,13 +3605,14 @@
     ],
     "tags": [
       "puissances",
-      "calcul"
+      "calcul",
+      "rappels"
     ],
     "isComprehension": false
   },
   {
     "id": "ex-maths-035",
-    "lessonId": "puissances",
+    "lessonId": "limites-fonctions",
     "title": "Quotient de puissances : $10^5/10^3$",
     "difficulty": 1,
     "statement": "Donner le résultat sous la forme d'une puissance de 10 : $\\dfrac{10^5}{10^3}$.",
@@ -3633,7 +3639,8 @@
     ],
     "tags": [
       "puissances",
-      "calcul"
+      "calcul",
+      "rappels"
     ],
     "isComprehension": false
   },
@@ -3745,7 +3752,7 @@
   },
   {
     "id": "ex-maths-039",
-    "lessonId": "second-degre-vieta",
+    "lessonId": "limites-fonctions",
     "title": "Trouver l'autre racine (Vieta)",
     "difficulty": 3,
     "statement": "On sait que $x=4$ est une racine de $3x^2-14x+8=0$. Calculer l'autre racine.",
@@ -3772,7 +3779,8 @@
     ],
     "tags": [
       "second degré",
-      "Vieta"
+      "Vieta",
+      "rappels"
     ],
     "isComprehension": false
   },
@@ -3886,7 +3894,7 @@
   },
   {
     "id": "ex-maths-043",
-    "lessonId": "fractions-produit-en-croix",
+    "lessonId": "limites-fonctions",
     "title": "Comparer A et B (produit en croix)",
     "difficulty": 3,
     "statement": "Les nombres $A=\\dfrac{33215}{66317}$ et $B=\\dfrac{104348}{208341}$ sont-ils égaux ? (Répondre Oui/Non et justifier.)",
@@ -3913,13 +3921,14 @@
     ],
     "tags": [
       "fractions",
-      "comparaison"
+      "comparaison",
+      "rappels"
     ],
     "isComprehension": false
   },
   {
     "id": "ex-maths-044",
-    "lessonId": "racines-carrees",
+    "lessonId": "limites-fonctions",
     "title": "Simplifier $\\sqrt{(\\sqrt3-1)^2}$",
     "difficulty": 2,
     "statement": "Simplifier : $\\sqrt{(\\sqrt3-1)^2}$.",
@@ -3946,7 +3955,8 @@
     ],
     "tags": [
       "racines carrées",
-      "valeur absolue"
+      "valeur absolue",
+      "rappels"
     ],
     "isComprehension": false
   },
@@ -4026,7 +4036,12 @@
       "Oublier le facteur $-2x$ dans la dérivée de $e^{-x^2}$.",
       "Confondre minimum local et minimum global."
     ],
-    "tags": ["dérivation", "variations", "extremums", "exponentielle"],
+    "tags": [
+      "dérivation",
+      "variations",
+      "extremums",
+      "exponentielle"
+    ],
     "isComprehension": false
   },
   {
@@ -4061,7 +4076,11 @@
       "Oublier d'évaluer le crochet aux bornes.",
       "Se tromper dans le coefficient $(n+1)$."
     ],
-    "tags": ["intégrales", "IPP", "récurrence"],
+    "tags": [
+      "intégrales",
+      "IPP",
+      "récurrence"
+    ],
     "isComprehension": false
   },
   {
@@ -4097,7 +4116,12 @@
       "Oublier de vérifier que la limite est dans l'ensemble d'arrivée.",
       "Ne pas justifier l'existence de la limite avant de résoudre l'équation."
     ],
-    "tags": ["suites", "récurrence", "convergence", "limites"],
+    "tags": [
+      "suites",
+      "récurrence",
+      "convergence",
+      "limites"
+    ],
     "isComprehension": false
   },
   {
@@ -4137,7 +4161,11 @@
       "Confondre $P(X \\geq 4)$ et $P(X > 4)$.",
       "Oublier que $\\binom{50}{k}$ peut être grand."
     ],
-    "tags": ["loi binomiale", "probabilités", "décision"],
+    "tags": [
+      "loi binomiale",
+      "probabilités",
+      "décision"
+    ],
     "isComprehension": false
   },
   {
@@ -4172,7 +4200,11 @@
       "Oublier que $|z + i| = |z - (-i)|$.",
       "Se tromper dans le calcul du milieu."
     ],
-    "tags": ["complexes", "lieu géométrique", "médiatrice"],
+    "tags": [
+      "complexes",
+      "lieu géométrique",
+      "médiatrice"
+    ],
     "isComprehension": false
   },
   {
@@ -4212,7 +4244,11 @@
       "Erreur de calcul dans les combinaisons linéaires.",
       "Oublier de vérifier la solution dans les trois équations."
     ],
-    "tags": ["plans", "intersection", "systèmes linéaires"],
+    "tags": [
+      "plans",
+      "intersection",
+      "systèmes linéaires"
+    ],
     "isComprehension": false
   },
   {
@@ -4247,7 +4283,11 @@
       "Ne pas pousser le DL assez loin.",
       "Oublier le terme en $\\frac{x^2}{2}$ dans $e^x$."
     ],
-    "tags": ["limites", "développement limité", "exponentielle"],
+    "tags": [
+      "limites",
+      "développement limité",
+      "exponentielle"
+    ],
     "isComprehension": false
   },
   {
@@ -4282,7 +4322,11 @@
       "Utiliser une récurrence simple au lieu d'une récurrence forte.",
       "Oublier d'initialiser aux deux premiers rangs."
     ],
-    "tags": ["récurrence", "Fibonacci", "inégalités"],
+    "tags": [
+      "récurrence",
+      "Fibonacci",
+      "inégalités"
+    ],
     "isComprehension": false
   },
   {
@@ -4317,7 +4361,11 @@
       "Oublier le facteur $\\frac{1}{2}$ venant de $du = 2x\\,dx$.",
       "Ne pas revenir à la variable $x$ à la fin."
     ],
-    "tags": ["primitives", "substitution", "racines"],
+    "tags": [
+      "primitives",
+      "substitution",
+      "racines"
+    ],
     "isComprehension": false
   },
   {
@@ -4352,7 +4400,11 @@
       "Oublier des solutions (il y en a toujours $n$).",
       "Erreur dans les formules de $\\cos$ et $\\sin$ des angles remarquables."
     ],
-    "tags": ["complexes", "racines n-ièmes", "forme exponentielle"],
+    "tags": [
+      "complexes",
+      "racines n-ièmes",
+      "forme exponentielle"
+    ],
     "isComprehension": false
   },
   {
@@ -4392,7 +4444,11 @@
       "Oublier de vérifier l'orthogonalité.",
       "Erreur de calcul dans le produit scalaire."
     ],
-    "tags": ["géométrie espace", "distance", "projection"],
+    "tags": [
+      "géométrie espace",
+      "distance",
+      "projection"
+    ],
     "isComprehension": false
   },
   {
@@ -4422,7 +4478,11 @@
       "Oublier que $V(-Y) = V(Y)$, pas $-V(Y)$.",
       "Oublier le carré des coefficients dans la variance."
     ],
-    "tags": ["espérance", "variance", "indépendance"],
+    "tags": [
+      "espérance",
+      "variance",
+      "indépendance"
+    ],
     "isComprehension": false
   },
   {
@@ -4457,7 +4517,11 @@
       "Oublier de vérifier le changement de signe de $f''$.",
       "Confondre maximum/minimum avec point d'inflexion."
     ],
-    "tags": ["convexité", "point d'inflexion", "dérivée seconde"],
+    "tags": [
+      "convexité",
+      "point d'inflexion",
+      "dérivée seconde"
+    ],
     "isComprehension": false
   },
   {
@@ -4492,7 +4556,11 @@
       "Oublier une coordonnée dans le produit scalaire.",
       "Confondre $\\cos\\theta$ et $\\theta$."
     ],
-    "tags": ["produit scalaire", "angle", "vecteurs espace"],
+    "tags": [
+      "produit scalaire",
+      "angle",
+      "vecteurs espace"
+    ],
     "isComprehension": false
   },
   {
@@ -4527,7 +4595,11 @@
       "Oublier de diviser par $\\sigma$ lors du centrage-réduction.",
       "Confondre quantile et probabilité."
     ],
-    "tags": ["loi normale", "probabilités", "quantile"],
+    "tags": [
+      "loi normale",
+      "probabilités",
+      "quantile"
+    ],
     "isComprehension": false
   },
   {
@@ -4557,7 +4629,11 @@
       "Oublier que $\\sin(n)$ n'a pas de limite.",
       "Ne pas justifier que les deux suites encadrantes tendent vers la même limite."
     ],
-    "tags": ["suites", "convergence", "gendarmes"],
+    "tags": [
+      "suites",
+      "convergence",
+      "gendarmes"
+    ],
     "isComprehension": false
   },
   {
@@ -4592,7 +4668,11 @@
       "Conclure trop vite que c'est une forme $\\frac{\\infty}{\\infty}$.",
       "Oublier que $\\ln(ab) = \\ln(a) + \\ln(b)$."
     ],
-    "tags": ["logarithmes", "limites", "factorisation"],
+    "tags": [
+      "logarithmes",
+      "limites",
+      "factorisation"
+    ],
     "isComprehension": false
   },
   {
@@ -4632,7 +4712,11 @@
       "Se tromper dans le calcul de $P^{-1}$.",
       "Oublier de vérifier que $A = PDP^{-1}$."
     ],
-    "tags": ["matrices", "diagonalisation", "puissance"],
+    "tags": [
+      "matrices",
+      "diagonalisation",
+      "puissance"
+    ],
     "isComprehension": false
   },
   {
@@ -4667,7 +4751,11 @@
       "Inverser l'ordre des fonctions.",
       "Oublier de déterminer les bornes d'intégration."
     ],
-    "tags": ["intégrales", "aire", "courbes"],
+    "tags": [
+      "intégrales",
+      "aire",
+      "courbes"
+    ],
     "isComprehension": false
   },
   {
@@ -4707,7 +4795,12 @@
       "Erreur de signe dans l'argument du dénominateur.",
       "Oublier de simplifier la forme algébrique."
     ],
-    "tags": ["complexes", "module", "argument", "forme exponentielle"],
+    "tags": [
+      "complexes",
+      "module",
+      "argument",
+      "forme exponentielle"
+    ],
     "isComprehension": false
   },
   {
@@ -4742,7 +4835,11 @@
       "Se tromper dans la remontée de l'algorithme d'Euclide.",
       "Oublier le paramètre $k$ dans les solutions générales."
     ],
-    "tags": ["arithmétique", "Bézout", "équation diophantienne"],
+    "tags": [
+      "arithmétique",
+      "Bézout",
+      "équation diophantienne"
+    ],
     "isComprehension": false
   },
   {
@@ -4777,7 +4874,12 @@
       "Erreur dans le calcul du déterminant 3×3.",
       "Se tromper dans la résolution du système."
     ],
-    "tags": ["vecteurs", "base", "déterminant", "coordonnées"],
+    "tags": [
+      "vecteurs",
+      "base",
+      "déterminant",
+      "coordonnées"
+    ],
     "isComprehension": false
   },
   {
@@ -4812,7 +4914,12 @@
       "Oublier de justifier la stricte croissance pour l'unicité.",
       "Ne pas vérifier le changement de signe."
     ],
-    "tags": ["continuité", "TVI", "racine", "encadrement"],
+    "tags": [
+      "continuité",
+      "TVI",
+      "racine",
+      "encadrement"
+    ],
     "isComprehension": false
   },
   {
@@ -4852,7 +4959,11 @@
       "Oublier de justifier que 2 et 3 sont premiers entre eux.",
       "Ne pas factoriser complètement."
     ],
-    "tags": ["arithmétique", "divisibilité", "entiers consécutifs"],
+    "tags": [
+      "arithmétique",
+      "divisibilité",
+      "entiers consécutifs"
+    ],
     "isComprehension": false
   },
   {
@@ -4887,7 +4998,11 @@
       "Oublier la constante $C$ dans la solution homogène.",
       "Se tromper dans le calcul de $a$."
     ],
-    "tags": ["équations différentielles", "exponentielle", "premier ordre"],
+    "tags": [
+      "équations différentielles",
+      "exponentielle",
+      "premier ordre"
+    ],
     "isComprehension": false
   },
   {
@@ -4917,7 +5032,11 @@
       "Confondre k-uplet et arrangement",
       "Utiliser les combinaisons alors que l'ordre compte"
     ],
-    "tags": ["combinatoire", "k-uplet", "arrangement"],
+    "tags": [
+      "combinatoire",
+      "k-uplet",
+      "arrangement"
+    ],
     "isComprehension": true
   },
   {
@@ -4947,7 +5066,11 @@
       "Utiliser les arrangements quand l'ordre ne compte pas",
       "Oublier de diviser par 2! pour les combinaisons"
     ],
-    "tags": ["combinatoire", "combinaison", "arrangement"],
+    "tags": [
+      "combinatoire",
+      "combinaison",
+      "arrangement"
+    ],
     "isComprehension": true
   },
   {
@@ -4978,7 +5101,11 @@
       "Oublier de diviser par les factorielles des répétitions",
       "Mal compter les occurrences de chaque lettre"
     ],
-    "tags": ["combinatoire", "permutation", "anagramme"],
+    "tags": [
+      "combinatoire",
+      "permutation",
+      "anagramme"
+    ],
     "isComprehension": false
   },
   {
@@ -5008,7 +5135,11 @@
       "Calculer directement 'au moins' au lieu d'utiliser le complémentaire",
       "Oublier le principe multiplicatif pour les choix indépendants"
     ],
-    "tags": ["combinatoire", "combinaison", "cartes"],
+    "tags": [
+      "combinatoire",
+      "combinaison",
+      "cartes"
+    ],
     "isComprehension": false
   },
   {
@@ -5038,7 +5169,11 @@
       "Additionner au lieu de multiplier pour des choix successifs",
       "Oublier de soustraire l'intersection quand les ensembles ne sont pas disjoints"
     ],
-    "tags": ["combinatoire", "principe multiplicatif", "principe additif"],
+    "tags": [
+      "combinatoire",
+      "principe multiplicatif",
+      "principe additif"
+    ],
     "isComprehension": true
   },
   {
@@ -5074,7 +5209,11 @@
       "Calculer les deux coefficients séparément sans utiliser la symétrie",
       "Confondre 2^n et n!"
     ],
-    "tags": ["combinatoire", "binomial", "Pascal"],
+    "tags": [
+      "combinatoire",
+      "binomial",
+      "Pascal"
+    ],
     "isComprehension": false
   },
   {
@@ -5109,7 +5248,10 @@
       "Oublier la constante C",
       "Confondre le signe de a"
     ],
-    "tags": ["équations différentielles", "homogène"],
+    "tags": [
+      "équations différentielles",
+      "homogène"
+    ],
     "isComprehension": true
   },
   {
@@ -5139,7 +5281,10 @@
       "Oublier de diviser pour isoler y'",
       "Se tromper dans le signe de a"
     ],
-    "tags": ["équations différentielles", "homogène"],
+    "tags": [
+      "équations différentielles",
+      "homogène"
+    ],
     "isComprehension": true
   },
   {
@@ -5184,7 +5329,10 @@
       "Écrire +b/a au lieu de -b/a",
       "Oublier d'ajouter la solution particulière"
     ],
-    "tags": ["équations différentielles", "second membre"],
+    "tags": [
+      "équations différentielles",
+      "second membre"
+    ],
     "isComprehension": false
   },
   {
@@ -5229,7 +5377,11 @@
       "Remplacer dans l'équation au lieu de la solution",
       "Oublier d'évaluer e^0 = 1"
     ],
-    "tags": ["équations différentielles", "condition initiale", "Cauchy"],
+    "tags": [
+      "équations différentielles",
+      "condition initiale",
+      "Cauchy"
+    ],
     "isComprehension": false
   },
   {
@@ -5265,7 +5417,10 @@
       "Se tromper dans le calcul de la dérivée",
       "Oublier de simplifier complètement"
     ],
-    "tags": ["équations différentielles", "vérification"],
+    "tags": [
+      "équations différentielles",
+      "vérification"
+    ],
     "isComprehension": true
   },
   {
@@ -5301,7 +5456,11 @@
       "Oublier que e^(-2x) → 0 quand x → +∞",
       "Confondre croissance et décroissance"
     ],
-    "tags": ["équations différentielles", "limite", "variations"],
+    "tags": [
+      "équations différentielles",
+      "limite",
+      "variations"
+    ],
     "isComprehension": false
   },
   {
@@ -5338,7 +5497,11 @@
       "Oublier de tester certains premiers",
       "Ne pas reconnaître un carré parfait"
     ],
-    "tags": ["arithmétique", "nombres premiers", "primalité"],
+    "tags": [
+      "arithmétique",
+      "nombres premiers",
+      "primalité"
+    ],
     "isComprehension": true
   },
   {
@@ -5374,7 +5537,11 @@
       "S'arrêter avant d'avoir fini (le résultat doit être 1)",
       "Oublier de factoriser complètement (ex: écrire 9 au lieu de 3²)"
     ],
-    "tags": ["arithmétique", "décomposition", "facteurs premiers"],
+    "tags": [
+      "arithmétique",
+      "décomposition",
+      "facteurs premiers"
+    ],
     "isComprehension": false
   },
   {
@@ -5410,7 +5577,11 @@
       "Oublier le +1 dans la formule",
       "Mal compter les exposants dans la décomposition"
     ],
-    "tags": ["arithmétique", "diviseurs", "formule"],
+    "tags": [
+      "arithmétique",
+      "diviseurs",
+      "formule"
+    ],
     "isComprehension": false
   },
   {
@@ -5447,7 +5618,11 @@
       "Oublier de vérifier que p ne divise pas a",
       "Se tromper dans la division euclidienne de l'exposant"
     ],
-    "tags": ["arithmétique", "Fermat", "congruences"],
+    "tags": [
+      "arithmétique",
+      "Fermat",
+      "congruences"
+    ],
     "isComprehension": false
   },
   {
@@ -5488,7 +5663,12 @@
       "Confondre min et max pour PGCD et PPCM",
       "Oublier les premiers qui n'apparaissent que dans un des nombres"
     ],
-    "tags": ["arithmétique", "pgcd", "ppcm", "décomposition"],
+    "tags": [
+      "arithmétique",
+      "pgcd",
+      "ppcm",
+      "décomposition"
+    ],
     "isComprehension": false
   },
   {
@@ -5529,7 +5709,12 @@
       "Croire que N est toujours premier (il a juste un diviseur premier non listé)",
       "Ne pas comprendre la structure du raisonnement par l'absurde"
     ],
-    "tags": ["arithmétique", "nombres premiers", "démonstration", "Euclide"],
+    "tags": [
+      "arithmétique",
+      "nombres premiers",
+      "démonstration",
+      "Euclide"
+    ],
     "isComprehension": false
   },
   {
@@ -5559,7 +5744,11 @@
       "Oublier le i dans la formule",
       "Se tromper dans le signe sous la racine"
     ],
-    "tags": ["complexes", "équation second degré", "discriminant"],
+    "tags": [
+      "complexes",
+      "équation second degré",
+      "discriminant"
+    ],
     "isComprehension": false
   },
   {
@@ -5600,7 +5789,11 @@
       "Oublier de calculer le module",
       "Se tromper dans le signe de xy"
     ],
-    "tags": ["complexes", "racine carrée", "méthode"],
+    "tags": [
+      "complexes",
+      "racine carrée",
+      "méthode"
+    ],
     "isComprehension": false
   },
   {
@@ -5639,7 +5832,11 @@
     "commonMistakes": [
       "Oublier le signe dans Z² - SZ + P"
     ],
-    "tags": ["complexes", "somme produit", "Viète"],
+    "tags": [
+      "complexes",
+      "somme produit",
+      "Viète"
+    ],
     "isComprehension": false
   },
   {
@@ -5679,7 +5876,11 @@
       "Oublier les solutions complexes pour z² = -7",
       "Ne pas revenir à la variable z"
     ],
-    "tags": ["complexes", "équation bicarrée", "changement de variable"],
+    "tags": [
+      "complexes",
+      "équation bicarrée",
+      "changement de variable"
+    ],
     "isComprehension": false
   },
   {
@@ -5720,7 +5921,11 @@
       "Erreur de calcul dans la factorisation",
       "Ne pas vérifier la racine évidente"
     ],
-    "tags": ["complexes", "polynôme", "factorisation"],
+    "tags": [
+      "complexes",
+      "polynôme",
+      "factorisation"
+    ],
     "isComprehension": false
   },
   {
@@ -5756,7 +5961,11 @@
       "Oublier que ω₀ = 1 (pas 0)",
       "Confondre argument et module"
     ],
-    "tags": ["complexes", "racines unité", "géométrie"],
+    "tags": [
+      "complexes",
+      "racines unité",
+      "géométrie"
+    ],
     "isComprehension": false
   },
   {
@@ -5792,7 +6001,11 @@
       "Confondre ligne et colonne dans la matrice",
       "Oublier que la somme de chaque ligne = 1"
     ],
-    "tags": ["markov", "matrice de transition", "probabilités"],
+    "tags": [
+      "markov",
+      "matrice de transition",
+      "probabilités"
+    ],
     "isComprehension": false
   },
   {
@@ -5828,7 +6041,11 @@
       "Mettre des 1/3 sur la diagonale (on ne peut pas rester sur place)",
       "Oublier de vérifier le calcul"
     ],
-    "tags": ["markov", "symétrie", "état stable"],
+    "tags": [
+      "markov",
+      "symétrie",
+      "état stable"
+    ],
     "isComprehension": false
   },
   {
@@ -5864,7 +6081,11 @@
       "Oublier la contrainte x + y = 1",
       "Inverser les probabilités de rester/partir"
     ],
-    "tags": ["markov", "état stable", "application"],
+    "tags": [
+      "markov",
+      "état stable",
+      "application"
+    ],
     "isComprehension": false
   },
   {
@@ -5900,7 +6121,11 @@
       "Se tromper dans les substitutions algébriques",
       "Oublier de vérifier que la matrice est bien stochastique"
     ],
-    "tags": ["markov", "état stable", "paramétrique"],
+    "tags": [
+      "markov",
+      "état stable",
+      "paramétrique"
+    ],
     "isComprehension": false
   },
   {
@@ -5936,7 +6161,11 @@
       "Mettre des probabilités non nulles sur la diagonale de P quand on ne peut pas rester",
       "Oublier que P² calcule les probabilités en 2 étapes"
     ],
-    "tags": ["markov", "puissance de matrice", "marche aléatoire"],
+    "tags": [
+      "markov",
+      "puissance de matrice",
+      "marche aléatoire"
+    ],
     "isComprehension": false
   },
   {
@@ -5972,7 +6201,210 @@
       "Confondre les probabilités de transition",
       "Oublier d'interpréter le résultat"
     ],
-    "tags": ["markov", "modélisation", "état stable"],
+    "tags": [
+      "markov",
+      "modélisation",
+      "état stable"
+    ],
     "isComprehension": false
+  },
+  {
+    "id": "ex-implication-001",
+    "lessonId": "implication-equivalence",
+    "title": "Implication vraie (multiple de 4)",
+    "difficulty": 1,
+    "statement": "Montrer que si un entier est multiple de 4 alors il est pair.",
+    "hints": [
+      "Utilise la définition de « multiple de 4 » : n = 4k.",
+      "Réécris 4k comme 2(2k)."
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Écrire la définition",
+        "content": "Si n est multiple de 4, alors n = 4k avec k entier."
+      },
+      {
+        "step": 2,
+        "title": "Conclure sur la parité",
+        "content": "n = 4k = 2(2k). Donc n est pair."
+      }
+    ],
+    "method": "Exprimer l’hypothèse avec un entier k puis conclure sur la parité.",
+    "commonMistakes": [
+      "Confondre implication et équivalence.",
+      "Oublier d’exprimer n avec un entier k."
+    ],
+    "tags": [
+      "logique",
+      "implication",
+      "entiers"
+    ],
+    "isComprehension": true
+  },
+  {
+    "id": "ex-trigo-bases-001",
+    "lessonId": "trigonometrie-bases",
+    "title": "Valeurs remarquables sur le cercle",
+    "difficulty": 1,
+    "statement": "Sur le cercle trigonométrique, donner $cos(pi/3)$ et $sin(pi/3)$.",
+    "hints": [
+      "Pense au triangle équilatéral coupé en deux.",
+      "Les valeurs associées à 60° sont $1/2$ et $sqrt{3}/2$."
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Identifier l’angle",
+        "content": "$pi/3$ correspond à 60°."
+      },
+      {
+        "step": 2,
+        "title": "Lire les coordonnées",
+        "content": "$cos(pi/3)=1/2$ et $sin(pi/3)=sqrt{3}/2$."
+      }
+    ],
+    "method": "Utiliser les angles remarquables et les coordonnées sur le cercle.",
+    "commonMistakes": [
+      "Inverser le sinus et le cosinus.",
+      "Oublier la valeur $sqrt{3}/2$."
+    ],
+    "tags": [
+      "trigonométrie",
+      "cercle",
+      "angles remarquables"
+    ],
+    "isComprehension": true
+  },
+  {
+    "id": "ex-fonctions-trigo-001",
+    "lessonId": "fonctions-trigo",
+    "title": "Domaine de la tangente",
+    "difficulty": 1,
+    "statement": "Déterminer le domaine de définition de $\tan(x)$.",
+    "hints": [
+      "Écris $\tan(x)=\frac{sin(x)}{cos(x)}$.",
+      "La tangente n’est pas définie quand $cos(x)=0$."
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Réécrire la tangente",
+        "content": "$\tan(x)=\frac{sin(x)}{cos(x)}$."
+      },
+      {
+        "step": 2,
+        "title": "Exclure les zéros du cosinus",
+        "content": "$cos(x)=0$ pour $x=pi/2+kpi$, donc on les exclut."
+      }
+    ],
+    "method": "Chercher où le dénominateur est nul.",
+    "commonMistakes": [
+      "Oublier les multiples de $pi$.",
+      "Dire que $\tan(x)$ est définie sur tout $mathbb{R}$."
+    ],
+    "tags": [
+      "trigonométrie",
+      "fonctions",
+      "domaine"
+    ],
+    "isComprehension": true
+  },
+  {
+    "id": "ex-graphes-intro-001",
+    "lessonId": "graphes-introduction",
+    "title": "Somme des degrés",
+    "difficulty": 1,
+    "statement": "Un graphe a 5 sommets et 6 arêtes. Quelle est la somme des degrés des sommets ?",
+    "hints": [
+      "Chaque arête compte pour 2 degrés.",
+      "Utilise la formule $sum deg(v) = 2|E|$."
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Appliquer la formule",
+        "content": "$sum deg(v) = 2 \times 6 = 12$."
+      }
+    ],
+    "method": "Utiliser la formule de la poignée de main.",
+    "commonMistakes": [
+      "Répondre 6 au lieu de 12.",
+      "Oublier que chaque arête touche deux sommets."
+    ],
+    "tags": [
+      "graphes",
+      "degré",
+      "arêtes"
+    ],
+    "isComprehension": true
+  },
+  {
+    "id": "ex-graphes-parcours-001",
+    "lessonId": "graphes-parcours",
+    "title": "Condition d’un parcours eulérien",
+    "difficulty": 2,
+    "statement": "Dans un graphe connexe, quelle condition sur les degrés assure l’existence d’un parcours eulérien ?",
+    "hints": [
+      "Regarde le nombre de sommets de degré impair.",
+      "Parcours eulérien vs circuit eulérien."
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Analyser les degrés",
+        "content": "Un parcours eulérien existe si le graphe a 0 ou 2 sommets de degré impair."
+      },
+      {
+        "step": 2,
+        "title": "Distinguer le cas du circuit",
+        "content": "Si 0 sommet impair, on obtient un circuit eulérien."
+      }
+    ],
+    "method": "Compter les sommets de degré impair.",
+    "commonMistakes": [
+      "Confondre parcours eulérien et circuit eulérien.",
+      "Penser que 1 sommet impair suffit."
+    ],
+    "tags": [
+      "graphes",
+      "parcours",
+      "Euler"
+    ],
+    "isComprehension": true
+  },
+  {
+    "id": "ex-matrices-systemes-001",
+    "lessonId": "matrices-systemes",
+    "title": "Unicité et déterminant",
+    "difficulty": 1,
+    "statement": "Le système $AX = B$ a une solution unique. Que peux-tu dire sur $det(A)$ ?",
+    "hints": [
+      "Solution unique ⇔ matrice inversible.",
+      "Une matrice inversible a un déterminant non nul."
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Relier unicité et inversibilité",
+        "content": "Si la solution est unique, $A$ est inversible."
+      },
+      {
+        "step": 2,
+        "title": "Conclure sur le déterminant",
+        "content": "Donc $det(A) \neq 0$."
+      }
+    ],
+    "method": "Utiliser le critère d’inversibilité.",
+    "commonMistakes": [
+      "Dire que le déterminant est forcément positif.",
+      "Confondre « solution unique » et « système compatible ». "
+    ],
+    "tags": [
+      "matrices",
+      "systèmes",
+      "déterminant"
+    ],
+    "isComprehension": true
   }
 ]

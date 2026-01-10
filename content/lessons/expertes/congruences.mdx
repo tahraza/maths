@@ -45,6 +45,12 @@ $$a \equiv b \pmod{n} \Leftrightarrow n | (a - b) \Leftrightarrow \exists k \in 
 Autrement dit : $a$ et $b$ ont le même reste dans la division euclidienne par $n$.
 :::
 
+:::example[Pourquoi ? Même reste]
+Si $a = qn + r$ et $b = q'n + r$ avec $0 \leq r < n$, alors $a - b = (q - q')n$, donc $a \equiv b \pmod{n}$.
+
+Réciproquement, si $n | (a-b)$, alors $a$ et $b$ ont le même reste modulo $n$.
+:::
+
 **Exemples** :
 - $17 \equiv 2 \pmod{5}$ car $17 - 2 = 15 = 5 \times 3$
 - $-3 \equiv 4 \pmod{7}$ car $-3 - 4 = -7 = 7 \times (-1)$
@@ -73,6 +79,12 @@ $$a^k \equiv b^k \pmod{n}$$ pour tout $k \in \mathbb{N}$
 $6 \equiv 0 \pmod{6}$, mais $6/2 \not\equiv 0/2 \pmod{6}$ au sens habituel.
 
 La simplification par $c$ n'est possible que si $\text{pgcd}(c, n) = 1$.
+:::
+
+:::example[Contre-exemple : simplification illégitime]
+$2x \equiv 2 \pmod{4}$ donne $2(x-1) \equiv 0 \pmod{4}$, donc $x-1$ est pair : $x \equiv 1 \pmod{2}$.
+
+On ne peut pas conclure $x \equiv 1 \pmod{4}$ : par exemple $x=3$ vérifie $2x \equiv 2 \pmod{4}$.
 :::
 
 :::property[Simplification]

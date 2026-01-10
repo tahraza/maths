@@ -72,10 +72,22 @@ $$e^{-a} = \frac{1}{e^a}$$
 $$e^0 = 1$$
 :::
 
+:::example[Contre-exemple : somme vs produit]
+Avec $a=b=0$ :
+$$e^{a+b} = e^0 = 1 \quad \text{mais} \quad e^a + e^b = 1 + 1 = 2$$
+Donc $e^{a+b} \neq e^a + e^b$ en général.
+:::
+
 :::property[Signe]
 Pour tout réel $x$ : $e^x > 0$
 
 L'exponentielle est toujours **strictement positive**.
+:::
+
+:::example[Pourquoi ? $e^x$ ne s'annule jamais]
+Si $e^x = 0$ pour un certain $x$, alors en multipliant par $e^{-x}$ on obtiendrait $1 = e^x e^{-x} = 0$, impossible.
+
+Donc $e^x \neq 0$ et comme $e^x$ est continue, elle ne peut pas changer de signe : on a bien $e^x > 0$ pour tout $x$.
 :::
 
 ## Propriétés analytiques

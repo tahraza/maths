@@ -88,10 +88,26 @@ Soit $f$ deux fois dérivable sur $I$.
 - $f$ est concave sur $I$ $\Leftrightarrow$ $f'$ est décroissante sur $I$
 :::
 
+:::example[Pourquoi ? Dérivée seconde et tangentes]
+Si $f'' \geq 0$ sur $I$, alors $f'$ est croissante. Pour $x \geq a$ :
+$$f'(t) \geq f'(a) \Rightarrow \int_a^x f'(t)\,dt \geq f'(a)(x-a)$$
+Donc $f(x) - f(a) \geq f'(a)(x-a)$, soit
+$$f(x) \geq f(a) + f'(a)(x-a)$$
+La courbe est au-dessus de la tangente (caractérisation de la convexité).
+:::
+
 :::property[Point d'inflexion]
 Si $f$ est deux fois dérivable et si $f''$ **change de signe** en $a$, alors $(a, f(a))$ est un point d'inflexion.
 
 Condition nécessaire : $f''(a) = 0$ (mais pas suffisante !)
+:::
+
+:::example[Contre-exemple : $f''(a)=0$ sans inflexion]
+Soit $f(x) = x^4$. Alors $f''(x) = 12x^2$.
+
+On a $f''(0) = 0$, mais $f''(x) \geq 0$ des deux côtés de 0 : la convexité ne change pas.
+
+Donc $(0,0)$ n'est **pas** un point d'inflexion.
 :::
 
 ## Position par rapport aux tangentes

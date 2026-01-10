@@ -40,6 +40,8 @@ interface PageProps {
 type QuizWithLesson = Quiz & {
   lessonSlug?: string
   lessonTrack?: Track
+  prereqLessons?: Record<string, { id: string; title: string; track: Track; slug: string }>
+  comprehensionExerciseId?: string
 }
 
 export default function QCMPage({ params }: PageProps) {
@@ -218,16 +220,10 @@ export default function QCMPage({ params }: PageProps) {
 
     if (score < 40) {
       level = 'low'
-      recommendations = [
-        'Revois les prérequis avant de commencer cette leçon',
-        ...Array.from(missedPrereqs),
-      ]
+      recommendations = ['Revois les prérequis avant de commencer cette leçon.']
     } else if (score < 70) {
       level = 'medium'
-      recommendations = [
-        'Quelques bases à consolider, mais tu peux commencer',
-        ...Array.from(missedPrereqs),
-      ]
+      recommendations = ['Quelques bases à consolider, mais tu peux commencer.']
     } else {
       level = 'high'
       recommendations = ['Excellentes bases ! Tu peux passer en mode accéléré.']
@@ -256,6 +252,15 @@ export default function QCMPage({ params }: PageProps) {
     const lessonLink = quiz.lessonTrack && quiz.lessonSlug
       ? `/lecons/${quiz.lessonTrack}/${quiz.lessonSlug}`
       : '/lecons'
+    const prereqLessons = quiz.prereqLessons ?? {}
+    const missingPrereqs = diagnostic?.missingPrereqs ?? []
+    const flashcardsLink = `/flashcards?lesson=${quiz.lessonId}`
+    const comprehensionLink = quiz.comprehensionExerciseId
+      ? `/exercices/${quiz.comprehensionExerciseId}`
+      : `/exercices?lesson=${quiz.lessonId}`
+    const comprehensionLabel = quiz.comprehensionExerciseId
+      ? 'Faire un exercice de compréhension'
+      : 'Voir les exercices de la leçon'
 
     return (
       <div className="min-h-screen bg-slate-50 py-8 dark:bg-slate-900">
@@ -307,6 +312,37 @@ export default function QCMPage({ params }: PageProps) {
                     </li>
                   ))}
                 </ul>
+                {missingPrereqs.length > 0 && (
+                  <div className="mt-3">
+                    <p className="text-sm font-medium text-slate-800 dark:text-slate-200">
+                      Notions à revoir :
+                    </p>
+                    <ul className="mt-2 space-y-1 text-sm">
+                      {missingPrereqs.map((prereqId) => {
+                        const lesson = prereqLessons[prereqId]
+                        if (lesson) {
+                          return (
+                            <li key={prereqId} className="flex items-start gap-2">
+                              <span className="mt-1">•</span>
+                              <Link
+                                href={`/lecons/${lesson.track}/${lesson.slug}`}
+                                className="text-primary-700 hover:text-primary-900 dark:text-primary-300 dark:hover:text-primary-200"
+                              >
+                                {lesson.title}
+                              </Link>
+                            </li>
+                          )
+                        }
+                        return (
+                          <li key={prereqId} className="flex items-start gap-2">
+                            <span className="mt-1">•</span>
+                            {prereqId}
+                          </li>
+                        )
+                      })}
+                    </ul>
+                  </div>
+                )}
               </div>
             )}
 
@@ -335,6 +371,24 @@ export default function QCMPage({ params }: PageProps) {
                 <BookOpen className="h-5 w-5" />
                 {quiz.type === 'pre' ? 'Commencer la leçon' : 'Revoir la leçon'}
               </Link>
+              {quiz.type === 'pre' && (
+                <div className="grid gap-2 sm:grid-cols-2">
+                  <Link
+                    href={flashcardsLink}
+                    className="btn-secondary flex items-center justify-center gap-2"
+                  >
+                    <BookOpen className="h-4 w-4" />
+                    Faire 2 flashcards
+                  </Link>
+                  <Link
+                    href={comprehensionLink}
+                    className="btn-outline flex items-center justify-center gap-2"
+                  >
+                    <BookOpen className="h-4 w-4" />
+                    {comprehensionLabel}
+                  </Link>
+                </div>
+              )}
               <Link
                 href="/lecons"
                 className="btn-secondary"

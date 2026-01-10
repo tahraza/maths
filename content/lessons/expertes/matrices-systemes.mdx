@@ -49,6 +49,12 @@ où $A$ est la matrice des coefficients, $X$ le vecteur des inconnues, $B$ le ve
 3. Remonter pour trouver les solutions
 :::
 
+:::example[Pourquoi ? Les opérations de Gauss préservent les solutions]
+Échanger deux lignes ne fait que réordonner les équations. Multiplier une ligne par un réel non nul ou ajouter un multiple d'une autre ligne revient à transformer une équation en une équation équivalente.
+
+Donc l'ensemble des solutions ne change pas.
+:::
+
 :::property[Interprétation des résultats]
 Après échelonnement :
 - **Ligne $0 = 0$** : équation redondante (infinité de solutions possibles)
@@ -65,6 +71,15 @@ $$X = A^{-1}B$$
 
 :::property[Critère d'inversibilité]
 Une matrice carrée $A$ est inversible si et seulement si $\det(A) \neq 0$.
+:::
+
+:::example[Contre-exemple : $\det(A)=0$]
+Avec $A = \begin{pmatrix} 1 & 2 \\ 2 & 4 \end{pmatrix}$, on a $\det(A)=0$.
+
+- Si $B = \begin{pmatrix} 3 \\ 6 \end{pmatrix}$, le système a une infinité de solutions.
+- Si $B = \begin{pmatrix} 3 \\ 5 \end{pmatrix}$, le système est incompatible.
+
+Donc $\det(A)=0$ ne garantit ni existence ni unicité.
 :::
 
 ## Déterminant 2×2 et 3×3

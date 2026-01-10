@@ -53,6 +53,12 @@ $$y = \ln(x) \Leftrightarrow e^y = x$$
 Autrement dit, $\ln(x)$ est l'exposant qu'il faut mettre à $e$ pour obtenir $x$.
 :::
 
+:::example[Pourquoi ? Le domaine est $]0, +\infty[$]
+L'équation $e^y = x$ a une solution seulement si $x > 0$, car $e^y > 0$ pour tout $y$.
+
+Donc $\ln(x)$ n'est défini que pour les réels strictement positifs.
+:::
+
 :::definition
 **Relation fondamentale**
 
@@ -71,6 +77,19 @@ $$\ln\left(\frac{a}{b}\right) = \ln(a) - \ln(b)$$
 $$\ln(a^n) = n \ln(a)$$
 $$\ln\left(\frac{1}{a}\right) = -\ln(a)$$
 $$\ln(\sqrt{a}) = \frac{1}{2}\ln(a)$$
+:::
+
+:::example[Pourquoi ? $\ln(ab) = \ln(a) + \ln(b)$]
+Écris $a = e^u$ et $b = e^v$ (possible car $a,b>0$).
+
+Alors $ab = e^{u+v}$ et donc :
+$$\ln(ab) = \ln(e^{u+v}) = u+v = \ln(a) + \ln(b)$$
+:::
+
+:::example[Contre-exemple : somme]
+Avec $a=b=1$ :
+$$\ln(a+b) = \ln(2) \quad \text{mais} \quad \ln(a)+\ln(b)=0$$
+Donc $\ln(a+b) \neq \ln(a)+\ln(b)$ en général.
 :::
 
 :::property[Valeurs particulières]

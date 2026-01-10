@@ -66,6 +66,14 @@ On dit que $f$ a pour limite $+\infty$ en $a$, noté $\displaystyle\lim_{x \to a
 $f$ admet une limite en $a$ si et seulement si les limites à gauche et à droite existent et sont égales.
 :::
 
+:::example[Contre-exemple : limites latérales différentes]
+Soit $f(x) = \begin{cases} 1 & \text{si } x > 0 \\ -1 & \text{si } x < 0 \end{cases}$.
+
+Alors $\lim_{x \to 0^-} f(x) = -1$ et $\lim_{x \to 0^+} f(x) = 1$.
+
+Les limites latérales sont différentes : $f$ **n'admet pas** de limite en 0.
+:::
+
 ## Limites de référence
 
 :::property[Limites usuelles]
@@ -129,6 +137,16 @@ La droite $y = ax + b$ (avec $a \neq 0$) est asymptote oblique à la courbe de $
 $$\lim_{x \to +\infty} [f(x) - (ax + b)] = 0$$
 
 Pour la trouver : $a = \lim_{x \to +\infty} \frac{f(x)}{x}$ et $b = \lim_{x \to +\infty} [f(x) - ax]$
+:::
+
+:::example[Pourquoi ? Formule de l'asymptote oblique]
+Si $f(x) = ax + b + \varepsilon(x)$ avec $\varepsilon(x) \to 0$ quand $x \to +\infty$, alors :
+$$\frac{f(x)}{x} = a + \frac{b}{x} + \frac{\varepsilon(x)}{x} \to a$$
+Donc $a = \lim_{x \to +\infty} \frac{f(x)}{x}$.
+
+Ensuite :
+$$f(x) - ax = b + \varepsilon(x) \to b$$
+Donc $b = \lim_{x \to +\infty} [f(x) - ax]$.
 :::
 
 ## Méthodes types
