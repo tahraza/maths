@@ -3,7 +3,7 @@ id: "suites-definition"
 title: "Suites numériques : définitions et modes de génération"
 track: "spe"
 level: 2
-prerequisites: ["fonctions-bases", "recurrence"]
+prerequisites: ["recurrence"]
 tags: ["suites", "récurrence", "explicite", "arithmétique", "géométrique"]
 estimatedTime: 45
 chapter: "suites"
@@ -94,6 +94,13 @@ Ou plus généralement, pour tout $p \in \mathbb{N}$ :
 $$u_n = u_p + (n-p) \cdot r$$
 :::
 
+:::proof[Pourquoi la formule explicite ?]
+On part de $u_{n+1} = u_n + r$.
+- **Initialisation** : pour $n = 0$, on a bien $u_0 = u_0 + 0 \cdot r$.
+- **Hérédité** : si $u_n = u_0 + n r$, alors $u_{n+1} = u_n + r = u_0 + (n+1) r$.
+Par récurrence, $u_n = u_0 + n r$ pour tout $n$.
+:::
+
 :::example[Suite arithmétique]
 La suite définie par $u_0 = 5$ et $u_{n+1} = u_n + 3$ est arithmétique de raison $r = 3$.
 
@@ -113,6 +120,13 @@ $$u_n = u_0 \cdot q^n$$
 
 Ou plus généralement :
 $$u_n = u_p \cdot q^{n-p}$$
+:::
+
+:::proof[Pourquoi la formule explicite ?]
+On part de $u_{n+1} = q u_n$.
+- **Initialisation** : pour $n = 0$, $u_0 = u_0 \cdot q^0$.
+- **Hérédité** : si $u_n = u_0 q^n$, alors $u_{n+1} = q u_n = u_0 q^{n+1}$.
+Par récurrence, $u_n = u_0 q^n$ pour tout $n$.
 :::
 
 :::example[Suite géométrique]
@@ -159,6 +173,15 @@ Soit $u_0 = 3$ et $u_{n+1} = 2u_n - 1$.
 - $u_3 = 2 \times 9 - 1 = 17$
 
 Cette suite n'est ni arithmétique (différences : 2, 4, 8) ni géométrique (quotients : 5/3, 9/5, 17/9).
+
+:::example[Contre-exemple]
+La suite $u_0 = 1$, $u_{n+1} = u_n + n$ **n'est pas** arithmétique : la différence vaut $1, 2, 3, \ldots$ et n'est pas constante.
+:::
+
+### Pourquoi ?
+
+Pourquoi une suite géométrique modélise-t-elle une croissance "en pourcentage" ?
+Parce qu'à chaque étape, on **multiplie** par le même facteur $q$ : la variation est proportionnelle au terme précédent.
 
 ### Exemple 3 : Identifier une suite arithmétique
 

@@ -1,0 +1,173 @@
+[
+  {
+    "id": "spe-module",
+    "title": "Spécialité Mathématiques",
+    "track": "spe",
+    "description": "Programme complet de spécialité mathématiques en Terminale",
+    "chapters": [
+      {
+        "id": "raisonnement",
+        "title": "Raisonnement et démonstration",
+        "track": "spe",
+        "order": 1,
+        "description": "Logique, implication, récurrence",
+        "lessons": [
+          "implication-equivalence",
+          "recurrence"
+        ]
+      },
+      {
+        "id": "suites",
+        "title": "Suites numériques",
+        "track": "spe",
+        "order": 2,
+        "description": "Définitions, limites, convergence",
+        "lessons": [
+          "suites-definition",
+          "suites-limites",
+          "suites-convergence"
+        ]
+      },
+      {
+        "id": "fonctions",
+        "title": "Fonctions",
+        "track": "spe",
+        "order": 3,
+        "description": "Limites, continuité, dérivation, convexité",
+        "lessons": [
+          "limites-fonctions",
+          "continuite",
+          "derivation",
+          "convexite"
+        ]
+      },
+      {
+        "id": "exp-ln",
+        "title": "Exponentielle et logarithme",
+        "track": "spe",
+        "order": 4,
+        "description": "Propriétés, équations, applications",
+        "lessons": [
+          "exponentielle",
+          "logarithme"
+        ]
+      },
+      {
+        "id": "trigo",
+        "title": "Trigonométrie",
+        "track": "spe",
+        "order": 5,
+        "description": "Cercle, formules, fonctions trigonométriques",
+        "lessons": [
+          "trigonometrie-bases",
+          "fonctions-trigo"
+        ]
+      },
+      {
+        "id": "geometrie-espace",
+        "title": "Géométrie dans l'espace",
+        "track": "spe",
+        "order": 6,
+        "description": "Vecteurs, droites, plans, orthogonalité",
+        "lessons": [
+          "vecteurs-espace",
+          "produit-scalaire-espace",
+          "droites-plans-espace",
+          "orthogonalite-espace"
+        ]
+      },
+      {
+        "id": "integration",
+        "title": "Intégration",
+        "track": "spe",
+        "order": 7,
+        "description": "Primitives, intégrales, équations différentielles",
+        "lessons": [
+          "primitives",
+          "integrales",
+          "equations-differentielles"
+        ]
+      },
+      {
+        "id": "probabilites",
+        "title": "Probabilités",
+        "track": "spe",
+        "order": 8,
+        "description": "Variables aléatoires discrètes, loi binomiale",
+        "lessons": [
+          "variables-aleatoires",
+          "loi-binomiale"
+        ]
+      },
+      {
+        "id": "probas",
+        "title": "Dénombrement et lois usuelles",
+        "track": "spe",
+        "order": 9,
+        "description": "Combinatoire, loi normale, variables aléatoires",
+        "lessons": [
+          "combinatoire",
+          "probabilites-va",
+          "loi-normale"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "expertes-module",
+    "title": "Maths Expertes",
+    "track": "expertes",
+    "description": "Programme de mathématiques expertes en Terminale",
+    "chapters": [
+      {
+        "id": "complexes",
+        "title": "Nombres complexes",
+        "track": "expertes",
+        "order": 1,
+        "description": "Formes, opérations, géométrie, équations",
+        "lessons": [
+          "complexes-introduction",
+          "complexes-formes",
+          "complexes-geometrie",
+          "equations-polynomiales-complexes"
+        ]
+      },
+      {
+        "id": "matrices",
+        "title": "Matrices et systèmes",
+        "track": "expertes",
+        "order": 2,
+        "description": "Opérations, systèmes linéaires, Markov",
+        "lessons": [
+          "matrices-operations",
+          "matrices-systemes",
+          "chaines-markov"
+        ]
+      },
+      {
+        "id": "arithmetique",
+        "title": "Arithmétique",
+        "track": "expertes",
+        "order": 3,
+        "description": "Divisibilité, congruences, nombres premiers",
+        "lessons": [
+          "divisibilite",
+          "congruences",
+          "nombres-premiers",
+          "bezout"
+        ]
+      },
+      {
+        "id": "graphes",
+        "title": "Graphes",
+        "track": "expertes",
+        "order": 4,
+        "description": "Notions de base, parcours et applications",
+        "lessons": [
+          "graphes-introduction",
+          "graphes-parcours"
+        ]
+      }
+    ]
+  }
+]

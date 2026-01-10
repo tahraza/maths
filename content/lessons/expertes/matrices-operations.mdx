@@ -3,7 +3,7 @@ id: "matrices-operations"
 title: "Matrices : définitions et opérations"
 track: "expertes"
 level: 2
-prerequisites: ["systemes-lineaires"]
+prerequisites: []
 tags: ["matrices", "addition", "multiplication", "transposée"]
 estimatedTime: 50
 chapter: "matrices"
@@ -57,6 +57,19 @@ Une matrice est **carrée** si elle a autant de lignes que de colonnes ($n = p$)
 
 Les coefficients $a_{i,i}$ forment la **diagonale principale**.
 :::
+
+:::example[Contre-exemple]
+La multiplication matricielle n'est pas commutative.
+Prenons
+$$A = \\begin{pmatrix}1 & 1 \\\\ 0 & 1\\end{pmatrix}, \\quad B = \\begin{pmatrix}1 & 0 \\\\ 1 & 1\\end{pmatrix}.$$
+Alors
+$$AB = \\begin{pmatrix}2 & 1 \\\\ 1 & 1\\end{pmatrix} \\neq \\begin{pmatrix}1 & 1 \\\\ 1 & 2\\end{pmatrix} = BA.$$
+:::
+
+### Pourquoi ?
+
+Pourquoi l'ordre compte-t-il pour le produit matriciel ?
+Parce qu'il correspond à la **composition** de transformations : faire $A$ puis $B$ n'est pas toujours la même chose que faire $B$ puis $A$.
 
 :::definition
 **Matrices particulières**

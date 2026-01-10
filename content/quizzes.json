@@ -15,7 +15,8 @@
           "$u_{n+1} = r^n$"
         ],
         "correctAnswer": 0,
-        "explanation": "Par définition, une suite arithmétique vérifie $u_{n+1} = u_n + r$ où $r$ est la raison."
+        "explanation": "Par définition, une suite arithmétique vérifie $u_{n+1} = u_n + r$ où $r$ est la raison.",
+        "prereqRef": "recurrence"
       },
       {
         "id": "q2",
@@ -27,7 +28,8 @@
           "12"
         ],
         "correctAnswer": 2,
-        "explanation": "$u_2 = u_0 \\times q^2 = 2 \\times 3^2 = 2 \\times 9 = 18$"
+        "explanation": "$u_2 = u_0 \\times q^2 = 2 \\times 3^2 = 2 \\times 9 = 18$",
+        "prereqRef": "recurrence"
       },
       {
         "id": "q3",
@@ -39,7 +41,8 @@
           "Croissante"
         ],
         "correctAnswer": 2,
-        "explanation": "Cette suite alterne entre 1 et -1, elle ne converge donc pas : elle est divergente."
+        "explanation": "Cette suite alterne entre 1 et -1, elle ne converge donc pas : elle est divergente.",
+        "prereqRef": "recurrence"
       },
       {
         "id": "q4",
@@ -51,7 +54,8 @@
           "10100"
         ],
         "correctAnswer": 1,
-        "explanation": "C'est la somme des 100 premiers entiers : $\\frac{100 \\times 101}{2} = 5050$"
+        "explanation": "C'est la somme des 100 premiers entiers : $\\frac{100 \\times 101}{2} = 5050$",
+        "prereqRef": "recurrence"
       }
     ],
     "difficulty": 1
@@ -141,7 +145,8 @@
           "$x^4/4$"
         ],
         "correctAnswer": 1,
-        "explanation": "$(x^n)' = nx^{n-1}$, donc $(x^3)' = 3x^2$."
+        "explanation": "$(x^n)' = nx^{n-1}$, donc $(x^3)' = 3x^2$.",
+        "prereqRef": "limites-fonctions"
       },
       {
         "id": "q2",
@@ -153,7 +158,8 @@
           "$\\frac{1}{e^x}$"
         ],
         "correctAnswer": 1,
-        "explanation": "L'exponentielle est sa propre dérivée : $(e^x)' = e^x$."
+        "explanation": "L'exponentielle est sa propre dérivée : $(e^x)' = e^x$.",
+        "prereqRef": "continuite"
       },
       {
         "id": "q3",
@@ -165,7 +171,8 @@
           "$f$ est constante"
         ],
         "correctAnswer": 1,
-        "explanation": "Si $f'(a) > 0$, la fonction est croissante au voisinage de $a$."
+        "explanation": "Si $f'(a) > 0$, la fonction est croissante au voisinage de $a$.",
+        "prereqRef": "limites-fonctions"
       },
       {
         "id": "q4",
@@ -177,7 +184,8 @@
           "$y = f'(a)x + f(a)$"
         ],
         "correctAnswer": 1,
-        "explanation": "L'équation de la tangente est $y = f'(a)(x - a) + f(a)$."
+        "explanation": "L'équation de la tangente est $y = f'(a)(x - a) + f(a)$.",
+        "prereqRef": "continuite"
       }
     ],
     "difficulty": 1
@@ -267,7 +275,8 @@
           "Undefined"
         ],
         "correctAnswer": 1,
-        "explanation": "Par définition, $e^0 = 1$ (comme toute puissance d'exposant 0)."
+        "explanation": "Par définition, $e^0 = 1$ (comme toute puissance d'exposant 0).",
+        "prereqRef": "derivation"
       },
       {
         "id": "q2",
@@ -279,7 +288,8 @@
           "$(e^a)^b$"
         ],
         "correctAnswer": 1,
-        "explanation": "Propriété fondamentale : $e^a \\times e^b = e^{a+b}$."
+        "explanation": "Propriété fondamentale : $e^a \\times e^b = e^{a+b}$.",
+        "prereqRef": "limites-fonctions"
       },
       {
         "id": "q3",
@@ -291,7 +301,8 @@
           "$e$"
         ],
         "correctAnswer": 2,
-        "explanation": "L'exponentielle tend vers $+\\infty$ quand $x \\to +\\infty$."
+        "explanation": "L'exponentielle tend vers $+\\infty$ quand $x \\to +\\infty$.",
+        "prereqRef": "derivation"
       },
       {
         "id": "q4",
@@ -303,7 +314,8 @@
           "Une infinité de solutions"
         ],
         "correctAnswer": 2,
-        "explanation": "$e^x > 0$ pour tout $x$, donc $e^x = 0$ n'a pas de solution."
+        "explanation": "$e^x > 0$ pour tout $x$, donc $e^x = 0$ n'a pas de solution.",
+        "prereqRef": "limites-fonctions"
       }
     ],
     "difficulty": 2
@@ -393,7 +405,8 @@
           "Undefined"
         ],
         "correctAnswer": 0,
-        "explanation": "$\\ln(1) = 0$ car $e^0 = 1$."
+        "explanation": "$\\ln(1) = 0$ car $e^0 = 1$.",
+        "prereqRef": "exponentielle"
       },
       {
         "id": "q2",
@@ -405,7 +418,8 @@
           "$\\frac{1}{e}$"
         ],
         "correctAnswer": 1,
-        "explanation": "$\\ln(e) = 1$ car $e^1 = e$."
+        "explanation": "$\\ln(e) = 1$ car $e^1 = e$.",
+        "prereqRef": "derivation"
       },
       {
         "id": "q3",
@@ -417,7 +431,8 @@
           "$\\ln(a^b)$"
         ],
         "correctAnswer": 1,
-        "explanation": "Propriété fondamentale : $\\ln(ab) = \\ln(a) + \\ln(b)$."
+        "explanation": "Propriété fondamentale : $\\ln(ab) = \\ln(a) + \\ln(b)$.",
+        "prereqRef": "exponentielle"
       },
       {
         "id": "q4",
@@ -429,7 +444,8 @@
           "$[1, +\\infty[$"
         ],
         "correctAnswer": 2,
-        "explanation": "Le logarithme n'est défini que pour $x > 0$."
+        "explanation": "Le logarithme n'est défini que pour $x > 0$.",
+        "prereqRef": "derivation"
       }
     ],
     "difficulty": 2
@@ -519,7 +535,8 @@
           "La médiane"
         ],
         "correctAnswer": 1,
-        "explanation": "L'espérance $E(X)$ est la moyenne théorique de la variable aléatoire."
+        "explanation": "L'espérance $E(X)$ est la moyenne théorique de la variable aléatoire.",
+        "prereqRef": "variables-aleatoires"
       },
       {
         "id": "q2",
@@ -531,7 +548,8 @@
           "$np(1-p)$"
         ],
         "correctAnswer": 0,
-        "explanation": "Pour une loi binomiale, $E(X) = np$."
+        "explanation": "Pour une loi binomiale, $E(X) = np$.",
+        "prereqRef": "combinatoire"
       },
       {
         "id": "q3",
@@ -543,7 +561,8 @@
           "La probabilité de succès"
         ],
         "correctAnswer": 1,
-        "explanation": "La variance $V(X)$ mesure la dispersion des valeurs autour de l'espérance."
+        "explanation": "La variance $V(X)$ mesure la dispersion des valeurs autour de l'espérance.",
+        "prereqRef": "variables-aleatoires"
       },
       {
         "id": "q4",
@@ -555,7 +574,8 @@
           "$25$"
         ],
         "correctAnswer": 1,
-        "explanation": "$\\binom{5}{2} = \\frac{5!}{2!3!} = \\frac{5 \\times 4}{2} = 10$."
+        "explanation": "$\\binom{5}{2} = \\frac{5!}{2!3!} = \\frac{5 \\times 4}{2} = 10$.",
+        "prereqRef": "combinatoire"
       }
     ],
     "difficulty": 2
@@ -645,7 +665,8 @@
           "$\\frac{x^2}{2}$"
         ],
         "correctAnswer": 0,
-        "explanation": "Si $F(x) = x^2$, alors $F'(x) = 2x$. Note : $x^2 + C$ est la forme générale."
+        "explanation": "Si $F(x) = x^2$, alors $F'(x) = 2x$. Note : $x^2 + C$ est la forme générale.",
+        "prereqRef": "derivation"
       },
       {
         "id": "q2",
@@ -657,7 +678,8 @@
           "$2$"
         ],
         "correctAnswer": 2,
-        "explanation": "$\\int_0^1 x\\,dx = [\\frac{x^2}{2}]_0^1 = \\frac{1}{2} - 0 = \\frac{1}{2}$."
+        "explanation": "$\\int_0^1 x\\,dx = [\\frac{x^2}{2}]_0^1 = \\frac{1}{2} - 0 = \\frac{1}{2}$.",
+        "prereqRef": "exponentielle"
       },
       {
         "id": "q3",
@@ -669,7 +691,8 @@
           "$e^{x-1}$"
         ],
         "correctAnswer": 0,
-        "explanation": "L'exponentielle est sa propre primitive : $(e^x)' = e^x$."
+        "explanation": "L'exponentielle est sa propre primitive : $(e^x)' = e^x$.",
+        "prereqRef": "logarithme"
       },
       {
         "id": "q4",
@@ -681,7 +704,8 @@
           "La valeur moyenne de f"
         ],
         "correctAnswer": 1,
-        "explanation": "L'intégrale représente l'aire algébrique entre la courbe et l'axe des abscisses."
+        "explanation": "L'intégrale représente l'aire algébrique entre la courbe et l'axe des abscisses.",
+        "prereqRef": "derivation"
       }
     ],
     "difficulty": 2
@@ -771,7 +795,8 @@
           "Autant d'étapes que de valeurs de n"
         ],
         "correctAnswer": 1,
-        "explanation": "Récurrence = initialisation (vérifier P(n₀)) + hérédité (P(n) ⟹ P(n+1))."
+        "explanation": "Récurrence = initialisation (vérifier P(n₀)) + hérédité (P(n) ⟹ P(n+1)).",
+        "prereqRef": "implication-equivalence"
       },
       {
         "id": "q2",
@@ -783,7 +808,8 @@
           "$P(0)$ est vraie"
         ],
         "correctAnswer": 2,
-        "explanation": "L'hérédité consiste à montrer $P(n) \\Rightarrow P(n+1)$."
+        "explanation": "L'hérédité consiste à montrer $P(n) \\Rightarrow P(n+1)$.",
+        "prereqRef": "implication-equivalence"
       },
       {
         "id": "q3",
@@ -795,7 +821,8 @@
           "Conclure la démonstration"
         ],
         "correctAnswer": 1,
-        "explanation": "L'initialisation vérifie que P(n₀) est vraie (point de départ de la récurrence)."
+        "explanation": "L'initialisation vérifie que P(n₀) est vraie (point de départ de la récurrence).",
+        "prereqRef": "implication-equivalence"
       },
       {
         "id": "q4",
@@ -807,7 +834,8 @@
           "Prouve la propriété pour n = 0 seulement"
         ],
         "correctAnswer": 2,
-        "explanation": "Sans initialisation, on n'a pas de point de départ : rien n'est prouvé."
+        "explanation": "Sans initialisation, on n'a pas de point de départ : rien n'est prouvé.",
+        "prereqRef": "implication-equivalence"
       }
     ],
     "difficulty": 2
@@ -897,7 +925,8 @@
           "$-i$"
         ],
         "correctAnswer": 1,
-        "explanation": "Par définition du nombre imaginaire : $i^2 = -1$."
+        "explanation": "Par définition du nombre imaginaire : $i^2 = -1$.",
+        "prereqRef": "trigonometrie-bases"
       },
       {
         "id": "q2",
@@ -909,7 +938,8 @@
           "$3 + 5i$"
         ],
         "correctAnswer": 1,
-        "explanation": "Pour $z = a + bi$, la partie imaginaire est $b$. Ici, $\\text{Im}(z) = 5$."
+        "explanation": "Pour $z = a + bi$, la partie imaginaire est $b$. Ici, $\\text{Im}(z) = 5$.",
+        "prereqRef": "trigonometrie-bases"
       },
       {
         "id": "q3",
@@ -921,7 +951,8 @@
           "$3 - 2i$"
         ],
         "correctAnswer": 1,
-        "explanation": "Le conjugué de $a + bi$ est $a - bi$. Ici $\\bar{z} = 2 + 3i$."
+        "explanation": "Le conjugué de $a + bi$ est $a - bi$. Ici $\\bar{z} = 2 + 3i$.",
+        "prereqRef": "trigonometrie-bases"
       },
       {
         "id": "q4",
@@ -933,7 +964,8 @@
           "$\\sqrt{7}$"
         ],
         "correctAnswer": 1,
-        "explanation": "$|z| = \\sqrt{3^2 + 4^2} = \\sqrt{9+16} = \\sqrt{25} = 5$."
+        "explanation": "$|z| = \\sqrt{3^2 + 4^2} = \\sqrt{9+16} = \\sqrt{25} = 5$.",
+        "prereqRef": "trigonometrie-bases"
       }
     ],
     "difficulty": 2
@@ -1023,7 +1055,8 @@
           "$-3 + 2i$"
         ],
         "correctAnswer": 0,
-        "explanation": "Le point $(x, y)$ a pour affixe $z = x + yi$. Donc $M(3,-2)$ a pour affixe $3 - 2i$."
+        "explanation": "Le point $(x, y)$ a pour affixe $z = x + yi$. Donc $M(3,-2)$ a pour affixe $3 - 2i$.",
+        "prereqRef": "complexes-introduction"
       },
       {
         "id": "q2",
@@ -1035,7 +1068,8 @@
           "L'argument du point"
         ],
         "correctAnswer": 2,
-        "explanation": "$|z|$ est la distance du point d'affixe $z$ à l'origine $O$."
+        "explanation": "$|z|$ est la distance du point d'affixe $z$ à l'origine $O$.",
+        "prereqRef": "complexes-formes"
       },
       {
         "id": "q3",
@@ -1047,7 +1081,8 @@
           "$-\\pi$"
         ],
         "correctAnswer": 2,
-        "explanation": "$-1$ est sur l'axe réel négatif, donc $\\arg(-1) = \\pi$."
+        "explanation": "$-1$ est sur l'axe réel négatif, donc $\\arg(-1) = \\pi$.",
+        "prereqRef": "complexes-introduction"
       },
       {
         "id": "q4",
@@ -1059,7 +1094,8 @@
           "Un disque"
         ],
         "correctAnswer": 2,
-        "explanation": "$|z| = 2$ signifie distance à l'origine = 2, c'est un cercle de centre O et rayon 2."
+        "explanation": "$|z| = 2$ signifie distance à l'origine = 2, c'est un cercle de centre O et rayon 2.",
+        "prereqRef": "complexes-formes"
       }
     ],
     "difficulty": 3
@@ -1149,7 +1185,8 @@
           "6 colonnes"
         ],
         "correctAnswer": 1,
-        "explanation": "Une matrice $m \\times n$ a $m$ lignes et $n$ colonnes."
+        "explanation": "Une matrice $m \\times n$ a $m$ lignes et $n$ colonnes.",
+        "prereqRef": "matrices-operations"
       },
       {
         "id": "q2",
@@ -1161,7 +1198,8 @@
           "Toujours"
         ],
         "correctAnswer": 2,
-        "explanation": "L'addition matricielle n'est définie que pour des matrices de mêmes dimensions."
+        "explanation": "L'addition matricielle n'est définie que pour des matrices de mêmes dimensions.",
+        "prereqRef": "matrices-operations"
       },
       {
         "id": "q3",
@@ -1173,7 +1211,8 @@
           "$\\begin{pmatrix}2&0\\\\0&2\\end{pmatrix}$"
         ],
         "correctAnswer": 1,
-        "explanation": "La matrice identité a des 1 sur la diagonale et des 0 ailleurs."
+        "explanation": "La matrice identité a des 1 sur la diagonale et des 0 ailleurs.",
+        "prereqRef": "matrices-operations"
       },
       {
         "id": "q4",
@@ -1185,7 +1224,8 @@
           "A et B ont mêmes dimensions"
         ],
         "correctAnswer": 1,
-        "explanation": "Pour $AB$ : nb colonnes de A = nb lignes de B."
+        "explanation": "Pour $AB$ : nb colonnes de A = nb lignes de B.",
+        "prereqRef": "matrices-operations"
       }
     ],
     "difficulty": 2
@@ -1275,7 +1315,8 @@
           "Le quotient de 3 par 12"
         ],
         "correctAnswer": 1,
-        "explanation": "La notation $a | b$ se lit \"$a$ divise $b$\". Ici, 3 divise 12."
+        "explanation": "La notation $a | b$ se lit \"$a$ divise $b$\". Ici, 3 divise 12.",
+        "prereqRef": "divisibilite"
       },
       {
         "id": "q2",
@@ -1287,7 +1328,8 @@
           "5"
         ],
         "correctAnswer": 0,
-        "explanation": "$17 = 5 \\times 3 + 2$, donc le reste est 2."
+        "explanation": "$17 = 5 \\times 3 + 2$, donc le reste est 2.",
+        "prereqRef": "divisibilite"
       },
       {
         "id": "q3",
@@ -1299,7 +1341,8 @@
           "36"
         ],
         "correctAnswer": 2,
-        "explanation": "Les diviseurs communs sont 1, 2, 3, 6. Le plus grand est 6."
+        "explanation": "Les diviseurs communs sont 1, 2, 3, 6. Le plus grand est 6.",
+        "prereqRef": "divisibilite"
       },
       {
         "id": "q4",
@@ -1311,7 +1354,8 @@
           "Leur somme est première"
         ],
         "correctAnswer": 1,
-        "explanation": "Premiers entre eux = PGCD égal à 1 (pas de diviseur commun autre que 1)."
+        "explanation": "Premiers entre eux = PGCD égal à 1 (pas de diviseur commun autre que 1).",
+        "prereqRef": "divisibilite"
       }
     ],
     "difficulty": 2
@@ -1401,7 +1445,8 @@
           "7"
         ],
         "correctAnswer": 1,
-        "explanation": "$17 = 5 \\times 3 + 2$, donc $17 \\equiv 2 \\pmod{5}$."
+        "explanation": "$17 = 5 \\times 3 + 2$, donc $17 \\equiv 2 \\pmod{5}$.",
+        "prereqRef": "divisibilite"
       },
       {
         "id": "q2",
@@ -1413,7 +1458,8 @@
           "$a + b = n$"
         ],
         "correctAnswer": 1,
-        "explanation": "$a \\equiv b \\pmod{n}$ ssi $n$ divise $a - b$."
+        "explanation": "$a \\equiv b \\pmod{n}$ ssi $n$ divise $a - b$.",
+        "prereqRef": "divisibilite"
       },
       {
         "id": "q3",
@@ -1425,7 +1471,8 @@
           "3"
         ],
         "correctAnswer": 1,
-        "explanation": "$2 \\equiv -1 \\pmod{3}$, donc $2^{10} \\equiv (-1)^{10} = 1 \\pmod{3}$."
+        "explanation": "$2 \\equiv -1 \\pmod{3}$, donc $2^{10} \\equiv (-1)^{10} = 1 \\pmod{3}$.",
+        "prereqRef": "divisibilite"
       },
       {
         "id": "q4",
@@ -1437,7 +1484,8 @@
           "Rien de particulier"
         ],
         "correctAnswer": 0,
-        "explanation": "Les congruences sont compatibles avec la multiplication : $ac \\equiv bd \\pmod{n}$."
+        "explanation": "Les congruences sont compatibles avec la multiplication : $ac \\equiv bd \\pmod{n}$.",
+        "prereqRef": "divisibilite"
       }
     ],
     "difficulty": 3
@@ -1527,7 +1575,8 @@
           "$a = d \\times b$"
         ],
         "correctAnswer": 1,
-        "explanation": "Bézout : il existe des entiers $u, v$ tels que $au + bv = \\text{pgcd}(a,b)$."
+        "explanation": "Bézout : il existe des entiers $u, v$ tels que $au + bv = \\text{pgcd}(a,b)$.",
+        "prereqRef": "divisibilite"
       },
       {
         "id": "q2",
@@ -1539,7 +1588,8 @@
           "$ab = 1$"
         ],
         "correctAnswer": 1,
-        "explanation": "Corollaire de Bézout : pgcd = 1 ssi $\\exists u,v : au + bv = 1$."
+        "explanation": "Corollaire de Bézout : pgcd = 1 ssi $\\exists u,v : au + bv = 1$.",
+        "prereqRef": "congruences"
       },
       {
         "id": "q3",
@@ -1551,7 +1601,8 @@
           "Non, car 6 et 9 ne sont pas premiers"
         ],
         "correctAnswer": 2,
-        "explanation": "pgcd(6,9) = 3 et $3 \\nmid 5$, donc pas de solution entière."
+        "explanation": "pgcd(6,9) = 3 et $3 \\nmid 5$, donc pas de solution entière.",
+        "prereqRef": "divisibilite"
       },
       {
         "id": "q4",
@@ -1563,7 +1614,8 @@
           "Résoudre des équations du second degré"
         ],
         "correctAnswer": 1,
-        "explanation": "Euclide étendu trouve $u, v$ tels que $au + bv = \\text{pgcd}(a,b)$."
+        "explanation": "Euclide étendu trouve $u, v$ tels que $au + bv = \\text{pgcd}(a,b)$.",
+        "prereqRef": "congruences"
       }
     ],
     "difficulty": 3
@@ -1653,7 +1705,8 @@
           "P et non Q"
         ],
         "correctAnswer": 2,
-        "explanation": "La contraposée de P ⟹ Q est non Q ⟹ non P."
+        "explanation": "La contraposée de P ⟹ Q est non Q ⟹ non P.",
+        "prereqRef": "implication-equivalence"
       },
       {
         "id": "q2",
@@ -1665,7 +1718,8 @@
           "P ⟹ Q et Q ⟹ P"
         ],
         "correctAnswer": 3,
-        "explanation": "L'équivalence signifie que les deux implications sont vraies."
+        "explanation": "L'équivalence signifie que les deux implications sont vraies.",
+        "prereqRef": "implication-equivalence"
       },
       {
         "id": "q3",
@@ -1677,7 +1731,8 @@
           "non P ou Q"
         ],
         "correctAnswer": 0,
-        "explanation": "La négation de P ⟹ Q est P et non Q."
+        "explanation": "La négation de P ⟹ Q est P et non Q.",
+        "prereqRef": "implication-equivalence"
       },
       {
         "id": "q4",
@@ -1689,7 +1744,8 @@
           "Rien"
         ],
         "correctAnswer": 1,
-        "explanation": "On suppose le contraire puis on arrive à une contradiction."
+        "explanation": "On suppose le contraire puis on arrive à une contradiction.",
+        "prereqRef": "implication-equivalence"
       }
     ],
     "difficulty": 1
@@ -1767,7 +1823,8 @@
           "-∞"
         ],
         "correctAnswer": 1,
-        "explanation": "1/n tend vers 0 quand n tend vers l'infini."
+        "explanation": "1/n tend vers 0 quand n tend vers l'infini.",
+        "prereqRef": "suites-definition"
       },
       {
         "id": "q2",
@@ -1779,7 +1836,8 @@
           "-∞"
         ],
         "correctAnswer": 1,
-        "explanation": "Pour |q| < 1, qⁿ → 0."
+        "explanation": "Pour |q| < 1, qⁿ → 0.",
+        "prereqRef": "suites-definition"
       },
       {
         "id": "q3",
@@ -1791,7 +1849,8 @@
           "Égale à +∞"
         ],
         "correctAnswer": 2,
-        "explanation": "C'est une forme indéterminée qu'il faut lever."
+        "explanation": "C'est une forme indéterminée qu'il faut lever.",
+        "prereqRef": "suites-definition"
       },
       {
         "id": "q4",
@@ -1803,7 +1862,8 @@
           "n'existe pas"
         ],
         "correctAnswer": 3,
-        "explanation": "La suite alterne et n'a pas de limite."
+        "explanation": "La suite alterne et n'a pas de limite.",
+        "prereqRef": "suites-definition"
       }
     ],
     "difficulty": 2
@@ -1881,7 +1941,8 @@
           "Constante"
         ],
         "correctAnswer": 1,
-        "explanation": "C'est le théorème de la limite monotone."
+        "explanation": "C'est le théorème de la limite monotone.",
+        "prereqRef": "suites-definition"
       },
       {
         "id": "q2",
@@ -1893,7 +1954,8 @@
           "+∞"
         ],
         "correctAnswer": 1,
-        "explanation": "Par définition des suites adjacentes."
+        "explanation": "Par définition des suites adjacentes.",
+        "prereqRef": "suites-limites"
       },
       {
         "id": "q3",
@@ -1905,7 +1967,8 @@
           "$\\ell = u_0$"
         ],
         "correctAnswer": 1,
-        "explanation": "La limite est un point fixe de f."
+        "explanation": "La limite est un point fixe de f.",
+        "prereqRef": "suites-definition"
       },
       {
         "id": "q4",
@@ -1917,7 +1980,8 @@
           "Constante"
         ],
         "correctAnswer": 2,
-        "explanation": "Exemple : $(-1)^n$ est bornée mais divergente."
+        "explanation": "Exemple : $(-1)^n$ est bornée mais divergente.",
+        "prereqRef": "suites-limites"
       }
     ],
     "difficulty": 3
@@ -1995,7 +2059,8 @@
           "-∞"
         ],
         "correctAnswer": 2,
-        "explanation": "L'exponentielle tend vers +∞ en +∞."
+        "explanation": "L'exponentielle tend vers +∞ en +∞.",
+        "prereqRef": "suites-limites"
       },
       {
         "id": "q2",
@@ -2007,7 +2072,8 @@
           "-∞"
         ],
         "correctAnswer": 3,
-        "explanation": "Le logarithme tend vers -∞ en 0⁺."
+        "explanation": "Le logarithme tend vers -∞ en 0⁺.",
+        "prereqRef": "suites-limites"
       },
       {
         "id": "q3",
@@ -2019,7 +2085,8 @@
           "f est constante"
         ],
         "correctAnswer": 2,
-        "explanation": "C'est la définition d'une asymptote horizontale."
+        "explanation": "C'est la définition d'une asymptote horizontale.",
+        "prereqRef": "suites-limites"
       },
       {
         "id": "q4",
@@ -2031,7 +2098,8 @@
           "Forme indéterminée"
         ],
         "correctAnswer": 1,
-        "explanation": "On factorise : (x-2)(x+2)/(x-2) = x+2 → 4."
+        "explanation": "On factorise : (x-2)(x+2)/(x-2) = x+2 → 4.",
+        "prereqRef": "suites-limites"
       }
     ],
     "difficulty": 2
@@ -2109,7 +2177,8 @@
           "f est dérivable en a"
         ],
         "correctAnswer": 2,
-        "explanation": "Continuité = la limite égale la valeur."
+        "explanation": "Continuité = la limite égale la valeur.",
+        "prereqRef": "limites-fonctions"
       },
       {
         "id": "q2",
@@ -2121,7 +2190,8 @@
           "Bornées"
         ],
         "correctAnswer": 1,
-        "explanation": "Le théorème des valeurs intermédiaires nécessite la continuité."
+        "explanation": "Le théorème des valeurs intermédiaires nécessite la continuité.",
+        "prereqRef": "limites-fonctions"
       },
       {
         "id": "q3",
@@ -2133,7 +2203,8 @@
           "f n'a pas de maximum"
         ],
         "correctAnswer": 0,
-        "explanation": "C'est le corollaire du TVI."
+        "explanation": "C'est le corollaire du TVI.",
+        "prereqRef": "limites-fonctions"
       },
       {
         "id": "q4",
@@ -2145,7 +2216,8 @@
           "ℝ*"
         ],
         "correctAnswer": 2,
-        "explanation": "Les polynômes sont continus sur ℝ entier."
+        "explanation": "Les polynômes sont continus sur ℝ entier.",
+        "prereqRef": "limites-fonctions"
       }
     ],
     "difficulty": 2
@@ -2223,7 +2295,8 @@
           "Croissante"
         ],
         "correctAnswer": 0,
-        "explanation": "f convexe ⟺ f'' ≥ 0."
+        "explanation": "f convexe ⟺ f'' ≥ 0.",
+        "prereqRef": "derivation"
       },
       {
         "id": "q2",
@@ -2235,7 +2308,8 @@
           "f a un extremum"
         ],
         "correctAnswer": 2,
-        "explanation": "C'est là où la convexité change."
+        "explanation": "C'est là où la convexité change.",
+        "prereqRef": "derivation"
       },
       {
         "id": "q3",
@@ -2247,7 +2321,8 @@
           "Les deux"
         ],
         "correctAnswer": 0,
-        "explanation": "$(e^x)'' = e^x > 0$, donc convexe."
+        "explanation": "$(e^x)'' = e^x > 0$, donc convexe.",
+        "prereqRef": "derivation"
       },
       {
         "id": "q4",
@@ -2259,7 +2334,8 @@
           "Primitives"
         ],
         "correctAnswer": 1,
-        "explanation": "Propriété fondamentale de la convexité."
+        "explanation": "Propriété fondamentale de la convexité.",
+        "prereqRef": "derivation"
       }
     ],
     "difficulty": 2
@@ -2337,7 +2413,8 @@
           "$\\sqrt{3}/2$"
         ],
         "correctAnswer": 1,
-        "explanation": "Valeur remarquable : cos(π/3) = 1/2."
+        "explanation": "Valeur remarquable : cos(π/3) = 1/2.",
+        "prereqRef": "trigonometrie-bases"
       },
       {
         "id": "q2",
@@ -2349,7 +2426,8 @@
           "sin(2x)"
         ],
         "correctAnswer": 1,
-        "explanation": "Relation fondamentale de trigonométrie."
+        "explanation": "Relation fondamentale de trigonométrie.",
+        "prereqRef": "trigonometrie-bases"
       },
       {
         "id": "q3",
@@ -2361,7 +2439,8 @@
           "cos(x) + sin(x)"
         ],
         "correctAnswer": 1,
-        "explanation": "Formule de duplication."
+        "explanation": "Formule de duplication.",
+        "prereqRef": "trigonometrie-bases"
       },
       {
         "id": "q4",
@@ -2373,7 +2452,8 @@
           "360°"
         ],
         "correctAnswer": 1,
-        "explanation": "π rad = 180°."
+        "explanation": "π rad = 180°.",
+        "prereqRef": "trigonometrie-bases"
       }
     ],
     "difficulty": 1
@@ -2451,7 +2531,8 @@
           "-sin(x)"
         ],
         "correctAnswer": 1,
-        "explanation": "$(\\sin(x))' = \\cos(x)$."
+        "explanation": "$(\\sin(x))' = \\cos(x)$.",
+        "prereqRef": "trigonometrie-bases"
       },
       {
         "id": "q2",
@@ -2463,7 +2544,8 @@
           "4π"
         ],
         "correctAnswer": 1,
-        "explanation": "sin est 2π-périodique."
+        "explanation": "sin est 2π-périodique.",
+        "prereqRef": "derivation"
       },
       {
         "id": "q3",
@@ -2475,7 +2557,8 @@
           "2π/3 et 4π/3"
         ],
         "correctAnswer": 2,
-        "explanation": "cos(x) = 1/2 pour x = ±π/3 + 2kπ."
+        "explanation": "cos(x) = 1/2 pour x = ±π/3 + 2kπ.",
+        "prereqRef": "trigonometrie-bases"
       },
       {
         "id": "q4",
@@ -2487,7 +2570,8 @@
           "-cos(x) + C"
         ],
         "correctAnswer": 1,
-        "explanation": "La primitive de cos est sin."
+        "explanation": "La primitive de cos est sin.",
+        "prereqRef": "derivation"
       }
     ],
     "difficulty": 2
@@ -2565,7 +2649,8 @@
           "2/3"
         ],
         "correctAnswer": 1,
-        "explanation": "$[x^3/3]_0^1 = 1/3$."
+        "explanation": "$[x^3/3]_0^1 = 1/3$.",
+        "prereqRef": "primitives"
       },
       {
         "id": "q2",
@@ -2577,7 +2662,8 @@
           "Le maximum"
         ],
         "correctAnswer": 1,
-        "explanation": "Interprétation géométrique de l'intégrale."
+        "explanation": "Interprétation géométrique de l'intégrale.",
+        "prereqRef": "continuite"
       },
       {
         "id": "q3",
@@ -2589,7 +2675,8 @@
           "$2\\int_a^b f$"
         ],
         "correctAnswer": 0,
-        "explanation": "Relation de Chasles."
+        "explanation": "Relation de Chasles.",
+        "prereqRef": "primitives"
       },
       {
         "id": "q4",
@@ -2601,7 +2688,8 @@
           "F(a) - F(b)"
         ],
         "correctAnswer": 1,
-        "explanation": "Inverser les bornes change le signe."
+        "explanation": "Inverser les bornes change le signe.",
+        "prereqRef": "continuite"
       }
     ],
     "difficulty": 3
@@ -2679,7 +2767,8 @@
           "0"
         ],
         "correctAnswer": 2,
-        "explanation": "μ est l'espérance de la loi normale."
+        "explanation": "μ est l'espérance de la loi normale.",
+        "prereqRef": "probabilites-va"
       },
       {
         "id": "q2",
@@ -2691,7 +2780,8 @@
           "X - σ"
         ],
         "correctAnswer": 1,
-        "explanation": "Z = (X - μ)/σ suit N(0, 1)."
+        "explanation": "Z = (X - μ)/σ suit N(0, 1).",
+        "prereqRef": "integrales"
       },
       {
         "id": "q3",
@@ -2703,7 +2793,8 @@
           "50%"
         ],
         "correctAnswer": 0,
-        "explanation": "Environ 68% dans un écart-type."
+        "explanation": "Environ 68% dans un écart-type.",
+        "prereqRef": "probabilites-va"
       },
       {
         "id": "q4",
@@ -2715,7 +2806,8 @@
           "A et B"
         ],
         "correctAnswer": 3,
-        "explanation": "C'est la loi normale centrée réduite (ou standard)."
+        "explanation": "C'est la loi normale centrée réduite (ou standard).",
+        "prereqRef": "integrales"
       }
     ],
     "difficulty": 3
@@ -2793,7 +2885,8 @@
           "B et C"
         ],
         "correctAnswer": 3,
-        "explanation": "Formes trigonométrique et exponentielle."
+        "explanation": "Formes trigonométrique et exponentielle.",
+        "prereqRef": "complexes-introduction"
       },
       {
         "id": "q2",
@@ -2805,7 +2898,8 @@
           "i"
         ],
         "correctAnswer": 2,
-        "explanation": "|1+i| = √(1² + 1²) = √2."
+        "explanation": "|1+i| = √(1² + 1²) = √2.",
+        "prereqRef": "complexes-introduction"
       },
       {
         "id": "q3",
@@ -2817,7 +2911,8 @@
           "-i"
         ],
         "correctAnswer": 1,
-        "explanation": "Identité d'Euler."
+        "explanation": "Identité d'Euler.",
+        "prereqRef": "complexes-introduction"
       },
       {
         "id": "q4",
@@ -2829,7 +2924,8 @@
           "2π"
         ],
         "correctAnswer": 2,
-        "explanation": "-1 = e^{iπ}, donc arg(-1) = π."
+        "explanation": "-1 = e^{iπ}, donc arg(-1) = π.",
+        "prereqRef": "complexes-introduction"
       }
     ],
     "difficulty": 3
@@ -2907,7 +3003,8 @@
           "A = I"
         ],
         "correctAnswer": 1,
-        "explanation": "A doit être inversible."
+        "explanation": "A doit être inversible.",
+        "prereqRef": "matrices-operations"
       },
       {
         "id": "q2",
@@ -2919,7 +3016,8 @@
           "ad + bc"
         ],
         "correctAnswer": 2,
-        "explanation": "Formule du déterminant 2×2."
+        "explanation": "Formule du déterminant 2×2.",
+        "prereqRef": "matrices-operations"
       },
       {
         "id": "q3",
@@ -2931,7 +3029,8 @@
           "Est impossible"
         ],
         "correctAnswer": 2,
-        "explanation": "Matrice singulière : 0 ou infinité de solutions."
+        "explanation": "Matrice singulière : 0 ou infinité de solutions.",
+        "prereqRef": "matrices-operations"
       },
       {
         "id": "q4",
@@ -2943,7 +3042,8 @@
           "A - B"
         ],
         "correctAnswer": 0,
-        "explanation": "On multiplie par $A^{-1}$ à gauche."
+        "explanation": "On multiplie par $A^{-1}$ à gauche.",
+        "prereqRef": "matrices-operations"
       }
     ],
     "difficulty": 3
@@ -3021,7 +3121,8 @@
           "Toutes ces réponses"
         ],
         "correctAnswer": 3,
-        "explanation": "Différentes terminologies pour la même chose."
+        "explanation": "Différentes terminologies pour la même chose.",
+        "prereqRef": "graphes-introduction"
       },
       {
         "id": "q2",
@@ -3033,7 +3134,8 @@
           "B et C"
         ],
         "correctAnswer": 3,
-        "explanation": "Nombre de voisins = nombre d'arêtes touchant le sommet."
+        "explanation": "Nombre de voisins = nombre d'arêtes touchant le sommet.",
+        "prereqRef": "graphes-introduction"
       },
       {
         "id": "q3",
@@ -3045,7 +3147,8 @@
           "Le nombre de cycles"
         ],
         "correctAnswer": 2,
-        "explanation": "Théorème des poignées de main."
+        "explanation": "Théorème des poignées de main.",
+        "prereqRef": "graphes-introduction"
       },
       {
         "id": "q4",
@@ -3057,7 +3160,8 @@
           "Nulle part"
         ],
         "correctAnswer": 1,
-        "explanation": "Définition de la connexité."
+        "explanation": "Définition de la connexité.",
+        "prereqRef": "graphes-introduction"
       }
     ],
     "difficulty": 2
@@ -3135,7 +3239,8 @@
           "Arbre"
         ],
         "correctAnswer": 1,
-        "explanation": "Breadth-First Search = file (FIFO)."
+        "explanation": "Breadth-First Search = file (FIFO).",
+        "prereqRef": "graphes-introduction"
       },
       {
         "id": "q2",
@@ -3147,7 +3252,8 @@
           "Arbre"
         ],
         "correctAnswer": 0,
-        "explanation": "Depth-First Search = pile (LIFO) ou récursion."
+        "explanation": "Depth-First Search = pile (LIFO) ou récursion.",
+        "prereqRef": "graphes-introduction"
       },
       {
         "id": "q3",
@@ -3159,7 +3265,8 @@
           "Rien de spécial"
         ],
         "correctAnswer": 0,
-        "explanation": "Eulérien = chaque arête exactement une fois."
+        "explanation": "Eulérien = chaque arête exactement une fois.",
+        "prereqRef": "graphes-introduction"
       },
       {
         "id": "q4",
@@ -3171,7 +3278,8 @@
           "Rien de spécial"
         ],
         "correctAnswer": 1,
-        "explanation": "Hamiltonien = chaque sommet exactement une fois."
+        "explanation": "Hamiltonien = chaque sommet exactement une fois.",
+        "prereqRef": "graphes-introduction"
       }
     ],
     "difficulty": 3
@@ -3249,7 +3357,8 @@
           "1 coordonnée"
         ],
         "correctAnswer": 1,
-        "explanation": "Dans l'espace 3D, on utilise les coordonnées (x, y, z)."
+        "explanation": "Dans l'espace 3D, on utilise les coordonnées (x, y, z).",
+        "prereqRef": "trigonometrie-bases"
       },
       {
         "id": "q2",
@@ -3261,7 +3370,8 @@
           "$(4, 10, 18)$"
         ],
         "correctAnswer": 1,
-        "explanation": "$\\overrightarrow{AB} = (x_B - x_A, y_B - y_A, z_B - z_A) = (3, 3, 3)$."
+        "explanation": "$\\overrightarrow{AB} = (x_B - x_A, y_B - y_A, z_B - z_A) = (3, 3, 3)$.",
+        "prereqRef": "trigonometrie-bases"
       },
       {
         "id": "q3",
@@ -3273,7 +3383,8 @@
           "$\\sqrt{5}$"
         ],
         "correctAnswer": 1,
-        "explanation": "$\\|\\vec{u}\\| = \\sqrt{1^2 + 2^2 + 2^2} = \\sqrt{9} = 3$."
+        "explanation": "$\\|\\vec{u}\\| = \\sqrt{1^2 + 2^2 + 2^2} = \\sqrt{9} = 3$.",
+        "prereqRef": "trigonometrie-bases"
       },
       {
         "id": "q4",
@@ -3285,7 +3396,8 @@
           "Le même sens"
         ],
         "correctAnswer": 1,
-        "explanation": "Colinéaires signifie même direction (mais pas forcément même sens ou norme)."
+        "explanation": "Colinéaires signifie même direction (mais pas forcément même sens ou norme).",
+        "prereqRef": "trigonometrie-bases"
       }
     ],
     "difficulty": 2
@@ -3375,7 +3487,8 @@
           "Un point"
         ],
         "correctAnswer": 1,
-        "explanation": "Le produit scalaire est un scalaire (nombre réel)."
+        "explanation": "Le produit scalaire est un scalaire (nombre réel).",
+        "prereqRef": "vecteurs-espace"
       },
       {
         "id": "q2",
@@ -3387,7 +3500,8 @@
           "Égaux"
         ],
         "correctAnswer": 1,
-        "explanation": "Le produit scalaire nul caractérise l'orthogonalité."
+        "explanation": "Le produit scalaire nul caractérise l'orthogonalité.",
+        "prereqRef": "vecteurs-espace"
       },
       {
         "id": "q3",
@@ -3399,7 +3513,8 @@
           "$27$"
         ],
         "correctAnswer": 1,
-        "explanation": "$1×4 + 2×5 + 3×6 = 4 + 10 + 18 = 32$."
+        "explanation": "$1×4 + 2×5 + 3×6 = 4 + 10 + 18 = 32$.",
+        "prereqRef": "vecteurs-espace"
       },
       {
         "id": "q4",
@@ -3411,7 +3526,8 @@
           "$\\sqrt{\\vec{u}}$"
         ],
         "correctAnswer": 0,
-        "explanation": "Par définition, $\\vec{u} \\cdot \\vec{u} = \\|\\vec{u}\\|^2$."
+        "explanation": "Par définition, $\\vec{u} \\cdot \\vec{u} = \\|\\vec{u}\\|^2$.",
+        "prereqRef": "vecteurs-espace"
       }
     ],
     "difficulty": 2
@@ -3501,7 +3617,8 @@
           "3 points"
         ],
         "correctAnswer": 2,
-        "explanation": "Un point et un vecteur directeur suffisent à définir une droite."
+        "explanation": "Un point et un vecteur directeur suffisent à définir une droite.",
+        "prereqRef": "vecteurs-espace"
       },
       {
         "id": "q2",
@@ -3513,7 +3630,8 @@
           "Une sphère"
         ],
         "correctAnswer": 1,
-        "explanation": "Une équation linéaire en x, y, z définit un plan."
+        "explanation": "Une équation linéaire en x, y, z définit un plan.",
+        "prereqRef": "produit-scalaire-espace"
       },
       {
         "id": "q3",
@@ -3525,7 +3643,8 @@
           "$(0, 0, 0)$"
         ],
         "correctAnswer": 1,
-        "explanation": "Les coefficients a, b, c donnent le vecteur normal $(1, 2, -1)$."
+        "explanation": "Les coefficients a, b, c donnent le vecteur normal $(1, 2, -1)$.",
+        "prereqRef": "vecteurs-espace"
       },
       {
         "id": "q4",
@@ -3537,7 +3656,8 @@
           "Gauches"
         ],
         "correctAnswer": 3,
-        "explanation": "Des droites non coplanaires sont appelées droites gauches."
+        "explanation": "Des droites non coplanaires sont appelées droites gauches.",
+        "prereqRef": "produit-scalaire-espace"
       }
     ],
     "difficulty": 3
@@ -3627,7 +3747,8 @@
           "Sécante en deux points"
         ],
         "correctAnswer": 2,
-        "explanation": "Perpendiculaire au plan = orthogonale à toutes les droites du plan passant par le point d'intersection."
+        "explanation": "Perpendiculaire au plan = orthogonale à toutes les droites du plan passant par le point d'intersection.",
+        "prereqRef": "produit-scalaire-espace"
       },
       {
         "id": "q2",
@@ -3639,7 +3760,8 @@
           "Le milieu"
         ],
         "correctAnswer": 1,
-        "explanation": "La projection orthogonale minimise la distance."
+        "explanation": "La projection orthogonale minimise la distance.",
+        "prereqRef": "droites-plans-espace"
       },
       {
         "id": "q3",
@@ -3651,7 +3773,8 @@
           "Parallèlement au plan"
         ],
         "correctAnswer": 2,
-        "explanation": "La distance est toujours mesurée perpendiculairement."
+        "explanation": "La distance est toujours mesurée perpendiculairement.",
+        "prereqRef": "produit-scalaire-espace"
       },
       {
         "id": "q4",
@@ -3663,7 +3786,8 @@
           "Nul"
         ],
         "correctAnswer": 1,
-        "explanation": "Droite perpendiculaire = direction colinéaire à la normale du plan."
+        "explanation": "Droite perpendiculaire = direction colinéaire à la normale du plan.",
+        "prereqRef": "droites-plans-espace"
       }
     ],
     "difficulty": 3
@@ -3753,7 +3877,8 @@
           "Un univers"
         ],
         "correctAnswer": 1,
-        "explanation": "Une VA est une fonction de l'univers vers les réels."
+        "explanation": "Une VA est une fonction de l'univers vers les réels.",
+        "prereqRef": "combinatoire"
       },
       {
         "id": "q2",
@@ -3765,7 +3890,8 @@
           "La variance"
         ],
         "correctAnswer": 1,
-        "explanation": "L'espérance est la moyenne pondérée par les probabilités."
+        "explanation": "L'espérance est la moyenne pondérée par les probabilités.",
+        "prereqRef": "combinatoire"
       },
       {
         "id": "q3",
@@ -3777,7 +3903,8 @@
           "3"
         ],
         "correctAnswer": 1,
-        "explanation": "$E(X) = 1 \\times 0.5 + 2 \\times 0.5 = 1.5$."
+        "explanation": "$E(X) = 1 \\times 0.5 + 2 \\times 0.5 = 1.5$.",
+        "prereqRef": "combinatoire"
       },
       {
         "id": "q4",
@@ -3789,7 +3916,8 @@
           "Le nombre de valeurs"
         ],
         "correctAnswer": 1,
-        "explanation": "La variance mesure comment les valeurs s'écartent de l'espérance."
+        "explanation": "La variance mesure comment les valeurs s'écartent de l'espérance.",
+        "prereqRef": "combinatoire"
       }
     ],
     "difficulty": 2
@@ -3879,7 +4007,8 @@
           "1 issue"
         ],
         "correctAnswer": 1,
-        "explanation": "Succès ou échec : deux issues possibles."
+        "explanation": "Succès ou échec : deux issues possibles.",
+        "prereqRef": "variables-aleatoires"
       },
       {
         "id": "q2",
@@ -3891,7 +4020,8 @@
           "20"
         ],
         "correctAnswer": 1,
-        "explanation": "$\\binom{5}{2} = \\frac{5!}{2!3!} = \\frac{120}{2 \\times 6} = 10$."
+        "explanation": "$\\binom{5}{2} = \\frac{5!}{2!3!} = \\frac{120}{2 \\times 6} = 10$.",
+        "prereqRef": "variables-aleatoires"
       },
       {
         "id": "q3",
@@ -3903,7 +4033,8 @@
           "50"
         ],
         "correctAnswer": 1,
-        "explanation": "$E(X) = np = 10 \\times 0.5 = 5$."
+        "explanation": "$E(X) = np = 10 \\times 0.5 = 5$.",
+        "prereqRef": "variables-aleatoires"
       },
       {
         "id": "q4",
@@ -3915,7 +4046,8 @@
           "Sans répétition"
         ],
         "correctAnswer": 1,
-        "explanation": "L'indépendance est une condition essentielle."
+        "explanation": "L'indépendance est une condition essentielle.",
+        "prereqRef": "variables-aleatoires"
       }
     ],
     "difficulty": 2
@@ -4005,7 +4137,8 @@
           "720"
         ],
         "correctAnswer": 1,
-        "explanation": "$5! = 5 \\times 4 \\times 3 \\times 2 \\times 1 = 120$"
+        "explanation": "$5! = 5 \\times 4 \\times 3 \\times 2 \\times 1 = 120$",
+        "prereqRef": "recurrence"
       },
       {
         "id": "q2",
@@ -4017,7 +4150,8 @@
           "Permutations"
         ],
         "correctAnswer": 2,
-        "explanation": "L'ordre compte (123 ≠ 321) et la répétition est permise (111 est valide). C'est un k-uplet."
+        "explanation": "L'ordre compte (123 ≠ 321) et la répétition est permise (111 est valide). C'est un k-uplet.",
+        "prereqRef": "recurrence"
       },
       {
         "id": "q3",
@@ -4029,7 +4163,8 @@
           "k-uplets"
         ],
         "correctAnswer": 1,
-        "explanation": "L'ordre ne compte pas (les 2 délégués sont équivalents), sans répétition : combinaisons."
+        "explanation": "L'ordre ne compte pas (les 2 délégués sont équivalents), sans répétition : combinaisons.",
+        "prereqRef": "recurrence"
       },
       {
         "id": "q4",
@@ -4041,7 +4176,8 @@
           "n"
         ],
         "correctAnswer": 1,
-        "explanation": "Par convention, $0! = 1$. C'est essentiel pour que les formules fonctionnent."
+        "explanation": "Par convention, $0! = 1$. C'est essentiel pour que les formules fonctionnent.",
+        "prereqRef": "recurrence"
       },
       {
         "id": "q5",
@@ -4053,7 +4189,8 @@
           "Un tirage aléatoire"
         ],
         "correctAnswer": 1,
-        "explanation": "Le principe multiplicatif (ET PUIS) : on fait un choix, puis un autre indépendamment."
+        "explanation": "Le principe multiplicatif (ET PUIS) : on fait un choix, puis un autre indépendamment.",
+        "prereqRef": "recurrence"
       }
     ],
     "difficulty": 1
@@ -4179,7 +4316,8 @@
           "$3xe^{3x-1}$"
         ],
         "correctAnswer": 1,
-        "explanation": "$(e^{ax})' = ae^{ax}$. Ici $a = 3$, donc $(e^{3x})' = 3e^{3x}$."
+        "explanation": "$(e^{ax})' = ae^{ax}$. Ici $a = 3$, donc $(e^{3x})' = 3e^{3x}$.",
+        "prereqRef": "primitives"
       },
       {
         "id": "q2",
@@ -4191,7 +4329,8 @@
           "Un polynôme"
         ],
         "correctAnswer": 1,
-        "explanation": "Contrairement aux équations classiques, l'inconnue est une fonction $y(x)$."
+        "explanation": "Contrairement aux équations classiques, l'inconnue est une fonction $y(x)$.",
+        "prereqRef": "exponentielle"
       },
       {
         "id": "q3",
@@ -4203,7 +4342,8 @@
           "Indéfini"
         ],
         "correctAnswer": 1,
-        "explanation": "$e^0 = 1$ pour tout $a$, car $a^0 = 1$."
+        "explanation": "$e^0 = 1$ pour tout $a$, car $a^0 = 1$.",
+        "prereqRef": "primitives"
       },
       {
         "id": "q4",
@@ -4215,7 +4355,8 @@
           "$e^{2C}$"
         ],
         "correctAnswer": 1,
-        "explanation": "$f(0) = Ce^{2 \\times 0} = Ce^0 = C \\times 1 = C$."
+        "explanation": "$f(0) = Ce^{2 \\times 0} = Ce^0 = C \\times 1 = C$.",
+        "prereqRef": "exponentielle"
       },
       {
         "id": "q5",
@@ -4227,7 +4368,8 @@
           "1"
         ],
         "correctAnswer": 2,
-        "explanation": "Quand $x \\to +\\infty$, $-x \\to -\\infty$, donc $e^{-x} \\to 0$."
+        "explanation": "Quand $x \\to +\\infty$, $-x \\to -\\infty$, donc $e^{-x} \\to 0$.",
+        "prereqRef": "primitives"
       }
     ],
     "difficulty": 1
@@ -4378,7 +4520,8 @@
           "$a$ et $b$ sont premiers"
         ],
         "correctAnswer": 1,
-        "explanation": "$a | b$ signifie qu'il existe $k$ entier tel que $b = ka$."
+        "explanation": "$a | b$ signifie qu'il existe $k$ entier tel que $b = ka$.",
+        "prereqRef": "divisibilite"
       },
       {
         "id": "q2",
@@ -4390,7 +4533,8 @@
           "C'est le plus petit premier"
         ],
         "correctAnswer": 1,
-        "explanation": "1 n'est pas premier car il n'a qu'un seul diviseur (lui-même). Un premier a exactement 2 diviseurs."
+        "explanation": "1 n'est pas premier car il n'a qu'un seul diviseur (lui-même). Un premier a exactement 2 diviseurs.",
+        "prereqRef": "divisibilite"
       },
       {
         "id": "q3",
@@ -4402,7 +4546,8 @@
           "4"
         ],
         "correctAnswer": 2,
-        "explanation": "2 est le seul premier pair. Tout autre nombre pair est divisible par 2, donc a au moins 3 diviseurs."
+        "explanation": "2 est le seul premier pair. Tout autre nombre pair est divisible par 2, donc a au moins 3 diviseurs.",
+        "prereqRef": "divisibilite"
       },
       {
         "id": "q4",
@@ -4414,7 +4559,8 @@
           "1, 6"
         ],
         "correctAnswer": 1,
-        "explanation": "Les diviseurs de 6 sont : 1, 2, 3 et 6."
+        "explanation": "Les diviseurs de 6 sont : 1, 2, 3 et 6.",
+        "prereqRef": "divisibilite"
       },
       {
         "id": "q5",
@@ -4426,7 +4572,8 @@
           "Leur somme"
         ],
         "correctAnswer": 1,
-        "explanation": "Le PGCD (Plus Grand Commun Diviseur) est le plus grand entier qui divise les deux nombres."
+        "explanation": "Le PGCD (Plus Grand Commun Diviseur) est le plus grand entier qui divise les deux nombres.",
+        "prereqRef": "divisibilite"
       }
     ],
     "difficulty": 1,
@@ -4579,7 +4726,8 @@
           "$i^2 = 0$"
         ],
         "correctAnswer": 1,
-        "explanation": "Par définition, $i$ est le nombre imaginaire tel que $i^2 = -1$."
+        "explanation": "Par définition, $i$ est le nombre imaginaire tel que $i^2 = -1$.",
+        "prereqRef": "complexes-introduction"
       },
       {
         "id": "q2",
@@ -4591,7 +4739,8 @@
           "12"
         ],
         "correctAnswer": 1,
-        "explanation": "$|z| = \\sqrt{3^2 + 4^2} = \\sqrt{9 + 16} = \\sqrt{25} = 5$."
+        "explanation": "$|z| = \\sqrt{3^2 + 4^2} = \\sqrt{9 + 16} = \\sqrt{25} = 5$.",
+        "prereqRef": "complexes-formes"
       },
       {
         "id": "q3",
@@ -4603,7 +4752,8 @@
           "$\\sqrt{2} e^{i\\pi/2}$"
         ],
         "correctAnswer": 0,
-        "explanation": "$|z| = \\sqrt{2}$ et $\\arg(z) = \\pi/4$, donc $z = \\sqrt{2} e^{i\\pi/4}$."
+        "explanation": "$|z| = \\sqrt{2}$ et $\\arg(z) = \\pi/4$, donc $z = \\sqrt{2} e^{i\\pi/4}$.",
+        "prereqRef": "complexes-introduction"
       },
       {
         "id": "q4",
@@ -4615,7 +4765,8 @@
           "0"
         ],
         "correctAnswer": 1,
-        "explanation": "$\\Delta = 36 - 4 \\times 25 = 36 - 100 = -64$."
+        "explanation": "$\\Delta = 36 - 4 \\times 25 = 36 - 100 = -64$.",
+        "prereqRef": "complexes-formes"
       },
       {
         "id": "q5",
@@ -4627,7 +4778,8 @@
           "$3 - 2i$"
         ],
         "correctAnswer": 1,
-        "explanation": "Le conjugué change le signe de la partie imaginaire : $\\bar{z} = 2 + 3i$."
+        "explanation": "Le conjugué change le signe de la partie imaginaire : $\\bar{z} = 2 + 3i$.",
+        "prereqRef": "complexes-introduction"
       }
     ],
     "difficulty": 1,
@@ -4779,7 +4931,8 @@
           "Tous les coefficients sont égaux"
         ],
         "correctAnswer": 1,
-        "explanation": "C'est une matrice stochastique : la somme des probabilités partant d'un état (ligne) doit être 1."
+        "explanation": "C'est une matrice stochastique : la somme des probabilités partant d'un état (ligne) doit être 1.",
+        "prereqRef": "matrices-operations"
       },
       {
         "id": "q2",
@@ -4791,7 +4944,8 @@
           "$P^n \\times \\pi_0$"
         ],
         "correctAnswer": 1,
-        "explanation": "On multiplie la matrice ligne à gauche par la matrice carrée à droite."
+        "explanation": "On multiplie la matrice ligne à gauche par la matrice carrée à droite.",
+        "prereqRef": "matrices-operations"
       },
       {
         "id": "q3",
@@ -4803,7 +4957,8 @@
           "Chaotique"
         ],
         "correctAnswer": 0,
-        "explanation": "L'état futur ne dépend que de l'état présent, pas du passé."
+        "explanation": "L'état futur ne dépend que de l'état présent, pas du passé.",
+        "prereqRef": "matrices-operations"
       },
       {
         "id": "q4",
@@ -4815,7 +4970,8 @@
           "Infini"
         ],
         "correctAnswer": 2,
-        "explanation": "C'est une matrice carrée dont la taille correspond au nombre d'états."
+        "explanation": "C'est une matrice carrée dont la taille correspond au nombre d'états.",
+        "prereqRef": "matrices-operations"
       }
     ],
     "difficulty": 1

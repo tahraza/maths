@@ -3,7 +3,7 @@ id: "recurrence"
 title: "Raisonnement par récurrence"
 track: "spe"
 level: 2
-prerequisites: ["logique-bases"]
+prerequisites: ["implication-equivalence"]
 tags: ["récurrence", "démonstration", "raisonnement", "suites"]
 estimatedTime: 40
 chapter: "raisonnement"
@@ -49,10 +49,21 @@ Si :
 Alors $P(n)$ est vraie pour tout entier $n \geq n_0$.
 :::
 
+### Pourquoi ?
+
+Pourquoi la récurrence fonctionne-t-elle ?
+Parce qu'elle transforme une infinité de vérifications en **deux étapes logiques** : un départ vrai, puis une transmission systématique.
+
 :::tip
 L'**initialisation** fait tomber le premier domino.
 L'**hérédité** montre que chaque domino fait tomber le suivant.
 La **conclusion** affirme que tous les dominos tombent.
+:::
+
+:::example[Contre-exemple]
+Si on oublie l'initialisation, la propriété peut être fausse.
+Exemple : "Tous les entiers $n \\ge 1$ vérifient $n \\ge 2$" est vraie pour $n \\to n+1$,
+mais elle est fausse pour $n = 1$. La chaîne ne démarre pas.
 :::
 
 ## Méthodes types

@@ -3,7 +3,7 @@ id: "derivation"
 title: "Dérivation : techniques et applications"
 track: "spe"
 level: 2
-prerequisites: ["limites-fonctions", "fonctions-bases"]
+prerequisites: ["limites-fonctions", "continuite"]
 tags: ["dérivation", "tangente", "variations", "extremum"]
 estimatedTime: 60
 chapter: "fonctions"
@@ -132,6 +132,16 @@ $$y = f'(a)(x - a) + f(a)$$
    - $f'(x) = 0$ ⟹ extremum possible
 :::
 
+### Pourquoi ?
+
+Pourquoi $f'(x) > 0$ implique-t-il que $f$ est croissante ?
+
+:::proof[Idée (théorème des accroissements finis)]
+Si $f$ est dérivable sur $[a,b]$, il existe $c \in ]a,b[$ tel que
+$$f(b) - f(a) = f'(c)\,(b-a).$$
+Si $f'(x) > 0$ partout, alors $f'(c) > 0$ et donc $f(b) > f(a)$ dès que $b > a$.
+:::
+
 ## Exemples résolus
 
 :::example[Dérivée d'un polynôme]
@@ -177,6 +187,10 @@ Soit $f(x) = x^3 - 3x + 2$.
 - $f(0) = 2$
 - $f'(0) = -3$
 - Équation : $y = -3(x - 0) + 2 = -3x + 2$
+:::
+
+:::example[Contre-exemple]
+La fonction $f(x) = x^3$ vérifie $f'(0) = 0$, mais $0$ n'est ni un maximum ni un minimum : la fonction continue d'augmenter de part et d'autre.
 :::
 
 ## Erreurs fréquentes

@@ -3,7 +3,7 @@ id: "complexes-introduction"
 title: "Nombres complexes : introduction et formes"
 track: "expertes"
 level: 2
-prerequisites: ["equations-second-degre", "trigonometrie"]
+prerequisites: ["trigonometrie-bases"]
 tags: ["complexes", "imaginaire", "module", "argument", "forme algébrique"]
 estimatedTime: 50
 chapter: "complexes"
@@ -66,6 +66,16 @@ Le **conjugué** de $z = a + bi$ est $\bar{z} = a - bi$.
 Géométriquement, $\bar{z}$ est le symétrique de $z$ par rapport à l'axe réel.
 :::
 
+:::proof[Pourquoi $z\\bar{z}$ est réel ?]
+Si $z = a + bi$, alors
+$$z\\bar{z} = (a + bi)(a - bi) = a^2 + b^2.$$
+Le produit est donc un réel positif, ce qui justifie la formule du module : $|z| = \\sqrt{a^2 + b^2}$.
+:::
+
+:::example[Contre-exemple]
+Il n'existe pas d'ordre compatible sur $\\mathbb{C}$ : si on supposait $i > 0$, alors $i^2 = -1 > 0$, ce qui contredit le fait que $1 > 0$ implique $-1 < 0$ sur $\\mathbb{R}$.
+:::
+
 ## Opérations
 
 :::property[Addition et soustraction]
@@ -79,6 +89,11 @@ $(a + bi)(c + di) = (ac - bd) + (ad + bc)i$
 
 En développant et utilisant $i^2 = -1$.
 :::
+
+### Pourquoi ?
+
+Pourquoi multiplie-t-on par le conjugué pour diviser ?
+Parce que $z\\bar{z}$ est **réel** : on élimine la partie imaginaire au dénominateur et on obtient une fraction classique.
 
 :::property[Puissances de $i$]
 - $i^0 = 1$

@@ -59,6 +59,15 @@ Aux bornes fermées de l'intervalle, on considère les limites à droite (borne 
 Si $f$ n'est pas définie en $a$ mais admet une limite $\ell$ en $a$, on peut définir le **prolongement par continuité** de $f$ en $a$ en posant $f(a) = \ell$.
 :::
 
+:::example[Contre-exemple]
+La fonction définie par
+$$f(x) = \\begin{cases}
+0 & \\text{si } x < 0 \\\\
+1 & \\text{si } x \\ge 0
+\\end{cases}$$
+admet un **saut** en $0$. On a $\\lim_{x \\to 0^-} f(x) = 0$ et $\\lim_{x \\to 0^+} f(x) = 1$, donc $f$ n'est pas continue en $0$.
+:::
+
 ## Propriétés
 
 :::property[Opérations et continuité]
@@ -98,6 +107,16 @@ Si $f$ est **continue** et **strictement monotone** sur $[a, b]$, alors :
 - Pour tout $k$ entre $f(a)$ et $f(b)$, l'équation $f(x) = k$ a **une unique** solution
 - $f$ réalise une **bijection** de $[a, b]$ sur $[f(a), f(b)]$ (ou $[f(b), f(a)]$)
 :::
+
+:::proof[Pourquoi l'unicité ?]
+Si $f$ est strictement monotone, elle ne prend **jamais deux fois** la même valeur.
+Donc l'équation $f(x) = k$ ne peut pas avoir deux solutions différentes.
+:::
+
+### Pourquoi ?
+
+Pourquoi le TVI exige-t-il la continuité ?
+Parce qu'une fonction avec un **saut** peut "passer" d'une valeur à une autre sans prendre les valeurs intermédiaires.
 
 ## Méthodes types
 

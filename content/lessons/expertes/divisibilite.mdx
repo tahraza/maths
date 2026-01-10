@@ -3,7 +3,7 @@ id: "divisibilite"
 title: "Divisibilité dans Z"
 track: "expertes"
 level: 2
-prerequisites: ["entiers-naturels"]
+prerequisites: []
 tags: ["divisibilité", "division euclidienne", "pgcd", "ppcm"]
 estimatedTime: 45
 chapter: "arithmetique"
@@ -59,6 +59,17 @@ $$a = bq + r \quad \text{avec} \quad 0 \leq r < b$$
 - $q$ est le **quotient**
 - $r$ est le **reste**
 :::
+
+:::proof[Unicité du quotient et du reste]
+Supposons $a = bq + r = bq' + r'$ avec $0 \\le r, r' < b$.
+Alors $b(q - q') = r' - r$. Le membre de droite est compris entre $-(b-1)$ et $b-1$.
+Le seul multiple de $b$ dans cet intervalle est $0$, donc $q = q'$ et $r = r'$.
+:::
+
+### Pourquoi ?
+
+Pourquoi impose-t-on $0 \\le r < b$ ?
+Pour garantir l'**unicité** : sans cette contrainte, plusieurs couples $(q,r)$ donneraient le même $a$.
 
 :::definition
 **PGCD (Plus Grand Commun Diviseur)**
