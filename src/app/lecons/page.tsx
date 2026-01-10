@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { BookOpen, Clock, Tag, ChevronRight, Filter } from 'lucide-react'
+import { BookOpen, Clock, Tag, ChevronRight, Filter, Network } from 'lucide-react'
 import { getAllLessons, getCourseStructure } from '@/lib/content'
 import { getTrackLabel, getTrackColor, getDifficultyLabel, getDifficultyColor, formatDuration } from '@/lib/utils'
 import { LessonFilters } from '@/components/LessonFilters'
@@ -37,11 +37,20 @@ export default function LessonsPage({ searchParams }: PageProps) {
     <div className="min-h-screen bg-slate-50 py-8 dark:bg-slate-900">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="mb-8">
-          <h1 className="text-3xl font-bold text-slate-900 dark:text-slate-100">Toutes les leçons</h1>
-          <p className="mt-2 text-slate-600 dark:text-slate-400">
-            {allLessons.length} leçons couvrant tout le programme de Terminale
-          </p>
+        <div className="mb-8 flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
+          <div>
+            <h1 className="text-3xl font-bold text-slate-900 dark:text-slate-100">Toutes les leçons</h1>
+            <p className="mt-2 text-slate-600 dark:text-slate-400">
+              {allLessons.length} leçons couvrant tout le programme de Terminale
+            </p>
+          </div>
+          <Link
+            href="/carte-conceptuelle"
+            className="btn-secondary flex items-center gap-2 self-start"
+          >
+            <Network className="h-4 w-4" />
+            Carte conceptuelle
+          </Link>
         </div>
 
         {/* Filters */}
