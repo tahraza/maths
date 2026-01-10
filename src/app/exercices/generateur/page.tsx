@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useCallback, useEffect } from 'react'
+import { useSearchParams } from 'next/navigation'
 import Link from 'next/link'
 import {
   Shuffle,
@@ -65,7 +66,10 @@ const defaultLocalStats: LocalStats = {
 }
 
 export default function GenerateurPage() {
-  const [selectedCategory, setSelectedCategory] = useState<string | null>(null)
+  const searchParams = useSearchParams()
+  const initialCategory = searchParams.get('category')
+
+  const [selectedCategory, setSelectedCategory] = useState<string | null>(initialCategory)
   const [selectedGenerator, setSelectedGenerator] = useState<ExerciseGenerator | null>(null)
   const [currentExercise, setCurrentExercise] = useState<GeneratedExercise | null>(null)
   const [showHints, setShowHints] = useState(false)

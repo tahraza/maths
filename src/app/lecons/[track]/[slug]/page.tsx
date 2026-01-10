@@ -11,6 +11,7 @@ import {
   Brain,
   ClipboardList,
   ChevronRight,
+  Infinity,
 } from 'lucide-react'
 import { getLessonBySlug, getAllLessons, getExercisesByLesson, getFlashcardsByLesson, getPreQuiz, getPostQuiz } from '@/lib/content'
 import { getTrackLabel, getTrackColor, getDifficultyLabel, getDifficultyColor, formatDuration } from '@/lib/utils'
@@ -21,6 +22,45 @@ import type { Track } from '@/types'
 
 interface PageProps {
   params: { track: string; slug: string }
+}
+
+// Mapping des IDs de leçons vers les catégories du générateur d'exercices
+const lessonToGeneratorCategory: Record<string, string> = {
+  // Spécialité
+  'derivation': 'Dérivation',
+  'suites-definition': 'Suites',
+  'suites-limites': 'Suites',
+  'suites-convergence': 'Suites',
+  'limites-fonctions': 'Limites',
+  'integrales': 'Intégrales',
+  'primitives': 'Primitives',
+  'continuite': 'Continuité',
+  'convexite': 'Convexité',
+  'exponentielle': 'Exponentielle',
+  'logarithme': 'Logarithme',
+  'trigonometrie-bases': 'Trigonométrie',
+  'fonctions-trigo': 'Trigonométrie',
+  'combinatoire': 'Combinatoire',
+  'probabilites-va': 'Probabilités',
+  'variables-aleatoires': 'Probabilités',
+  'loi-binomiale': 'Probabilités',
+  'loi-normale': 'Loi normale',
+  'recurrence': 'Récurrence',
+  'vecteurs-espace': 'Géométrie',
+  'produit-scalaire-espace': 'Géométrie',
+  'orthogonalite-espace': 'Géométrie',
+  'equations-differentielles': 'Équations différentielles',
+  // Expertes
+  'complexes-introduction': 'Nombres complexes',
+  'complexes-formes': 'Nombres complexes',
+  'complexes-geometrie': 'Nombres complexes',
+  'equations-polynomiales-complexes': 'Nombres complexes',
+  'divisibilite': 'Arithmétique',
+  'congruences': 'Arithmétique',
+  'bezout': 'Arithmétique',
+  'nombres-premiers': 'Arithmétique',
+  'matrices-operations': 'Matrices',
+  'matrices-systemes': 'Matrices',
 }
 
 export async function generateStaticParams() {
@@ -234,6 +274,26 @@ export default function LessonPage({ params }: PageProps) {
                     Voir tous les exercices
                   </Link>
                 )}
+              </div>
+            )}
+
+            {/* Random exercise generator */}
+            {lessonToGeneratorCategory[lesson.id] && (
+              <div className="card border-2 border-dashed border-amber-200 dark:border-amber-800 bg-gradient-to-br from-amber-50 to-orange-50 dark:from-amber-900/20 dark:to-orange-900/20">
+                <h3 className="flex items-center gap-2 font-semibold text-slate-900 dark:text-slate-100">
+                  <Infinity className="h-5 w-5 text-amber-600 dark:text-amber-500" />
+                  Exercices illimités
+                </h3>
+                <p className="mt-2 text-sm text-slate-600 dark:text-slate-400">
+                  Entraîne-toi avec des exercices générés aléatoirement sur ce chapitre.
+                </p>
+                <Link
+                  href={`/exercices/generateur?category=${encodeURIComponent(lessonToGeneratorCategory[lesson.id])}`}
+                  className="btn-primary mt-4 w-full text-center flex items-center justify-center gap-2"
+                >
+                  <Infinity className="h-4 w-4" />
+                  Générateur {lessonToGeneratorCategory[lesson.id]}
+                </Link>
               </div>
             )}
 
