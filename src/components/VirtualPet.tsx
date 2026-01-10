@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react'
 import { Heart, Sparkles, Star, ArrowRight, Edit2, Check, X, Zap, Brain } from 'lucide-react'
 import { usePetStore, AVAILABLE_PETS, PetType } from '@/stores/petStore'
+import { useGamificationStore } from '@/stores/gamificationStore'
 import { cn } from '@/lib/utils'
 
 export function VirtualPet() {
@@ -18,11 +19,18 @@ export function VirtualPet() {
     getPetType,
     getEquippedAccessory,
     getEquippedBackground,
+    syncPointsFromGamification,
   } = usePetStore()
+
+  const { totalPoints: gamificationPoints } = useGamificationStore()
 
   useEffect(() => {
     setMounted(true)
-  }, [])
+
+    // Synchroniser les points avec le store de gamification
+    // pour récupérer les points des utilisateurs existants
+    syncPointsFromGamification(gamificationPoints)
+  }, [syncPointsFromGamification, gamificationPoints])
 
   if (!mounted) {
     return <VirtualPetSkeleton />

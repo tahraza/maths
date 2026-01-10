@@ -248,6 +248,7 @@ interface PetState {
   refreshSideQuests: () => void
   completeSideQuest: (questId: string) => void
   getActiveSideQuests: () => SideQuest[]
+  syncPointsFromGamification: (gamificationPoints: number) => void
 }
 
 export const usePetStore = create<PetState>()(
@@ -270,10 +271,17 @@ export const usePetStore = create<PetState>()(
       lastSideQuestRefresh: null,
 
       selectPet: (petId, name) => {
+        const { selectedPetId, currentPoints } = get()
+
+        // Ne pas réinitialiser les points si c'est la première sélection
+        // ou si on garde le même animal
+        const shouldKeepPoints = selectedPetId === null || selectedPetId === petId
+
         set({
           selectedPetId: petId,
           petName: name,
-          currentPoints: 0,
+          // Garder les points existants
+          currentPoints: shouldKeepPoints ? currentPoints : currentPoints,
         })
         get().refreshSideQuests()
       },
@@ -467,6 +475,34 @@ export const usePetStore = create<PetState>()(
       getActiveSideQuests: () => {
         const { activeSideQuests } = get()
         return SIDE_QUESTS.filter(q => activeSideQuests.includes(q.id))
+      },
+
+      // Synchronise les points avec le store de gamification
+      // Appelé pour récupérer les points des utilisateurs existants
+      syncPointsFromGamification: (gamificationPoints: number) => {
+        const { currentPoints, ownedAccessories, ownedBackgrounds } = get()
+
+        // Calculer les points déjà dépensés
+        const spentOnAccessories = ownedAccessories.reduce((total, accId) => {
+          const acc = ACCESSORIES.find(a => a.id === accId)
+          return total + (acc?.price || 0)
+        }, 0)
+
+        const spentOnBackgrounds = ownedBackgrounds.reduce((total, bgId) => {
+          const bg = BACKGROUNDS.find(b => b.id === bgId)
+          // Le background par défaut est gratuit
+          return total + (bg?.price || 0)
+        }, 0)
+
+        const totalSpent = spentOnAccessories + spentOnBackgrounds
+
+        // Les points disponibles = points de gamification - points dépensés
+        const expectedPoints = Math.max(0, gamificationPoints - totalSpent)
+
+        // Si les points actuels sont inférieurs aux points attendus, synchroniser
+        if (currentPoints < expectedPoints) {
+          set({ currentPoints: expectedPoints })
+        }
       },
     }),
     {
