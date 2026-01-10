@@ -51,6 +51,33 @@ const categoryColors: Record<string, string> = {
 const difficultyLabels = ['', 'Facile', 'Accessible', 'Intermédiaire', 'Avancé', 'Expert']
 const difficultyColors = ['', 'bg-green-500', 'bg-lime-500', 'bg-yellow-500', 'bg-orange-500', 'bg-red-500']
 
+// Mapping catégorie → leçon (pour lien retour)
+const categoryToLesson: Record<string, { slug: string; track: string; title: string }> = {
+  'Dérivation': { slug: 'derivation', track: 'spe', title: 'Dérivation' },
+  'Suites': { slug: 'suites-definition', track: 'spe', title: 'Suites numériques' },
+  'Limites': { slug: 'limites-fonctions', track: 'spe', title: 'Limites de fonctions' },
+  'Intégrales': { slug: 'integrales', track: 'spe', title: 'Intégrales' },
+  'Primitives': { slug: 'primitives', track: 'spe', title: 'Primitives' },
+  'Continuité': { slug: 'continuite', track: 'spe', title: 'Continuité' },
+  'Convexité': { slug: 'convexite', track: 'spe', title: 'Convexité' },
+  'Exponentielle': { slug: 'exponentielle', track: 'spe', title: 'Fonction exponentielle' },
+  'Logarithme': { slug: 'logarithme', track: 'spe', title: 'Fonction logarithme' },
+  'Trigonométrie': { slug: 'trigonometrie-bases', track: 'spe', title: 'Trigonométrie' },
+  'Probabilités': { slug: 'loi-binomiale', track: 'spe', title: 'Loi binomiale' },
+  'Combinatoire': { slug: 'combinatoire', track: 'spe', title: 'Combinatoire' },
+  'Loi normale': { slug: 'loi-normale', track: 'spe', title: 'Loi normale' },
+  'Récurrence': { slug: 'recurrence', track: 'spe', title: 'Raisonnement par récurrence' },
+  'Équations différentielles': { slug: 'equations-differentielles', track: 'spe', title: 'Équations différentielles' },
+  'Géométrie': { slug: 'vecteurs-espace', track: 'spe', title: 'Géométrie dans l\'espace' },
+  'Droites et plans': { slug: 'droites-plans-espace', track: 'spe', title: 'Droites et plans' },
+  'Logique': { slug: 'implication-equivalence', track: 'spe', title: 'Implication et équivalence' },
+  'Nombres complexes': { slug: 'complexes-introduction', track: 'expertes', title: 'Nombres complexes' },
+  'Arithmétique': { slug: 'divisibilite', track: 'expertes', title: 'Arithmétique' },
+  'Matrices': { slug: 'matrices-operations', track: 'expertes', title: 'Matrices' },
+  'Chaînes de Markov': { slug: 'chaines-markov', track: 'expertes', title: 'Chaînes de Markov' },
+  'Graphes': { slug: 'graphes-introduction', track: 'expertes', title: 'Théorie des graphes' },
+}
+
 // Points de base par difficulté
 const difficultyPoints = [0, 10, 20, 30, 50, 80]
 
@@ -408,6 +435,15 @@ export default function GenerateurPage() {
                 <span className={`badge ${categoryColors[selectedGenerator.category] || ''}`}>
                   {selectedGenerator.category}
                 </span>
+                {categoryToLesson[selectedGenerator.category] && (
+                  <Link
+                    href={`/lecons/${categoryToLesson[selectedGenerator.category].track}/${categoryToLesson[selectedGenerator.category].slug}`}
+                    className="flex items-center gap-1 text-sm text-primary-600 hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-300"
+                  >
+                    <BookOpen className="h-4 w-4" />
+                    Voir la leçon
+                  </Link>
+                )}
                 <span className="text-sm text-slate-500 dark:text-slate-400">
                   Exercice #{exerciseCount}
                 </span>
