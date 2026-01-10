@@ -24,6 +24,7 @@ import {
   SieveOfEratosthenes,
   ProbabilityTree,
   PascalTriangle,
+  CombinatoricsVisualization,
 } from './InteractiveGraphs'
 
 interface LessonContentProps {
@@ -318,6 +319,8 @@ function GraphRenderer({ config }: { config: GraphConfig }) {
         return <ProbabilityTree {...(props as React.ComponentProps<typeof ProbabilityTree>)} />
       case 'PascalTriangle':
         return <PascalTriangle {...(props as React.ComponentProps<typeof PascalTriangle>)} />
+      case 'CombinatoricsVisualization':
+        return <CombinatoricsVisualization {...(props as React.ComponentProps<typeof CombinatoricsVisualization>)} />
       default:
         return <div className="text-danger-600">Type de graphe inconnu: {config.type}</div>
     }
