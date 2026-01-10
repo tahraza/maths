@@ -367,18 +367,29 @@ export const useGamificationStore = create<GamificationState>()(
         const today = new Date().toISOString().split('T')[0]
 
         set((state) => {
-          const todayActivities = state.dailyActivities[today] || {
-            lessonsCompleted: [],
-            exercisesCompleted: [],
-            quizzesCompleted: [],
-            flashcardsReviewed: [],
-            pointsEarned: 0,
+          const existing = state.dailyActivities[today]
+
+          // Toujours initialiser avec les valeurs par défaut, puis merger les existantes
+          const todayActivities = {
+            lessonsCompleted: existing?.lessonsCompleted ?? [],
+            exercisesCompleted: existing?.exercisesCompleted ?? [],
+            quizzesCompleted: existing?.quizzesCompleted ?? [],
+            flashcardsReviewed: existing?.flashcardsReviewed ?? [],
+            pointsEarned: existing?.pointsEarned ?? 0,
           }
 
-          const key = `${type}sCompleted` as keyof typeof todayActivities
-          if (key === 'pointsEarned') return state
+          // Mapper les types vers les bonnes clés
+          const keyMap: Record<string, 'lessonsCompleted' | 'exercisesCompleted' | 'quizzesCompleted' | 'flashcardsReviewed'> = {
+            lesson: 'lessonsCompleted',
+            exercise: 'exercisesCompleted',
+            quiz: 'quizzesCompleted',
+            flashcard: 'flashcardsReviewed',
+          }
 
-          const currentList = todayActivities[key] as string[]
+          const key = keyMap[type]
+          if (!key) return state
+
+          const currentList = todayActivities[key]
           if (currentList.includes(id)) return state
 
           return {
