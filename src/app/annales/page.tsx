@@ -20,6 +20,7 @@ interface AnnaleExercise {
   pages?: number[]
   topics?: string[]
   skills?: string[]
+  lessonRefs?: string[]
 }
 
 interface AnnaleSummary {

@@ -12,6 +12,7 @@ import {
   XCircle,
   Tags,
   ClipboardList,
+  BookOpen,
 } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import annalesData from '../../../../content/annales.json'
@@ -22,6 +23,7 @@ interface AnnaleExercise {
   pages?: number[]
   topics?: string[]
   skills?: string[]
+  lessonRefs?: string[]
 }
 
 interface Annale {
@@ -61,6 +63,13 @@ const formatPages = (pages?: number[]) => {
   if (!pages || pages.length === 0) return 'Pages à renseigner'
   if (pages.length === 1) return `Page ${pages[0]}`
   return `Pages ${pages.join(', ')}`
+}
+
+const formatLessonLabel = (slug: string) => {
+  return slug
+    .split('-')
+    .map((part) => (part.length ? part[0].toUpperCase() + part.slice(1) : part))
+    .join(' ')
 }
 
 export default function AnnalePage() {
@@ -246,15 +255,25 @@ export default function AnnalePage() {
                   const isSelected = selectedExerciseId === exercise.id
                   const topics = exercise.topics ?? []
                   const skills = exercise.skills ?? []
+                  const lessonRefs = exercise.lessonRefs ?? []
                   const pages = exercise.pages ?? []
+                  const handleSelect = () => {
+                    setSelectedExerciseId(exercise.id)
+                    if (pages.length > 0) {
+                      setActivePage(pages[0])
+                    }
+                  }
 
                   return (
-                    <button
+                    <div
                       key={exercise.id}
-                      onClick={() => {
-                        setSelectedExerciseId(exercise.id)
-                        if (pages.length > 0) {
-                          setActivePage(pages[0])
+                      role="button"
+                      tabIndex={0}
+                      onClick={handleSelect}
+                      onKeyDown={(event) => {
+                        if (event.key === 'Enter' || event.key === ' ') {
+                          event.preventDefault()
+                          handleSelect()
                         }
                       }}
                       className={cn(
@@ -299,7 +318,23 @@ export default function AnnalePage() {
                           ))}
                         </div>
                       )}
-                    </button>
+
+                      {lessonRefs.length > 0 && (
+                        <div className="mt-2 flex flex-wrap gap-1">
+                          {lessonRefs.map((lesson) => (
+                            <Link
+                              key={lesson}
+                              href={`/lecons/spe/${lesson}`}
+                              onClick={(event) => event.stopPropagation()}
+                              className="inline-flex items-center gap-1 rounded bg-indigo-50 px-2 py-0.5 text-xs text-indigo-700 hover:bg-indigo-100 dark:bg-indigo-900/30 dark:text-indigo-200 dark:hover:bg-indigo-900/50"
+                            >
+                              <BookOpen className="h-3 w-3" />
+                              {formatLessonLabel(lesson)}
+                            </Link>
+                          ))}
+                        </div>
+                      )}
+                    </div>
                   )
                 })}
               </div>
