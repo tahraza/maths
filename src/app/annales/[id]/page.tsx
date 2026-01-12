@@ -5,87 +5,83 @@ import { useParams } from 'next/navigation'
 import Link from 'next/link'
 import {
   ArrowLeft,
-  Award,
   Calendar,
-  ChevronDown,
-  ChevronRight,
-  Clock,
-  Eye,
-  EyeOff,
+  FileText,
+  ExternalLink,
   CheckCircle2,
+  XCircle,
+  Tags,
+  ClipboardList,
 } from 'lucide-react'
 import { cn } from '@/lib/utils'
-import MathText from '@/components/MathText'
 import annalesData from '../../../../content/annales.json'
 
-interface Question {
-  number: string
-  text: string
-  points: number
-  answer: string
-}
-
-interface Part {
+interface AnnaleExercise {
   id: string
-  title: string
-  questions: Question[]
+  title?: string
+  pages?: number[]
+  topics?: string[]
+  skills?: string[]
 }
 
 interface Annale {
   id: string
   year: number
   session: string
-  exerciseNumber: number
-  title: string
-  subject: string
-  themes: string[]
-  points: number
-  duration: number
-  difficulty: string
-  description: string
-  parts: Part[]
+  track: string
+  paper: number
+  subjectPath: string
+  correctionPath?: string | null
+  exercises?: AnnaleExercise[]
+}
+
+const SESSION_LABELS: Record<string, string> = {
+  'amerique-nord': 'Amérique du Nord',
+  'amerique-sud': 'Amérique du Sud',
+  'centres-etranger': 'Centres étrangers',
+  'nouv-caledonie': 'Nouvelle-Calédonie',
+  'la-reunion': 'La Réunion',
+  'mayotte-liban': 'Mayotte-Liban',
+  'polynesie': 'Polynésie',
+  'metropole': 'Métropole',
+  'asie': 'Asie',
+  'suede': 'Suède',
+  'zero': 'Zéro',
+}
+
+const formatSession = (slug: string) => {
+  if (SESSION_LABELS[slug]) return SESSION_LABELS[slug]
+  return slug
+    .split('-')
+    .map((part) => (part.length ? part[0].toUpperCase() + part.slice(1) : part))
+    .join(' ')
+}
+
+const formatPages = (pages?: number[]) => {
+  if (!pages || pages.length === 0) return 'Pages à renseigner'
+  if (pages.length === 1) return `Page ${pages[0]}`
+  return `Pages ${pages.join(', ')}`
 }
 
 export default function AnnalePage() {
   const params = useParams()
   const [mounted, setMounted] = useState(false)
-  const [expandedParts, setExpandedParts] = useState<string[]>([])
-  const [shownAnswers, setShownAnswers] = useState<string[]>([])
+  const [activeDoc, setActiveDoc] = useState<'subject' | 'correction'>('subject')
+  const [activePage, setActivePage] = useState<number>(1)
+  const [selectedExerciseId, setSelectedExerciseId] = useState<string | null>(null)
 
   useEffect(() => {
     setMounted(true)
   }, [])
 
   const annaleId = params.id as string
-  const annale = annalesData.annales.find((a) => a.id === annaleId) as Annale | undefined
+  const annale = annalesData.annales.find((item) => item.id === annaleId) as Annale | undefined
 
-  const togglePart = (partId: string) => {
-    setExpandedParts(prev =>
-      prev.includes(partId)
-        ? prev.filter(p => p !== partId)
-        : [...prev, partId]
-    )
-  }
-
-  const toggleAnswer = (questionId: string) => {
-    setShownAnswers(prev =>
-      prev.includes(questionId)
-        ? prev.filter(q => q !== questionId)
-        : [...prev, questionId]
-    )
-  }
-
-  const showAllAnswers = () => {
-    const allQuestionIds = annale?.parts.flatMap(p =>
-      p.questions.map(q => `${p.id}-${q.number}`)
-    ) || []
-    setShownAnswers(allQuestionIds)
-    setExpandedParts(annale?.parts.map(p => p.id) || [])
-  }
-
-  const hideAllAnswers = () => {
-    setShownAnswers([])
-  }
+  useEffect(() => {
+    if (annale && activeDoc === 'correction' && !annale.correctionPath) {
+      setActiveDoc('subject')
+    }
+  }, [annale, activeDoc])
 
   if (!mounted) {
     return (
@@ -119,10 +115,17 @@ export default function AnnalePage() {
     )
   }
 
+  const exercises = annale.exercises ?? []
+  const hasCorrection = Boolean(annale.correctionPath)
+  const docPath = activeDoc === 'correction' && annale.correctionPath
+    ? annale.correctionPath
+    : annale.subjectPath
+  const docLabel = activeDoc === 'correction' ? 'Correction' : 'Sujet'
+  const docUrl = docPath ? `${docPath}#page=${activePage}` : ''
+
   return (
     <div className="min-h-screen bg-slate-50 dark:bg-slate-900 py-8">
-      <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-        {/* Navigation */}
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="mb-6">
           <Link
             href="/annales"
@@ -133,202 +136,179 @@ export default function AnnalePage() {
           </Link>
         </div>
 
-        {/* Header */}
-        <div className="mb-8 rounded-xl border border-slate-200 bg-white p-6 dark:border-slate-700 dark:bg-slate-800">
+        <div className="mb-6 rounded-xl border border-slate-200 bg-white p-6 dark:border-slate-700 dark:bg-slate-800">
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <span className="flex items-center gap-1 rounded-full bg-amber-100 px-3 py-1 text-sm font-semibold text-amber-700 dark:bg-amber-900/30 dark:text-amber-300">
               <Calendar className="h-4 w-4" />
               Bac {annale.year}
             </span>
             <span className="rounded-full bg-slate-100 px-3 py-1 text-sm font-medium text-slate-600 dark:bg-slate-700 dark:text-slate-300">
-              {annale.session}
+              {formatSession(annale.session)}
+            </span>
+            <span className="rounded-full bg-slate-100 px-3 py-1 text-sm font-medium text-slate-600 dark:bg-slate-700 dark:text-slate-300">
+              Sujet {annale.paper}
             </span>
             <span className={cn(
-              'rounded-full px-3 py-1 text-sm font-medium',
-              annale.subject === 'physique'
-                ? 'bg-primary-100 text-primary-700 dark:bg-primary-900/30 dark:text-primary-300'
-                : 'bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-300'
+              'inline-flex items-center gap-1 rounded-full px-3 py-1 text-sm font-medium',
+              hasCorrection
+                ? 'bg-success-100 text-success-700 dark:bg-success-900/30 dark:text-success-300'
+                : 'bg-slate-100 text-slate-600 dark:bg-slate-700 dark:text-slate-300'
             )}>
-              {annale.subject === 'physique' ? 'Physique' : 'Chimie'}
+              {hasCorrection ? <CheckCircle2 className="h-4 w-4" /> : <XCircle className="h-4 w-4" />}
+              {hasCorrection ? 'Corrigé disponible' : 'Corrigé manquant'}
             </span>
           </div>
 
-          <h1 className="mb-2 text-2xl font-bold text-slate-900 dark:text-slate-100">
-            Exercice {annale.exerciseNumber} : {annale.title}
+          <h1 className="text-2xl font-bold text-slate-900 dark:text-slate-100">
+            Annale – {formatSession(annale.session)} {annale.year}
           </h1>
-
-          <p className="mb-4 text-slate-600 dark:text-slate-400">
-            {annale.description}
+          <p className="mt-2 text-sm text-slate-600 dark:text-slate-400">
+            Utilise l'embed pour naviguer dans le sujet et clique sur un exercice pour aller à la page indiquée.
           </p>
 
-          <div className="flex flex-wrap items-center gap-4">
-            <div className="flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400">
-              <Award className="h-4 w-4" />
-              {annale.points} points
-            </div>
-            <div className="flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400">
-              <Clock className="h-4 w-4" />
-              ~{annale.duration} minutes
-            </div>
-          </div>
+          <div className="mt-4 flex flex-wrap items-center gap-2">
+            <button
+              onClick={() => setActiveDoc('subject')}
+              className={cn(
+                'rounded-lg px-3 py-1.5 text-sm font-medium transition-colors',
+                activeDoc === 'subject'
+                  ? 'bg-amber-600 text-white'
+                  : 'bg-slate-100 text-slate-700 hover:bg-slate-200 dark:bg-slate-700 dark:text-slate-200 dark:hover:bg-slate-600'
+              )}
+            >
+              Sujet
+            </button>
+            <button
+              onClick={() => setActiveDoc('correction')}
+              disabled={!hasCorrection}
+              className={cn(
+                'rounded-lg px-3 py-1.5 text-sm font-medium transition-colors',
+                activeDoc === 'correction'
+                  ? 'bg-emerald-600 text-white'
+                  : 'bg-slate-100 text-slate-700 hover:bg-slate-200 dark:bg-slate-700 dark:text-slate-200 dark:hover:bg-slate-600',
+                !hasCorrection && 'cursor-not-allowed opacity-60'
+              )}
+            >
+              Corrigé
+            </button>
 
-          <div className="mt-4 flex flex-wrap gap-1">
-            {annale.themes.map(theme => (
-              <span
-                key={theme}
-                className="rounded bg-slate-100 px-2 py-0.5 text-xs text-slate-600 dark:bg-slate-700 dark:text-slate-400"
+            {docPath && (
+              <Link
+                href={docPath}
+                target="_blank"
+                className="ml-auto inline-flex items-center gap-1 text-sm font-medium text-amber-600 hover:text-amber-700 dark:text-amber-400"
               >
-                {theme}
+                Ouvrir en grand
+                <ExternalLink className="h-4 w-4" />
+              </Link>
+            )}
+          </div>
+        </div>
+
+        <div className="grid gap-6 lg:grid-cols-[2fr_1fr]">
+          <div className="rounded-xl border border-slate-200 bg-white p-4 dark:border-slate-700 dark:bg-slate-800">
+            <div className="mb-3 flex items-center justify-between text-sm text-slate-500 dark:text-slate-400">
+              <span className="flex items-center gap-2">
+                <FileText className="h-4 w-4" />
+                {docLabel}
               </span>
-            ))}
-          </div>
-        </div>
-
-        {/* Show/Hide all answers */}
-        <div className="mb-6 flex gap-2">
-          <button
-            onClick={showAllAnswers}
-            className="flex items-center gap-2 rounded-lg bg-primary-100 px-4 py-2 text-sm font-medium text-primary-700 transition-colors hover:bg-primary-200 dark:bg-primary-900/30 dark:text-primary-300 dark:hover:bg-primary-900/50"
-          >
-            <Eye className="h-4 w-4" />
-            Voir toutes les réponses
-          </button>
-          <button
-            onClick={hideAllAnswers}
-            className="flex items-center gap-2 rounded-lg bg-slate-100 px-4 py-2 text-sm font-medium text-slate-700 transition-colors hover:bg-slate-200 dark:bg-slate-800 dark:text-slate-300 dark:hover:bg-slate-700"
-          >
-            <EyeOff className="h-4 w-4" />
-            Cacher les réponses
-          </button>
-        </div>
-
-        {/* Parts and questions */}
-        <div className="space-y-4">
-          {annale.parts.map((part) => {
-            const isExpanded = expandedParts.includes(part.id)
-
-            return (
-              <div
-                key={part.id}
-                className="rounded-xl border border-slate-200 bg-white dark:border-slate-700 dark:bg-slate-800"
-              >
-                {/* Part header */}
-                <button
-                  onClick={() => togglePart(part.id)}
-                  className="flex w-full items-center justify-between p-5"
-                >
-                  <div className="flex items-center gap-3">
-                    <span className="flex h-8 w-8 items-center justify-center rounded-full bg-amber-100 text-sm font-bold text-amber-700 dark:bg-amber-900/30 dark:text-amber-300">
-                      {part.id}
-                    </span>
-                    <span className="text-lg font-semibold text-slate-900 dark:text-slate-100">
-                      {part.title}
-                    </span>
-                  </div>
-                  {isExpanded ? (
-                    <ChevronDown className="h-5 w-5 text-slate-400" />
-                  ) : (
-                    <ChevronRight className="h-5 w-5 text-slate-400" />
-                  )}
-                </button>
-
-                {/* Questions */}
-                {isExpanded && (
-                  <div className="border-t border-slate-200 p-5 dark:border-slate-700">
-                    <div className="space-y-6">
-                      {part.questions.map((question) => {
-                        const questionId = `${part.id}-${question.number}`
-                        const isAnswerShown = shownAnswers.includes(questionId)
-
-                        return (
-                          <div key={question.number} className="space-y-3">
-                            {/* Question */}
-                            <div className="flex gap-3">
-                              <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-slate-100 text-xs font-semibold text-slate-600 dark:bg-slate-700 dark:text-slate-300">
-                                {question.number}
-                              </span>
-                              <div className="flex-1">
-                                <div className="flex items-start justify-between gap-2">
-                                  <p className="text-slate-700 dark:text-slate-300">
-                                    <MathText text={question.text} />
-                                  </p>
-                                  <span className="flex-shrink-0 rounded bg-slate-100 px-2 py-0.5 text-xs font-medium text-slate-600 dark:bg-slate-700 dark:text-slate-400">
-                                    {question.points} pt{question.points > 1 ? 's' : ''}
-                                  </span>
-                                </div>
-                              </div>
-                            </div>
-
-                            {/* Answer toggle */}
-                            {!isAnswerShown ? (
-                              <button
-                                onClick={() => toggleAnswer(questionId)}
-                                className="ml-9 flex items-center gap-2 rounded-lg bg-primary-50 px-3 py-2 text-sm font-medium text-primary-700 transition-colors hover:bg-primary-100 dark:bg-primary-900/20 dark:text-primary-300 dark:hover:bg-primary-900/30"
-                              >
-                                <Eye className="h-4 w-4" />
-                                Voir la réponse
-                              </button>
-                            ) : (
-                              <div className="ml-9 rounded-lg border border-success-200 bg-success-50 p-4 dark:border-success-800 dark:bg-success-900/20">
-                                <div className="mb-2 flex items-center gap-2 text-success-700 dark:text-success-300">
-                                  <CheckCircle2 className="h-4 w-4" />
-                                  <span className="font-medium">Correction</span>
-                                  <button
-                                    onClick={() => toggleAnswer(questionId)}
-                                    className="ml-auto text-xs text-success-600 hover:text-success-700 dark:text-success-400"
-                                  >
-                                    Cacher
-                                  </button>
-                                </div>
-                                <div className="text-sm text-slate-700 dark:text-slate-300">
-                                  <MathText text={question.answer} />
-                                </div>
-                              </div>
-                            )}
-                          </div>
-                        )
-                      })}
-                    </div>
-                  </div>
-                )}
+              <span>Page {activePage}</span>
+            </div>
+            {docUrl ? (
+              <iframe
+                title={`${docLabel} ${annale.id}`}
+                src={docUrl}
+                className="h-[75vh] w-full rounded-lg border border-slate-200 dark:border-slate-700"
+              />
+            ) : (
+              <div className="flex h-[60vh] items-center justify-center text-sm text-slate-500 dark:text-slate-400">
+                Document indisponible.
               </div>
-            )
-          })}
-        </div>
-
-        {/* Navigation to other annales */}
-        <div className="mt-8 rounded-xl border border-slate-200 bg-white p-6 dark:border-slate-700 dark:bg-slate-800">
-          <h3 className="mb-4 font-semibold text-slate-900 dark:text-slate-100">
-            Autres annales de {annale.year}
-          </h3>
-          <div className="space-y-2">
-            {annalesData.annales
-              .filter((a) => a.year === annale.year && a.id !== annale.id)
-              .slice(0, 3)
-              .map((a) => (
-                <Link
-                  key={a.id}
-                  href={`/annales/${a.id}`}
-                  className="flex items-center justify-between rounded-lg bg-slate-50 p-3 transition-colors hover:bg-slate-100 dark:bg-slate-800/50 dark:hover:bg-slate-700/50"
-                >
-                  <span className="text-sm font-medium text-slate-700 dark:text-slate-300">
-                    Ex. {a.exerciseNumber} : {a.title}
-                  </span>
-                  <span className={cn(
-                    'text-xs',
-                    a.subject === 'physique' ? 'text-primary-600 dark:text-primary-400' : 'text-emerald-600 dark:text-emerald-400'
-                  )}>
-                    {a.subject === 'physique' ? 'Physique' : 'Chimie'}
-                  </span>
-                </Link>
-              ))}
+            )}
           </div>
-          <Link
-            href="/annales"
-            className="mt-4 block text-center text-sm font-medium text-amber-600 hover:text-amber-700 dark:text-amber-400"
-          >
-            Voir toutes les annales
-          </Link>
+
+          <div className="space-y-4">
+            <div className="rounded-xl border border-slate-200 bg-white p-5 dark:border-slate-700 dark:bg-slate-800">
+              <div className="mb-4 flex items-center gap-2 text-slate-700 dark:text-slate-200">
+                <ClipboardList className="h-5 w-5" />
+                <h2 className="text-lg font-semibold">Exercices</h2>
+              </div>
+
+              {exercises.length === 0 && (
+                <p className="text-sm text-slate-600 dark:text-slate-400">
+                  Aucun exercice n'est encore renseigné pour cette annale. Ajoute les pages, thèmes et compétences dans
+                  <span className="font-semibold"> content/annales.json</span>.
+                </p>
+              )}
+
+              <div className="space-y-3">
+                {exercises.map((exercise) => {
+                  const isSelected = selectedExerciseId === exercise.id
+                  const topics = exercise.topics ?? []
+                  const skills = exercise.skills ?? []
+                  const pages = exercise.pages ?? []
+
+                  return (
+                    <button
+                      key={exercise.id}
+                      onClick={() => {
+                        setSelectedExerciseId(exercise.id)
+                        if (pages.length > 0) {
+                          setActivePage(pages[0])
+                        }
+                      }}
+                      className={cn(
+                        'w-full rounded-lg border p-3 text-left transition-colors',
+                        isSelected
+                          ? 'border-amber-400 bg-amber-50 dark:border-amber-500/60 dark:bg-amber-900/20'
+                          : 'border-slate-200 bg-white hover:border-amber-200 dark:border-slate-700 dark:bg-slate-800 dark:hover:border-amber-600'
+                      )}
+                    >
+                      <div className="flex items-center justify-between gap-2">
+                        <span className="text-sm font-semibold text-slate-900 dark:text-slate-100">
+                          {exercise.title || `Exercice ${exercise.id.replace('ex', '')}`}
+                        </span>
+                        <span className="text-xs text-slate-500 dark:text-slate-400">
+                          {formatPages(pages)}
+                        </span>
+                      </div>
+
+                      {topics.length > 0 && (
+                        <div className="mt-2 flex flex-wrap gap-1">
+                          {topics.map((topic) => (
+                            <span
+                              key={topic}
+                              className="inline-flex items-center gap-1 rounded bg-slate-100 px-2 py-0.5 text-xs text-slate-600 dark:bg-slate-700 dark:text-slate-300"
+                            >
+                              <Tags className="h-3 w-3" />
+                              {topic}
+                            </span>
+                          ))}
+                        </div>
+                      )}
+
+                      {skills.length > 0 && (
+                        <div className="mt-2 flex flex-wrap gap-1">
+                          {skills.map((skill) => (
+                            <span
+                              key={skill}
+                              className="inline-flex items-center rounded bg-emerald-50 px-2 py-0.5 text-xs text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-200"
+                            >
+                              {skill}
+                            </span>
+                          ))}
+                        </div>
+                      )}
+                    </button>
+                  )
+                })}
+              </div>
+            </div>
+
+            <div className="rounded-xl border border-slate-200 bg-white p-5 text-sm text-slate-600 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-400">
+              Astuce : renseigne les pages pour pouvoir sauter directement à un exercice depuis cette liste.
+            </div>
+          </div>
         </div>
       </div>
     </div>

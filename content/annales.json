@@ -1,678 +1,624 @@
 {
   "annales": [
     {
-      "id": "2024-metropole-ex1",
-      "year": 2024,
-      "session": "Métropole",
-      "exerciseNumber": 1,
-      "title": "Suites et récurrence",
-      "subject": "analyse",
-      "themes": ["Suites", "Récurrence", "Limites"],
-      "points": 5,
-      "duration": 45,
-      "difficulty": "moyen",
-      "description": "Étude d'une suite définie par récurrence et calcul de sa limite.",
-      "parts": [
-        {
-          "id": "A",
-          "title": "Étude de la suite",
-          "questions": [
-            { "number": "1", "text": "Soit $(u_n)$ la suite définie par $u_0 = 2$ et pour tout $n \\in \\mathbb{N}$, $u_{n+1} = \\frac{1}{2}u_n + 1$. Calculer $u_1$, $u_2$ et $u_3$.", "points": 1, "answer": "$u_1 = \\frac{1}{2} \\times 2 + 1 = 2$, $u_2 = 2$, $u_3 = 2$. La suite semble constante égale à 2." },
-            { "number": "2", "text": "Démontrer par récurrence que pour tout $n \\in \\mathbb{N}$, $u_n = 2$.", "points": 2, "answer": "**Initialisation** : $u_0 = 2$ ✓\n**Hérédité** : Si $u_n = 2$, alors $u_{n+1} = \\frac{1}{2} \\times 2 + 1 = 2$ ✓\n**Conclusion** : Par récurrence, $u_n = 2$ pour tout $n$." },
-            { "number": "3", "text": "En déduire la limite de la suite $(u_n)$.", "points": 2, "answer": "La suite étant constante égale à 2, $\\lim_{n \\to +\\infty} u_n = 2$." }
-          ]
-        }
-      ]
+      "id": "2025-amerique-nord-01",
+      "year": 2025,
+      "session": "amerique-nord",
+      "track": "spe",
+      "paper": 1,
+      "subjectPath": "/annales/2025_spe-mathematiques_amerique-nord_01_sujet.pdf",
+      "correctionPath": "/annales/2025_spe-mathematiques_amerique-nord_01_corrige.pdf",
+      "exercises": []
     },
     {
-      "id": "2024-metropole-ex2",
-      "year": 2024,
-      "session": "Métropole",
-      "exerciseNumber": 2,
-      "title": "Probabilités et loi binomiale",
-      "subject": "probabilites",
-      "themes": ["Loi binomiale", "Espérance", "Probabilités"],
-      "points": 5,
-      "duration": 40,
-      "difficulty": "moyen",
-      "description": "Étude d'une expérience aléatoire avec loi binomiale.",
-      "parts": [
-        {
-          "id": "A",
-          "title": "Loi binomiale",
-          "questions": [
-            { "number": "1", "text": "On lance 5 fois une pièce équilibrée. Soit $X$ le nombre de piles. Quelle est la loi de $X$ ?", "points": 1, "answer": "$X \\sim \\mathcal{B}(5, 0.5)$" },
-            { "number": "2", "text": "Calculer $P(X = 3)$.", "points": 2, "answer": "$P(X=3) = \\binom{5}{3} \\times 0.5^5 = 10 \\times 0.03125 = 0.3125$" },
-            { "number": "3", "text": "Calculer l'espérance et la variance de $X$.", "points": 2, "answer": "$E(X) = np = 2.5$ et $V(X) = np(1-p) = 1.25$" }
-          ]
-        }
-      ]
+      "id": "2025-amerique-nord-02",
+      "year": 2025,
+      "session": "amerique-nord",
+      "track": "spe",
+      "paper": 2,
+      "subjectPath": "/annales/2025_spe-mathematiques_amerique-nord_02_sujet.pdf",
+      "correctionPath": "/annales/2025_spe-mathematiques_amerique-nord_02_corrige.pdf",
+      "exercises": []
     },
     {
-      "id": "2024-metropole-ex3",
-      "year": 2024,
-      "session": "Métropole",
-      "exerciseNumber": 3,
-      "title": "Fonction exponentielle",
-      "subject": "analyse",
-      "themes": ["Exponentielle", "Dérivation", "Limites"],
-      "points": 5,
-      "duration": 45,
-      "difficulty": "difficile",
-      "description": "Étude complète d'une fonction avec exponentielle.",
-      "parts": [
-        {
-          "id": "A",
-          "title": "Étude de la fonction",
-          "questions": [
-            { "number": "1", "text": "Soit $f(x) = (x-1)e^x$. Calculer $f'(x)$.", "points": 2, "answer": "$f'(x) = e^x + (x-1)e^x = xe^x$" },
-            { "number": "2", "text": "Étudier le signe de $f'(x)$ et les variations de $f$.", "points": 2, "answer": "$f'(x) = xe^x$. Comme $e^x > 0$, $f'(x)$ a le signe de $x$.\n$f$ décroissante sur $]-\\infty, 0]$, croissante sur $[0, +\\infty[$. Minimum en 0." },
-            { "number": "3", "text": "Calculer les limites de $f$ en $\\pm\\infty$.", "points": 1, "answer": "$\\lim_{x \\to +\\infty} f(x) = +\\infty$ et $\\lim_{x \\to -\\infty} f(x) = 0$" }
-          ]
-        }
-      ]
+      "id": "2025-amerique-sud-01",
+      "year": 2025,
+      "session": "amerique-sud",
+      "track": "spe",
+      "paper": 1,
+      "subjectPath": "/annales/2025_spe-mathematiques_amerique-sud_01_sujet.pdf",
+      "correctionPath": "/annales/2025_spe-mathematiques_amerique-sud_01_corrige.pdf",
+      "exercises": []
     },
     {
-      "id": "2024-metropole-ex4",
-      "year": 2024,
-      "session": "Métropole",
-      "exerciseNumber": 4,
-      "title": "Intégration",
-      "subject": "analyse",
-      "themes": ["Primitives", "Intégrales", "Aires"],
-      "points": 5,
-      "duration": 40,
-      "difficulty": "moyen",
-      "description": "Calcul d'intégrales et application au calcul d'aires.",
-      "parts": [
-        {
-          "id": "A",
-          "title": "Calcul d'intégrales",
-          "questions": [
-            { "number": "1", "text": "Calculer $\\int_0^1 (2x + 3) dx$.", "points": 1, "answer": "$\\int_0^1 (2x+3)dx = [x^2 + 3x]_0^1 = (1+3) - 0 = 4$" },
-            { "number": "2", "text": "Calculer $\\int_1^e \\frac{1}{x} dx$.", "points": 2, "answer": "$\\int_1^e \\frac{1}{x}dx = [\\ln x]_1^e = \\ln e - \\ln 1 = 1 - 0 = 1$" },
-            { "number": "3", "text": "Calculer l'aire sous la courbe de $f(x) = e^x$ entre 0 et 1.", "points": 2, "answer": "$\\mathcal{A} = \\int_0^1 e^x dx = [e^x]_0^1 = e - 1 \\approx 1.72$ u.a." }
-          ]
-        }
-      ]
+      "id": "2025-amerique-sud-02",
+      "year": 2025,
+      "session": "amerique-sud",
+      "track": "spe",
+      "paper": 2,
+      "subjectPath": "/annales/2025_spe-mathematiques_amerique-sud_02_sujet.pdf",
+      "correctionPath": "/annales/2025_spe-mathematiques_amerique-sud_02_corrige.pdf",
+      "exercises": []
     },
     {
-      "id": "2024-antilles-ex1",
-      "year": 2024,
-      "session": "Antilles-Guyane",
-      "exerciseNumber": 1,
-      "title": "Nombres complexes",
-      "subject": "algebre",
-      "themes": ["Complexes", "Module", "Argument"],
-      "points": 5,
-      "duration": 45,
-      "difficulty": "moyen",
-      "description": "Calculs avec les nombres complexes et interprétation géométrique.",
-      "parts": [
-        {
-          "id": "A",
-          "title": "Forme algébrique et trigonométrique",
-          "questions": [
-            { "number": "1", "text": "Soit $z = 1 + i$. Calculer le module et l'argument de $z$.", "points": 2, "answer": "$|z| = \\sqrt{1^2 + 1^2} = \\sqrt{2}$\n$\\arg(z) = \\arctan(1/1) = \\frac{\\pi}{4}$" },
-            { "number": "2", "text": "Écrire $z$ sous forme exponentielle.", "points": 1, "answer": "$z = \\sqrt{2}e^{i\\frac{\\pi}{4}}$" },
-            { "number": "3", "text": "Calculer $z^4$ sous forme algébrique.", "points": 2, "answer": "$z^4 = (\\sqrt{2})^4 e^{i\\pi} = 4e^{i\\pi} = 4(-1) = -4$" }
-          ]
-        }
-      ]
+      "id": "2025-asie-01",
+      "year": 2025,
+      "session": "asie",
+      "track": "spe",
+      "paper": 1,
+      "subjectPath": "/annales/2025_spe-mathematiques_asie_01_sujet.pdf",
+      "correctionPath": "/annales/2025_spe-mathematiques_asie_01_corrige.pdf",
+      "exercises": []
     },
     {
-      "id": "2024-antilles-ex2",
-      "year": 2024,
-      "session": "Antilles-Guyane",
-      "exerciseNumber": 2,
-      "title": "Géométrie dans l'espace",
-      "subject": "geometrie",
-      "themes": ["Vecteurs", "Droites", "Plans"],
-      "points": 5,
-      "duration": 50,
-      "difficulty": "difficile",
-      "description": "Étude de positions relatives et équations de plans.",
-      "parts": [
-        {
-          "id": "A",
-          "title": "Équations de plans",
-          "questions": [
-            { "number": "1", "text": "Donner une équation cartésienne du plan $\\mathcal{P}$ passant par $A(1,0,2)$ et de vecteur normal $\\vec{n}(1,2,-1)$.", "points": 2, "answer": "L'équation est $1(x-1) + 2(y-0) - 1(z-2) = 0$, soit $x + 2y - z + 1 = 0$" },
-            { "number": "2", "text": "Le point $B(2, 1, 5)$ appartient-il au plan $\\mathcal{P}$ ?", "points": 1, "answer": "$2 + 2(1) - 5 + 1 = 0$. Oui, $B \\in \\mathcal{P}$." },
-            { "number": "3", "text": "Déterminer la distance du point $C(0,0,0)$ au plan $\\mathcal{P}$.", "points": 2, "answer": "$d = \\frac{|0 + 0 - 0 + 1|}{\\sqrt{1+4+1}} = \\frac{1}{\\sqrt{6}}$" }
-          ]
-        }
-      ]
+      "id": "2025-asie-02",
+      "year": 2025,
+      "session": "asie",
+      "track": "spe",
+      "paper": 2,
+      "subjectPath": "/annales/2025_spe-mathematiques_asie_02_sujet.pdf",
+      "correctionPath": "/annales/2025_spe-mathematiques_asie_02_corrige.pdf",
+      "exercises": []
     },
     {
-      "id": "2024-asie-ex1",
-      "year": 2024,
-      "session": "Asie",
-      "exerciseNumber": 1,
-      "title": "Équations différentielles",
-      "subject": "analyse",
-      "themes": ["Équations différentielles", "Exponentielle", "Conditions initiales"],
-      "points": 5,
-      "duration": 45,
-      "difficulty": "difficile",
-      "description": "Résolution d'équations différentielles du premier ordre.",
-      "parts": [
-        {
-          "id": "A",
-          "title": "Équation homogène",
-          "questions": [
-            { "number": "1", "text": "Résoudre l'équation différentielle $y' + 2y = 0$.", "points": 2, "answer": "Les solutions sont $y(x) = Ce^{-2x}$ où $C \\in \\mathbb{R}$." },
-            { "number": "2", "text": "Trouver une solution particulière de $y' + 2y = 4$.", "points": 2, "answer": "On cherche une solution constante : $0 + 2y_p = 4$, donc $y_p = 2$." },
-            { "number": "3", "text": "Déterminer la solution vérifiant $y(0) = 5$.", "points": 1, "answer": "Solution générale : $y = Ce^{-2x} + 2$. $y(0) = C + 2 = 5$, donc $C = 3$.\nSolution : $y(x) = 3e^{-2x} + 2$." }
-          ]
-        }
-      ]
+      "id": "2025-centres-etranger-01",
+      "year": 2025,
+      "session": "centres-etranger",
+      "track": "spe",
+      "paper": 1,
+      "subjectPath": "/annales/2025_spe-mathematiques_centres-etranger_01_sujet.pdf",
+      "correctionPath": "/annales/2025_spe-mathematiques_centres-etranger_01_corrige.pdf",
+      "exercises": []
     },
     {
-      "id": "2024-asie-ex2",
-      "year": 2024,
-      "session": "Asie",
-      "exerciseNumber": 2,
-      "title": "Matrices et systèmes",
-      "subject": "algebre",
-      "themes": ["Matrices", "Systèmes linéaires", "Inverse"],
-      "points": 5,
-      "duration": 50,
-      "difficulty": "difficile",
-      "description": "Calcul matriciel et résolution de systèmes.",
-      "parts": [
-        {
-          "id": "A",
-          "title": "Calcul matriciel",
-          "questions": [
-            { "number": "1", "text": "Soit $A = \\begin{pmatrix} 2 & 1 \\\\ 1 & 1 \\end{pmatrix}$. Calculer $A^2$.", "points": 2, "answer": "$A^2 = \\begin{pmatrix} 5 & 3 \\\\ 3 & 2 \\end{pmatrix}$" },
-            { "number": "2", "text": "Calculer le déterminant de $A$.", "points": 1, "answer": "$\\det(A) = 2 \\times 1 - 1 \\times 1 = 1$" },
-            { "number": "3", "text": "Déterminer $A^{-1}$.", "points": 2, "answer": "$A^{-1} = \\begin{pmatrix} 1 & -1 \\\\ -1 & 2 \\end{pmatrix}$" }
-          ]
-        }
-      ]
+      "id": "2025-centres-etranger-02",
+      "year": 2025,
+      "session": "centres-etranger",
+      "track": "spe",
+      "paper": 2,
+      "subjectPath": "/annales/2025_spe-mathematiques_centres-etranger_02_sujet.pdf",
+      "correctionPath": "/annales/2025_spe-mathematiques_centres-etranger_02_corrige.pdf",
+      "exercises": []
     },
     {
-      "id": "2023-metropole-ex1",
+      "id": "2025-metropole-01",
+      "year": 2025,
+      "session": "metropole",
+      "track": "spe",
+      "paper": 1,
+      "subjectPath": "/annales/2025_spe-mathematiques_metropole_01_sujet.pdf",
+      "correctionPath": "/annales/2025_spe-mathematiques_metropole_01_corrige.pdf",
+      "exercises": []
+    },
+    {
+      "id": "2025-metropole-02",
+      "year": 2025,
+      "session": "metropole",
+      "track": "spe",
+      "paper": 2,
+      "subjectPath": "/annales/2025_spe-mathematiques_metropole_02_sujet.pdf",
+      "correctionPath": "/annales/2025_spe-mathematiques_metropole_02_corrige.pdf",
+      "exercises": []
+    },
+    {
+      "id": "2025-nouv-caledonie-01",
+      "year": 2025,
+      "session": "nouv-caledonie",
+      "track": "spe",
+      "paper": 1,
+      "subjectPath": "/annales/2025_spe-mathematiques_nouv-caledonie_01_sujet.pdf",
+      "correctionPath": "/annales/2025_spe-mathematiques_nouv-caledonie_01_corrige.pdf",
+      "exercises": []
+    },
+    {
+      "id": "2025-nouv-caledonie-02",
+      "year": 2025,
+      "session": "nouv-caledonie",
+      "track": "spe",
+      "paper": 2,
+      "subjectPath": "/annales/2025_spe-mathematiques_nouv-caledonie_02_sujet.pdf",
+      "correctionPath": "/annales/2025_spe-mathematiques_nouv-caledonie_02_corrige.pdf",
+      "exercises": []
+    },
+    {
+      "id": "2025-polynesie-01",
+      "year": 2025,
+      "session": "polynesie",
+      "track": "spe",
+      "paper": 1,
+      "subjectPath": "/annales/2025_spe-mathematiques_polynesie_01_sujet.pdf",
+      "correctionPath": "/annales/2025_spe-mathematiques_polynesie_01_corrige.pdf",
+      "exercises": []
+    },
+    {
+      "id": "2025-polynesie-02",
+      "year": 2025,
+      "session": "polynesie",
+      "track": "spe",
+      "paper": 2,
+      "subjectPath": "/annales/2025_spe-mathematiques_polynesie_02_sujet.pdf",
+      "correctionPath": "/annales/2025_spe-mathematiques_polynesie_02_corrige.pdf",
+      "exercises": []
+    },
+    {
+      "id": "2024-amerique-nord-01",
+      "year": 2024,
+      "session": "amerique-nord",
+      "track": "spe",
+      "paper": 1,
+      "subjectPath": "/annales/2024_spe-mathematiques_amerique-nord_01_sujet.pdf",
+      "correctionPath": "/annales/2024_spe-mathematiques_amerique-nord_01_corrige.pdf",
+      "exercises": []
+    },
+    {
+      "id": "2024-amerique-nord-02",
+      "year": 2024,
+      "session": "amerique-nord",
+      "track": "spe",
+      "paper": 2,
+      "subjectPath": "/annales/2024_spe-mathematiques_amerique-nord_02_sujet.pdf",
+      "correctionPath": "/annales/2024_spe-mathematiques_amerique-nord_02_corrige.pdf",
+      "exercises": []
+    },
+    {
+      "id": "2024-amerique-sud-01",
+      "year": 2024,
+      "session": "amerique-sud",
+      "track": "spe",
+      "paper": 1,
+      "subjectPath": "/annales/2024_spe-mathematiques_amerique-sud_01_sujet.pdf",
+      "correctionPath": "/annales/2024_spe-mathematiques_amerique-sud_01_corrige.pdf",
+      "exercises": []
+    },
+    {
+      "id": "2024-amerique-sud-02",
+      "year": 2024,
+      "session": "amerique-sud",
+      "track": "spe",
+      "paper": 2,
+      "subjectPath": "/annales/2024_spe-mathematiques_amerique-sud_02_sujet.pdf",
+      "correctionPath": null,
+      "exercises": []
+    },
+    {
+      "id": "2024-asie-01",
+      "year": 2024,
+      "session": "asie",
+      "track": "spe",
+      "paper": 1,
+      "subjectPath": "/annales/2024_spe-mathematiques_asie_01_sujet.pdf",
+      "correctionPath": null,
+      "exercises": []
+    },
+    {
+      "id": "2024-asie-02",
+      "year": 2024,
+      "session": "asie",
+      "track": "spe",
+      "paper": 2,
+      "subjectPath": "/annales/2024_spe-mathematiques_asie_02_sujet.pdf",
+      "correctionPath": null,
+      "exercises": []
+    },
+    {
+      "id": "2024-centres-etranger-01",
+      "year": 2024,
+      "session": "centres-etranger",
+      "track": "spe",
+      "paper": 1,
+      "subjectPath": "/annales/2024_spe-mathematiques_centres-etranger_01_sujet.pdf",
+      "correctionPath": "/annales/2024_spe-mathematiques_centres-etranger_01_corrige.pdf",
+      "exercises": []
+    },
+    {
+      "id": "2024-centres-etranger-02",
+      "year": 2024,
+      "session": "centres-etranger",
+      "track": "spe",
+      "paper": 2,
+      "subjectPath": "/annales/2024_spe-mathematiques_centres-etranger_02_sujet.pdf",
+      "correctionPath": "/annales/2024_spe-mathematiques_centres-etranger_02_corrige.pdf",
+      "exercises": []
+    },
+    {
+      "id": "2024-metropole-01",
+      "year": 2024,
+      "session": "metropole",
+      "track": "spe",
+      "paper": 1,
+      "subjectPath": "/annales/2024_spe-mathematiques_metropole_01_sujet.pdf",
+      "correctionPath": "/annales/2024_spe-mathematiques_metropole_01_corrige.pdf",
+      "exercises": []
+    },
+    {
+      "id": "2024-metropole-02",
+      "year": 2024,
+      "session": "metropole",
+      "track": "spe",
+      "paper": 2,
+      "subjectPath": "/annales/2024_spe-mathematiques_metropole_02_sujet.pdf",
+      "correctionPath": "/annales/2024_spe-mathematiques_metropole_02_corrige.pdf",
+      "exercises": []
+    },
+    {
+      "id": "2024-polynesie-01",
+      "year": 2024,
+      "session": "polynesie",
+      "track": "spe",
+      "paper": 1,
+      "subjectPath": "/annales/2024_spe-mathematiques_polynesie_01_sujet.pdf",
+      "correctionPath": "/annales/2024_spe-mathematiques_polynesie_01_corrige.pdf",
+      "exercises": []
+    },
+    {
+      "id": "2024-polynesie-02",
+      "year": 2024,
+      "session": "polynesie",
+      "track": "spe",
+      "paper": 2,
+      "subjectPath": "/annales/2024_spe-mathematiques_polynesie_02_sujet.pdf",
+      "correctionPath": "/annales/2024_spe-mathematiques_polynesie_02_corrige.pdf",
+      "exercises": []
+    },
+    {
+      "id": "2024-suede-02",
+      "year": 2024,
+      "session": "suede",
+      "track": "spe",
+      "paper": 2,
+      "subjectPath": "/annales/2024_spe-mathematiques_suede_02_sujet.pdf",
+      "correctionPath": null,
+      "exercises": []
+    },
+    {
+      "id": "2024-zero-01",
+      "year": 2024,
+      "session": "zero",
+      "track": "spe",
+      "paper": 1,
+      "subjectPath": "/annales/2024_spe-mathematiques_zero_01_sujet.pdf",
+      "correctionPath": null,
+      "exercises": []
+    },
+    {
+      "id": "2023-amerique-nord-01",
       "year": 2023,
-      "session": "Métropole",
-      "exerciseNumber": 1,
-      "title": "Logarithme népérien",
-      "subject": "analyse",
-      "themes": ["Logarithme", "Dérivation", "Équations"],
-      "points": 5,
-      "duration": 45,
-      "difficulty": "facile",
-      "description": "Étude d'une fonction logarithmique.",
-      "parts": [
-        {
-          "id": "A",
-          "title": "Étude de fonction",
-          "questions": [
-            { "number": "1", "text": "Soit $f(x) = \\ln(x) - x + 1$ sur $]0, +\\infty[$. Calculer $f'(x)$.", "points": 1, "answer": "$f'(x) = \\frac{1}{x} - 1 = \\frac{1-x}{x}$" },
-            { "number": "2", "text": "Dresser le tableau de variations de $f$.", "points": 2, "answer": "$f'(x) > 0$ si $x < 1$, $f'(x) < 0$ si $x > 1$. Maximum en $x = 1$ : $f(1) = 0$." },
-            { "number": "3", "text": "En déduire que $\\ln(x) \\leq x - 1$ pour tout $x > 0$.", "points": 2, "answer": "$f(x) \\leq f(1) = 0$ pour tout $x > 0$, donc $\\ln(x) \\leq x - 1$." }
-          ]
-        }
-      ]
+      "session": "amerique-nord",
+      "track": "spe",
+      "paper": 1,
+      "subjectPath": "/annales/2023_spe-mathematiques_amerique-nord_01_sujet.pdf",
+      "correctionPath": "/annales/2023_spe-mathematiques_amerique-nord_01_corrige.pdf",
+      "exercises": []
     },
     {
-      "id": "2023-metropole-ex2",
+      "id": "2023-amerique-nord-02",
       "year": 2023,
-      "session": "Métropole",
-      "exerciseNumber": 2,
-      "title": "Suites géométriques",
-      "subject": "analyse",
-      "themes": ["Suites géométriques", "Sommes", "Limites"],
-      "points": 5,
-      "duration": 40,
-      "difficulty": "facile",
-      "description": "Étude d'une suite géométrique et calcul de sommes.",
-      "parts": [
-        {
-          "id": "A",
-          "title": "Suite géométrique",
-          "questions": [
-            { "number": "1", "text": "Soit $(u_n)$ la suite géométrique de premier terme $u_0 = 3$ et de raison $q = 0.5$. Exprimer $u_n$ en fonction de $n$.", "points": 1, "answer": "$u_n = u_0 \\times q^n = 3 \\times 0.5^n$" },
-            { "number": "2", "text": "Calculer $S_n = u_0 + u_1 + ... + u_n$.", "points": 2, "answer": "$S_n = 3 \\times \\frac{1 - 0.5^{n+1}}{1 - 0.5} = 6(1 - 0.5^{n+1})$" },
-            { "number": "3", "text": "Calculer $\\lim_{n \\to +\\infty} S_n$.", "points": 2, "answer": "Comme $|0.5| < 1$, $0.5^{n+1} \\to 0$, donc $\\lim S_n = 6$." }
-          ]
-        }
-      ]
+      "session": "amerique-nord",
+      "track": "spe",
+      "paper": 2,
+      "subjectPath": "/annales/2023_spe-mathematiques_amerique-nord_02_sujet.pdf",
+      "correctionPath": "/annales/2023_spe-mathematiques_amerique-nord_02_corrige.pdf",
+      "exercises": []
     },
     {
-      "id": "2023-metropole-ex3",
+      "id": "2023-amerique-sud-01",
       "year": 2023,
-      "session": "Métropole",
-      "exerciseNumber": 3,
-      "title": "Probabilités continues",
-      "subject": "probabilites",
-      "themes": ["Loi normale", "Densité", "Probabilités"],
-      "points": 5,
-      "duration": 45,
-      "difficulty": "moyen",
-      "description": "Étude d'une variable aléatoire suivant une loi normale.",
-      "parts": [
-        {
-          "id": "A",
-          "title": "Loi normale",
-          "questions": [
-            { "number": "1", "text": "Soit $X$ une variable aléatoire suivant la loi normale $\\mathcal{N}(100, 15)$. Que valent $E(X)$ et $\\sigma(X)$ ?", "points": 1, "answer": "$E(X) = 100$ et $\\sigma(X) = 15$" },
-            { "number": "2", "text": "Calculer $P(85 < X < 115)$ (à la calculatrice).", "points": 2, "answer": "$P(85 < X < 115) \\approx 0.6827$ (intervalle $[\\mu-\\sigma, \\mu+\\sigma]$)" },
-            { "number": "3", "text": "Déterminer la valeur $a$ telle que $P(X > a) = 0.05$.", "points": 2, "answer": "$a = \\mu + 1.645\\sigma = 100 + 1.645 \\times 15 \\approx 124.7$" }
-          ]
-        }
-      ]
+      "session": "amerique-sud",
+      "track": "spe",
+      "paper": 1,
+      "subjectPath": "/annales/2023_spe-mathematiques_amerique-sud_01_sujet.pdf",
+      "correctionPath": null,
+      "exercises": []
     },
     {
-      "id": "2023-metropole-ex4",
+      "id": "2023-amerique-sud-02",
       "year": 2023,
-      "session": "Métropole",
-      "exerciseNumber": 4,
-      "title": "Convexité et point d'inflexion",
-      "subject": "analyse",
-      "themes": ["Convexité", "Dérivée seconde", "Inflexion"],
-      "points": 5,
-      "duration": 45,
-      "difficulty": "moyen",
-      "description": "Étude de la convexité d'une fonction.",
-      "parts": [
-        {
-          "id": "A",
-          "title": "Convexité",
-          "questions": [
-            { "number": "1", "text": "Soit $f(x) = x^3 - 3x^2 + 2x$. Calculer $f''(x)$.", "points": 1, "answer": "$f'(x) = 3x^2 - 6x + 2$, donc $f''(x) = 6x - 6$" },
-            { "number": "2", "text": "Étudier le signe de $f''(x)$ et en déduire la convexité de $f$.", "points": 2, "answer": "$f''(x) = 6(x-1)$. $f''(x) < 0$ si $x < 1$ (concave), $f''(x) > 0$ si $x > 1$ (convexe)." },
-            { "number": "3", "text": "Déterminer les coordonnées du point d'inflexion.", "points": 2, "answer": "Point d'inflexion en $x = 1$. $f(1) = 1 - 3 + 2 = 0$. Point d'inflexion : $(1, 0)$." }
-          ]
-        }
-      ]
+      "session": "amerique-sud",
+      "track": "spe",
+      "paper": 2,
+      "subjectPath": "/annales/2023_spe-mathematiques_amerique-sud_02_sujet.pdf",
+      "correctionPath": null,
+      "exercises": []
     },
     {
-      "id": "2023-antilles-ex1",
+      "id": "2023-asie-01",
       "year": 2023,
-      "session": "Antilles-Guyane",
-      "exerciseNumber": 1,
-      "title": "Fonction avec paramètre",
-      "subject": "analyse",
-      "themes": ["Fonctions", "Dérivées", "Paramètre"],
-      "points": 5,
-      "duration": 50,
-      "difficulty": "difficile",
-      "description": "Étude d'une famille de fonctions dépendant d'un paramètre.",
-      "parts": [
-        {
-          "id": "A",
-          "title": "Étude selon le paramètre",
-          "questions": [
-            { "number": "1", "text": "Soit $f_m(x) = x^2 - 2mx + 1$ où $m$ est un réel. Calculer $f'_m(x)$.", "points": 1, "answer": "$f'_m(x) = 2x - 2m$" },
-            { "number": "2", "text": "Trouver les coordonnées du sommet de la parabole.", "points": 2, "answer": "Le sommet est atteint pour $x = m$. $f_m(m) = m^2 - 2m^2 + 1 = 1 - m^2$. Sommet : $(m, 1-m^2)$." },
-            { "number": "3", "text": "Pour quelles valeurs de $m$ la fonction $f_m$ a-t-elle deux racines réelles distinctes ?", "points": 2, "answer": "$\\Delta = 4m^2 - 4 > 0 \\Leftrightarrow m^2 > 1 \\Leftrightarrow m < -1$ ou $m > 1$" }
-          ]
-        }
-      ]
+      "session": "asie",
+      "track": "spe",
+      "paper": 1,
+      "subjectPath": "/annales/2023_spe-mathematiques_asie_01_sujet.pdf",
+      "correctionPath": "/annales/2023_spe-mathematiques_asie_01_corrige.pdf",
+      "exercises": []
     },
     {
-      "id": "2023-antilles-ex2",
+      "id": "2023-asie-02",
       "year": 2023,
-      "session": "Antilles-Guyane",
-      "exerciseNumber": 2,
-      "title": "Probabilités conditionnelles",
-      "subject": "probabilites",
-      "themes": ["Probabilités conditionnelles", "Arbre", "Formule de Bayes"],
-      "points": 5,
-      "duration": 40,
-      "difficulty": "moyen",
-      "description": "Utilisation des probabilités conditionnelles et de la formule de Bayes.",
-      "parts": [
-        {
-          "id": "A",
-          "title": "Arbre de probabilités",
-          "questions": [
-            { "number": "1", "text": "Une urne contient 3 boules rouges et 2 blanches. On tire 2 boules successivement sans remise. Calculer $P(R_1)$ et $P(R_2|R_1)$.", "points": 2, "answer": "$P(R_1) = \\frac{3}{5}$ et $P(R_2|R_1) = \\frac{2}{4} = \\frac{1}{2}$" },
-            { "number": "2", "text": "Calculer $P(R_1 \\cap R_2)$.", "points": 1, "answer": "$P(R_1 \\cap R_2) = P(R_1) \\times P(R_2|R_1) = \\frac{3}{5} \\times \\frac{1}{2} = \\frac{3}{10}$" },
-            { "number": "3", "text": "Calculer $P(R_2)$ en utilisant la formule des probabilités totales.", "points": 2, "answer": "$P(R_2) = P(R_1)P(R_2|R_1) + P(\\bar{R_1})P(R_2|\\bar{R_1}) = \\frac{3}{5} \\times \\frac{2}{4} + \\frac{2}{5} \\times \\frac{3}{4} = \\frac{3}{10} + \\frac{3}{10} = \\frac{3}{5}$" }
-          ]
-        }
-      ]
+      "session": "asie",
+      "track": "spe",
+      "paper": 2,
+      "subjectPath": "/annales/2023_spe-mathematiques_asie_02_sujet.pdf",
+      "correctionPath": null,
+      "exercises": []
     },
     {
-      "id": "2023-asie-ex1",
+      "id": "2023-centres-etranger-01",
       "year": 2023,
-      "session": "Asie",
-      "exerciseNumber": 1,
-      "title": "Suite arithmético-géométrique",
-      "subject": "analyse",
-      "themes": ["Suites", "Arithmético-géométrique", "Limites"],
-      "points": 5,
-      "duration": 50,
-      "difficulty": "difficile",
-      "description": "Étude d'une suite arithmético-géométrique.",
-      "parts": [
-        {
-          "id": "A",
-          "title": "Suite auxiliaire",
-          "questions": [
-            { "number": "1", "text": "Soit $(u_n)$ définie par $u_0 = 4$ et $u_{n+1} = \\frac{1}{2}u_n + 3$. Montrer que $(v_n)$ définie par $v_n = u_n - 6$ est géométrique.", "points": 2, "answer": "$v_{n+1} = u_{n+1} - 6 = \\frac{1}{2}u_n + 3 - 6 = \\frac{1}{2}u_n - 3 = \\frac{1}{2}(u_n - 6) = \\frac{1}{2}v_n$\nDonc $(v_n)$ est géométrique de raison $\\frac{1}{2}$." },
-            { "number": "2", "text": "Exprimer $v_n$ puis $u_n$ en fonction de $n$.", "points": 2, "answer": "$v_n = v_0 \\times (\\frac{1}{2})^n = (4-6) \\times (\\frac{1}{2})^n = -2 \\times (\\frac{1}{2})^n$\n$u_n = v_n + 6 = 6 - 2 \\times (\\frac{1}{2})^n$" },
-            { "number": "3", "text": "Calculer $\\lim_{n \\to +\\infty} u_n$.", "points": 1, "answer": "$\\lim_{n \\to +\\infty} (\\frac{1}{2})^n = 0$, donc $\\lim_{n \\to +\\infty} u_n = 6$" }
-          ]
-        }
-      ]
+      "session": "centres-etranger",
+      "track": "spe",
+      "paper": 1,
+      "subjectPath": "/annales/2023_spe-mathematiques_centres-etranger_01_sujet.pdf",
+      "correctionPath": "/annales/2023_spe-mathematiques_centres-etranger_01_corrige.pdf",
+      "exercises": []
     },
     {
-      "id": "2022-metropole-ex1",
+      "id": "2023-centres-etranger-02",
+      "year": 2023,
+      "session": "centres-etranger",
+      "track": "spe",
+      "paper": 2,
+      "subjectPath": "/annales/2023_spe-mathematiques_centres-etranger_02_sujet.pdf",
+      "correctionPath": "/annales/2023_spe-mathematiques_centres-etranger_02_corrige.pdf",
+      "exercises": []
+    },
+    {
+      "id": "2023-la-reunion-01",
+      "year": 2023,
+      "session": "la-reunion",
+      "track": "spe",
+      "paper": 1,
+      "subjectPath": "/annales/2023_spe-mathematiques_la-reunion_01_sujet.pdf",
+      "correctionPath": "/annales/2023_spe-mathematiques_la-reunion_01_corrige.pdf",
+      "exercises": []
+    },
+    {
+      "id": "2023-la-reunion-02",
+      "year": 2023,
+      "session": "la-reunion",
+      "track": "spe",
+      "paper": 2,
+      "subjectPath": "/annales/2023_spe-mathematiques_la-reunion_02_sujet.pdf",
+      "correctionPath": null,
+      "exercises": []
+    },
+    {
+      "id": "2023-liban-01",
+      "year": 2023,
+      "session": "liban",
+      "track": "spe",
+      "paper": 1,
+      "subjectPath": "/annales/2023_spe-mathematiques_liban_01_sujet.pdf",
+      "correctionPath": "/annales/2023_spe-mathematiques_liban_01_corrige.pdf",
+      "exercises": []
+    },
+    {
+      "id": "2023-liban-02",
+      "year": 2023,
+      "session": "liban",
+      "track": "spe",
+      "paper": 2,
+      "subjectPath": "/annales/2023_spe-mathematiques_liban_02_sujet.pdf",
+      "correctionPath": null,
+      "exercises": []
+    },
+    {
+      "id": "2023-metropole-01",
+      "year": 2023,
+      "session": "metropole",
+      "track": "spe",
+      "paper": 1,
+      "subjectPath": "/annales/2023_spe-mathematiques_metropole_01_sujet.pdf",
+      "correctionPath": "/annales/2023_spe-mathematiques_metropole_01_corrige.pdf",
+      "exercises": []
+    },
+    {
+      "id": "2023-metropole-02",
+      "year": 2023,
+      "session": "metropole",
+      "track": "spe",
+      "paper": 2,
+      "subjectPath": "/annales/2023_spe-mathematiques_metropole_02_sujet.pdf",
+      "correctionPath": "/annales/2023_spe-mathematiques_metropole_02_corrige.pdf",
+      "exercises": []
+    },
+    {
+      "id": "2023-nouv-caledonie-01",
+      "year": 2023,
+      "session": "nouv-caledonie",
+      "track": "spe",
+      "paper": 1,
+      "subjectPath": "/annales/2023_spe-mathematiques_nouv-caledonie_01_sujet.pdf",
+      "correctionPath": null,
+      "exercises": []
+    },
+    {
+      "id": "2023-nouv-caledonie-02",
+      "year": 2023,
+      "session": "nouv-caledonie",
+      "track": "spe",
+      "paper": 2,
+      "subjectPath": "/annales/2023_spe-mathematiques_nouv-caledonie_02_sujet.pdf",
+      "correctionPath": null,
+      "exercises": []
+    },
+    {
+      "id": "2023-polynesie-01",
+      "year": 2023,
+      "session": "polynesie",
+      "track": "spe",
+      "paper": 1,
+      "subjectPath": "/annales/2023_spe-mathematiques_polynesie_01_sujet.pdf",
+      "correctionPath": null,
+      "exercises": []
+    },
+    {
+      "id": "2023-polynesie-02",
+      "year": 2023,
+      "session": "polynesie",
+      "track": "spe",
+      "paper": 2,
+      "subjectPath": "/annales/2023_spe-mathematiques_polynesie_02_sujet.pdf",
+      "correctionPath": null,
+      "exercises": []
+    },
+    {
+      "id": "2022-amerique-nord-01",
       "year": 2022,
-      "session": "Métropole",
-      "exerciseNumber": 1,
-      "title": "Fonction trigonométrique",
-      "subject": "analyse",
-      "themes": ["Trigonométrie", "Dérivation", "Variations"],
-      "points": 5,
-      "duration": 45,
-      "difficulty": "moyen",
-      "description": "Étude d'une fonction trigonométrique.",
-      "parts": [
-        {
-          "id": "A",
-          "title": "Étude de $f$",
-          "questions": [
-            { "number": "1", "text": "Soit $f(x) = \\cos(2x) + 2\\cos(x)$ sur $[0, 2\\pi]$. Montrer que $f(x) = 2\\cos^2(x) + 2\\cos(x) - 1$.", "points": 1, "answer": "On utilise $\\cos(2x) = 2\\cos^2(x) - 1$.\nDonc $f(x) = 2\\cos^2(x) - 1 + 2\\cos(x) = 2\\cos^2(x) + 2\\cos(x) - 1$." },
-            { "number": "2", "text": "En posant $X = \\cos(x)$, résoudre $f(x) = 0$.", "points": 2, "answer": "$2X^2 + 2X - 1 = 0$. $\\Delta = 4 + 8 = 12$.\n$X = \\frac{-2 \\pm 2\\sqrt{3}}{4} = \\frac{-1 \\pm \\sqrt{3}}{2}$.\nSeule $X = \\frac{-1 + \\sqrt{3}}{2} \\approx 0.366$ est dans $[-1,1]$." },
-            { "number": "3", "text": "Calculer $f'(x)$.", "points": 2, "answer": "$f'(x) = -2\\sin(2x) - 2\\sin(x) = -4\\sin(x)\\cos(x) - 2\\sin(x) = -2\\sin(x)(2\\cos(x) + 1)$" }
-          ]
-        }
-      ]
+      "session": "amerique-nord",
+      "track": "spe",
+      "paper": 1,
+      "subjectPath": "/annales/2022_spe-mathematiques_amerique-nord_01_sujet.pdf",
+      "correctionPath": "/annales/2022_spe-mathematiques_amerique-nord_01_corrige.pdf",
+      "exercises": []
     },
     {
-      "id": "2022-metropole-ex2",
+      "id": "2022-amerique-nord-02",
       "year": 2022,
-      "session": "Métropole",
-      "exerciseNumber": 2,
-      "title": "Vecteurs et produit scalaire",
-      "subject": "geometrie",
-      "themes": ["Vecteurs", "Produit scalaire", "Orthogonalité"],
-      "points": 5,
-      "duration": 40,
-      "difficulty": "moyen",
-      "description": "Utilisation du produit scalaire pour des problèmes géométriques.",
-      "parts": [
-        {
-          "id": "A",
-          "title": "Produit scalaire",
-          "questions": [
-            { "number": "1", "text": "Soient $\\vec{u}(3, -1)$ et $\\vec{v}(2, 6)$. Calculer $\\vec{u} \\cdot \\vec{v}$.", "points": 1, "answer": "$\\vec{u} \\cdot \\vec{v} = 3 \\times 2 + (-1) \\times 6 = 6 - 6 = 0$" },
-            { "number": "2", "text": "Que peut-on en déduire sur $\\vec{u}$ et $\\vec{v}$ ?", "points": 1, "answer": "$\\vec{u} \\cdot \\vec{v} = 0$, donc $\\vec{u}$ et $\\vec{v}$ sont orthogonaux." },
-            { "number": "3", "text": "Calculer $||\\vec{u}||$ et $||\\vec{v}||$.", "points": 1, "answer": "$||\\vec{u}|| = \\sqrt{9+1} = \\sqrt{10}$ et $||\\vec{v}|| = \\sqrt{4+36} = \\sqrt{40} = 2\\sqrt{10}$" },
-            { "number": "4", "text": "Déterminer l'aire du parallélogramme construit sur $\\vec{u}$ et $\\vec{v}$.", "points": 2, "answer": "Aire $= ||\\vec{u}|| \\times ||\\vec{v}|| = \\sqrt{10} \\times 2\\sqrt{10} = 20$ (car $\\vec{u} \\perp \\vec{v}$)" }
-          ]
-        }
-      ]
+      "session": "amerique-nord",
+      "track": "spe",
+      "paper": 2,
+      "subjectPath": "/annales/2022_spe-mathematiques_amerique-nord_02_sujet.pdf",
+      "correctionPath": "/annales/2022_spe-mathematiques_amerique-nord_02_corrige.pdf",
+      "exercises": []
     },
     {
-      "id": "2022-metropole-ex3",
+      "id": "2022-amerique-sud-01",
       "year": 2022,
-      "session": "Métropole",
-      "exerciseNumber": 3,
-      "title": "Intégration par parties",
-      "subject": "analyse",
-      "themes": ["Intégration", "Parties", "Primitives"],
-      "points": 5,
-      "duration": 45,
-      "difficulty": "difficile",
-      "description": "Calcul d'intégrales par la méthode d'intégration par parties.",
-      "parts": [
-        {
-          "id": "A",
-          "title": "Intégration par parties",
-          "questions": [
-            { "number": "1", "text": "Rappeler la formule d'intégration par parties.", "points": 1, "answer": "$\\int_a^b u'(x)v(x)dx = [u(x)v(x)]_a^b - \\int_a^b u(x)v'(x)dx$" },
-            { "number": "2", "text": "Calculer $\\int_0^1 xe^x dx$ en posant $u'(x) = e^x$ et $v(x) = x$.", "points": 2, "answer": "$u(x) = e^x$, $v'(x) = 1$.\n$\\int_0^1 xe^x dx = [xe^x]_0^1 - \\int_0^1 e^x dx = e - [e^x]_0^1 = e - (e-1) = 1$" },
-            { "number": "3", "text": "Calculer $\\int_1^e x\\ln(x) dx$.", "points": 2, "answer": "On pose $u'(x) = x$ et $v(x) = \\ln(x)$.\n$u(x) = \\frac{x^2}{2}$, $v'(x) = \\frac{1}{x}$.\n$\\int_1^e x\\ln(x)dx = [\\frac{x^2}{2}\\ln(x)]_1^e - \\int_1^e \\frac{x}{2}dx = \\frac{e^2}{2} - [\\frac{x^2}{4}]_1^e = \\frac{e^2}{2} - \\frac{e^2-1}{4} = \\frac{e^2+1}{4}$" }
-          ]
-        }
-      ]
+      "session": "amerique-sud",
+      "track": "spe",
+      "paper": 1,
+      "subjectPath": "/annales/2022_spe-mathematiques_amerique-sud_01_sujet.pdf",
+      "correctionPath": null,
+      "exercises": []
     },
     {
-      "id": "2022-antilles-ex1",
+      "id": "2022-amerique-sud-02",
       "year": 2022,
-      "session": "Antilles-Guyane",
-      "exerciseNumber": 1,
-      "title": "Continuité et TVI",
-      "subject": "analyse",
-      "themes": ["Continuité", "TVI", "Équations"],
-      "points": 5,
-      "duration": 40,
-      "difficulty": "moyen",
-      "description": "Application du théorème des valeurs intermédiaires.",
-      "parts": [
-        {
-          "id": "A",
-          "title": "Théorème des valeurs intermédiaires",
-          "questions": [
-            { "number": "1", "text": "Soit $f(x) = x^3 + x - 1$. Calculer $f(0)$ et $f(1)$.", "points": 1, "answer": "$f(0) = -1 < 0$ et $f(1) = 1 > 0$" },
-            { "number": "2", "text": "Montrer que l'équation $f(x) = 0$ admet une unique solution sur $[0, 1]$.", "points": 2, "answer": "$f$ est continue sur $[0,1]$, $f(0) < 0 < f(1)$.\nD'après le TVI, $\\exists \\alpha \\in ]0,1[$ tel que $f(\\alpha) = 0$.\n$f'(x) = 3x^2 + 1 > 0$, donc $f$ est strictement croissante : unicité." },
-            { "number": "3", "text": "Donner un encadrement de $\\alpha$ à $10^{-1}$ près.", "points": 2, "answer": "$f(0.6) \\approx -0.18 < 0$ et $f(0.7) \\approx 0.04 > 0$.\nDonc $\\alpha \\in [0.6, 0.7]$, soit $\\alpha \\approx 0.7$ à $10^{-1}$ près." }
-          ]
-        }
-      ]
+      "session": "amerique-sud",
+      "track": "spe",
+      "paper": 2,
+      "subjectPath": "/annales/2022_spe-mathematiques_amerique-sud_02_sujet.pdf",
+      "correctionPath": null,
+      "exercises": []
     },
     {
-      "id": "2022-antilles-ex2",
+      "id": "2022-asie-01",
       "year": 2022,
-      "session": "Antilles-Guyane",
-      "exerciseNumber": 2,
-      "title": "Loi exponentielle",
-      "subject": "probabilites",
-      "themes": ["Loi exponentielle", "Espérance", "Probabilités"],
-      "points": 5,
-      "duration": 40,
-      "difficulty": "moyen",
-      "description": "Étude d'une variable aléatoire suivant une loi exponentielle.",
-      "parts": [
-        {
-          "id": "A",
-          "title": "Loi exponentielle",
-          "questions": [
-            { "number": "1", "text": "Soit $T$ une variable aléatoire suivant la loi exponentielle de paramètre $\\lambda = 0.5$. Quelle est la fonction de densité de $T$ ?", "points": 1, "answer": "$f(t) = 0.5e^{-0.5t}$ pour $t \\geq 0$, $f(t) = 0$ sinon." },
-            { "number": "2", "text": "Calculer $P(T \\leq 2)$.", "points": 2, "answer": "$P(T \\leq 2) = 1 - e^{-0.5 \\times 2} = 1 - e^{-1} \\approx 0.632$" },
-            { "number": "3", "text": "Calculer l'espérance $E(T)$.", "points": 2, "answer": "Pour une loi exponentielle de paramètre $\\lambda$, $E(T) = \\frac{1}{\\lambda} = \\frac{1}{0.5} = 2$." }
-          ]
-        }
-      ]
+      "session": "asie",
+      "track": "spe",
+      "paper": 1,
+      "subjectPath": "/annales/2022_spe-mathematiques_asie_01_sujet.pdf",
+      "correctionPath": null,
+      "exercises": []
     },
     {
-      "id": "2021-metropole-ex1",
-      "year": 2021,
-      "session": "Métropole",
-      "exerciseNumber": 1,
-      "title": "Suite récurrente et limite",
-      "subject": "analyse",
-      "themes": ["Suites", "Récurrence", "Limites"],
-      "points": 5,
-      "duration": 45,
-      "difficulty": "moyen",
-      "description": "Étude d'une suite définie par récurrence.",
-      "parts": [
-        {
-          "id": "A",
-          "title": "Étude de la suite",
-          "questions": [
-            { "number": "1", "text": "Soit $(u_n)$ définie par $u_0 = 1$ et $u_{n+1} = \\sqrt{2u_n + 3}$. Calculer $u_1$ et $u_2$.", "points": 1, "answer": "$u_1 = \\sqrt{2 \\times 1 + 3} = \\sqrt{5} \\approx 2.24$\n$u_2 = \\sqrt{2\\sqrt{5} + 3} \\approx 2.77$" },
-            { "number": "2", "text": "Montrer par récurrence que pour tout $n \\in \\mathbb{N}$, $0 < u_n < 3$.", "points": 2, "answer": "**Init** : $0 < u_0 = 1 < 3$ ✓\n**Héré** : Si $0 < u_n < 3$, alors $3 < 2u_n + 3 < 9$, donc $\\sqrt{3} < u_{n+1} < 3$ ✓\n**Concl** : Par récurrence, $0 < u_n < 3$ pour tout $n$." },
-            { "number": "3", "text": "Montrer que $(u_n)$ est croissante.", "points": 1, "answer": "$u_{n+1} - u_n > 0$ ⟺ $\\sqrt{2u_n+3} > u_n$ ⟺ $2u_n+3 > u_n^2$ (car $u_n > 0$).\nOr $u_n^2 - 2u_n - 3 = (u_n-3)(u_n+1) < 0$ car $u_n < 3$ et $u_n > 0$. ✓" },
-            { "number": "4", "text": "En déduire que $(u_n)$ converge et calculer sa limite.", "points": 1, "answer": "$(u_n)$ croissante majorée par 3, donc converge.\nSoit $\\ell$ la limite : $\\ell = \\sqrt{2\\ell + 3}$, donc $\\ell^2 = 2\\ell + 3$, soit $\\ell^2 - 2\\ell - 3 = 0$.\n$(\\ell-3)(\\ell+1) = 0$ donc $\\ell = 3$ (car $\\ell > 0$)." }
-          ]
-        }
-      ]
+      "id": "2022-asie-02",
+      "year": 2022,
+      "session": "asie",
+      "track": "spe",
+      "paper": 2,
+      "subjectPath": "/annales/2022_spe-mathematiques_asie_02_sujet.pdf",
+      "correctionPath": null,
+      "exercises": []
     },
     {
-      "id": "2021-metropole-ex2",
-      "year": 2021,
-      "session": "Métropole",
-      "exerciseNumber": 2,
-      "title": "Fonction logarithme et aires",
-      "subject": "analyse",
-      "themes": ["Logarithme", "Intégrales", "Aires"],
-      "points": 5,
-      "duration": 50,
-      "difficulty": "difficile",
-      "description": "Calcul d'aires avec la fonction logarithme.",
-      "parts": [
-        {
-          "id": "A",
-          "title": "Étude et intégration",
-          "questions": [
-            { "number": "1", "text": "Soit $f(x) = x\\ln(x)$ définie sur $]0, +\\infty[$. Calculer $f'(x)$.", "points": 1, "answer": "$f'(x) = \\ln(x) + x \\times \\frac{1}{x} = \\ln(x) + 1$" },
-            { "number": "2", "text": "Étudier les variations de $f$ et dresser le tableau de variations.", "points": 2, "answer": "$f'(x) = 0$ ⟺ $\\ln(x) = -1$ ⟺ $x = e^{-1} = \\frac{1}{e}$.\n$f'(x) < 0$ si $x < \\frac{1}{e}$, $f'(x) > 0$ si $x > \\frac{1}{e}$.\nMinimum en $x = \\frac{1}{e}$ : $f(\\frac{1}{e}) = \\frac{1}{e} \\times (-1) = -\\frac{1}{e}$." },
-            { "number": "3", "text": "Calculer $\\int_1^e x\\ln(x) dx$ par IPP.", "points": 2, "answer": "Posons $u'(x) = x$ et $v(x) = \\ln(x)$, donc $u(x) = \\frac{x^2}{2}$ et $v'(x) = \\frac{1}{x}$.\n$\\int_1^e x\\ln(x)dx = [\\frac{x^2}{2}\\ln(x)]_1^e - \\int_1^e \\frac{x^2}{2} \\times \\frac{1}{x}dx$\n$= \\frac{e^2}{2} - 0 - \\int_1^e \\frac{x}{2}dx = \\frac{e^2}{2} - [\\frac{x^2}{4}]_1^e = \\frac{e^2}{2} - \\frac{e^2 - 1}{4} = \\frac{e^2 + 1}{4}$" }
-          ]
-        }
-      ]
+      "id": "2022-centres-etranger-01",
+      "year": 2022,
+      "session": "centres-etranger",
+      "track": "spe",
+      "paper": 1,
+      "subjectPath": "/annales/2022_spe-mathematiques_centres-etranger_01_sujet.pdf",
+      "correctionPath": null,
+      "exercises": []
     },
     {
-      "id": "2021-metropole-ex3",
-      "year": 2021,
-      "session": "Métropole",
-      "exerciseNumber": 3,
-      "title": "Probabilités et variables aléatoires",
-      "subject": "probabilites",
-      "themes": ["Variables aléatoires", "Espérance", "Variance"],
-      "points": 5,
-      "duration": 40,
-      "difficulty": "moyen",
-      "description": "Étude d'une variable aléatoire discrète.",
-      "parts": [
-        {
-          "id": "A",
-          "title": "Variable aléatoire",
-          "questions": [
-            { "number": "1", "text": "Une urne contient 2 boules rouges et 3 boules vertes. On tire 2 boules sans remise. Soit $X$ le nombre de boules rouges. Déterminer la loi de $X$.", "points": 2, "answer": "$P(X=0) = \\frac{3}{5} \\times \\frac{2}{4} = \\frac{6}{20} = \\frac{3}{10}$\n$P(X=1) = \\frac{2}{5} \\times \\frac{3}{4} + \\frac{3}{5} \\times \\frac{2}{4} = \\frac{6}{20} + \\frac{6}{20} = \\frac{12}{20} = \\frac{3}{5}$\n$P(X=2) = \\frac{2}{5} \\times \\frac{1}{4} = \\frac{2}{20} = \\frac{1}{10}$" },
-            { "number": "2", "text": "Calculer $E(X)$.", "points": 2, "answer": "$E(X) = 0 \\times \\frac{3}{10} + 1 \\times \\frac{6}{10} + 2 \\times \\frac{1}{10} = \\frac{8}{10} = 0.8$" },
-            { "number": "3", "text": "Calculer $V(X)$.", "points": 1, "answer": "$E(X^2) = 0 + 1 \\times \\frac{6}{10} + 4 \\times \\frac{1}{10} = 1$\n$V(X) = E(X^2) - [E(X)]^2 = 1 - 0.64 = 0.36$" }
-          ]
-        }
-      ]
+      "id": "2022-centres-etranger-02",
+      "year": 2022,
+      "session": "centres-etranger",
+      "track": "spe",
+      "paper": 2,
+      "subjectPath": "/annales/2022_spe-mathematiques_centres-etranger_02_sujet.pdf",
+      "correctionPath": null,
+      "exercises": []
     },
     {
-      "id": "2021-metropole-ex4",
-      "year": 2021,
-      "session": "Métropole",
-      "exerciseNumber": 4,
-      "title": "Géométrie dans l'espace",
-      "subject": "geometrie",
-      "themes": ["Vecteurs", "Plans", "Distance"],
-      "points": 5,
-      "duration": 45,
-      "difficulty": "difficile",
-      "description": "Positions relatives et calculs de distances dans l'espace.",
-      "parts": [
-        {
-          "id": "A",
-          "title": "Plans et droites",
-          "questions": [
-            { "number": "1", "text": "Soit le plan $(P)$ d'équation $2x - y + z - 4 = 0$. Donner un vecteur normal à $(P)$.", "points": 1, "answer": "$\\vec{n}(2, -1, 1)$ est un vecteur normal à $(P)$." },
-            { "number": "2", "text": "La droite $(d)$ passant par $A(1, 0, 3)$ et de vecteur directeur $\\vec{u}(1, 2, 0)$ est-elle parallèle à $(P)$ ?", "points": 2, "answer": "$\\vec{u} \\cdot \\vec{n} = 1 \\times 2 + 2 \\times (-1) + 0 \\times 1 = 2 - 2 = 0$.\nDonc $\\vec{u} \\perp \\vec{n}$, donc $(d) \\parallel (P)$." },
-            { "number": "3", "text": "Calculer la distance de $A$ au plan $(P)$.", "points": 2, "answer": "$d(A, (P)) = \\frac{|2(1) - 0 + 3 - 4|}{\\sqrt{4 + 1 + 1}} = \\frac{|1|}{\\sqrt{6}} = \\frac{\\sqrt{6}}{6}$" }
-          ]
-        }
-      ]
+      "id": "2022-mayotte-liban-01",
+      "year": 2022,
+      "session": "mayotte-liban",
+      "track": "spe",
+      "paper": 1,
+      "subjectPath": "/annales/2022_spe-mathematiques_mayotte-liban_01_sujet.pdf",
+      "correctionPath": null,
+      "exercises": []
     },
     {
-      "id": "2021-antilles-ex1",
-      "year": 2021,
-      "session": "Antilles-Guyane",
-      "exerciseNumber": 1,
-      "title": "Fonction exponentielle et dérivée",
-      "subject": "analyse",
-      "themes": ["Exponentielle", "Dérivation", "Tableau de variations"],
-      "points": 5,
-      "duration": 45,
-      "difficulty": "moyen",
-      "description": "Étude d'une fonction avec exponentielle.",
-      "parts": [
-        {
-          "id": "A",
-          "title": "Étude de la fonction",
-          "questions": [
-            { "number": "1", "text": "Soit $f(x) = (2x - 1)e^{-x}$. Calculer les limites de $f$ en $+\\infty$ et $-\\infty$.", "points": 2, "answer": "$\\lim_{x \\to +\\infty} (2x-1)e^{-x} = 0$ (croissance comparée)\n$\\lim_{x \\to -\\infty} (2x-1)e^{-x} = -\\infty$ car $e^{-x} \\to +\\infty$ et $2x-1 \\to -\\infty$" },
-            { "number": "2", "text": "Calculer $f'(x)$.", "points": 2, "answer": "$f'(x) = 2e^{-x} + (2x-1)(-1)e^{-x} = e^{-x}(2 - 2x + 1) = e^{-x}(3 - 2x)$" },
-            { "number": "3", "text": "Étudier le signe de $f'(x)$ et les variations de $f$.", "points": 1, "answer": "$f'(x) = e^{-x}(3-2x)$. Comme $e^{-x} > 0$, $f'(x)$ a le signe de $3-2x$.\n$f'(x) > 0$ si $x < \\frac{3}{2}$, $f'(x) < 0$ si $x > \\frac{3}{2}$.\nMaximum en $x = \\frac{3}{2}$ : $f(\\frac{3}{2}) = 2e^{-3/2}$." }
-          ]
-        }
-      ]
+      "id": "2022-mayotte-liban-02",
+      "year": 2022,
+      "session": "mayotte-liban",
+      "track": "spe",
+      "paper": 2,
+      "subjectPath": "/annales/2022_spe-mathematiques_mayotte-liban_02_sujet.pdf",
+      "correctionPath": null,
+      "exercises": []
     },
     {
-      "id": "2021-antilles-ex2",
-      "year": 2021,
-      "session": "Antilles-Guyane",
-      "exerciseNumber": 2,
-      "title": "Nombres complexes et géométrie",
-      "subject": "algebre",
-      "themes": ["Complexes", "Géométrie", "Transformations"],
-      "points": 5,
-      "duration": 50,
-      "difficulty": "difficile",
-      "description": "Utilisation des complexes en géométrie plane.",
-      "parts": [
-        {
-          "id": "A",
-          "title": "Étude géométrique",
-          "questions": [
-            { "number": "1", "text": "Soient $A$, $B$, $C$ d'affixes $z_A = 2$, $z_B = 4i$, $z_C = -2 + 2i$. Calculer $z_B - z_A$ et $z_C - z_A$.", "points": 1, "answer": "$z_B - z_A = 4i - 2 = -2 + 4i$\n$z_C - z_A = -2 + 2i - 2 = -4 + 2i$" },
-            { "number": "2", "text": "Calculer $\\frac{z_C - z_A}{z_B - z_A}$.", "points": 2, "answer": "$\\frac{-4 + 2i}{-2 + 4i} = \\frac{(-4+2i)(-2-4i)}{(-2+4i)(-2-4i)} = \\frac{8 + 16i - 4i - 8i^2}{4 + 16} = \\frac{16 + 12i}{20} = \\frac{4+3i}{5}$" },
-            { "number": "3", "text": "En déduire une mesure de l'angle $(\\overrightarrow{AB}, \\overrightarrow{AC})$.", "points": 2, "answer": "$\\frac{z_C - z_A}{z_B - z_A} = \\frac{4+3i}{5}$ avec $|\\frac{4+3i}{5}| = 1$.\nDonc c'est un nombre de module 1, d'argument $\\theta = \\arctan(\\frac{3}{4}) \\approx 0.644$ rad $\\approx 37°$." }
-          ]
-        }
-      ]
+      "id": "2022-metropole-01",
+      "year": 2022,
+      "session": "metropole",
+      "track": "spe",
+      "paper": 1,
+      "subjectPath": "/annales/2022_spe-mathematiques_metropole_01_sujet.pdf",
+      "correctionPath": "/annales/2022_spe-mathematiques_metropole_01_corrige.pdf",
+      "exercises": []
     },
     {
-      "id": "2021-asie-ex1",
-      "year": 2021,
-      "session": "Asie",
-      "exerciseNumber": 1,
-      "title": "Suite et somme partielle",
-      "subject": "analyse",
-      "themes": ["Suites", "Sommes", "Récurrence"],
-      "points": 5,
-      "duration": 45,
-      "difficulty": "moyen",
-      "description": "Étude d'une suite et calcul de somme.",
-      "parts": [
-        {
-          "id": "A",
-          "title": "Étude de la suite",
-          "questions": [
-            { "number": "1", "text": "Soit $(u_n)$ définie par $u_n = 3^n + 2^n$. Calculer $u_0$, $u_1$ et $u_2$.", "points": 1, "answer": "$u_0 = 1 + 1 = 2$\n$u_1 = 3 + 2 = 5$\n$u_2 = 9 + 4 = 13$" },
-            { "number": "2", "text": "Calculer $S_n = \\sum_{k=0}^{n} u_k$.", "points": 2, "answer": "$S_n = \\sum_{k=0}^{n} 3^k + \\sum_{k=0}^{n} 2^k = \\frac{3^{n+1}-1}{2} + (2^{n+1} - 1) = \\frac{3^{n+1} - 1}{2} + 2^{n+1} - 1$" },
-            { "number": "3", "text": "Montrer que $\\lim_{n \\to +\\infty} \\frac{u_n}{3^n} = 1$.", "points": 2, "answer": "$\\frac{u_n}{3^n} = 1 + \\left(\\frac{2}{3}\\right)^n$.\nComme $|\\frac{2}{3}| < 1$, $\\left(\\frac{2}{3}\\right)^n \\to 0$.\nDonc $\\lim_{n \\to +\\infty} \\frac{u_n}{3^n} = 1$." }
-          ]
-        }
-      ]
+      "id": "2022-metropole-02",
+      "year": 2022,
+      "session": "metropole",
+      "track": "spe",
+      "paper": 2,
+      "subjectPath": "/annales/2022_spe-mathematiques_metropole_02_sujet.pdf",
+      "correctionPath": null,
+      "exercises": []
     },
     {
-      "id": "2021-asie-ex2",
-      "year": 2021,
-      "session": "Asie",
-      "exerciseNumber": 2,
-      "title": "Primitives et intégrales",
-      "subject": "analyse",
-      "themes": ["Primitives", "Intégrales", "Calculs"],
-      "points": 5,
-      "duration": 40,
-      "difficulty": "moyen",
-      "description": "Calculs de primitives et d'intégrales.",
-      "parts": [
-        {
-          "id": "A",
-          "title": "Calculs d'intégrales",
-          "questions": [
-            { "number": "1", "text": "Calculer $\\int_0^{\\pi/2} \\sin(x) dx$.", "points": 1, "answer": "$\\int_0^{\\pi/2} \\sin(x)dx = [-\\cos(x)]_0^{\\pi/2} = -\\cos(\\frac{\\pi}{2}) + \\cos(0) = 0 + 1 = 1$" },
-            { "number": "2", "text": "Calculer $\\int_1^2 \\frac{2x}{x^2 + 1} dx$.", "points": 2, "answer": "On reconnaît $\\frac{u'}{u}$ avec $u = x^2 + 1$.\n$\\int_1^2 \\frac{2x}{x^2+1}dx = [\\ln(x^2+1)]_1^2 = \\ln(5) - \\ln(2) = \\ln(\\frac{5}{2})$" },
-            { "number": "3", "text": "Calculer $\\int_0^1 (2x+1)e^{x^2+x} dx$.", "points": 2, "answer": "On pose $u = x^2 + x$, donc $u' = 2x + 1$.\n$\\int_0^1 (2x+1)e^{x^2+x}dx = [e^{x^2+x}]_0^1 = e^2 - e^0 = e^2 - 1$" }
-          ]
-        }
-      ]
+      "id": "2022-nouv-caledonie-01",
+      "year": 2022,
+      "session": "nouv-caledonie",
+      "track": "spe",
+      "paper": 1,
+      "subjectPath": "/annales/2022_spe-mathematiques_nouv-caledonie_01_sujet.pdf",
+      "correctionPath": null,
+      "exercises": []
+    },
+    {
+      "id": "2022-nouv-caledonie-02",
+      "year": 2022,
+      "session": "nouv-caledonie",
+      "track": "spe",
+      "paper": 2,
+      "subjectPath": "/annales/2022_spe-mathematiques_nouv-caledonie_02_sujet.pdf",
+      "correctionPath": null,
+      "exercises": []
+    },
+    {
+      "id": "2022-polynesie-01",
+      "year": 2022,
+      "session": "polynesie",
+      "track": "spe",
+      "paper": 1,
+      "subjectPath": "/annales/2022_spe-mathematiques_polynesie_01_sujet.pdf",
+      "correctionPath": "/annales/2022_spe-mathematiques_polynesie_01_corrige.pdf",
+      "exercises": []
+    },
+    {
+      "id": "2022-polynesie-02",
+      "year": 2022,
+      "session": "polynesie",
+      "track": "spe",
+      "paper": 2,
+      "subjectPath": "/annales/2022_spe-mathematiques_polynesie_02_sujet.pdf",
+      "correctionPath": "/annales/2022_spe-mathematiques_polynesie_02_corrige.pdf",
+      "exercises": []
     }
   ]
 }
