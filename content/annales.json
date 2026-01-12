@@ -88,7 +88,82 @@
       "paper": 1,
       "subjectPath": "/annales/2025_spe-mathematiques_metropole_01_sujet.pdf",
       "correctionPath": "/annales/2025_spe-mathematiques_metropole_01_corrige.pdf",
-      "exercises": []
+      "exercises": [
+        {
+          "id": "ex1",
+          "title": "Groupes sanguins et probabilites",
+          "pages": [
+            2,
+            3
+          ],
+          "topics": [
+            "Probabilites",
+            "Variables aleatoires",
+            "Loi binomiale"
+          ],
+          "skills": [
+            "Modeliser",
+            "Calculer",
+            "Raisonner"
+          ]
+        },
+        {
+          "id": "ex2",
+          "title": "Etude de fonction logarithme",
+          "pages": [
+            3,
+            4
+          ],
+          "topics": [
+            "Fonctions",
+            "Logarithme",
+            "Derivation",
+            "Convexite",
+            "Integration"
+          ],
+          "skills": [
+            "Representer",
+            "Calculer",
+            "Raisonner"
+          ]
+        },
+        {
+          "id": "ex3",
+          "title": "Geometrie dans l'espace - Vrai/Faux",
+          "pages": [
+            5
+          ],
+          "topics": [
+            "Geometrie dans l'espace",
+            "Vecteurs",
+            "Droites et plans"
+          ],
+          "skills": [
+            "Representer",
+            "Calculer",
+            "Raisonner"
+          ]
+        },
+        {
+          "id": "ex4",
+          "title": "Modele de croissance (suite et E.D.)",
+          "pages": [
+            5,
+            6,
+            7
+          ],
+          "topics": [
+            "Suites",
+            "Equations differentielles",
+            "Algorithmique"
+          ],
+          "skills": [
+            "Modeliser",
+            "Raisonner",
+            "Calculer"
+          ]
+        }
+      ]
     },
     {
       "id": "2025-metropole-02",
@@ -98,7 +173,83 @@
       "paper": 2,
       "subjectPath": "/annales/2025_spe-mathematiques_metropole_02_sujet.pdf",
       "correctionPath": "/annales/2025_spe-mathematiques_metropole_02_corrige.pdf",
-      "exercises": []
+      "exercises": [
+        {
+          "id": "ex1",
+          "title": "Week-end multisports et probabilites",
+          "pages": [
+            2
+          ],
+          "topics": [
+            "Probabilites",
+            "Variables aleatoires",
+            "Loi binomiale"
+          ],
+          "skills": [
+            "Modeliser",
+            "Calculer",
+            "Raisonner"
+          ]
+        },
+        {
+          "id": "ex2",
+          "title": "Geometrie dans l'espace - droites et plans",
+          "pages": [
+            2,
+            3
+          ],
+          "topics": [
+            "Geometrie dans l'espace",
+            "Vecteurs",
+            "Droites et plans"
+          ],
+          "skills": [
+            "Representer",
+            "Calculer",
+            "Raisonner"
+          ]
+        },
+        {
+          "id": "ex3",
+          "title": "Vrai/Faux suites et fonctions",
+          "pages": [
+            3,
+            4
+          ],
+          "topics": [
+            "Suites",
+            "Fonctions",
+            "Logarithme",
+            "Convexite"
+          ],
+          "skills": [
+            "Raisonner",
+            "Calculer",
+            "Representer"
+          ]
+        },
+        {
+          "id": "ex4",
+          "title": "Freinage d'un chariot",
+          "pages": [
+            4,
+            5,
+            6,
+            7
+          ],
+          "topics": [
+            "Fonctions",
+            "Equations differentielles",
+            "Integration"
+          ],
+          "skills": [
+            "Modeliser",
+            "Calculer",
+            "Raisonner",
+            "Representer"
+          ]
+        }
+      ]
     },
     {
       "id": "2025-nouv-caledonie-01",
