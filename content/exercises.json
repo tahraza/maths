@@ -6766,5 +6766,399 @@
       "combinaison",
       "type-bac"
     ]
+  },
+  {
+    "id": "ex-bac-expo-001",
+    "lessonId": "exponentielle",
+    "title": "Etude de fonction produit",
+    "difficulty": 2,
+    "exerciseType": "type-bac",
+    "statement": "Soit $f$ la fonction definie sur $[0;10]$ par $f(t)=3t\\,e^{-0{,}5t+1}$.\n\n1. Montrer que $f'(t)=3(1-0{,}5t)e^{-0{,}5t+1}$.\n2. Dresser le tableau de variations de $f$.\n3. Determiner la valeur maximale de $f$ sur $[0;10]$.",
+    "hints": [
+      "Utilise la derivee d'un produit : $(uv)'=u'v+uv' .",
+      "L'exponentielle est toujours strictement positive.",
+      "Le maximum est atteint au point critique dans l'intervalle."
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Derivee",
+        "content": "Avec $u(t)=3t$ et $v(t)=e^{-0{,}5t+1}$, on obtient $f'(t)=3e^{-0{,}5t+1}-1{,}5t\\,e^{-0{,}5t+1}=3(1-0{,}5t)e^{-0{,}5t+1}$."
+      },
+      {
+        "step": 2,
+        "title": "Variations",
+        "content": "Le signe de $f'(t)$ est celui de $1-0{,}5t$. Ainsi $f$ est croissante sur $[0;2]$ puis decroissante sur $[2;10]$."
+      },
+      {
+        "step": 3,
+        "title": "Maximum",
+        "content": "Le maximum est atteint en $t=2$ et vaut $f(2)=6\\,e^0=6$."
+      }
+    ],
+    "method": "Identifier le point critique via la derivee, puis utiliser le signe de $f'$.",
+    "commonMistakes": [
+      "Oublier le facteur $-0{,}5$ en derivant l'exponentielle.",
+      "Chercher un extremum en dehors de l'intervalle etudie."
+    ],
+    "tags": [
+      "exponentielle",
+      "derivation",
+      "variations",
+      "type-bac"
+    ]
+  },
+  {
+    "id": "ex-bac-expo-002",
+    "lessonId": "exponentielle",
+    "title": "Limites, derivee et concavite",
+    "difficulty": 3,
+    "exerciseType": "type-bac",
+    "statement": "Soit $f$ definie sur $]-\\infty;1[$ par $f(x)=\\dfrac{e^x}{x-1}$.\n\n1. Determiner les limites de $f$ en $-\\infty$ et en $1$.\n2. Calculer $f'(x)$ et etudier les variations.\n3. Montrer que $f''(x)=\\dfrac{e^x(x^2-4x+5)}{(x-1)^3}$ et etudier la concavite.",
+    "hints": [
+      "En $-\\infty$, $e^x \to 0$. En $1$, le denominateur tend vers $0^-$.",
+      "Ecrire $f'(x)=\\dfrac{e^x(x-2)}{(x-1)^2}$.",
+      "Le trinome $x^2-4x+5$ est toujours positif."
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Limites",
+        "content": "Quand $x\to-\\infty$, $e^x\to 0$ et $x-1\to-\\infty$, donc $f(x)\to 0$.\nQuand $x\to 1^-$, $e^x>0$ et $x-1\to 0^-$, donc $f(x)\to-\\infty$."
+      },
+      {
+        "step": 2,
+        "title": "Variations",
+        "content": "On obtient $f'(x)=\\dfrac{e^x(x-2)}{(x-1)^2}$. Sur $]-\\infty;1[$, $x-2<0$ et le denominateur est positif, donc $f'(x)<0$ : $f$ est strictement decroissante."
+      },
+      {
+        "step": 3,
+        "title": "Concavite",
+        "content": "Avec $f''(x)=\\dfrac{e^x(x^2-4x+5)}{(x-1)^3}$, le numerateur est toujours positif et $(x-1)^3<0$ sur $]-\\infty;1[$. Donc $f''(x)<0$ : $f$ est concave."
+      }
+    ],
+    "method": "Factoriser les derivees pour isoler les signes (exponentielle, puissances).",
+    "commonMistakes": [
+      "Se tromper de signe pour la limite en $1^-$.",
+      "Oublier que $(x-1)^2$ est toujours positif."
+    ],
+    "tags": [
+      "exponentielle",
+      "limites",
+      "derivation",
+      "convexite",
+      "type-bac"
+    ]
+  },
+  {
+    "id": "ex-bac-expo-003",
+    "lessonId": "exponentielle",
+    "title": "Refroidissement et equation differentielle",
+    "difficulty": 3,
+    "exerciseType": "type-bac",
+    "statement": "On cherche une fonction $f(t)$ solution de $(E):\\ y'+0{,}02y=m$ avec $f(0)=210$. On admet que la temperature ambiante est $30\\,^\\circ$C (limite de $f$ en $+\\infty$).\n\n1. Determiner $m$.\n2. Donner l'expression de $f(t)$.\n3. Calculer le temps $T$ pour atteindre $50\\,^\\circ$C.",
+    "hints": [
+      "La solution particuliere constante vaut $m/0{,}02$.",
+      "Utilise $f(0)$ pour determiner la constante.",
+      "Isoler l'exponentielle avant de prendre le logarithme."
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Valeur de $m$",
+        "content": "La limite vaut $m/0{,}02=50m$. Comme elle est egale a 30, on obtient $m=0{,}6$."
+      },
+      {
+        "step": 2,
+        "title": "Expression de $f(t)$",
+        "content": "La solution generale est $f(t)=Ce^{-0{,}02t}+30$. Avec $f(0)=210$, on trouve $C=180$, donc $f(t)=180e^{-0{,}02t}+30$."
+      },
+      {
+        "step": 3,
+        "title": "Temps pour $50\\,^\\circ$C",
+        "content": "$180e^{-0{,}02t}+30=50$ donne $e^{-0{,}02t}=\tfrac{1}{9}$, donc $t=\\dfrac{\\ln 9}{0{,}02}\u0007pprox 110$ s."
+      }
+    ],
+    "method": "Identifier la solution particuliere constante puis appliquer la condition initiale.",
+    "commonMistakes": [
+      "Confondre $m/0{,}02$ et $0{,}02m$.",
+      "Oublier que $e^{-0{,}02t}$ est toujours positif."
+    ],
+    "tags": [
+      "exponentielle",
+      "equations-differentielles",
+      "modelisation",
+      "type-bac"
+    ]
+  },
+  {
+    "id": "ex-bac-expo-004",
+    "lessonId": "exponentielle",
+    "title": "Etude complete et tangente",
+    "difficulty": 3,
+    "exerciseType": "type-bac",
+    "statement": "Soit $f(x)=(x^2-5x+6)e^x$ definie sur $\\mathbb{R}$.\n\n1. Determiner les limites de $f$ en $-\\infty$ et $+\\infty$.\n2. Montrer que $f'(x)=(x^2-3x+1)e^x$ et dresser le tableau de variations.\n3. Determiner l'equation de la tangente en $0$.",
+    "hints": [
+      "Pour $x\to -\\infty$, utiliser la croissance comparee entre polynome et exponentielle.",
+      "Le signe de $f'$ depend du trinome $x^2-3x+1$.",
+      "La tangente en $0$ utilise $f(0)$ et $f'(0)$."
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Limites",
+        "content": "Quand $x\to+\\infty$, $e^x$ domine et $f(x)\to+\\infty$. Quand $x\to-\\infty$, $e^x\to 0$ et le polynome est borne par croissance comparee : $f(x)\to 0$."
+      },
+      {
+        "step": 2,
+        "title": "Variations",
+        "content": "$f'(x)=(x^2-3x+1)e^x$. Les racines sont $\frac{3\\pm\\sqrt{5}}{2}$. Comme $e^x>0$, le signe de $f'$ est celui du trinome."
+      },
+      {
+        "step": 3,
+        "title": "Tangente en 0",
+        "content": "$f(0)=6$ et $f'(0)=1$. L'equation est donc $y=x+6$."
+      }
+    ],
+    "method": "Factoriser la derivee pour etudier le signe via le trinome.",
+    "commonMistakes": [
+      "Confondre les limites en $-\\infty$ et $+\\infty$.",
+      "Oublier que $e^x$ est toujours positif."
+    ],
+    "tags": [
+      "exponentielle",
+      "derivation",
+      "limites",
+      "variations",
+      "type-bac"
+    ]
+  },
+  {
+    "id": "ex-bac-expo-005",
+    "lessonId": "exponentielle",
+    "title": "Exponentielle et trigonometrie",
+    "difficulty": 3,
+    "exerciseType": "type-bac",
+    "statement": "Soit $f(x)=e^x\\sin x$ definie sur $[0;2\\pi]$.\n\n1. Montrer que $f'(x)=e^x(\\sin x+\\cos x)$.\n2. Etudier la convexite de $f$ sur $[0;2\\pi]$.",
+    "hints": [
+      "Utiliser la derivee d'un produit.",
+      "On a $f''(x)=2e^x\\cos x$. Le signe depend de $\\cos x$."
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Derivee",
+        "content": "$f'(x)=e^x\\sin x+e^x\\cos x=e^x(\\sin x+\\cos x)$."
+      },
+      {
+        "step": 2,
+        "title": "Convexite",
+        "content": "$f''(x)=2e^x\\cos x$. Ainsi $f$ est convexe sur $[0;\tfrac{\\pi}{2}]\\cup[\tfrac{3\\pi}{2};2\\pi]$ et concave sur $[\tfrac{\\pi}{2};\tfrac{3\\pi}{2}]$."
+      }
+    ],
+    "method": "Deriver deux fois puis etudier le signe de $f''$.",
+    "commonMistakes": [
+      "Oublier le facteur $e^x$ dans $f''$.",
+      "Confondre les intervalles ou $\\cos x$ est positif ou negatif."
+    ],
+    "tags": [
+      "exponentielle",
+      "trigonometrie",
+      "derivation",
+      "convexite",
+      "type-bac"
+    ]
+  },
+  {
+    "id": "ex-bac-expo-006",
+    "lessonId": "exponentielle",
+    "title": "Equation differentielle avec second membre",
+    "difficulty": 3,
+    "exerciseType": "type-bac",
+    "statement": "On considere $(E):\\ y'+\tfrac{1}{4}y=20e^{-x/4}$ sur $\\mathbb{R}$.\n\n1. Determiner $a$ pour que $g(x)=ax\\,e^{-x/4}$ soit une solution particuliere.\n2. Donner la solution generale de $(E)$.\n3. Trouver la solution $f$ telle que $f(0)=8$.",
+    "hints": [
+      "Calculer $g'(x)$ puis $g'(x)+\tfrac{1}{4}g(x)$.",
+      "La solution generale est somme d'une solution particuliere et de la solution de l'homogene.",
+      "Utiliser $f(0)$ pour determiner la constante."
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Solution particuliere",
+        "content": "$g'(x)=ae^{-x/4}-\tfrac{a}{4}x e^{-x/4}$. Donc $g'(x)+\tfrac{1}{4}g(x)=ae^{-x/4}$. On veut $ae^{-x/4}=20e^{-x/4}$, donc $a=20$."
+      },
+      {
+        "step": 2,
+        "title": "Solution generale",
+        "content": "La solution de l'homogene est $Ce^{-x/4}$. Ainsi $y(x)=(20x+C)e^{-x/4}$."
+      },
+      {
+        "step": 3,
+        "title": "Condition initiale",
+        "content": "$f(0)=C=8$, donc $f(x)=(20x+8)e^{-x/4}$."
+      }
+    ],
+    "method": "Trouver une solution particuliere puis ajouter la solution de l'homogene.",
+    "commonMistakes": [
+      "Oublier le facteur $x$ dans la solution particuliere.",
+      "Confondre $e^{-x/4}$ et $e^{-4x}$."
+    ],
+    "tags": [
+      "exponentielle",
+      "equations-differentielles",
+      "type-bac"
+    ]
+  },
+  {
+    "id": "ex-bac-expo-007",
+    "lessonId": "exponentielle",
+    "title": "Suite recurente et fonction $2x e^{-x}$",
+    "difficulty": 3,
+    "exerciseType": "type-bac",
+    "statement": "Soit $f(x)=2x e^{-x}$ definie sur $[0;1]$ et la suite $(u_n)$ definie par $u_{n+1}=f(u_n)$ avec $u_0=0{,}1$.\n\n1. Etudier les variations de $f$ sur $[0;1]$.\n2. Montrer que $0\\le u_n<u_{n+1}\\le 1$.\n3. Determiner la limite de $(u_n)$.",
+    "hints": [
+      "Calculer $f'(x)$ pour les variations.",
+      "Utiliser le fait que $f$ est croissante et que $f(1)=2/e<1$.",
+      "La limite verifie $f(\\ell)=\\ell$."
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Variations de $f$",
+        "content": "$f'(x)=2(1-x)e^{-x}\\ge 0$ sur $[0;1]$, donc $f$ est croissante."
+      },
+      {
+        "step": 2,
+        "title": "Encadrement de la suite",
+        "content": "Comme $f$ est croissante, $u_{n+1}=f(u_n)$ conserve l'ordre. De plus $f(1)=2/e<1$, donc la suite est croissante et majoree par 1."
+      },
+      {
+        "step": 3,
+        "title": "Limite",
+        "content": "La limite $\\ell$ verifie $2\\ell e^{-\\ell}=\\ell$. Comme $\\ell>0$, on obtient $e^{-\\ell}=1/2$, donc $\\ell=\\ln 2$."
+      }
+    ],
+    "method": "Montrer que $f$ est croissante puis utiliser le theoreme de convergence monotone.",
+    "commonMistakes": [
+      "Oublier que $\\ell=0$ n'est pas possible ici car $u_0>0$.",
+      "Confondre la condition fixe $f(\\ell)=\\ell$ avec $f'(\\ell)=1$."
+    ],
+    "tags": [
+      "exponentielle",
+      "suites",
+      "recurrence",
+      "type-bac"
+    ]
+  },
+  {
+    "id": "ex-bac-expo-008",
+    "lessonId": "exponentielle",
+    "title": "QCM - primitives et limites",
+    "difficulty": 2,
+    "exerciseType": "type-bac",
+    "statement": "1. Donner une primitive de $f(x)=x e^x$.\n2. Soit $g(t)=b+a e^{-t}$. On sait que $g(0)=2$ et $\\lim_{t\to+\\infty} g(t)=3$. Determiner $a$ et $b$.",
+    "hints": [
+      "Tester $F(x)=(x-1)e^x$ en derivant.",
+      "La limite en $+\\infty$ est simplement $b$."
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Primitive",
+        "content": "$F(x)=(x-1)e^x$ convient car $F'(x)=x e^x$."
+      },
+      {
+        "step": 2,
+        "title": "Parametres",
+        "content": "La limite vaut $b=3$. Puis $g(0)=b+a=2$ donne $a=-1$."
+      }
+    ],
+    "method": "Deriver pour verifier une primitive, puis utiliser les conditions sur la limite.",
+    "commonMistakes": [
+      "Oublier que $e^{-t}\to 0$ quand $t\to+\\infty$.",
+      "Se tromper de signe sur $a$."
+    ],
+    "tags": [
+      "exponentielle",
+      "primitives",
+      "limites",
+      "type-bac"
+    ]
+  },
+  {
+    "id": "ex-bac-expo-009",
+    "lessonId": "exponentielle",
+    "title": "Modelisation du taux de chlore",
+    "difficulty": 3,
+    "exerciseType": "type-bac",
+    "statement": "On modelise un taux de chlore par une fonction $f$ solution de $y'=-0{,}08y+0{,}02q$ avec $f(0)=0{,}7$. On veut que la limite de $f$ en $+\\infty$ soit $2$.\n\n1. Exprimer $f(t)$ en fonction de $C$ et $q$.\n2. Determiner $q$ puis $C$.",
+    "hints": [
+      "La solution particuliere constante est $q/4$.",
+      "Utiliser la condition initiale pour $C$."
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Solution generale",
+        "content": "On obtient $f(t)=Ce^{-0{,}08t}+\\dfrac{q}{4}$."
+      },
+      {
+        "step": 2,
+        "title": "Parametres",
+        "content": "La limite vaut $q/4=2$, donc $q=8$. Avec $f(0)=0{,}7$, on a $C+2=0{,}7$ donc $C=-1{,}3$."
+      }
+    ],
+    "method": "Determiner la solution particuliere constante puis appliquer les conditions. ",
+    "commonMistakes": [
+      "Confondre $q/4$ et $4q$.",
+      "Oublier que le terme exponentiel tend vers 0 a l'infini."
+    ],
+    "tags": [
+      "exponentielle",
+      "equations-differentielles",
+      "modelisation",
+      "type-bac"
+    ]
+  },
+  {
+    "id": "ex-bac-expo-010",
+    "lessonId": "exponentielle",
+    "title": "Tangente et convexite de $x e^x$",
+    "difficulty": 2,
+    "exerciseType": "type-bac",
+    "statement": "Soit $f(x)=x e^x$ definie sur $]0;+\\infty[$.\n\n1. Calculer $f'(x)$ et etudier les variations.\n2. Montrer que $f$ est convexe sur $]0;+\\infty[$.\n3. Donner l'equation de la tangente au point d'abscisse $1$.",
+    "hints": [
+      "$f'(x)=e^x+x e^x$.",
+      "Deriver encore pour $f''$.",
+      "La tangente utilise $f(1)$ et $f'(1)$."
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Variations",
+        "content": "$f'(x)=(x+1)e^x>0$ sur $]0;+\\infty[$, donc $f$ est croissante."
+      },
+      {
+        "step": 2,
+        "title": "Convexite",
+        "content": "$f''(x)=(x+2)e^x>0$ sur $]0;+\\infty[$, donc $f$ est convexe."
+      },
+      {
+        "step": 3,
+        "title": "Tangente en 1",
+        "content": "$f(1)=e$ et $f'(1)=2e$. Tangente : $y=2e(x-1)+e$."
+      }
+    ],
+    "method": "Deriver puis utiliser le signe de $f'$ et $f''$.",
+    "commonMistakes": [
+      "Oublier le facteur $e^x$ dans $f'$.",
+      "Confondre la pente $f'(1)$ avec la valeur $f(1)$."
+    ],
+    "tags": [
+      "exponentielle",
+      "derivation",
+      "convexite",
+      "type-bac"
+    ]
   }
 ]
