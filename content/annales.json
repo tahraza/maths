@@ -8,7 +8,94 @@
       "paper": 1,
       "subjectPath": "/annales/2025_spe-mathematiques_amerique-nord_01_sujet.pdf",
       "correctionPath": "/annales/2025_spe-mathematiques_amerique-nord_01_corrige.pdf",
-      "exercises": []
+      "exercises": [
+        {
+          "id": "ex1",
+          "pages": [
+            2,
+            3
+          ],
+          "topics": [
+            "Probabilites",
+            "Variables aleatoires",
+            "Loi binomiale",
+            "Fonctions",
+            "Integration",
+            "Equations differentielles",
+            "Geometrie dans l'espace",
+            "Trigonometrie"
+          ],
+          "skills": [
+            "Modeliser",
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex2",
+          "pages": [
+            4
+          ],
+          "topics": [
+            "Suites",
+            "Recurrence",
+            "Fonctions",
+            "Limites",
+            "Algorithmique"
+          ],
+          "skills": [
+            "Modeliser",
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex3",
+          "pages": [
+            5
+          ],
+          "topics": [
+            "Integration",
+            "Geometrie dans l'espace",
+            "Vecteurs",
+            "Droites et plans",
+            "Trigonometrie"
+          ],
+          "skills": [
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex4",
+          "pages": [
+            6,
+            7
+          ],
+          "topics": [
+            "Probabilites",
+            "Fonctions",
+            "Derivation",
+            "Convexite",
+            "Limites",
+            "Integration",
+            "Equations differentielles",
+            "Geometrie dans l'espace",
+            "Vecteurs",
+            "Droites et plans",
+            "Trigonometrie"
+          ],
+          "skills": [
+            "Modeliser",
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        }
+      ]
     },
     {
       "id": "2025-amerique-nord-02",
@@ -18,7 +105,96 @@
       "paper": 2,
       "subjectPath": "/annales/2025_spe-mathematiques_amerique-nord_02_sujet.pdf",
       "correctionPath": "/annales/2025_spe-mathematiques_amerique-nord_02_corrige.pdf",
-      "exercises": []
+      "exercises": [
+        {
+          "id": "ex1",
+          "pages": [
+            2
+          ],
+          "topics": [
+            "Probabilites",
+            "Variables aleatoires",
+            "Loi binomiale",
+            "Fonctions",
+            "Integration",
+            "Trigonometrie"
+          ],
+          "skills": [
+            "Modeliser",
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex2",
+          "pages": [
+            3,
+            4
+          ],
+          "topics": [
+            "Probabilites",
+            "Variables aleatoires",
+            "Suites",
+            "Recurrence",
+            "Fonctions",
+            "Derivation",
+            "Limites",
+            "Logarithme",
+            "Geometrie dans l'espace",
+            "Vecteurs",
+            "Droites et plans",
+            "Trigonometrie",
+            "Algorithmique"
+          ],
+          "skills": [
+            "Modeliser",
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex3",
+          "pages": [
+            5
+          ],
+          "topics": [
+            "Integration",
+            "Geometrie dans l'espace",
+            "Vecteurs",
+            "Droites et plans",
+            "Trigonometrie"
+          ],
+          "skills": [
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex4",
+          "pages": [
+            6
+          ],
+          "topics": [
+            "Fonctions",
+            "Derivation",
+            "Convexite",
+            "Integration",
+            "Equations differentielles",
+            "Geometrie dans l'espace",
+            "Droites et plans",
+            "Trigonometrie"
+          ],
+          "skills": [
+            "Modeliser",
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        }
+      ]
     },
     {
       "id": "2025-amerique-sud-01",
@@ -28,7 +204,89 @@
       "paper": 1,
       "subjectPath": "/annales/2025_spe-mathematiques_amerique-sud_01_sujet.pdf",
       "correctionPath": "/annales/2025_spe-mathematiques_amerique-sud_01_corrige.pdf",
-      "exercises": []
+      "exercises": [
+        {
+          "id": "ex1",
+          "pages": [
+            2
+          ],
+          "topics": [
+            "Probabilites",
+            "Suites",
+            "Recurrence",
+            "Fonctions",
+            "Limites",
+            "Integration",
+            "Algorithmique"
+          ],
+          "skills": [
+            "Modeliser",
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex2",
+          "pages": [
+            3
+          ],
+          "topics": [
+            "Probabilites",
+            "Variables aleatoires",
+            "Loi binomiale",
+            "Equations differentielles",
+            "Geometrie dans l'espace",
+            "Trigonometrie"
+          ],
+          "skills": [
+            "Modeliser",
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex3",
+          "pages": [
+            4,
+            5
+          ],
+          "topics": [
+            "Fonctions",
+            "Derivation",
+            "Limites",
+            "Equations differentielles",
+            "Trigonometrie"
+          ],
+          "skills": [
+            "Modeliser",
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex4",
+          "pages": [
+            6
+          ],
+          "topics": [
+            "Fonctions",
+            "Derivation",
+            "Integration",
+            "Geometrie dans l'espace",
+            "Vecteurs",
+            "Droites et plans",
+            "Trigonometrie"
+          ],
+          "skills": [
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        }
+      ]
     },
     {
       "id": "2025-amerique-sud-02",
@@ -38,7 +296,87 @@
       "paper": 2,
       "subjectPath": "/annales/2025_spe-mathematiques_amerique-sud_02_sujet.pdf",
       "correctionPath": "/annales/2025_spe-mathematiques_amerique-sud_02_corrige.pdf",
-      "exercises": []
+      "exercises": [
+        {
+          "id": "ex1",
+          "pages": [
+            2
+          ],
+          "topics": [
+            "Probabilites",
+            "Variables aleatoires",
+            "Loi binomiale",
+            "Trigonometrie"
+          ],
+          "skills": [
+            "Modeliser",
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex2",
+          "pages": [
+            3
+          ],
+          "topics": [
+            "Integration",
+            "Geometrie dans l'espace",
+            "Vecteurs",
+            "Droites et plans"
+          ],
+          "skills": [
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex3",
+          "pages": [
+            4
+          ],
+          "topics": [
+            "Suites",
+            "Recurrence",
+            "Limites",
+            "Logarithme",
+            "Exponentielle",
+            "Algorithmique"
+          ],
+          "skills": [
+            "Modeliser",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex4",
+          "pages": [
+            5
+          ],
+          "topics": [
+            "Probabilites",
+            "Combinatoire",
+            "Fonctions",
+            "Derivation",
+            "Limites",
+            "Integration",
+            "Equations differentielles",
+            "Geometrie dans l'espace",
+            "Vecteurs",
+            "Droites et plans",
+            "Trigonometrie"
+          ],
+          "skills": [
+            "Modeliser",
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        }
+      ]
     },
     {
       "id": "2025-asie-01",
@@ -48,7 +386,81 @@
       "paper": 1,
       "subjectPath": "/annales/2025_spe-mathematiques_asie_01_sujet.pdf",
       "correctionPath": "/annales/2025_spe-mathematiques_asie_01_corrige.pdf",
-      "exercises": []
+      "exercises": [
+        {
+          "id": "ex1",
+          "pages": [
+            2
+          ],
+          "topics": [
+            "Geometrie dans l'espace",
+            "Vecteurs",
+            "Droites et plans",
+            "Trigonometrie"
+          ],
+          "skills": [
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex2",
+          "pages": [
+            3,
+            4
+          ],
+          "topics": [
+            "Probabilites",
+            "Variables aleatoires",
+            "Loi binomiale",
+            "Suites",
+            "Fonctions"
+          ],
+          "skills": [
+            "Modeliser",
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex3",
+          "pages": [
+            5
+          ],
+          "topics": [
+            "Suites",
+            "Recurrence",
+            "Fonctions",
+            "Algorithmique"
+          ],
+          "skills": [
+            "Modeliser",
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex4",
+          "pages": [
+            6
+          ],
+          "topics": [
+            "Fonctions",
+            "Derivation",
+            "Limites",
+            "Geometrie dans l'espace",
+            "Vecteurs"
+          ],
+          "skills": [
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        }
+      ]
     },
     {
       "id": "2025-asie-02",
@@ -58,7 +470,87 @@
       "paper": 2,
       "subjectPath": "/annales/2025_spe-mathematiques_asie_02_sujet.pdf",
       "correctionPath": "/annales/2025_spe-mathematiques_asie_02_corrige.pdf",
-      "exercises": []
+      "exercises": [
+        {
+          "id": "ex1",
+          "pages": [
+            2,
+            3
+          ],
+          "topics": [
+            "Probabilites",
+            "Variables aleatoires",
+            "Loi binomiale",
+            "Fonctions",
+            "Integration",
+            "Trigonometrie"
+          ],
+          "skills": [
+            "Modeliser",
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex2",
+          "pages": [
+            4
+          ],
+          "topics": [
+            "Suites",
+            "Recurrence",
+            "Fonctions",
+            "Limites",
+            "Algorithmique"
+          ],
+          "skills": [
+            "Modeliser",
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex3",
+          "pages": [
+            5
+          ],
+          "topics": [
+            "Geometrie dans l'espace",
+            "Vecteurs",
+            "Droites et plans",
+            "Trigonometrie"
+          ],
+          "skills": [
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex4",
+          "pages": [
+            6,
+            7
+          ],
+          "topics": [
+            "Probabilites",
+            "Fonctions",
+            "Derivation",
+            "Equations differentielles",
+            "Geometrie dans l'espace",
+            "Droites et plans",
+            "Trigonometrie"
+          ],
+          "skills": [
+            "Modeliser",
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        }
+      ]
     },
     {
       "id": "2025-centres-etranger-01",
@@ -68,7 +560,90 @@
       "paper": 1,
       "subjectPath": "/annales/2025_spe-mathematiques_centres-etranger_01_sujet.pdf",
       "correctionPath": "/annales/2025_spe-mathematiques_centres-etranger_01_corrige.pdf",
-      "exercises": []
+      "exercises": [
+        {
+          "id": "ex1",
+          "pages": [
+            2,
+            3
+          ],
+          "topics": [
+            "Probabilites",
+            "Variables aleatoires",
+            "Loi binomiale",
+            "Integration",
+            "Trigonometrie"
+          ],
+          "skills": [
+            "Modeliser",
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex2",
+          "pages": [
+            4
+          ],
+          "topics": [
+            "Probabilites",
+            "Integration",
+            "Geometrie dans l'espace",
+            "Vecteurs",
+            "Droites et plans",
+            "Trigonometrie"
+          ],
+          "skills": [
+            "Modeliser",
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex3",
+          "pages": [
+            5
+          ],
+          "topics": [
+            "Fonctions",
+            "Derivation",
+            "Limites",
+            "Logarithme",
+            "Algorithmique"
+          ],
+          "skills": [
+            "Modeliser",
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex4",
+          "pages": [
+            6,
+            7
+          ],
+          "topics": [
+            "Suites",
+            "Recurrence",
+            "Fonctions",
+            "Derivation",
+            "Limites",
+            "Integration",
+            "Equations differentielles",
+            "Trigonometrie"
+          ],
+          "skills": [
+            "Modeliser",
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        }
+      ]
     },
     {
       "id": "2025-centres-etranger-02",
@@ -78,7 +653,87 @@
       "paper": 2,
       "subjectPath": "/annales/2025_spe-mathematiques_centres-etranger_02_sujet.pdf",
       "correctionPath": "/annales/2025_spe-mathematiques_centres-etranger_02_corrige.pdf",
-      "exercises": []
+      "exercises": [
+        {
+          "id": "ex1",
+          "pages": [
+            2
+          ],
+          "topics": [
+            "Suites",
+            "Recurrence",
+            "Fonctions",
+            "Limites",
+            "Algorithmique"
+          ],
+          "skills": [
+            "Modeliser",
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex2",
+          "pages": [
+            3
+          ],
+          "topics": [
+            "Suites",
+            "Fonctions",
+            "Derivation",
+            "Geometrie dans l'espace",
+            "Droites et plans",
+            "Trigonometrie"
+          ],
+          "skills": [
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex3",
+          "pages": [
+            4
+          ],
+          "topics": [
+            "Probabilites",
+            "Variables aleatoires",
+            "Loi binomiale",
+            "Fonctions",
+            "Integration",
+            "Equations differentielles",
+            "Trigonometrie"
+          ],
+          "skills": [
+            "Modeliser",
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex4",
+          "pages": [
+            5
+          ],
+          "topics": [
+            "Probabilites",
+            "Variables aleatoires",
+            "Integration",
+            "Geometrie dans l'espace",
+            "Vecteurs",
+            "Droites et plans"
+          ],
+          "skills": [
+            "Modeliser",
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        }
+      ]
     },
     {
       "id": "2025-metropole-01",
@@ -259,7 +914,84 @@
       "paper": 1,
       "subjectPath": "/annales/2025_spe-mathematiques_nouv-caledonie_01_sujet.pdf",
       "correctionPath": "/annales/2025_spe-mathematiques_nouv-caledonie_01_corrige.pdf",
-      "exercises": []
+      "exercises": [
+        {
+          "id": "ex1",
+          "pages": [
+            2
+          ],
+          "topics": [
+            "Probabilites",
+            "Variables aleatoires",
+            "Trigonometrie"
+          ],
+          "skills": [
+            "Modeliser",
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex2",
+          "pages": [
+            3
+          ],
+          "topics": [
+            "Integration",
+            "Geometrie dans l'espace",
+            "Vecteurs",
+            "Droites et plans",
+            "Trigonometrie"
+          ],
+          "skills": [
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex3",
+          "pages": [
+            4,
+            5
+          ],
+          "topics": [
+            "Suites",
+            "Fonctions",
+            "Derivation",
+            "Limites",
+            "Algorithmique"
+          ],
+          "skills": [
+            "Modeliser",
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex4",
+          "pages": [
+            6
+          ],
+          "topics": [
+            "Combinatoire",
+            "Suites",
+            "Fonctions",
+            "Convexite",
+            "Logarithme",
+            "Equations differentielles",
+            "Trigonometrie"
+          ],
+          "skills": [
+            "Modeliser",
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        }
+      ]
     },
     {
       "id": "2025-nouv-caledonie-02",
@@ -269,7 +1001,86 @@
       "paper": 2,
       "subjectPath": "/annales/2025_spe-mathematiques_nouv-caledonie_02_sujet.pdf",
       "correctionPath": "/annales/2025_spe-mathematiques_nouv-caledonie_02_corrige.pdf",
-      "exercises": []
+      "exercises": [
+        {
+          "id": "ex1",
+          "pages": [
+            2
+          ],
+          "topics": [
+            "Geometrie dans l'espace",
+            "Vecteurs",
+            "Droites et plans",
+            "Trigonometrie"
+          ],
+          "skills": [
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex2",
+          "pages": [
+            3,
+            4
+          ],
+          "topics": [
+            "Probabilites",
+            "Variables aleatoires",
+            "Integration",
+            "Geometrie dans l'espace",
+            "Vecteurs",
+            "Droites et plans",
+            "Trigonometrie"
+          ],
+          "skills": [
+            "Modeliser",
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex3",
+          "pages": [
+            5
+          ],
+          "topics": [
+            "Suites",
+            "Recurrence",
+            "Fonctions",
+            "Derivation",
+            "Limites",
+            "Logarithme"
+          ],
+          "skills": [
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex4",
+          "pages": [
+            6
+          ],
+          "topics": [
+            "Fonctions",
+            "Derivation",
+            "Limites",
+            "Logarithme",
+            "Geometrie dans l'espace",
+            "Vecteurs",
+            "Trigonometrie"
+          ],
+          "skills": [
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        }
+      ]
     },
     {
       "id": "2025-polynesie-01",
@@ -279,7 +1090,99 @@
       "paper": 1,
       "subjectPath": "/annales/2025_spe-mathematiques_polynesie_01_sujet.pdf",
       "correctionPath": "/annales/2025_spe-mathematiques_polynesie_01_corrige.pdf",
-      "exercises": []
+      "exercises": [
+        {
+          "id": "ex1",
+          "pages": [
+            2,
+            3
+          ],
+          "topics": [
+            "Probabilites",
+            "Variables aleatoires",
+            "Loi binomiale",
+            "Suites",
+            "Integration",
+            "Equations differentielles"
+          ],
+          "skills": [
+            "Modeliser",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex2",
+          "pages": [
+            4,
+            5
+          ],
+          "topics": [
+            "Fonctions",
+            "Integration",
+            "Geometrie dans l'espace",
+            "Vecteurs",
+            "Droites et plans",
+            "Trigonometrie"
+          ],
+          "skills": [
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex3",
+          "pages": [
+            6,
+            7
+          ],
+          "topics": [
+            "Probabilites",
+            "Suites",
+            "Fonctions",
+            "Derivation",
+            "Limites",
+            "Integration",
+            "Geometrie dans l'espace",
+            "Vecteurs",
+            "Droites et plans",
+            "Trigonometrie",
+            "Algorithmique"
+          ],
+          "skills": [
+            "Modeliser",
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex4",
+          "pages": [
+            8,
+            9
+          ],
+          "topics": [
+            "Probabilites",
+            "Suites",
+            "Fonctions",
+            "Derivation",
+            "Convexite",
+            "Logarithme",
+            "Equations differentielles",
+            "Geometrie dans l'espace",
+            "Vecteurs",
+            "Trigonometrie"
+          ],
+          "skills": [
+            "Modeliser",
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        }
+      ]
     },
     {
       "id": "2025-polynesie-02",
@@ -289,7 +1192,91 @@
       "paper": 2,
       "subjectPath": "/annales/2025_spe-mathematiques_polynesie_02_sujet.pdf",
       "correctionPath": "/annales/2025_spe-mathematiques_polynesie_02_corrige.pdf",
-      "exercises": []
+      "exercises": [
+        {
+          "id": "ex1",
+          "pages": [
+            2,
+            3
+          ],
+          "topics": [
+            "Probabilites",
+            "Recurrence",
+            "Fonctions",
+            "Limites",
+            "Integration",
+            "Trigonometrie",
+            "Algorithmique"
+          ],
+          "skills": [
+            "Modeliser",
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex2",
+          "pages": [
+            4
+          ],
+          "topics": [
+            "Fonctions",
+            "Derivation",
+            "Convexite",
+            "Limites",
+            "Logarithme",
+            "Vecteurs",
+            "Trigonometrie"
+          ],
+          "skills": [
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex3",
+          "pages": [
+            5
+          ],
+          "topics": [
+            "Integration",
+            "Geometrie dans l'espace",
+            "Vecteurs",
+            "Droites et plans",
+            "Trigonometrie"
+          ],
+          "skills": [
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex4",
+          "pages": [
+            6
+          ],
+          "topics": [
+            "Combinatoire",
+            "Suites",
+            "Fonctions",
+            "Logarithme",
+            "Integration",
+            "Equations differentielles",
+            "Geometrie dans l'espace",
+            "Vecteurs",
+            "Trigonometrie"
+          ],
+          "skills": [
+            "Modeliser",
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        }
+      ]
     },
     {
       "id": "2024-amerique-nord-01",
@@ -299,7 +1286,88 @@
       "paper": 1,
       "subjectPath": "/annales/2024_spe-mathematiques_amerique-nord_01_sujet.pdf",
       "correctionPath": "/annales/2024_spe-mathematiques_amerique-nord_01_corrige.pdf",
-      "exercises": []
+      "exercises": [
+        {
+          "id": "ex1",
+          "pages": [
+            2
+          ],
+          "topics": [
+            "Probabilites",
+            "Variables aleatoires",
+            "Integration",
+            "Trigonometrie"
+          ],
+          "skills": [
+            "Modeliser",
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex2",
+          "pages": [
+            3
+          ],
+          "topics": [
+            "Probabilites",
+            "Integration",
+            "Geometrie dans l'espace",
+            "Vecteurs",
+            "Droites et plans"
+          ],
+          "skills": [
+            "Modeliser",
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex3",
+          "pages": [
+            4
+          ],
+          "topics": [
+            "Fonctions",
+            "Derivation",
+            "Convexite",
+            "Limites",
+            "Logarithme",
+            "Geometrie dans l'espace",
+            "Vecteurs",
+            "Droites et plans",
+            "Trigonometrie"
+          ],
+          "skills": [
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex4",
+          "pages": [
+            5
+          ],
+          "topics": [
+            "Suites",
+            "Limites",
+            "Exponentielle",
+            "Integration",
+            "Equations differentielles",
+            "Trigonometrie",
+            "Algorithmique"
+          ],
+          "skills": [
+            "Modeliser",
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        }
+      ]
     },
     {
       "id": "2024-amerique-nord-02",
@@ -309,7 +1377,87 @@
       "paper": 2,
       "subjectPath": "/annales/2024_spe-mathematiques_amerique-nord_02_sujet.pdf",
       "correctionPath": "/annales/2024_spe-mathematiques_amerique-nord_02_corrige.pdf",
-      "exercises": []
+      "exercises": [
+        {
+          "id": "ex1",
+          "pages": [
+            2,
+            3
+          ],
+          "topics": [
+            "Probabilites",
+            "Variables aleatoires",
+            "Loi binomiale",
+            "Suites",
+            "Fonctions",
+            "Integration",
+            "Trigonometrie"
+          ],
+          "skills": [
+            "Modeliser",
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex2",
+          "pages": [
+            4
+          ],
+          "topics": [
+            "Geometrie dans l'espace",
+            "Vecteurs",
+            "Droites et plans"
+          ],
+          "skills": [
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex3",
+          "pages": [
+            5
+          ],
+          "topics": [
+            "Suites",
+            "Recurrence",
+            "Fonctions",
+            "Limites",
+            "Logarithme",
+            "Algorithmique"
+          ],
+          "skills": [
+            "Modeliser",
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex4",
+          "pages": [
+            6
+          ],
+          "topics": [
+            "Fonctions",
+            "Derivation",
+            "Logarithme",
+            "Integration",
+            "Geometrie dans l'espace",
+            "Vecteurs",
+            "Droites et plans",
+            "Trigonometrie"
+          ],
+          "skills": [
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        }
+      ]
     },
     {
       "id": "2024-amerique-sud-01",
@@ -319,7 +1467,76 @@
       "paper": 1,
       "subjectPath": "/annales/2024_spe-mathematiques_amerique-sud_01_sujet.pdf",
       "correctionPath": "/annales/2024_spe-mathematiques_amerique-sud_01_corrige.pdf",
-      "exercises": []
+      "exercises": [
+        {
+          "id": "ex1",
+          "pages": [
+            2
+          ],
+          "topics": [
+            "Equations differentielles",
+            "Fonctions",
+            "Derivation",
+            "Exponentielle",
+            "Algorithmique"
+          ],
+          "skills": [
+            "Modeliser",
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex2",
+          "pages": [
+            3,
+            4
+          ],
+          "topics": [
+            "Probabilites",
+            "Variables aleatoires",
+            "Loi binomiale",
+            "Combinatoire"
+          ],
+          "skills": [
+            "Modeliser",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex3",
+          "pages": [
+            5
+          ],
+          "topics": [
+            "Suites",
+            "Logarithme",
+            "Integration"
+          ],
+          "skills": [
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex4",
+          "pages": [
+            6
+          ],
+          "topics": [
+            "Geometrie dans l'espace",
+            "Vecteurs",
+            "Droites et plans"
+          ],
+          "skills": [
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        }
+      ]
     },
     {
       "id": "2024-amerique-sud-02",
@@ -329,7 +1546,78 @@
       "paper": 2,
       "subjectPath": "/annales/2024_spe-mathematiques_amerique-sud_02_sujet.pdf",
       "correctionPath": null,
-      "exercises": []
+      "exercises": [
+        {
+          "id": "ex1",
+          "pages": [
+            2,
+            3
+          ],
+          "topics": [
+            "Probabilites",
+            "Variables aleatoires",
+            "Loi binomiale",
+            "Algorithmique"
+          ],
+          "skills": [
+            "Modeliser",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex2",
+          "pages": [
+            4
+          ],
+          "topics": [
+            "Suites",
+            "Equations differentielles",
+            "Fonctions",
+            "Derivation"
+          ],
+          "skills": [
+            "Modeliser",
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex3",
+          "pages": [
+            5
+          ],
+          "topics": [
+            "Fonctions",
+            "Derivation",
+            "Exponentielle",
+            "Integration",
+            "Limites"
+          ],
+          "skills": [
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex4",
+          "pages": [
+            6
+          ],
+          "topics": [
+            "Geometrie dans l'espace",
+            "Vecteurs",
+            "Droites et plans"
+          ],
+          "skills": [
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        }
+      ]
     },
     {
       "id": "2024-asie-01",
@@ -339,7 +1627,81 @@
       "paper": 1,
       "subjectPath": "/annales/2024_spe-mathematiques_asie_01_sujet.pdf",
       "correctionPath": null,
-      "exercises": []
+      "exercises": [
+        {
+          "id": "ex1",
+          "pages": [
+            2,
+            3
+          ],
+          "topics": [
+            "Fonctions",
+            "Derivation",
+            "Convexite",
+            "Integration",
+            "Geometrie dans l'espace",
+            "Droites et plans",
+            "Trigonometrie"
+          ],
+          "skills": [
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex2",
+          "pages": [
+            4
+          ],
+          "topics": [
+            "Integration",
+            "Geometrie dans l'espace",
+            "Vecteurs",
+            "Droites et plans"
+          ],
+          "skills": [
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex3",
+          "pages": [
+            5,
+            6
+          ],
+          "topics": [
+            "Probabilites",
+            "Variables aleatoires",
+            "Loi binomiale"
+          ],
+          "skills": [
+            "Modeliser",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex4",
+          "pages": [
+            7
+          ],
+          "topics": [
+            "Suites",
+            "Fonctions",
+            "Logarithme",
+            "Algorithmique"
+          ],
+          "skills": [
+            "Modeliser",
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        }
+      ]
     },
     {
       "id": "2024-asie-02",
@@ -349,7 +1711,87 @@
       "paper": 2,
       "subjectPath": "/annales/2024_spe-mathematiques_asie_02_sujet.pdf",
       "correctionPath": null,
-      "exercises": []
+      "exercises": [
+        {
+          "id": "ex1",
+          "pages": [
+            2
+          ],
+          "topics": [
+            "Suites",
+            "Recurrence",
+            "Fonctions",
+            "Derivation",
+            "Limites",
+            "Logarithme",
+            "Integration"
+          ],
+          "skills": [
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex2",
+          "pages": [
+            3,
+            4
+          ],
+          "topics": [
+            "Probabilites",
+            "Suites",
+            "Fonctions",
+            "Limites",
+            "Trigonometrie",
+            "Algorithmique"
+          ],
+          "skills": [
+            "Modeliser",
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex3",
+          "pages": [
+            5
+          ],
+          "topics": [
+            "Suites",
+            "Fonctions",
+            "Derivation",
+            "Convexite",
+            "Logarithme",
+            "Equations differentielles"
+          ],
+          "skills": [
+            "Modeliser",
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex4",
+          "pages": [
+            6
+          ],
+          "topics": [
+            "Integration",
+            "Geometrie dans l'espace",
+            "Vecteurs",
+            "Droites et plans",
+            "Trigonometrie"
+          ],
+          "skills": [
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        }
+      ]
     },
     {
       "id": "2024-centres-etranger-01",
@@ -359,7 +1801,83 @@
       "paper": 1,
       "subjectPath": "/annales/2024_spe-mathematiques_centres-etranger_01_sujet.pdf",
       "correctionPath": "/annales/2024_spe-mathematiques_centres-etranger_01_corrige.pdf",
-      "exercises": []
+      "exercises": [
+        {
+          "id": "ex1",
+          "pages": [
+            2,
+            3
+          ],
+          "topics": [
+            "Probabilites",
+            "Fonctions",
+            "Trigonometrie"
+          ],
+          "skills": [
+            "Modeliser",
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex2",
+          "pages": [
+            4
+          ],
+          "topics": [
+            "Suites",
+            "Recurrence",
+            "Fonctions",
+            "Derivation",
+            "Limites",
+            "Logarithme",
+            "Algorithmique"
+          ],
+          "skills": [
+            "Modeliser",
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex3",
+          "pages": [
+            5
+          ],
+          "topics": [
+            "Fonctions",
+            "Derivation",
+            "Equations differentielles",
+            "Trigonometrie"
+          ],
+          "skills": [
+            "Modeliser",
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex4",
+          "pages": [
+            6
+          ],
+          "topics": [
+            "Integration",
+            "Geometrie dans l'espace",
+            "Vecteurs",
+            "Droites et plans",
+            "Trigonometrie"
+          ],
+          "skills": [
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        }
+      ]
     },
     {
       "id": "2024-centres-etranger-02",
@@ -369,7 +1887,80 @@
       "paper": 2,
       "subjectPath": "/annales/2024_spe-mathematiques_centres-etranger_02_sujet.pdf",
       "correctionPath": "/annales/2024_spe-mathematiques_centres-etranger_02_corrige.pdf",
-      "exercises": []
+      "exercises": [
+        {
+          "id": "ex1",
+          "pages": [
+            2
+          ],
+          "topics": [
+            "Probabilites",
+            "Variables aleatoires",
+            "Trigonometrie"
+          ],
+          "skills": [
+            "Modeliser",
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex2",
+          "pages": [
+            3
+          ],
+          "topics": [
+            "Fonctions",
+            "Derivation",
+            "Limites",
+            "Geometrie dans l'espace",
+            "Trigonometrie"
+          ],
+          "skills": [
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex3",
+          "pages": [
+            4
+          ],
+          "topics": [
+            "Integration",
+            "Geometrie dans l'espace",
+            "Vecteurs",
+            "Droites et plans",
+            "Trigonometrie"
+          ],
+          "skills": [
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex4",
+          "pages": [
+            5
+          ],
+          "topics": [
+            "Suites",
+            "Recurrence",
+            "Fonctions",
+            "Derivation",
+            "Algorithmique"
+          ],
+          "skills": [
+            "Modeliser",
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        }
+      ]
     },
     {
       "id": "2024-metropole-01",
@@ -379,7 +1970,95 @@
       "paper": 1,
       "subjectPath": "/annales/2024_spe-mathematiques_metropole_01_sujet.pdf",
       "correctionPath": "/annales/2024_spe-mathematiques_metropole_01_corrige.pdf",
-      "exercises": []
+      "exercises": [
+        {
+          "id": "ex1",
+          "pages": [
+            2
+          ],
+          "topics": [
+            "Probabilites",
+            "Suites",
+            "Fonctions",
+            "Limites",
+            "Equations differentielles",
+            "Geometrie dans l'espace",
+            "Vecteurs",
+            "Trigonometrie"
+          ],
+          "skills": [
+            "Modeliser",
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex2",
+          "pages": [
+            2,
+            3
+          ],
+          "topics": [
+            "Probabilites",
+            "Variables aleatoires",
+            "Loi binomiale",
+            "Suites",
+            "Fonctions",
+            "Limites",
+            "Integration",
+            "Equations differentielles",
+            "Geometrie dans l'espace",
+            "Vecteurs",
+            "Trigonometrie"
+          ],
+          "skills": [
+            "Modeliser",
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex3",
+          "pages": [
+            4
+          ],
+          "topics": [
+            "Integration",
+            "Geometrie dans l'espace",
+            "Vecteurs",
+            "Droites et plans",
+            "Trigonometrie"
+          ],
+          "skills": [
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex4",
+          "pages": [
+            5,
+            6
+          ],
+          "topics": [
+            "Fonctions",
+            "Derivation",
+            "Limites",
+            "Logarithme",
+            "Integration",
+            "Geometrie dans l'espace",
+            "Droites et plans"
+          ],
+          "skills": [
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        }
+      ]
     },
     {
       "id": "2024-metropole-02",
@@ -389,7 +2068,90 @@
       "paper": 2,
       "subjectPath": "/annales/2024_spe-mathematiques_metropole_02_sujet.pdf",
       "correctionPath": "/annales/2024_spe-mathematiques_metropole_02_corrige.pdf",
-      "exercises": []
+      "exercises": [
+        {
+          "id": "ex1",
+          "pages": [
+            2
+          ],
+          "topics": [
+            "Probabilites",
+            "Variables aleatoires",
+            "Loi binomiale",
+            "Suites",
+            "Integration"
+          ],
+          "skills": [
+            "Modeliser",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex2",
+          "pages": [
+            3
+          ],
+          "topics": [
+            "Probabilites",
+            "Suites",
+            "Recurrence",
+            "Fonctions",
+            "Limites",
+            "Integration",
+            "Equations differentielles",
+            "Trigonometrie",
+            "Algorithmique"
+          ],
+          "skills": [
+            "Modeliser",
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex3",
+          "pages": [
+            4,
+            5
+          ],
+          "topics": [
+            "Fonctions",
+            "Derivation",
+            "Convexite",
+            "Limites",
+            "Logarithme",
+            "Integration",
+            "Geometrie dans l'espace",
+            "Vecteurs",
+            "Droites et plans",
+            "Trigonometrie"
+          ],
+          "skills": [
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex4",
+          "pages": [
+            6
+          ],
+          "topics": [
+            "Integration",
+            "Geometrie dans l'espace",
+            "Vecteurs",
+            "Droites et plans"
+          ],
+          "skills": [
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        }
+      ]
     },
     {
       "id": "2024-polynesie-01",
@@ -399,7 +2161,87 @@
       "paper": 1,
       "subjectPath": "/annales/2024_spe-mathematiques_polynesie_01_sujet.pdf",
       "correctionPath": "/annales/2024_spe-mathematiques_polynesie_01_corrige.pdf",
-      "exercises": []
+      "exercises": [
+        {
+          "id": "ex1",
+          "pages": [
+            2
+          ],
+          "topics": [
+            "Probabilites",
+            "Integration",
+            "Geometrie dans l'espace",
+            "Vecteurs",
+            "Droites et plans"
+          ],
+          "skills": [
+            "Modeliser",
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex2",
+          "pages": [
+            3
+          ],
+          "topics": [
+            "Fonctions",
+            "Limites",
+            "Exponentielle",
+            "Integration",
+            "Equations differentielles",
+            "Trigonometrie"
+          ],
+          "skills": [
+            "Modeliser",
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex3",
+          "pages": [
+            4
+          ],
+          "topics": [
+            "Probabilites",
+            "Variables aleatoires",
+            "Suites",
+            "Trigonometrie"
+          ],
+          "skills": [
+            "Modeliser",
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex4",
+          "pages": [
+            5,
+            6
+          ],
+          "topics": [
+            "Probabilites",
+            "Suites",
+            "Recurrence",
+            "Fonctions",
+            "Derivation",
+            "Limites",
+            "Algorithmique"
+          ],
+          "skills": [
+            "Modeliser",
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        }
+      ]
     },
     {
       "id": "2024-polynesie-02",
@@ -409,7 +2251,88 @@
       "paper": 2,
       "subjectPath": "/annales/2024_spe-mathematiques_polynesie_02_sujet.pdf",
       "correctionPath": "/annales/2024_spe-mathematiques_polynesie_02_corrige.pdf",
-      "exercises": []
+      "exercises": [
+        {
+          "id": "ex1",
+          "pages": [
+            2
+          ],
+          "topics": [
+            "Probabilites",
+            "Variables aleatoires",
+            "Suites",
+            "Integration"
+          ],
+          "skills": [
+            "Modeliser",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex2",
+          "pages": [
+            3,
+            4
+          ],
+          "topics": [
+            "Probabilites",
+            "Fonctions",
+            "Logarithme",
+            "Integration",
+            "Equations differentielles",
+            "Trigonometrie"
+          ],
+          "skills": [
+            "Modeliser",
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex3",
+          "pages": [
+            5,
+            6
+          ],
+          "topics": [
+            "Suites",
+            "Recurrence",
+            "Fonctions",
+            "Derivation",
+            "Limites",
+            "Logarithme",
+            "Algorithmique"
+          ],
+          "skills": [
+            "Modeliser",
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex4",
+          "pages": [
+            7
+          ],
+          "topics": [
+            "Suites",
+            "Fonctions",
+            "Integration",
+            "Geometrie dans l'espace",
+            "Vecteurs",
+            "Droites et plans",
+            "Trigonometrie"
+          ],
+          "skills": [
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        }
+      ]
     },
     {
       "id": "2024-suede-02",
@@ -419,7 +2342,85 @@
       "paper": 2,
       "subjectPath": "/annales/2024_spe-mathematiques_suede_02_sujet.pdf",
       "correctionPath": null,
-      "exercises": []
+      "exercises": [
+        {
+          "id": "ex1",
+          "pages": [
+            2
+          ],
+          "topics": [
+            "Suites",
+            "Fonctions",
+            "Derivation",
+            "Limites",
+            "Logarithme",
+            "Equations differentielles",
+            "Geometrie dans l'espace",
+            "Trigonometrie",
+            "Algorithmique"
+          ],
+          "skills": [
+            "Modeliser",
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex2",
+          "pages": [
+            3
+          ],
+          "topics": [
+            "Probabilites",
+            "Variables aleatoires",
+            "Suites",
+            "Fonctions",
+            "Limites",
+            "Integration"
+          ],
+          "skills": [
+            "Modeliser",
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex3",
+          "pages": [
+            4,
+            5
+          ],
+          "topics": [
+            "Probabilites",
+            "Fonctions",
+            "Limites"
+          ],
+          "skills": [
+            "Modeliser",
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex4",
+          "pages": [
+            6
+          ],
+          "topics": [
+            "Geometrie dans l'espace",
+            "Vecteurs",
+            "Trigonometrie"
+          ],
+          "skills": [
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        }
+      ]
     },
     {
       "id": "2024-zero-01",
@@ -429,7 +2430,163 @@
       "paper": 1,
       "subjectPath": "/annales/2024_spe-mathematiques_zero_01_sujet.pdf",
       "correctionPath": null,
-      "exercises": []
+      "exercises": [
+        {
+          "id": "ex1",
+          "pages": [
+            2,
+            3
+          ],
+          "topics": [
+            "Probabilites",
+            "Fonctions",
+            "Equations differentielles",
+            "Geometrie dans l'espace",
+            "Algorithmique"
+          ],
+          "skills": [
+            "Modeliser",
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex2",
+          "pages": [
+            4,
+            5
+          ],
+          "topics": [
+            "Probabilites",
+            "Suites",
+            "Fonctions",
+            "Limites",
+            "Integration",
+            "Geometrie dans l'espace",
+            "Droites et plans",
+            "Trigonometrie",
+            "Algorithmique"
+          ],
+          "skills": [
+            "Modeliser",
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex3",
+          "pages": [
+            6,
+            7
+          ],
+          "topics": [
+            "Probabilites",
+            "Variables aleatoires",
+            "Loi binomiale",
+            "Integration",
+            "Equations differentielles"
+          ],
+          "skills": [
+            "Modeliser",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex4",
+          "pages": [
+            8,
+            9
+          ],
+          "topics": [
+            "Probabilites",
+            "Integration",
+            "Geometrie dans l'espace",
+            "Vecteurs",
+            "Droites et plans",
+            "Trigonometrie"
+          ],
+          "skills": [
+            "Modeliser",
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex5",
+          "pages": [
+            10
+          ],
+          "topics": [
+            "Probabilites",
+            "Fonctions",
+            "Derivation",
+            "Convexite",
+            "Integration",
+            "Trigonometrie"
+          ],
+          "skills": [
+            "Modeliser",
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex6",
+          "pages": [
+            11
+          ],
+          "topics": [
+            "Suites"
+          ],
+          "skills": [
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex7",
+          "pages": [
+            12
+          ],
+          "topics": [
+            "Fonctions",
+            "Derivation",
+            "Logarithme",
+            "Equations differentielles",
+            "Geometrie dans l'espace",
+            "Vecteurs",
+            "Droites et plans"
+          ],
+          "skills": [
+            "Modeliser",
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex8",
+          "pages": [
+            13
+          ],
+          "topics": [
+            "Suites",
+            "Fonctions",
+            "Algorithmique"
+          ],
+          "skills": [
+            "Modeliser",
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        }
+      ]
     },
     {
       "id": "2023-amerique-nord-01",
@@ -439,7 +2596,77 @@
       "paper": 1,
       "subjectPath": "/annales/2023_spe-mathematiques_amerique-nord_01_sujet.pdf",
       "correctionPath": "/annales/2023_spe-mathematiques_amerique-nord_01_corrige.pdf",
-      "exercises": []
+      "exercises": [
+        {
+          "id": "ex1",
+          "pages": [
+            2,
+            3
+          ],
+          "topics": [
+            "Probabilites",
+            "Variables aleatoires",
+            "Loi binomiale"
+          ],
+          "skills": [
+            "Modeliser",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex2",
+          "pages": [
+            4
+          ],
+          "topics": [
+            "Fonctions",
+            "Derivation",
+            "Exponentielle",
+            "Limites",
+            "Convexite"
+          ],
+          "skills": [
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex3",
+          "pages": [
+            5,
+            6
+          ],
+          "topics": [
+            "Geometrie dans l'espace",
+            "Vecteurs",
+            "Droites et plans"
+          ],
+          "skills": [
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex4",
+          "pages": [
+            6,
+            7
+          ],
+          "topics": [
+            "Suites",
+            "Recurrence",
+            "Algorithmique"
+          ],
+          "skills": [
+            "Modeliser",
+            "Raisonner",
+            "Calculer"
+          ]
+        }
+      ]
     },
     {
       "id": "2023-amerique-nord-02",
@@ -449,7 +2676,81 @@
       "paper": 2,
       "subjectPath": "/annales/2023_spe-mathematiques_amerique-nord_02_sujet.pdf",
       "correctionPath": "/annales/2023_spe-mathematiques_amerique-nord_02_corrige.pdf",
-      "exercises": []
+      "exercises": [
+        {
+          "id": "ex1",
+          "pages": [
+            2
+          ],
+          "topics": [
+            "Fonctions",
+            "Derivation",
+            "Exponentielle",
+            "Convexite",
+            "Limites"
+          ],
+          "skills": [
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex2",
+          "pages": [
+            3
+          ],
+          "topics": [
+            "Suites",
+            "Recurrence",
+            "Algorithmique"
+          ],
+          "skills": [
+            "Modeliser",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex3",
+          "pages": [
+            4
+          ],
+          "topics": [
+            "Geometrie dans l'espace",
+            "Vecteurs",
+            "Droites et plans"
+          ],
+          "skills": [
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex4",
+          "pages": [
+            4,
+            5
+          ],
+          "topics": [
+            "Fonctions",
+            "Limites",
+            "Continuite",
+            "Logarithme",
+            "Suites",
+            "Probabilites",
+            "Variables aleatoires",
+            "Loi binomiale"
+          ],
+          "skills": [
+            "Modeliser",
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        }
+      ]
     },
     {
       "id": "2023-amerique-sud-01",
@@ -459,7 +2760,86 @@
       "paper": 1,
       "subjectPath": "/annales/2023_spe-mathematiques_amerique-sud_01_sujet.pdf",
       "correctionPath": null,
-      "exercises": []
+      "exercises": [
+        {
+          "id": "ex1",
+          "pages": [
+            2,
+            3
+          ],
+          "topics": [
+            "Suites",
+            "Fonctions",
+            "Derivation",
+            "Logarithme",
+            "Geometrie dans l'espace",
+            "Vecteurs",
+            "Droites et plans",
+            "Trigonometrie",
+            "Algorithmique"
+          ],
+          "skills": [
+            "Modeliser",
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex2",
+          "pages": [
+            4,
+            5
+          ],
+          "topics": [
+            "Probabilites",
+            "Variables aleatoires",
+            "Suites",
+            "Integration",
+            "Equations differentielles"
+          ],
+          "skills": [
+            "Modeliser",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex3",
+          "pages": [
+            6
+          ],
+          "topics": [
+            "Integration",
+            "Geometrie dans l'espace",
+            "Vecteurs",
+            "Droites et plans",
+            "Trigonometrie"
+          ],
+          "skills": [
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex4",
+          "pages": [
+            7
+          ],
+          "topics": [
+            "Suites",
+            "Recurrence",
+            "Fonctions",
+            "Limites"
+          ],
+          "skills": [
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        }
+      ]
     },
     {
       "id": "2023-amerique-sud-02",
@@ -469,7 +2849,85 @@
       "paper": 2,
       "subjectPath": "/annales/2023_spe-mathematiques_amerique-sud_02_sujet.pdf",
       "correctionPath": null,
-      "exercises": []
+      "exercises": [
+        {
+          "id": "ex1",
+          "pages": [
+            2
+          ],
+          "topics": [
+            "Probabilites",
+            "Variables aleatoires",
+            "Integration"
+          ],
+          "skills": [
+            "Modeliser",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex2",
+          "pages": [
+            3
+          ],
+          "topics": [
+            "Probabilites",
+            "Variables aleatoires",
+            "Loi binomiale",
+            "Geometrie dans l'espace",
+            "Vecteurs",
+            "Droites et plans",
+            "Trigonometrie"
+          ],
+          "skills": [
+            "Modeliser",
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex3",
+          "pages": [
+            4
+          ],
+          "topics": [
+            "Suites",
+            "Recurrence",
+            "Fonctions",
+            "Limites",
+            "Algorithmique"
+          ],
+          "skills": [
+            "Modeliser",
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex4",
+          "pages": [
+            5
+          ],
+          "topics": [
+            "Fonctions",
+            "Derivation",
+            "Limites",
+            "Logarithme",
+            "Geometrie dans l'espace",
+            "Vecteurs",
+            "Droites et plans",
+            "Trigonometrie"
+          ],
+          "skills": [
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        }
+      ]
     },
     {
       "id": "2023-asie-01",
@@ -479,7 +2937,74 @@
       "paper": 1,
       "subjectPath": "/annales/2023_spe-mathematiques_asie_01_sujet.pdf",
       "correctionPath": "/annales/2023_spe-mathematiques_asie_01_corrige.pdf",
-      "exercises": []
+      "exercises": [
+        {
+          "id": "ex1",
+          "pages": [
+            2
+          ],
+          "topics": [
+            "Suites",
+            "Recurrence",
+            "Algorithmique"
+          ],
+          "skills": [
+            "Modeliser",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex2",
+          "pages": [
+            3
+          ],
+          "topics": [
+            "Geometrie dans l'espace",
+            "Vecteurs",
+            "Droites et plans"
+          ],
+          "skills": [
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex3",
+          "pages": [
+            4,
+            5
+          ],
+          "topics": [
+            "Fonctions",
+            "Logarithme",
+            "Derivation",
+            "Limites"
+          ],
+          "skills": [
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex4",
+          "pages": [
+            6,
+            7
+          ],
+          "topics": [
+            "Probabilites",
+            "Variables aleatoires"
+          ],
+          "skills": [
+            "Modeliser",
+            "Raisonner",
+            "Calculer"
+          ]
+        }
+      ]
     },
     {
       "id": "2023-asie-02",
@@ -489,7 +3014,75 @@
       "paper": 2,
       "subjectPath": "/annales/2023_spe-mathematiques_asie_02_sujet.pdf",
       "correctionPath": null,
-      "exercises": []
+      "exercises": [
+        {
+          "id": "ex1",
+          "pages": [
+            2
+          ],
+          "topics": [
+            "Geometrie dans l'espace",
+            "Vecteurs",
+            "Droites et plans"
+          ],
+          "skills": [
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex2",
+          "pages": [
+            3,
+            4
+          ],
+          "topics": [
+            "Fonctions",
+            "Logarithme",
+            "Derivation",
+            "Limites"
+          ],
+          "skills": [
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex3",
+          "pages": [
+            5
+          ],
+          "topics": [
+            "Suites",
+            "Recurrence",
+            "Algorithmique"
+          ],
+          "skills": [
+            "Modeliser",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex4",
+          "pages": [
+            6,
+            7
+          ],
+          "topics": [
+            "Suites",
+            "Probabilites",
+            "Combinatoire"
+          ],
+          "skills": [
+            "Modeliser",
+            "Raisonner",
+            "Calculer"
+          ]
+        }
+      ]
     },
     {
       "id": "2023-centres-etranger-01",
@@ -499,7 +3092,86 @@
       "paper": 1,
       "subjectPath": "/annales/2023_spe-mathematiques_centres-etranger_01_sujet.pdf",
       "correctionPath": "/annales/2023_spe-mathematiques_centres-etranger_01_corrige.pdf",
-      "exercises": []
+      "exercises": [
+        {
+          "id": "ex1",
+          "pages": [
+            2,
+            3
+          ],
+          "topics": [
+            "Probabilites",
+            "Suites",
+            "Fonctions",
+            "Derivation",
+            "Continuite",
+            "Logarithme",
+            "Integration",
+            "Algorithmique"
+          ],
+          "skills": [
+            "Modeliser",
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex2",
+          "pages": [
+            4,
+            5
+          ],
+          "topics": [
+            "Probabilites",
+            "Variables aleatoires",
+            "Loi binomiale",
+            "Suites",
+            "Recurrence",
+            "Fonctions",
+            "Limites",
+            "Trigonometrie"
+          ],
+          "skills": [
+            "Modeliser",
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex3",
+          "pages": [
+            6
+          ],
+          "topics": [
+            "Integration",
+            "Geometrie dans l'espace",
+            "Vecteurs",
+            "Droites et plans",
+            "Trigonometrie"
+          ],
+          "skills": [
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex4",
+          "pages": [
+            7
+          ],
+          "topics": [
+            "Fonctions"
+          ],
+          "skills": [
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        }
+      ]
     },
     {
       "id": "2023-centres-etranger-02",
@@ -509,7 +3181,81 @@
       "paper": 2,
       "subjectPath": "/annales/2023_spe-mathematiques_centres-etranger_02_sujet.pdf",
       "correctionPath": "/annales/2023_spe-mathematiques_centres-etranger_02_corrige.pdf",
-      "exercises": []
+      "exercises": [
+        {
+          "id": "ex1",
+          "pages": [
+            2,
+            3
+          ],
+          "topics": [
+            "Probabilites",
+            "Fonctions",
+            "Derivation",
+            "Convexite",
+            "Integration",
+            "Algorithmique"
+          ],
+          "skills": [
+            "Modeliser",
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex2",
+          "pages": [
+            4
+          ],
+          "topics": [
+            "Suites",
+            "Recurrence",
+            "Fonctions",
+            "Limites",
+            "Logarithme",
+            "Integration"
+          ],
+          "skills": [
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex3",
+          "pages": [
+            5
+          ],
+          "topics": [
+            "Integration",
+            "Geometrie dans l'espace",
+            "Vecteurs",
+            "Droites et plans",
+            "Trigonometrie"
+          ],
+          "skills": [
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex4",
+          "pages": [
+            6
+          ],
+          "topics": [
+            "Probabilites",
+            "Algorithmique"
+          ],
+          "skills": [
+            "Modeliser",
+            "Raisonner",
+            "Calculer"
+          ]
+        }
+      ]
     },
     {
       "id": "2023-la-reunion-01",
@@ -519,7 +3265,83 @@
       "paper": 1,
       "subjectPath": "/annales/2023_spe-mathematiques_la-reunion_01_sujet.pdf",
       "correctionPath": "/annales/2023_spe-mathematiques_la-reunion_01_corrige.pdf",
-      "exercises": []
+      "exercises": [
+        {
+          "id": "ex1",
+          "pages": [
+            2
+          ],
+          "topics": [
+            "Probabilites",
+            "Variables aleatoires",
+            "Loi binomiale"
+          ],
+          "skills": [
+            "Modeliser",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex2",
+          "pages": [
+            3
+          ],
+          "topics": [
+            "Fonctions",
+            "Derivation",
+            "Limites",
+            "Logarithme",
+            "Integration",
+            "Geometrie dans l'espace",
+            "Droites et plans",
+            "Trigonometrie"
+          ],
+          "skills": [
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex3",
+          "pages": [
+            4
+          ],
+          "topics": [
+            "Suites",
+            "Recurrence",
+            "Fonctions",
+            "Limites",
+            "Integration",
+            "Trigonometrie",
+            "Algorithmique"
+          ],
+          "skills": [
+            "Modeliser",
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex4",
+          "pages": [
+            5
+          ],
+          "topics": [
+            "Geometrie dans l'espace",
+            "Vecteurs",
+            "Droites et plans",
+            "Trigonometrie"
+          ],
+          "skills": [
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        }
+      ]
     },
     {
       "id": "2023-la-reunion-02",
@@ -529,7 +3351,83 @@
       "paper": 2,
       "subjectPath": "/annales/2023_spe-mathematiques_la-reunion_02_sujet.pdf",
       "correctionPath": null,
-      "exercises": []
+      "exercises": [
+        {
+          "id": "ex1",
+          "pages": [
+            2
+          ],
+          "topics": [
+            "Probabilites",
+            "Variables aleatoires",
+            "Loi binomiale"
+          ],
+          "skills": [
+            "Modeliser",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex2",
+          "pages": [
+            3
+          ],
+          "topics": [
+            "Suites",
+            "Recurrence",
+            "Fonctions",
+            "Limites",
+            "Algorithmique"
+          ],
+          "skills": [
+            "Modeliser",
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex3",
+          "pages": [
+            4
+          ],
+          "topics": [
+            "Integration",
+            "Geometrie dans l'espace",
+            "Vecteurs",
+            "Droites et plans",
+            "Trigonometrie"
+          ],
+          "skills": [
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex4",
+          "pages": [
+            5
+          ],
+          "topics": [
+            "Fonctions",
+            "Derivation",
+            "Convexite",
+            "Limites",
+            "Logarithme",
+            "Integration",
+            "Geometrie dans l'espace",
+            "Vecteurs",
+            "Trigonometrie"
+          ],
+          "skills": [
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        }
+      ]
     },
     {
       "id": "2023-liban-01",
@@ -539,7 +3437,87 @@
       "paper": 1,
       "subjectPath": "/annales/2023_spe-mathematiques_liban_01_sujet.pdf",
       "correctionPath": "/annales/2023_spe-mathematiques_liban_01_corrige.pdf",
-      "exercises": []
+      "exercises": [
+        {
+          "id": "ex1",
+          "pages": [
+            2
+          ],
+          "topics": [
+            "Fonctions",
+            "Derivation",
+            "Limites",
+            "Logarithme",
+            "Geometrie dans l'espace",
+            "Vecteurs"
+          ],
+          "skills": [
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex2",
+          "pages": [
+            3,
+            4
+          ],
+          "topics": [
+            "Probabilites",
+            "Suites",
+            "Recurrence",
+            "Limites",
+            "Trigonometrie"
+          ],
+          "skills": [
+            "Modeliser",
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex3",
+          "pages": [
+            5
+          ],
+          "topics": [
+            "Probabilites",
+            "Suites",
+            "Fonctions",
+            "Convexite",
+            "Limites",
+            "Logarithme",
+            "Integration",
+            "Trigonometrie"
+          ],
+          "skills": [
+            "Modeliser",
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex4",
+          "pages": [
+            6
+          ],
+          "topics": [
+            "Fonctions",
+            "Geometrie dans l'espace",
+            "Vecteurs",
+            "Droites et plans",
+            "Trigonometrie"
+          ],
+          "skills": [
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        }
+      ]
     },
     {
       "id": "2023-liban-02",
@@ -549,7 +3527,97 @@
       "paper": 2,
       "subjectPath": "/annales/2023_spe-mathematiques_liban_02_sujet.pdf",
       "correctionPath": null,
-      "exercises": []
+      "exercises": [
+        {
+          "id": "ex1",
+          "pages": [
+            2
+          ],
+          "topics": [
+            "Fonctions",
+            "Derivation",
+            "Convexite",
+            "Limites",
+            "Geometrie dans l'espace",
+            "Vecteurs",
+            "Droites et plans",
+            "Trigonometrie"
+          ],
+          "skills": [
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex2",
+          "pages": [
+            3
+          ],
+          "topics": [
+            "Suites",
+            "Recurrence",
+            "Fonctions",
+            "Derivation",
+            "Convexite",
+            "Limites",
+            "Logarithme",
+            "Trigonometrie"
+          ],
+          "skills": [
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex3",
+          "pages": [
+            4
+          ],
+          "topics": [
+            "Probabilites",
+            "Variables aleatoires",
+            "Limites",
+            "Integration",
+            "Geometrie dans l'espace",
+            "Vecteurs",
+            "Droites et plans",
+            "Trigonometrie"
+          ],
+          "skills": [
+            "Modeliser",
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex4",
+          "pages": [
+            4,
+            5
+          ],
+          "topics": [
+            "Probabilites",
+            "Variables aleatoires",
+            "Fonctions",
+            "Limites",
+            "Integration",
+            "Geometrie dans l'espace",
+            "Vecteurs",
+            "Droites et plans",
+            "Trigonometrie",
+            "Algorithmique"
+          ],
+          "skills": [
+            "Modeliser",
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        }
+      ]
     },
     {
       "id": "2023-metropole-01",
@@ -559,7 +3627,78 @@
       "paper": 1,
       "subjectPath": "/annales/2023_spe-mathematiques_metropole_01_sujet.pdf",
       "correctionPath": "/annales/2023_spe-mathematiques_metropole_01_corrige.pdf",
-      "exercises": []
+      "exercises": [
+        {
+          "id": "ex1",
+          "pages": [
+            2
+          ],
+          "topics": [
+            "Probabilites",
+            "Integration"
+          ],
+          "skills": [
+            "Modeliser",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex2",
+          "pages": [
+            3
+          ],
+          "topics": [
+            "Probabilites",
+            "Variables aleatoires",
+            "Loi binomiale",
+            "Fonctions",
+            "Derivation",
+            "Limites",
+            "Logarithme"
+          ],
+          "skills": [
+            "Modeliser",
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex3",
+          "pages": [
+            4
+          ],
+          "topics": [
+            "Suites",
+            "Recurrence",
+            "Algorithmique"
+          ],
+          "skills": [
+            "Modeliser",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex4",
+          "pages": [
+            5
+          ],
+          "topics": [
+            "Integration",
+            "Geometrie dans l'espace",
+            "Vecteurs",
+            "Droites et plans",
+            "Trigonometrie"
+          ],
+          "skills": [
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        }
+      ]
     },
     {
       "id": "2023-metropole-02",
@@ -569,7 +3708,86 @@
       "paper": 2,
       "subjectPath": "/annales/2023_spe-mathematiques_metropole_02_sujet.pdf",
       "correctionPath": "/annales/2023_spe-mathematiques_metropole_02_corrige.pdf",
-      "exercises": []
+      "exercises": [
+        {
+          "id": "ex1",
+          "pages": [
+            2
+          ],
+          "topics": [
+            "Probabilites",
+            "Suites",
+            "Integration"
+          ],
+          "skills": [
+            "Modeliser",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex2",
+          "pages": [
+            3
+          ],
+          "topics": [
+            "Suites",
+            "Recurrence",
+            "Fonctions",
+            "Limites",
+            "Trigonometrie",
+            "Algorithmique"
+          ],
+          "skills": [
+            "Modeliser",
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex3",
+          "pages": [
+            4
+          ],
+          "topics": [
+            "Integration",
+            "Geometrie dans l'espace",
+            "Vecteurs",
+            "Droites et plans",
+            "Trigonometrie"
+          ],
+          "skills": [
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex4",
+          "pages": [
+            5
+          ],
+          "topics": [
+            "Fonctions",
+            "Derivation",
+            "Convexite",
+            "Limites",
+            "Logarithme",
+            "Equations differentielles",
+            "Geometrie dans l'espace",
+            "Vecteurs",
+            "Droites et plans",
+            "Trigonometrie"
+          ],
+          "skills": [
+            "Modeliser",
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        }
+      ]
     },
     {
       "id": "2023-nouv-caledonie-01",
@@ -579,7 +3797,85 @@
       "paper": 1,
       "subjectPath": "/annales/2023_spe-mathematiques_nouv-caledonie_01_sujet.pdf",
       "correctionPath": null,
-      "exercises": []
+      "exercises": [
+        {
+          "id": "ex1",
+          "pages": [
+            2
+          ],
+          "topics": [
+            "Probabilites",
+            "Variables aleatoires",
+            "Loi binomiale",
+            "Trigonometrie"
+          ],
+          "skills": [
+            "Modeliser",
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex2",
+          "pages": [
+            3
+          ],
+          "topics": [
+            "Suites",
+            "Recurrence",
+            "Fonctions",
+            "Limites",
+            "Algorithmique"
+          ],
+          "skills": [
+            "Modeliser",
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex3",
+          "pages": [
+            4
+          ],
+          "topics": [
+            "Suites",
+            "Fonctions",
+            "Integration",
+            "Geometrie dans l'espace",
+            "Vecteurs",
+            "Droites et plans",
+            "Trigonometrie"
+          ],
+          "skills": [
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex4",
+          "pages": [
+            5
+          ],
+          "topics": [
+            "Fonctions",
+            "Derivation",
+            "Limites",
+            "Logarithme",
+            "Geometrie dans l'espace",
+            "Droites et plans",
+            "Trigonometrie"
+          ],
+          "skills": [
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        }
+      ]
     },
     {
       "id": "2023-nouv-caledonie-02",
@@ -589,7 +3885,81 @@
       "paper": 2,
       "subjectPath": "/annales/2023_spe-mathematiques_nouv-caledonie_02_sujet.pdf",
       "correctionPath": null,
-      "exercises": []
+      "exercises": [
+        {
+          "id": "ex1",
+          "pages": [
+            2
+          ],
+          "topics": [
+            "Integration",
+            "Geometrie dans l'espace",
+            "Vecteurs",
+            "Droites et plans",
+            "Trigonometrie"
+          ],
+          "skills": [
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex2",
+          "pages": [
+            3
+          ],
+          "topics": [
+            "Fonctions",
+            "Derivation",
+            "Convexite",
+            "Limites",
+            "Geometrie dans l'espace",
+            "Vecteurs",
+            "Droites et plans",
+            "Trigonometrie"
+          ],
+          "skills": [
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex3",
+          "pages": [
+            4
+          ],
+          "topics": [
+            "Suites",
+            "Recurrence",
+            "Fonctions",
+            "Limites",
+            "Algorithmique"
+          ],
+          "skills": [
+            "Modeliser",
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex4",
+          "pages": [
+            5
+          ],
+          "topics": [
+            "Probabilites",
+            "Integration"
+          ],
+          "skills": [
+            "Modeliser",
+            "Raisonner",
+            "Calculer"
+          ]
+        }
+      ]
     },
     {
       "id": "2023-polynesie-01",
@@ -599,7 +3969,82 @@
       "paper": 1,
       "subjectPath": "/annales/2023_spe-mathematiques_polynesie_01_sujet.pdf",
       "correctionPath": null,
-      "exercises": []
+      "exercises": [
+        {
+          "id": "ex1",
+          "pages": [
+            2,
+            3
+          ],
+          "topics": [
+            "Probabilites",
+            "Variables aleatoires",
+            "Integration",
+            "Trigonometrie"
+          ],
+          "skills": [
+            "Modeliser",
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex2",
+          "pages": [
+            4
+          ],
+          "topics": [
+            "Integration",
+            "Geometrie dans l'espace",
+            "Vecteurs",
+            "Droites et plans"
+          ],
+          "skills": [
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex3",
+          "pages": [
+            5
+          ],
+          "topics": [
+            "Fonctions",
+            "Convexite",
+            "Logarithme",
+            "Exponentielle",
+            "Integration",
+            "Algorithmique"
+          ],
+          "skills": [
+            "Modeliser",
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex4",
+          "pages": [
+            6
+          ],
+          "topics": [
+            "Suites",
+            "Recurrence",
+            "Fonctions",
+            "Limites",
+            "Logarithme"
+          ],
+          "skills": [
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        }
+      ]
     },
     {
       "id": "2023-polynesie-02",
@@ -609,7 +4054,86 @@
       "paper": 2,
       "subjectPath": "/annales/2023_spe-mathematiques_polynesie_02_sujet.pdf",
       "correctionPath": null,
-      "exercises": []
+      "exercises": [
+        {
+          "id": "ex1",
+          "pages": [
+            2,
+            3
+          ],
+          "topics": [
+            "Probabilites",
+            "Variables aleatoires",
+            "Suites",
+            "Limites"
+          ],
+          "skills": [
+            "Modeliser",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex2",
+          "pages": [
+            4
+          ],
+          "topics": [
+            "Fonctions",
+            "Integration",
+            "Geometrie dans l'espace",
+            "Vecteurs",
+            "Droites et plans",
+            "Trigonometrie"
+          ],
+          "skills": [
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex3",
+          "pages": [
+            5,
+            6
+          ],
+          "topics": [
+            "Fonctions",
+            "Derivation",
+            "Convexite",
+            "Limites",
+            "Geometrie dans l'espace",
+            "Droites et plans",
+            "Trigonometrie"
+          ],
+          "skills": [
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex4",
+          "pages": [
+            7
+          ],
+          "topics": [
+            "Suites",
+            "Fonctions",
+            "Convexite",
+            "Limites",
+            "Logarithme",
+            "Algorithmique"
+          ],
+          "skills": [
+            "Modeliser",
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        }
+      ]
     },
     {
       "id": "2022-amerique-nord-01",
@@ -619,7 +4143,83 @@
       "paper": 1,
       "subjectPath": "/annales/2022_spe-mathematiques_amerique-nord_01_sujet.pdf",
       "correctionPath": "/annales/2022_spe-mathematiques_amerique-nord_01_corrige.pdf",
-      "exercises": []
+      "exercises": [
+        {
+          "id": "ex1",
+          "pages": [
+            2
+          ],
+          "topics": [
+            "Probabilites",
+            "Variables aleatoires",
+            "Integration"
+          ],
+          "skills": [
+            "Modeliser",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex2",
+          "pages": [
+            3
+          ],
+          "topics": [
+            "Suites",
+            "Recurrence",
+            "Fonctions",
+            "Limites",
+            "Trigonometrie",
+            "Algorithmique"
+          ],
+          "skills": [
+            "Modeliser",
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex3",
+          "pages": [
+            4
+          ],
+          "topics": [
+            "Suites",
+            "Integration",
+            "Geometrie dans l'espace",
+            "Vecteurs",
+            "Droites et plans",
+            "Trigonometrie"
+          ],
+          "skills": [
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex4",
+          "pages": [
+            5
+          ],
+          "topics": [
+            "Fonctions",
+            "Convexite",
+            "Exponentielle",
+            "Geometrie dans l'espace",
+            "Vecteurs",
+            "Droites et plans",
+            "Trigonometrie"
+          ],
+          "skills": [
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        }
+      ]
     },
     {
       "id": "2022-amerique-nord-02",
@@ -629,7 +4229,91 @@
       "paper": 2,
       "subjectPath": "/annales/2022_spe-mathematiques_amerique-nord_02_sujet.pdf",
       "correctionPath": "/annales/2022_spe-mathematiques_amerique-nord_02_corrige.pdf",
-      "exercises": []
+      "exercises": [
+        {
+          "id": "ex1",
+          "pages": [
+            2,
+            3
+          ],
+          "topics": [
+            "Probabilites",
+            "Suites",
+            "Recurrence",
+            "Limites",
+            "Equations differentielles",
+            "Trigonometrie"
+          ],
+          "skills": [
+            "Modeliser",
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex2",
+          "pages": [
+            4
+          ],
+          "topics": [
+            "Fonctions",
+            "Derivation",
+            "Convexite",
+            "Exponentielle",
+            "Geometrie dans l'espace",
+            "Trigonometrie"
+          ],
+          "skills": [
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex3",
+          "pages": [
+            5,
+            6
+          ],
+          "topics": [
+            "Integration",
+            "Geometrie dans l'espace",
+            "Vecteurs",
+            "Droites et plans",
+            "Trigonometrie"
+          ],
+          "skills": [
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex4",
+          "pages": [
+            7,
+            8
+          ],
+          "topics": [
+            "Probabilites",
+            "Fonctions",
+            "Derivation",
+            "Logarithme",
+            "Integration",
+            "Equations differentielles",
+            "Geometrie dans l'espace",
+            "Droites et plans",
+            "Trigonometrie"
+          ],
+          "skills": [
+            "Modeliser",
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        }
+      ]
     },
     {
       "id": "2022-amerique-sud-01",
@@ -639,7 +4323,87 @@
       "paper": 1,
       "subjectPath": "/annales/2022_spe-mathematiques_amerique-sud_01_sujet.pdf",
       "correctionPath": null,
-      "exercises": []
+      "exercises": [
+        {
+          "id": "ex1",
+          "pages": [
+            2
+          ],
+          "topics": [
+            "Probabilites",
+            "Variables aleatoires",
+            "Fonctions",
+            "Integration",
+            "Trigonometrie"
+          ],
+          "skills": [
+            "Modeliser",
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex2",
+          "pages": [
+            3
+          ],
+          "topics": [
+            "Probabilites",
+            "Suites",
+            "Recurrence",
+            "Fonctions",
+            "Limites",
+            "Logarithme",
+            "Algorithmique"
+          ],
+          "skills": [
+            "Modeliser",
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex3",
+          "pages": [
+            4
+          ],
+          "topics": [
+            "Fonctions",
+            "Derivation",
+            "Convexite",
+            "Logarithme",
+            "Geometrie dans l'espace",
+            "Vecteurs",
+            "Droites et plans"
+          ],
+          "skills": [
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex4",
+          "pages": [
+            5
+          ],
+          "topics": [
+            "Suites",
+            "Integration",
+            "Geometrie dans l'espace",
+            "Vecteurs",
+            "Droites et plans",
+            "Trigonometrie"
+          ],
+          "skills": [
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        }
+      ]
     },
     {
       "id": "2022-amerique-sud-02",
@@ -649,7 +4413,85 @@
       "paper": 2,
       "subjectPath": "/annales/2022_spe-mathematiques_amerique-sud_02_sujet.pdf",
       "correctionPath": null,
-      "exercises": []
+      "exercises": [
+        {
+          "id": "ex1",
+          "pages": [
+            2
+          ],
+          "topics": [
+            "Probabilites",
+            "Variables aleatoires",
+            "Loi binomiale",
+            "Integration",
+            "Trigonometrie"
+          ],
+          "skills": [
+            "Modeliser",
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex2",
+          "pages": [
+            3
+          ],
+          "topics": [
+            "Fonctions",
+            "Derivation",
+            "Logarithme",
+            "Integration",
+            "Geometrie dans l'espace"
+          ],
+          "skills": [
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex3",
+          "pages": [
+            4
+          ],
+          "topics": [
+            "Suites",
+            "Recurrence",
+            "Derivation",
+            "Convexite",
+            "Limites",
+            "Integration",
+            "Vecteurs"
+          ],
+          "skills": [
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex4",
+          "pages": [
+            5
+          ],
+          "topics": [
+            "Integration",
+            "Geometrie dans l'espace",
+            "Vecteurs",
+            "Droites et plans",
+            "Trigonometrie",
+            "Algorithmique"
+          ],
+          "skills": [
+            "Modeliser",
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        }
+      ]
     },
     {
       "id": "2022-asie-01",
@@ -659,7 +4501,94 @@
       "paper": 1,
       "subjectPath": "/annales/2022_spe-mathematiques_asie_01_sujet.pdf",
       "correctionPath": null,
-      "exercises": []
+      "exercises": [
+        {
+          "id": "ex1",
+          "pages": [
+            2,
+            3
+          ],
+          "topics": [
+            "Probabilites",
+            "Variables aleatoires",
+            "Loi binomiale",
+            "Integration",
+            "Trigonometrie"
+          ],
+          "skills": [
+            "Modeliser",
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex2",
+          "pages": [
+            4,
+            5
+          ],
+          "topics": [
+            "Suites",
+            "Recurrence",
+            "Fonctions",
+            "Integration",
+            "Trigonometrie",
+            "Algorithmique"
+          ],
+          "skills": [
+            "Modeliser",
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex3",
+          "pages": [
+            6
+          ],
+          "topics": [
+            "Integration",
+            "Geometrie dans l'espace",
+            "Vecteurs",
+            "Droites et plans",
+            "Trigonometrie"
+          ],
+          "skills": [
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex4",
+          "pages": [
+            7,
+            8,
+            9,
+            10
+          ],
+          "topics": [
+            "Probabilites",
+            "Fonctions",
+            "Derivation",
+            "Convexite",
+            "Limites",
+            "Logarithme",
+            "Integration",
+            "Geometrie dans l'espace",
+            "Droites et plans",
+            "Trigonometrie"
+          ],
+          "skills": [
+            "Modeliser",
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        }
+      ]
     },
     {
       "id": "2022-asie-02",
@@ -669,7 +4598,89 @@
       "paper": 2,
       "subjectPath": "/annales/2022_spe-mathematiques_asie_02_sujet.pdf",
       "correctionPath": null,
-      "exercises": []
+      "exercises": [
+        {
+          "id": "ex1",
+          "pages": [
+            2
+          ],
+          "topics": [
+            "Integration",
+            "Geometrie dans l'espace",
+            "Vecteurs",
+            "Droites et plans",
+            "Trigonometrie"
+          ],
+          "skills": [
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex2",
+          "pages": [
+            3,
+            4
+          ],
+          "topics": [
+            "Suites",
+            "Fonctions",
+            "Derivation",
+            "Limites",
+            "Logarithme",
+            "Geometrie dans l'espace",
+            "Vecteurs"
+          ],
+          "skills": [
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex3",
+          "pages": [
+            5,
+            6
+          ],
+          "topics": [
+            "Probabilites",
+            "Variables aleatoires",
+            "Loi binomiale",
+            "Integration",
+            "Trigonometrie"
+          ],
+          "skills": [
+            "Modeliser",
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex4",
+          "pages": [
+            7,
+            8
+          ],
+          "topics": [
+            "Probabilites",
+            "Suites",
+            "Recurrence",
+            "Fonctions",
+            "Limites",
+            "Trigonometrie",
+            "Algorithmique"
+          ],
+          "skills": [
+            "Modeliser",
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        }
+      ]
     },
     {
       "id": "2022-centres-etranger-01",
@@ -679,7 +4690,93 @@
       "paper": 1,
       "subjectPath": "/annales/2022_spe-mathematiques_centres-etranger_01_sujet.pdf",
       "correctionPath": null,
-      "exercises": []
+      "exercises": [
+        {
+          "id": "ex1",
+          "pages": [
+            2
+          ],
+          "topics": [
+            "Probabilites",
+            "Fonctions",
+            "Convexite",
+            "Logarithme",
+            "Integration",
+            "Geometrie dans l'espace",
+            "Droites et plans"
+          ],
+          "skills": [
+            "Modeliser",
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex2",
+          "pages": [
+            3
+          ],
+          "topics": [
+            "Fonctions",
+            "Derivation",
+            "Logarithme",
+            "Integration",
+            "Geometrie dans l'espace",
+            "Vecteurs",
+            "Droites et plans",
+            "Trigonometrie"
+          ],
+          "skills": [
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex3",
+          "pages": [
+            4
+          ],
+          "topics": [
+            "Suites",
+            "Fonctions",
+            "Derivation",
+            "Limites",
+            "Exponentielle",
+            "Equations differentielles",
+            "Geometrie dans l'espace",
+            "Trigonometrie"
+          ],
+          "skills": [
+            "Modeliser",
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex4",
+          "pages": [
+            5,
+            6
+          ],
+          "topics": [
+            "Probabilites",
+            "Variables aleatoires",
+            "Loi binomiale",
+            "Suites",
+            "Integration",
+            "Trigonometrie"
+          ],
+          "skills": [
+            "Modeliser",
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        }
+      ]
     },
     {
       "id": "2022-centres-etranger-02",
@@ -689,7 +4786,64 @@
       "paper": 2,
       "subjectPath": "/annales/2022_spe-mathematiques_centres-etranger_02_sujet.pdf",
       "correctionPath": null,
-      "exercises": []
+      "exercises": [
+        {
+          "id": "ex2",
+          "pages": [
+            4
+          ],
+          "topics": [
+            "Suites",
+            "Recurrence",
+            "Fonctions",
+            "Derivation",
+            "Limites",
+            "Logarithme",
+            "Geometrie dans l'espace",
+            "Droites et plans",
+            "Trigonometrie"
+          ],
+          "skills": [
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex3",
+          "pages": [
+            5
+          ],
+          "topics": [
+            "Integration",
+            "Geometrie dans l'espace",
+            "Vecteurs",
+            "Droites et plans",
+            "Trigonometrie"
+          ],
+          "skills": [
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex4",
+          "pages": [
+            6
+          ],
+          "topics": [
+            "Probabilites",
+            "Variables aleatoires",
+            "Equations differentielles"
+          ],
+          "skills": [
+            "Modeliser",
+            "Raisonner",
+            "Calculer"
+          ]
+        }
+      ]
     },
     {
       "id": "2022-mayotte-liban-01",
@@ -699,7 +4853,87 @@
       "paper": 1,
       "subjectPath": "/annales/2022_spe-mathematiques_mayotte-liban_01_sujet.pdf",
       "correctionPath": null,
-      "exercises": []
+      "exercises": [
+        {
+          "id": "ex1",
+          "pages": [
+            2,
+            3
+          ],
+          "topics": [
+            "Probabilites",
+            "Variables aleatoires",
+            "Loi binomiale"
+          ],
+          "skills": [
+            "Modeliser",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex2",
+          "pages": [
+            4,
+            5
+          ],
+          "topics": [
+            "Suites",
+            "Fonctions",
+            "Derivation",
+            "Convexite",
+            "Limites",
+            "Logarithme",
+            "Integration",
+            "Geometrie dans l'espace",
+            "Droites et plans",
+            "Trigonometrie"
+          ],
+          "skills": [
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex3",
+          "pages": [
+            6
+          ],
+          "topics": [
+            "Suites",
+            "Recurrence",
+            "Fonctions",
+            "Derivation",
+            "Limites",
+            "Logarithme",
+            "Exponentielle",
+            "Algorithmique"
+          ],
+          "skills": [
+            "Modeliser",
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex4",
+          "pages": [
+            7
+          ],
+          "topics": [
+            "Geometrie dans l'espace",
+            "Vecteurs",
+            "Droites et plans"
+          ],
+          "skills": [
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        }
+      ]
     },
     {
       "id": "2022-mayotte-liban-02",
@@ -709,7 +4943,87 @@
       "paper": 2,
       "subjectPath": "/annales/2022_spe-mathematiques_mayotte-liban_02_sujet.pdf",
       "correctionPath": null,
-      "exercises": []
+      "exercises": [
+        {
+          "id": "ex1",
+          "pages": [
+            2
+          ],
+          "topics": [
+            "Probabilites",
+            "Variables aleatoires",
+            "Loi binomiale"
+          ],
+          "skills": [
+            "Modeliser",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex2",
+          "pages": [
+            3
+          ],
+          "topics": [
+            "Integration",
+            "Geometrie dans l'espace",
+            "Vecteurs",
+            "Droites et plans",
+            "Trigonometrie"
+          ],
+          "skills": [
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex3",
+          "pages": [
+            4,
+            5
+          ],
+          "topics": [
+            "Suites",
+            "Fonctions",
+            "Derivation",
+            "Convexite",
+            "Integration",
+            "Geometrie dans l'espace",
+            "Droites et plans",
+            "Trigonometrie"
+          ],
+          "skills": [
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex4",
+          "pages": [
+            6,
+            7
+          ],
+          "topics": [
+            "Suites",
+            "Recurrence",
+            "Fonctions",
+            "Derivation",
+            "Limites",
+            "Logarithme",
+            "Exponentielle",
+            "Algorithmique"
+          ],
+          "skills": [
+            "Modeliser",
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        }
+      ]
     },
     {
       "id": "2022-metropole-01",
@@ -719,7 +5033,96 @@
       "paper": 1,
       "subjectPath": "/annales/2022_spe-mathematiques_metropole_01_sujet.pdf",
       "correctionPath": "/annales/2022_spe-mathematiques_metropole_01_corrige.pdf",
-      "exercises": []
+      "exercises": [
+        {
+          "id": "ex1",
+          "pages": [
+            2
+          ],
+          "topics": [
+            "Probabilites",
+            "Suites",
+            "Fonctions",
+            "Derivation",
+            "Exponentielle",
+            "Integration",
+            "Equations differentielles",
+            "Trigonometrie"
+          ],
+          "skills": [
+            "Modeliser",
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex2",
+          "pages": [
+            3
+          ],
+          "topics": [
+            "Suites",
+            "Recurrence",
+            "Fonctions",
+            "Limites",
+            "Integration",
+            "Geometrie dans l'espace",
+            "Vecteurs",
+            "Droites et plans",
+            "Trigonometrie"
+          ],
+          "skills": [
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex3",
+          "pages": [
+            4
+          ],
+          "topics": [
+            "Probabilites",
+            "Variables aleatoires",
+            "Loi binomiale",
+            "Fonctions",
+            "Integration",
+            "Trigonometrie",
+            "Algorithmique"
+          ],
+          "skills": [
+            "Modeliser",
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex4",
+          "pages": [
+            5
+          ],
+          "topics": [
+            "Probabilites",
+            "Fonctions",
+            "Derivation",
+            "Convexite",
+            "Limites",
+            "Logarithme",
+            "Integration",
+            "Geometrie dans l'espace",
+            "Droites et plans"
+          ],
+          "skills": [
+            "Modeliser",
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        }
+      ]
     },
     {
       "id": "2022-metropole-02",
@@ -729,7 +5132,89 @@
       "paper": 2,
       "subjectPath": "/annales/2022_spe-mathematiques_metropole_02_sujet.pdf",
       "correctionPath": null,
-      "exercises": []
+      "exercises": [
+        {
+          "id": "ex1",
+          "pages": [
+            2
+          ],
+          "topics": [
+            "Probabilites",
+            "Variables aleatoires",
+            "Integration",
+            "Trigonometrie"
+          ],
+          "skills": [
+            "Modeliser",
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex2",
+          "pages": [
+            3
+          ],
+          "topics": [
+            "Suites",
+            "Fonctions",
+            "Derivation",
+            "Convexite",
+            "Integration",
+            "Vecteurs",
+            "Trigonometrie"
+          ],
+          "skills": [
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex3",
+          "pages": [
+            4
+          ],
+          "topics": [
+            "Suites",
+            "Limites",
+            "Integration",
+            "Geometrie dans l'espace",
+            "Vecteurs",
+            "Droites et plans",
+            "Trigonometrie"
+          ],
+          "skills": [
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex4",
+          "pages": [
+            5,
+            6,
+            7
+          ],
+          "topics": [
+            "Fonctions",
+            "Derivation",
+            "Limites",
+            "Exponentielle",
+            "Equations differentielles",
+            "Geometrie dans l'espace",
+            "Trigonometrie"
+          ],
+          "skills": [
+            "Modeliser",
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        }
+      ]
     },
     {
       "id": "2022-nouv-caledonie-01",
@@ -739,7 +5224,83 @@
       "paper": 1,
       "subjectPath": "/annales/2022_spe-mathematiques_nouv-caledonie_01_sujet.pdf",
       "correctionPath": null,
-      "exercises": []
+      "exercises": [
+        {
+          "id": "ex1",
+          "pages": [
+            2
+          ],
+          "topics": [
+            "Fonctions",
+            "Derivation",
+            "Convexite",
+            "Logarithme",
+            "Geometrie dans l'espace",
+            "Vecteurs"
+          ],
+          "skills": [
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex2",
+          "pages": [
+            3
+          ],
+          "topics": [
+            "Suites",
+            "Recurrence",
+            "Fonctions",
+            "Derivation",
+            "Limites",
+            "Exponentielle",
+            "Algorithmique"
+          ],
+          "skills": [
+            "Modeliser",
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex3",
+          "pages": [
+            4
+          ],
+          "topics": [
+            "Geometrie dans l'espace",
+            "Vecteurs",
+            "Droites et plans",
+            "Trigonometrie"
+          ],
+          "skills": [
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex4",
+          "pages": [
+            5,
+            6
+          ],
+          "topics": [
+            "Probabilites",
+            "Integration",
+            "Trigonometrie"
+          ],
+          "skills": [
+            "Modeliser",
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        }
+      ]
     },
     {
       "id": "2022-nouv-caledonie-02",
@@ -749,7 +5310,84 @@
       "paper": 2,
       "subjectPath": "/annales/2022_spe-mathematiques_nouv-caledonie_02_sujet.pdf",
       "correctionPath": null,
-      "exercises": []
+      "exercises": [
+        {
+          "id": "ex1",
+          "pages": [
+            2
+          ],
+          "topics": [
+            "Probabilites",
+            "Variables aleatoires",
+            "Loi binomiale"
+          ],
+          "skills": [
+            "Modeliser",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex2",
+          "pages": [
+            3
+          ],
+          "topics": [
+            "Fonctions",
+            "Derivation",
+            "Convexite",
+            "Limites",
+            "Logarithme",
+            "Geometrie dans l'espace",
+            "Trigonometrie",
+            "Algorithmique"
+          ],
+          "skills": [
+            "Modeliser",
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex3",
+          "pages": [
+            4
+          ],
+          "topics": [
+            "Integration",
+            "Geometrie dans l'espace",
+            "Vecteurs",
+            "Droites et plans",
+            "Trigonometrie"
+          ],
+          "skills": [
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex4",
+          "pages": [
+            5,
+            6
+          ],
+          "topics": [
+            "Suites",
+            "Fonctions",
+            "Limites",
+            "Logarithme",
+            "Integration",
+            "Geometrie dans l'espace"
+          ],
+          "skills": [
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        }
+      ]
     },
     {
       "id": "2022-polynesie-01",
@@ -759,7 +5397,87 @@
       "paper": 1,
       "subjectPath": "/annales/2022_spe-mathematiques_polynesie_01_sujet.pdf",
       "correctionPath": "/annales/2022_spe-mathematiques_polynesie_01_corrige.pdf",
-      "exercises": []
+      "exercises": [
+        {
+          "id": "ex1",
+          "pages": [
+            2,
+            3,
+            4
+          ],
+          "topics": [
+            "Suites",
+            "Fonctions",
+            "Derivation",
+            "Convexite",
+            "Limites",
+            "Logarithme",
+            "Integration",
+            "Algorithmique"
+          ],
+          "skills": [
+            "Modeliser",
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex2",
+          "pages": [
+            5
+          ],
+          "topics": [
+            "Probabilites",
+            "Variables aleatoires",
+            "Integration",
+            "Trigonometrie"
+          ],
+          "skills": [
+            "Modeliser",
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex3",
+          "pages": [
+            6
+          ],
+          "topics": [
+            "Suites",
+            "Recurrence",
+            "Fonctions",
+            "Limites",
+            "Algorithmique"
+          ],
+          "skills": [
+            "Modeliser",
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex4",
+          "pages": [
+            7
+          ],
+          "topics": [
+            "Integration",
+            "Geometrie dans l'espace",
+            "Vecteurs",
+            "Droites et plans",
+            "Trigonometrie"
+          ],
+          "skills": [
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        }
+      ]
     },
     {
       "id": "2022-polynesie-02",
@@ -769,7 +5487,90 @@
       "paper": 2,
       "subjectPath": "/annales/2022_spe-mathematiques_polynesie_02_sujet.pdf",
       "correctionPath": "/annales/2022_spe-mathematiques_polynesie_02_corrige.pdf",
-      "exercises": []
+      "exercises": [
+        {
+          "id": "ex1",
+          "pages": [
+            2,
+            3
+          ],
+          "topics": [
+            "Probabilites",
+            "Fonctions",
+            "Derivation",
+            "Limites",
+            "Continuite",
+            "Logarithme",
+            "Integration",
+            "Trigonometrie"
+          ],
+          "skills": [
+            "Modeliser",
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex2",
+          "pages": [
+            4
+          ],
+          "topics": [
+            "Probabilites",
+            "Variables aleatoires",
+            "Loi binomiale",
+            "Integration",
+            "Trigonometrie"
+          ],
+          "skills": [
+            "Modeliser",
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex3",
+          "pages": [
+            5
+          ],
+          "topics": [
+            "Suites",
+            "Recurrence",
+            "Fonctions",
+            "Limites",
+            "Algorithmique"
+          ],
+          "skills": [
+            "Modeliser",
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        },
+        {
+          "id": "ex4",
+          "pages": [
+            6,
+            7
+          ],
+          "topics": [
+            "Integration",
+            "Equations differentielles",
+            "Geometrie dans l'espace",
+            "Vecteurs",
+            "Droites et plans",
+            "Trigonometrie"
+          ],
+          "skills": [
+            "Modeliser",
+            "Representer",
+            "Raisonner",
+            "Calculer"
+          ]
+        }
+      ]
     }
   ]
 }
