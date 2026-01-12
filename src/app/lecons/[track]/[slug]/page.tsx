@@ -12,6 +12,7 @@ import {
   ClipboardList,
   ChevronRight,
   Infinity,
+  GraduationCap,
 } from 'lucide-react'
 import { getLessonBySlug, getAllLessons, getExercisesByLesson, getFlashcardsByLesson, getPreQuiz, getPostQuiz } from '@/lib/content'
 import { getTrackLabel, getTrackColor, getDifficultyLabel, getDifficultyColor, formatDuration } from '@/lib/utils'
@@ -88,6 +89,8 @@ export default function LessonPage({ params }: PageProps) {
   }
 
   const exercises = getExercisesByLesson(lesson.id)
+  const typeBacExercises = exercises.filter((exercise) => exercise.exerciseType === 'type-bac')
+  const standardExercises = exercises.filter((exercise) => exercise.exerciseType !== 'type-bac')
   const flashcards = getFlashcardsByLesson(lesson.id)
   const preQuiz = getPreQuiz(lesson.id)
   const postQuiz = getPostQuiz(lesson.id)
@@ -264,14 +267,14 @@ export default function LessonPage({ params }: PageProps) {
             <MnemonicSidebarWidget mnemonics={mnemonics} />
 
             {/* Related exercises */}
-            {exercises.length > 0 && (
+            {standardExercises.length > 0 && (
               <div className="card">
                 <h3 className="flex items-center gap-2 font-semibold text-slate-900 dark:text-slate-100">
                   <ClipboardList className="h-5 w-5 text-amber-600 dark:text-amber-500" />
-                  Exercices ({exercises.length})
+                  Exercices ({standardExercises.length})
                 </h3>
                 <ul className="mt-4 space-y-2">
-                  {exercises.slice(0, 5).map((exercise) => (
+                  {standardExercises.slice(0, 5).map((exercise) => (
                     <li key={exercise.id}>
                       <Link
                         href={`/exercices/${exercise.id}`}
@@ -285,12 +288,47 @@ export default function LessonPage({ params }: PageProps) {
                     </li>
                   ))}
                 </ul>
-                {exercises.length > 5 && (
+                {standardExercises.length > 5 && (
                   <Link
                     href={`/exercices?lesson=${lesson.id}`}
                     className="mt-4 block text-sm text-primary-600 hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-300"
                   >
                     Voir tous les exercices
+                  </Link>
+                )}
+              </div>
+            )}
+
+            {typeBacExercises.length > 0 && (
+              <div className="card border border-indigo-100 dark:border-indigo-900/60">
+                <h3 className="flex items-center gap-2 font-semibold text-slate-900 dark:text-slate-100">
+                  <GraduationCap className="h-5 w-5 text-indigo-600 dark:text-indigo-400" />
+                  Exercices type bac ({typeBacExercises.length})
+                </h3>
+                <p className="mt-2 text-sm text-slate-600 dark:text-slate-400">
+                  Entraîne-toi sur un exercice issu d'une annale pour appliquer la leçon.
+                </p>
+                <ul className="mt-4 space-y-2">
+                  {typeBacExercises.slice(0, 3).map((exercise) => (
+                    <li key={exercise.id}>
+                      <Link
+                        href={`/exercices/${exercise.id}`}
+                        className="flex items-center justify-between text-sm text-slate-600 hover:text-primary-600 dark:text-slate-400 dark:hover:text-primary-400"
+                      >
+                        <span className="truncate">{exercise.title}</span>
+                        <span className={`badge text-xs ${getDifficultyColor(exercise.difficulty)}`}>
+                          {getDifficultyLabel(exercise.difficulty)}
+                        </span>
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+                {typeBacExercises.length > 3 && (
+                  <Link
+                    href={`/exercices?lesson=${lesson.id}&type=type-bac`}
+                    className="mt-4 block text-sm text-primary-600 hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-300"
+                  >
+                    Voir tous les exercices type bac
                   </Link>
                 )}
               </div>

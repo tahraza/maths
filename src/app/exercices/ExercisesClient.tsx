@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react'
 import { useSearchParams, useRouter } from 'next/navigation'
 import Link from 'next/link'
-import { ClipboardList, Tag, ChevronRight, Filter, Infinity } from 'lucide-react'
+import { ClipboardList, Tag, ChevronRight, Filter, Infinity, GraduationCap } from 'lucide-react'
 import { getDifficultyLabel, getDifficultyColor } from '@/lib/utils'
 import MathText from '@/components/MathText'
 
@@ -11,6 +11,7 @@ interface Exercise {
   id: string
   lessonId: string
   title: string
+  exerciseType?: 'standard' | 'type-bac'
   difficulty: number
   statement: string
   hints: string[]
@@ -34,6 +35,7 @@ export default function ExercisesClient() {
 
   const lessonFilter = searchParams.get('lesson') || ''
   const difficultyFilter = searchParams.get('difficulty') || ''
+  const typeFilter = searchParams.get('type') || ''
 
   useEffect(() => {
     async function loadData() {
@@ -83,6 +85,12 @@ export default function ExercisesClient() {
     filteredExercises = filteredExercises.filter((e) => e.difficulty === difficulty)
   }
 
+  if (typeFilter) {
+    filteredExercises = filteredExercises.filter(
+      (e) => (e.exerciseType ?? 'standard') === typeFilter
+    )
+  }
+
   // Group by difficulty
   const exercisesByDifficulty = filteredExercises.reduce((acc, exercise) => {
     const key = exercise.difficulty
@@ -124,13 +132,22 @@ export default function ExercisesClient() {
                 {exercises.length} exercices corrigés avec indices et solutions détaillées
               </p>
             </div>
-            <Link
-              href="/exercices/generateur"
-              className="btn btn-primary flex items-center gap-2 self-start"
-            >
-              <Infinity className="h-5 w-5" />
-              Générateur infini
-            </Link>
+            <div className="flex flex-wrap items-center gap-2">
+              <Link
+                href="/exercices?type=type-bac"
+                className="btn btn-secondary flex items-center gap-2 self-start"
+              >
+                <GraduationCap className="h-5 w-5" />
+                Type bac
+              </Link>
+              <Link
+                href="/exercices/generateur"
+                className="btn btn-primary flex items-center gap-2 self-start"
+              >
+                <Infinity className="h-5 w-5" />
+                Générateur infini
+              </Link>
+            </div>
           </div>
         </div>
 
@@ -167,7 +184,16 @@ export default function ExercisesClient() {
             <option value="5">Expert</option>
           </select>
 
-          {(lessonFilter || difficultyFilter) && (
+          <select
+            value={typeFilter}
+            onChange={(e) => handleFilterChange('type', e.target.value)}
+            className="input w-auto"
+          >
+            <option value="">Tous les types</option>
+            <option value="type-bac">Type bac</option>
+          </select>
+
+          {(lessonFilter || difficultyFilter || typeFilter) && (
             <Link
               href="/exercices"
               className="text-sm text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-300"
@@ -211,9 +237,16 @@ export default function ExercisesClient() {
                           className="card group hover:border-amber-200 hover:shadow-md transition-all dark:hover:border-amber-700"
                         >
                           <div className="flex items-start justify-between">
-                            <span className={`badge ${getDifficultyColor(exercise.difficulty)}`}>
-                              {getDifficultyLabel(exercise.difficulty)}
-                            </span>
+                            <div className="flex flex-wrap items-center gap-2">
+                              <span className={`badge ${getDifficultyColor(exercise.difficulty)}`}>
+                                {getDifficultyLabel(exercise.difficulty)}
+                              </span>
+                              {exercise.exerciseType === 'type-bac' && (
+                                <span className="badge bg-indigo-100 text-indigo-700 dark:bg-indigo-900/50 dark:text-indigo-200">
+                                  Type bac
+                                </span>
+                              )}
+                            </div>
                             <ChevronRight className="h-5 w-5 text-slate-400 group-hover:text-amber-600 transition-colors" />
                           </div>
 

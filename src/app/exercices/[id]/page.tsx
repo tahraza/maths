@@ -119,6 +119,11 @@ export default function ExercisePage({ params }: PageProps) {
                     Compréhension
                   </span>
                 )}
+                {exercise.exerciseType === 'type-bac' && (
+                  <span className="badge bg-indigo-100 text-indigo-700 dark:bg-indigo-900/50 dark:text-indigo-200">
+                    Type bac
+                  </span>
+                )}
               </div>
               <h1 className="text-2xl font-bold text-slate-900 dark:text-slate-100">{exercise.title}</h1>
             </div>

@@ -108,6 +108,7 @@ export interface Exercise {
   lessonId: string
   title: string
   difficulty: DifficultyLevel
+  exerciseType?: 'standard' | 'type-bac'
   statement: string
   hints: string[]
   solutionSteps: SolutionStep[]
