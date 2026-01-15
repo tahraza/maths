@@ -8,9 +8,9 @@ import { ThemeProvider } from '@/components/ThemeProvider'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Maths Terminale | Spécialité & Expertes',
+  title: 'Maths Terminale | Spécialité, Expertes & Rappels',
   description: 'Plateforme interactive pour réviser les mathématiques de Terminale : cours complets, exercices corrigés, QCM, flashcards et suivi de progression.',
-  keywords: ['maths', 'terminale', 'bac', 'révision', 'exercices', 'cours', 'spécialité', 'expertes'],
+  keywords: ['maths', 'terminale', 'bac', 'révision', 'exercices', 'cours', 'spécialité', 'expertes', 'rappels'],
 }
 
 export default function RootLayout({

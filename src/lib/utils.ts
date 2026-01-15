@@ -63,6 +63,7 @@ export function getDifficultyColor(level: number): string {
 
 export function getTrackLabel(track: string): string {
   const labels: Record<string, string> = {
+    rappels: 'Rappels',
     spe: 'Spécialité',
     expertes: 'Expertes',
   }
@@ -71,6 +72,7 @@ export function getTrackLabel(track: string): string {
 
 export function getTrackColor(track: string): string {
   const colors: Record<string, string> = {
+    rappels: 'text-sky-700 bg-sky-100',
     spe: 'text-primary-700 bg-primary-100',
     expertes: 'text-purple-700 bg-purple-100',
   }

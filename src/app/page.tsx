@@ -16,8 +16,10 @@ export default function HomePage() {
   const exercises = getAllExercises()
   const flashcards = getAllFlashcards()
 
+  const trackCount = new Set(lessons.map((lesson) => lesson.track)).size
   const speLessons = lessons.filter((l) => l.track === 'spe')
   const expertesLessons = lessons.filter((l) => l.track === 'expertes')
+  const rappelsLessons = lessons.filter((l) => l.track === 'rappels')
 
   return (
     <div className="min-h-screen">
@@ -71,8 +73,8 @@ export default function HomePage() {
               <div className="text-sm text-slate-600 dark:text-slate-400">Flashcards</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-primary-600">2</div>
-              <div className="text-sm text-slate-600 dark:text-slate-400">Programmes</div>
+              <div className="text-3xl font-bold text-primary-600">{trackCount}</div>
+              <div className="text-sm text-slate-600 dark:text-slate-400">Espaces</div>
             </div>
           </div>
         </div>
@@ -183,13 +185,13 @@ export default function HomePage() {
       <section className="bg-slate-50 py-16 dark:bg-slate-800/50">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h2 className="text-3xl font-bold text-slate-900 dark:text-slate-100">Deux programmes complets</h2>
+            <h2 className="text-3xl font-bold text-slate-900 dark:text-slate-100">Trois espaces d'apprentissage</h2>
             <p className="mx-auto mt-4 max-w-2xl text-slate-600 dark:text-slate-400">
-              Spécialité Mathématiques et Maths Expertes, tout le programme de Terminale.
+              Spécialité, Maths Expertes et rappels express pour consolider les notations clés.
             </p>
           </div>
 
-          <div className="mt-12 grid gap-8 md:grid-cols-2">
+          <div className="mt-12 grid gap-8 md:grid-cols-3">
             {/* Spécialité */}
             <div className="card bg-gradient-to-br from-primary-50 to-white border-primary-200 dark:from-primary-900/20 dark:to-slate-800 dark:border-primary-800">
               <div className="flex items-center gap-3">
@@ -270,6 +272,44 @@ export default function HomePage() {
                 className="mt-6 flex items-center gap-2 text-purple-600 hover:text-purple-700 font-medium"
               >
                 Voir les leçons
+                <ArrowRight className="h-4 w-4" />
+              </Link>
+            </div>
+
+            {/* Rappels */}
+            <div className="card bg-gradient-to-br from-sky-50 to-white border-sky-200 dark:from-sky-900/20 dark:to-slate-800 dark:border-sky-800">
+              <div className="flex items-center gap-3">
+                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-sky-600 text-white">
+                  <span className="text-lg font-bold">R</span>
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-slate-900 dark:text-slate-100">Rappels</h3>
+                  <p className="text-sm text-slate-600 dark:text-slate-400">{rappelsLessons.length} leçon{rappelsLessons.length > 1 ? 's' : ''} disponible{rappelsLessons.length > 1 ? 's' : ''}</p>
+                </div>
+              </div>
+              <ul className="mt-6 space-y-2">
+                <li className="flex items-center gap-2 text-sm text-slate-700 dark:text-slate-300">
+                  <CheckCircle className="h-4 w-4 text-sky-600" />
+                  Notations Sigma et Pi
+                </li>
+                <li className="flex items-center gap-2 text-sm text-slate-700 dark:text-slate-300">
+                  <CheckCircle className="h-4 w-4 text-sky-600" />
+                  Formules de base utiles
+                </li>
+                <li className="flex items-center gap-2 text-sm text-slate-700 dark:text-slate-300">
+                  <CheckCircle className="h-4 w-4 text-sky-600" />
+                  Lecture et manipulation rapide
+                </li>
+                <li className="flex items-center gap-2 text-sm text-slate-700 dark:text-slate-300">
+                  <CheckCircle className="h-4 w-4 text-sky-600" />
+                  QCM express de diagnostic
+                </li>
+              </ul>
+              <Link
+                href="/lecons?track=rappels"
+                className="mt-6 flex items-center gap-2 text-sky-600 hover:text-sky-700 font-medium"
+              >
+                Voir les rappels
                 <ArrowRight className="h-4 w-4" />
               </Link>
             </div>

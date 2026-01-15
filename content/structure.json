@@ -1,5 +1,23 @@
 [
   {
+    "id": "rappels-module",
+    "title": "Rappels",
+    "track": "rappels",
+    "description": "Rappels express pour consolider les bases",
+    "chapters": [
+      {
+        "id": "rappels-notations",
+        "title": "Notations essentielles",
+        "track": "rappels",
+        "order": 1,
+        "description": "Sommes, produits et notations clés",
+        "lessons": [
+          "sommes-produits"
+        ]
+      }
+    ]
+  },
+  {
     "id": "spe-module",
     "title": "Spécialité Mathématiques",
     "track": "spe",

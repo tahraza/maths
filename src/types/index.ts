@@ -3,7 +3,7 @@
 // ==========================================
 
 // Filière d'études
-export type Track = 'spe' | 'expertes'
+export type Track = 'rappels' | 'spe' | 'expertes'
 
 // Niveau de difficulté (1-5)
 export type DifficultyLevel = 1 | 2 | 3 | 4 | 5

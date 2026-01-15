@@ -30,6 +30,7 @@ export default function LessonsPage({ searchParams }: PageProps) {
   }
 
   // Group lessons by track and chapter
+  const rappelsModule = structure.find((m) => m.track === 'rappels')
   const speModule = structure.find((m) => m.track === 'spe')
   const expertesModule = structure.find((m) => m.track === 'expertes')
 
@@ -146,6 +147,37 @@ export default function LessonsPage({ searchParams }: PageProps) {
             <h2 className="text-2xl font-bold text-slate-900 mb-8 dark:text-slate-100">Par chapitre</h2>
 
             <div className="space-y-12">
+              {/* Rappels */}
+              {rappelsModule && (
+                <div>
+                  <h3 className="flex items-center gap-2 text-xl font-semibold text-slate-900 mb-4 dark:text-slate-100">
+                    <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-sky-600 text-white text-sm font-bold">
+                      R
+                    </span>
+                    Rappels
+                  </h3>
+                  <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+                    {rappelsModule.chapters.map((chapter) => (
+                      <Link
+                        key={chapter.id}
+                        href={`/lecons?track=rappels&chapter=${chapter.id}`}
+                        className="card group hover:border-sky-200 hover:shadow-md transition-all dark:hover:border-sky-700"
+                      >
+                        <h4 className="font-semibold text-slate-900 group-hover:text-sky-600 dark:text-slate-100">
+                          {chapter.title}
+                        </h4>
+                        <p className="mt-1 text-sm text-slate-600 dark:text-slate-400">
+                          {chapter.description}
+                        </p>
+                        <div className="mt-2 text-xs text-slate-500 dark:text-slate-400">
+                          {chapter.lessons.length} leçon{chapter.lessons.length > 1 ? 's' : ''}
+                        </div>
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              )}
+
               {/* Spécialité */}
               {speModule && (
                 <div>

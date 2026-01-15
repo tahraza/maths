@@ -82,6 +82,17 @@ export function LessonFilters({
             Spécialité
           </button>
           <button
+            onClick={() => updateFilter('track', 'rappels')}
+            className={cn(
+              'px-3 py-1.5 text-sm rounded-lg transition-colors',
+              currentTrack === 'rappels'
+                ? 'bg-sky-600 text-white'
+                : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
+            )}
+          >
+            Rappels
+          </button>
+          <button
             onClick={() => updateFilter('track', 'expertes')}
             className={cn(
               'px-3 py-1.5 text-sm rounded-lg transition-colors',

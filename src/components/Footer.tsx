@@ -51,8 +51,13 @@ export function Footer() {
 
           {/* Tracks */}
           <div>
-            <h3 className="text-sm font-semibold text-slate-900 dark:text-slate-100">Programmes</h3>
+            <h3 className="text-sm font-semibold text-slate-900 dark:text-slate-100">Espaces</h3>
             <ul className="mt-3 space-y-2">
+              <li>
+                <Link href="/lecons?track=rappels" className="text-sm text-slate-600 hover:text-primary-600 dark:text-slate-400 dark:hover:text-primary-400">
+                  Rappels
+                </Link>
+              </li>
               <li>
                 <Link href="/lecons?track=spe" className="text-sm text-slate-600 hover:text-primary-600 dark:text-slate-400 dark:hover:text-primary-400">
                   Spécialité Maths

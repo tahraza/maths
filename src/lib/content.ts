@@ -16,7 +16,7 @@ export function getAllLessons(): Lesson[] {
     return []
   }
 
-  const tracks = ['spe', 'expertes']
+  const tracks: Track[] = ['rappels', 'spe', 'expertes']
   const lessons: Lesson[] = []
 
   for (const track of tracks) {
@@ -40,8 +40,9 @@ export function getAllLessons(): Lesson[] {
     }
   }
 
+  const trackOrder: Record<Track, number> = { rappels: 0, spe: 1, expertes: 2 }
   return lessons.sort((a, b) => {
-    if (a.track !== b.track) return a.track === 'spe' ? -1 : 1
+    if (a.track !== b.track) return (trackOrder[a.track] ?? 99) - (trackOrder[b.track] ?? 99)
     return a.order - b.order
   })
 }
@@ -182,6 +183,22 @@ export function getCourseStructure(): Module[] {
 
 function getDefaultStructure(): Module[] {
   return [
+    {
+      id: 'rappels-module',
+      title: 'Rappels',
+      track: 'rappels',
+      description: 'Rappels express pour consolider les bases',
+      chapters: [
+        {
+          id: 'rappels-notations',
+          title: 'Notations essentielles',
+          track: 'rappels',
+          order: 1,
+          description: 'Sommes, produits et notations clés',
+          lessons: ['sommes-produits'],
+        },
+      ],
+    },
     {
       id: 'spe-module',
       title: 'Spécialité Mathématiques',
