@@ -1,0 +1,106 @@
+---
+id: "ensembles-intervalles-valeur-absolue"
+title: "Ensembles, intervalles et valeur absolue"
+track: "rappels"
+level: 1
+prerequisites: []
+tags: ["ensembles", "intervalles", "valeur absolue", "inequations", "distance"]
+estimatedTime: 12
+chapter: "rappels-notations"
+order: 1
+---
+
+# Ensembles, intervalles et valeur absolue
+
+Cette leçon rassemble trois outils utilisés partout : écrire un ensemble, décrire un intervalle et traduire une distance avec la valeur absolue.
+
+:::graph[FunctionPlot]
+fn: abs(x)
+xDomain: [-5, 5]
+yDomain: [0, 5]
+showMovablePoint: true
+title: La courbe de |x| représente une distance
+:::
+
+## Objectifs
+
+À la fin de cette leçon, tu sauras :
+- Lire et écrire les intervalles usuels
+- Manipuler union, intersection, complémentaire
+- Traduire une distance avec $|x-a|$
+- Passer d'une inéquation à un intervalle
+
+## Ensembles : notations essentielles
+
+:::definition
+Un **ensemble** est une collection d'objets (nombres, points, etc.).
+
+- $x \in A$ : $x$ appartient à $A$
+- $x \notin A$ : $x$ n'appartient pas à $A$
+- $A \subset B$ : $A$ est inclus dans $B$
+:::
+
+### Union et intersection
+
+:::property
+- **Union** : $A \cup B$ contient les éléments de $A$ **ou** de $B$
+- **Intersection** : $A \cap B$ contient les éléments de $A$ **et** de $B$
+:::
+
+:::example[Exemple rapide]
+Soit $A = [1,4]$ et $B = ]3,6]$.
+
+- $A \cap B = ]3,4]$
+- $A \cup B = [1,6]$
+:::
+
+## Intervalles
+
+Voici les notations de base :
+
+| Écriture | Lecture |
+|---|---|
+| $[a,b]$ | de $a$ à $b$, **bornes incluses** |
+| $]a,b[$ | de $a$ à $b$, **bornes exclues** |
+| $[a,b[$ | $a$ inclus, $b$ exclu |
+| $]-\infty, a]$ | tous les réels $\le a$ |
+| $[a, +\infty[$ | tous les réels $\ge a$ |
+
+:::tip
+Quand tu résous une inéquation, écris toujours la solution **en intervalle**.
+:::
+
+## Valeur absolue = distance
+
+:::definition
+$|x|$ est la **distance** entre $x$ et $0$ sur la droite réelle.
+
+Plus généralement :
+$$|x-a| = \text{distance entre } x \text{ et } a$$
+:::
+
+:::property
+Pour $a > 0$ :
+$$|x| \le a \iff -a \le x \le a$$
+$$|x| \ge a \iff x \le -a \text{ ou } x \ge a$$
+:::
+
+:::example[Traduction en intervalle]
+Résoudre $|x-2| \le 3$.
+
+On traduit : $-3 \le x-2 \le 3$.
+Donc $-1 \le x \le 5$, soit $x \in [-1,5]$.
+:::
+
+:::method[Passer d'une inéquation à un intervalle]
+1. Isoler $x$.
+2. Écrire la solution sous forme d'intervalle.
+3. Si un **OU** apparaît, écrire une **union**.
+:::
+
+## À retenir
+
+- Union = **OU**, intersection = **ET**
+- Les intervalles décrivent précisément un ensemble de réels
+- $|x-a|$ représente une **distance**
+- Les inéquations se traduisent directement en intervalles

@@ -1,0 +1,84 @@
+---
+id: "equations-inequations-tableau-signes"
+title: "Équations, inéquations et tableau de signes"
+track: "rappels"
+level: 1
+prerequisites: []
+tags: ["equations", "inequations", "signe", "second degré", "tableau"]
+estimatedTime: 14
+chapter: "rappels-algebre"
+order: 2
+---
+
+# Équations, inéquations et tableau de signes
+
+Résoudre vite une équation ou une inéquation est un réflexe essentiel avant l'étude de fonctions et les probabilités.
+
+:::graph[FunctionPlot]
+fn: x^2 - 3*x + 2
+xDomain: [-1, 4]
+yDomain: [-3, 4]
+showMovablePoint: true
+title: Le signe d'un polynôme se lit entre ses racines
+:::
+
+## Objectifs
+
+À la fin de cette leçon, tu sauras :
+- Résoudre une équation du 1er et du 2nd degré
+- Construire un tableau de signes
+- Résoudre une inéquation avec factorisation
+
+## Équations du 1er degré
+
+:::property
+$$ax+b=0 \quad (a\ne 0) \Rightarrow x = -\frac{b}{a}$$
+:::
+
+:::example
+$$2x-5=0 \Rightarrow x=\frac{5}{2}$$
+:::
+
+## Équations du 2nd degré
+
+:::method[Résolution]
+Pour $ax^2+bx+c=0$ :
+1. Calculer $\Delta=b^2-4ac$
+2. Si $\Delta>0$ : deux solutions
+3. Si $\Delta=0$ : une solution double
+4. Si $\Delta<0$ : aucune solution réelle
+:::
+
+:::example
+$$x^2-3x+2=0 \Rightarrow (x-1)(x-2)=0$$
+Donc $x=1$ ou $x=2$.
+:::
+
+## Tableau de signes (produit)
+
+:::property
+Si $f(x) = (x-a)(x-b)$ avec $a<b$ :
+- le signe alterne entre les racines
+- et dépend du coefficient dominant
+:::
+
+:::example[Inéquation]
+Résoudre $x^2-3x+2 \ge 0$.
+
+On factorise : $(x-1)(x-2) \ge 0$.
+
+Le tableau de signes donne :
+$$x \le 1 \quad \text{ou} \quad x \ge 2$$
+
+Solution : $(-\infty,1] \cup [2,+\infty)$.
+:::
+
+:::warning
+Ne pas oublier que le signe change **entre** les racines pour un polynôme du 2nd degré.
+:::
+
+## À retenir
+
+- Toujours factoriser avant de résoudre une inéquation
+- Le tableau de signes est indispensable pour éviter les erreurs
+- La solution d'une inéquation s'écrit en **intervalle**

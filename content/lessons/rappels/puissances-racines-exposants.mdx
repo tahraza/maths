@@ -1,0 +1,80 @@
+---
+id: "puissances-racines-exposants"
+title: "Puissances, racines et exposants"
+track: "rappels"
+level: 1
+prerequisites: []
+tags: ["puissances", "racines", "exposants", "calcul", "simplification"]
+estimatedTime: 12
+chapter: "rappels-algebre"
+order: 0
+---
+
+# Puissances, racines et exposants
+
+Les règles de puissances évitent des calculs lourds et sont indispensables pour l'exponentielle, les logarithmes et les limites.
+
+:::graph[FunctionPlot]
+fn: sqrt(x)
+xDomain: [0, 9]
+yDomain: [0, 4]
+showMovablePoint: true
+title: La racine carrée est l'inverse de la puissance 2
+:::
+
+## Objectifs
+
+À la fin de cette leçon, tu sauras :
+- Utiliser les règles de calcul sur les puissances
+- Gérer les exposants négatifs et fractionnaires
+- Simplifier des expressions rapidement
+
+## Règles de base
+
+:::property
+Pour $a>0$ et $m,n \in \mathbb{Z}$ :
+$$a^m \times a^n = a^{m+n}$$
+$$\frac{a^m}{a^n} = a^{m-n}$$
+$$(a^m)^n = a^{mn}$$
+:::
+
+:::property
+Pour $a,b>0$ :
+$$(ab)^n = a^n b^n$$
+$$\left(\frac{a}{b}\right)^n = \frac{a^n}{b^n}$$
+:::
+
+:::property[Exposants négatifs]
+$$a^{-n} = \frac{1}{a^n}$$
+:::
+
+:::property[Exposants fractionnaires]
+$$a^{1/n} = \sqrt[n]{a}$$
+$$a^{m/n} = \sqrt[n]{a^m}$$
+:::
+
+## Exemples rapides
+
+:::example[Simplification]
+$$\frac{2^3 \times 2^5}{2^4} = 2^{3+5-4} = 2^4 = 16$$
+:::
+
+:::example[Réécriture]
+$$\sqrt{50} = \sqrt{25 \times 2} = 5\sqrt{2}$$
+:::
+
+:::example[Forme factorisée]
+$$3^4 - 3^2 = 3^2(3^2 - 1)$$
+Isoler une puissance commune simplifie les calculs.
+:::
+
+:::warning
+Attention : $\sqrt{a+b} \ne \sqrt{a} + \sqrt{b}$.
+:::
+
+## À retenir
+
+- Additionner les exposants au produit, soustraire au quotient
+- Un exposant négatif inverse la fraction
+- Les racines sont des puissances fractionnaires
+- Cherche une **puissance commune** pour factoriser vite
