@@ -55,6 +55,13 @@ $$\sum_{k=a}^{b} (u_k+v_k) = \sum_{k=a}^{b} u_k + \sum_{k=a}^{b} v_k$$
 $$\sum_{k=a}^{b} c\,u_k = c\sum_{k=a}^{b} u_k$$
 :::
 
+:::property[Somme constante]
+Si $A$ est constant et qu'il y a $b-a+1$ termes :
+$$\sum_{k=a}^{b} A = (b-a+1)A$$
+En particulier :
+$$\sum_{k=1}^{n} A = nA$$
+:::
+
 :::property[Décalage d'indice]
 On peut changer l'indice en conservant les mêmes termes :
 $$\sum_{k=a}^{b} u_{k+1} = \sum_{k=a+1}^{b+1} u_k$$
@@ -63,6 +70,11 @@ $$\sum_{k=a}^{b} u_{k+1} = \sum_{k=a+1}^{b+1} u_k$$
 :::example[Décalage pratique]
 $$\sum_{k=1}^{n} (k+1) = \sum_{k=2}^{n+1} k$$
 Les deux sommes contiennent exactement les mêmes termes.
+:::
+
+:::example[Réécriture utile]
+$$\sum_{k=1}^{n} (2k+1) = 2\sum_{k=1}^{n} k + \sum_{k=1}^{n} 1$$
+On isole la partie constante pour appliquer la somme d'entiers puis la somme constante.
 :::
 
 ### Formules utiles
