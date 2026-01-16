@@ -61,6 +61,32 @@ $6 \times 14 = 84$ et $6 \times 15 = 90$ depasse.
 Donc $q=14$ et $r=5$.
 :::
 
+## Division euclidienne de polynomes
+
+:::definition
+Pour deux polynomes $A(x)$ et $B(x)$ avec $B \\ne 0$, il existe un unique couple $(Q,R)$ tel que :
+$$A(x) = B(x)Q(x) + R(x) \\quad \\text{avec} \\quad \\deg R < \\deg B$$
+:::
+
+:::method
+1. Diviser le terme de plus haut degre de $A$ par celui de $B$ pour obtenir le premier terme de $Q$.
+2. Multiplier $B$ par ce terme, puis soustraire.
+3. Recommencer jusqu'a obtenir un reste de degre strictement plus petit que $B$.
+:::
+
+:::example[Exemple avec reste]
+Diviser $x^3 + 2x + 1$ par $x^2 + 1$.
+
+On trouve $Q(x)=x$ et $R(x)=x+1$.
+Donc $x^3 + 2x + 1 = (x^2 + 1)\\,x + (x+1)$.
+:::
+
+:::example[Exemple sans reste]
+Diviser $x^3 - 1$ par $x - 1$.
+
+On obtient $Q(x)=x^2 + x + 1$ et $R(x)=0$.
+:::
+
 ## Lien avec le modulo
 
 :::property
