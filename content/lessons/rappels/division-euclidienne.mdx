@@ -1,0 +1,78 @@
+---
+id: "division-euclidienne"
+title: "Division euclidienne"
+track: "rappels"
+level: 1
+prerequisites: []
+tags: ["division", "quotient", "reste", "modulo", "arithmetique"]
+estimatedTime: 12
+chapter: "rappels-algebre"
+order: 3
+---
+
+# Division euclidienne
+
+La division euclidienne donne un quotient et un reste. C'est la base du calcul de congruences, de la parite, et des tests de divisibilite.
+
+:::graph[EuclideanDivision]
+initialDividend: 47
+initialDivisor: 6
+autoPlay: true
+stepDelay: 900
+title: Animation d'une division euclidienne
+:::
+
+## Objectifs
+
+A la fin de cette lecon, tu sauras :
+- Poser une division euclidienne
+- Identifier quotient et reste
+- Utiliser l'ecriture $a = bq + r$
+
+## Definition
+
+:::definition
+Pour deux entiers $a$ et $b$ avec $b>0$, il existe un unique couple $(q,r)$ tel que :
+$$a = bq + r \quad \text{avec} \quad 0 \le r < b$$
+
+- $q$ est le **quotient**
+- $r$ est le **reste**
+:::
+
+:::example[Exemple rapide]
+Diviser 47 par 6.
+
+On obtient $47 = 6 \times 7 + 5$.
+Donc $q=7$ et $r=5$.
+:::
+
+## Methode rapide
+
+:::method
+1. Cherche $q$ tel que $bq$ soit **le plus proche possible** de $a$ sans depasser.
+2. Calcule $r = a - bq$.
+3. Verifie $0 \le r < b$.
+:::
+
+:::example
+Diviser 89 par 6.
+
+$6 \times 14 = 84$ et $6 \times 15 = 90$ depasse.
+Donc $q=14$ et $r=5$.
+:::
+
+## Lien avec le modulo
+
+:::property
+On note $a \equiv r \pmod b$ pour dire que le reste de la division de $a$ par $b$ vaut $r$.
+:::
+
+:::warning
+Le reste doit etre **strictement plus petit** que le diviseur. Le reste $r=b$ est impossible.
+:::
+
+## A retenir
+
+- Toujours ecrire $a=bq+r$ avec $0 \le r < b$
+- Le quotient est la partie entiere de $a/b$
+- Le reste mesure ce qu'il manque pour atteindre $a$

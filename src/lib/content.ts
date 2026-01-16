@@ -203,7 +203,7 @@ function getDefaultStructure(): Module[] {
           track: 'rappels',
           order: 2,
           description: 'Puissances, identités et équations',
-          lessons: ['puissances-racines-exposants', 'identites-remarquables-factorisation', 'equations-inequations-tableau-signes'],
+          lessons: ['puissances-racines-exposants', 'identites-remarquables-factorisation', 'equations-inequations-tableau-signes', 'division-euclidienne'],
         },
         {
           id: 'rappels-fonctions',

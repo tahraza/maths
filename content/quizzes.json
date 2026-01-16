@@ -6076,5 +6076,144 @@
     ],
     "difficulty": 2,
     "passingScore": 70
+  },
+  {
+    "id": "pre-division-euclidienne",
+    "lessonId": "division-euclidienne",
+    "type": "pre",
+    "title": "Diagnostic : Division euclidienne",
+    "questions": [
+      {
+        "id": "q1",
+        "question": "Dans $a=bq+r$, quelle condition porte sur $r$ ?",
+        "options": [
+          "$0 \\le r < b$",
+          "$0 < r \\le b$",
+          "$r \\ge b$",
+          "$r < 0$"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Le reste est toujours compris entre 0 et b-1."
+      },
+      {
+        "id": "q2",
+        "question": "Dans la division de 23 par 5, le reste vaut :",
+        "options": [
+          "3",
+          "4",
+          "5",
+          "2"
+        ],
+        "correctAnswer": 0,
+        "explanation": "23 = 5 x 4 + 3."
+      },
+      {
+        "id": "q3",
+        "question": "Dans la division de 23 par 5, le quotient vaut :",
+        "options": [
+          "4",
+          "5",
+          "3",
+          "6"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Le plus grand multiple de 5 sans depasser 23 est 20."
+      },
+      {
+        "id": "q4",
+        "question": "Quelle ecriture est une division euclidienne correcte ?",
+        "options": [
+          "$23 = 5 \times 4 + 3$",
+          "$23 = 5 \times 5 + 3$",
+          "$23 = 5 \times 4 + 5$",
+          "$23 = 5 \times 3 + 8$"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Le reste doit etre strictement plus petit que 5."
+      },
+      {
+        "id": "q5",
+        "question": "Le reste possible quand on divise par 7 est :",
+        "options": [
+          "6",
+          "7",
+          "8",
+          "-1"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Les restes possibles sont 0,1,2,3,4,5,6."
+      }
+    ],
+    "difficulty": 1
+  },
+  {
+    "id": "post-division-euclidienne",
+    "lessonId": "division-euclidienne",
+    "type": "post",
+    "title": "Validation : Division euclidienne",
+    "questions": [
+      {
+        "id": "q1",
+        "question": "89 divise par 6 donne :",
+        "options": [
+          "$q=14, r=5$",
+          "$q=15, r= -1$",
+          "$q=13, r=11$",
+          "$q=12, r=17$"
+        ],
+        "correctAnswer": 0,
+        "explanation": "6 x 14 = 84, reste 5."
+      },
+      {
+        "id": "q2",
+        "question": "Dans la division de 65 par 8 :",
+        "options": [
+          "$q=8, r=1$",
+          "$q=7, r=9$",
+          "$q=9, r= -7$",
+          "$q=8, r=8$"
+        ],
+        "correctAnswer": 0,
+        "explanation": "8 x 8 = 64, reste 1."
+      },
+      {
+        "id": "q3",
+        "question": "Si $a=5q+2$, alors le reste de la division de $a$ par 5 est :",
+        "options": [
+          "2",
+          "5",
+          "0",
+          "1"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Le reste est le terme ajoute."
+      },
+      {
+        "id": "q4",
+        "question": "Quel reste est impossible lors d'une division par 9 ?",
+        "options": [
+          "9",
+          "8",
+          "0",
+          "4"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Le reste doit etre < 9."
+      },
+      {
+        "id": "q5",
+        "question": "58 divise par 3 donne :",
+        "options": [
+          "$q=19, r=1$",
+          "$q=18, r=4$",
+          "$q=20, r= -2$",
+          "$q=17, r=7$"
+        ],
+        "correctAnswer": 0,
+        "explanation": "3 x 19 = 57, reste 1."
+      }
+    ],
+    "difficulty": 2,
+    "passingScore": 70
   }
 ]

@@ -25,6 +25,7 @@ import {
   ProbabilityTree,
   PascalTriangle,
   CombinatoricsVisualization,
+  EuclideanDivision,
 } from './InteractiveGraphs'
 
 interface LessonContentProps {
@@ -321,6 +322,8 @@ function GraphRenderer({ config }: { config: GraphConfig }) {
         return <PascalTriangle {...(props as React.ComponentProps<typeof PascalTriangle>)} />
       case 'CombinatoricsVisualization':
         return <CombinatoricsVisualization {...(props as React.ComponentProps<typeof CombinatoricsVisualization>)} />
+      case 'EuclideanDivision':
+        return <EuclideanDivision {...(props as React.ComponentProps<typeof EuclideanDivision>)} />
       default:
         return <div className="text-danger-600">Type de graphe inconnu: {config.type}</div>
     }
