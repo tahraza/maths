@@ -7160,5 +7160,409 @@
       "convexite",
       "type-bac"
     ]
+  },
+  {
+    "id": "ex-bac-suites-001",
+    "lessonId": "suites-convergence",
+    "title": "Refroidissement d'un gateau (Amerique du Nord 2022)",
+    "difficulty": 3,
+    "exerciseType": "type-bac",
+    "statement": "On considere la suite $(T_n)$ definie par $T_0=180$ et $T_{n+1}=0,955 T_n + 0,9$.\n\n1. Demontrer par recurrence que pour tout $n$, $T_n \\ge 20$.\n2. Montrer que la suite $(T_n)$ est decroissante.\n3. On pose $u_n = T_n - 20$. Montrer que $(u_n)$ est geometrique et donner sa raison.",
+    "hints": [
+      "Pour la question 1, utilise l'hypothese $T_n \\ge 20$ dans la relation de recurrence.",
+      "Pour la question 2, etudie $T_{n+1}-T_n$ et factorise par $T_n-20$.",
+      "Pour la question 3, calcule $u_{n+1}$ en fonction de $u_n$."
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Minoration par recurrence",
+        "content": "Initialisation : $T_0=180 \\ge 20$. Heredite : si $T_n \\ge 20$, alors $T_{n+1}=0,955 T_n+0,9 \\ge 0,955\\times 20 + 0,9 = 20$."
+      },
+      {
+        "step": 2,
+        "title": "Monotonie",
+        "content": "$T_{n+1}-T_n=-0,045 T_n+0,9=-0,045(T_n-20) \\le 0$ puisque $T_n \\ge 20$. La suite est decroissante."
+      },
+      {
+        "step": 3,
+        "title": "Suite geometrique",
+        "content": "Avec $u_n=T_n-20$, on obtient $u_{n+1}=0,955(T_n-20)=0,955 u_n$. La raison vaut $q=0,955$."
+      }
+    ],
+    "method": "Encadrer par recurrence, etudier la difference puis translater la suite.",
+    "commonMistakes": [
+      "Oublier l'initialisation dans la recurrence.",
+      "Conclure a la decroissance sans etudier $T_{n+1}-T_n$.",
+      "Confondre le terme $T_{n+1}$ et la raison geometrique."
+    ],
+    "tags": [
+      "suites",
+      "recurrence",
+      "geometrique",
+      "convergence",
+      "type-bac"
+    ]
+  },
+  {
+    "id": "ex-bac-suites-002",
+    "lessonId": "suites-convergence",
+    "title": "Population d'une espece protegee (Amerique du Sud 2022)",
+    "difficulty": 3,
+    "exerciseType": "type-bac",
+    "statement": "Une population diminue de 10 % chaque annee, puis on reintroduit 100 individus en fin d'annee. On definit $u_0=2000$ et $u_{n+1}=0,9u_n+100$.\n\n1. Montrer par recurrence que $1000 < u_{n+1} \\le u_n$.\n2. En deduire que la suite $(u_n)$ est convergente.\n3. En posant $v_n = u_n - 1000$, determiner la limite de $(u_n)$.",
+    "hints": [
+      "Utilise que $f(x)=0,9x+100$ est croissante.",
+      "Une suite decroissante et minoree converge.",
+      "Exprime $v_{n+1}$ en fonction de $v_n$."
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Encadrement",
+        "content": "Initialisation : $u_1=0,9\\times 2000+100=1900$, donc $1000<1900\\le 2000$. Heredite : si $1000<u_{n+1}\\le u_n$, alors $f(1000)<f(u_{n+1})\\le f(u_n)$, donc $1000<u_{n+2}\\le u_{n+1}$."
+      },
+      {
+        "step": 2,
+        "title": "Convergence",
+        "content": "La suite est decroissante et minoree par 1000, donc convergente."
+      },
+      {
+        "step": 3,
+        "title": "Transformation geometrique",
+        "content": "$v_{n+1}=u_{n+1}-1000=0,9u_n+100-1000=0,9(u_n-1000)=0,9 v_n$. Donc $v_n \\to 0$ et $u_n \\to 1000$."
+      }
+    ],
+    "method": "Encadrer par recurrence puis translater pour obtenir une suite geometrique.",
+    "commonMistakes": [
+      "Oublier que $f$ est croissante pour conserver l'ordre.",
+      "Confondre limite et borne inferieure.",
+      "Ne pas verifier $0<0,9<1$ pour la convergence de $v_n$."
+    ],
+    "tags": [
+      "suites",
+      "recurrence",
+      "convergence",
+      "geometrique",
+      "type-bac"
+    ]
+  },
+  {
+    "id": "ex-bac-suites-003",
+    "lessonId": "suites-limites",
+    "title": "Methode de Heron pour \"racine de 11\" (Amerique du Nord 2023)",
+    "difficulty": 4,
+    "exerciseType": "type-bac",
+    "statement": "Soit $u_0=5$ et $u_{n+1}=\\frac12\\left(u_n+\\frac{11}{u_n}\\right)$.\n\n1. Demontrer par recurrence que $u_n \\ge u_{n+1} \\ge \\sqrt{11}$.\n2. Determiner la limite de la suite.",
+    "hints": [
+      "Etudie la fonction $f(x)=\\frac12(x+11/x)$ sur $[\\sqrt{11},+\\infty[$.",
+      "Montre que $f(x)\\ge\\sqrt{11}$.",
+      "La limite est un point fixe de $f$."
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Encadrement",
+        "content": "Sur $[\\sqrt{11},+\\infty[$, $f$ est croissante et $f(x)\\ge\\sqrt{11}$. Avec $u_0>\\sqrt{11}$, on obtient $u_{n+1}=f(u_n)\\ge\\sqrt{11}$ et, par croissance, $u_{n+1}\\le u_n$."
+      },
+      {
+        "step": 2,
+        "title": "Limite",
+        "content": "La suite est decroissante et minoree, donc convergente vers $\\ell>0$. En passant a la limite : $\\ell=\\frac12(\\ell+11/\\ell)$, donc $\\ell^2=11$ et $\\ell=\\sqrt{11}$."
+      }
+    ],
+    "method": "Etudier la fonction d'iteration, puis utiliser le point fixe.",
+    "commonMistakes": [
+      "Oublier de montrer que $f$ est croissante.",
+      "Confondre la limite avec le premier terme.",
+      "Oublier que $u_n>0$ pour choisir $\\sqrt{11}$."
+    ],
+    "tags": [
+      "suites",
+      "convergence",
+      "recurrence",
+      "limite",
+      "type-bac"
+    ]
+  },
+  {
+    "id": "ex-bac-suites-004",
+    "lessonId": "suites-definition",
+    "title": "Transmission binaire (Polynesie 2025 - J2)",
+    "difficulty": 3,
+    "exerciseType": "type-bac",
+    "statement": "Une donnee (0 ou 1) est transmise. Elle est fidele dans 90 % des cas et inversee sinon. On note $p_n$ la probabilite que la n-ieme machine recoive \"1\". On a $p_1=1$ et $p_{n+1}=0,8p_n+0,1$.\n\n1. Montrer par recurrence que $p_n = 0,5\\times 0,8^{n-1} + 0,5$.\n2. Determiner la limite de $(p_n)$.",
+    "hints": [
+      "Pose $u_n=p_n-0,5$.",
+      "La suite $(u_n)$ est geometrique.",
+      "Reviens ensuite a $p_n$."
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Transformation",
+        "content": "On pose $u_n=p_n-0,5$. Alors $u_{n+1}=0,8p_n+0,1-0,5=0,8(p_n-0,5)=0,8u_n$. Donc $u_n=u_1\\times 0,8^{n-1}=0,5\\times 0,8^{n-1}$."
+      },
+      {
+        "step": 2,
+        "title": "Limite",
+        "content": "On obtient $p_n=0,5\\times 0,8^{n-1}+0,5$ et comme $0,8^{n-1}\\to 0$, la limite vaut $0,5$."
+      }
+    ],
+    "method": "Centrer la suite pour obtenir une recurrence geometrique.",
+    "commonMistakes": [
+      "Oublier de calculer $u_1$.",
+      "Dire que la limite est 0,8 au lieu de 0,5.",
+      "Confondre $p_1$ et $p_0$."
+    ],
+    "tags": [
+      "suites",
+      "recurrence",
+      "geometrique",
+      "limite",
+      "type-bac"
+    ]
+  },
+  {
+    "id": "ex-bac-suites-005",
+    "lessonId": "suites-limites",
+    "title": "Suite recurrente et comparaison (Metropole 2023 - J1)",
+    "difficulty": 4,
+    "exerciseType": "type-bac",
+    "statement": "Soit $u_0=3$ et $u_{n+1}=\\frac12 u_n + \\frac12(n+1)$.\n\n1. Demontrer par recurrence que $n \\le u_n \\le n+3$.\n2. En deduire la limite de $(u_n)$.\n3. Determiner $\\lim_{n\\to\\infty} \\frac{n}{u_n}$.",
+    "hints": [
+      "Utilise la recurrence pour passer de l'encadrement au rang $n+1$.",
+      "Si $u_n \\ge n$, quelle est la limite ?",
+      "Encadre $n/u_n$ avec les bornes obtenues."
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Encadrement",
+        "content": "Par recurrence, on montre $n \\le u_n \\le n+3$. Le passage au rang $n+1$ utilise la linearite de la recurrence."
+      },
+      {
+        "step": 2,
+        "title": "Limite",
+        "content": "Comme $u_n \\ge n$ et $n\\to +\\infty$, on a $u_n\\to +\\infty$."
+      },
+      {
+        "step": 3,
+        "title": "Rapport",
+        "content": "On a $1 \\le \\frac{n}{u_n} \\le \\frac{n}{n+3}$. Par encadrement, la limite vaut 1."
+      }
+    ],
+    "method": "Obtenir un encadrement par recurrence puis passer aux limites.",
+    "commonMistakes": [
+      "Oublier d'encadrer des deux cotes.",
+      "Confondre divergence et non-convergence.",
+      "Mal simplifier $n/(n+3)$."
+    ],
+    "tags": [
+      "suites",
+      "limite",
+      "recurrence",
+      "comparaison",
+      "type-bac"
+    ]
+  },
+  {
+    "id": "ex-bac-suites-006",
+    "lessonId": "suites-definition",
+    "title": "Suite affine et translation (Asie 2025 - J2)",
+    "difficulty": 3,
+    "exerciseType": "type-bac",
+    "statement": "Soit $u_0=30$ et $u_{n+1}=\\frac12 u_n + 10$. On pose $v_n=u_n-20$.\n\n1. Demontrer que $(v_n)$ est geometrique.\n2. Exprimer $u_n$ en fonction de $n$.\n3. Determiner la limite de $(u_n)$.",
+    "hints": [
+      "Exprime $v_{n+1}$ en fonction de $v_n$.",
+      "Calcule $v_0$.",
+      "Reviens ensuite a $u_n$."
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Suite geometrique",
+        "content": "$v_{n+1}=u_{n+1}-20=\\frac12 u_n+10-20=\\frac12(u_n-20)=\\frac12 v_n$."
+      },
+      {
+        "step": 2,
+        "title": "Expression explicite",
+        "content": "$v_0=10$, donc $v_n=10\\times (1/2)^n$ et $u_n=20+10\\times (1/2)^n$."
+      },
+      {
+        "step": 3,
+        "title": "Limite",
+        "content": "Comme $(1/2)^n\\to 0$, la limite de $u_n$ vaut 20."
+      }
+    ],
+    "method": "Translater la suite pour obtenir une recurrence geometrique.",
+    "commonMistakes": [
+      "Oublier de calculer $v_0$.",
+      "Dire que la limite est 10 au lieu de 20.",
+      "Confondre raison et terme de la suite."
+    ],
+    "tags": [
+      "suites",
+      "geometrique",
+      "recurrence",
+      "limite",
+      "type-bac"
+    ]
+  },
+  {
+    "id": "ex-bac-suites-007",
+    "lessonId": "suites-definition",
+    "title": "Suite rationnelle (Polynesie 2022 - J1)",
+    "difficulty": 3,
+    "exerciseType": "type-bac",
+    "statement": "Soit $u_0=1$ et $u_{n+1}=\\frac{u_n}{1+u_n}$.\n\n1. Calculer $u_1$, $u_2$, $u_3$.\n2. Conjecturer une expression de $u_n$ puis la demontrer par recurrence.",
+    "hints": [
+      "Ecris $u_{n+1}$ sous la forme $1/(1+1/u_n)$.",
+      "Regarde les valeurs obtenues pour conjecturer.",
+      "Vise une forme $u_n=1/(n+1)$."
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Premiers termes",
+        "content": "$u_1=1/2$, $u_2=(1/2)/(1+1/2)=1/3$, $u_3=(1/3)/(1+1/3)=1/4$."
+      },
+      {
+        "step": 2,
+        "title": "Conjecture et recurrence",
+        "content": "On conjecture $u_n=1/(n+1)$. Si $u_n=1/(n+1)$, alors $u_{n+1}=\\frac{1/(n+1)}{1+1/(n+1)}=1/(n+2)$."
+      }
+    ],
+    "method": "Calculer des termes puis prouver par recurrence.",
+    "commonMistakes": [
+      "Confondre $u_n/(1+u_n)$ et $u_n/(1+u_n)^2$.",
+      "Oublier de verifier l'initialisation.",
+      "Ne pas simplifier la fraction correctement."
+    ],
+    "tags": [
+      "suites",
+      "recurrence",
+      "formule",
+      "type-bac"
+    ]
+  },
+  {
+    "id": "ex-bac-suites-008",
+    "lessonId": "suites-convergence",
+    "title": "Etat de trottinettes (Centres etrangers 2023 - J1)",
+    "difficulty": 3,
+    "exerciseType": "type-bac",
+    "statement": "Soit $p_0=1$ et $p_{n+1}=0,5p_n+0,4$.\n\n1. Demontrer par recurrence que $p_n \\ge 0,8$.\n2. Etudier la suite $u_n=p_n-0,8$ et en deduire l'expression de $p_n$ et sa limite.",
+    "hints": [
+      "La fonction $f(x)=0,5x+0,4$ envoie $[0,8,+\\infty[$ dans lui-meme.",
+      "Calcule $u_{n+1}$ en fonction de $u_n$.",
+      "Reviens ensuite a $p_n$."
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Minoration",
+        "content": "Initialisation : $p_0=1 \\ge 0,8$. Heredite : si $p_n\\ge 0,8$, alors $p_{n+1}=0,5p_n+0,4 \\ge 0,4+0,4=0,8$."
+      },
+      {
+        "step": 2,
+        "title": "Suite geometrique",
+        "content": "Avec $u_n=p_n-0,8$, on a $u_{n+1}=0,5u_n$. Donc $u_n=0,2\\times 0,5^n$ et $p_n=0,8+0,2\\times 0,5^n$."
+      },
+      {
+        "step": 3,
+        "title": "Limite",
+        "content": "Comme $0,5^n\\to 0$, on obtient $p_n\\to 0,8$."
+      }
+    ],
+    "method": "Montrer l'encadrement puis translater pour obtenir une suite geometrique.",
+    "commonMistakes": [
+      "Oublier que $0,5^n$ tend vers 0.",
+      "Confondre la borne 0,8 avec le quotient.",
+      "Ne pas justifier l'heredite."
+    ],
+    "tags": [
+      "suites",
+      "convergence",
+      "geometrique",
+      "recurrence",
+      "type-bac"
+    ]
+  },
+  {
+    "id": "ex-bac-suites-009",
+    "lessonId": "suites-convergence",
+    "title": "Algorithme et seuil (Nouvelle-Caledonie 2022 - J1)",
+    "difficulty": 4,
+    "exerciseType": "type-bac",
+    "statement": "Soit $u_0=-1$ et $u_{n+1}=u_n^3 e^{u_n}$.\n\n1. Demontrer par recurrence que $-1 \\le u_n \\le u_{n+1} \\le 0$.\n2. En deduire la convergence de la suite et sa limite.",
+    "hints": [
+      "Etudie $f(x)=x^3 e^x$ sur $[-1,0]$.",
+      "Montrer que $f$ envoie $[-1,0]$ dans lui-meme.",
+      "La limite verifie $\\ell = \\ell^3 e^{\\ell}$."
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Monotonie et encadrement",
+        "content": "Sur $[-1,0]$, $f(x)=x^3 e^x$ est croissante et $f([-1,0])\\subset [-1,0]$. Avec $u_0=-1$, on obtient $-1 \\le u_n \\le u_{n+1} \\le 0$."
+      },
+      {
+        "step": 2,
+        "title": "Limite",
+        "content": "La suite est croissante et majorée, donc convergente vers $\\ell\\in[-1,0]$. L'equation $\\ell=\\ell^3 e^{\\ell}$ donne $\\ell=0$."
+      }
+    ],
+    "method": "Encadrer la suite via l'etude de la fonction d'iteration.",
+    "commonMistakes": [
+      "Oublier de montrer que $f$ est croissante.",
+      "Conclure $\\ell=-1$ sans verification.",
+      "Ne pas utiliser l'encadrement pour la convergence."
+    ],
+    "tags": [
+      "suites",
+      "convergence",
+      "recurrence",
+      "limite",
+      "type-bac"
+    ]
+  },
+  {
+    "id": "ex-bac-suites-010",
+    "lessonId": "suites-limites",
+    "title": "Suites croisees et logarithme (Amerique du Sud 2022 - J1)",
+    "difficulty": 4,
+    "exerciseType": "type-bac",
+    "statement": "Soit $u_0=4$ et $u_{n+1}=\\frac{1}{5}u_n^2$. On pose $v_n=\\ln(u_n)$ et $w_n=v_n-\\ln(5)$.\n\n1. Montrer que $(w_n)$ est geometrique de raison 2.\n2. Exprimer $v_n$ en fonction de $n$.",
+    "hints": [
+      "Utilise $\\ln(u_{n+1})=\\ln(u_n^2/5)$.",
+      "Exprime $w_{n+1}$ en fonction de $w_n$.",
+      "Calcule $w_0$."
+    ],
+    "solutionSteps": [
+      {
+        "step": 1,
+        "title": "Recurrence sur les logs",
+        "content": "$v_{n+1}=\\ln(u_{n+1})=\\ln(u_n^2/5)=2v_n-\\ln(5)$, donc $w_{n+1}=2w_n$."
+      },
+      {
+        "step": 2,
+        "title": "Expression explicite",
+        "content": "$w_0=\\ln(4)-\\ln(5)=\\ln(4/5)$, donc $w_n=\\ln(4/5)\\times 2^n$ et $v_n=\\ln(4/5)\\times 2^n + \\ln(5)$."
+      }
+    ],
+    "method": "Transformer la recurrence avec le logarithme pour obtenir une suite geometrique.",
+    "commonMistakes": [
+      "Oublier la propriete $\\ln(a/b)=\\ln a-\\ln b$.",
+      "Confondre $\\ln(u_n^2)$ avec $\\ln(u_n)^2$.",
+      "Perdre le terme $-\\ln(5)$."
+    ],
+    "tags": [
+      "suites",
+      "logarithme",
+      "recurrence",
+      "limite",
+      "type-bac"
+    ]
   }
 ]
